@@ -29,18 +29,18 @@
         {% csrf_token %}
         {{ form2.as_p }}
         <div class="form-row">
-         <!--  <div class="form-group col-md-6">
+          <div class="form-group col-md-6">
             <label for="">Internship Company Name</label>
-            <input type="text" class="form-control" id="" name="it_name" placeholder="Internship">
+              {% render_field form2.first_name class="form-control" %}
           </div>
           <div class="form-group col-md-3">
             <label for="">From</label>
-            <input type="date" class="form-control" id="" name="it_f" placeholder="EmpName" >
+              {% render_field form2.first_name class="form-control" %}
           </div>
           <div class="form-group col-md-3">
             <label for="">To</label>
-            <input type="date" class="form-control" id="" name="it_t" placeholder="EmpName">
-          </div> -->
+              {% render_field form2.first_name class="form-control" %}
+          </div>
 
           <div class="form-group col-md-6">
             <label for="inputEmpName">EmpName</label>
@@ -50,26 +50,26 @@
             <label for="inputEmployeeIdNo">EmployeeIdNo</label>
             <input type="text" class="form-control" id="inputEmployeeIdNo" placeholder="EmployeeIdNo" value="{{emp_id}}">
         </div>
-        <!-- <div class="form-group col-md-6">
+        <div class="form-group col-md-6">
             <label for="inputHighestQuali">HighestQuali</label>
-            <input type="text" class="form-control" id="inputHighestQuali" name="high_qual" placeholder="HighestQuali">
-        </div> -->
+              {% render_field form2.first_name class="form-control" %}
+        </div>
         <div class="form-group col-md-6">
           <label for="inputDept">Dept</label>
-          <input type="text" class="form-control" id="inputDept" placeholder="Dept" >
+            {% render_field form2.first_name class="form-control" %}
         </div>
-        <!-- <div class="form-group col-md-12">
+        <div class="form-group col-md-12">
           <label for="inputDOJ">DOJ</label>
-          <input type="date" class="form-control" id="inputDOJ" placeholder="DOJ" name="doj">
+            {% render_field form2.first_name class="form-control" %}
         </div> -->
-        <!-- <div class="form-group col-md-6">
+        <div class="form-group col-md-6">
           <label for="inputPresentPosition">PresentPosition</label>
-          <input type="text" class="form-control" id="inputPresentPosition" placeholder="PresentPosition" name="Present_pos">
+            {% render_field form2.first_name class="form-control" %}
         </div> -->
-        <!-- <div class="form-group col-md-6">
+        <div class="form-group col-md-6">
           <label for="inputHeldFrom">HeldFrom</label>
-          <input type="date" class="form-control" id="inputHeldFrom" placeholder="HeldFrom" name="Held_from">
-        </div> -->
+          {% render_field form2.first_name class="form-control" %}
+        </div>
 
         <div class="form-group col-md-6">
           <label for="inputPhoneNo">PhoneNo</label>
@@ -81,23 +81,23 @@
         </div>
 
         <h3>Experience</h3>
-          <!-- <div class="row form-group col-md-12">
+          <div class="row form-group col-md-12">
 
            <div class="form-group col-md-4">
             <label for="inputteaching">teaching</label>
-            <input type="text" class="form-control" id="inputteaching" placeholder="2" name="exp_teach">
+            {% render_field form2.first_name class="form-control" %}
            </div>
             <div class="form-group col-md-4">
               <label for="inputResearch">Research</label>
-              <input type="text" class="form-control" id="inputResearch" placeholder="3" name="exp_res">
+                {% render_field form2.first_name class="form-control" %}
             </div>
             <div class="form-group col-md-4">
               <label for="inputIndustry">Industry</label>
-              <input type="text" class="form-control" id="inputIndustry" placeholder="1" name="exp_indus">
+                {% render_field form2.first_name class="form-control" %}
             </div>
-         </div> -->
+         </div>
      </div>
-  <!-- </form> -->
+
 
 
    <h3>Course Feedback and results<span class="sp">(Maximum Score: 30 marks)</span></h3>
@@ -522,7 +522,7 @@ Presentations (Invited talk/panel/keynote)
 </div>
 
 <div class="form-group col-sm-6">
-<label>Place: </label> 
+<label>Place: </label>
 <input type="text" name="" placeholder="place" class="form-control" name="c_place">
 </div>
 
@@ -572,7 +572,7 @@ Presentations (Invited talk/panel/keynote)
     </div>
 </form>
 </div> -->
-  
+
 
   <div class="card">
     <div class="card-header" id="headingTwo">
@@ -585,7 +585,7 @@ Number of journal papers with Scopus/DBLP/ Google Scholar Indexed Publications<s
     </div>
       <div class="form-group col-md-12">
         <div class="form-row">
-<div class="form-group col-sm-6">       
+<div class="form-group col-sm-6">
 <label >Name of journal: </label>
 <input type="text" name="" placeholder="name" class="form-control " name="j_name">
 </div>
