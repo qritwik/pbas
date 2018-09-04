@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 {% load staticfiles %}
+{% load widget_tweaks %}
 <html>
 
 <head>
@@ -27,9 +28,6 @@
 
       <form method="POST">
          {% csrf_token %}
-         {{ form2.as_p }}
-         {{ form3.as_p }}
-         {{ form4.as_p }}
 
         <div class="form-row">
           <div class="form-group col-md-6">

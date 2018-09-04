@@ -31,30 +31,37 @@ class User(AbstractUser):
 		return self.username
 
 	def is_assistant_professor(self):
-		faculty = designation.objects.get(name="Assistant Professor")
-		if faculty in self.designation.all():
+		faculty = Designation.objects.get(name="Assistant Professor")
+		if faculty == self.designation.name:
 			return True
+		return False
 
 	def is_associate_professor(self):
-		faculty = designation.objects.get(name="Associate Professor")
-		if faculty in self.designation.all():
+		faculty = Designation.objects.get(name="Associate Professor")
+		if faculty == self.designation.name:
 			return True
+		return False
 
 	def is_hod(self):
-		faculty = designation.objects.get(name="HOD")
-		if faculty in self.designation.all():
+		faculty = Designation.objects.get(name="HOD")
+		if faculty == self.designation.name:
 			return True
+		return False
 
 	def is_principal(self):
-		faculty = designation.objects.get(name="Principal")
-		if faculty in self.designation.all():
+		faculty = Designation.objects.get(name="Principal")
+		if faculty == self.designation.name:
 			return True
+		return False
 
 	def is_ao(self):
-		faculty = designation.objects.get(name="AO")
-		if faculty in self.designation.all():
+		faculty = Designation.objects.get(name="AO")
+		if faculty == self.designation.name:
 			return True
+		return False
 
+	def get_designation(self):
+		return self.designation.name
 	#get entry using form
 #TABLE-2
 class empDetailForm(models.Model):

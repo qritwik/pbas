@@ -37,20 +37,27 @@ def login(request):
 	return render(request,'login.html')
 
 def decide_view(request):
-	if request.user.is_assistant_professor:
+	if request.user.is_assistant_professor():
+		print('assis')
 		return HttpResponseRedirect("/assistant_form/")
 
-	if request.user.is_associate_professor:
+	elif request.user.is_associate_professor():
+		print('asso')
 		return HttpResponseRedirect("/associate_form/")
 
-	if request.user.is_hod:
+	elif request.user.is_hod():
+		print('hod')
 		return HttpResponseRedirect("/hod_first/")
 
-	if request.user.is_principal:
+	elif request.user.is_principal():
+		print('princy')
 		return HttpResponseRedirect("/principal_first/")
 
-	if request.user.is_ao:
+	elif request.user.is_ao():
 		return HttpResponseRedirect("/ao.first/")
+
+	else:
+		return HttpResponseRedirect("/")
 # def front(request):
 # 	return render(request,'front.html')
 
@@ -77,22 +84,25 @@ def success(request):
 
 def f_assistant(request):
 
-	form2 = forms.form_UserForm()
+	form2 = forms.form_empDetailForm()
 	form3 = forms.form_feedbackTab()
 	form4 = forms.form_rd()
 
-	# if request.method == 'POST':
-	# 	if form1.is_valid() and form2.is_valid() and form3.is_valid() and form4.is_valid():
-	return render(request,'assistant_form.html',{'form1':form1,'form2':form2,'form3':form3,'form4':form4})
+	if request.method == 'POST':
+		if  form2.is_valid():
+			form2.save()
+			render(request,'hod_success.html')	
+
+	return render(request,'assistant_form.html',{'form2':form2,'form3':form3,'form4':form4})
 
 def f_associate(request):
 
-	form2 = forms.form_UserForm()
+	form2 = forms.form_empDetailForm()
 	form3 = forms.form_feedbackTab()
 	form4 = forms.form_rd()
 
 	# if request.method == 'POST':
 	# 	if form1.is_valid() and form2.is_valid() and form3.is_valid() and form4.is_valid():
-	return render(request,'associate_form.html',{'form1':form1,'form2':form2,'form3':form3,'form4':form4})
+	return render(request,'associate_form.html',{'form2':form2,'form3':form3,'form4':form4})
 
 
