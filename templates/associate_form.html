@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+
+<head>
+  <title>asp1</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href={% static "css/index.css" %}>
+
+</head>
+<body>
+  <div class="container">
+
+      <div class="card poi">
+        <div class="form-row">
+        <div class="form-group col-md-3">
+        <img src={% static "image/logo.png" %} class="img-thumbnail" width="150px"/>
+      </div>
+        <div class="form-group col-md-9">
+        <h2 class="display-4 al" >BMS Institute of Technology&Management</h2>
+      </div>
+    </div>
+        <h3 class="lead" align="center">Faculty appraisal form</h3>
+        <hr class="my-4">
+        <h5>Report must be submitted.</h5>
+      </div>
+
+      <form method="POST">
+        {% csrf_token %}
+        {{ form2.as_p }}
+        <div class="form-row">
+         <!--  <div class="form-group col-md-6">
+            <label for="">Internship Company Name</label>
+            <input type="text" class="form-control" id="" name="it_name" placeholder="Internship">
+          </div>
+          <div class="form-group col-md-3">
+            <label for="">From</label>
+            <input type="date" class="form-control" id="" name="it_f" placeholder="EmpName" >
+          </div>
+          <div class="form-group col-md-3">
+            <label for="">To</label>
+            <input type="date" class="form-control" id="" name="it_t" placeholder="EmpName">
+          </div> -->
+
+          <div class="form-group col-md-6">
+            <label for="inputEmpName">EmpName</label>
+            <input type="email" class="form-control" id="inputEmpName" placeholder="EmpName" value="{{ first_name }}">
+          </div>
+        <div class="form-group col-md-6">
+            <label for="inputEmployeeIdNo">EmployeeIdNo</label>
+            <input type="text" class="form-control" id="inputEmployeeIdNo" placeholder="EmployeeIdNo" value="{{emp_id}}">
+        </div>
+        <!-- <div class="form-group col-md-6">
+            <label for="inputHighestQuali">HighestQuali</label>
+            <input type="text" class="form-control" id="inputHighestQuali" name="high_qual" placeholder="HighestQuali">
+        </div> -->
+        <div class="form-group col-md-6">
+          <label for="inputDept">Dept</label>
+          <input type="text" class="form-control" id="inputDept" placeholder="Dept" >
+        </div>
+        <!-- <div class="form-group col-md-12">
+          <label for="inputDOJ">DOJ</label>
+          <input type="date" class="form-control" id="inputDOJ" placeholder="DOJ" name="doj">
+        </div> -->
+        <!-- <div class="form-group col-md-6">
+          <label for="inputPresentPosition">PresentPosition</label>
+          <input type="text" class="form-control" id="inputPresentPosition" placeholder="PresentPosition" name="Present_pos">
+        </div> -->
+        <!-- <div class="form-group col-md-6">
+          <label for="inputHeldFrom">HeldFrom</label>
+          <input type="date" class="form-control" id="inputHeldFrom" placeholder="HeldFrom" name="Held_from">
+        </div> -->
+
+        <div class="form-group col-md-6">
+          <label for="inputPhoneNo">PhoneNo</label>
+          <input type="text" class="form-control" id="inputPhoneNo" placeholder="PhoneNo" value="{{phone}}">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputEmail">Email</label>
+          <input type="email" class="form-control" id="inputEmail" placeholder="Email" value="{{email}}">
+        </div>
+
+        <h3>Experience</h3>
+          <!-- <div class="row form-group col-md-12">
+
+           <div class="form-group col-md-4">
+            <label for="inputteaching">teaching</label>
+            <input type="text" class="form-control" id="inputteaching" placeholder="2" name="exp_teach">
+           </div>
+            <div class="form-group col-md-4">
+              <label for="inputResearch">Research</label>
+              <input type="text" class="form-control" id="inputResearch" placeholder="3" name="exp_res">
+            </div>
+            <div class="form-group col-md-4">
+              <label for="inputIndustry">Industry</label>
+              <input type="text" class="form-control" id="inputIndustry" placeholder="1" name="exp_indus">
+            </div>
+         </div> -->
+     </div>
+  <!-- </form> -->
+
+
+   <h3>Course Feedback and results<span class="sp">(Maximum Score: 30 marks)</span></h3>
+
+<div class="card poi">
+
+    <h4>Odd Semester</h4>
+  <table class="table table-bordered">
+  <thead>
+    <tr>
+      <th rowspan="2">S.no</th>
+      <th rowspan="2">Therory Courses</th>
+      <th colspan="3">Student Feedback</th>
+      <th colspan="3">Final Result</th>
+    </tr>
+    <tr>
+      <th>Feedback1</th>
+      <th>Feedback2</th>
+      <th>Avg</th>
+      <th>Stuapp</th>
+      <th>StuPass</th>
+      <th>%pass</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td><input type="text" class="form-control " placeholder="Subname" aria-label="Username" aria-describedby="basic-addon1" name="o_t1_name"></td>
+      <td class="right aligned"><input type="number" class="form-control " placeholder="%" aria-label="Username" aria-describedby="basic-addon1" name="o_t1_f1"></td>
+      <td class="center aligned"><input type="number" class="form-control " placeholder="%" aria-label="Username" aria-describedby="basic-addon1" name="o_t1_f2"></td>
+      <td></td>
+      <td> <input type="text" class="form-control " placeholder="Number" aria-label="Username" aria-describedby="basic-addon1" name="o_t1_stu_app"></td>
+      <td><input type="text" class="form-control " placeholder="Number" aria-label="Username" aria-describedby="basic-addon1" name="o_t1_stu_pass"></td>
+      <td></td>
+    </tr>
+   <tr>
+      <td>2</td>
+      <td><input type="text" class="form-control " placeholder="Subname" aria-label="Username" aria-describedby="basic-addon1" name="o_t2_name"></td>
+      <td class="right aligned"><input type="number" class="form-control " placeholder="%" aria-label="Username" aria-describedby="basic-addon1" name="o_t2_f1"></td>
+      <td class="center aligned"><input type="number" class="form-control " placeholder="%" aria-label="Username" aria-describedby="basic-addon1" name="o_t2_f2"></td>
+      <td></td>
+      <td> <input type="text" class="form-control " placeholder="Number" aria-label="Username" aria-describedby="basic-addon1" name="o_t2_stu_app"></td>
+      <td><input type="text" class="form-control " placeholder="Number" aria-label="Username" aria-describedby="basic-addon1" name="o_t2_stu_pass"></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td><input type="text" class="form-control " placeholder="Subname" aria-label="Username" aria-describedby="basic-addon1" name="o_t3_name"></td>
+      <td class="right aligned"><input type="number" class="form-control " placeholder="%" aria-label="Username" aria-describedby="basic-addon1" name="o_t3_f1"></td>
+      <td class="center aligned"><input type="number" class="form-control " placeholder="%" aria-label="Username" aria-describedby="basic-addon1" name="o_t3_f2"></td>
+      <td></td>
+      <td> <input type="text" class="form-control " placeholder="Number" aria-label="Username" aria-describedby="basic-addon1" name="o_t3_stu_app"></td>
+      <td><input type="text" class="form-control " placeholder="Number" aria-label="Username" aria-describedby="basic-addon1" name="o_t3_stu_pass"></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="table-bordered table">
+  <thead>
+    <tr>
+      <th rowspan="2">S.no</th>
+      <th rowspan="2">Lab Courses</th>
+      <th colspan="3">Student Feedback</th>
+      <th colspan="3">Final Result</th>
+    </tr>
+    <tr>
+      <th>Feedback1</th>
+      <th>Feedback2</th>
+      <th>Avg</th>
+      <th>Stuapp</th>
+      <th>StuPass</th>
+      <th>%pass</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td><input type="text" class="form-control " placeholder="Subname" aria-label="Username" aria-describedby="basic-addon1" name="o_l1_name"></td>
+      <td class="right aligned"><input type="number" class="form-control " placeholder="%" aria-label="Username" aria-describedby="basic-addon1" name="o_l1_f1"></td>
+      <td class="center aligned"><input type="number" class="form-control " placeholder="%" aria-label="Username" aria-describedby="basic-addon1" name="o_l1_f2"></td>
+      <td></td>
+      <td> <input type="text" class="form-control " placeholder="Number" aria-label="Username" aria-describedby="basic-addon1" name="o_l1_stu_app"></td>
+      <td><input type="text" class="form-control " placeholder="Number" aria-label="Username" aria-describedby="basic-addon1" name="o_l1_stu_pass"></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td><input type="text" class="form-control " placeholder="Subname" aria-label="Username" aria-describedby="basic-addon1" name="o_l2_name"></td>
+      <td class="right aligned"><input type="number" class="form-control " placeholder="%" aria-label="Username" aria-describedby="basic-addon1" name="o_l2_f1"></td>
+      <td class="center aligned"><input type="number" class="form-control " placeholder="%" aria-label="Username" aria-describedby="basic-addon1" name="o_l2_f2"></td>
+      <td></td>
+      <td> <input type="text" class="form-control " placeholder="Number" aria-label="Username" aria-describedby="basic-addon1" name="o_l2_stu_app"></td>
+      <td><input type="text" class="form-control " placeholder="Number" aria-label="Username" aria-describedby="basic-addon1" name="o_l2_stu_pass"></td>
+      <td></td>
+    </tr>
+     <tr>
+      <td>3</td>
+      <td><input type="text" class="form-control " placeholder="Subname" aria-label="Username" aria-describedby="basic-addon1" name="o_l3_name"></td>
+      <td class="right aligned"><input type="number" class="form-control " placeholder="%" aria-label="Username" aria-describedby="basic-addon1" name="o_l3_f1"></td>
+      <td class="center aligned"><input type="number" class="form-control " placeholder="%" aria-label="Username" aria-describedby="basic-addon1" name="o_l3_f2"></td>
+      <td></td>
+      <td> <input type="text" class="form-control " placeholder="Number" aria-label="Username" aria-describedby="basic-addon1" name="o_l3_stu_app"></td>
+      <td><input type="text" class="form-control " placeholder="Number" aria-label="Username" aria-describedby="basic-addon1" name="o_l3_stu_pass"></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td><input type="text" class="form-control " placeholder="Subname" aria-label="Username" aria-describedby="basic-addon1" name="o_l4_name"></td>
+      <td class="right aligned"><input type="number" class="form-control " placeholder="%" aria-label="Username" aria-describedby="basic-addon1" name="o_l4_f1"></td>
+      <td class="center aligned"><input type="number" class="form-control " placeholder="%" aria-label="Username" aria-describedby="basic-addon1" name="o_l4_f2"></td>
+      <td></td>
+      <td> <input type="text" class="form-control " placeholder="Number" aria-label="Username" aria-describedby="basic-addon1" name="o_l4_stu_app"></td>
+      <td><input type="text" class="form-control " placeholder="Number" aria-label="Username" aria-describedby="basic-addon1" name="o_l4_stu_pass"></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td><input type="text" class="form-control " placeholder="Subname" aria-label="Username" aria-describedby="basic-addon1" name="o_l5_name"></td>
+      <td class="right aligned"><input type="number" class="form-control " placeholder="%" aria-label="Username" aria-describedby="basic-addon1" name="o_l5_f1"></td>
+      <td class="center aligned"><input type="number" class="form-control " placeholder="%" aria-label="Username" aria-describedby="basic-addon1" name="o_l5_f2"></td>
+      <td></td>
+      <td> <input type="text" class="form-control " placeholder="Number" aria-label="Username" aria-describedby="basic-addon1" name="o_l5_stu_app"></td>
+      <td><input type="text" class="form-control " placeholder="Number" aria-label="Username" aria-describedby="basic-addon1" name="o_l5_stu_pass"></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+
+</div>
+
+<div class="card poi1">
+
+   <h4>Even Semester</h4>
+  <table class="table-bordered table">
+  <thead>
+    <tr>
+      <th rowspan="2">S.no</th>
+      <th rowspan="2">Therory Courses</th>
+      <th colspan="3">Student Feedback</th>
+      <th colspan="3">Final Result</th>
+    </tr>
+    <tr>
+      <th>Feedback1</th>
+      <th>Feedback2</th>
+      <th>Avg</th>
+      <th>Stuapp</th>
+      <th>StuPass</th>
+      <th>%pass</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td><input type="text" class="form-control " placeholder="Subname" aria-label="Username" aria-describedby="basic-addon1" name="e_t1_name"></td>
+      <td class="right aligned"><input type="number" class="form-control " placeholder="%" aria-label="Username" aria-describedby="basic-addon1" name="e_t1_f1"></td>
+      <td class="center aligned"><input type="number" class="form-control " placeholder="%" aria-label="Username" aria-describedby="basic-addon1" name="e_t1_f2"></td>
+      <td></td>
+      <td> <input type="text" class="form-control " placeholder="Number" aria-label="Username" aria-describedby="basic-addon1" name="e_t1_stu_app"></td>
+      <td><input type="text" class="form-control " placeholder="Number" aria-label="Username" aria-describedby="basic-addon1" name="e_t1_stu_pass"></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td><input type="text" class="form-control " placeholder="Subname" aria-label="Username" aria-describedby="basic-addon1" name="e_t2_name"></td>
+      <td class="right aligned"><input type="number" class="form-control " placeholder="%" aria-label="Username" aria-describedby="basic-addon1" name="e_t2_f1"></td>
+      <td class="center aligned"><input type="number" class="form-control " placeholder="%" aria-label="Username" aria-describedby="basic-addon1" name="e_t2_f2"></td>
+      <td></td>
+      <td> <input type="text" class="form-control " placeholder="Number" aria-label="Username" aria-describedby="basic-addon1" name="e_t2_stu_app"></td>
+      <td><input type="text" class="form-control " placeholder="Number" aria-label="Username" aria-describedby="basic-addon1" name="e_t2_stu_pass"></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td><input type="text" class="form-control " placeholder="Subname" aria-label="Username" aria-describedby="basic-addon1" name="e_t3_name"></td>
+      <td class="right aligned"><input type="number" class="form-control " placeholder="%" aria-label="Username" aria-describedby="basic-addon1" name="e_t3_f1"></td>
+      <td class="center aligned"><input type="number" class="form-control " placeholder="%" aria-label="Username" aria-describedby="basic-addon1" name="e_t3_f2"></td>
+      <td></td>
+      <td> <input type="text" class="form-control " placeholder="Number" aria-label="Username" aria-describedby="basic-addon1" name="e_t3_stu_app"></td>
+      <td><input type="text" class="form-control " placeholder="Number" aria-label="Username" aria-describedby="basic-addon1" name="e_t3_stu_pass"></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="table-bordered table">
+  <thead>
+    <tr>
+      <th rowspan="2">S.no</th>
+      <th rowspan="2">Lab Courses</th>
+      <th colspan="3">Student Feedback</th>
+      <th colspan="3">Final Result</th>
+    </tr>
+    <tr>
+      <th>Feedback1</th>
+      <th>Feedback2</th>
+      <th>Avg</th>
+      <th>Stuapp</th>
+      <th>StuPass</th>
+      <th>%pass</th>
+    </tr>
+  </thead>
+  <tbody>
+   <tr>
+      <td>1</td>
+      <td><input type="text" class="form-control " placeholder="Subname" aria-label="Username" aria-describedby="basic-addon1" name="e_l1_name"></td>
+      <td class="right aligned"><input type="number" class="form-control " placeholder="%" aria-label="Username" aria-describedby="basic-addon1" name="e_l1_f1"></td>
+      <td class="center aligned"><input type="number" class="form-control " placeholder="%" aria-label="Username" aria-describedby="basic-addon1" name="e_l1_f2"></td>
+      <td></td>
+      <td> <input type="text" class="form-control " placeholder="Number" aria-label="Username" aria-describedby="basic-addon1" name="e_l1_stu_app"></td>
+      <td><input type="text" class="form-control " placeholder="Number" aria-label="Username" aria-describedby="basic-addon1" name="e_l1_stu_pass"></td>
+      <td></td>
+    </tr>
+     <tr>
+      <td>2</td>
+      <td><input type="text" class="form-control " placeholder="Subname" aria-label="Username" aria-describedby="basic-addon1" name="e_l2_name"></td>
+      <td class="right aligned"><input type="number" class="form-control " placeholder="%" aria-label="Username" aria-describedby="basic-addon1" name="e_l2_f1"></td>
+      <td class="center aligned"><input type="number" class="form-control " placeholder="%" aria-label="Username" aria-describedby="basic-addon1" name="e_l2_f2"></td>
+      <td></td>
+      <td> <input type="text" class="form-control " placeholder="Number" aria-label="Username" aria-describedby="basic-addon1" name="e_l2_stu_app"></td>
+      <td><input type="text" class="form-control " placeholder="Number" aria-label="Username" aria-describedby="basic-addon1" name="e_l2_stu_pass"></td>
+      <td></td>
+    </tr>
+     <tr>
+      <td>3</td>
+      <td><input type="text" class="form-control " placeholder="Subname" aria-label="Username" aria-describedby="basic-addon1" name="e_l3_name"></td>
+      <td class="right aligned"><input type="number" class="form-control " placeholder="%" aria-label="Username" aria-describedby="basic-addon1" name="e_l3_f1"></td>
+      <td class="center aligned"><input type="number" class="form-control " placeholder="%" aria-label="Username" aria-describedby="basic-addon1" name="e_l3_f2"></td>
+      <td></td>
+      <td> <input type="text" class="form-control " placeholder="Number" aria-label="Username" aria-describedby="basic-addon1" name="e_l3_stu_app"></td>
+      <td><input type="text" class="form-control " placeholder="Number" aria-label="Username" aria-describedby="basic-addon1" name="e_l3_stu_pass"></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td><input type="text" class="form-control " placeholder="Subname" aria-label="Username" aria-describedby="basic-addon1" name="e_l4_name"></td>
+      <td class="right aligned"><input type="number" class="form-control " placeholder="%" aria-label="Username" aria-describedby="basic-addon1" name="e_l4_f1"></td>
+      <td class="center aligned"><input type="number" class="form-control " placeholder="%" aria-label="Username" aria-describedby="basic-addon1" name="e_l4_f2"></td>
+      <td></td>
+      <td> <input type="text" class="form-control " placeholder="Number" aria-label="Username" aria-describedby="basic-addon1" name="e_l4_stu_app"></td>
+      <td><input type="text" class="form-control " placeholder="Number" aria-label="Username" aria-describedby="basic-addon1" name="e_l4_stu_pass"></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td><input type="text" class="form-control " placeholder="Subname" aria-label="Username" aria-describedby="basic-addon1" name="e_l5_name"></td>
+      <td class="right aligned"><input type="number" class="form-control " placeholder="%" aria-label="Username" aria-describedby="basic-addon1" name="e_l5_f1"></td>
+      <td class="center aligned"><input type="number" class="form-control " placeholder="%" aria-label="Username" aria-describedby="basic-addon1" name="e_l5_f2"></td>
+      <td></td>
+      <td> <input type="text" class="form-control " placeholder="Number" aria-label="Username" aria-describedby="basic-addon1" name="e_l5_stu_app"></td>
+      <td><input type="text" class="form-control " placeholder="Number" aria-label="Username" aria-describedby="basic-addon1" name="e_l5_stu_pass"></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+
+</div>
+
+<div class="card poi">
+
+   <h4>Project Guided</h4>
+  <table class="table-bordered table">
+  <thead>
+    <tr>
+      <th rowspan="2">S.no</th>
+      <th rowspan="2" >Therory Courses</th>
+      <th colspan="3" >Student Feedback</th>
+    </tr>
+    <tr>
+      <th>Feedback1</th>
+      <th>Feedback2</th>
+      <th>Avg</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td><input type="text" class="form-control " placeholder="Subname" aria-label="Username" aria-describedby="basic-addon1" name="p1_name"></td>
+      <td class="right aligned"><input type="number" class="form-control " placeholder="%" aria-label="Username" aria-describedby="basic-addon1" name="p1_f1"></td>
+      <td class="center aligned"><input type="number" class="form-control " placeholder="%" aria-label="Username" aria-describedby="basic-addon1" name="p1_f2"></td>
+      <td></td>
+    </tr>
+     <tr>
+      <td>2</td>
+      <td><input type="text" class="form-control " placeholder="Subname" aria-label="Username" aria-describedby="basic-addon1" name="p2_name"></td>
+      <td class="right aligned"><input type="number" class="form-control " placeholder="%" aria-label="Username" aria-describedby="basic-addon1" name="p2_f1"></td>
+      <td class="center aligned"><input type="number" class="form-control " placeholder="%" aria-label="Username" aria-describedby="basic-addon1" name="p2_f2"></td>
+      <td></td>
+    </tr>
+</tbody>
+</table>
+</div>
+
+
+<div class="accordion" id="accordionExample">
+  <h5 class="po color1">RESEARCH & DEVELOPMENT AND CONSULTANCY<span class="sp">(Maximum Score: 40 marks)</span></h5>
+  <div class="card">
+    <div class="card-header" id="headingOne">
+      <h5 class="mb-0">
+        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          Workshops/FDP attended
+        </button>
+      </h5>
+    </div>
+
+<form>
+        <div class="form-row dis">
+          <div class="form-group col-md-6">
+                        <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="State Level" >
+
+          </div>
+        <div class="form-group col-md-6">
+
+            <input type="text" class="form-control" id="inputEmployeeIdNo" placeholder="Days" name="w_s_d">
+        </div>
+    </div>
+
+    <div class="form-row dis">
+          <div class="form-group col-md-6">
+                        <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="National Level">
+
+          </div>
+        <div class="form-group col-md-6">
+
+            <input type="text" class="form-control" id="inputEmployeeIdNo" placeholder="Days" name="w_n_d">
+        </div>
+    </div>
+
+    <div class="form-row dis">
+          <div class="form-group col-md-6">
+                        <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="International Level">
+
+          </div>
+        <div class="form-group col-md-6">
+
+            <input type="text" class="form-control" id="inputEmployeeIdNo" placeholder="Days" name="w_i_d">
+        </div>
+    </div>
+</form>
+</div>
+  <div class="card">
+    <div class="card-header" id="headingTwo">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+
+Presentations (Invited talk/panel/keynote)
+        </button>
+      </h5>
+    </div>
+   <form>
+        <div class="form-row dis">
+          <div class="form-group col-md-6">
+                        <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="State Level">
+
+          </div>
+        <div class="form-group col-md-6">
+
+            <input type="text" class="form-control" id="inputEmployeeIdNo" placeholder="Days" name="p_s_d">
+        </div>
+    </div>
+
+    <div class="form-row dis">
+          <div class="form-group col-md-6">
+                        <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="National Level">
+
+          </div>
+        <div class="form-group col-md-6">
+
+            <input type="text" class="form-control" id="inputEmployeeIdNo" placeholder="Days" name="p_n_d">
+        </div>
+    </div>
+
+    <div class="form-row dis">
+          <div class="form-group col-md-6">
+                        <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="International Level">
+
+          </div>
+        <div class="form-group col-md-6">
+
+            <input type="text" class="form-control" id="inputEmployeeIdNo" placeholder="Days" name="p_i_d">
+        </div>
+    </div>
+</form>
+  </div>
+  <div class="card">
+    <div class="card-header" id="headingThree">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          Number of Online Courses Completed
+        </button>
+      </h5>
+    </div>
+   <div class="form-group dis col-md-6">
+
+            <input type="text" class="form-control" id="inputEmployeeIdNo" placeholder="Count Eg. 3" name="onl_course_c">
+        </div>
+  </div>
+</div>
+
+
+
+<div class="accordion dis1" id="accordionExample">
+  <h5 class="po color1">Publications</h5>
+  <div class="card">
+    <div class="card-header" id="headingOne">
+      <h5 class="mb-0">
+        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          Number of Publications in National/International Journals/Conferences<span class="sp">(Maximum Score: 08 marks)</span>
+        </button>
+      </h5>
+    </div>
+   <div class="form-group col-md-12" >
+<div class="form-row">
+<div class="form-group col-sm-6">
+<label >Name of conference: </label>
+<input type="text" name="" placeholder="name" class="form-control" name="c_name">
+</div>
+
+<div class="form-group col-sm-6">
+<label >Title of the paper: </label>
+<input type="text" name="" placeholder="title" class="form-control" name="c_title">
+</div>
+
+<div class="form-group col-sm-6">
+<label>Place: </label> 
+<input type="text" name="" placeholder="place" class="form-control" name="c_place">
+</div>
+
+<div class="form-group col-sm-6">
+<label >Date: </label>
+<input type="date" name="" placeholder="date" class="form-control " name="c_date">
+</div>
+
+<div class="form-group col-sm-6">
+<label>Indexed: </label>
+<input type="text" name="" placeholder="Indexed" class="form-control" name="c_index">
+</div>
+</div>
+</div>
+<!-- form>
+        <div class="form-row dis">
+          <div class="form-group col-md-6">
+                        <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="Sole Authored">
+
+          </div>
+        <div class="form-group col-md-6">
+
+            <input type="text" class="form-control" id="inputEmployeeIdNo" placeholder="Count Eg. 3">
+        </div>
+    </div>
+
+    <div class="form-row dis">
+          <div class="form-group col-md-6">
+                        <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="Being first and second author">
+
+          </div>
+        <div class="form-group col-md-6">
+
+            <input type="text" class="form-control" id="inputEmployeeIdNo" placeholder="Count Eg. 3">
+        </div>
+    </div>
+
+    <div class="form-row dis">
+          <div class="form-group col-md-6">
+                        <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="Being other author ">
+
+          </div>
+        <div class="form-group col-md-6">
+
+            <input type="text" class="form-control" id="inputEmployeeIdNo" placeholder="Count Eg. 3">
+        </div>
+    </div>
+</form>
+</div> -->
+  
+
+  <div class="card">
+    <div class="card-header" id="headingTwo">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+
+Number of journal papers with Scopus/DBLP/ Google Scholar Indexed Publications<span class="sp">(Maximum Score: 12 marks)</span>
+        </button>
+      </h5>
+    </div>
+      <div class="form-group col-md-12">
+        <div class="form-row">
+<div class="form-group col-sm-6">       
+<label >Name of journal: </label>
+<input type="text" name="" placeholder="name" class="form-control " name="j_name">
+</div>
+<div class="form-group col-sm-6">
+<label >Title of the paper: </label>
+<input type="text" name="" placeholder="title" class="form-control " name="j_title">
+</div>
+<div class="form-group col-sm-6">
+<label >Volume: </label>
+<input type="text" name="" placeholder="volume" class="form-control " name="j_volume">
+</div>
+<div class="form-group col-sm-6">
+<label >Issn/Doi: </label>
+<input type="text" name="" placeholder="Issn" class="form-control" name="j_issn">
+</div>
+<div class="form-group col-sm-6">
+<label >Date: </label>
+<input type="date" name="" placeholder="date" class="form-control " name="j_date">
+</div>
+<div class="form-group col-sm-6">
+<label >Page no: </label>
+<input type="text" name="" placeholder="Page no" class="form-control" name="j_page">
+</div>
+<div class="form-group col-sm-6">
+<label>Indexed: </label>
+<input type="text" name="" placeholder="Indexed" class="form-control" name="j_index">
+</div>
+</div>
+</div>
+<!--    <form>
+        <div class="form-row dis">
+          <div class="form-group col-md-6">
+                        <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="Sole Authored">
+
+          </div>
+        <div class="form-group col-md-6">
+
+            <input type="text" class="form-control" id="inputEmployeeIdNo" placeholder="Count Eg. 3">
+        </div>
+    </div>
+
+    <div class="form-row dis">
+          <div class="form-group col-md-6">
+                        <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="Being first and second author">
+
+          </div>
+        <div class="form-group col-md-6">
+
+            <input type="text" class="form-control" id="inputEmployeeIdNo" placeholder="Count Eg. 3">
+        </div>
+    </div>
+
+    <div class="form-row dis">
+          <div class="form-group col-md-6">
+                        <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="Being other author ">
+
+          </div>
+        <div class="form-group col-md-6">
+
+            <input type="text" class="form-control" id="inputEmployeeIdNo" placeholder="Count Eg. 3">
+        </div>
+    </div>
+</form> -->
+  </div>
+  <div class="card">
+    <div class="card-header" id="headingThree">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+         Number of Books/Book chapter Published/Publication in News media<span class="sp">(Maximum Score: 10 marks)</span>
+        </button>
+      </h5>
+    </div>
+   <!-- <form> -->
+        <div class="form-row dis">
+          <div class="form-group col-md-6">
+                        <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="Book Authored  International (10 marks/Book)">
+
+          </div>
+        <div class="form-group col-md-6">
+
+            <input type="text" class="form-control" id="inputEmployeeIdNo" placeholder="Count Eg. 3" name="book_i">
+        </div>
+    </div>
+
+    <div class="form-row dis">
+          <div class="form-group col-md-6">
+                        <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="Book Authored  National (08 marks/Book)">
+
+          </div>
+        <div class="form-group col-md-6">
+
+            <input type="text" class="form-control" id="inputEmployeeIdNo" placeholder="Count Eg. 3" name="book_n">
+        </div>
+    </div>
+
+    <div class="form-row dis">
+          <div class="form-group col-md-6">
+                        <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="Book chapterAuthored  International (06 marks/Book Chapter)">
+
+          </div>
+        <div class="form-group col-md-6">
+
+            <input type="text" class="form-control" id="inputEmployeeIdNo" placeholder="Count Eg. 3" name="book_ci">
+        </div>
+    </div>
+
+    <div class="form-row dis">
+          <div class="form-group col-md-6">
+                        <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="Book chapterAuthored  National (04 marks/Book Chapter)">
+
+          </div>
+        <div class="form-group col-md-6">
+
+            <input type="text" class="form-control" id="inputEmployeeIdNo" placeholder="Count Eg. 3" name="book_cn">
+        </div>
+    </div>
+
+    <div class="form-row dis">
+          <div class="form-group col-md-6">
+                        <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="Articles Published in International (10 marks/Article)">
+
+          </div>
+        <div class="form-group col-md-6">
+
+            <input type="text" class="form-control" id="inputEmployeeIdNo" placeholder="Count Eg. 3" name="book_ai">
+        </div>
+    </div>
+
+    <div class="form-row dis">
+          <div class="form-group col-md-6">
+                        <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="National  Media (06 marks/Article)">
+
+          </div>
+        <div class="form-group col-md-6">
+
+            <input type="text" class="form-control" id="inputEmployeeIdNo" placeholder="Count Eg. 3" name="book_nm">
+        </div>
+    </div>
+<!-- </form> -->
+  </div>
+</div>
+
+<div class="card poi">
+  <h5 class="po color1">Research Projects</h5>
+  <table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Funding</th>
+      <th scope="col">Being Sole Principal Investigator</th>
+      <th scope="col">Being first Principal Investigator</th>
+      <th scope="col">Being Co-Investigator</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Internally Funded<span class="sp"> 5 marks/project</span></th>
+      <td>  <input type="text" class="form-control" placeholder="Project Name" aria-label="Username" aria-describedby="basic-addon1" name="if_s">
+</td>
+      <td><input type="text" class="form-control" placeholder="Project Name" aria-label="Username" aria-describedby="basic-addon1" name="if_f"></td>
+      <td><input type="text" class="form-control" placeholder="Project Name" aria-label="Username" aria-describedby="basic-addon1" name="if_c"></td>
+    </tr>
+    <tr>
+      <th scope="row">Externally Funded Less than 5Lakhs<span class="sp">( 5 marks/project )</span> </th>
+      <td><input type="text" class="form-control" placeholder="Project Name" aria-label="Username" aria-describedby="basic-addon1" name="ef_s"></td>
+      <td><input type="text" class="form-control" placeholder="Project Name" aria-label="Username" aria-describedby="basic-addon1" name="ef_f"></td>
+      <td><input type="text" class="form-control" placeholder="Project Name" aria-label="Username" aria-describedby="basic-addon1" name="ef_c"></td>
+    </tr>
+    <tr>
+      <th scope="row">Externally Funded Btw 5Lakhs to 10Lakhs<span class="sp"> 10 marks/project</span> </th>
+      <td><input type="text" class="form-control" placeholder="Project Name" aria-label="Username" aria-describedby="basic-addon1" name="eef_s"></td>
+      <td><input type="text" class="form-control" placeholder="Project Name" aria-label="Username" aria-describedby="basic-addon1" name="eef_f"></td>
+      <td><input type="text" class="form-control" placeholder="Project Name" aria-label="Username" aria-describedby="basic-addon1" name="eef_c"></td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Funding</th>
+      <th scope="col">Upto 2 Lakhs</th>
+      <th scope="col">Upto 2-5 Lakhs</th>
+      <th scope="col">Above 5 Lakhs</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Consultancy Work</th>
+      <td>  <input type="text" class="form-control" placeholder="Project Name" aria-label="Username" aria-describedby="basic-addon1" name="Cw_2">
+</td>
+      <td><input type="text" class="form-control" placeholder="Project Name" aria-label="Username" aria-describedby="basic-addon1" name="Cw_2_5"></td>
+      <td><input type="text" class="form-control" placeholder="Project Name" aria-label="Username" aria-describedby="basic-addon1" name="Cw_5"></td>
+    </tr>
+    </tbody>
+</table>
+</div>
+
+<div class="card po">
+  <h5 class="po"> Innovative contributions to teaching learning process provide description below with Initiation,Implementation, Impact Analysis<span class="sp">(Maximum Score: 5 marks)</span></h5>
+ <div class="input-group text12">
+  <div class="input-group-prepend">
+  </div>
+  <textarea class="form-control po" aria-label="With textarea" name="ta_ic"></textarea>
+  <input type="text" class="form-control col-md-2 poi" placeholder="marks" aria-label="Username" aria-describedby="basic-addon1" disabled >
+</div>
+</div>
+
+<div class="card dis1 po">
+  <h5 class="po">Departmental  Responsibilities (Please list only those where you have made significant contribution)</h5>
+ <div class="input-group text12">
+  <div class="input-group-prepend">
+
+  </div>
+  <textarea class="form-control" aria-label="With textarea" name="ta_dr"></textarea>
+</div>
+</div>
+
+<div class="card dis1 ">
+  <table class="table table-bordered">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col"></th>
+      <th scope="col">Attitude and Commitment to Departmental and Regular Teaching and Examination works:<span class="sp">(Maximum Score: 15 marks)</span></th>
+      <th scope="col">HOD'S MARKS</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Contribution to Department Developmental Activites<span class="sp"> (Maximum Score: 5 marks)</span></td>
+       <td rowspan="3"><input type="text" class="form-control" placeholder="marks" aria-label="Username" aria-describedby="basic-addon1" disabled></td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Attitude/Behaviour/Discipline/Punctuality<span class="sp"> (Maximum Score: 5 marks)</span></td>
+
+
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Examination/Test duties, Question paper preparation, Evaluation Preparation of Course material and Dedicaton in conducting Theory and Laboratory classes<span class="sp"> (Maximum Score: 5 marks)</span></td>
+
+    </tr>
+  </tbody>
+</table>
+
+</div>
+
+<div class="card dis1">
+ <div class="input-group text12">
+  <div class="input-group-prepend">
+    <span class="input-group-text">Brief Remarks of the HOD</span>
+  </div>
+  <textarea class="form-control" aria-label="With textarea"></textarea>
+</div>
+</div>
+
+<div class="card po dis1">
+  <h5 class="po">Institutional  Responsibilities (Please list only those where you have made significant contribution)</h5>
+ <div class="input-group text12">
+  <div class="input-group-prepend">
+
+  </div>
+  <textarea class="form-control" aria-label="With textarea" name="ta_ir"></textarea>
+</div>
+</div>
+
+<div class="card dis1 ">
+  <table class="table table-bordered">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col"></th>
+      <th scope="col">PRINCIPAL'S MARKS</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Contribution to Institutional Developmental Activites<span class="sp">(Maximum Score: 10 marks)</span></td>
+       <td rowspan="3"><input type="text" class="form-control" placeholder="marks" aria-label="Username" aria-describedby="basic-addon1" disabled></td>
+     </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="card dis1">
+ <div class="input-group text12">
+  <div class="input-group-prepend">
+    <span class="input-group-text">Brief Remarks of the Principal</span>
+  </div>
+  <textarea class="form-control" aria-label="With textarea"></textarea>
+</div>
+</div>
+
+<input type="submit" name="" value="Submit">
+</form>
+</div>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</body>
+</html>

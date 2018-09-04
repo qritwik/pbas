@@ -1,0 +1,9 @@
+ <form class="login-form" action="#" method="post" onsubmit="return checkForm(this);">{% csrf_token %}
+      <!-- <input id="usn" name="usn1" type="text" placeholder="Username/USN"/> -->
+      <!-- <input type="password" placeholder="password"/> -->
+      <p style="color:black;" id="usn1">{{ form_otp.username }}</p>
+            <p style="color:black;">{{ form_otp.password }}</p>
+            <p style="z-index:100;"><i onclick="myFunction()" id="eye" class="fa fa-eye" aria-hidden="true"></i></p>
+      <input type="submit" name="myButton" class="btn btn-default btn-lg signin" value="Sign In">
+      <a href="/" style="margin-top:1%;width:100%;" class="btn">Resend OTP</a>
+    </form>

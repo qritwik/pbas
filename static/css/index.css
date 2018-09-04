@@ -1,0 +1,48 @@
+body{
+	margin:5%;
+	background-color: #ccd3e0;
+}
+
+.h2, h2{
+	color: blue;
+}
+
+.h4, h4{
+	color: blue;
+	text-decoration: underline;
+}
+
+.poi{
+	margin: 60px !important;
+	padding: 2.5%;
+}
+.poi1{
+	margin-left:  60px !important;
+	margin-right:  60px !important;
+	padding: 2.5%;
+}
+
+.dis{
+	margin: 1.4%;
+}
+
+
+.dis1{
+	margin-top: 1.6%;
+}
+
+.color1{
+	color: blue;
+}
+
+.text12{
+	height: 150px;
+}
+
+.po{
+	padding: 1%;
+}
+
+.sp{
+	color: red;
+}
