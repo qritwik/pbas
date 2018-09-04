@@ -29,29 +29,6 @@ def login(request):
 			random_otp = '12345'
 			phone_otp(random_otp,phone)
 
-		emp_id = request.POST.get('emp_id')
-		if(User.objects.filter(emp_id=username).exists()):
-
-			first_name = empDetail.objects.filter(emp_id=emp_id).values('first_name')
-			First_name = first_name[0]['first_name']
-			email = empDetail.objects.filter(emp_id=emp_id).values('email')
-			Email = email[0]['email']
-			phone = empDetail.objects.filter(emp_id=emp_id).values('phone')
-			Phone = phone[0]['phone']
-			dept_id = empDetail.objects.filter(emp_id=emp_id).values('dept_id')
-
-			emp_id = empDetail.objects.filter(emp_id=emp_id).values('emp_id')
-			Emp_id = emp_id[0]['emp_id']
-
-			context = {'username':Username,
-			'password':password,
-			'first_name':First_name,
-			'email':Email,
-			'phone':Phone,
-			'dept_id':dept_id}
-
-			phone_otp('12345',Phone)
-
 			hashed_pwd = make_password(random_otp)
 			User.objects.filter(username=username).update(password=hashed_pwd)
 
@@ -100,7 +77,7 @@ def success(request):
 
 def f_assistant(request):
 
-	form2 = forms.form_empDetailForm()
+	form2 = forms.form_UserForm()
 	form3 = forms.form_feedbackTab()
 	form4 = forms.form_rd()
 
@@ -110,7 +87,7 @@ def f_assistant(request):
 
 def f_associate(request):
 
-	form2 = forms.form_empDetailForm()
+	form2 = forms.form_UserForm()
 	form3 = forms.form_feedbackTab()
 	form4 = forms.form_rd()
 
