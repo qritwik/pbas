@@ -34,15 +34,15 @@
         <div class="form-row">
           <div class="form-group col-md-6">
             <label for="">Internship Company Name</label>
-            {% render_field form2.first_name class="form-control" %}
+            {% render_field form2.it_name class="form-control" %}
           </div>
           <div class="form-group col-md-3">
             <label for="">From</label>
-            {% render_field form2.first_name class="form-control" %}
+            {% render_field form2.it_f class="form-control" %}
           </div>
           <div class="form-group col-md-3">
             <label for="">To</label>
-            {% render_field form2.first_name class="form-control" %}
+            {% render_field form2.it_t class="form-control" %}
           </div>
 
           <div class="form-group col-md-6">
@@ -55,28 +55,28 @@
         </div>
         <div class="form-group col-md-6">
             <label for="inputHighestQuali">HighestQuali</label>
-            {% render_field form2.first_name class="form-control" %}
+            {% render_field form2.high_qual class="form-control" %}
         </div>
         <div class="form-group col-md-6">
           <label for="inputDept">Dept</label>
-          <input type="text" class="form-control" id="inputDept" placeholder="Dept">
+          <input type="text" class="form-control" id="inputEmployeeIdNo" value="{{department}}">
         </div>
         <div class="form-group col-md-12">
           <label for="inputDOJ">DOJ</label>
-          {% render_field form2.first_name class="form-control" %}
+          {% render_field form2.doj class="form-control" %}
         </div>
         <div class="form-group col-md-6">
           <label for="inputPresentPosition">PresentPosition</label>
-          {% render_field form2.first_name class="form-control" %}
+          {% render_field form2.Present_pos class="form-control" %}
         </div>
         <div class="form-group col-md-6">
           <label for="inputHeldFrom">HeldFrom</label>
-          {% render_field form2.first_name class="form-control" %}
+          {% render_field form2.Held_from class="form-control" %}
         </div>
 
         <div class="form-group col-md-6">
           <label for="inputPhoneNo">PhoneNo</label>
-          <input type="text" class="form-control" id="inputPhoneNo" placeholder="PhoneNo" value="{{phone">
+          <input type="text" class="form-control" id="inputPhoneNo" placeholder="PhoneNo" value="{{phone}}">
         </div>
         <div class="form-group col-md-6">
           <label for="inputEmail">Email</label>
@@ -88,19 +88,19 @@
 
       	   <div class="form-group col-md-4">
             <label for="inputteaching">teaching</label>
-            {% render_field form2.first_name class="form-control" %}
+            {% render_field form2.exp_teach class="form-control" %}
            </div>
             <div class="form-group col-md-4">
               <label for="inputResearch">Research</label>
-              {% render_field form2.first_name class="form-control" %}
+              {% render_field form2.exp_res class="form-control" %}
             </div>
             <div class="form-group col-md-4">
               <label for="inputIndustry">Industry</label>
-              {% render_field form2.first_name class="form-control" %}
+              {% render_field form2.exp_indus class="form-control" %}
             </div>
 	       </div>
 	   </div>
-	
+
 
 
    <h3>Course Feedback and results<span class="sp">(Maximum Score: 40 marks)</span></h3>
@@ -485,7 +485,7 @@ Presentations (Invited talk/panel/keynote)
 </div>
 
 <div class="form-group col-sm-6">
-<label>Place: </label> 
+<label>Place: </label>
 <input type="text" name="" placeholder="place" class="form-control">
 </div>
 
@@ -535,7 +535,7 @@ Presentations (Invited talk/panel/keynote)
     </div>
 </form>
 </div> -->
-  
+
 
   <div class="card">
     <div class="card-header" id="headingTwo">
@@ -548,7 +548,7 @@ Number of journal papers with Scopus/DBLP/ Google Scholar Indexed Publications<s
     </div>
       <div class="form-group col-md-12">
         <div class="form-row">
-<div class="form-group col-sm-6">       
+<div class="form-group col-sm-6">
 <label >Name of journal: </label>
 <input type="text" name="" placeholder="name" class="form-control ">
 </div>

@@ -26,18 +26,20 @@
       </div>
 
       <form>
+        {% csrf_token %}
+        {{ form2.as_p }}
         <div class="form-row">
           <div class="form-group col-md-6">
             <label for="">Internship Company Name</label>
-            <input type="text" class="form-control" id="" placeholder="Internship">
+            {% render_field form2.it_name class="form-control" %}
           </div>
           <div class="form-group col-md-3">
             <label for="">From</label>
-            <input type="date" class="form-control" id="" placeholder="EmpName">
+            {% render_field form2.it_f class="form-control" %}
           </div>
           <div class="form-group col-md-3">
             <label for="">To</label>
-            <input type="date" class="form-control" id="" placeholder="EmpName">
+            {% render_field form2.it_t class="form-control" %}
           </div>
 
           <div class="form-group col-md-6">
@@ -50,23 +52,23 @@
         </div>
         <div class="form-group col-md-6">
             <label for="inputHighestQuali">HighestQuali</label>
-            <input type="text" class="form-control" id="inputHighestQuali" placeholder="HighestQuali">
+            {% render_field form2.high_qual class="form-control" %}
         </div>
         <div class="form-group col-md-6">
           <label for="inputDept">Dept</label>
-          <input type="text" class="form-control" id="inputDept" placeholder="Dept">
+          <input type="text" class="form-control" id="inputEmployeeIdNo" placeholder="EmployeeIdNo" value="{{department}}">
         </div>
         <div class="form-group col-md-12">
           <label for="inputDOJ">DOJ</label>
-          <input type="date" class="form-control" id="inputDOJ" placeholder="DOJ">
+          {% render_field form2.doj class="form-control" %}
         </div>
         <div class="form-group col-md-6">
           <label for="inputPresentPosition">PresentPosition</label>
-          <input type="text" class="form-control" id="inputPresentPosition" placeholder="PresentPosition">
+            {% render_field form2.Present_pos class="form-control" %}
         </div>
         <div class="form-group col-md-6">
           <label for="inputHeldFrom">HeldFrom</label>
-          <input type="date" class="form-control" id="inputHeldFrom" placeholder="HeldFrom">
+          {% render_field form2.Held_from class="form-control" %}
         </div>
 
         <div class="form-group col-md-6">
@@ -83,15 +85,15 @@
 
            <div class="form-group col-md-4">
             <label for="inputteaching">teaching</label>
-            <input type="text" class="form-control" id="inputteaching" placeholder="2">
+            {% render_field form2.exp_teach class="form-control" %}
            </div>
             <div class="form-group col-md-4">
               <label for="inputResearch">Research</label>
-              <input type="text" class="form-control" id="inputResearch" placeholder="3">
+              {% render_field form2.exp_res class="form-control" %}
             </div>
             <div class="form-group col-md-4">
               <label for="inputIndustry">Industry</label>
-              <input type="text" class="form-control" id="inputIndustry" placeholder="1">
+              {% render_field form2.exp_indus class="form-control" %}
             </div>
          </div>
      </div>
@@ -480,7 +482,7 @@ Presentations (Invited talk/panel/keynote)
 </div>
 
 <div class="form-group col-sm-6">
-<label>Place: </label> 
+<label>Place: </label>
 <input type="text" name="" placeholder="place" class="form-control">
 </div>
 
@@ -530,7 +532,7 @@ Presentations (Invited talk/panel/keynote)
     </div>
 </form>
 </div> -->
-  
+
 
   <div class="card">
     <div class="card-header" id="headingTwo">
@@ -543,7 +545,7 @@ Number of journal papers with Scopus/DBLP/ Google Scholar Indexed Publications
     </div>
       <form class="form-group col-md-12">
         <div class="form-row">
-<div class="form-group col-sm-6">       
+<div class="form-group col-sm-6">
 <label >Name of journal: </label>
 <input type="text" name="" placeholder="name" class="form-control ">
 </div>
