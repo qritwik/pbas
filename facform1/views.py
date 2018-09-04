@@ -17,7 +17,7 @@ def phone_otp(random_otp, phone):
 def login(request):
 	if(request.method=='POST'):
 		emp_id = request.POST.get('emp_id')
-		if(empDetail.objects.filter(emp_id=username).exists()):
+		if(User.objects.filter(emp_id=username).exists()):
 
 			first_name = empDetail.objects.filter(emp_id=emp_id).values('first_name')
 			First_name = first_name[0]['first_name']
@@ -36,6 +36,7 @@ def login(request):
 			'email':Email,
 			'phone':Phone,
 			'dept_id':dept_id}
+
 			phone_otp('12345',Phone)
 			hashed_pwd = make_password(random_otp)
 			User.objects.filter(emp_id=emp_id).update(password=hashed_pwd)
