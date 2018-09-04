@@ -12,11 +12,6 @@ class LoginForm(AuthenticationForm):
 	password = forms.CharField(label="Password", max_length=30,
 							   widget=forms.PasswordInput(attrs={'class': 'form-control', 'name': 'otp', 'id': 'otp', 'placeholder': 'Enter OTP'}))
 
-class form_empDetail(forms.ModelForm):
-
-	class Meta:
-		model = empDetail
-		fields = '__all__'
 
 
 class form_empDetailForm(forms.ModelForm):

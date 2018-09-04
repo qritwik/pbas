@@ -4,20 +4,31 @@ from django.contrib.auth.models import AbstractUser, User
 #TABLE-1
 
 class Designation(models.Model):
-    """
-    Description: Holds the Designations avbailable
-    """
-    name = models.CharField(max_length=20, blank=True, null=True)
-    def __int__(self):
+	"""
+	Description: Holds the Designations avbailable
+	"""
+	name = models.CharField(max_length=20, blank=True, null=True)
+	
+	def __str__(self):
+		return self.name
+
+class Department(models.Model):
+	"""
+	Description: Model Description
+	"""
+	name = models.CharField(max_length=20, blank=True, null=True)
+
+	def __str__(self):
 		return self.name
 
 class User(AbstractUser):
 	phone = models.BigIntegerField(null=True)
-	dept_id = models.IntegerField()
-	emp_id = models.IntegerField()
+	department = models.ForeignKey('Department', on_delete=models.CASCADE,null=True)
+	emp_id = models.IntegerField(blank=True, null=True)
 	designation = models.ForeignKey('Designation', on_delete=models.CASCADE,null=True)
-	def __int__(self):
-		return self.emp_id
+	
+	def __str__(self):
+		return self.username
 
 	#get entry using form
 #TABLE-2
@@ -33,7 +44,7 @@ class empDetailForm(models.Model):
 	exp_teach = models.IntegerField(null=True)
 	exp_res = models.IntegerField(null=True)
 	exp_indus = models.IntegerField(null=True)
-	emp_id = models.ForeignKey(empDetail, on_delete=models.CASCADE,null=True)
+	emp_id = models.ForeignKey('User', on_delete=models.CASCADE,null=True)
 
 
 #TABLE-3
@@ -207,7 +218,7 @@ class feedbackTab(models.Model):
 	p2_f1 = models.CharField(max_length=30)
 	p2_f2 = models.CharField(max_length=30)
 	p2_favg = models.CharField(max_length=30)
-	emp_id = models.ForeignKey(empDetail, on_delete=models.CASCADE,null=True)
+	emp_id = models.ForeignKey('User', on_delete=models.CASCADE,null=True)
 
 
 
@@ -259,7 +270,7 @@ class rd(models.Model):
 	Cw_2 = models.CharField(max_length=30)
 	Cw_2_5 = models.CharField(max_length=30)
 	Cw_5 = models.CharField(max_length=30)
-	emp_id = models.ForeignKey(empDetail, on_delete=models.CASCADE,null=True)
+	emp_id = models.ForeignKey('User', on_delete=models.CASCADE,null=True)
 
 
 
@@ -278,7 +289,7 @@ class remarks(models.Model):
 	teach_status = models.BooleanField(default=False)
 	hod_status = models.BooleanField(default=False)
 	principal_status = models.BooleanField(default=False)
-	emp_id = models.ForeignKey(empDetail, on_delete=models.CASCADE,null=True)
+	emp_id = models.ForeignKey('User', on_delete=models.CASCADE,null=True)
 
 
 

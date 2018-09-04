@@ -1,17 +1,39 @@
 from django.contrib import admin
 from import_export import resources
-from facform1.models import empDetail,empDetailForm,feedbackTab,rd,remarks
+from .models import *
+from django.contrib.auth.admin import UserAdmin as DjangoUserAdmin
 
 # Register your models here.
 
-class empres(resources.ModelResource):
+@admin.register(User)
+class UserAdmin(DjangoUserAdmin):
 
-    class Meta:
-        model = empDetail
+	fieldsets = (
+		(None, {'fields': ('username', 'email', 'password')}),
+		(('Personal info'), {'fields': ('first_name', 'last_name', 'phone', 'department', 'emp_id')}),
+		(('Permissions'), {'fields': ('is_active', 'is_staff', 'is_superuser',
+									   )}),
 
-admin.site.register(empDetail)
+		(('Designation'), {'fields': ('designation',)}),
+		(('Important dates'), {'fields': ('last_login', 'date_joined')}),
+	)
+	add_fieldsets = (
+		(None, {
+			'classes': ('wide',),
+			'fields': ('email', 'password1', 'password2'),
+		}),
+	)
+
+	list_display = ('username', 'first_name', 'last_name', 'phone', 'email')
+	search_fields = ('email', 'first_name', 'last_name', 'username', 'phone')
+	ordering = ('username',)
+
 admin.site.register(empDetailForm)
 admin.site.register(feedbackTab)
 admin.site.register(rd)
 admin.site.register(remarks)
+
+admin.site.register(Designation)
+
+admin.site.register(Department)
 
