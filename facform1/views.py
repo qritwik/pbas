@@ -89,6 +89,7 @@ def f_assistant(request):
 	form4 = forms.form_rd()
 
 	if request.method == 'POST':
+		form2 = forms.form_empDetailForm(request.POST)
 		if  form2.is_valid():
 			form2.save(commit = True)
 			render(request,'hod_success.html')
