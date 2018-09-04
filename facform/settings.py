@@ -31,7 +31,7 @@ DEBUG = True
 ALLOWED_HOSTS = []
 AUTH_USER_MODEL = 'facform1.User'
 
-
+LOGIN_REDIRECT_URL = '/main'
 # Application definition
 
 INSTALLED_APPS = [

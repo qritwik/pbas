@@ -1,9 +1,11 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from .models import *
 from . import forms
 import urllib.parse as ap
 import urllib.request
+from django.contrib.auth.hashers import make_password, check_password
+
 
 
 def phone_otp(random_otp, phone):
@@ -16,39 +18,37 @@ def phone_otp(random_otp, phone):
 
 def login(request):
 	if(request.method=='POST'):
-		emp_id = request.POST.get('emp_id')
-		if(empDetail.objects.filter(emp_id=username).exists()):
+		username = request.POST.get('username')
 
-			first_name = empDetail.objects.filter(emp_id=emp_id).values('first_name')
-			First_name = first_name[0]['first_name']
-			email = empDetail.objects.filter(emp_id=emp_id).values('email')
-			Email = email[0]['email']
-			phone = empDetail.objects.filter(emp_id=emp_id).values('phone')
-			Phone = phone[0]['phone']
-			dept_id = empDetail.objects.filter(emp_id=emp_id).values('dept_id')
-
-			emp_id = empDetail.objects.filter(emp_id=emp_id).values('emp_id')
-			Emp_id = emp_id[0]['emp_id']
-
-			context = {'username':Username,
-			'password':password,
-			'first_name':First_name,
-			'email':Email,
-			'phone':Phone,
-			'dept_id':dept_id}
-			phone_otp('12345',Phone)
+		if(User.objects.filter(username=username).exists()):
+			user = User.objects.get(username=username)
+			first_name = user.first_name
+			email = user.email
+			phone = user.phone
+			random_otp = '12345'
+			phone_otp(random_otp,phone)
 			hashed_pwd = make_password(random_otp)
-			User.objects.filter(emp_id=emp_id).update(password=hashed_pwd)
+			User.objects.filter(username=username).update(password=hashed_pwd)
 
+			return HttpResponseRedirect("/login/user=" + username)
 
 	return render(request,'login.html')
 
-def otp(request):
-	form_otp = forms.LoginForm()
-	return render(request,'otp.html',{'form_otp':form_otp})
+def decide_view(request):
+	if request.user.is_assistant_professor:
+		return HttpResponseRedirect("/assistant_form/")
 
+	if request.user.is_associate_professor:
+		return HttpResponseRedirect("/associate_form/")
 
+	if request.user.is_hod:
+		return HttpResponseRedirect("/hod_first/")
 
+	if request.user.is_principal:
+		return HttpResponseRedirect("/principal_first/")
+
+	if request.user.is_ao:
+		return HttpResponseRedirect("/ao.first/")
 # def front(request):
 # 	return render(request,'front.html')
 
@@ -75,7 +75,6 @@ def success(request):
 
 def f_assistant(request):
 
-	form1 = forms.form_empDetail()
 	form2 = forms.form_empDetailForm()
 	form3 = forms.form_feedbackTab()
 	form4 = forms.form_rd()
@@ -83,3 +82,15 @@ def f_assistant(request):
 	# if request.method == 'POST':
 	# 	if form1.is_valid() and form2.is_valid() and form3.is_valid() and form4.is_valid():
 	return render(request,'assistant_form.html',{'form1':form1,'form2':form2,'form3':form3,'form4':form4})
+
+def f_associate(request):
+
+	form2 = forms.form_empDetailForm()
+	form3 = forms.form_feedbackTab()
+	form4 = forms.form_rd()
+
+	# if request.method == 'POST':
+	# 	if form1.is_valid() and form2.is_valid() and form3.is_valid() and form4.is_valid():
+	return render(request,'associate_form.html',{'form1':form1,'form2':form2,'form3':form3,'form4':form4})
+
+

@@ -1,11 +1,16 @@
 from django.conf.urls import url
 from . import views
+from django.contrib.auth.views import login, logout
+from . import forms
 
 urlpatterns = [
-    url(r'^login/', views.login,name="login"),
+    url(r'^$', views.login, name="login-username-view"),
+    url(r'^login/', login, {'template_name': 'otp.html','authentication_form': forms.LoginForm}, name='login'),
+    url(r'^logout/$', logout, {'next_page': '/exit'}, name='logout'),
+    url(r'^main/', views.decide_view, name="decide-view"),
     # url(r'^front/', views.front,name="front"),
-    # url(r'^assistant_form/', views.f_assistant,name="assistant_form"),
-    # url(r'^associate_form/', views.associate_form,name="associate_form"),
+    url(r'^assistant_form/', views.f_assistant,name="assistant_form"),
+    url(r'^associate_form/', views.f_associate,name="associate_form"),
     url(r'^hod_form/', views.hod_form,name="hod_form"),
     url(r'^hod_first/', views.phone_otp,name="hod_first"),
     url(r'^hod_display/', views.hod_display,name="hod_display"),

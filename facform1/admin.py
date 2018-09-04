@@ -2,8 +2,14 @@ from django.contrib import admin
 from import_export import resources
 from .models import *
 from django.contrib.auth.admin import UserAdmin as DjangoUserAdmin
+from import_export import resources
 
 # Register your models here.
+
+class BookResource(resources.ModelResource):
+
+    class Meta:
+        model = User
 
 @admin.register(User)
 class UserAdmin(DjangoUserAdmin):
