@@ -90,8 +90,8 @@ def f_assistant(request):
 
 	if request.method == 'POST':
 		if  form2.is_valid():
-			form2.save()
-			render(request,'hod_success.html')	
+			form2.save(commit = True)
+			render(request,'hod_success.html')
 
 	return render(request,'assistant_form.html',{'form2':form2,'form3':form3,'form4':form4})
 
@@ -104,5 +104,3 @@ def f_associate(request):
 	# if request.method == 'POST':
 	# 	if form1.is_valid() and form2.is_valid() and form3.is_valid() and form4.is_valid():
 	return render(request,'associate_form.html',{'form2':form2,'form3':form3,'form4':form4})
-
-
