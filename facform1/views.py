@@ -7,9 +7,6 @@ import urllib.request
 
 
 def phone_otp(random_otp, phone):
-		'''
-		Sends OTP to phone
-		'''
 		phone1 = str(phone)
 		message = 'Please login with the OTP: '+random_otp
 		params = { 'number' : phone1, 'text' : message }
@@ -85,7 +82,4 @@ def f_assistant(request):
 
 	# if request.method == 'POST':
 	# 	if form1.is_valid() and form2.is_valid() and form3.is_valid() and form4.is_valid():
-
-
-
 	return render(request,'assistant_form.html',{'form1':form1,'form2':form2,'form3':form3,'form4':form4})
