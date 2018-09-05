@@ -5,6 +5,7 @@ from . import forms
 import urllib.parse as ap
 import urllib.request
 from django.contrib.auth.hashers import make_password, check_password
+import random
 
 
 
@@ -26,7 +27,7 @@ def login(request):
 			first_name = user.first_name
 			email = user.email
 			phone = user.phone
-			random_otp = '12345'
+			random_otp = r''.join(random.choice('01234ABCD') for i in range(8))
 			phone_otp(random_otp,phone)
 
 			hashed_pwd = make_password(random_otp)
