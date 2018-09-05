@@ -1,12 +1,22 @@
 .p1
 {
   max-height: 35% !important;
+  background-color: #ddccaa !important;
 }
+
+.jumbotron{
+background-color: ##ddccaa !important;
+}
+
+}
+
 .q1
 {
 
   margin-top: 2%;
 }
+
+
 #pb
 {
 font-size : 150px ;
@@ -309,4 +319,10 @@ body {
     padding: 10px;
     color: white;
     text-align: center;
+}
+
+.a_one{
+
+  color: #212121 !important;
+  
 }

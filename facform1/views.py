@@ -67,13 +67,14 @@ def decide_view(request):
 
 def hod_form(request):
 	if request.method == 'POST':
+		print("bdhsbhjdsjk")
 		form2 = forms.form_empDetailForm(request.POST)
 		if  form2.is_valid():
 			obj = form2.save(commit=False)
 			obj.emp_id = request.user
 			obj.save()
 
-			return render(request,'success.html')
+			return HttpResponseRedirect("/logout/")
 		else:
 			print(form2.errors)
 
@@ -83,7 +84,7 @@ def hod_form(request):
 		form3 = forms.form_feedbackTab()
 		form4 = forms.form_rd()
 
-	return render(request,'hod_form.html',{'form2':form2,'form3':form3,'form4':form4})
+	return render(request,'hod_form.html',{'form2':form2})
 
 def hod_display(request):
 	user = request.user
@@ -103,7 +104,7 @@ def hod_first(request):
 def principal_first(request):
 	return render(request,'principal_first.html')
 
-def success(request):
+def logout(request):
 	return render(request,'hod_success.html')
 
 def f_assistant(request):
@@ -115,7 +116,7 @@ def f_assistant(request):
 			obj.emp_id = request.user
 			obj.save()
 
-			return render(request,'success.html')
+			return HttpResponseRedirect("/logout/")
 		else:
 			print(form2.errors)
 	else:
@@ -134,7 +135,7 @@ def f_associate(request):
 			obj.emp_id = request.user
 			obj.save()
 
-			return render(request,'success.html')
+			return HttpResponseRedirect("/logout/")
 		else:
 			print(form2.errors)
 

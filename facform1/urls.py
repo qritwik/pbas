@@ -6,7 +6,7 @@ from . import forms
 urlpatterns = [
     url(r'^$', views.login, name="login-username-view"),
     url(r'^login/', login, {'template_name': 'otp.html','authentication_form': forms.LoginForm}, name='login'),
-    url(r'^logout/$', logout, {'next_page': '/exit'}, name='logout'),
+    url(r'^logout/$', logout, {'template_name': 'success.html'}, name='logout'),
     url(r'^main/', views.decide_view, name="decide-view"),
     # url(r'^front/', views.front,name="front"),
     url(r'^assistant_form/', views.f_assistant,name="assistant_form"),
@@ -16,5 +16,5 @@ urlpatterns = [
     url(r'^hod_display/', views.hod_display,name="hod_display"),
     url(r'^principal_first/', views.principal_first,name="principal_first"),
     url(r'^principal_display/', views.principal_display,name="principal_display"),
-    url(r'^success/', views.success,name="success"),
- ]
+ #    url(r'^success/', views.success,name="success"),
+  ]

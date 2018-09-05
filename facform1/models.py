@@ -55,7 +55,7 @@ class User(AbstractUser):
 		return False
 
 	def is_principal(self):
-		faculty = Designation.objects.get(name="Principal")
+		faculty = Designation.objects.get(name="principal")
 		faculty1 = str(faculty)
 		faculty2 = str(self.designation.name)
 		if faculty1 == faculty2:
