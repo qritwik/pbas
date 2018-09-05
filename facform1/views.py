@@ -77,7 +77,7 @@ def hod_form(request):
 			print(form2.errors)
 
 	else:
-	
+
 		form2 = forms.form_empDetailForm()
 		form3 = forms.form_feedbackTab()
 		form4 = forms.form_rd()
@@ -118,7 +118,7 @@ def f_assistant(request):
 		else:
 			print(form2.errors)
 	else:
-	
+
 		form2 = forms.form_empDetailForm()
 		form3 = forms.form_feedbackTab()
 		form4 = forms.form_rd()
@@ -138,10 +138,10 @@ def f_associate(request):
 			print(form2.errors)
 
 	else:
-	
+
 		form2 = forms.form_empDetailForm()
 		form3 = forms.form_feedbackTab()
 		form4 = forms.form_rd()
-		
+
 
 	return render(request,'associate_form.html',{'form2':form2})

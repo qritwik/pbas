@@ -1,49 +1,71 @@
- <form class="login-form" action="#" method="post" onsubmit="return checkForm(this);">
+ <!-- <form class="login-form" action="#" method="post" onsubmit="return checkForm(this);">
  	{% csrf_token %}
       <!-- <input id="usn" name="usn1" type="text" placeholder="Username/USN"/> -->
       <!-- <input type="password" placeholder="password"/> -->
-      <p style="color:black;" id="usn1">{{ form.username }}</p>
+      <!-- <p style="color:black;" id="usn1">{{ form.username }}</p>
             <p style="color:black;">{{ form.password }}</p>
             <p style="z-index:100;"><i onclick="myFunction()" id="eye" class="fa fa-eye" aria-hidden="true"></i></p>
       <input type="submit" name="myButton" class="btn btn-default btn-lg signin" value="Sign In">
       <a href="/" style="margin-top:1%;width:100%;" class="btn">Resend OTP</a>
-    </form>
-
-
-
-<!-- <html>
- <head>
-  <Title>Appraisal</title>
-  </head>
-  
-  <body>
-
-<link rel="stylesheet" type="text/css" href="theme.css"><link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-
-
-<div class="jumbotron">
-
-<div class="container-fluid">
-<center><img  src="bmsit1.png" alt="BMS Institute of Technology of management" ></center>
-<div class="row">
-
- <div class="col-12"><h1 align="center" class="display-4"> BMS Institute of Technology and management</h1>
- <h1 id="qw" align="center" class="display-4">PBAS</h1>
- </div>
- </div>
-</div>
-</div>
-
-<div class="login-page">
-  <div style="margin-top:-5%;" class="form">
-   
-    <p>ENTER OTP</p>
-    <form class="login-form" action="#" method="post">
-      <input id="usn" name="usn1" type="text" placeholder="OTP/One Time Password"/>
-      
-      <input type="submit" name="myButton" class="btn btn-success btn-lg signin" value="Submit">
-      <a style="margin-top:1%;width:100%;" class="btn" data-toggle="modal" data-target="#cbModal">Need Help?</a>
-    </form>
-  </div>
-</div>
+    </form> -->
  -->
+
+<!DOCTYPE html>
+{% load staticfiles %}
+ <html>
+  <head>
+   <Title>Appraisal</title>
+   </head>
+
+   <body>
+
+ <link rel="stylesheet" type="text/css" href="{% static "css/theme.css" %}"><link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+
+ <div class="jumbotron">
+
+ <div class="container-fluid">
+ <center><img  src="{% static "image/bms.logo.png" %}" alt="BMS Institute of Technology of management" ></center>
+ <div class="row">
+
+  <div class="col-12"><h1 align="center" class="display-4"> BMS Institute of Technology and management</h1>
+  <h1 id="qw" align="center" class="display-4">PBAS</h1>
+  </div>
+  </div>
+ </div>
+ </div>
+
+ <div class="login-page">
+   <div style="margin-top:-5%;" class="form">
+
+     <p>ENTER OTP</p>
+     <form class="login-form" action="#" method="post" onsubmit="return checkForm(this);">
+   {% csrf_token %}
+       <!-- <input id="usn" name="usn1" type="text" placeholder="Username/USN"/> -->
+       <!-- <input type="password" placeholder="password"/> -->
+       <p style="color:black;" id="usn1">{{ form.username }}</p>
+             <p style="color:black;">{{ form.password }}</p>
+             <p style="z-index:100;"><i onclick="myFunction()" id="eye" class="fa fa-eye" aria-hidden="true"></i></p>
+       <input type="submit" name="myButton" class="btn btn-default btn-lg signin" value="Sign In">
+       <a href="/" style="margin-top:1%;width:100%;" class="btn">Resend OTP</a>
+     </form>
+
+   </div>
+ </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+ <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.bundle.min.js" integrity="sha384-pjaaA8dDz/5BgdFUPX6M/9SUZv4d12SUPF0axWc+VRZkx5xU3daN+lYb49+Ax+Tl" crossorigin="anonymous"></script><script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.bundle.min.js" integrity="sha384-pjaaA8dDz/5BgdFUPX6M/9SUZv4d12SUPF0axWc+VRZkx5xU3daN+lYb49+Ax+Tl" crossorigin="anonymous"></script>
+ </body>
+ </html>
