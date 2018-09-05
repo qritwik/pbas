@@ -31,32 +31,42 @@ class User(AbstractUser):
 		return self.username
 
 	def is_assistant_professor(self):
-		faculty = Designation.objects.get(name="Assistant Professor")
-		if faculty == self.designation.name:
+		faculty = Designation.objects.get(name="assistant")
+		faculty1 = str(faculty)
+		faculty2 = str(self.designation.name)
+		if faculty1 == faculty2:
 			return True
 		return False
 
 	def is_associate_professor(self):
-		faculty = Designation.objects.get(name="Associate Professor")
-		if faculty == self.designation.name:
+		faculty = Designation.objects.get(name="associate")
+		faculty1 = str(faculty)
+		faculty2 = str(self.designation.name)
+		if faculty1 == faculty2:
 			return True
 		return False
 
 	def is_hod(self):
 		faculty = Designation.objects.get(name="HOD")
-		if faculty == self.designation.name:
+		faculty1 = str(faculty)
+		faculty2 = str(self.designation.name)
+		if faculty1 == faculty2:
 			return True
 		return False
 
 	def is_principal(self):
 		faculty = Designation.objects.get(name="Principal")
-		if faculty == self.designation.name:
+		faculty1 = str(faculty)
+		faculty2 = str(self.designation.name)
+		if faculty1 == faculty2:
 			return True
 		return False
 
 	def is_ao(self):
 		faculty = Designation.objects.get(name="AO")
-		if faculty == self.designation.name:
+		faculty1 = str(faculty)
+		faculty2 = str(self.designation.name)
+		if faculty1 == faculty2:
 			return True
 		return False
 

@@ -56,8 +56,8 @@ def decide_view(request):
 	elif request.user.is_ao():
 		return HttpResponseRedirect("/ao.first/")
 
-	else:
-		return HttpResponseRedirect("/")
+	# else:
+	# 	return HttpResponseRedirect("/")
 # def front(request):
 # 	return render(request,'front.html')
 
@@ -65,10 +65,33 @@ def decide_view(request):
 
 
 def hod_form(request):
-	return render(request,'hod_form.html')
+	if request.method == 'POST':
+		form2 = forms.form_empDetailForm(request.POST)
+		if  form2.is_valid():
+			obj = form2.save(commit=False)
+			obj.emp_id = request.user
+			obj.save()
+
+			return render(request,'success.html')
+		else:
+			print(form2.errors)
+
+	else:
+	
+		form2 = forms.form_empDetailForm()
+		form3 = forms.form_feedbackTab()
+		form4 = forms.form_rd()
+
+	return render(request,'hod_form.html',{'form2':form2,'form3':form3,'form4':form4})
 
 def hod_display(request):
-	return render(request,'hod_display.html')
+	user = request.user
+	forms = empDetailForm.objects.filter(emp_id__department=user.department)
+	print(forms)
+	context = {
+	"forms" : forms
+	}
+	return render(request,'hod_display.html', context)
 
 def principal_display(request):
 	return render(request,'principal_display.html')
@@ -84,24 +107,41 @@ def success(request):
 
 def f_assistant(request):
 
-	form2 = forms.form_empDetailForm()
-	form3 = forms.form_feedbackTab()
-	form4 = forms.form_rd()
+	if request.method == 'POST':
+		form2 = forms.form_empDetailForm(request.POST)
+		if  form2.is_valid():
+			obj = form2.save(commit=False)
+			obj.emp_id = request.user
+			obj.save()
+
+			return render(request,'success.html')
+		else:
+			print(form2.errors)
+	else:
+	
+		form2 = forms.form_empDetailForm()
+		form3 = forms.form_feedbackTab()
+		form4 = forms.form_rd()
+	return render(request,'assistant_form.html',{'form2':form2})
+
+def f_associate(request):
 
 	if request.method == 'POST':
 		form2 = forms.form_empDetailForm(request.POST)
 		if  form2.is_valid():
-			form2.save(commit = True)
-			render(request,'hod_success.html')
+			obj = form2.save(commit=False)
+			obj.emp_id = request.user
+			obj.save()
 
-	return render(request,'assistant_form.html',{'form2':form2,'form3':form3,'form4':form4})
+			return render(request,'success.html')
+		else:
+			print(form2.errors)
 
-def f_associate(request):
+	else:
+	
+		form2 = forms.form_empDetailForm()
+		form3 = forms.form_feedbackTab()
+		form4 = forms.form_rd()
+		
 
-	form2 = forms.form_empDetailForm()
-	form3 = forms.form_feedbackTab()
-	form4 = forms.form_rd()
-
-	# if request.method == 'POST':
-	# 	if form1.is_valid() and form2.is_valid() and form3.is_valid() and form4.is_valid():
-	return render(request,'associate_form.html',{'form2':form2,'form3':form3,'form4':form4})
+	return render(request,'associate_form.html',{'form2':form2})

@@ -20,13 +20,7 @@ class UserAdmin(DjangoUserAdmin):
 		(('Designation'), {'fields': ('designation',)}),
 		(('Important dates'), {'fields': ('last_login', 'date_joined')}),
 	)
-	add_fieldsets = (
-		(None, {
-			'classes': ('wide',),
-			'fields': ('email', 'password1', 'password2'),
-		}),
-	)
-
+	
 	list_display = ('username', 'first_name', 'last_name', 'phone', 'email')
 	search_fields = ('email', 'first_name', 'last_name', 'username', 'phone')
 	ordering = ('username',)

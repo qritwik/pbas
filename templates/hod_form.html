@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 {% load staticfiles %}
+{% load widget_tweaks %}
 <html>
 
 <head>
@@ -27,7 +28,7 @@
 
       <form>
         {% csrf_token %}
-        {{ form2.as_p }}
+        
         <div class="form-row">
           <div class="form-group col-md-6">
             <label for="">Internship Company Name</label>
