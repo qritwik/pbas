@@ -105,7 +105,7 @@
 
 <div class="card poi">
 
-   <h4>Odd Semester</h4>
+    <h4>Odd Semester</h4>
   <table class="table table-bordered">
   <thead>
     <tr>
@@ -126,32 +126,33 @@
   <tbody>
     <tr>
       <td>1</td>
-      <td><input type="text" class="form-control " placeholder="Subname" aria-label="Username" aria-describedby="basic-addon1"></td>
-      <td class="right aligned"><input type="number" class="form-control " placeholder="%" aria-label="Username" aria-describedby="basic-addon1"></td>
-      <td class="center aligned"><input type="number" class="form-control " placeholder="%" aria-label="Username" aria-describedby="basic-addon1"></td>
+      <td>{% render_field form3.o_t1_name class="form-control" %}</td>
+      <td class="right aligned">{% render_field form3.o_t1_f1 class="form-control" %}</td>
+      <td class="center aligned">{% render_field form3.o_t1_f2 class="form-control" %}</td>
       <td></td>
-      <td> <input type="text" class="form-control " placeholder="Number" aria-label="Username" aria-describedby="basic-addon1"></td>
-      <td><input type="text" class="form-control " placeholder="Number" aria-label="Username" aria-describedby="basic-addon1"></td>
+      <td> {% render_field form3.o_t1_stu_app class="form-control" %}</td>
+      <td>{% render_field form3.o_t1_stu_pass class="form-control" %}</td>
       <td></td>
     </tr>
     <tr>
       <td>2</td>
-      <td><input type="text" class="form-control " placeholder="Subname" aria-label="Username" aria-describedby="basic-addon1"></td>
-      <td class="right aligned"><input type="number" class="form-control " placeholder="%" aria-label="Username" aria-describedby="basic-addon1"></td>
-      <td class="center aligned"><input type="number" class="form-control " placeholder="%" aria-label="Username" aria-describedby="basic-addon1"></td>
+      <td>{% render_field form3.o_t2_name class="form-control" %}</td>
+      <td class="right aligned">{% render_field form3.o_t2_f1 class="form-control" %}</td>
+      <td class="center aligned">{% render_field form3.o_t2_f2 class="form-control" %}</td>
       <td></td>
-      <td><input type="text" class="form-control " placeholder="Number" aria-label="Username" aria-describedby="basic-addon1"></td>
-      <td><input type="text" class="form-control " placeholder="Number" aria-label="Username" aria-describedby="basic-addon1"></td>
+      <td> {% render_field form3.o_t2_stu_app class="form-control" %}</td>
+      <td>{% render_field form3.o_t2_stu_pass class="form-control" %}</td>
       <td></td>
     </tr>
     <tr>
+      <tr>
       <td>3</td>
-      <td><input type="text" class="form-control " placeholder="Subname" aria-label="Username" aria-describedby="basic-addon1"></td>
-      <td class="right aligned"><input type="number" class="form-control " placeholder="%" aria-label="Username" aria-describedby="basic-addon1"></td>
-      <td class="center aligned"><input type="number" class="form-control " placeholder="%" aria-label="Username" aria-describedby="basic-addon1"></td>
+      <td>{% render_field form3.o_t3_name class="form-control" %}</td>
+      <td class="right aligned">{% render_field form3.o_t3_f1 class="form-control" %}</td>
+      <td class="center aligned">{% render_field form3.o_t3_f2 class="form-control" %}</td>
       <td></td>
-      <td><input type="text" class="form-control " placeholder="Number" aria-label="Username" aria-describedby="basic-addon1"></td>
-      <td><input type="text" class="form-control " placeholder="Number" aria-label="Username" aria-describedby="basic-addon1"></td>
+      <td> {% render_field form3.o_t3_stu_app class="form-control" %}</td>
+      <td>{% render_field form3.o_t3_stu_pass class="form-control" %}</td>
       <td></td>
     </tr>
   </tbody>
@@ -177,32 +178,52 @@
   <tbody>
     <tr>
       <td>1</td>
-      <td><input type="text" class="form-control " placeholder="Subname" aria-label="Username" aria-describedby="basic-addon1"></td>
-      <td class="right aligned"><input type="number" class="form-control " placeholder="%" aria-label="Username" aria-describedby="basic-addon1"></td>
-      <td class="center aligned"><input type="number" class="form-control " placeholder="%" aria-label="Username" aria-describedby="basic-addon1"></td>
+      <td>{% render_field form3.o_l1_name class="form-control" %}</td>
+      <td class="right aligned">{% render_field form3.o_l1_f1 class="form-control" %}</td>
+      <td class="center aligned">{% render_field form3.o_l1_f2 class="form-control" %}</td>
       <td></td>
-      <td><input type="text" class="form-control " placeholder="Number" aria-label="Username" aria-describedby="basic-addon1"></td>
-      <td><input type="text" class="form-control " placeholder="Number" aria-label="Username" aria-describedby="basic-addon1"></td>
+      <td> {% render_field form3.o_l1_stu_app class="form-control" %}</td>
+      <td>{% render_field form3.o_l1_stu_pass class="form-control" %}</td>
       <td></td>
     </tr>
     <tr>
       <td>2</td>
-      <td><input type="text" class="form-control " placeholder="Subname" aria-label="Username" aria-describedby="basic-addon1"></td>
-      <td class="right aligned"><input type="number" class="form-control " placeholder="%" aria-label="Username" aria-describedby="basic-addon1"></td>
-      <td class="center aligned"><input type="number" class="form-control " placeholder="%" aria-label="Username" aria-describedby="basic-addon1"></td>
+      <td>{% render_field form3.o_l2_name class="form-control" %}</td>
+      <td class="right aligned">{% render_field form3.o_l2_f1 class="form-control" %}</td>
+      <td class="center aligned">{% render_field form3.o_l2_f2 class="form-control" %}</td>
       <td></td>
-      <td><input type="text" class="form-control " placeholder="Number" aria-label="Username" aria-describedby="basic-addon1"></td>
-      <td><input type="text" class="form-control " placeholder="Number" aria-label="Username" aria-describedby="basic-addon1"></td>
+      <td> {% render_field form3.o_l2_stu_app class="form-control" %}</td>
+      <td>{% render_field form3.o_l2_stu_pass class="form-control" %}</td>
+      <td></td>
+    </tr>
+     <tr>
+      <td>3</td>
+      <td>{% render_field form3.o_l3_name class="form-control" %}</td>
+      <td class="right aligned">{% render_field form3.o_l3_f1 class="form-control" %}</td>
+      <td class="center aligned">{% render_field form3.o_l3_f2 class="form-control" %}</td>
+      <td></td>
+      <td> {% render_field form3.o_l3_stu_app class="form-control" %}</td>
+      <td>{% render_field form3.o_l3_stu_pass class="form-control" %}</td>
       <td></td>
     </tr>
     <tr>
-      <td>3</td>
-      <td><input type="text" class="form-control " placeholder="Subname" aria-label="Username" aria-describedby="basic-addon1"></td>
-      <td class="right aligned"><input type="number" class="form-control " placeholder="%" aria-label="Username" aria-describedby="basic-addon1"></td>
-      <td class="center aligned"><input type="number" class="form-control " placeholder="%" aria-label="Username" aria-describedby="basic-addon1"></td>
+      <td>4</td>
+      <td>{% render_field form3.o_l4_name class="form-control" %}</td>
+      <td class="right aligned">{% render_field form3.o_l4_f1 class="form-control" %}</td>
+      <td class="center aligned">{% render_field form3.o_l4_f2 class="form-control" %}</td>
       <td></td>
-      <td><input type="text" class="form-control " placeholder="Number" aria-label="Username" aria-describedby="basic-addon1"></td>
-      <td><input type="text" class="form-control " placeholder="Number" aria-label="Username" aria-describedby="basic-addon1"></td>
+      <td> {% render_field form3.o_l4_stu_app class="form-control" %}</td>
+      <td>{% render_field form3.o_l4_stu_pass class="form-control" %}</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>{% render_field form3.o_l5_name class="form-control" %}</td>
+      <td class="right aligned">{% render_field form3.o_l5_f1 class="form-control" %}</td>
+      <td class="center aligned">{% render_field form3.o_l5_f2 class="form-control" %}</td>
+      <td></td>
+      <td> {% render_field form3.o_l5_stu_app class="form-control" %}</td>
+      <td>{% render_field form3.o_l5_stu_pass class="form-control" %}</td>
       <td></td>
     </tr>
   </tbody>
@@ -231,34 +252,34 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
+   <tr>
       <td>1</td>
-      <td><input type="text" class="form-control " placeholder="Subname" aria-label="Username" aria-describedby="basic-addon1"></td>
-      <td class="right aligned"><input type="number" class="form-control " placeholder="%" aria-label="Username" aria-describedby="basic-addon1"></td>
-      <td class="center aligned"><input type="number" class="form-control " placeholder="%" aria-label="Username" aria-describedby="basic-addon1"></td>
+      <td>{% render_field form3.e_t1_name class="form-control" %}</td>
+      <td class="right aligned">{% render_field form3.e_t1_f1 class="form-control" %}</td>
+      <td class="center aligned">{% render_field form3.e_t1_f2 class="form-control" %}</td>
       <td></td>
-      <td><input type="text" class="form-control " placeholder="Number" aria-label="Username" aria-describedby="basic-addon1"></td>
-      <td><input type="text" class="form-control " placeholder="Number" aria-label="Username" aria-describedby="basic-addon1"></td>
+      <td> {% render_field form3.e_t1_stu_app class="form-control" %}</td>
+      <td>{% render_field form3.e_t1_stu_pass class="form-control" %}</td>
       <td></td>
     </tr>
-    <tr>
+     <tr>
       <td>2</td>
-      <td><input type="text" class="form-control " placeholder="Subname" aria-label="Username" aria-describedby="basic-addon1"></td>
-      <td class="right aligned"><input type="number" class="form-control " placeholder="%" aria-label="Username" aria-describedby="basic-addon1"></td>
-      <td class="center aligned"><input type="number" class="form-control " placeholder="%" aria-label="Username" aria-describedby="basic-addon1"></td>
+      <td>{% render_field form3.e_t2_name class="form-control" %}</td>
+      <td class="right aligned">{% render_field form3.e_t2_f1 class="form-control" %}</td>
+      <td class="center aligned">{% render_field form3.e_t2_f2 class="form-control" %}</td>
       <td></td>
-      <td><input type="text" class="form-control " placeholder="Number" aria-label="Username" aria-describedby="basic-addon1"></td>
-      <td><input type="text" class="form-control " placeholder="Number" aria-label="Username" aria-describedby="basic-addon1"></td>
+      <td> {% render_field form3.e_t2_stu_app class="form-control" %}</td>
+      <td>{% render_field form3.e_t2_stu_pass class="form-control" %}</td>
       <td></td>
     </tr>
-    <tr>
+     <tr>
       <td>3</td>
-      <td><input type="text" class="form-control " placeholder="Subname" aria-label="Username" aria-describedby="basic-addon1"></td>
-      <td class="right aligned"><input type="number" class="form-control " placeholder="%" aria-label="Username" aria-describedby="basic-addon1"></td>
-      <td class="center aligned"><input type="number" class="form-control " placeholder="%" aria-label="Username" aria-describedby="basic-addon1"></td>
+      <td>{% render_field form3.e_t3_name class="form-control" %}</td>
+      <td class="right aligned">{% render_field form3.e_t3_f1 class="form-control" %}</td>
+      <td class="center aligned">{% render_field form3.e_t3_f2 class="form-control" %}</td>
       <td></td>
-      <td><input type="text" class="form-control " placeholder="Number" aria-label="Username" aria-describedby="basic-addon1"></td>
-      <td><input type="text" class="form-control " placeholder="Number" aria-label="Username" aria-describedby="basic-addon1"></td>
+      <td> {% render_field form3.e_t3_stu_app class="form-control" %}</td>
+      <td>{% render_field form3.e_t3_stu_pass class="form-control" %}</td>
       <td></td>
     </tr>
   </tbody>
@@ -284,32 +305,53 @@
   <tbody>
     <tr>
       <td>1</td>
-      <td><input type="text" class="form-control " placeholder="Subname" aria-label="Username" aria-describedby="basic-addon1"></td>
-      <td class="right aligned"><input type="number" class="form-control " placeholder="%" aria-label="Username" aria-describedby="basic-addon1"></td>
-      <td class="center aligned"><input type="number" class="form-control " placeholder="%" aria-label="Username" aria-describedby="basic-addon1"></td>
+      <td>{% render_field form3.e_l1_name class="form-control" %}</td>
+      <td class="right aligned">{% render_field form3.e_l1_f1 class="form-control" %}</td>
+      <td class="center aligned">{% render_field form3.e_l1_f2 class="form-control" %}</td>
       <td></td>
-      <td><input type="text" class="form-control " placeholder="Number" aria-label="Username" aria-describedby="basic-addon1"></td>
-      <td><input type="text" class="form-control " placeholder="Number" aria-label="Username" aria-describedby="basic-addon1"></td>
+      <td> {% render_field form3.e_l1_stu_app class="form-control" %}</td>
+      <td>{% render_field form3.e_l1_stu_pass class="form-control" %}</td>
       <td></td>
     </tr>
-    <tr>
+     <tr>
       <td>2</td>
-      <td><input type="text" class="form-control " placeholder="Subname" aria-label="Username" aria-describedby="basic-addon1"></td>
-      <td class="right aligned"><input type="number" class="form-control " placeholder="%" aria-label="Username" aria-describedby="basic-addon1"></td>
-      <td class="center aligned"><input type="number" class="form-control " placeholder="%" aria-label="Username" aria-describedby="basic-addon1"></td>
+      <td>{% render_field form3.e_l2_name class="form-control" %}</td>
+      <td class="right aligned">{% render_field form3.e_l2_f1 class="form-control" %}</td>
+      <td class="center aligned">{% render_field form3.e_l2_f2 class="form-control" %}</td>
       <td></td>
-      <td><input type="text" class="form-control " placeholder="Number" aria-label="Username" aria-describedby="basic-addon1"></td>
-      <td><input type="text" class="form-control " placeholder="Number" aria-label="Username" aria-describedby="basic-addon1"></td>
+      <td> {% render_field form3.e_l2_stu_app class="form-control" %}</td>
+      <td>{% render_field form3.e_l2_stu_pass class="form-control" %}</td>
+      <td></td>
+    </tr>
+     <tr>
+      <td>3</td>
+      <td>{% render_field form3.e_l3_name class="form-control" %}</td>
+      <td class="right aligned">{% render_field form3.e_l3_f1 class="form-control" %}</td>
+      <td class="center aligned">{% render_field form3.e_l3_f2 class="form-control" %}</td>
+      <td></td>
+      <td> {% render_field form3.e_l3_stu_app class="form-control" %}</td>
+      <td>{% render_field form3.e_l3_stu_pass class="form-control" %}</td>
       <td></td>
     </tr>
     <tr>
-      <td>3</td>
-      <td><input type="text" class="form-control " placeholder="Subname" aria-label="Username" aria-describedby="basic-addon1"></td>
-      <td class="right aligned"><input type="number" class="form-control " placeholder="%" aria-label="Username" aria-describedby="basic-addon1"></td>
-      <td class="center aligned"><input type="number" class="form-control " placeholder="%" aria-label="Username" aria-describedby="basic-addon1"></td>
+     <tr>
+      <td>4</td>
+      <td>{% render_field form3.e_l4_name class="form-control" %}</td>
+      <td class="right aligned">{% render_field form3.e_l4_f1 class="form-control" %}</td>
+      <td class="center aligned">{% render_field form3.e_l4_f2 class="form-control" %}</td>
       <td></td>
-      <td><input type="text" class="form-control " placeholder="Number" aria-label="Username" aria-describedby="basic-addon1"></td>
-      <td><input type="text" class="form-control " placeholder="Number" aria-label="Username" aria-describedby="basic-addon1"></td>
+      <td> {% render_field form3.e_l4_stu_app class="form-control" %}</td>
+      <td>{% render_field form3.e_l4_stu_pass class="form-control" %}</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>{% render_field form3.e_l5_name class="form-control" %}</td>
+      <td class="right aligned">{% render_field form3.e_l5_f1 class="form-control" %}</td>
+      <td class="center aligned">{% render_field form3.e_l5_f2 class="form-control" %}</td>
+      <td></td>
+      <td> {% render_field form3.e_l5_stu_app class="form-control" %}</td>
+      <td>{% render_field form3.e_l5_stu_pass class="form-control" %}</td>
       <td></td>
     </tr>
   </tbody>
@@ -336,16 +378,16 @@
   <tbody>
     <tr>
       <td>1</td>
-      <td><input type="text" class="form-control " placeholder="Subname" aria-label="Username" aria-describedby="basic-addon1"></td>
-      <td class="right aligned"><input type="number" class="form-control " placeholder="%" aria-label="Username" aria-describedby="basic-addon1"></td>
-      <td class="center aligned"><input type="number" class="form-control " placeholder="%" aria-label="Username" aria-describedby="basic-addon1"></td>
+      <td>{% render_field form3.p1_name class="form-control" %}</td>
+      <td class="right aligned">{% render_field form3.p1_f1 class="form-control" %}</td>
+      <td class="center aligned">{% render_field form3.p1_f2 class="form-control" %}</td>
       <td></td>
     </tr>
-    <tr>
+     <tr>
       <td>2</td>
-      <td><input type="text" class="form-control " placeholder="Subname" aria-label="Username" aria-describedby="basic-addon1"></td>
-      <td class="right aligned"><input type="number" class="form-control " placeholder="%" aria-label="Username" aria-describedby="basic-addon1"></td>
-      <td class="center aligned"><input type="number" class="form-control " placeholder="%" aria-label="Username" aria-describedby="basic-addon1"></td>
+      <td>{% render_field form3.p2_name class="form-control" %}</td>
+      <td class="right aligned">{% render_field form3.p2_f1 class="form-control" %}</td>
+      <td class="center aligned">{% render_field form3.p2_f2 class="form-control" %}</td>
       <td></td>
     </tr>
 </tbody>
@@ -364,15 +406,14 @@
       </h5>
     </div>
 
-<!-- <form> -->
-        <div class="form-row dis">
+<div class="form-row dis">
           <div class="form-group col-md-6">
-                        <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="State Level">
+                        <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="State Level" >
 
           </div>
         <div class="form-group col-md-6">
 
-            <input type="text" class="form-control" id="inputEmployeeIdNo" placeholder="Days">
+            {% render_field form4.w_s_d class="form-control" %}
         </div>
     </div>
 
@@ -383,7 +424,7 @@
           </div>
         <div class="form-group col-md-6">
 
-            <input type="text" class="form-control" id="inputEmployeeIdNo" placeholder="Days">
+            {% render_field form4.w_n_d class="form-control" %}
         </div>
     </div>
 
@@ -394,10 +435,10 @@
           </div>
         <div class="form-group col-md-6">
 
-            <input type="text" class="form-control" id="inputEmployeeIdNo" placeholder="Days">
+            {% render_field form4.w_i_d class="form-control" %}
         </div>
     </div>
-<!-- </form> -->
+
 </div>
   <div class="card">
     <div class="card-header" id="headingTwo">
@@ -408,7 +449,7 @@ Presentations (Invited talk/panel/keynote)
         </button>
       </h5>
     </div>
-   <!-- <form> -->
+   
         <div class="form-row dis">
           <div class="form-group col-md-6">
                         <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="State Level">
@@ -416,7 +457,7 @@ Presentations (Invited talk/panel/keynote)
           </div>
         <div class="form-group col-md-6">
 
-            <input type="text" class="form-control" id="inputEmployeeIdNo" placeholder="Days">
+            {% render_field form4.p_s_d class="form-control" %}
         </div>
     </div>
 
@@ -427,7 +468,8 @@ Presentations (Invited talk/panel/keynote)
           </div>
         <div class="form-group col-md-6">
 
-            <input type="text" class="form-control" id="inputEmployeeIdNo" placeholder="Days">
+            {% render_field form4.p_n_d class="form-control" %}
+            
         </div>
     </div>
 
@@ -438,10 +480,11 @@ Presentations (Invited talk/panel/keynote)
           </div>
         <div class="form-group col-md-6">
 
-            <input type="text" class="form-control" id="inputEmployeeIdNo" placeholder="Days">
+            {% render_field form4.p_i_d class="form-control" %}
+            
         </div>
     </div>
-<!-- </form> -->
+
   </div>
   <div class="card">
     <div class="card-header" id="headingThree">
@@ -452,12 +495,10 @@ Presentations (Invited talk/panel/keynote)
       </h5>
     </div>
    <div class="form-group dis col-md-6">
-
-            <input type="text" class="form-control" id="inputEmployeeIdNo" placeholder="Count Eg. 3">
+            {% render_field form4.onl_course_c class="form-control" %}
         </div>
   </div>
 </div>
-
 
 
 <div class="accordion dis1" id="accordionExample">
@@ -470,31 +511,31 @@ Presentations (Invited talk/panel/keynote)
         </button>
       </h5>
     </div>
-   <div class="form-group col-md-12" >
+    <div class="form-group col-md-12" >
 <div class="form-row">
 <div class="form-group col-sm-6">
 <label >Name of conference: </label>
-<input type="text" name="" placeholder="name" class="form-control">
+{% render_field form4.c_name class="form-control" %}
 </div>
 
 <div class="form-group col-sm-6">
 <label >Title of the paper: </label>
-<input type="text" name="" placeholder="title" class="form-control ">
+{% render_field form4.c_title class="form-control" %}
 </div>
 
 <div class="form-group col-sm-6">
 <label>Place: </label>
-<input type="text" name="" placeholder="place" class="form-control">
+{% render_field form4.c_place class="form-control" %}
 </div>
 
 <div class="form-group col-sm-6">
 <label >Date: </label>
-<input type="date" name="" placeholder="date" class="form-control ">
+{% render_field form4.c_date class="form-control" %}
 </div>
 
 <div class="form-group col-sm-6">
 <label>Indexed: </label>
-<input type="text" name="" placeholder="Indexed" class="form-control">
+{% render_field form4.c_index class="form-control" %}
 </div>
 </div>
 </div>
@@ -548,31 +589,31 @@ Number of journal papers with Scopus/DBLP/ Google Scholar Indexed Publications<s
         <div class="form-row">
 <div class="form-group col-sm-6">
 <label >Name of journal: </label>
-<input type="text" name="" placeholder="name" class="form-control ">
+{% render_field form4.j_name class="form-control" %}
 </div>
 <div class="form-group col-sm-6">
 <label >Title of the paper: </label>
-<input type="text" name="" placeholder="title" class="form-control ">
+{% render_field form4.j_title class="form-control" %}
 </div>
 <div class="form-group col-sm-6">
 <label >Volume: </label>
-<input type="text" name="" placeholder="volume" class="form-control ">
+{% render_field form4.j_volume class="form-control" %}
 </div>
 <div class="form-group col-sm-6">
 <label >Issn/Doi: </label>
-<input type="text" name="" placeholder="Issn" class="form-control">
+{% render_field form4.j_issn class="form-control" %}
 </div>
 <div class="form-group col-sm-6">
 <label >Date: </label>
-<input type="date" name="" placeholder="date" class="form-control ">
+{% render_field form4.c_date class="form-control" %}
 </div>
 <div class="form-group col-sm-6">
 <label >Page no: </label>
-<input type="text" name="" placeholder="Page no" class="form-control">
+{% render_field form4.j_page class="form-control" %}
 </div>
 <div class="form-group col-sm-6">
 <label>Indexed: </label>
-<input type="text" name="" placeholder="Indexed" class="form-control">
+{% render_field form4.j_index class="form-control" %}
 </div>
 </div>
 </div>
@@ -619,76 +660,74 @@ Number of journal papers with Scopus/DBLP/ Google Scholar Indexed Publications<s
         </button>
       </h5>
     </div>
-   <!-- <form> -->
+   
         <div class="form-row dis">
           <div class="form-group col-md-6">
-                        <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="Book Authored  International">
+                        <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="Book Authored  International (10 marks/Book)">
 
           </div>
         <div class="form-group col-md-6">
 
-            <input type="text" class="form-control" id="inputEmployeeIdNo" placeholder="Count Eg. 3">
+           {% render_field form4.book_i class="form-control" %}
         </div>
     </div>
 
     <div class="form-row dis">
           <div class="form-group col-md-6">
-                        <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="Book Authored  National">
+                        <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="Book Authored  National (08 marks/Book)">
 
           </div>
         <div class="form-group col-md-6">
 
-            <input type="text" class="form-control" id="inputEmployeeIdNo" placeholder="Count Eg. 3">
+            {% render_field form4.book_n class="form-control" %}
         </div>
     </div>
 
     <div class="form-row dis">
           <div class="form-group col-md-6">
-                        <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="Book chapterAuthored  International">
+                        <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="Book chapterAuthored  International (06 marks/Book Chapter)">
 
           </div>
         <div class="form-group col-md-6">
 
-            <input type="text" class="form-control" id="inputEmployeeIdNo" placeholder="Count Eg. 3">
+             {% render_field form4.book_ci class="form-control" %}
         </div>
     </div>
 
     <div class="form-row dis">
           <div class="form-group col-md-6">
-                        <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="Book chapterAuthored  National">
+                        <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="Book chapterAuthored  National (04 marks/Book Chapter)">
 
           </div>
         <div class="form-group col-md-6">
-
-            <input type="text" class="form-control" id="inputEmployeeIdNo" placeholder="Count Eg. 3">
+        {% render_field form4.book_cn class="form-control" %}
         </div>
     </div>
 
     <div class="form-row dis">
           <div class="form-group col-md-6">
-                        <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="Articles Published in International">
+                        <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="Articles Published in International (10 marks/Article)">
 
           </div>
         <div class="form-group col-md-6">
 
-            <input type="text" class="form-control" id="inputEmployeeIdNo" placeholder="Count Eg. 3">
+             {% render_field form4.book_ai class="form-control" %}
         </div>
     </div>
 
     <div class="form-row dis">
           <div class="form-group col-md-6">
-                        <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="National  Media">
+                        <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="National  Media (06 marks/Article)">
 
           </div>
         <div class="form-group col-md-6">
 
-            <input type="text" class="form-control" id="inputEmployeeIdNo" placeholder="Count Eg. 3">
+             {% render_field form4.book_nm class="form-control" %}
         </div>
     </div>
 <!-- </form> -->
   </div>
 </div>
-
 <div class="card poi">
   <h5 class="po color1">Research Projects</h5>
 	<table class="table table-bordered">
@@ -702,23 +741,22 @@ Number of journal papers with Scopus/DBLP/ Google Scholar Indexed Publications<s
   </thead>
   <tbody>
     <tr>
-      <th scope="row">Internally Funded</th>
-      <td>  <input type="text" class="form-control" placeholder="Project Name" aria-label="Username" aria-describedby="basic-addon1">
-</td>
-      <td><input type="text" class="form-control" placeholder="Project Name" aria-label="Username" aria-describedby="basic-addon1"></td>
-      <td><input type="text" class="form-control" placeholder="Project Name" aria-label="Username" aria-describedby="basic-addon1"></td>
+      <th scope="row">Internally Funded<span class="sp"> 5 marks/project</span></th>
+      <td> {% render_field form4.if_s class="form-control" %}</td>
+      <td>{% render_field form4.if_f class="form-control" %}</td>
+      <td>{% render_field form4.if_c class="form-control" %}</td>
     </tr>
     <tr>
-      <th scope="row">Externally Funded Less than 5Lakhs </th>
-      <td><input type="text" class="form-control" placeholder="Project Name" aria-label="Username" aria-describedby="basic-addon1"></td>
-      <td><input type="text" class="form-control" placeholder="Project Name" aria-label="Username" aria-describedby="basic-addon1"></td>
-      <td><input type="text" class="form-control" placeholder="Project Name" aria-label="Username" aria-describedby="basic-addon1"></td>
+      <th scope="row">Externally Funded Less than 5Lakhs<span class="sp">( 5 marks/project )</span> </th>
+       <td> {% render_field form4.ef_s class="form-control" %}</td>
+      <td>{% render_field form4.ef_f class="form-control" %}</td>
+      <td>{% render_field form4.ef_c class="form-control" %}</td>
     </tr>
     <tr>
-      <th scope="row">Externally Funded Btw 5Lakhs to 10Lakhs </th>
-      <td><input type="text" class="form-control" placeholder="Project Name" aria-label="Username" aria-describedby="basic-addon1"></td>
-      <td><input type="text" class="form-control" placeholder="Project Name" aria-label="Username" aria-describedby="basic-addon1"></td>
-      <td><input type="text" class="form-control" placeholder="Project Name" aria-label="Username" aria-describedby="basic-addon1"></td>
+      <th scope="row">Externally Funded Btw 5Lakhs to 10Lakhs<span class="sp"> 10 marks/project</span> </th>
+      <td> {% render_field form4.eef_s class="form-control" %}</td>
+      <td>{% render_field form4.eef_f class="form-control" %}</td>
+      <td>{% render_field form4.eef_c class="form-control" %}</td>
     </tr>
   </tbody>
 </table>
@@ -735,10 +773,9 @@ Number of journal papers with Scopus/DBLP/ Google Scholar Indexed Publications<s
   <tbody>
     <tr>
       <th scope="row">Consultancy Work</th>
-      <td>  <input type="text" class="form-control" placeholder="Project Name" aria-label="Username" aria-describedby="basic-addon1">
-</td>
-      <td><input type="text" class="form-control" placeholder="Project Name" aria-label="Username" aria-describedby="basic-addon1"></td>
-      <td><input type="text" class="form-control" placeholder="Project Name" aria-label="Username" aria-describedby="basic-addon1"></td>
+      <td> {% render_field form4.Cw_2 class="form-control" %}</td>
+      <td>{% render_field form4.Cw_2_5 class="form-control" %}</td>
+      <td>{% render_field form4.Cw_5 class="form-control" %}</td>
     </tr>
     </tbody>
 </table>
@@ -749,7 +786,7 @@ Number of journal papers with Scopus/DBLP/ Google Scholar Indexed Publications<s
  <div class="input-group text12">
   <div class="input-group-prepend">
   </div>
-  <textarea class="form-control po" aria-label="With textarea"></textarea>
+  {% render_field form5.ta_ic class="form-control" %}
   <input type="text" class="form-control col-md-2 poi" placeholder="marks" aria-label="Username" aria-describedby="basic-addon1" disabled >
 </div>
 </div>
@@ -757,10 +794,7 @@ Number of journal papers with Scopus/DBLP/ Google Scholar Indexed Publications<s
 <div class="card dis1 po">
   <h5 class="po">Departmental  Responsibilities (Please list only those where you have made significant contribution)</h5>
  <div class="input-group text12">
-  <div class="input-group-prepend">
-
-  </div>
-  <textarea class="form-control" aria-label="With textarea"></textarea>
+  {% render_field form5.ta_dr class="form-control" %}
 </div>
 </div>
 
@@ -810,7 +844,7 @@ Number of journal papers with Scopus/DBLP/ Google Scholar Indexed Publications<s
   <div class="input-group-prepend">
 
   </div>
-  <textarea class="form-control" aria-label="With textarea"></textarea>
+   {% render_field form5.ta_ir class="form-control" %}
 </div>
 </div>
 
@@ -838,6 +872,7 @@ Number of journal papers with Scopus/DBLP/ Google Scholar Indexed Publications<s
   </div>
   <textarea class="form-control" aria-label="With textarea"></textarea>
 </div>
+
 </div>
 
 <input type="submit" name="submit">

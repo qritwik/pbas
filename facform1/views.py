@@ -67,24 +67,33 @@ def decide_view(request):
 
 def hod_form(request):
 	if request.method == 'POST':
-		print("bdhsbhjdsjk")
 		form2 = forms.form_empDetailForm(request.POST)
-		if  form2.is_valid():
+		form3 = forms.form_feedbackTab(request.POST)
+		form4 = forms.form_rd(request.POST)
+		if  form2.is_valid() and form3.is_valid() and form4.is_valid():
 			obj = form2.save(commit=False)
+			obj1 = form3.save(commit=False)
+			obj2 = form3.save(commit=False)
+
 			obj.emp_id = request.user
+			obj1.emp_id = request.user
+			obj2.emp_id = request.user
 			obj.save()
+			obj1.save()
+			obj2.save()
+
 
 			return HttpResponseRedirect("/logout/")
 		else:
 			print(form2.errors)
-
 	else:
 
 		form2 = forms.form_empDetailForm()
 		form3 = forms.form_feedbackTab()
 		form4 = forms.form_rd()
+		form5 = forms.form_remarks()
 
-	return render(request,'hod_form.html',{'form2':form2})
+	return render(request,'hod_form.html',{'form2':form2,'form3':form3,'form4':form4,'form5':form5})
 
 def hod_display(request):
 	user = request.user
@@ -111,10 +120,20 @@ def f_assistant(request):
 
 	if request.method == 'POST':
 		form2 = forms.form_empDetailForm(request.POST)
-		if  form2.is_valid():
+		form3 = forms.form_feedbackTab(request.POST)
+		form4 = forms.form_rd(request.POST)
+		if  form2.is_valid() and form3.is_valid() and form4.is_valid():
 			obj = form2.save(commit=False)
+			obj1 = form3.save(commit=False)
+			obj2 = form3.save(commit=False)
+
 			obj.emp_id = request.user
+			obj1.emp_id = request.user
+			obj2.emp_id = request.user
 			obj.save()
+			obj1.save()
+			obj2.save()
+
 
 			return HttpResponseRedirect("/logout/")
 		else:
@@ -124,26 +143,35 @@ def f_assistant(request):
 		form2 = forms.form_empDetailForm()
 		form3 = forms.form_feedbackTab()
 		form4 = forms.form_rd()
-	return render(request,'assistant_form.html',{'form2':form2})
+		form5 = forms.form_remarks()
+	return render(request,'assistant_form.html',{'form2':form2,'form3':form3,'form4':form4,'form5':form5})
 
 def f_associate(request):
-
 	if request.method == 'POST':
 		form2 = forms.form_empDetailForm(request.POST)
-		if  form2.is_valid():
+		form3 = forms.form_feedbackTab(request.POST)
+		form4 = forms.form_rd(request.POST)
+		if  form2.is_valid() and form3.is_valid() and form4.is_valid():
 			obj = form2.save(commit=False)
+			obj1 = form3.save(commit=False)
+			obj2 = form3.save(commit=False)
+
 			obj.emp_id = request.user
+			obj1.emp_id = request.user
+			obj2.emp_id = request.user
 			obj.save()
+			obj1.save()
+			obj2.save()
+
 
 			return HttpResponseRedirect("/logout/")
 		else:
 			print(form2.errors)
-
 	else:
 
 		form2 = forms.form_empDetailForm()
 		form3 = forms.form_feedbackTab()
 		form4 = forms.form_rd()
+		form5 = forms.form_remarks()
 
-
-	return render(request,'associate_form.html',{'form2':form2})
+	return render(request,'associate_form.html',{'form2':form2,'form3':form3,'form4':form4,'form5':form5})
