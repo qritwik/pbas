@@ -1,11 +1,13 @@
+<!DOCTYPE html>
+{% load staticfiles %}
 <html>
  <head>
   <Title>Appraisal</title>
   </head>
-  
+
   <body>
 
-<link rel="stylesheet" type="text/css" href="theme1.css"><link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="{% static "css/theme1.css" %}"><link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
 
 <div class="jumbotron p1">
@@ -13,7 +15,7 @@
 <div class="container-fluid ">
 
 <div class="row">
-<div class="col-3"><center><img  src="bmsit1.png" alt="BMS Institute of Technology of management" ></center></div>
+<div class="col-3"><center><img  src="{% static "image/bms.logo.png" %}" alt="BMS Institute of Technology of management" ></center></div>
  <div class="col-6 q1"><h1 align="center" class="display-4"> HOD'S VIEW</h1>
  <h1 id="qw" align="center" class="display-4"></h1>
  </div>
@@ -22,10 +24,10 @@
 </div>
 <div class="login-page">
   <div style="margin-top:-5%;" class="form">
-   
+
     <p><h3>FACULTY LIST</h3></p>
     <form class="login-form" method="post">
-    
+
     <div class="list-group">
   <button type="button" class="list-group-item list-group-item-action ">
    A
@@ -35,8 +37,8 @@
   <button type="button" class="list-group-item list-group-item-action">D</button>
   <button type="button" class="list-group-item list-group-item-action">E</button>
 </div>
-     
-      
+
+
     </form>
   </div>
 </div>
