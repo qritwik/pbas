@@ -8,7 +8,7 @@ class Designation(models.Model):
 	Description: Holds the Designations avbailable
 	"""
 	name = models.CharField(max_length=20, blank=True, null=True)
-	
+
 	def __str__(self):
 		return self.name
 
@@ -25,7 +25,7 @@ class User(AbstractUser):
 	phone = models.BigIntegerField(null=True)
 	department = models.ForeignKey('Department', on_delete=models.CASCADE,null=True)
 	designation = models.ForeignKey('Designation', on_delete=models.CASCADE,null=True)
-	
+
 	def __str__(self):
 		return self.username
 
@@ -77,7 +77,7 @@ class empDetailForm(models.Model):
 	it_name = models.CharField(max_length=50, blank=True, null=True)
 	it_f = models.DateField(blank=True, null=True)
 	it_t = models.DateField(blank=True, null=True)
-	
+
 	high_qual = models.CharField(max_length=50,null=True)
 	doj = models.DateField(null=True)
 	Present_pos = models.CharField(max_length=50,null=True)
@@ -335,10 +335,10 @@ class remarks(models.Model):
 
 
 
-	
 
 
-	
+
+
 
 # O_Theory_1
 # O_Theory_2
@@ -486,7 +486,7 @@ class remarks(models.Model):
 # W_I
 
 # P_S
-# P_N 
+# P_N
 # P_I
 
 # Online_Course
@@ -542,12 +542,3 @@ class remarks(models.Model):
 
 
 # Total_marks
-
-
-
-
-
-
-
-
-

@@ -133,8 +133,8 @@ def f_assistant(request):
 		form5 = forms.form_remarks(request.POST)
 		if  form2.is_valid() and form3.is_valid() and form4.is_valid() and form5.is_valid():
 
-			
-			
+
+
 			obj = form2.save(commit=False)
 			obj1 = form3.save(commit=False)
 			obj2 = form4.save(commit=False)
@@ -144,11 +144,16 @@ def f_assistant(request):
 			obj1.username = request.user
 			obj2.username = request.user
 			obj3.username = request.user
-			
+
 			obj.save()
 			obj1.save()
 			obj2.save()
 			obj3.save()
+
+			data1 = remarks.objects.get(username = request.user)
+			data1.teach_status = True
+
+			remarks.teach_status =
 
 
 			return HttpResponseRedirect("/logout/")
