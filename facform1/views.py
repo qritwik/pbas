@@ -153,8 +153,7 @@ def f_assistant(request):
 			data1 = remarks.objects.get(username = request.user)
 			data1.teach_status = True
 
-			remarks.teach_status =
-
+			
 
 			return HttpResponseRedirect("/logout/")
 		else:
