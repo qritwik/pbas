@@ -77,10 +77,10 @@ def hod_form(request):
 			obj2 = form4.save(commit=False)
 			obj3 = form5.save(commit=False)
 
-			obj.username = request.user
-			obj1.username = request.user
-			obj2.username = request.user
-			obj3.username = request.user
+			obj.emp_id = request.user
+			obj1.emp_id = request.user
+			obj2.emp_id = request.user
+			obj3.emp_id = request.user
 			obj.save()
 			obj1.save()
 			obj2.save()
@@ -101,12 +101,17 @@ def hod_form(request):
 
 def hod_display(request):
 	user = request.user
-	forms = empDetailForm.objects.filter(username__department=user.department)
+	forms = empDetailForm.objects.filter(emp_id__department=user.department)
 	print(forms)
 	context = {
 	"forms" : forms
 	}
 	return render(request,'hod_display.html', context)
+
+def hod_teacher_display(request):
+	data1 = User.objects.get(username__iexact=)
+	context1 = {"key1":data1}
+	return render(request,'hod_teacher_display.html',context1)
 
 def principal_display(request):
 	return render(request,'principal_display.html')
@@ -132,10 +137,10 @@ def f_assistant(request):
 			obj2 = form4.save(commit=False)
 			obj3 = form5.save(commit=False)
 
-			obj.username = request.user
-			obj1.username = request.user
-			obj2.username = request.user
-			obj3.username = request.user
+			obj.emp_id = request.user
+			obj1.emp_id = request.user
+			obj2.emp_id = request.user
+			obj3.emp_id = request.user
 			obj.save()
 			obj1.save()
 			obj2.save()
@@ -165,10 +170,10 @@ def f_associate(request):
 			obj2 = form4.save(commit=False)
 			obj3 = form5.save(commit=False)
 
-			obj.username = request.user
-			obj1.username = request.user
-			obj2.username = request.user
-			obj3.username = request.user
+			obj.emp_id = request.user
+			obj1.emp_id = request.user
+			obj2.emp_id = request.user
+			obj3.emp_id = request.user
 			obj.save()
 			obj1.save()
 			obj2.save()
