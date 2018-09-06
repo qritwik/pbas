@@ -24,7 +24,6 @@ class Department(models.Model):
 class User(AbstractUser):
 	phone = models.BigIntegerField(null=True)
 	department = models.ForeignKey('Department', on_delete=models.CASCADE,null=True)
-	emp_id = models.IntegerField(blank=True, null=True)
 	designation = models.ForeignKey('Designation', on_delete=models.CASCADE,null=True)
 	
 	def __str__(self):
@@ -86,7 +85,7 @@ class empDetailForm(models.Model):
 	exp_teach = models.IntegerField(blank=True, null=True)
 	exp_res = models.IntegerField( blank=True, null=True)
 	exp_indus = models.IntegerField(blank=True, null=True)
-	emp_id = models.ForeignKey('User', on_delete=models.CASCADE,null=True)
+	username = models.ForeignKey('User', on_delete=models.CASCADE,null=True)
 
 
 #TABLE-3
@@ -261,7 +260,7 @@ class feedbackTab(models.Model):
 	p2_f1 = models.CharField(max_length=30, blank=True, null=True)
 	p2_f2 = models.CharField(max_length=30, blank=True, null=True)
 	p2_favg = models.CharField(max_length=30, blank=True, null=True)
-	emp_id = models.ForeignKey('User', on_delete=models.CASCADE,null=True)
+	username = models.ForeignKey('User', on_delete=models.CASCADE,null=True)
 
 
 
@@ -313,7 +312,7 @@ class rd(models.Model):
 	Cw_2 = models.CharField(max_length=30, blank=True, null=True)
 	Cw_2_5 = models.CharField(max_length=30, blank=True, null=True)
 	Cw_5 = models.CharField(max_length=30, blank=True, null=True)
-	emp_id = models.ForeignKey('User', on_delete=models.CASCADE,null=True)
+	username = models.ForeignKey('User', on_delete=models.CASCADE,null=True)
 
 
 
@@ -332,7 +331,7 @@ class remarks(models.Model):
 	teach_status = models.BooleanField(default=False)
 	hod_status = models.BooleanField(default=False)
 	principal_status = models.BooleanField(default=False)
-	emp_id = models.ForeignKey('User', on_delete=models.CASCADE,null=True)
+	username = models.ForeignKey('User', on_delete=models.CASCADE,null=True)
 
 
 
