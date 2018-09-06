@@ -109,7 +109,7 @@ def hod_display(request):
 	return render(request,'hod_display.html', context)
 
 def hod_teacher_display(request):
-	data1 = User.objects.get(username__iexact=)
+	data1 = User.objects.get(username__iexact="tarun")
 	context1 = {"key1":data1}
 	return render(request,'hod_teacher_display.html',context1)
 
@@ -132,6 +132,8 @@ def f_assistant(request):
 		form4 = forms.form_rd(request.POST)
 		form5 = forms.form_remarks1(request.POST)
 		if  form2.is_valid() and form3.is_valid() and form4.is_valid() and form5.is_valid():
+			
+			form5.teach_status = True
 			obj = form2.save(commit=False)
 			obj1 = form3.save(commit=False)
 			obj2 = form4.save(commit=False)
@@ -141,6 +143,7 @@ def f_assistant(request):
 			obj1.username = request.user
 			obj2.username = request.user
 			obj3.username = request.user
+			
 			obj.save()
 			obj1.save()
 			obj2.save()
