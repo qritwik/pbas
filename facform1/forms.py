@@ -41,21 +41,13 @@ class form_rd(forms.ModelForm):
 
 
 
-class form_remarks1(forms.ModelForm):
+class form_remarks(forms.ModelForm):
 
 	class Meta:
 		model = remarks
-		fields = ['ta_ir', 'ta_ic', 'ta_dr','teach_status']
+		fields = '__all__'
+		exclude = ['username']
 
-class form_remarks2(forms.ModelForm):
 
-	class Meta:
-		model = remarks
-		fields = ['hod_marks1','hod_marks2','ta_hod_remarks']
 
-class form_remarks2(forms.ModelForm):
-
-	class Meta:
-		model = remarks
-		fields = ['prin_marks1','prin_marks2','ta_prin_remarks']
 		

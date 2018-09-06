@@ -70,7 +70,7 @@ def hod_form(request):
 		form2 = forms.form_empDetailForm(request.POST)
 		form3 = forms.form_feedbackTab(request.POST)
 		form4 = forms.form_rd(request.POST)
-		form5 = forms.form_remarks1(request.POST)
+		form5 = forms.form_remarks(request.POST)
 		if  form2.is_valid() and form3.is_valid() and form4.is_valid() and form5.is_valid():
 			obj = form2.save(commit=False)
 			obj1 = form3.save(commit=False)
@@ -84,7 +84,7 @@ def hod_form(request):
 			obj.save()
 			obj1.save()
 			obj2.save()
-			obj2.save()
+			obj3.save()
 
 
 			return HttpResponseRedirect("/logout/")
@@ -95,7 +95,7 @@ def hod_form(request):
 		form2 = forms.form_empDetailForm()
 		form3 = forms.form_feedbackTab()
 		form4 = forms.form_rd()
-		form5 = forms.form_remarks1()
+		form5 = forms.form_remarks()
 
 	return render(request,'hod_form.html',{'form2':form2,'form3':form3,'form4':form4,'form5':form5})
 
@@ -130,10 +130,11 @@ def f_assistant(request):
 		form2 = forms.form_empDetailForm(request.POST)
 		form3 = forms.form_feedbackTab(request.POST)
 		form4 = forms.form_rd(request.POST)
-		form5 = forms.form_remarks1(request.POST)
+		form5 = forms.form_remarks(request.POST)
 		if  form2.is_valid() and form3.is_valid() and form4.is_valid() and form5.is_valid():
+
 			
-			form5.teach_status = True
+			
 			obj = form2.save(commit=False)
 			obj1 = form3.save(commit=False)
 			obj2 = form4.save(commit=False)
@@ -147,7 +148,7 @@ def f_assistant(request):
 			obj.save()
 			obj1.save()
 			obj2.save()
-			obj2.save()
+			obj3.save()
 
 
 			return HttpResponseRedirect("/logout/")
@@ -158,7 +159,7 @@ def f_assistant(request):
 		form2 = forms.form_empDetailForm()
 		form3 = forms.form_feedbackTab()
 		form4 = forms.form_rd()
-		form5 = forms.form_remarks1()
+		form5 = forms.form_remarks()
 	return render(request,'assistant_form.html',{'form2':form2,'form3':form3,'form4':form4,'form5':form5})
 
 def f_associate(request):
@@ -166,7 +167,7 @@ def f_associate(request):
 		form2 = forms.form_empDetailForm(request.POST)
 		form3 = forms.form_feedbackTab(request.POST)
 		form4 = forms.form_rd(request.POST)
-		form5 = forms.form_remarks1(request.POST)
+		form5 = forms.form_remarks(request.POST)
 		if  form2.is_valid() and form3.is_valid() and form4.is_valid() and form5.is_valid():
 			obj = form2.save(commit=False)
 			obj1 = form3.save(commit=False)
@@ -180,7 +181,7 @@ def f_associate(request):
 			obj.save()
 			obj1.save()
 			obj2.save()
-			obj2.save()
+			obj3.save()
 
 
 			return HttpResponseRedirect("/logout/")
@@ -191,6 +192,6 @@ def f_associate(request):
 		form2 = forms.form_empDetailForm()
 		form3 = forms.form_feedbackTab()
 		form4 = forms.form_rd()
-		form5 = forms.form_remarks1()
+		form5 = forms.form_remarks()
 
 	return render(request,'associate_form.html',{'form2':form2,'form3':form3,'form4':form4,'form5':form5})
