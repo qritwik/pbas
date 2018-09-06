@@ -101,13 +101,13 @@ def hod_form(request):
 	return render(request,'hod_form.html',{'form2':form2,'form3':form3,'form4':form4,'form5':form5})
 
 def hod_display(request):
-	user = request.user
-	forms = empDetailForm.objects.filter(username__department=user.department)
-	print(forms)
-	context = {
-	"forms" : forms
-	}
-	return render(request,'hod_display.html', context)
+	# user = request.user
+	# forms = empDetailForm.objects.filter(username__department=user.department)
+	# print(forms)
+	# context = {
+	# "forms" : forms
+	# }
+	return render(request,'hod_display.html')
 
 def hod_teacher_display(request):
 	data1 = User.objects.get(username__iexact="tarun")

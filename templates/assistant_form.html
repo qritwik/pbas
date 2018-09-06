@@ -6,8 +6,11 @@
 <head>
 	<title>asp1</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 	<link rel="stylesheet" type="text/css" href={% static "css/index.css" %}>
-
+  <script type="text/javascript" src="{% static "js/calc.js" %}"></script>
 </head>
 <body>
 	<div class="container">
@@ -36,20 +39,10 @@
           </div>
           <div class="form-group col-md-3">
             <label for="">From</label>
-						<div id="datetimepicker4" class="input-append">
+	
 	 					{% render_field form2.it_f data-format="yyyy-MM-dd" class="form-control" %}
 	 					<span class="add-on">
-		 				<i data-time-icon="icon-time" data-date-icon="icon-calendar">
-		 				</i>
-	 					</span>
- 						</div>
-						<script type="text/javascript">
-  					$(function() {
-				    $('#datetimepicker4').datetimepicker({
-				      pickTime: false
-				    });
-				  	});
-						</script>
+		 			
 
 
           </div>
@@ -142,9 +135,9 @@
     <tr>
       <td>1</td>
       <td>{% render_field form3.o_t1_name class="form-control" %}</td>
-      <td class="right aligned">{% render_field form3.o_t1_f1 class="form-control" %}</td>
-      <td class="center aligned">{% render_field form3.o_t1_f2 class="form-control" %}</td>
-      <td></td>
+      <td class="right aligned">{% render_field form3.o_t1_f1 class="form-control abc"  %}</td>
+      <td class="center aligned">{% render_field form3.o_t1_f2 class="form-control cba" %}</td>
+      <td><p class="poia"></p></td>
       <td> {% render_field form3.o_t1_stu_app class="form-control" %}</td>
       <td>{% render_field form3.o_t1_stu_pass class="form-control" %}</td>
       <td></td>
@@ -893,9 +886,5 @@ Number of journal papers with Scopus/DBLP/ Google Scholar Indexed Publications<s
 <input type="submit" name="submit">
 </form>
 </div>
-
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </body>
 </html>
