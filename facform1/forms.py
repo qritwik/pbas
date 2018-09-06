@@ -19,7 +19,7 @@ class form_empDetailForm(forms.ModelForm):
 	class Meta:
 		model = empDetailForm
 		fields = '__all__'
-		exclude = ['username']
+		exclude = ['info']
 
 
 class form_feedbackTab(forms.ModelForm):
@@ -27,7 +27,7 @@ class form_feedbackTab(forms.ModelForm):
 	class Meta:
 		model = feedbackTab
 		fields = '__all__'
-		exclude = ['username']
+		exclude = ['info']
 
 
 
@@ -37,7 +37,7 @@ class form_rd(forms.ModelForm):
 	class Meta:
 		model = rd
 		fields = '__all__'
-		exclude = ['username']
+		exclude = ['info']
 
 
 
@@ -46,8 +46,4 @@ class form_remarks(forms.ModelForm):
 	class Meta:
 		model = remarks
 		fields = '__all__'
-		exclude = ['username']
-
-
-
-		
+		exclude = ['info']

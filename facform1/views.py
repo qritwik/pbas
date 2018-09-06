@@ -77,10 +77,10 @@ def hod_form(request):
 			obj2 = form4.save(commit=False)
 			obj3 = form5.save(commit=False)
 
-			obj.username = request.user
-			obj1.username = request.user
-			obj2.username = request.user
-			obj3.username = request.user
+			obj.info = request.user
+			obj1.info = request.user
+			obj2.info = request.user
+			obj3.info = request.user
 			obj.save()
 			obj1.save()
 			obj2.save()
@@ -110,8 +110,19 @@ def hod_display(request):
 	return render(request,'hod_display.html')
 
 def hod_teacher_display(request):
-	data1 = User.objects.get(username__iexact="tarun")
-	context1 = {"key1":data1}
+	data1 = User.objects.get(username="ritwik")
+	data2 = empDetailForm.objects.get(info__username="ritwik")
+	data3 = feedbackTab.objects.get(info__username="ritwik")
+	data4 = rd.objects.get(info__username="ritwik")
+	data5 = remarks.objects.get(info__username="ritwik")
+
+	context1 = {
+	"key1":data1,
+	"key2":data2,
+	"key3":data3,
+	"key4":data4,
+	"key5":data5,
+	}
 	return render(request,'hod_teacher_display.html',context1)
 
 def principal_display(request):
@@ -141,15 +152,15 @@ def f_assistant(request):
 			obj2 = form4.save(commit=False)
 			obj3 = form5.save(commit=False)
 
-			obj.username = request.user
-			obj1.username = request.user
-			obj2.username = request.user
-			obj3.username = request.user
+			obj.info = request.user
+			obj1.info = request.user
+			obj2.info = request.user
+			obj3.info = request.user
 
 			obj.save()
 			obj1.save()
 			obj2.save()
-			
+
 			obj3.teach_status = True
 
 			obj3.save()
@@ -177,10 +188,10 @@ def f_associate(request):
 			obj2 = form4.save(commit=False)
 			obj3 = form5.save(commit=False)
 
-			obj.username = request.user
-			obj1.username = request.user
-			obj2.username = request.user
-			obj3.username = request.user
+			obj.info = request.user
+			obj1.info = request.user
+			obj2.info = request.user
+			obj3.info = request.user
 			obj.save()
 			obj1.save()
 			obj2.save()

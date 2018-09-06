@@ -13,14 +13,14 @@ class UserAdmin(DjangoUserAdmin):
 
 	fieldsets = (
 		(None, {'fields': ('username', 'email', 'password')}),
-		(('Personal info'), {'fields': ('first_name', 'last_name', 'phone', 'department',)}),
+		(('Personal info'), {'fields': ('first_name', 'last_name', 'phone', 'department','info')}),
 		(('Permissions'), {'fields': ('is_active', 'is_staff', 'is_superuser',
 									   )}),
 
 		(('Designation'), {'fields': ('designation',)}),
 		(('Important dates'), {'fields': ('last_login', 'date_joined')}),
 	)
-	
+
 	list_display = ('username', 'first_name', 'last_name', 'phone', 'email')
 	search_fields = ('email', 'first_name', 'last_name', 'username', 'phone')
 	ordering = ('username',)
