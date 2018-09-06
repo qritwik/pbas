@@ -84,6 +84,7 @@ def hod_form(request):
 			obj.save()
 			obj1.save()
 			obj2.save()
+			obj3.teach_status = True
 			obj3.save()
 
 
@@ -148,12 +149,10 @@ def f_assistant(request):
 			obj.save()
 			obj1.save()
 			obj2.save()
+			
+			obj3.teach_status = True
+
 			obj3.save()
-
-			data1 = remarks.objects.get(username = request.user)
-			data1.teach_status = True
-
-			obj3.save();
 
 			return HttpResponseRedirect("/logout/")
 		else:
@@ -185,6 +184,7 @@ def f_associate(request):
 			obj.save()
 			obj1.save()
 			obj2.save()
+			obj3.teach_status = True
 			obj3.save()
 
 
