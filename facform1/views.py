@@ -7,6 +7,7 @@ import urllib.request
 from django.contrib.auth.hashers import make_password, check_password
 import random
 from django.db.models import Q
+import itertools
 
 
 
@@ -112,10 +113,13 @@ def hod_display(request):
 	hod_dept = user.department
 	hod_desg = user.designation
 	c1 = User.objects.filter(department=hod_dept).filter(~Q(designation=hod_desg))
-	# for c2 in c1:
-	# 	print(c2.first_name)
+	c2 = remarks.objects.filter(info__department=hod_dept).filter(~Q(info__designation=hod_desg))
 
-	data6 = {'v1':c1,'hod_dept':hod_dept}
+	# c3 = {c1,c2}
+	#
+	# print(c3)
+
+	data6 = {'name':c1,'hod_dept':hod_dept,'bool':c2}
 
 
 	return render(request,'hod_display.html',context=data6)
