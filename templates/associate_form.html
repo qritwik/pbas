@@ -8,14 +8,10 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href={% static "css/index.css" %}>
   <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/css/bootstrap-datepicker.css"></script>
 
-<script>
-  $('#datetimepicker').datetimepicker({
-    format: 'yyyy-mm-dd hh:ii'
-});
-  $('.datepicker').datepicker();
-  </script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script type="text/javascript" src={% static "js/asc.js" %}></script>
+
 </head>
 <body>
   <div class="container">
@@ -39,7 +35,7 @@
         <div class="form-row">
           <div class="form-group col-md-6">
             <label for="">Internship Company Name</label>
-              {% render_field form2.it_name class="form-control" data-provide="datepicker" %}
+              {% render_field form2.it_name class="form-control"  %}
           </div>
           <div class="form-group col-md-3">
             <label for="">From</label>
@@ -141,34 +137,35 @@
     <tr>
       <td>1</td>
       <td>{% render_field form3.o_t1_name class="form-control" %}</td>
-      <td class="right aligned">{% render_field form3.o_t1_f1 class="form-control" %}</td>
-      <td class="center aligned">{% render_field form3.o_t1_f2 class="form-control" %}</td>
-      <td></td>
-      <td> {% render_field form3.o_t1_stu_app class="form-control" %}</td>
-      <td>{% render_field form3.o_t1_stu_pass class="form-control" %}</td>
-      <td></td>
+      <td class="right aligned">{% render_field form3.o_t1_f1 class="form-control o_t1_f1"  %}</td>
+      <td class="center aligned">{% render_field form3.o_t1_f2 class="form-control o_t1_f2" %}</td>
+      <td><p class="o_t1_favg"></p></td>
+      <td> {% render_field form3.o_t1_stu_app class="form-control o_t1_stu_app " %}</td>
+      <td>{% render_field form3.o_t1_stu_pass class="form-control o_t1_stu_pass " %}</td>
+      <td><p class="o_t1_stu_perpass"></p></td>
     </tr>
     <tr>
       <td>2</td>
       <td>{% render_field form3.o_t2_name class="form-control" %}</td>
-      <td class="right aligned">{% render_field form3.o_t2_f1 class="form-control" %}</td>
-      <td class="center aligned">{% render_field form3.o_t2_f2 class="form-control" %}</td>
-      <td></td>
-      <td> {% render_field form3.o_t2_stu_app class="form-control" %}</td>
-      <td>{% render_field form3.o_t2_stu_pass class="form-control" %}</td>
-      <td></td>
+      <td class="right aligned">{% render_field form3.o_t2_f1 class="form-control o_t2_f1" %}</td>
+      <td class="center aligned">{% render_field form3.o_t2_f2 class="form-control o_t2_f2" %}</td>
+      <td><p class="o_t2_favg"></p></td>
+      <td> {% render_field form3.o_t2_stu_app class="form-control o_t2_stu_app" %}</td>
+      <td>{% render_field form3.o_t2_stu_pass class="form-control o_t2_stu_pass" %}</td>
+      <td><p class="o_t2_stu_perpass"></p></td>
     </tr>
     <tr>
       <tr>
       <td>3</td>
       <td>{% render_field form3.o_t3_name class="form-control" %}</td>
-      <td class="right aligned">{% render_field form3.o_t3_f1 class="form-control" %}</td>
-      <td class="center aligned">{% render_field form3.o_t3_f2 class="form-control" %}</td>
-      <td></td>
-      <td> {% render_field form3.o_t3_stu_app class="form-control" %}</td>
-      <td>{% render_field form3.o_t3_stu_pass class="form-control" %}</td>
-      <td></td>
+      <td class="right aligned">{% render_field form3.o_t3_f1 class="form-control o_t3_f1" %}</td>
+      <td class="center aligned">{% render_field form3.o_t3_f2 class="form-control o_t3_f2" %}</td>
+      <td><p class="o_t3_favg"></p></td>
+      <td> {% render_field form3.o_t3_stu_app class="form-control o_t3_stu_app" %}</td>
+      <td>{% render_field form3.o_t3_stu_pass class="form-control o_t3_stu_pass" %}</td>
+      <td><p class="o_t3_stu_perpass"></p></td>
     </tr>
+
   </tbody>
 </table>
 <div class="container-fluid">
@@ -176,11 +173,11 @@
 
 <div class="form-group col-sm-6">
 <label >TOTAL FEEDBACK AVG. </label>
-<input type="text" class="form-control">
+<input type="text" class="form-control o_t_avg">
 </div>
 <div class="form-group col-sm-6">
 <label >TOTAL RESULTS AVG.</label>
-<input type="text" class="form-control">
+<input type="text" class="form-control o_tr_avg">
 </div>
 </div>
 <div class="row">
@@ -190,7 +187,7 @@
 </div>
 <div class="form-group col-sm-4">
 
-<button type="button" class="btn btn-info btn-lg btn-block">Calculate</button>
+<input type="button" class="btn btn-info btn-lg btn-block o_t" value="Calculate" >
 </div>
 <div class="form-group col-sm-4">
 
@@ -219,52 +216,52 @@
     <tr>
       <td>1</td>
       <td>{% render_field form3.o_l1_name class="form-control" %}</td>
-      <td class="right aligned">{% render_field form3.o_l1_f1 class="form-control" %}</td>
-      <td class="center aligned">{% render_field form3.o_l1_f2 class="form-control" %}</td>
-      <td></td>
-      <td> {% render_field form3.o_l1_stu_app class="form-control" %}</td>
-      <td>{% render_field form3.o_l1_stu_pass class="form-control" %}</td>
-      <td></td>
+      <td class="right aligned">{% render_field form3.o_l1_f1 class="form-control o_l1_f1" %}</td>
+      <td class="center aligned">{% render_field form3.o_l1_f2 class="form-control o_l1_f2" %}</td>
+      <td><p class="o_l1_favg"></p></td>
+      <td> {% render_field form3.o_l1_stu_app class="form-control o_l1_stu_app" %}</td>
+      <td>{% render_field form3.o_l1_stu_pass class="form-control o_l1_stu_pass" %}</td>
+      <td><p class="o_l1_stu_perpass"></p></td>
     </tr>
     <tr>
       <td>2</td>
       <td>{% render_field form3.o_l2_name class="form-control" %}</td>
-      <td class="right aligned">{% render_field form3.o_l2_f1 class="form-control" %}</td>
-      <td class="center aligned">{% render_field form3.o_l2_f2 class="form-control" %}</td>
-      <td></td>
-      <td> {% render_field form3.o_l2_stu_app class="form-control" %}</td>
-      <td>{% render_field form3.o_l2_stu_pass class="form-control" %}</td>
-      <td></td>
+      <td class="right aligned">{% render_field form3.o_l2_f1 class="form-control o_l2_f1" %}</td>
+      <td class="center aligned">{% render_field form3.o_l2_f2 class="form-control o_l2_f2" %}</td>
+      <td><p class="o_l2_favg"></p></td>
+      <td> {% render_field form3.o_l2_stu_app class="form-control o_l2_stu_app" %}</td>
+      <td>{% render_field form3.o_l2_stu_pass class="form-control o_l2_stu_pass" %}</td>
+      <td><p class="o_l2_stu_perpass"></p></td>
     </tr>
      <tr>
       <td>3</td>
       <td>{% render_field form3.o_l3_name class="form-control" %}</td>
-      <td class="right aligned">{% render_field form3.o_l3_f1 class="form-control" %}</td>
-      <td class="center aligned">{% render_field form3.o_l3_f2 class="form-control" %}</td>
-      <td></td>
-      <td> {% render_field form3.o_l3_stu_app class="form-control" %}</td>
-      <td>{% render_field form3.o_l3_stu_pass class="form-control" %}</td>
-      <td></td>
+      <td class="right aligned">{% render_field form3.o_l3_f1 class="form-control o_l3_f1" %}</td>
+      <td class="center aligned">{% render_field form3.o_l3_f2 class="form-control o_l3_f2" %}</td>
+      <td><p class="o_l3_favg"></p></td>
+      <td> {% render_field form3.o_l3_stu_app class="form-control o_l3_stu_app" %}</td>
+      <td>{% render_field form3.o_l3_stu_pass class="form-control o_l3_stu_pass" %}</td>
+      <td><p class="o_l3_stu_perpass"></p></td>
     </tr>
     <tr>
       <td>4</td>
       <td>{% render_field form3.o_l4_name class="form-control" %}</td>
-      <td class="right aligned">{% render_field form3.o_l4_f1 class="form-control" %}</td>
-      <td class="center aligned">{% render_field form3.o_l4_f2 class="form-control" %}</td>
-      <td></td>
-      <td> {% render_field form3.o_l4_stu_app class="form-control" %}</td>
-      <td>{% render_field form3.o_l4_stu_pass class="form-control" %}</td>
-      <td></td>
+      <td class="right aligned">{% render_field form3.o_l4_f1 class="form-control o_l4_f1" %}</td>
+      <td class="center aligned">{% render_field form3.o_l4_f2 class="form-control o_l4_f2" %}</td>
+      <td><p class="o_l4_favg"></p></td>
+      <td> {% render_field form3.o_l4_stu_app class="form-control o_l4_stu_app" %}</td>
+      <td>{% render_field form3.o_l4_stu_pass class="form-control o_l4_stu_pass" %}</td>
+      <td><p class="o_l4_stu_perpass"></p></td>
     </tr>
     <tr>
       <td>5</td>
       <td>{% render_field form3.o_l5_name class="form-control" %}</td>
-      <td class="right aligned">{% render_field form3.o_l5_f1 class="form-control" %}</td>
-      <td class="center aligned">{% render_field form3.o_l5_f2 class="form-control" %}</td>
-      <td></td>
-      <td> {% render_field form3.o_l5_stu_app class="form-control" %}</td>
-      <td>{% render_field form3.o_l5_stu_pass class="form-control" %}</td>
-      <td></td>
+      <td class="right aligned">{% render_field form3.o_l5_f1 class="form-control o_l5_f1" %}</td>
+      <td class="center aligned">{% render_field form3.o_l5_f2 class="form-control o_l5_f2" %}</td>
+      <td><p class="o_l5_favg"></p></td>
+      <td> {% render_field form3.o_l5_stu_app class="form-control o_l5_stu_app" %}</td>
+      <td>{% render_field form3.o_l5_stu_pass class="form-control o_l5_stu_pass" %}</td>
+      <td><p class="o_l5_stu_perpass"></p></td>
     </tr>
   </tbody>
 </table>
@@ -273,11 +270,11 @@
 
 <div class="form-group col-sm-6">
 <label >TOTAL FEEDBACK AVG. </label>
-<input type="text" class="form-control">
+<input type="text" class="form-control o_l_avg">
 </div>
 <div class="form-group col-sm-6">
 <label >TOTAL RESULTS AVG.</label>
-<input type="text" class="form-control">
+<input type="text" class="form-control o_tr_avg">
 </div>
 </div>
 <div class="row">
@@ -287,7 +284,7 @@
 </div>
 <div class="form-group col-sm-4">
 
-<button type="button" class="btn btn-info btn-lg btn-block">Calculate</button>
+<input type="button" class="btn btn-info btn-lg btn-block o_l" value="Calculate" >
 </div>
 <div class="form-group col-sm-4">
 
@@ -327,32 +324,32 @@
    <tr>
       <td>1</td>
       <td>{% render_field form3.e_t1_name class="form-control" %}</td>
-      <td class="right aligned">{% render_field form3.e_t1_f1 class="form-control" %}</td>
-      <td class="center aligned">{% render_field form3.e_t1_f2 class="form-control" %}</td>
-      <td></td>
-      <td> {% render_field form3.e_t1_stu_app class="form-control" %}</td>
-      <td>{% render_field form3.e_t1_stu_pass class="form-control" %}</td>
-      <td></td>
+      <td class="right aligned">{% render_field form3.e_t1_f1 class="form-control e_t1_f1" %}</td>
+      <td class="center aligned">{% render_field form3.e_t1_f2 class="form-control e_t1_f2" %}</td>
+      <td><p class="e_t1_favg"></p></td>
+      <td> {% render_field form3.e_t1_stu_app class="form-control e_t1_stu_app" %}</td>
+      <td>{% render_field form3.e_t1_stu_pass class="form-control e_t1_stu_pass" %}</td>
+      <td><p class="e_t1_stu_perpass"></p></td>
     </tr>
      <tr>
       <td>2</td>
       <td>{% render_field form3.e_t2_name class="form-control" %}</td>
-      <td class="right aligned">{% render_field form3.e_t2_f1 class="form-control" %}</td>
-      <td class="center aligned">{% render_field form3.e_t2_f2 class="form-control" %}</td>
-      <td></td>
-      <td> {% render_field form3.e_t2_stu_app class="form-control" %}</td>
-      <td>{% render_field form3.e_t2_stu_pass class="form-control" %}</td>
-      <td></td>
+      <td class="right aligned">{% render_field form3.e_t2_f1 class="form-control e_t2_f1" %}</td>
+      <td class="center aligned">{% render_field form3.e_t2_f2 class="form-control e_t2_f2" %}</td>
+      <td><p class="e_t2_favg"></p></td>
+      <td> {% render_field form3.e_t2_stu_app class="form-control e_t2_stu_app" %}</td>
+      <td>{% render_field form3.e_t2_stu_pass class="form-control e_t2_stu_pass" %}</td>
+      <td><p class="e_t2_stu_perpass"></p></td>
     </tr>
      <tr>
       <td>3</td>
       <td>{% render_field form3.e_t3_name class="form-control" %}</td>
-      <td class="right aligned">{% render_field form3.e_t3_f1 class="form-control" %}</td>
-      <td class="center aligned">{% render_field form3.e_t3_f2 class="form-control" %}</td>
-      <td></td>
-      <td> {% render_field form3.e_t3_stu_app class="form-control" %}</td>
-      <td>{% render_field form3.e_t3_stu_pass class="form-control" %}</td>
-      <td></td>
+      <td class="right aligned">{% render_field form3.e_t3_f1 class="form-control e_t3_f1" %}</td>
+      <td class="center aligned">{% render_field form3.e_t3_f2 class="form-control e_t3_f2" %}</td>
+      <td><p class="e_t3_favg"></p></td>
+      <td> {% render_field form3.e_t3_stu_app class="form-control e_t3_stu_app" %}</td>
+      <td>{% render_field form3.e_t3_stu_pass class="form-control e_t3_stu_pass" %}</td>
+      <td><p class="e_t3_stu_perpass"></p></td>
     </tr>
   </tbody>
 </table>
@@ -361,11 +358,11 @@
 
 <div class="form-group col-sm-6">
 <label >TOTAL FEEDBACK AVG. </label>
-<input type="text" class="form-control">
+<input type="text" class="form-control e_t_avg">
 </div>
 <div class="form-group col-sm-6">
 <label >TOTAL RESULTS AVG.</label>
-<input type="text" class="form-control">
+<input type="text" class="form-control e_tr_avg">
 </div>
 </div>
 <div class="row">
@@ -375,7 +372,7 @@
 </div>
 <div class="form-group col-sm-4">
 
-<button type="button" class="btn btn-info btn-lg btn-block">Calculate</button>
+<input type="button" class="btn btn-info btn-lg btn-block e_t" value="Calculate" >
 </div>
 <div class="form-group col-sm-4">
 
@@ -403,53 +400,53 @@
     <tr>
       <td>1</td>
       <td>{% render_field form3.e_l1_name class="form-control" %}</td>
-      <td class="right aligned">{% render_field form3.e_l1_f1 class="form-control" %}</td>
-      <td class="center aligned">{% render_field form3.e_l1_f2 class="form-control" %}</td>
-      <td></td>
-      <td> {% render_field form3.e_l1_stu_app class="form-control" %}</td>
-      <td>{% render_field form3.e_l1_stu_pass class="form-control" %}</td>
-      <td></td>
+      <td class="right aligned">{% render_field form3.e_l1_f1 class="form-control e_l1_f1" %}</td>
+      <td class="center aligned">{% render_field form3.e_l1_f2 class="form-control e_l1_f2" %}</td>
+      <td><p class="e_l1_favg"></p></td>
+      <td> {% render_field form3.e_l1_stu_app class="form-control e_l1_stu_app" %}</td>
+      <td>{% render_field form3.e_l1_stu_pass class="form-control e_l1_stu_pass" %}</td>
+      <td><p class="e_l1_stu_perpass"></p></td>
     </tr>
      <tr>
       <td>2</td>
       <td>{% render_field form3.e_l2_name class="form-control" %}</td>
-      <td class="right aligned">{% render_field form3.e_l2_f1 class="form-control" %}</td>
-      <td class="center aligned">{% render_field form3.e_l2_f2 class="form-control" %}</td>
-      <td></td>
-      <td> {% render_field form3.e_l2_stu_app class="form-control" %}</td>
-      <td>{% render_field form3.e_l2_stu_pass class="form-control" %}</td>
-      <td></td>
+      <td class="right aligned">{% render_field form3.e_l2_f1 class="form-control e_l2_f1" %}</td>
+      <td class="center aligned">{% render_field form3.e_l2_f2 class="form-control e_l2_f2" %}</td>
+      <td><p class="e_l2_favg"></p></td>
+      <td> {% render_field form3.e_l2_stu_app class="form-control e_l2_stu_app" %}</td>
+      <td>{% render_field form3.e_l2_stu_pass class="form-control e_l2_stu_pass" %}</td>
+      <td><p class="e_l2_stu_perpass"></p></td>
     </tr>
      <tr>
       <td>3</td>
       <td>{% render_field form3.e_l3_name class="form-control" %}</td>
-      <td class="right aligned">{% render_field form3.e_l3_f1 class="form-control" %}</td>
-      <td class="center aligned">{% render_field form3.e_l3_f2 class="form-control" %}</td>
-      <td></td>
-      <td> {% render_field form3.e_l3_stu_app class="form-control" %}</td>
-      <td>{% render_field form3.e_l3_stu_pass class="form-control" %}</td>
-      <td></td>
+      <td class="right aligned">{% render_field form3.e_l3_f1 class="form-control e_l3_f1" %}</td>
+      <td class="center aligned">{% render_field form3.e_l3_f2 class="form-control e_l3_f2" %}</td>
+      <td><p class="e_l3_favg"></p></td>
+      <td> {% render_field form3.e_l3_stu_app class="form-control e_l3_stu_app" %}</td>
+      <td>{% render_field form3.e_l3_stu_pass class="form-control e_l3_stu_pass" %}</td>
+      <td><p class="e_l3_stu_perpass"></p></td>
     </tr>
     <tr>
      <tr>
       <td>4</td>
       <td>{% render_field form3.e_l4_name class="form-control" %}</td>
-      <td class="right aligned">{% render_field form3.e_l4_f1 class="form-control" %}</td>
-      <td class="center aligned">{% render_field form3.e_l4_f2 class="form-control" %}</td>
-      <td></td>
-      <td> {% render_field form3.e_l4_stu_app class="form-control" %}</td>
-      <td>{% render_field form3.e_l4_stu_pass class="form-control" %}</td>
-      <td></td>
+      <td class="right aligned">{% render_field form3.e_l4_f1 class="form-control e_l4_f1" %}</td>
+      <td class="center aligned">{% render_field form3.e_l4_f2 class="form-control e_l4_f2" %}</td>
+      <td><p class="e_l4_favg"></p></td>
+      <td> {% render_field form3.e_l4_stu_app class="form-control e_l4_stu_app" %}</td>
+      <td>{% render_field form3.e_l4_stu_pass class="form-control e_l4_stu_pass" %}</td>
+      <td><p class="e_l4_stu_perpass"></p></td>
     </tr>
     <tr>
       <td>5</td>
       <td>{% render_field form3.e_l5_name class="form-control" %}</td>
-      <td class="right aligned">{% render_field form3.e_l5_f1 class="form-control" %}</td>
-      <td class="center aligned">{% render_field form3.e_l5_f2 class="form-control" %}</td>
-      <td></td>
-      <td> {% render_field form3.e_l5_stu_app class="form-control" %}</td>
-      <td>{% render_field form3.e_l5_stu_pass class="form-control" %}</td>
-      <td></td>
+      <td class="right aligned">{% render_field form3.e_l5_f1 class="form-control e_l5_f1" %}</td>
+      <td class="center aligned">{% render_field form3.e_l5_f2 class="form-control e_l5_f2" %}</td>
+      <td><p class="e_l5_favg"></p></td>
+      <td> {% render_field form3.e_l5_stu_app class="form-control e_l5_stu_app" %}</td>
+      <td>{% render_field form3.e_l5_stu_pass class="form-control e_l5_stu_pass" %}</td>
+      <td><p class="e_l5_stu_perpass"></p></td>
     </tr>
   </tbody>
 </table>
@@ -458,11 +455,11 @@
 
 <div class="form-group col-sm-6">
 <label >TOTAL FEEDBACK AVG. </label>
-<input type="text" class="form-control">
+<input type="text" class="form-control e_l_avg">
 </div>
 <div class="form-group col-sm-6">
 <label >TOTAL RESULTS AVG.</label>
-<input type="text" class="form-control">
+<input type="text" class="form-control e_lr_avg">
 </div>
 </div>
 <div class="row">
@@ -472,7 +469,7 @@
 </div>
 <div class="form-group col-sm-4">
 
-<button type="button" class="btn btn-info btn-lg btn-block">Calculate</button>
+<input type="button" class="btn btn-info btn-lg btn-block e_t" value="Calculate" >
 </div>
 <div class="form-group col-sm-4">
 
@@ -508,16 +505,16 @@
     <tr>
       <td>1</td>
       <td>{% render_field form3.p1_name class="form-control" %}</td>
-      <td class="right aligned">{% render_field form3.p1_f1 class="form-control" %}</td>
-      <td class="center aligned">{% render_field form3.p1_f2 class="form-control" %}</td>
-      <td></td>
+      <td class="right aligned">{% render_field form3.p1_f1 class="form-control p1_f1" %}</td>
+      <td class="center aligned">{% render_field form3.p1_f2 class="form-control p1_f2" %}</td>
+      <td><p class="p1_favg"></p></td>
     </tr>
      <tr>
       <td>2</td>
       <td>{% render_field form3.p2_name class="form-control" %}</td>
-      <td class="right aligned">{% render_field form3.p2_f1 class="form-control" %}</td>
-      <td class="center aligned">{% render_field form3.p2_f2 class="form-control" %}</td>
-      <td></td>
+      <td class="right aligned">{% render_field form3.p2_f1 class="form-control p2_f1" %}</td>
+      <td class="center aligned">{% render_field form3.p2_f2 class="form-control p2_f2" %}</td>
+      <td><p class="p2_favg"></p></td>
     </tr>
 </tbody>
 </table>
@@ -528,14 +525,14 @@
 <div class="form-group col-sm-4">
 <label > </label>
 
-<button type="button" class="btn btn-info btn-lg btn-block">Calculate</button>
+<input type="button" class="btn btn-info btn-lg btn-block e_p" value="Calculate" >
 
 </div>
 <div class="form-group col-sm-1">
 </div>
 <div class="form-group col-sm-6">
 <label >TOTAL FEEDBACK AVG.</label>
-<input type="text" class="form-control">
+<input type="text" class="form-control p_avg">
 </div>
 </div>
 </div>
@@ -548,12 +545,12 @@
 <div class="col-1"></div>
 <div class="col-10">
  <div class="form-row dis">
-               <div class="orm-group col-md-6">
+               <div class="form-group col-md-6">
               <h6 class="po color1">TOTAL MARKS<span class="sp">_(Maximum Score: 30)</span></h6>
                </div>
 
-                  <div class="orm-group col-md-6">
-                        <input type="text" class="form-control"  placeholder="Calculated Marks" >
+                  <div class="form-group col-md-6">
+                        <input type="text" class="form-control f_marks"  placeholder="Calculated Marks" >
                         </div>
                     </div>
 </div>
@@ -567,7 +564,8 @@
 
 
 
-   <button type="button" class="btn btn-success btn-lg btn-block">Calculate</button>
+<input type="button" class="btn btn-info btn-lg btn-block f_calc" value="Calculate" >
+   
 
 
 
@@ -602,7 +600,7 @@
           </div>
         <div class="form-group col-md-6">
 
-            {% render_field form4.w_s_d class="form-control" %}
+            {% render_field form4.w_s_d class="form-control w_s_d" %}
         </div>
 
 
@@ -615,7 +613,7 @@
           </div>
         <div class="form-group col-md-6">
 
-            {% render_field form4.w_n_d class="form-control" %}
+            {% render_field form4.w_n_d class="form-control w_n_d" %}
         </div>
 
 
@@ -630,7 +628,7 @@
           </div>
         <div class="form-group col-md-6">
 
-            {% render_field form4.w_i_d class="form-control" %}
+            {% render_field form4.w_i_d class="form-control w_i_d" %}
         </div>
 
 
@@ -650,7 +648,7 @@
               </div>
                     <div class="form-group col-md-2"></div>
                   <div class="orm-group col-md-6">
-                        <input type="text" class="form-control"  placeholder="Calculated Marks" >
+                        <input type="text" class="form-control w_s"  placeholder="Calculated Marks" >
                         </div>
                     </div>
 
@@ -676,7 +674,7 @@
           </div>
         <div class="form-group col-md-6">
 
-            {% render_field form4.p_s_d class="form-control" %}
+            {% render_field form4.p_s_d class="form-control p_s_d" %}
         </div>
 
     </div>
@@ -688,7 +686,7 @@
           </div>
         <div class="form-group col-md-6">
 
-            {% render_field form4.p_n_d class="form-control" %}
+            {% render_field form4.p_n_d class="form-control p_n_d" %}
 
         </div>
 
@@ -702,7 +700,7 @@
           </div>
         <div class="form-group col-md-6">
 
-            {% render_field form4.p_i_d class="form-control" %}
+            {% render_field form4.p_i_d class="form-control p_i_d" %}
 
         </div>
 
@@ -723,7 +721,7 @@
                   </div>
                         <div class="form-group col-md-2"></div>
                       <div class="orm-group col-md-6">
-                            <input type="text" class="form-control"  placeholder="Calculated Marks" >
+                            <input type="text" class="form-control p_s"  placeholder="Calculated Marks" >
                             </div>
                         </div>
 
@@ -743,10 +741,10 @@
     <div class="form-group">
     <div class="form-row dis">
    <div class="form-group col-md-6">
-            {% render_field form4.onl_course_c class="form-control" %}
+            {% render_field form4.onl_course_c class="form-control onl_course_c" %}
         </div>
         <div class="form-group col-md-6">
-                        <input type="text" class="form-control"  placeholder="Calculated Marks (5 m/course)" ></div>
+                        <input type="text" class="form-control o_m"  placeholder="Calculated Marks (5 m/course)" ></div>
   </div>
 </div>
 </div>
@@ -964,7 +962,7 @@
           </div>
         <div class="form-group col-md-6">
 
-           {% render_field form4.book_i class="form-control" %}
+           {% render_field form4.book_i class="form-control book_i" %}
         </div>
     </div>
 
@@ -975,7 +973,7 @@
           </div>
         <div class="form-group col-md-6">
 
-            {% render_field form4.book_n class="form-control" %}
+            {% render_field form4.book_n class="form-control book_n" %}
         </div>
     </div>
 
@@ -986,7 +984,7 @@
           </div>
         <div class="form-group col-md-6">
 
-             {% render_field form4.book_ci class="form-control" %}
+             {% render_field form4.book_ci class="form-control book_ci" %}
         </div>
     </div>
 
@@ -996,7 +994,7 @@
 
           </div>
         <div class="form-group col-md-6">
-        {% render_field form4.book_cn class="form-control" %}
+        {% render_field form4.book_cn class="form-control book_cn" %}
         </div>
     </div>
 
@@ -1007,7 +1005,7 @@
           </div>
         <div class="form-group col-md-6">
 
-             {% render_field form4.book_ai class="form-control" %}
+             {% render_field form4.book_ai class="form-control book_ai" %}
         </div>
     </div>
 
@@ -1018,7 +1016,7 @@
           </div>
         <div class="form-group col-md-6">
 
-             {% render_field form4.book_nm class="form-control" %}
+             {% render_field form4.book_nm class="form-control book_nm" %}
         </div>
     </div>
 
@@ -1036,7 +1034,7 @@
                   </div>
                         <div class="form-group col-md-2"></div>
                       <div class="orm-group col-md-6">
-                            <input type="text" class="form-control"  placeholder="Calculated Marks" >
+                            <input type="text" class="form-control b_t"  placeholder="Calculated Marks" >
                             </div>
                         </div>
 
@@ -1071,21 +1069,21 @@
   <tbody>
     <tr>
       <th scope="row">Internally Funded<span class="sp"> 5 marks/project</span></th>
-      <td> {% render_field form4.if_s class="form-control" %}</td>
-      <td>{% render_field form4.if_f class="form-control" %}</td>
-      <td>{% render_field form4.if_c class="form-control" %}</td>
+      <td> {% render_field form4.if_s class="form-control if_s" %}</td>
+      <td>{% render_field form4.if_f class="form-control if_f" %}</td>
+      <td>{% render_field form4.if_c class="form-control if_c" %}</td>
     </tr>
     <tr>
       <th scope="row">Externally Funded Less than 5Lakhs<span class="sp">( 5 marks/project )</span> </th>
-       <td> {% render_field form4.ef_s class="form-control" %}</td>
-      <td>{% render_field form4.ef_f class="form-control" %}</td>
-      <td>{% render_field form4.ef_c class="form-control" %}</td>
+       <td> {% render_field form4.ef_s class="form-control ef_s" %}</td>
+      <td>{% render_field form4.ef_f class="form-control ef_f" %}</td>
+      <td>{% render_field form4.ef_c class="form-control ef_c" %}</td>
     </tr>
     <tr>
       <th scope="row">Externally Funded Btw 5Lakhs to 10Lakhs<span class="sp"> 10 marks/project</span> </th>
-      <td> {% render_field form4.eef_s class="form-control" %}</td>
-      <td>{% render_field form4.eef_f class="form-control" %}</td>
-      <td>{% render_field form4.eef_c class="form-control" %}</td>
+      <td> {% render_field form4.eef_s class="form-control eef_s" %}</td>
+      <td>{% render_field form4.eef_f class="form-control eef_f" %}</td>
+      <td>{% render_field form4.eef_c class="form-control eef_c" %}</td>
     </tr>
   </tbody>
 </table>
@@ -1102,9 +1100,9 @@
   <tbody>
     <tr>
       <th scope="row">Consultancy Work</th>
-      <td> {% render_field form4.Cw_2 class="form-control" %}</td>
-      <td>{% render_field form4.Cw_2_5 class="form-control" %}</td>
-      <td>{% render_field form4.Cw_5 class="form-control" %}</td>
+      <td> {% render_field form4.Cw_2 class="form-control cw_2" %}</td>
+      <td>{% render_field form4.Cw_2_5 class="form-control cw_2_5" %}</td>
+      <td>{% render_field form4.Cw_5 class="form-control cw_5" %}</td>
     </tr>
     </tbody>
 </table>
@@ -1165,7 +1163,7 @@
                 </div>
                       <div class="form-group col-md-2"></div>
                     <div class="orm-group col-md-6">
-                          <input type="text" class="form-control"  placeholder="Calculated Marks" >
+                          <input type="text" class="form-control rp_m"  placeholder="Calculated Marks" >
                           </div>
                       </div>
 
@@ -1191,7 +1189,7 @@
                </div>
 
                   <div class="orm-group col-md-6">
-                        <input type="text" class="form-control"  placeholder="Calculated Marks" >
+                        <input type="text" class="form-control r_marks"  placeholder="Calculated Marks" >
                         </div>
                     </div>
 </div>
@@ -1205,7 +1203,7 @@
 
 
 
-   <button type="button" class="btn btn-success btn-lg btn-block">Calculate</button>
+   <input type="button" class="btn btn-success btn-lg btn-block rd" value="Calculate">
 
 
 

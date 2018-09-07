@@ -583,10 +583,10 @@ $('.f_calc').on("click",function(){
 		f_marks = 10;
 
 	else if(a>80 && a<=90)
-		f_marks = 12;
+		f_marks = 15;
 
 	else if(a>90)
-		f_marks = 15;
+		f_marks = 20;
 
 
 	if(b<60){
@@ -599,10 +599,10 @@ $('.f_calc').on("click",function(){
 		f_marks = f_marks + 10;
 
 	else if(b>80 && b<=90)
-		f_marks = f_marks+ 12;
+		f_marks = f_marks+ 15;
 
 	else if(b>90)
-		f_marks = f_marks+15;
+		f_marks = f_marks+20;
 
 
 	$('.f_marks').val(f_marks);
