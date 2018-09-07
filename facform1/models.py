@@ -47,7 +47,7 @@ class User(AbstractUser):
 		return False
 
 	def is_hod(self):
-		faculty = Designation.objects.get(name="HOD")
+		faculty = Designation.objects.get(name="hod")
 		faculty1 = str(faculty)
 		faculty2 = str(self.designation.name)
 		if faculty1 == faculty2:

@@ -6,6 +6,7 @@ import urllib.parse as ap
 import urllib.request
 from django.contrib.auth.hashers import make_password, check_password
 import random
+from django.db.models import Q
 
 
 
@@ -39,7 +40,7 @@ def login(request):
 
 def decide_view(request):
 	if request.user.is_assistant_professor():
-		print('assis')
+		# print('assis')
 		return HttpResponseRedirect("/assistant_form/")
 
 	elif request.user.is_associate_professor():
@@ -47,7 +48,7 @@ def decide_view(request):
 		return HttpResponseRedirect("/associate_form/")
 
 	elif request.user.is_hod():
-		print('hod')
+		# print('hod')
 		return HttpResponseRedirect("/hod_first/")
 
 	elif request.user.is_principal():
@@ -107,7 +108,17 @@ def hod_display(request):
 	# context = {
 	# "forms" : forms
 	# }
-	return render(request,'hod_display.html')
+	user = request.user
+	hod_dept = user.department
+	hod_desg = user.designation
+	c1 = User.objects.filter(department=hod_dept).filter(~Q(designation=hod_desg))
+	# for c2 in c1:
+	# 	print(c2.first_name)
+
+	data6 = {'v1':c1,'hod_dept':hod_dept}
+
+
+	return render(request,'hod_display.html',context=data6)
 
 def hod_teacher_display(request):
 	data1 = User.objects.get(username="ritwik")
@@ -123,7 +134,7 @@ def hod_teacher_display(request):
 	"key4":data4,
 	"key5":data5,
 	}
-	return render(request,'hod_teacher_display.html',context1)
+	return render(request,'hod_teacher_display.html',context=context1)
 
 def principal_display(request):
 	return render(request,'principal_display.html')
