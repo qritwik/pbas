@@ -20,10 +20,10 @@
 <body>
   <div class="container">
 
-      <div class="card poi">
+      <div class="card poi" style="background: #ddccaa">
         <div class="form-row">
         <div class="form-group col-md-3">
-        <img src={% static "image/logo.png" %} class="img-thumbnail" width="150px"/>
+        <img src={% static "image/bms.logo.png" %} class="" width="150px"/>
       </div>
         <div class="form-group col-md-9">
         <h2 class="display-4 al" >BMS Institute of Technology&Management</h2>
@@ -55,7 +55,7 @@
             <input type="email" class="form-control" id="inputEmpName" placeholder="EmpName" value="{{ first_name }}">
           </div>
         <div class="form-group col-md-6">
-            <label for="inputEmployeeIdNo">Username</label>
+            <label for="inputEmployeeIdNo">Employee IdNo</label>
             <input type="text" class="form-control" id="inputEmployeeIdNo" placeholder="EmployeeIdNo" value="{{emp_id}}">
         </div>
         <div class="form-group col-md-6">
@@ -69,11 +69,11 @@
         <div class="form-group col-md-12">
           <label for="inputDOJ">DOJ</label>
             {% render_field form2.doj class="form-control" %}
-        </div> 
+        </div>
         <div class="form-group col-md-6">
           <label for="inputPresentPosition">PresentPosition</label>
             {% render_field form2.Present_pos class="form-control" %}
-        </div> 
+        </div>
         <div class="form-group col-md-6">
           <label for="inputHeldFrom">HeldFrom</label>
           {% render_field form2.Held_from class="form-control" %}
@@ -112,7 +112,14 @@
 
 <div class="card poi">
 
-    <h4>Odd Semester</h4>
+     <div class="card-header" id="headingTwo">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+
+1A: ODD SEMESTER
+        </button>
+      </h5>
+    </div>
   <table class="table table-bordered">
   <thead>
     <tr>
@@ -164,6 +171,32 @@
     </tr>
   </tbody>
 </table>
+<div class="container-fluid">
+<div class="row">
+
+<div class="form-group col-sm-6">
+<label >TOTAL FEEDBACK AVG. </label>
+<input type="text" class="form-control">
+</div>
+<div class="form-group col-sm-6">
+<label >TOTAL RESULTS AVG.</label>
+<input type="text" class="form-control">
+</div>
+</div>
+<div class="row">
+
+<div class="form-group col-sm-4">
+
+</div>
+<div class="form-group col-sm-4">
+
+<button type="button" class="btn btn-info btn-lg btn-block">Calculate</button>
+</div>
+<div class="form-group col-sm-4">
+
+</div>
+</div>
+</div>
 
 <table class="table-bordered table">
   <thead>
@@ -235,12 +268,44 @@
     </tr>
   </tbody>
 </table>
+<div class="container-fluid">
+<div class="row">
 
+<div class="form-group col-sm-6">
+<label >TOTAL FEEDBACK AVG. </label>
+<input type="text" class="form-control">
+</div>
+<div class="form-group col-sm-6">
+<label >TOTAL RESULTS AVG.</label>
+<input type="text" class="form-control">
+</div>
+</div>
+<div class="row">
+
+<div class="form-group col-sm-4">
+
+</div>
+<div class="form-group col-sm-4">
+
+<button type="button" class="btn btn-info btn-lg btn-block">Calculate</button>
+</div>
+<div class="form-group col-sm-4">
+
+</div>
+</div>
+</div>
 </div>
 
 <div class="card poi1">
 
-   <h4>Even Semester</h4>
+    <div class="card-header" id="headingTwo">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+
+1B: EVEN SEMESTER
+        </button>
+      </h5>
+    </div>
   <table class="table-bordered table">
   <thead>
     <tr>
@@ -291,7 +356,32 @@
     </tr>
   </tbody>
 </table>
+<div class="container-fluid">
+<div class="row">
 
+<div class="form-group col-sm-6">
+<label >TOTAL FEEDBACK AVG. </label>
+<input type="text" class="form-control">
+</div>
+<div class="form-group col-sm-6">
+<label >TOTAL RESULTS AVG.</label>
+<input type="text" class="form-control">
+</div>
+</div>
+<div class="row">
+
+<div class="form-group col-sm-4">
+
+</div>
+<div class="form-group col-sm-4">
+
+<button type="button" class="btn btn-info btn-lg btn-block">Calculate</button>
+</div>
+<div class="form-group col-sm-4">
+
+</div>
+</div>
+</div>
 <table class="table-bordered table">
   <thead>
     <tr>
@@ -363,12 +453,44 @@
     </tr>
   </tbody>
 </table>
+<div class="container-fluid">
+<div class="row">
 
+<div class="form-group col-sm-6">
+<label >TOTAL FEEDBACK AVG. </label>
+<input type="text" class="form-control">
+</div>
+<div class="form-group col-sm-6">
+<label >TOTAL RESULTS AVG.</label>
+<input type="text" class="form-control">
+</div>
+</div>
+<div class="row">
+
+<div class="form-group col-sm-4">
+
+</div>
+<div class="form-group col-sm-4">
+
+<button type="button" class="btn btn-info btn-lg btn-block">Calculate</button>
+</div>
+<div class="form-group col-sm-4">
+
+</div>
+</div>
+</div>
 </div>
 
 <div class="card poi">
 
-   <h4>Project Guided</h4>
+    <div class="card-header" id="headingTwo">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+
+1C: Project Guided
+        </button>
+      </h5>
+    </div>
   <table class="table-bordered table">
   <thead>
     <tr>
@@ -399,128 +521,248 @@
     </tr>
 </tbody>
 </table>
+<div class="container-fluid">
+<div class="row">
+<div class="form-group col-sm-1">
+</div>
+<div class="form-group col-sm-4">
+<label > </label>
+
+<button type="button" class="btn btn-info btn-lg btn-block">Calculate</button>
+
+</div>
+<div class="form-group col-sm-1">
+</div>
+<div class="form-group col-sm-6">
+<label >TOTAL FEEDBACK AVG.</label>
+<input type="text" class="form-control">
+</div>
+</div>
+</div>
+
+</div>
+
+<div class="card poi card-header" id="headingOne">
+<div class="form-group">
+<div class="form-row dis">
+<div class="col-1"></div>
+<div class="col-10">
+ <div class="form-row dis">
+               <div class="orm-group col-md-6">
+              <h6 class="po color1">TOTAL MARKS<span class="sp">_(Maximum Score: 30)</span></h6>
+               </div>
+
+                  <div class="orm-group col-md-6">
+                        <input type="text" class="form-control"  placeholder="Calculated Marks" >
+                        </div>
+                    </div>
+</div>
+<div class="col-1"></div>
+</div>
+
+<div class="form-row dis">
+<div class="col-4"></div>
+<div class="col-4">
+ <div class="form-row dis">
+
+
+
+   <button type="button" class="btn btn-success btn-lg btn-block">Calculate</button>
+
+
+
+</div>
+<div class="col-4"></div>
+</div>
+</div>
+</div>
+
 </div>
 
 
+
+
+
+
 <div class="accordion" id="accordionExample">
-  <h5 class="po color1">RESEARCH & DEVELOPMENT AND CONSULTANCY<span class="sp">(Maximum Score: 40 marks)</span></h5>
+  <h5 class="po color1">2: RESEARCH & DEVELOPMENT AND CONSULTANCY<span class="sp">(Maximum Score: 35 marks)</span></h5>
   <div class="card">
     <div class="card-header" id="headingOne">
       <h5 class="mb-0">
         <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-          Workshops/FDP attended
+         2A: Workshops/FDP attended
         </button>
       </h5>
     </div>
 
-
-        <div class="form-row dis">
+<div class="form-row dis">
           <div class="form-group col-md-6">
-                        <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="State Level" >
+                        <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="State Level (.5 m/day)" >
 
           </div>
         <div class="form-group col-md-6">
 
             {% render_field form4.w_s_d class="form-control" %}
         </div>
+
+
     </div>
 
     <div class="form-row dis">
           <div class="form-group col-md-6">
-                        <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="National Level">
+                        <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="National Level (1 m/day)">
 
           </div>
         <div class="form-group col-md-6">
 
             {% render_field form4.w_n_d class="form-control" %}
         </div>
+
+
+
+
     </div>
 
     <div class="form-row dis">
           <div class="form-group col-md-6">
-                        <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="International Level">
+                        <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="International Level (1 m/day)">
 
           </div>
         <div class="form-group col-md-6">
 
             {% render_field form4.w_i_d class="form-control" %}
         </div>
-    </div>
 
+
+
+    </div>
+<div class="form-row dis">
+          <div class="form-group col-md-2">
+
+
+          </div>
+
+
+         <div class="form-group col-md-8">
+               <div class="form-row dis">
+             <div class="orm-group col-md-4">
+
+              </div>
+                    <div class="form-group col-md-2"></div>
+                  <div class="orm-group col-md-6">
+                        <input type="text" class="form-control"  placeholder="Calculated Marks" >
+                        </div>
+                    </div>
+
+          </div>
+          <div class="form-group col-md-2"></div>
+
+    </div>
 </div>
   <div class="card">
     <div class="card-header" id="headingTwo">
       <h5 class="mb-0">
         <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
 
-Presentations (Invited talk/panel/keynote)
+2B: Invited talk/panel/keynote
         </button>
       </h5>
     </div>
-   
+
         <div class="form-row dis">
           <div class="form-group col-md-6">
-                        <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="State Level">
+                        <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="State Level (2 m/session)">
 
           </div>
         <div class="form-group col-md-6">
 
             {% render_field form4.p_s_d class="form-control" %}
         </div>
+
     </div>
 
     <div class="form-row dis">
           <div class="form-group col-md-6">
-                        <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="National Level">
+                        <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="National Level (4 m/session)">
 
           </div>
         <div class="form-group col-md-6">
 
             {% render_field form4.p_n_d class="form-control" %}
-            
+
         </div>
+
+
     </div>
 
     <div class="form-row dis">
           <div class="form-group col-md-6">
-                        <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="International Level">
+                        <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="International Level (5 m/session)">
 
           </div>
         <div class="form-group col-md-6">
 
             {% render_field form4.p_i_d class="form-control" %}
-            
-        </div>
-    </div>
 
+        </div>
+
+
+
+    </div>
+    <div class="form-row dis">
+              <div class="form-group col-md-2">
+
+
+              </div>
+
+
+             <div class="form-group col-md-8">
+                   <div class="form-row dis">
+                 <div class="orm-group col-md-4">
+
+                  </div>
+                        <div class="form-group col-md-2"></div>
+                      <div class="orm-group col-md-6">
+                            <input type="text" class="form-control"  placeholder="Calculated Marks" >
+                            </div>
+                        </div>
+
+              </div>
+              <div class="form-group col-md-2"></div>
+
+        </div>
   </div>
   <div class="card">
     <div class="card-header" id="headingThree">
       <h5 class="mb-0">
         <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-          Number of Online Courses Completed
-        </button>
+         2C: Number of Online Courses Completed
+        </button><span class="sp">(Maximum Score: 10 marks)</span>
       </h5>
     </div>
-   <div class="form-group dis col-md-6">
+    <div class="form-group">
+    <div class="form-row dis">
+   <div class="form-group col-md-6">
             {% render_field form4.onl_course_c class="form-control" %}
         </div>
+        <div class="form-group col-md-6">
+                        <input type="text" class="form-control"  placeholder="Calculated Marks (5 m/course)" ></div>
   </div>
 </div>
-
-
+</div>
+</div>
 
 <div class="accordion dis1" id="accordionExample">
-  <h5 class="po color1">Publications</h5>
+  <h5 class="po color1">3: Publications</h5>
   <div class="card">
     <div class="card-header" id="headingOne">
       <h5 class="mb-0">
         <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-          Number of Publications in National/International Journals/Conferences<span class="sp">(Maximum Score: 08 marks)</span>
+          3A: Number of Publications in National/International Journals/Conferences<span class="sp">(Maximum Score: 08 marks)</span>
         </button>
       </h5>
     </div>
-   <div class="form-group col-md-12" >
+    <div class="form-group col-md-12" >
 <div class="form-row">
 <div class="form-group col-sm-6">
 <label >Name of conference: </label>
@@ -546,8 +788,65 @@ Presentations (Invited talk/panel/keynote)
 <label>Indexed: </label>
 {% render_field form4.c_index class="form-control" %}
 </div>
+<div class="form-group col-sm-6">
+  <label> </label>
+ <div class="form-row dis">
+               <div class="form-group col-md-8">
+                 <div class="btn-group dropright">
+       <button type="button" class="btn btn-danger btn-block">Select Here</button>
+       <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         <span class="sr-only">Toggle Dropdown</span>
+       </button>
+       <div class="dropdown-menu">
+         <a class="dropdown-item active" href="#">Sole Author (5m/Publication)</a>
+         <a class="dropdown-item" href="#">First & Second Author (3m/Publication)</a>
+         <a class="dropdown-item" href="#">Other Author (2m/Publication)</a>
+
+       </div>
+     </div>
+               </div>
+                  <div class="form-group col-md-4">
+
+                        </div>
+                    </div>
 </div>
 </div>
+</div>
+<!-- form>
+        <div class="form-row dis">
+          <div class="form-group col-md-6">
+                        <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="Sole Authored">
+
+          </div>
+        <div class="form-group col-md-6">
+
+            <input type="text" class="form-control" id="inputEmployeeIdNo" placeholder="Count Eg. 3">
+        </div>
+    </div>
+
+    <div class="form-row dis">
+          <div class="form-group col-md-6">
+                        <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="Being first and second author">
+
+          </div>
+        <div class="form-group col-md-6">
+
+            <input type="text" class="form-control" id="inputEmployeeIdNo" placeholder="Count Eg. 3">
+        </div>
+    </div>
+
+    <div class="form-row dis">
+          <div class="form-group col-md-6">
+                        <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="Being other author ">
+
+          </div>
+        <div class="form-group col-md-6">
+
+            <input type="text" class="form-control" id="inputEmployeeIdNo" placeholder="Count Eg. 3">
+        </div>
+    </div>
+</form>
+</div> -->
 
 
   <div class="card">
@@ -555,7 +854,7 @@ Presentations (Invited talk/panel/keynote)
       <h5 class="mb-0">
         <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
 
-Number of journal papers with Scopus/DBLP/ Google Scholar Indexed Publications<span class="sp">(Maximum Score: 12 marks)</span>
+3B: Number of journal papers with Scopus/DBLP/ Google Scholar Indexed Publications<span class="sp">(Maximum Score: 12 marks)</span>
         </button>
       </h5>
     </div>
@@ -589,15 +888,71 @@ Number of journal papers with Scopus/DBLP/ Google Scholar Indexed Publications<s
 <label>Indexed: </label>
 {% render_field form4.j_index class="form-control" %}
 </div>
-</div>
+<div class="form-group col-sm-6">
+  <label> </label>
+ <div class="form-row dis">
+               <div class="form-group col-md-8">
+                 <div class="btn-group dropright">
+       <button type="button" class="btn btn-danger btn-block">Select Here</button>
+       <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         <span class="sr-only">Toggle Dropdown</span>
+       </button>
+       <div class="dropdown-menu">
+         <a class="dropdown-item active" href="#">Sole Author (5m/Publication)</a>
+         <a class="dropdown-item" href="#">First & Second Author (3m/Publication)</a>
+         <a class="dropdown-item" href="#">Other Author (2m/Publication)</a>
+
+       </div>
+     </div>
+               </div>
+                  <div class="form-group col-md-4">
+
+                        </div>
+                    </div>
 </div>
 
+</div>
+</div>
+<!--    <form>
+        <div class="form-row dis">
+          <div class="form-group col-md-6">
+                        <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="Sole Authored">
+
+          </div>
+        <div class="form-group col-md-6">
+
+            <input type="text" class="form-control" id="inputEmployeeIdNo" placeholder="Count Eg. 3">
+        </div>
+    </div>
+
+    <div class="form-row dis">
+          <div class="form-group col-md-6">
+                        <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="Being first and second author">
+
+          </div>
+        <div class="form-group col-md-6">
+
+            <input type="text" class="form-control" id="inputEmployeeIdNo" placeholder="Count Eg. 3">
+        </div>
+    </div>
+
+    <div class="form-row dis">
+          <div class="form-group col-md-6">
+                        <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="Being other author ">
+
+          </div>
+        <div class="form-group col-md-6">
+
+            <input type="text" class="form-control" id="inputEmployeeIdNo" placeholder="Count Eg. 3">
+        </div>
+    </div>
+</form> -->
   </div>
   <div class="card">
     <div class="card-header" id="headingThree">
       <h5 class="mb-0">
         <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-         Number of Books/Book chapter Published/Publication in News media<span class="sp">(Maximum Score: 10 marks)</span>
+         3C: Number of Books/Book chapter Published/Publication in News media<span class="sp">(Maximum Score: 10 marks)</span>
         </button>
       </h5>
     </div>
@@ -666,12 +1021,44 @@ Number of journal papers with Scopus/DBLP/ Google Scholar Indexed Publications<s
              {% render_field form4.book_nm class="form-control" %}
         </div>
     </div>
+
+    <div class="form-row dis">
+              <div class="form-group col-md-2">
+
+
+              </div>
+
+
+             <div class="form-group col-md-8">
+                   <div class="form-row dis">
+                 <div class="orm-group col-md-4">
+
+                  </div>
+                        <div class="form-group col-md-2"></div>
+                      <div class="orm-group col-md-6">
+                            <input type="text" class="form-control"  placeholder="Calculated Marks" >
+                            </div>
+                        </div>
+
+              </div>
+              <div class="form-group col-md-2"></div>
+
+        </div>
+    </div>
 <!-- </form> -->
   </div>
 </div>
+<div class="card ">
 
-<div class="card poi">
-  <h5 class="po color1">Research Projects</h5>
+    <div class="card-header" id="headingTwo">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+
+3D: Research Project<span class="sp">(Maximum Score: 5 marks)</span>
+        </button>
+      </h5>
+    </div>
+        </button>
   <table class="table table-bordered">
   <thead>
     <tr>
@@ -721,7 +1108,117 @@ Number of journal papers with Scopus/DBLP/ Google Scholar Indexed Publications<s
     </tr>
     </tbody>
 </table>
+<div class="card poi">
+
+ <div class="form-group ">
+                 <div class="form-row dis">
+                 <div class="form-group col-md-2">
+                 </div>
+        <div class="form-group col-md-3 align-center"><h4> IPR Type :</h4>
+        </div>
+
+      <div class="form-group col-md-3"> <input type="text" class="form-control"  placeholder="Enter Here" ></div>
+ </div>
+ </div>
+ <div class="form-group ">
+                 <div class="form-row dis">
+                 <div class="form-group col-md-2">
+                 </div>
+        <div class="form-group col-md-3 align-center"><h4> IPR Status :</h4>
+        </div>
+
+      <div class="form-group col-md-5">
+      <div class="btn-group">
+  <button type="button" class="btn btn-danger btn-lg">Select</button>
+  <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <span class="sr-only">Toggle Dropdown</span>
+  </button>
+  <div class="dropdown-menu">
+    <a class="dropdown-item" href="#">Filed</a>
+    <a class="dropdown-item" href="#">Received</a>
+    <a class="dropdown-item" href="#">Something else here</a>
+
 </div>
+  </div>
+</div>
+ </div>
+ </div>
+</div>
+
+
+
+<div class="form-group">
+
+
+
+  <div class="form-row dis">
+            <div class="form-group col-md-2">
+
+
+            </div>
+
+
+           <div class="form-group col-md-8">
+                 <div class="form-row dis">
+               <div class="orm-group col-md-4">
+                    
+                </div>
+                      <div class="form-group col-md-2"></div>
+                    <div class="orm-group col-md-6">
+                          <input type="text" class="form-control"  placeholder="Calculated Marks" >
+                          </div>
+                      </div>
+
+            </div>
+            <div class="form-group col-md-2"></div>
+
+      </div>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="card poi card-header" id="headingOne">
+<div class="form-group">
+<div class="form-row dis">
+<div class="col-1"></div>
+<div class="col-10">
+ <div class="form-row dis">
+               <div class="orm-group col-md-6">
+              <h6 class="po color1">TOTAL MARKS<span class="sp">_(Maximum Score: 30)</span></h6>
+               </div>
+
+                  <div class="orm-group col-md-6">
+                        <input type="text" class="form-control"  placeholder="Calculated Marks" >
+                        </div>
+                    </div>
+</div>
+<div class="col-1"></div>
+</div>
+
+<div class="form-row dis">
+<div class="col-4"></div>
+<div class="col-4">
+ <div class="form-row dis">
+
+
+
+   <button type="button" class="btn btn-success btn-lg btn-block">Calculate</button>
+
+
+
+</div>
+<div class="col-4"></div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="card poi">
+
+
 
 <div class="card po">
   <h5 class="po"> Innovative contributions to teaching learning process provide description below with Initiation,Implementation, Impact Analysis<span class="sp">(Maximum Score: 5 marks)</span></h5>
@@ -815,10 +1312,47 @@ Number of journal papers with Scopus/DBLP/ Google Scholar Indexed Publications<s
   <textarea class="form-control" aria-label="With textarea"></textarea>
 </div>
 </div>
-
-<input type="submit" name="" value="Submit">
-</form>
 </div>
+<div class="card poi card-header" id="headingOne">
+<div class="form-group">
+<div class="form-row dis">
+<div class="col-1"></div>
+<div class="col-10">
+ <div class="form-row dis">
+               <div class="orm-group col-md-6">
+              <h6 class="po color1">TOTAL MARKS<span class="sp">_(Maximum Score: 100)</span></h6>
+               </div>
+
+                  <div class="orm-group col-md-6">
+                        <input type="text" class="form-control"  placeholder="Calculated Marks" >
+                        </div>
+                    </div>
+</div>
+<div class="col-1"></div>
+</div>
+
+<div class="form-row dis">
+<div class="col-4"></div>
+<div class="col-4">
+ <div class="form-row dis">
+
+
+
+   <button type="button" class="btn btn-success btn-lg btn-block">Submit</button>
+
+
+
+</div>
+<div class="col-4"></div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+
+
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
