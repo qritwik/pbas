@@ -30,6 +30,7 @@ def login(request):
 			email = user.email
 			phone = user.phone
 			random_otp = r''.join(random.choice('01234ABCD') for i in range(8))
+			print(random_otp)
 			phone_otp(random_otp,phone)
 
 			hashed_pwd = make_password(random_otp)
@@ -103,6 +104,8 @@ def hod_form(request):
 	return render(request,'hod_form.html',{'form2':form2,'form3':form3,'form4':form4,'form5':form5})
 
 def hod_display(request):
+
+
 	# user = request.user
 	# forms = empDetailForm.objects.filter(username__department=user.department)
 	# print(forms)
@@ -110,6 +113,7 @@ def hod_display(request):
 	# "forms" : forms
 	# }
 	user = request.user
+	pk = request.user.pk
 	hod_dept = user.department
 	hod_desg = user.designation
 	c1 = User.objects.filter(department=hod_dept).filter(~Q(designation=hod_desg))
@@ -118,18 +122,18 @@ def hod_display(request):
 	# c3 = {c1,c2}
 	#
 	# print(c3)
-
 	data6 = {'name':c1,'hod_dept':hod_dept,'bool':c2}
 
+	print(data6)
+	return render(request,'hod_display.html',data6)
 
-	return render(request,'hod_display.html',context=data6)
-
-def hod_teacher_display(request):
-	data1 = User.objects.get(username="ritwik")
-	data2 = empDetailForm.objects.get(info__username="ritwik")
-	data3 = feedbackTab.objects.get(info__username="ritwik")
-	data4 = rd.objects.get(info__username="ritwik")
-	data5 = remarks.objects.get(info__username="ritwik")
+def hod_teacher_display(request,pk):
+	name =  User.objects.get(pk = pk);
+	data1 = User.objects.get(username=name);
+	data2 = empDetailForm.objects.get(info__username=name);
+	data3 = feedbackTab.objects.get(info__username=name);
+	data4 = rd.objects.get(info__username=name);
+	data5 = remarks.objects.get(info__username=name);
 
 	context1 = {
 	"key1":data1,

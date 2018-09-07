@@ -34,14 +34,15 @@
     <form class="login-form" method="post">
 
     <div class="list-group">
+      {{pk}}
       {% if name %}
 
           <ul class="list-group">
             {% for info in name %}
 
-              <li class="list-group-item d-flex justify-content-between align-items-center">
-                {{info.first_name}}
-                <span class="badge badge-primary badge-pill">Submitted</span>
+              <li class="list-group-item d-flex justify-content-between align-items-center" value="{{info.pk}}">
+                <a href="/hod_teacher_display/{{info.pk}}">{{info.first_name}}</a>
+                <span class="badge badge-primary badge-pill">{{info1.teach_status}}</span>
               </li>
 
 
