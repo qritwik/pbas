@@ -162,7 +162,6 @@ def principal_display(request,dept):
 
 	return render(request,'principal_display.html',context=dept)
 
-<<<<<<< Updated upstream
 
 
 def ao_first(request):
@@ -211,13 +210,13 @@ def ao_teacher_display(request,pk):
 
 	}
 	return render(request,'ao_teacher_display.html',context=context1)
-=======
+	
 def hod_first(request):
 	user = request.user
 	hod_dept = user.department
 	context = {'dept':hod_dept}
 	return render(request,'hod_first.html',context=context)
->>>>>>> Stashed changes
+
 
 
 

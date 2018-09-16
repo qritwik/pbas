@@ -21,7 +21,7 @@ $(function(){
 	var o_t1_f2 = parseFloat($('.o_t1_f2').val());
 	o_t1_favg = (o_t1_f1+o_t1_f2)/2;
 	if(o_t1_favg<=100){
-		$('.o_t1_favg').html(o_t1_favg);
+		$('.o_t1_favg').val(o_t1_favg);
 		o_t_avg = o_t_avg + o_t1_favg;
 		c++;
 	}
@@ -31,7 +31,7 @@ $(function(){
 	var o_t2_f2 = parseFloat($('.o_t2_f2').val());
 	o_t2_favg = (o_t2_f1+o_t2_f2)/2;
 	if(o_t2_favg<=100){
-		$('.o_t2_favg').html(o_t2_favg);
+		$('.o_t2_favg').val(o_t2_favg);
 		o_t_avg = o_t_avg + o_t2_favg;
 		c++;
 	}
@@ -41,7 +41,7 @@ $(function(){
 	var o_t3_f2 = parseFloat($('.o_t3_f2').val());
 	o_t3_favg = (o_t3_f1+o_t3_f2)/2;
 	if(o_t3_favg<=100){
-		$('.o_t3_favg').html(o_t3_favg);
+		$('.o_t3_favg').val(o_t3_favg);
 		o_t_avg = o_t_avg + o_t3_favg;
 		c++;
 	}
@@ -51,7 +51,7 @@ $(function(){
 	var o_t1_stu_pass = parseFloat($('.o_t1_stu_pass').val());
 	if(o_t1_stu_pass<=o_t1_stu_app){
 		var o_t1 = (o_t1_stu_pass/o_t1_stu_app)*100
-		$('.o_t1_stu_perpass').html(Math.round( o_t1*100)/100);
+		$('.o_t1_stu_perpass').val(Math.round( o_t1*100)/100);
 		o_tr_avg = o_tr_avg + o_t1;
 		d++;
 	}
@@ -61,7 +61,7 @@ $(function(){
 	var o_t2_stu_pass = parseFloat($('.o_t2_stu_pass').val());
 	if(o_t2_stu_pass<=o_t2_stu_app){
 		var o_t2 = (o_t2_stu_pass/o_t2_stu_app)*100
-		$('.o_t2_stu_perpass').html(Math.round( o_t2*100)/100);
+		$('.o_t2_stu_perpass').val(Math.round( o_t2*100)/100);
 		o_tr_avg = o_tr_avg + o_t2;
 		d++;
 	}
@@ -70,7 +70,7 @@ $(function(){
 	var o_t3_stu_pass = parseFloat($('.o_t3_stu_pass').val());
 	if(o_t3_stu_pass<=o_t3_stu_app){
 		o_t3 = (o_t3_stu_pass/o_t3_stu_app)*100
-		$('.o_t3_stu_perpass').html(Math.round( o_t3*100)/100);
+		$('.o_t3_stu_perpass').val(Math.round( o_t3*100)/100);
 		o_tr_avg = o_tr_avg + o_t3 ;
 		d++;
 	}
@@ -78,19 +78,19 @@ $(function(){
 
 	o_t_avg = (o_t_avg)/c;
 	if(isNaN(o_t_avg)){
-		$('.o_t_avg').val(0);
+		$('.o_t_f_avg').val(0);
 	}
 	else{
-		$('.o_t_avg').val(o_t_avg);
+		$('.o_t_f_avg').val(o_t_avg);
 	}
 
 	o_tr_avg =(o_tr_avg)/d;
 	o_tr_avg =Math.round(o_tr_avg * 100)/100;
 	if(isNaN(o_tr_avg)){
-		$('.o_tr_avg').val(0);
+		$('.o_t_r_avg').val(0);
 	}
 	else{
-		$('.o_tr_avg').val(o_tr_avg);
+		$('.o_t_r_avg').val(o_tr_avg);
 	}
 
  });
@@ -117,7 +117,7 @@ $('.o_l').on("click",function(){
 	var o_l1_f2 = parseFloat($('.o_l1_f2').val());
 	o_l1_favg = (o_l1_f1+o_l1_f2)/2;
 	if(o_l1_favg<=100){
-		$('.o_l1_favg').html(o_l1_favg);
+		$('.o_l1_favg').val(o_l1_favg);
 		o_l_avg = o_l_avg + o_l1_favg;
 		c++;
 	}
@@ -127,7 +127,7 @@ $('.o_l').on("click",function(){
 	var o_l2_f2 = parseFloat($('.o_l2_f2').val());
 	o_l2_favg = (o_l2_f1+o_l2_f2)/2;
 	if(o_l2_favg<=100){
-		$('.o_l2_favg').html(o_l2_favg);
+		$('.o_l2_favg').val(o_l2_favg);
 		o_l_avg = o_l_avg + o_l2_favg;
 		c++;
 	}
@@ -137,7 +137,7 @@ $('.o_l').on("click",function(){
 	var o_l3_f2 = parseFloat($('.o_l3_f2').val());
 	o_l3_favg = (o_l3_f1+o_l3_f2)/2;
 	if(o_l3_favg<=100){
-		$('.o_l3_favg').html(o_l3_favg);
+		$('.o_l3_favg').val(o_l3_favg);
 		o_l_avg = o_l_avg + o_l3_favg;
 		c++;
 	}
@@ -146,7 +146,7 @@ $('.o_l').on("click",function(){
 	var o_l4_f2 = parseFloat($('.o_l4_f2').val());
 	o_l4_favg = (o_l4_f1+o_l4_f2)/2;
 	if(o_l4_favg<=100){
-		$('.o_l4_favg').html(o_l4_favg);
+		$('.o_l4_favg').val(o_l4_favg);
 		o_l_avg = o_l_avg + o_l4_favg;
 		c++;
 	}
@@ -155,7 +155,7 @@ $('.o_l').on("click",function(){
 	var o_l5_f2 = parseFloat($('.o_l5_f2').val());
 	o_l5_favg = (o_l5_f1+o_l5_f2)/2;
 	if(o_l5_favg<=100){
-		$('.o_l5_favg').html(o_l5_favg);
+		$('.o_l5_favg').val(o_l5_favg);
 		o_l_avg = o_l_avg + o_l5_favg;
 		c++;
 	}
@@ -164,7 +164,7 @@ $('.o_l').on("click",function(){
 	var o_l1_stu_pass = parseFloat($('.o_l1_stu_pass').val());
 	if(o_l1_stu_pass<=o_l1_stu_app){
 		var o_l1 = (o_l1_stu_pass/o_l1_stu_app)*100
-		$('.o_l1_stu_perpass').html(Math.round( o_l1*100)/100);
+		$('.o_l1_stu_perpass').val(Math.round( o_l1*100)/100);
 		o_lr_avg = o_lr_avg + o_l1;
 		d++;
 	}
@@ -174,7 +174,7 @@ $('.o_l').on("click",function(){
 	var o_l2_stu_pass = parseFloat($('.o_l2_stu_pass').val());
 	if(o_l2_stu_pass<=o_l2_stu_app){
 		var o_l2 = (o_l2_stu_pass/o_l2_stu_app)*100
-		$('.o_l2_stu_perpass').html(Math.round( o_l2*100)/100);
+		$('.o_l2_stu_perpass').val(Math.round( o_l2*100)/100);
 		o_lr_avg = o_lr_avg + o_l2;
 		d++;
 	}
@@ -183,7 +183,7 @@ $('.o_l').on("click",function(){
 	var o_l3_stu_pass = parseFloat($('.o_l3_stu_pass').val());
 	if(o_l3_stu_pass<=o_l3_stu_app){
 		var o_l3 = (o_l3_stu_pass/o_l3_stu_app)*100
-		$('.o_l3_stu_perpass').html(Math.round( o_l3*100)/100);
+		$('.o_l3_stu_perpass').val(Math.round( o_l3*100)/100);
 		o_lr_avg = o_lr_avg + o_l3;
 		d++;
 	}
@@ -192,7 +192,7 @@ $('.o_l').on("click",function(){
 	var o_l4_stu_pass = parseFloat($('.o_l4_stu_pass').val());
 	if(o_l4_stu_pass<=o_l4_stu_app){
 		var o_l4 = (o_l4_stu_pass/o_l4_stu_app)*100
-		$('.o_l4_stu_perpass').html(Math.round( o_l4*100)/100);
+		$('.o_l4_stu_perpass').val(Math.round( o_l4*100)/100);
 		o_lr_avg = o_lr_avg + o_l4;
 		d++;
 	}
@@ -201,17 +201,17 @@ $('.o_l').on("click",function(){
 	var o_l5_stu_pass = parseFloat($('.o_l5_stu_pass').val());
 	var o_l5 = (o_l5_stu_pass/o_l5_stu_app)*100
 	if(o_l5_stu_pass<=o_l5_stu_app){
-		$('.o_l5_stu_perpass').html(Math.round( o_l5*100)/100);
+		$('.o_l5_stu_perpass').val(Math.round( o_l5*100)/100);
 		o_lr_avg = o_lr_avg + o_l5;
 		d++;
 	}
 
 	o_l_avg = (o_l_avg)/c;
 	if(isNaN(o_l_avg)){
-		$('.o_l_avg').val(0);
+		$('.o_l_f_avg').val(0);
 	}
 	else{
-		$('.o_l_avg').val(o_l_avg);
+		$('.o_l_f_avg').val(o_l_avg);
 	}
 	
 
@@ -219,11 +219,11 @@ $('.o_l').on("click",function(){
 	o_lr_avg =Math.round(o_lr_avg * 100)/100;
 
 	if(isNaN(o_lr_avg)){
-	$('.o_lr_avg').val(0);
+	$('.o_l_r_avg').val(0);
 
 	}
 	else{
-	$('.o_lr_avg').val(o_lr_avg);
+	$('.o_l_r_avg').val(o_lr_avg);
 
 	}
 	
@@ -252,7 +252,7 @@ $('.o_l').on("click",function(){
 	var e_t1_f2 = parseFloat($('.e_t1_f2').val());
 	e_t1_favg = (e_t1_f1+e_t1_f2)/2;
 	if(e_t1_favg<=100){
-		$('.e_t1_favg').html(e_t1_favg);
+		$('.e_t1_favg').val(e_t1_favg);
 		e_t_avg = e_t_avg + e_t1_favg;
 		c++;
 	}
@@ -262,7 +262,7 @@ $('.o_l').on("click",function(){
 	var e_t2_f2 = parseFloat($('.e_t2_f2').val());
 	e_t2_favg = (e_t2_f1+e_t2_f2)/2;
 	if(e_t2_favg<=100){
-		$('.e_t2_favg').html(e_t2_favg);
+		$('.e_t2_favg').val(e_t2_favg);
 		e_t_avg = e_t_avg + e_t2_favg;
 		c++;
 	}
@@ -272,7 +272,7 @@ $('.o_l').on("click",function(){
 	var e_t3_f2 = parseFloat($('.e_t3_f2').val());
 	e_t3_favg = (e_t3_f1+e_t3_f2)/2;
 	if(e_t3_favg<=100){
-		$('.e_t3_favg').html(e_t3_favg);
+		$('.e_t3_favg').val(e_t3_favg);
 		e_t_avg = e_t_avg + e_t3_favg;
 		c++;
 	}
@@ -282,7 +282,7 @@ $('.o_l').on("click",function(){
 	var e_t1_stu_pass = parseFloat($('.e_t1_stu_pass').val());
 	if(e_t1_stu_pass<=e_t1_stu_app){
 		var e_t1 = (e_t1_stu_pass/e_t1_stu_app)*100
-		$('.e_t1_stu_perpass').html(Math.round( e_t1*100)/100);
+		$('.e_t1_stu_perpass').val(Math.round( e_t1*100)/100);
 		e_tr_avg = e_tr_avg + e_t1;
 		d++;
 	}
@@ -292,7 +292,7 @@ $('.o_l').on("click",function(){
 	var e_t2_stu_pass = parseFloat($('.e_t2_stu_pass').val());
 	if(e_t2_stu_pass<=e_t2_stu_app){
 		var e_t2 = (e_t2_stu_pass/e_t2_stu_app)*100
-		$('.e_t2_stu_perpass').html(Math.round( e_t2*100)/100);
+		$('.e_t2_stu_perpass').val(Math.round( e_t2*100)/100);
 		e_tr_avg = e_tr_avg + e_t2;
 		d++;
 	}
@@ -301,7 +301,7 @@ $('.o_l').on("click",function(){
 	var e_t3_stu_pass = parseFloat($('.e_t3_stu_pass').val());
 	if(e_t3_stu_pass<=e_t3_stu_app){
 		var e_t3 = (e_t3_stu_pass/e_t3_stu_app)*100
-		$('.e_t3_stu_perpass').html(Math.round( e_t3*100)/100);
+		$('.e_t3_stu_perpass').val(Math.round( e_t3*100)/100);
 		e_tr_avg = e_tr_avg + e_t3;
 		d++;
 	}
@@ -309,11 +309,11 @@ $('.o_l').on("click",function(){
 	e_t_avg = (e_t_avg)/c;
 
 	if(isNaN(e_t_avg)){
-	$('.e_t_avg').val(0);
+	$('.e_t_f_avg').val(0);
 
 	}
 	else{
-	$('.e_t_avg').val(e_t_avg);
+	$('.e_t_f_avg').val(e_t_avg);
 
 	}
 
@@ -321,11 +321,11 @@ $('.o_l').on("click",function(){
 	e_tr_avg =Math.round(e_tr_avg * 100)/100;
 
 	if(isNaN(e_tr_avg)){
-	$('.e_tr_avg').val(0);
+	$('.e_t_r_avg').val(0);
 
 	}
 	else{
-	$('.e_tr_avg').val(e_tr_avg);
+	$('.e_t_r_avg').val(e_tr_avg);
 
 	}
 	
@@ -352,7 +352,7 @@ $('.e_l').on("click",function(){
 	var e_l1_f2 = parseFloat($('.e_l1_f2').val());
 	 e_l1_favg = (e_l1_f1+e_l1_f2)/2;
 	if(e_l1_favg<=100){
-		$('.e_l1_favg').html(e_l1_favg);
+		$('.e_l1_favg').val(e_l1_favg);
 		e_l_avg = e_l_avg + e_l1_favg;
 		c++;
 	}
@@ -362,7 +362,7 @@ $('.e_l').on("click",function(){
 	var e_l2_f2 = parseFloat($('.e_l2_f2').val());
 	e_l2_favg = (e_l2_f1+e_l2_f2)/2;
 	if(e_l2_favg<=100){
-		$('.e_l2_favg').html(e_l2_favg);
+		$('.e_l2_favg').val(e_l2_favg);
 		e_l_avg = e_l_avg + e_l2_favg;
 		c++;
 	}
@@ -372,7 +372,7 @@ $('.e_l').on("click",function(){
 	var e_l3_f2 = parseFloat($('.e_l3_f2').val());
 	e_l3_favg = (e_l3_f1+e_l3_f2)/2;
 	if(e_l3_favg<=100){
-		$('.e_l3_favg').html(e_l3_favg);
+		$('.e_l3_favg').val(e_l3_favg);
 		e_l_avg = e_l_avg + e_l3_favg;
 		c++;
 	}
@@ -381,7 +381,7 @@ $('.e_l').on("click",function(){
 	var e_l4_f2 = parseFloat($('.e_l4_f2').val());
 	e_l4_favg = (e_l4_f1+e_l4_f2)/2;
 	if(e_l4_favg<=100){
-		$('.e_l4_favg').html(e_l4_favg);
+		$('.e_l4_favg').val(e_l4_favg);
 		e_l_avg = e_l_avg + e_l4_favg;
 		c++;
 	}
@@ -390,7 +390,7 @@ $('.e_l').on("click",function(){
 	var e_l5_f2 = parseFloat($('.e_l5_f2').val());
 	e_l5_favg = (e_l5_f1+e_l5_f2)/2;
 	if(e_l5_favg<=100){
-		$('.e_l5_favg').html(e_l5_favg);
+		$('.e_l5_favg').val(e_l5_favg);
 		e_l_avg = e_l_avg + e_l5_favg;
 		c++;
 	}
@@ -399,7 +399,7 @@ $('.e_l').on("click",function(){
 	var e_l1_stu_pass = parseFloat($('.e_l1_stu_pass').val());
 	if(e_l1_stu_pass<=e_l1_stu_app){
 		var e_l1 = (e_l1_stu_pass/e_l1_stu_app)*100
-		$('.e_l1_stu_perpass').html(Math.round( e_l1*100)/100);
+		$('.e_l1_stu_perpass').val(Math.round( e_l1*100)/100);
 		e_lr_avg = e_lr_avg + e_l1;
 		d++;
 	}
@@ -409,7 +409,7 @@ $('.e_l').on("click",function(){
 	var e_l2_stu_pass = parseFloat($('.e_l2_stu_pass').val());
 	if(e_l2_stu_pass<=e_l2_stu_app){
 		var e_l2 = (e_l2_stu_pass/e_l2_stu_app)*100
-		$('.e_l2_stu_perpass').html(Math.round( e_l2*100)/100);
+		$('.e_l2_stu_perpass').val(Math.round( e_l2*100)/100);
 		e_lr_avg = e_lr_avg + e_l2;
 		d++;
 	}
@@ -418,7 +418,7 @@ $('.e_l').on("click",function(){
 	var e_l3_stu_pass = parseFloat($('.e_l3_stu_pass').val());
 	if(e_l3_stu_pass<=e_l3_stu_app){
 		var e_l3 = (e_l3_stu_pass/e_l3_stu_app)*100
-		$('.e_l3_stu_perpass').html(Math.round( e_l3*100)/100);
+		$('.e_l3_stu_perpass').val(Math.round( e_l3*100)/100);
 		e_lr_avg = e_lr_avg + e_l3;
 		d++;
 	}
@@ -427,7 +427,7 @@ $('.e_l').on("click",function(){
 	var e_l4_stu_pass = parseFloat($('.e_l4_stu_pass').val());
 	if(e_l4_stu_pass<=e_l4_stu_app){
 		var e_l4 = (e_l4_stu_pass/e_l4_stu_app)*100
-		$('.e_l4_stu_perpass').html(Math.round( e_l4*100)/100);
+		$('.e_l4_stu_perpass').val(Math.round( e_l4*100)/100);
 		e_lr_avg = e_lr_avg + e_l4;
 		d++;
 	}
@@ -436,7 +436,7 @@ $('.e_l').on("click",function(){
 	var e_l5_stu_pass = parseFloat($('.e_l5_stu_pass').val());
 	if(e_l5_stu_pass<=e_l5_stu_app){
 		var e_l5 = (e_l5_stu_pass/e_l5_stu_app)*100
-		$('.e_l5_stu_perpass').html(Math.round( e_l5*100)/100);
+		$('.e_l5_stu_perpass').val(Math.round( e_l5*100)/100);
 		e_lr_avg = e_lr_avg + e_l5;
 		d++;
 	}
@@ -444,10 +444,10 @@ $('.e_l').on("click",function(){
 	e_l_avg = (e_l_avg)/c;
 
 	if(isNaN(e_l_avg)){
-	$('.e_l_avg').val(0);
+	$('.o_l_f_avg').val(0);
 	}
 	else{
-	$('.e_l_avg').val(e_l_avg);
+	$('.o_l_f_avg').val(e_l_avg);
 
 	}
 
@@ -455,10 +455,10 @@ $('.e_l').on("click",function(){
 	e_lr_avg =Math.round(e_lr_avg * 100)/100;
 
 	if(isNaN(e_lr_avg)){
-	$('.e_lr_avg').val(0);
+	$('.o_l_r_avg').val(0);
 	}
 	else{
-	$('.e_lr_avg').val(e_lr_avg);
+	$('.o_l_r_avg').val(e_lr_avg);
 
 	}
 
@@ -477,7 +477,7 @@ $('.e_p').on("click",function(){
 	var p1_f2 = parseFloat($('.p1_f2').val());
 	var p1_favg = (p1_f1+p1_f2)/2;
 	if(p1_favg<=100){
-		$('.p1_favg').html(p1_favg);
+		$('.p1_favg').val(p1_favg);
 		p_avg = p_avg + p1_favg;
 		c++;
 	}
@@ -486,7 +486,7 @@ $('.e_p').on("click",function(){
 	var p2_f2 = parseFloat($('.p2_f2').val());
 	var p2_favg = (p2_f1+p2_f2)/2;
 	if(p2_favg<=100){
-		$('.p2_favg').html(p2_favg);
+		$('.p2_favg').val(p2_favg);
 		p_avg = p_avg + p2_favg;
 		c++;
 	}
@@ -494,10 +494,10 @@ $('.e_p').on("click",function(){
 
 	p_avg = p_avg/c;
 	if(isNaN(p_avg)){
-	$('.p_avg').val(0);
+	$('.p_f_avg').val(0);
 	}
 	else{
-	$('.p_avg').val(p_avg);
+	$('.p_f_avg').val(p_avg);
 		
 	}
  });
@@ -510,16 +510,16 @@ $('.f_calc').on("click",function(){
 	var d = 4;
 
 	
-	var o_t_avg = parseFloat($('.o_t_avg').val());
-	var o_l_avg = parseFloat($('.o_l_avg').val());
-	var e_t_avg = parseFloat($('.e_t_avg').val());
-	var e_l_avg = parseFloat($('.e_l_avg').val());
+	var o_t_avg = parseFloat($('.o_t_f_avg').val());
+	var o_l_avg = parseFloat($('.o_l_f_avg').val());
+	var e_t_avg = parseFloat($('.e_t_f_avg').val());
+	var e_l_avg = parseFloat($('.e_l_f_avg').val());
 	var p_avg = parseFloat($('.p_avg').val());
 
-	var o_tr_avg = parseFloat($('.o_tr_avg').val());
-	var o_lr_avg = parseFloat($('.o_lr_avg').val());
-	var e_tr_avg = parseFloat($('.e_tr_avg').val());
-	var e_lr_avg = parseFloat($('.e_lr_avg').val());
+	var o_tr_avg = parseFloat($('.o_t_r_avg').val());
+	var o_lr_avg = parseFloat($('.o_l_r_avg').val());
+	var e_tr_avg = parseFloat($('.e_t_r_avg').val());
+	var e_lr_avg = parseFloat($('.e_l_r_avg').val());
 
 	
 	if(isNaN(o_t_avg)){
@@ -605,7 +605,7 @@ $('.f_calc').on("click",function(){
 		f_marks = f_marks+20;
 
 
-	$('.f_marks').val(f_marks);
+	$('.e_o_f_r_final').val(f_marks);
  });
 
 
@@ -641,11 +641,11 @@ $('.rd').on("click",function(){
 
 	//max 5
 	if(a>=5){
-		$('.w_s').val(5);
+		$('.w_m').val(5);
 		a = 5;
 	}
 	else{
-		$('.w_s').val(a);
+		$('.w_m').val(a);
 	}
 	
 
@@ -669,11 +669,11 @@ $('.rd').on("click",function(){
 
 	//max 5
 	if(b>=5){
-		$('.p_s').val(5);
+		$('.p_m').val(5);
 		b= 5;
 	}
 	else{
-		$('.p_s').val(b);
+		$('.p_m').val(b);
 	}
 	
 
@@ -689,8 +689,58 @@ $('.rd').on("click",function(){
 	if(c>=10){
 		c = 10;
 	}
-	$('.o_m').val(c);
+	$('.onl_course_m').val(c);
 	
+	///
+	var m=0;
+
+	if($('.s_c_name').val()){
+		$('.s_c_m').val(5)
+		m = m+5	
+	}
+	
+
+	if($('.f_c_name').val()){
+		$('.f_c_m').val(3)
+		m = m+3	
+	}
+	
+
+	if($('.o_c_name').val()){
+		$('.o_c_m').val(2)
+		m = m+2	
+	}
+	
+	if(m>8){
+		m= 8
+	}
+
+////
+	n= 0
+
+	if($('.s_j_name').val()){
+		$('.s_j_m').val(10)
+		n = n+10
+	}
+	
+
+	if($('.f_j_name').val()){
+		$('.f_j_m').val(6)
+		n = n+6	
+	}
+	
+
+	if($('.o_j_name').val()){
+		$('.o_j_m').val(4)
+		n = n+4	
+	}
+	
+	if(m>12){
+		n = 12
+	}
+
+
+
 
 	var book_i = parseFloat($('.book_i').val());
 	var book_n = parseFloat($('.book_n').val());
@@ -731,11 +781,11 @@ $('.rd').on("click",function(){
 
 	//max 10
 	if(d>=10){
-		$('.b_t').val(10);
+		$('.book_m').val(10);
 		d = 10;
 	}
 	else{
-		$('.b_t').val(d);
+		$('.book_m').val(d);
 	}
 
 	var if_s = parseFloat($('.if_s').val());
@@ -810,16 +860,16 @@ $('.rd').on("click",function(){
 		$('.rp_m').val(e);
 	}
 
-	 f = a+b+c+d+e;
+	 f = a+b+c+d+e+m+n;
 	
 	//out of 35
 
 	if(f>=35){
-		$('.r_marks').val(35);
+		$('.rd_tot_marks').val(35);
 		f = 35;
 	}
 	else{
-		$('.r_marks').val(f);
+		$('.rd_tot_marks').val(f);
 	}
  });
 
