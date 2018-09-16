@@ -59,7 +59,7 @@ def decide_view(request):
 		return HttpResponseRedirect("/principal_first/")
 
 	elif request.user.is_ao():
-		return HttpResponseRedirect("/ao.first/")
+		return HttpResponseRedirect("/ao_first/")
 
 	# else:
 	# 	return HttpResponseRedirect("/")
@@ -159,6 +159,11 @@ def principal_display(request,dept):
 
 def hod_first(request):
 	return render(request,'hod_first.html')
+
+def ao_first(request):
+	dept = Department.objects.all()
+	context = {'dept':dept}
+	return render(request,'ao_first.html',context=context)
 
 
 
