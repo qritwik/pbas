@@ -502,7 +502,7 @@ $('.e_p').on("click",function(){
 	}
  });
 
-//out of 40
+//out of 30
 
 $('.f_calc').on("click",function(){
 	
@@ -812,8 +812,15 @@ $('.rd').on("click",function(){
 
 	 f = a+b+c+d+e;
 	
-	//out of 35
-	$('.r_marks').val(f);
+	//out of 40
+	if(f>=5){
+		$('.r_marks').val(40);
+		f =40;
+	}
+	else{
+		$('.r_marks').val(f);
+	}
+
  });
 
 });

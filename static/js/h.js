@@ -577,32 +577,32 @@ $('.f_calc').on("click",function(){
 		f_marks = 0;
 	}
 	else if(a>60 && a<=70)
-		f_marks = 5;
+		f_marks = 3;
 
 	else if(a>70 && a<=80)
-		f_marks = 10;
+		f_marks = 5;
 
 	else if(a>80 && a<=90)
-		f_marks = 15;
+		f_marks = 8;
 
 	else if(a>90)
-		f_marks = 20;
+		f_marks = 10;
 
 
 	if(b<60){
 		f_marks = f_marks + 0;
 	}
 	else if(b>60 && b<=70)
-		f_marks = f_marks + 5;
+		f_marks = f_marks + 3;
 
 	else if(b>70 && b<=80)
-		f_marks = f_marks + 10;
+		f_marks = f_marks + 5;
 
 	else if(b>80 && b<=90)
-		f_marks = f_marks+ 15;
+		f_marks = f_marks+ 8;
 
 	else if(b>90)
-		f_marks = f_marks+20;
+		f_marks = f_marks + 10;
 
 
 	$('.f_marks').val(f_marks);
@@ -813,7 +813,14 @@ $('.rd').on("click",function(){
 	 f = a+b+c+d+e;
 	
 	//out of 35
-	$('.r_marks').val(f);
+	if(f>=35){
+		$('.r_marks').val(35);
+		f =35;
+	}
+	else{
+		$('.r_marks').val(f);
+	}
+
  });
 
 });

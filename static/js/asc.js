@@ -813,7 +813,14 @@ $('.rd').on("click",function(){
 	 f = a+b+c+d+e;
 	
 	//out of 35
-	$('.r_marks').val(f);
+
+	if(f>=35){
+		$('.r_marks').val(35);
+		f = 35;
+	}
+	else{
+		$('.r_marks').val(f);
+	}
  });
 
 });
