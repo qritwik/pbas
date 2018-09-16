@@ -128,6 +128,7 @@ def hod_teacher_display(request,pk):
 	name =  User.objects.get(pk = pk);
 	print(name)
 	data1 = User.objects.get(username=name);
+	print(data1.first_name)
 	data2 = empDetailForm.objects.get(info__username=name);
 	data3 = feedbackTab.objects.get(info__username=name);
 	data4 = rd.objects.get(info__username=name);
@@ -161,6 +162,7 @@ def principal_display(request,dept):
 
 	return render(request,'principal_display.html',context=dept)
 
+<<<<<<< Updated upstream
 
 
 def ao_first(request):
@@ -209,6 +211,13 @@ def ao_teacher_display(request,pk):
 
 	}
 	return render(request,'ao_teacher_display.html',context=context1)
+=======
+def hod_first(request):
+	user = request.user
+	hod_dept = user.department
+	context = {'dept':hod_dept}
+	return render(request,'hod_first.html',context=context)
+>>>>>>> Stashed changes
 
 
 
@@ -218,7 +227,14 @@ def logout(request):
 
 
 def f_assistant(request):
+	user = request.user
+	print(user)
+	data_final = User.objects.get(username=user)
+
+
+
 	if request.method == 'POST':
+
 		form2 = forms.form_empDetailForm(request.POST)
 		form3 = forms.form_feedbackTab(request.POST)
 		form4 = forms.form_rd(request.POST)
@@ -256,7 +272,7 @@ def f_assistant(request):
 		form3 = forms.form_feedbackTab()
 		form4 = forms.form_rd()
 		form5 = forms.form_remarks()
-	return render(request,'assistant_form.html',{'form2':form2,'form3':form3,'form4':form4,'form5':form5})
+	return render(request,'assistant_form.html',{'form2':form2,'form3':form3,'form4':form4,'form5':form5,'info':data_final})
 
 def f_associate(request):
 	if request.method == 'POST':

@@ -8,7 +8,7 @@
       <input type="submit" name="myButton" class="btn btn-default btn-lg signin" value="Sign In">
       <a href="/" style="margin-top:1%;width:100%;" class="btn">Resend OTP</a>
     </form> -->
- -->
+
 
 <!DOCTYPE html>
 {% load staticfiles %}
@@ -19,7 +19,8 @@
 
    <body>
 
- <link rel="stylesheet" type="text/css" href="{% static "css/theme.css" %}"><link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+ <link rel="stylesheet" type="text/css" href="{% static "css/theme.css" %}">
+ <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
 
  <div class="jumbotron">
@@ -36,7 +37,7 @@
  </div>
 
  <div class="login-page">
-   <div style="margin-top:-5%;" class="form">
+   <div style="margin-top:-25%;" class="form">
 
      <p>ENTER OTP</p>
      <form class="login-form" action="#" method="post" onsubmit="return checkForm(this);">
@@ -46,8 +47,8 @@
        <p style="color:black;" id="usn1">{{ form.username }}</p>
              <p style="color:black;">{{ form.password }}</p>
              <p style="z-index:100;"><i onclick="myFunction()" id="eye" class="fa fa-eye" aria-hidden="true"></i></p>
-       <input type="submit" name="myButton" class="btn btn-default btn-lg signin" value="Sign In">
-       <a href="/" style="margin-top:1%;width:100%;" class="btn">Resend OTP</a>
+       <input type="submit" name="myButton" class="list-group-item list-group-item-action list-group-item-success" value="Sign In">
+       <a href="/" style="margin-top:1%;width:100%;" class="list-group-item list-group-item-action">Resend OTP</a>
      </form>
 
    </div>

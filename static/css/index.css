@@ -17,13 +17,13 @@ background: linear-gradient(to right, #48b1bf, #06beb6); /* W3C, IE 10+/ Edge, F
 }
 
 .poi{
-	margin: 60px !important;
-	padding: 2.5%;
+	margin-top: 60px !important;
+	padding: 0.5%;
 }
 .poi1{
 	margin-left:  60px !important;
 	margin-right:  60px !important;
-	padding: 2.5%;
+	padding: 1.5%;
 }
 
 .dis{

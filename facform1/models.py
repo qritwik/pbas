@@ -85,7 +85,7 @@ class empDetailForm(models.Model):
 
 	high_qual = models.CharField(max_length=50,null=True)
 	doj = models.DateField(null=True)
-	Present_pos = models.CharField(max_length=50,null=True)
+	# Present_pos = models.CharField(max_length=50,null=True,blank=True)
 	Held_from = models.DateField(null=True)
 	exp_teach = models.IntegerField(blank=True, null=True)
 	exp_res = models.IntegerField( blank=True, null=True)
@@ -228,7 +228,7 @@ class feedbackTab(models.Model):
 
 	o_l4_stu_app = models.CharField(max_length=30, blank=True, null=True)
 	o_l4_stu_pass = models.CharField(max_length=30, blank=True, null=True)
-	o_t4_stu_perpass = models.CharField(max_length=30, blank=True, null=True)
+	o_l4_stu_perpass = models.CharField(max_length=30, blank=True, null=True)
 
 	o_l5_stu_app = models.CharField(max_length=30, blank=True, null=True)
 	o_l5_stu_pass = models.CharField(max_length=30, blank=True, null=True)
@@ -330,15 +330,18 @@ class rd(models.Model):
 	f_j_date = models.DateField(blank=True, null=True)
 	f_j_page = models.IntegerField( blank=True, null=True)
 
-	c_j_index = models.CharField(max_length=30, blank=True, null=True)
-	c_j_name = models.CharField(max_length=30, blank=True, null=True)
-	c_j_title = models.CharField(max_length=30, blank=True, null=True)
-	c_j_volume = models.CharField(max_length=30, blank=True, null=True)
-	c_j_issn = models.CharField(max_length=30, blank=True, null=True)
-	c_j_date = models.DateField(blank=True, null=True)
-	c_j_page = models.IntegerField( blank=True, null=True)
+	o_j_index = models.CharField(max_length=30, blank=True, null=True)
+	o_j_name = models.CharField(max_length=30, blank=True, null=True)
+	o_j_title = models.CharField(max_length=30, blank=True, null=True)
+	o_j_volume = models.CharField(max_length=30, blank=True, null=True)
+	o_j_issn = models.CharField(max_length=30, blank=True, null=True)
+	o_j_date = models.DateField(blank=True, null=True)
+	o_j_page = models.IntegerField( blank=True, null=True)
 
-	j_m = models.CharField(max_length=30, blank=True, null=True)
+	s_j_m = models.CharField(max_length=30, blank=True, null=True)
+	f_j_m = models.CharField(max_length=30, blank=True, null=True)
+	o_j_m = models.CharField(max_length=30, blank=True, null=True)
+
 
 	s_c_name = models.CharField(max_length=30, blank=True, null=True)
 	s_c_title = models.CharField(max_length=30, blank=True, null=True)
@@ -352,13 +355,18 @@ class rd(models.Model):
 	f_c_date = models.DateField(blank=True, null=True)
 	f_c_index = models.CharField(max_length=30, blank=True, null=True)
 
-	c_c_name = models.CharField(max_length=30, blank=True, null=True)
-	c_c_title = models.CharField(max_length=30, blank=True, null=True)
-	c_c_place = models.CharField(max_length=30, blank=True, null=True)
-	c_c_date = models.DateField(blank=True, null=True)
-	c_c_index = models.CharField(max_length=30, blank=True, null=True)
+	o_c_name = models.CharField(max_length=30, blank=True, null=True)
+	o_c_title = models.CharField(max_length=30, blank=True, null=True)
+	o_c_place = models.CharField(max_length=30, blank=True, null=True)
+	o_c_date = models.DateField(blank=True, null=True)
+	o_c_index = models.CharField(max_length=30, blank=True, null=True)
 
-	c_m = models.CharField(max_length=30, blank=True, null=True)
+	s_c_m = models.CharField(max_length=30, blank=True, null=True)
+	f_c_m = models.CharField(max_length=30, blank=True, null=True)
+	o_c_m = models.CharField(max_length=30, blank=True, null=True)
+
+
+
 
 	book_i = models.IntegerField(blank=True, null=True)
 	book_n = models.IntegerField( blank=True, null=True)
