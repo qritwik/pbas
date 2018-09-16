@@ -397,16 +397,21 @@ class remarks(models.Model):
 	ta_ir = models.TextField( blank=True, null=True)
 	ta_ic = models.TextField( blank=True, null=True)
 	ta_dr = models.TextField( blank=True, null=True)
+	info = models.ForeignKey('User', on_delete=models.CASCADE,null=True)
+
+class remarks1(models.Model):	
 	hod_marks1 = models.IntegerField(blank=True, null=True)
 	hod_marks2 = models.IntegerField( blank=True, null=True)
 	ta_hod_remarks = models.TextField( blank=True, null=True)
+	info = models.ForeignKey('User', on_delete=models.CASCADE,null=True)
+
+class remarks2(models.Model):
 	ta_prin_remarks = models.TextField( blank=True, null=True)
 	prin_marks1 = models.IntegerField( blank=True, null=True)
 	prin_marks2 = models.IntegerField( blank=True, null=True)
 	total_marks = models.IntegerField( blank=True, null=True)
-	hod_status = models.BooleanField(default=False)
-	principal_status = models.BooleanField(default=False)
 	info = models.ForeignKey('User', on_delete=models.CASCADE,null=True)
+	department = models.ForeignKey('Department', on_delete=models.CASCADE,null=True)
 
 
 

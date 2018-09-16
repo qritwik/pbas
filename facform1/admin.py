@@ -33,6 +33,8 @@ admin.site.register(empDetailForm)
 admin.site.register(feedbackTab)
 admin.site.register(rd)
 admin.site.register(remarks)
+admin.site.register(remarks1)
+admin.site.register(remarks2)
 
 admin.site.register(Designation)
 

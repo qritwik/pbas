@@ -104,6 +104,10 @@ def hod_form(request):
 
 	return render(request,'hod_form.html',{'form2':form2,'form3':form3,'form4':form4,'form5':form5})
 
+def hod_first(request):
+	return render(request,'hod_first.html')
+
+
 def hod_display(request):
 
 	user = request.user
@@ -157,13 +161,54 @@ def principal_display(request,dept):
 
 	return render(request,'principal_display.html',context=dept)
 
-def hod_first(request):
-	return render(request,'hod_first.html')
+
 
 def ao_first(request):
 	dept = Department.objects.all()
 	context = {'dept':dept}
 	return render(request,'ao_first.html',context=context)
+
+
+
+def ao_display(request,dept):
+
+	print(dept)
+	above = remarks2.objects.filter(total_marks__gte = 60).filter(department__name=dept)
+	below = remarks2.objects.filter(total_marks__lt = 60).filter(department__name=dept)
+	
+	dept = {'dept':dept,'above':above,'below':below}
+	print(above)
+	print(below)
+
+	return render(request,'ao_display.html',context=dept)
+
+
+def ao_teacher_display(request,pk):
+	name =  User.objects.get(pk = pk);
+	print(name)
+	data1 = User.objects.get(username=name);
+	data2 = empDetailForm.objects.get(info__username=name);
+	data3 = feedbackTab.objects.get(info__username=name);
+	data4 = rd.objects.get(info__username=name);
+	data5 = remarks.objects.get(info__username=name);
+	data6 = remarks1.objects.get(info__username=name);
+	data7 = remarks2.objects.get(info__username=name);
+
+	print(data2.Present_pos)
+
+
+	context1 = {
+	"key1":data1,
+	"key2":data2,
+	"key3":data3,
+	"key4":data4,
+	"key5":data5,
+	"key6":data6,
+	"key7":data7,
+
+
+	}
+	return render(request,'ao_teacher_display.html',context=context1)
 
 
 

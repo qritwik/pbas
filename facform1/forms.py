@@ -54,3 +54,17 @@ class form_remarks(forms.ModelForm):
 		model = remarks
 		fields = '__all__'
 		exclude = ['info']
+
+class form_remarks1(forms.ModelForm):
+
+	class Meta:
+		model = remarks
+		fields = '__all__'
+		exclude = ['info']
+
+class form_remarks2(forms.ModelForm):
+
+	class Meta:
+		model = remarks
+		fields = '__all__'
+		exclude = ['info']

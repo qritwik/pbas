@@ -16,37 +16,73 @@
 
 <div class="row">
 <div class="col-3"><center><img  src="{% static "image/bms.logo.png" %}" alt="BMS Institute of Technology of management" ></center></div>
-
- <div class="col-6 q1"><h1 align="center" class="display-4"> AO VIEW</h1>
-
-   <h2>BMS Institute of Technology & Management</h2>
-
+ <div class="col-6 q1"><h1 align="center" class="display-4"> PRINCIPAL</h1>
+ <h1 id="qw" align="center" class="display-4">BMSIT</h1>
+ <h1 id="qw" align="center" class="display-4">Department of {{dept}}</h1>
  </div>
  </div>
 </div>
 </div>
 
-<div class="login-page">
+<div class="container-fluid">
+<div class="row">
+
+
+
+
+
+<div class="col-6">
+ <div class="login-page">
   <div style="margin-top:-5%;" class="form">
 
-    <p><h3>DEPARTMENT LIST</h3></p>
+    <p><h3>Below 60 LIST</h3></p>
     <form class="login-form" method="post">
 
     <div class="list-group">
-
-        {% for dept in dept %}
-
-  <a class="list-group-item list-group-item-action list-group-item-primary a_one" href="/ao_display/{{dept.name}}" value="{dept.name}">{{dept.name}}</a>
-
-
-  {% endfor %}
-</div>
+      {% for below_name in below %}
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        <a href="#" class="list-group-item list-group-item-action list-group-item-dark">{{below_name}}
+            <span class="badge badge-primary badge-pill">Pending</span>
+        </a>
 
 
-    </form>
+      </li>
+      {% endfor %}
+
+
+  </form>
+  </div>
   </div>
 </div>
+</div>
+<div class="col-6">
+ <div class="login-page">
+  <div style="margin-top:-5%;" class="form">
 
+    <p><h3>Above 60 LIST</h3></p>
+    <form class="login-form" method="post">
+
+    <div class="list-group">
+      {% for name in above %}
+
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        <a href="#" class="list-group-item list-group-item-action list-group-item-dark">{{name}}
+            <span class="badge badge-primary badge-pill">Pending</span>
+        </a>
+
+
+      </li>
+      {% endfor %}
+
+
+    </div>
+
+
+     </form>
+    </div>
+   </div>
+  </div>
+ </div>
 
 
 
