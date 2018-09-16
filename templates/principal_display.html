@@ -18,7 +18,7 @@
 <div class="col-3"><center><img  src="{% static "image/bms.logo.png" %}" alt="BMS Institute of Technology of management" ></center></div>
  <div class="col-6 q1"><h1 align="center" class="display-4"> PRINCIPAL</h1>
  <h1 id="qw" align="center" class="display-4">BMSIT</h1>
- <h1 id="qw" align="center" class="display-4">Department of CSE</h1>
+ <h1 id="qw" align="center" class="display-4">Department of {{dept}}</h1>
  </div>
  </div>
 </div>
@@ -39,9 +39,17 @@
     <form class="login-form" method="post">
 
     <div class="list-group">
-  <button type="button" class="list-group-item list-group-item-action ">
-   A
-  </button>
+      {% for hod_name in hod %}
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        <a href="#" class="list-group-item list-group-item-action list-group-item-dark">{{hod_name}}
+            <span class="badge badge-primary badge-pill">Pending</span>
+        </a>
+
+
+      </li>
+      {% endfor %}
+
+
   </form>
   </div>
   </div>
@@ -55,14 +63,19 @@
     <form class="login-form" method="post">
 
     <div class="list-group">
-  <button type="button" class="list-group-item list-group-item-action ">
-   A
-  </button>
-  <button type="button" class="list-group-item list-group-item-action">B</button>
-  <button type="button" class="list-group-item list-group-item-action">C</button>
-  <button type="button" class="list-group-item list-group-item-action">D</button>
-  <button type="button" class="list-group-item list-group-item-action">E</button>
-</div>
+      {% for name in teach %}
+
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        <a href="#" class="list-group-item list-group-item-action list-group-item-dark">{{name}}
+            <span class="badge badge-primary badge-pill">Pending</span>
+        </a>
+
+
+      </li>
+      {% endfor %}
+
+
+    </div>
 
 
      </form>

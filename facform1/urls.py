@@ -15,7 +15,7 @@ urlpatterns = [
     url(r'^hod_first/', views.hod_first,name="hod_first"),
     url(r'^hod_display/', views.hod_display,name="hod_display"),
     url(r'^principal_first/', views.principal_first,name="principal_first"),
-    url(r'^principal_display/', views.principal_display,name="principal_display"),
+    url(r'^principal_display/(?P<dept>[\w\-]+)$', views.principal_display,name="principal_display"),
     url(r'^hod_teacher_display/(?P<pk>[\w\-]+)$', views.hod_teacher_display,name="hod_teacher_display"),
  #    url(r'^success/', views.success,name="success"),
   ]

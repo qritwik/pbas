@@ -1,4 +1,6 @@
 from django.contrib import admin
+from import_export.admin import ImportExportModelAdmin
+from import_export import resources
 
 from .models import *
 from django.contrib.auth.admin import UserAdmin as DjangoUserAdmin
@@ -9,13 +11,15 @@ from django.contrib.auth.admin import UserAdmin as DjangoUserAdmin
 
 
 @admin.register(User)
-class UserAdmin(DjangoUserAdmin):
+class UserAdmin(DjangoUserAdmin, ImportExportModelAdmin):
 
 	fieldsets = (
 		(None, {'fields': ('username', 'email', 'password')}),
 		(('Personal info'), {'fields': ('first_name', 'last_name', 'phone', 'department','info')}),
 		(('Permissions'), {'fields': ('is_active', 'is_staff', 'is_superuser',
 									   )}),
+
+		(('Status'), {'fields': ('teach_status','hod_status','principal_status')}),
 
 		(('Designation'), {'fields': ('designation',)}),
 		(('Important dates'), {'fields': ('last_login', 'date_joined')}),

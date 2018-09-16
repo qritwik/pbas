@@ -5,7 +5,7 @@
 }
 
 .jumbotron{
-background-color: ##ddccaa !important;
+background-color: #ddccaa !important;
 }
 
 }
@@ -324,5 +324,6 @@ body {
 .a_one{
 
   color: #212121 !important;
-  
+  text-decoration-style: double;
+
 }

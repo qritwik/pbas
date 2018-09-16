@@ -21,7 +21,7 @@
 <div class="col-3"><center><img  src="{% static "image/bms.logo.png" %}" alt="BMS Institute of Technology of management" ></center></div>
  <div class="col-6 q1">
    <h1 align="center" style="margin-top:6%" class="display-4"> HOD'S VIEW</h1>
-   <h1 align="center" style="margin-top:6%" class="display-4">Department of {{ hod_dept }}</h1>
+   <h1 align="center" style="margin-top:6%" class="display-4">Department of <em>{{ hod_dept }}</em></h1>
  <h1 id="qw" align="center" class="display-4"></h1>
  </div>
  </div>
@@ -35,14 +35,16 @@
 
     <div class="list-group">
       {{pk}}
-      {% if name %}
 
           <ul class="list-group">
             {% for info in name %}
 
               <li class="list-group-item d-flex justify-content-between align-items-center" value="{{info.pk}}">
-                <a href="/hod_teacher_display/{{info.pk}}">{{info.first_name}}</a>
-                <span class="badge badge-primary badge-pill">{{info1.teach_status}}</span>
+                <a href="/hod_teacher_display/{{info.pk}}" class="list-group-item list-group-item-action list-group-item-dark">{{info.first_name}}
+                    <span class="badge badge-primary badge-pill">{{info.teach_status}}</span>
+                </a>
+
+
               </li>
 
 
@@ -53,7 +55,6 @@
           </ol>
 
 
-      {% endif %}
 
 
     </div>

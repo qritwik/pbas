@@ -25,7 +25,11 @@ class User(AbstractUser):
 	phone = models.BigIntegerField(null=True)
 	department = models.ForeignKey('Department', on_delete=models.CASCADE,null=True)
 	designation = models.ForeignKey('Designation', on_delete=models.CASCADE,null=True)
+	teach_status = models.BooleanField(default=False)
+	hod_status = models.BooleanField(default=False)
+	principal_status = models.BooleanField(default=False)
 	info = models.CharField(max_length=20, blank=True, null=True)
+
 
 	def __str__(self):
 		return self.username
@@ -118,6 +122,8 @@ class feedbackTab(models.Model):
 	o_l5_f2 = models.CharField(max_length=30, blank=True, null=True)
 	o_l5_favg = models.CharField(max_length=30, blank=True, null=True)
 
+	o_l_f_avg = models.CharField(max_length=30, blank=True, null=True)
+
 
 	o_t3_name = models.CharField(max_length=30, blank=True, null=True)
 	o_t3_f1 = models.CharField(max_length=30, blank=True, null=True)
@@ -135,6 +141,9 @@ class feedbackTab(models.Model):
 	o_t1_f1 = models.CharField(max_length=30, blank=True, null=True)
 	o_t1_f2 = models.CharField(max_length=30, blank=True, null=True)
 	o_t1_favg = models.CharField(max_length=30, blank=True, null=True)
+
+	o_t_f_avg = models.CharField(max_length=30, blank=True, null=True)
+
 
 
 	e_l1_name = models.CharField(max_length=30, blank=True, null=True)
@@ -166,6 +175,9 @@ class feedbackTab(models.Model):
 	e_l5_f2 = models.CharField(max_length=30, blank=True, null=True)
 	e_l5_favg = models.CharField(max_length=30, blank=True, null=True)
 
+	e_l_f_avg = models.CharField(max_length=30, blank=True, null=True)
+
+
 
 	e_t3_name = models.CharField(max_length=30, blank=True, null=True)
 	e_t3_f1 = models.CharField(max_length=30, blank=True, null=True)
@@ -184,6 +196,9 @@ class feedbackTab(models.Model):
 	e_t1_f2 = models.CharField(max_length=30, blank=True, null=True)
 	e_t1_favg = models.CharField(max_length=30, blank=True, null=True)
 
+	e_t_f_avg = models.CharField(max_length=30, blank=True, null=True)
+
+
 
 	o_t1_stu_app = models.CharField(max_length=30, blank=True, null=True)
 	o_t1_stu_pass = models.CharField(max_length=30, blank=True, null=True)
@@ -196,6 +211,8 @@ class feedbackTab(models.Model):
 	o_t3_stu_app = models.CharField(max_length=30, blank=True, null=True)
 	o_t3_stu_pass = models.CharField(max_length=30, blank=True, null=True)
 	o_t3_stu_perpass = models.CharField(max_length=30, blank=True, null=True)
+
+	o_t_r_avg = models.CharField(max_length=30, blank=True, null=True)
 
 	o_l1_stu_app = models.CharField(max_length=30, blank=True, null=True)
 	o_l1_stu_pass = models.CharField(max_length=30, blank=True, null=True)
@@ -217,6 +234,9 @@ class feedbackTab(models.Model):
 	o_l5_stu_pass = models.CharField(max_length=30, blank=True, null=True)
 	o_l5_stu_perpass = models.CharField(max_length=30, blank=True, null=True)
 
+	o_l_r_avg = models.CharField(max_length=30, blank=True, null=True)
+
+
 
 
 
@@ -231,6 +251,9 @@ class feedbackTab(models.Model):
 	e_t3_stu_app = models.CharField(max_length=30, blank=True, null=True)
 	e_t3_stu_pass = models.CharField(max_length=30, blank=True, null=True)
 	e_t3_stu_perpass = models.CharField(max_length=30, blank=True, null=True)
+
+	e_t_r_avg = models.CharField(max_length=30, blank=True, null=True)
+
 
 	e_l1_stu_app = models.CharField(max_length=30, blank=True, null=True)
 	e_l1_stu_pass = models.CharField(max_length=30, blank=True, null=True)
@@ -252,6 +275,9 @@ class feedbackTab(models.Model):
 	e_l5_stu_pass = models.CharField(max_length=30, blank=True, null=True)
 	e_l5_stu_perpass = models.CharField(max_length=30, blank=True, null=True)
 
+	e_l_r_avg = models.CharField(max_length=30, blank=True, null=True)
+
+
 	p1_name = models.CharField(max_length=30, blank=True, null=True)
 	p1_f1 = models.CharField(max_length=30, blank=True, null=True)
 	p1_f2 = models.CharField(max_length=30, blank=True, null=True)
@@ -261,6 +287,11 @@ class feedbackTab(models.Model):
 	p2_f1 = models.CharField(max_length=30, blank=True, null=True)
 	p2_f2 = models.CharField(max_length=30, blank=True, null=True)
 	p2_favg = models.CharField(max_length=30, blank=True, null=True)
+
+	p_f_avg = models.CharField(max_length=30, blank=True, null=True)
+
+	e_o_f_r_final = models.CharField(max_length=30, blank=True, null=True)
+
 	info = models.ForeignKey('User', on_delete=models.CASCADE,null=True)
 
 
@@ -271,25 +302,63 @@ class rd(models.Model):
 	w_n_d = models.IntegerField( blank=True, null=True)
 	w_i_d = models.IntegerField( blank=True, null=True)
 
+	w_m = models.CharField(max_length=30, blank=True, null=True)
+
 	p_s_d = models.IntegerField( blank=True, null=True)
 	p_n_d = models.IntegerField( blank=True, null=True)
 	p_i_d = models.IntegerField( blank=True, null=True)
 
+	p_m = models.CharField(max_length=30, blank=True, null=True)
+
 	onl_course_c = models.IntegerField( blank=True, null=True)
 
-	j_index = models.CharField(max_length=30, blank=True, null=True)
-	j_name = models.CharField(max_length=30, blank=True, null=True)
-	j_title = models.CharField(max_length=30, blank=True, null=True)
-	j_volume = models.CharField(max_length=30, blank=True, null=True)
-	j_issn = models.CharField(max_length=30, blank=True, null=True)
-	j_date = models.DateField(blank=True, null=True)
-	j_page = models.IntegerField( blank=True, null=True)
+	onl_course_m = models.CharField(max_length=30, blank=True, null=True)
 
-	c_name = models.CharField(max_length=30, blank=True, null=True)
-	c_title = models.CharField(max_length=30, blank=True, null=True)
-	c_place = models.CharField(max_length=30, blank=True, null=True)
-	c_date = models.DateField(blank=True, null=True)
-	c_index = models.CharField(max_length=30, blank=True, null=True)
+	s_j_index = models.CharField(max_length=30, blank=True, null=True)
+	s_j_name = models.CharField(max_length=30, blank=True, null=True)
+	s_j_title = models.CharField(max_length=30, blank=True, null=True)
+	s_j_volume = models.CharField(max_length=30, blank=True, null=True)
+	s_j_issn = models.CharField(max_length=30, blank=True, null=True)
+	s_j_date = models.DateField(blank=True, null=True)
+	s_j_page = models.IntegerField( blank=True, null=True)
+
+	f_j_index = models.CharField(max_length=30, blank=True, null=True)
+	f_j_name = models.CharField(max_length=30, blank=True, null=True)
+	f_j_title = models.CharField(max_length=30, blank=True, null=True)
+	f_j_volume = models.CharField(max_length=30, blank=True, null=True)
+	f_j_issn = models.CharField(max_length=30, blank=True, null=True)
+	f_j_date = models.DateField(blank=True, null=True)
+	f_j_page = models.IntegerField( blank=True, null=True)
+
+	c_j_index = models.CharField(max_length=30, blank=True, null=True)
+	c_j_name = models.CharField(max_length=30, blank=True, null=True)
+	c_j_title = models.CharField(max_length=30, blank=True, null=True)
+	c_j_volume = models.CharField(max_length=30, blank=True, null=True)
+	c_j_issn = models.CharField(max_length=30, blank=True, null=True)
+	c_j_date = models.DateField(blank=True, null=True)
+	c_j_page = models.IntegerField( blank=True, null=True)
+
+	j_m = models.CharField(max_length=30, blank=True, null=True)
+
+	s_c_name = models.CharField(max_length=30, blank=True, null=True)
+	s_c_title = models.CharField(max_length=30, blank=True, null=True)
+	s_c_place = models.CharField(max_length=30, blank=True, null=True)
+	s_c_date = models.DateField(blank=True, null=True)
+	s_c_index = models.CharField(max_length=30, blank=True, null=True)
+
+	f_c_name = models.CharField(max_length=30, blank=True, null=True)
+	f_c_title = models.CharField(max_length=30, blank=True, null=True)
+	f_c_place = models.CharField(max_length=30, blank=True, null=True)
+	f_c_date = models.DateField(blank=True, null=True)
+	f_c_index = models.CharField(max_length=30, blank=True, null=True)
+
+	c_c_name = models.CharField(max_length=30, blank=True, null=True)
+	c_c_title = models.CharField(max_length=30, blank=True, null=True)
+	c_c_place = models.CharField(max_length=30, blank=True, null=True)
+	c_c_date = models.DateField(blank=True, null=True)
+	c_c_index = models.CharField(max_length=30, blank=True, null=True)
+
+	c_m = models.CharField(max_length=30, blank=True, null=True)
 
 	book_i = models.IntegerField(blank=True, null=True)
 	book_n = models.IntegerField( blank=True, null=True)
@@ -297,6 +366,8 @@ class rd(models.Model):
 	book_cn = models.IntegerField(blank=True, null=True)
 	book_ai = models.IntegerField( blank=True, null=True)
 	book_nm = models.IntegerField( blank=True, null=True)
+
+	book_m = models.CharField(max_length=30, blank=True, null=True)
 
 	if_s = models.CharField(max_length=30, blank=True, null=True)
 	if_f = models.CharField(max_length=30, blank=True, null=True)
@@ -313,8 +384,12 @@ class rd(models.Model):
 	Cw_2 = models.CharField(max_length=30, blank=True, null=True)
 	Cw_2_5 = models.CharField(max_length=30, blank=True, null=True)
 	Cw_5 = models.CharField(max_length=30, blank=True, null=True)
-	info = models.ForeignKey('User', on_delete=models.CASCADE,null=True)
 
+	rp_marks = models.CharField(max_length=30, blank=True, null=True)
+
+	rd_tot_marks = models.CharField(max_length=30, blank=True, null=True)
+
+	info = models.ForeignKey('User', on_delete=models.CASCADE,null=True)
 
 
 #TABLE-5
@@ -328,8 +403,7 @@ class remarks(models.Model):
 	ta_prin_remarks = models.TextField( blank=True, null=True)
 	prin_marks1 = models.IntegerField( blank=True, null=True)
 	prin_marks2 = models.IntegerField( blank=True, null=True)
-	tot_marks = models.IntegerField( blank=True, null=True)
-	teach_status = models.BooleanField(default=False)
+	total_marks = models.IntegerField( blank=True, null=True)
 	hod_status = models.BooleanField(default=False)
 	principal_status = models.BooleanField(default=False)
 	info = models.ForeignKey('User', on_delete=models.CASCADE,null=True)

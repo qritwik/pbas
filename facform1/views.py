@@ -11,12 +11,12 @@ import itertools
 
 
 
-def phone_otp(random_otp, phone):
-		phone1 = str(phone)
-		message = 'Please login with the OTP: '+random_otp
-		params = { 'number' : phone1, 'text' : message }
-		baseUrl = 'https://www.smsgatewayhub.com/api/mt/SendSMS?APIKey=62sxGWT6MkCjDul6eNKejw&senderid=BMSITM&channel=2&DCS=0&flashsms=0&' + ap.urlencode(params)
-		urllib.request.urlopen(baseUrl).read(1000)
+# def phone_otp(random_otp, phone):
+# 		phone1 = str(phone)
+# 		message = 'Please login with the OTP: '+random_otp
+# 		params = { 'number' : phone1, 'text' : message }
+# 		baseUrl = 'https://www.smsgatewayhub.com/api/mt/SendSMS?APIKey=62sxGWT6MkCjDul6eNKejw&senderid=BMSITM&channel=2&DCS=0&flashsms=0&' + ap.urlencode(params)
+# 		urllib.request.urlopen(baseUrl).read(1000)
 
 
 def login(request):
@@ -29,9 +29,10 @@ def login(request):
 			first_name = user.first_name
 			email = user.email
 			phone = user.phone
-			random_otp = r''.join(random.choice('01234ABCD') for i in range(8))
+			# random_otp = r''.join(random.choice('01234ABCD') for i in range(8))
+			random_otp = "123456"
 			print(random_otp)
-			phone_otp(random_otp,phone)
+			#phone_otp(random_otp,phone)
 
 			hashed_pwd = make_password(random_otp)
 			User.objects.filter(username=username).update(password=hashed_pwd)
@@ -105,35 +106,30 @@ def hod_form(request):
 
 def hod_display(request):
 
-
-	# user = request.user
-	# forms = empDetailForm.objects.filter(username__department=user.department)
-	# print(forms)
-	# context = {
-	# "forms" : forms
-	# }
 	user = request.user
 	pk = request.user.pk
 	hod_dept = user.department
 	hod_desg = user.designation
 	c1 = User.objects.filter(department=hod_dept).filter(~Q(designation=hod_desg))
-	c2 = remarks.objects.filter(info__department=hod_dept).filter(~Q(info__designation=hod_desg))
+	# c2 = .objects.filter(info__department=hod_dept).filter(~Q(info__designation=hod_desg))
 
-	# c3 = {c1,c2}
-	#
-	# print(c3)
-	data6 = {'name':c1,'hod_dept':hod_dept,'bool':c2}
 
-	print(data6)
-	return render(request,'hod_display.html',data6)
+
+	context = {'name':c1,'hod_dept':hod_dept}
+
+	# print(data6)
+	return render(request,'hod_display.html',context=context)
 
 def hod_teacher_display(request,pk):
 	name =  User.objects.get(pk = pk);
+	print(name)
 	data1 = User.objects.get(username=name);
 	data2 = empDetailForm.objects.get(info__username=name);
 	data3 = feedbackTab.objects.get(info__username=name);
 	data4 = rd.objects.get(info__username=name);
 	data5 = remarks.objects.get(info__username=name);
+	print(data2.Present_pos)
+
 
 	context1 = {
 	"key1":data1,
@@ -144,17 +140,32 @@ def hod_teacher_display(request,pk):
 	}
 	return render(request,'hod_teacher_display.html',context=context1)
 
-def principal_display(request):
-	return render(request,'principal_display.html')
+
+def principal_first(request):
+	dept = Department.objects.all()
+	context = {'dept':dept}
+	return render(request,'principal_first.html',context=context)
+
+def principal_display(request,dept):
+
+	print(dept)
+	hod = User.objects.filter(department__name=dept).filter(designation__pk = 8)
+	teach = User.objects.filter(department__name=dept).filter(~Q(designation__pk = 8))
+	dept = {'dept':dept,'hod':hod,'teach':teach}
+	print(hod)
+	print(teach)
+
+	return render(request,'principal_display.html',context=dept)
 
 def hod_first(request):
 	return render(request,'hod_first.html')
 
-def principal_first(request):
-	return render(request,'principal_first.html')
+
 
 def logout(request):
 	return render(request,'hod_success.html')
+
+
 
 def f_assistant(request):
 	if request.method == 'POST':
@@ -162,14 +173,15 @@ def f_assistant(request):
 		form3 = forms.form_feedbackTab(request.POST)
 		form4 = forms.form_rd(request.POST)
 		form5 = forms.form_remarks(request.POST)
-		if  form2.is_valid() and form3.is_valid() and form4.is_valid() and form5.is_valid():
+		if form2.is_valid() and form3.is_valid() and form4.is_valid() and form5.is_valid():
 
-
+			sendme = User.objects.get(username=request.user)
 
 			obj = form2.save(commit=False)
 			obj1 = form3.save(commit=False)
 			obj2 = form4.save(commit=False)
 			obj3 = form5.save(commit=False)
+
 
 			obj.info = request.user
 			obj1.info = request.user
@@ -179,10 +191,11 @@ def f_assistant(request):
 			obj.save()
 			obj1.save()
 			obj2.save()
-
-			obj3.teach_status = True
-
 			obj3.save()
+
+			if sendme.teach_status == False:
+				sendme.teach_status = True
+				sendme.save()
 
 			return HttpResponseRedirect("/logout/")
 		else:

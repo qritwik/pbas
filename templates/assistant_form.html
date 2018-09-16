@@ -15,13 +15,13 @@
 <body>
 	<div class="container">
 
-		  <div class="card poi">
+		  <div class="card poi" style="background:#ddccaa">
         <div class="form-row">
         <div class="form-group col-md-3">
         <img src={% static "image/logo.png" %} class="img-thumbnail" width="150px"/>
       </div>
         <div class="form-group col-md-9">
-        <h2 class="display-4 al" >BMS Institute of Technology&Management</h2>
+        <h2 class="display-4 al" >BMS Institute of Technology & Management</h2>
       </div>
     </div>
         <h3 class="lead" align="center">Faculty appraisal form</h3>
@@ -173,7 +173,20 @@
 <input type="text" class="form-control o_tr_avg">
 </div>
 
-<input type="button" value="click me" class="o_t">
+
+</div>
+<div class="row">
+
+<div class="form-group col-sm-4">
+
+</div>
+<div class="form-group col-sm-4">
+
+<button type="button" class="btn btn-info btn-lg btn-block o_t">Calculate</button>
+</div>
+<div class="form-group col-sm-4">
+
+</div>
 </div>
 
 
@@ -260,8 +273,22 @@
 <label >TOTAL RESULTS AVG.</label>
 <input type="text" class="form-control o_lr_avg">
 </div>
-<input type="button" value="click me" class="o_l">
+
 </div>
+<div class="row">
+
+<div class="form-group col-sm-4">
+
+</div>
+<div class="form-group col-sm-4">
+
+<button type="button" class="btn btn-info btn-lg btn-block o_l">Calculate</button>
+</div>
+<div class="form-group col-sm-4">
+
+</div>
+</div>
+
 </div>
 
 </div>
@@ -330,7 +357,20 @@
 <label >TOTAL RESULT AVG.</label>
 <input type="text" class="form-control e_tr_avg">
 </div>
-<input type="button" value="click me" class="e_t">
+
+</div>
+<div class="row">
+
+<div class="form-group col-sm-4">
+
+</div>
+<div class="form-group col-sm-4">
+
+<button type="button" class="btn btn-info btn-lg btn-block e_t">Calculate</button>
+</div>
+<div class="form-group col-sm-4">
+
+</div>
 </div>
 </div>
 <table class="table-bordered table">
@@ -416,7 +456,20 @@
 <input type="text" class="form-control e_lr_avg">
 </div>
 </div>
-<input type="button" value="click me" class="e_l">
+<div class="row">
+
+<div class="form-group col-sm-4">
+
+</div>
+<div class="form-group col-sm-4">
+
+<button type="button" class="btn btn-info btn-lg btn-block e_l">Calculate</button>
+</div>
+<div class="form-group col-sm-4">
+
+</div>
+</div>
+
 </div>
 </div>
 
@@ -458,29 +511,58 @@
 
 <div class="container-fluid">
 <div class="row">
-
-<div class="form-group col-sm-6">
+<div class="form-group col-sm-1">
+</div>
+<div class="form-group col-sm-4">
 <label > </label>
 
+<button type="button" class="btn btn-info btn-lg btn-block e_p">Calculate</button>
+
+</div>
+<div class="form-group col-sm-1">
 </div>
 <div class="form-group col-sm-6">
 <label >TOTAL FEEDBACK AVG.</label>
 <input type="text" class="form-control p_avg">
 </div>
 </div>
-<input type="button" value="click me" class="e_p">
 </div>
 </div>
-<div class="container-fluid" >
-<div class="row">
-<div class="form-group col-sm-6" >
+<div class="card poi card-header" id="headingOne">
+<div class="form-group">
+<div class="form-row dis">
+<div class="col-1"></div>
+<div class="col-10">
+ <div class="form-row dis">
+               <div class="form-group col-md-6">
+              <h6 class="po color1">TOTAL MARKS<span class="sp">_(Maximum Score: 40)</span></h6>
+               </div>
+
+                  <div class="orm-group col-md-6">
+                        <input type="text" class="form-control f_marks"  placeholder="Calculated Marks" >
+                        </div>
+                    </div>
 </div>
-<div class="form-group col-sm-6" >
-<h6 class="po color1">TOTAL MARKS<span class="sp">_(Maximum Score: 40)</span></h6>
-<input type="text" class="form-control f_marks">
-<input type="button" value="click me " class="f_calc">
+<div class="col-1"></div>
+</div>
+
+<div class="form-row dis">
+<div class="col-4"></div>
+<div class="col-4">
+ <div class="form-row dis">
+
+
+
+   <button type="button" class="btn btn-success btn-lg btn-block f_calc">Calculate</button>
+
+
+
+</div>
+<div class="col-4"></div>
 </div>
 </div>
+</div>
+
 </div>
 <div class="accordion" id="accordionExample">
   <h5 class="po color1">2: RESEARCH & DEVELOPMENT AND CONSULTANCY<span class="sp">(Maximum Score: 35 marks)</span></h5>
@@ -494,79 +576,68 @@
     </div>
 
 <div class="form-row dis">
-          <div class="form-group col-md-4">
+          <div class="form-group col-md-6">
                         <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="State Level (.5 m/day)" >
 
           </div>
-        <div class="form-group col-md-4">
+        <div class="form-group col-md-6">
 
             {% render_field form4.w_s_d class="form-control w_s_d" %}
         </div>
-       <div class="form-group col-md-4">
-                        <input type="text" class="form-control"  placeholder="Calculated Marks Generated Here" >
 
-          </div>
 
     </div>
 
     <div class="form-row dis">
-          <div class="form-group col-md-4">
+          <div class="form-group col-md-6">
                         <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="National Level (1 m/day)">
 
           </div>
-        <div class="form-group col-md-4">
+        <div class="form-group col-md-6">
 
             {% render_field form4.w_n_d class="form-control w_n_d" %}
         </div>
 
-         <div class="form-group col-md-4">
-                        <input type="text" class="form-control"  placeholder="Calculated Marks Generated Here" >
 
-          </div>
 
 
     </div>
 
     <div class="form-row dis">
-          <div class="form-group col-md-4">
+          <div class="form-group col-md-6">
                         <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="International Level (1 m/day)">
 
           </div>
-        <div class="form-group col-md-4">
+        <div class="form-group col-md-6">
 
             {% render_field form4.w_i_d class="form-control w_i_d" %}
         </div>
 
-         <div class="form-group col-md-4">
-                        <input type="text" class="form-control"  placeholder="Calculated Marks Generated Here" >
-
-          </div>
-
-    </div>
-<div class="form-row dis">
-          <div class="form-group col-md-4">
-
-
-          </div>
-        <div class="form-group col-md-4">
-
-
-        </div>
-
-         <div class="form-group col-md-4">
-               <div class="form-row dis">
-               <div class="form-group col-md-4">
-               <span>Total Marks :</span>
-               </div>
-                  <div class="form-group col-md-8">
-                        <input type="text" class="form-control w_s"  placeholder="Calculated Marks" >
-                        </div>
-                    </div>
-
-          </div>
 
 
     </div>
+		<div class="form-row dis">
+							<div class="form-group col-md-2">
+
+
+							</div>
+
+
+						 <div class="form-group col-md-8">
+									 <div class="form-row dis">
+								 <div class="orm-group col-md-4">
+
+									</div>
+												<div class="form-group col-md-2"></div>
+											<div class="orm-group col-md-6">
+														<input type="text" class="form-control w_s"  placeholder="Calculated Marks" >
+														</div>
+												</div>
+
+							</div>
+							<div class="form-group col-md-2"></div>
+
+				</div>
 </div>
   <div class="card">
     <div class="card-header" id="headingTwo">
@@ -579,97 +650,86 @@
     </div>
 
         <div class="form-row dis">
-          <div class="form-group col-md-4">
+          <div class="form-group col-md-6">
                         <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="State Level (2 m/session)">
 
           </div>
-        <div class="form-group col-md-4">
+        <div class="form-group col-md-6">
 
             {% render_field form4.p_s_d class="form-control p_s_d" %}
         </div>
-         <div class="form-group col-md-4">
-                        <input type="text" class="form-control"  placeholder="Calculated Marks Generated Here" >
 
-          </div>
     </div>
 
     <div class="form-row dis">
-          <div class="form-group col-md-4">
+          <div class="form-group col-md-6">
                         <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="National Level (4 m/session)">
 
           </div>
-        <div class="form-group col-md-4">
+        <div class="form-group col-md-6">
 
             {% render_field form4.p_n_d class="form-control p_n_d" %}
 
         </div>
 
-         <div class="form-group col-md-4">
-                        <input type="text" class="form-control"  placeholder="Calculated Marks Generated Here" >
 
-          </div>
     </div>
 
     <div class="form-row dis">
-          <div class="form-group col-md-4">
+          <div class="form-group col-md-6">
                         <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="International Level (5 m/session)">
 
           </div>
-        <div class="form-group col-md-4">
+        <div class="form-group col-md-6">
 
             {% render_field form4.p_i_d class="form-control p_i_d" %}
 
         </div>
 
-         <div class="form-group col-md-4">
-                        <input type="text" class="form-control"  placeholder="Calculated Marks Generated Here" >
-
-          </div>
-
-    </div>
-    <div class="form-row dis">
-          <div class="form-group col-md-4">
-
-
-          </div>
-        <div class="form-group col-md-4">
-
-
-        </div>
-
-         <div class="form-group col-md-4">
-               <div class="form-row dis">
-               <div class="orm-group col-md-4">
-               <span>Total Marks :</span>
-               </div>
-                  <div class="orm-group col-md-8">
-                        <input type="text" class="form-control p_s"  placeholder="Calculated Marks" >
-                        </div>
-                    </div>
-
-          </div>
 
 
     </div>
+		<div class="form-row dis">
+							<div class="form-group col-md-2">
+
+
+							</div>
+
+
+						 <div class="form-group col-md-8">
+									 <div class="form-row dis">
+								 <div class="orm-group col-md-4">
+
+									</div>
+												<div class="form-group col-md-2"></div>
+											<div class="orm-group col-md-6">
+														<input type="text" class="form-control p_s"  placeholder="Calculated Marks" >
+														</div>
+												</div>
+
+							</div>
+							<div class="form-group col-md-2"></div>
+
+				</div>
   </div>
-  <div class="card">
-    <div class="card-header" id="headingThree">
-      <h5 class="mb-0">
-        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-         2C: Number of Online Courses Completed
-        </button><span class="sp">(Maximum Score: 10 marks)</span>
-      </h5>
-    </div>
-    <div class="container-fluid dis">
-    <div class="row ">
-   <div class="form-group dis col-md-6">
-            {% render_field form4.onl_course_c class="form-control onl_course_c" %}
-        </div>
-        <div class="form-group col-md-6">
-                        <input type="text" class="form-control o_m"  placeholder="Calculated Marks (5 m/course)" ></div>
-  </div>
-</div>
-</div>
+	<div class="card">
+		<div class="card-header" id="headingThree">
+			<h5 class="mb-0">
+				<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+				 2C: Number of Online Courses Completed
+				</button><span class="sp">(Maximum Score: 10 marks)</span>
+			</h5>
+		</div>
+		<div class="form-group">
+		<div class="form-row dis">
+	 <div class="form-group col-md-6">
+						{% render_field form4.onl_course_c class="form-control onl_course_c" %}
+				</div>
+				<div class="form-group col-md-6">
+												<input type="text" class="form-control o_m"  placeholder="Calculated Marks (5 m/course)" ></div>
+	</div>
+	</div>
+	</div>
 </div>
 
 
@@ -683,41 +743,165 @@
         </button>
       </h5>
     </div>
-    <div class="form-group col-md-12" >
+
+		<div class="form-row dis">
+    <div class="form-group col-md-4 " >
+			<div class="form-row">
+			<div class="form-group col-sm-12">
+			<h4 class="mb-0" align ="center" >Sole Authored </h4>
+
+			</div>
+			</div>
 <div class="form-row">
-<div class="form-group col-sm-6">
+<div class="form-group col-sm-12">
 <label >Name of conference: </label>
 {% render_field form4.c_name class="form-control" %}
 </div>
-
-<div class="form-group col-sm-6">
+</div>
+<div class="form-row">
+<div class="form-group col-sm-12">
 <label >Title of the paper: </label>
 {% render_field form4.c_title class="form-control" %}
 </div>
-
-<div class="form-group col-sm-6">
+</div>
+<div class="form-row">
+<div class="form-group col-sm-12">
 <label>Place: </label>
 {% render_field form4.c_place class="form-control" %}
 </div>
-
-<div class="form-group col-sm-6">
+</div>
+<div class="form-row">
+<div class="form-group col-sm-12">
 <label >Date: </label>
 {% render_field form4.c_date class="form-control" %}
 </div>
-
-<div class="form-group col-sm-6">
+</div>
+<div class="form-row">
+<div class="form-group col-sm-12">
 <label>Indexed: </label>
 {% render_field form4.c_index class="form-control" %}
 </div>
-<div class="form-group col-sm-6">
+</div>
+<div class="form-row">
+<div class="form-group col-sm-12">
  <div class="form-row dis">
-               <div class="orm-group col-md-4">
-               <span>Total Marks :</span>
+               <div class="orm-group col-md-2">
+
                </div>
                   <div class="orm-group col-md-8">
-                        <input type="text" class="form-control"  placeholder="Calculated Marks" >
+                        <input type="text" class="form-control"  placeholder="6m/publication" >
                         </div>
+												<div class="orm-group col-md-2">
+
+												</div>
                     </div>
+</div>
+</div>
+</div>
+<div class="form-group col-md-4 " style="  border-left: thin solid #ff0000" >
+	<div class="form-row">
+	<div class="form-group col-sm-12">
+	<h4 class="mb-0" align ="center" >First & Second Author </h4>
+
+	</div>
+	</div>
+<div class="form-row">
+<div class="form-group col-sm-12">
+<label >Name of conference: </label>
+{% render_field form4.c_name class="form-control" %}
+</div>
+</div>
+<div class="form-row">
+<div class="form-group col-sm-12">
+<label >Title of the paper: </label>
+{% render_field form4.c_title class="form-control" %}
+</div>
+</div>
+<div class="form-row">
+<div class="form-group col-sm-12">
+<label>Place: </label>
+{% render_field form4.c_place class="form-control" %}
+</div>
+</div>
+<div class="form-row">
+<div class="form-group col-sm-12">
+<label >Date: </label>
+{% render_field form4.c_date class="form-control" %}
+</div>
+</div>
+<div class="form-row">
+<div class="form-group col-sm-12">
+<label>Indexed: </label>
+{% render_field form4.c_index class="form-control" %}
+</div>
+</div>
+<div class="form-row">
+<div class="form-group col-sm-12">
+<div class="form-row dis">
+					 <div class="orm-group col-md-2">
+
+					 </div>
+							<div class="orm-group col-md-8">
+										<input type="text" class="form-control"  placeholder="3m/publication" >
+										</div>
+										<div class="orm-group col-md-2">
+
+										</div>
+								</div>
+</div>
+</div>
+</div>
+<div class="form-group col-md-4" style="  border-left: thin solid #ff0000" >
+	<div class="form-row">
+	<div class="form-group col-sm-12">
+	<h4 class="mb-0" align ="center" >Other Author </h4>
+
+	</div>
+	</div>
+<div class="form-row">
+<div class="form-group col-sm-12">
+<label >Name of conference: </label>
+{% render_field form4.c_name class="form-control" %}
+</div>
+</div>
+<div class="form-row">
+<div class="form-group col-sm-12">
+<label >Title of the paper: </label>
+{% render_field form4.c_title class="form-control" %}
+</div>
+</div>
+<div class="form-row">
+<div class="form-group col-sm-12">
+<label>Place: </label>
+{% render_field form4.c_place class="form-control" %}
+</div>
+</div>
+<div class="form-row">
+<div class="form-group col-sm-12">
+<label >Date: </label>
+{% render_field form4.c_date class="form-control" %}
+</div>
+</div>
+<div class="form-row">
+<div class="form-group col-sm-12">
+<label>Indexed: </label>
+{% render_field form4.c_index class="form-control" %}
+</div>
+</div>
+<div class="form-row">
+<div class="form-group col-sm-12">
+<div class="form-row dis">
+					 <div class="orm-group col-md-2">
+
+					 </div>
+							<div class="orm-group col-md-8">
+										<input type="text" class="form-control"  placeholder="2m/publication" >
+										</div>
+										<div class="orm-group col-md-2">
+
+										</div>
+								</div>
+</div>
 </div>
 </div>
 </div>
@@ -767,47 +951,205 @@
         </button>
       </h5>
     </div>
-      <div class="form-group col-md-12">
+
+		    <div class="form-row dis">
+      <div class="form-group col-md-4">
         <div class="form-row">
-<div class="form-group col-sm-6">
+<div class="form-group col-sm-11">
+					<div class="form-group col-sm-12">
+					<h4 class="mb-0" align ="center" >Sole Authored </h4>
+</div>
+					</div>
+<div class="form-group col-sm-11">
 <label >Name of journal: </label>
 {% render_field form4.j_name class="form-control" %}
 </div>
-<div class="form-group col-sm-6">
+</div>
+    <div class="form-row">
+<div class="form-group col-sm-11">
 <label >Title of the paper: </label>
 {% render_field form4.j_title class="form-control" %}
 </div>
-<div class="form-group col-sm-6">
+</div>
+    <div class="form-row">
+<div class="form-group col-sm-11">
 <label >Volume: </label>
 {% render_field form4.j_volume class="form-control" %}
 </div>
-<div class="form-group col-sm-6">
+</div>
+    <div class="form-row">
+<div class="form-group col-sm-11">
 <label >Issn/Doi: </label>
 {% render_field form4.j_issn class="form-control" %}
 </div>
-<div class="form-group col-sm-6">
+</div>
+    <div class="form-row">
+<div class="form-group col-sm-11">
 <label >Date: </label>
 {% render_field form4.c_date class="form-control" %}
 </div>
-<div class="form-group col-sm-6">
+</div>
+    <div class="form-row">
+<div class="form-group col-sm-11">
 <label >Page no: </label>
 {% render_field form4.j_page class="form-control" %}
 </div>
-<div class="form-group col-sm-6">
+</div>
+    <div class="form-row">
+<div class="form-group col-sm-11">
 <label>Indexed: </label>
 {% render_field form4.j_index class="form-control" %}
 </div>
-<div class="form-group col-sm-6">
+</div>
+    <div class="form-row">
+<div class="form-group col-sm-11">
  <div class="form-row dis">
-               <div class="orm-group col-md-4">
-               <span>Total Marks :</span>
+               <div class="orm-group col-md-2">
+
                </div>
                   <div class="orm-group col-md-8">
-                        <input type="text" class="form-control"  placeholder="Calculated Marks" >
+                        <input type="text" class="form-control"  placeholder="10m/publication" >
                         </div>
+												<div class="orm-group col-md-2">
+
+				                </div>
                     </div>
 
    </div>
+</div>
+
+</div>
+
+<div class="form-group col-md-4 " style="  border-left: thin solid #ff0000">
+	<div class="form-row">
+		<div class="form-group col-sm-11">
+							<div class="form-group col-sm-12">
+							<h4 class="mb-0" align ="center" >First & Second Author </h4>
+		</div>
+							</div>
+<div class="form-group col-sm-11">
+<label >Name of journal: </label>
+{% render_field form4.j_name class="form-control" %}
+</div>
+</div>
+<div class="form-row">
+<div class="form-group col-sm-11">
+<label >Title of the paper: </label>
+{% render_field form4.j_title class="form-control" %}
+</div>
+</div>
+<div class="form-row">
+<div class="form-group col-sm-11">
+<label >Volume: </label>
+{% render_field form4.j_volume class="form-control" %}
+</div>
+</div>
+<div class="form-row">
+<div class="form-group col-sm-11">
+<label >Issn/Doi: </label>
+{% render_field form4.j_issn class="form-control" %}
+</div>
+</div>
+<div class="form-row">
+<div class="form-group col-sm-11">
+<label >Date: </label>
+{% render_field form4.c_date class="form-control" %}
+</div>
+</div>
+<div class="form-row">
+<div class="form-group col-sm-11">
+<label >Page no: </label>
+{% render_field form4.j_page class="form-control" %}
+</div>
+</div>
+<div class="form-row">
+<div class="form-group col-sm-11">
+<label>Indexed: </label>
+{% render_field form4.j_index class="form-control" %}
+</div>
+</div>
+<div class="form-row">
+<div class="form-group col-sm-11">
+<div class="form-row dis">
+				 <div class="orm-group col-md-2">
+
+				 </div>
+						<div class="orm-group col-md-8">
+									<input type="text" class="form-control"  placeholder="6m/publication" >
+									</div>
+									<div class="orm-group col-md-2">
+
+									</div>
+							</div>
+
+</div>
+</div>
+
+</div>
+<div class="form-group col-md-4 " style="  border-left: thin solid #ff0000">
+	<div class="form-row">
+		<div class="form-group col-sm-11">
+							<div class="form-group col-sm-12">
+							<h4 class="mb-0" align ="center" >Other Author </h4>
+		</div>
+							</div>
+<div class="form-group col-sm-11">
+<label >Name of journal: </label>
+{% render_field form4.j_name class="form-control" %}
+</div>
+</div>
+<div class="form-row">
+<div class="form-group col-sm-11">
+<label >Title of the paper: </label>
+{% render_field form4.j_title class="form-control" %}
+</div>
+</div>
+<div class="form-row">
+<div class="form-group col-sm-11">
+<label >Volume: </label>
+{% render_field form4.j_volume class="form-control" %}
+</div>
+</div>
+<div class="form-row">
+<div class="form-group col-sm-11">
+<label >Issn/Doi: </label>
+{% render_field form4.j_issn class="form-control" %}
+</div>
+</div>
+<div class="form-row">
+<div class="form-group col-sm-11">
+<label >Date: </label>
+{% render_field form4.c_date class="form-control" %}
+</div>
+</div>
+<div class="form-row">
+<div class="form-group col-sm-11">
+<label >Page no: </label>
+{% render_field form4.j_page class="form-control" %}
+</div>
+</div>
+<div class="form-row">
+<div class="form-group col-sm-11">
+<label>Indexed: </label>
+{% render_field form4.j_index class="form-control" %}
+</div>
+</div>
+<div class="form-row">
+<div class="form-group col-sm-11">
+<div class="form-row dis">
+				 <div class="orm-group col-md-2">
+
+				 </div>
+						<div class="orm-group col-md-8">
+									<input type="text" class="form-control"  placeholder="4m/publication" >
+									</div>
+									<div class="orm-group col-md-2">
+
+									</div>
+							</div>
+
+</div>
+</div>
 
 </div>
 </div>
@@ -927,14 +1269,15 @@
           </div>
         <div class="form-group col-md-6">
 
-              <div class="form-row dis">
-               <div class="form-group col-md-4">
-               <span>Total Marks :</span>
-               </div>
-                  <div class="form-group col-md-8">
+                 <div class="form-row">
+									 <div clas="col-md-9">
                         <input type="text" class="form-control b_t"  placeholder="Calculated Marks" >
-                        </div>
-                    </div>
+                     </div>
+										 <div class="col-md-3"></div>
+
+</div>
+
+
 
    </div>
         </div>
@@ -942,7 +1285,7 @@
 <!-- </form> -->
   </div>
 </div>
-<div class="card poi">
+<div class="card ">
 
     <div class="card-header" id="headingTwo">
       <h5 class="mb-0">
@@ -964,23 +1307,25 @@
   </thead>
   <tbody>
     <tr>
-      <th scope="row">Internally Funded<span class="sp"> 5 marks/project</span></th>
+      <th scope="row">Internally Funded<span class="sp">( 5 marks/project)</span></th>
       <td> {% render_field form4.if_s class="form-control if_s" %}</td>
       <td>{% render_field form4.if_f class="form-control if_f" %}</td>
       <td>{% render_field form4.if_c class="form-control if_c" %}</td>
     </tr>
     <tr>
-      <th scope="row">Externally Funded Less than 5Lakhs<span class="sp">( 5 marks/project )</span> </th>
+      <th scope="row">Externally Funded Less than 5_Lakhs<span class="sp">( 5 marks/project )</span> </th>
        <td> {% render_field form4.ef_s class="form-control ef_s" %}</td>
       <td>{% render_field form4.ef_f class="form-control ef_f" %}</td>
       <td>{% render_field form4.ef_c class="form-control ef_c" %}</td>
     </tr>
     <tr>
-      <th scope="row">Externally Funded Btw 5Lakhs to 10Lakhs<span class="sp"> 10 marks/project</span> </th>
+      <th scope="row">Externally Funded more than 5_Lakhs<span class="sp"> (10 marks/project)</span> </th>
       <td> {% render_field form4.eef_s class="form-control eef_s" %}</td>
       <td>{% render_field form4.eef_f class="form-control eef_f" %}</td>
       <td>{% render_field form4.eef_c class="form-control eef_c" %}</td>
     </tr>
+		<tr>
+
   </tbody>
 </table>
 
@@ -1016,48 +1361,87 @@
         <div class="form-group col-md-2 align-center"><h4> IPR Type :</h4>
         </div>
 
-      <div class="form-group col-md-8"> <input type="text" class="form-control"  placeholder="Enter Here" ></div>
- </div>
+      <div class="form-group col-md-4"> <form>
+    <div class="form-group">
+      <label for="sel1">Select list (select one):</label>
+      <select class="form-control" id="sel1">
+        <option>Filed</option>
+        <option>Received</option>
+        <option>Pending</option>
+
+      </select>
+
+    </div>
+  </form></div>
  </div>
 </div>
-<div class="card poi">
+
+<div class="form-group">
+
+
+
+  <div class="form-row dis">
+            <div class="form-group col-md-2">
+
+
+            </div>
+
+
+           <div class="form-group col-md-8">
+                 <div class="form-row dis">
+               <div class="orm-group col-md-4">
+
+                </div>
+                      <div class="form-group col-md-2"></div>
+                    <div class="orm-group col-md-6">
+                          <input type="text" class="form-control rp_m"  placeholder="Calculated Marks" >
+                          </div>
+                      </div>
+
+            </div>
+            <div class="form-group col-md-2"></div>
+
+      </div>
+</div>
+</div>
+</div>
+<div class="card poi card-header" id="headingOne">
 <div class="form-group">
 <div class="form-row dis">
-<div class="col-6">
-</div>
-<div class="col-6">
+<div class="col-1"></div>
+<div class="col-10">
  <div class="form-row dis">
-               <div class="orm-group col-md-4">
-               <span>Total Marks :</span>
+               <div class="orm-group col-md-6">
+              <h6 class="po color1">TOTAL MARKS<span class="sp">_(Maximum Score: 30)</span></h6>
                </div>
 
-                  <div class="orm-group col-md-8">
-                        <input type="text" class="form-control rp_m"  placeholder="Calculated Marks" >
-                        </div>
-                    </div>
-</div>
-</div>
-</div>
-</div>
-<div class="card poi">
-<div class="form-group">
-<div class="form-row dis">
-<div class="col-6"></div>
-<div class="col-6">
- <div class="form-row dis">
-               <div class="orm-group col-md-4">
-               <span><h6>Total Marks (Out Of 35):</h6></span>
-               </div>
-
-                  <div class="form-group col-md-8">
+                  <div class="orm-group col-md-6">
                         <input type="text" class="form-control r_marks"  placeholder="Calculated Marks" >
                         </div>
-                        <input type="button" value="click me" class="rd">
                     </div>
 </div>
+<div class="col-1"></div>
+</div>
+
+<div class="form-row dis">
+<div class="col-4"></div>
+<div class="col-4">
+ <div class="form-row dis">
+
+
+
+   <input type="button" class="btn btn-success btn-lg btn-block rd" value="Calculate">
+
+
+
+</div>
+<div class="col-4"></div>
 </div>
 </div>
 </div>
+
+</div>
+<div class="card poi">
 
 <div class="card po">
   <h5 class="po"> Innovative contributions to teaching learning process provide description below with Initiation,Implementation, Impact Analysis<span class="sp">(Maximum Score: 5 marks)</span></h5>
@@ -1150,32 +1534,49 @@
   </div>
   <textarea class="form-control" aria-label="With textarea"></textarea>
 </div>
-
 </div>
-<div class="card poi">
+</div>
+<div class="card poi card-header" id="headingOne">
 <div class="form-group">
 <div class="form-row dis">
-<div class="col-4"></div>
-<div class="col-8">
+<div class="col-1"></div>
+<div class="col-10">
  <div class="form-row dis">
-               <div class="orm-group col-md-5">
-               <span><h4>Total Marks (Out Of 100):</h4></span>
+               <div class="orm-group col-md-6">
+              <h6 class="po color1">TOTAL MARKS<span class="sp">_(Maximum Score: 100)</span></h6>
                </div>
 
-                  <div class="orm-group col-md-7">
+                  <div class="orm-group col-md-6">
                         <input type="text" class="form-control"  placeholder="Calculated Marks" >
                         </div>
                     </div>
 </div>
+<div class="col-1"></div>
+</div>
+
+<div class="form-row dis">
+<div class="col-4"></div>
+<div class="col-4">
+ <div class="form-row dis">
+
+
+
+   <button type="button" class="btn btn-success btn-lg btn-block">Submit</button>
+
+
+
+</div>
+<div class="col-4"></div>
 </div>
 </div>
 </div>
 
-<input type="submit" name="submit">
-</form>
 </div>
 
-	
+
+</div>
+
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </body>
