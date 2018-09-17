@@ -28,6 +28,7 @@ class User(AbstractUser):
 	teach_status = models.BooleanField(default=False)
 	hod_status = models.BooleanField(default=False)
 	principal_status = models.BooleanField(default=False)
+	doc_link = models.CharField(max_length=1000, blank=True, null=True)
 	info = models.CharField(max_length=20, blank=True, null=True)
 
 
@@ -364,6 +365,10 @@ class rd(models.Model):
 	s_c_m = models.CharField(max_length=30, blank=True, null=True)
 	f_c_m = models.CharField(max_length=30, blank=True, null=True)
 	o_c_m = models.CharField(max_length=30, blank=True, null=True)
+
+
+	department = models.ForeignKey('Department', on_delete=models.CASCADE,null=True)
+	designation = models.ForeignKey('Designation', on_delete=models.CASCADE,null=True)
 
 
 

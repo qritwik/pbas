@@ -219,7 +219,7 @@ def principal_teacher_display(request,pk):
 			if sendme.principal_status == False:
 				sendme.principal_status = True
 				sendme.save()
-			
+
 			return HttpResponseRedirect("/logout/")
 
 	else:
@@ -311,26 +311,29 @@ def f_assistant(request):
 
 
 	if request.method == 'POST':
-
+		form1 = forms.form_User(request.POST)
 		form2 = forms.form_empDetailForm(request.POST)
 		form3 = forms.form_feedbackTab(request.POST)
 		form4 = forms.form_rd(request.POST)
 		form5 = forms.form_remarks(request.POST)
-		if form2.is_valid() and form3.is_valid() and form4.is_valid() and form5.is_valid():
+		if form1.is_valid() and form2.is_valid() and form3.is_valid() and form4.is_valid() and form5.is_valid():
 
 			sendme = User.objects.get(username=request.user)
 
+			obj0 = form1.save(commit=False)
 			obj = form2.save(commit=False)
 			obj1 = form3.save(commit=False)
 			obj2 = form4.save(commit=False)
 			obj3 = form5.save(commit=False)
 
 
+			obj0.info = request.user
 			obj.info = request.user
 			obj1.info = request.user
 			obj2.info = request.user
 			obj3.info = request.user
 
+			obj0.save()
 			obj.save()
 			obj1.save()
 			obj2.save()
@@ -344,12 +347,12 @@ def f_assistant(request):
 		else:
 			print(form2.errors)
 	else:
-
+		form1 = forms.form_User()
 		form2 = forms.form_empDetailForm()
 		form3 = forms.form_feedbackTab()
 		form4 = forms.form_rd()
 		form5 = forms.form_remarks()
-	return render(request,'assistant_form.html',{'form2':form2,'form3':form3,'form4':form4,'form5':form5,'info':data_final})
+	return render(request,'assistant_form.html',{'form1':form1,'form2':form2,'form3':form3,'form4':form4,'form5':form5,'info':data_final})
 
 def f_associate(request):
 	if request.method == 'POST':

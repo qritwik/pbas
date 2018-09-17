@@ -216,7 +216,7 @@
 			<td>{% render_field form3.o_l1_favg class="form-control o_l1_favg" %}</td>
       <td> {% render_field form3.o_l1_stu_app class="form-control o_l1_stu_app" %}</td>
       <td>{% render_field form3.o_l1_stu_pass class="form-control o_l1_stu_pass" %}</td>
-			<td>{% render_field form3.o_l1_stu_perpass class="form-control o_t1_stu_perpass"  %}</td>
+			<td>{% render_field form3.o_l1_stu_perpass class="form-control o_t3_stu_perpass"  %}</td>
     </tr>
     <tr>
       <td>2</td>
@@ -1380,7 +1380,7 @@
 
 
   <div class="form-row dis">
-            <div class="form-group col-md-2">
+            <div class="form-group col-md-6">
 
 
             </div>
@@ -1393,7 +1393,7 @@
                 </div>
                       <div class="form-group col-md-2"></div>
                     <div class="orm-group col-md-6">
-											{% render_field form4.rp_marks class="form-control rp_marks" %}
+											{% render_field form4.rp_marks class="form-control" %}
                           </div>
                       </div>
 
@@ -1406,6 +1406,23 @@
 </div>
 <div class="card poi card-header" id="headingOne">
 <div class="form-group">
+
+	<div class="form-row dis">
+	<div class="col-1"></div>
+	<div class="col-10">
+	 <div class="form-row dis">
+	               <div class="orm-group col-md-6">
+	              <h6 class="po color1">Upload Link here<span class="sp">_(For all required documents)</span></h6>
+	               </div>
+
+	                  <div class="form-group col-md-6">
+											{% render_field form1.doc_link class="form-control" %}
+	                        </div>
+	                    </div>
+	</div>
+	<div class="col-1"></div>
+	</div>
+
 <div class="form-row dis">
 <div class="col-1"></div>
 <div class="col-10">
