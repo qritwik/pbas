@@ -16,6 +16,10 @@ background: linear-gradient(to right, #48b1bf, #06beb6); /* W3C, IE 10+/ Edge, F
 	text-decoration: underline;
 }
 
+.iop{
+	margin-top: 50px !important;
+}
+
 .poi{
 	margin-top: 60px !important;
 	padding: 0.5%;

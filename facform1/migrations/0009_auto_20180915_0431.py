@@ -10,10 +10,7 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.RemoveField(
-            model_name='remarks',
-            name='teach_status',
-        ),
+        
         migrations.AddField(
             model_name='user',
             name='teach_status',

@@ -34,18 +34,7 @@ class Migration(migrations.Migration):
                 ('department', models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, to='facform1.Department')),
             ],
         ),
-        migrations.RemoveField(
-            model_name='remarks',
-            name='hod_marks1',
-        ),
-        migrations.RemoveField(
-            model_name='remarks',
-            name='hod_marks2',
-        ),
-        migrations.RemoveField(
-            model_name='remarks',
-            name='hod_status',
-        ),
+        
         migrations.RemoveField(
             model_name='remarks',
             name='prin_marks1',

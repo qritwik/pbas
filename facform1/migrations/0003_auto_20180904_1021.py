@@ -20,10 +20,7 @@ class Migration(migrations.Migration):
                 ('name', models.CharField(blank=True, max_length=20, null=True)),
             ],
         ),
-        migrations.RemoveField(
-            model_name='user',
-            name='dept_id',
-        ),
+        
         migrations.AddField(
             model_name='user',
             name='deptartment',

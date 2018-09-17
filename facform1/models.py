@@ -407,7 +407,7 @@ class remarks(models.Model):
 	ta_dr = models.TextField( blank=True, null=True)
 	info = models.ForeignKey('User', on_delete=models.CASCADE,null=True)
 
-class remarks1(models.Model):	
+class remarks1(models.Model):
 	hod_marks1 = models.IntegerField(blank=True, null=True)
 	hod_marks2 = models.IntegerField( blank=True, null=True)
 	ta_hod_remarks = models.TextField( blank=True, null=True)

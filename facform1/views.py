@@ -133,7 +133,28 @@ def hod_teacher_display(request,pk):
 	data3 = feedbackTab.objects.get(info__username=name);
 	data4 = rd.objects.get(info__username=name);
 	data5 = remarks.objects.get(info__username=name);
-	print(data2.Present_pos)
+
+
+
+
+
+	if request.method == 'POST':
+		form1 = forms.form_remarks1(request.POST)
+		if form1.is_valid():
+
+			sendme = User.objects.get(username=name)
+			obj = form1.save(commit=False)
+
+			obj.info = name
+			obj.save()
+
+			if sendme.hod_status == False:
+				sendme.hod_status = True
+				sendme.save()
+			return HttpResponseRedirect("/logout/")
+
+	else:
+		form1 = forms.form_remarks1()
 
 
 	context1 = {
@@ -142,7 +163,9 @@ def hod_teacher_display(request,pk):
 	"key3":data3,
 	"key4":data4,
 	"key5":data5,
+	"form1":form1
 	}
+
 	return render(request,'hod_teacher_display.html',context=context1)
 
 
@@ -176,7 +199,7 @@ def ao_display(request,dept):
 	print(dept)
 	above = remarks2.objects.filter(total_marks__gte = 60).filter(department__name=dept)
 	below = remarks2.objects.filter(total_marks__lt = 60).filter(department__name=dept)
-	
+
 	dept = {'dept':dept,'above':above,'below':below}
 	print(above)
 	print(below)
@@ -210,7 +233,9 @@ def ao_teacher_display(request,pk):
 
 	}
 	return render(request,'ao_teacher_display.html',context=context1)
-	
+
+
+
 def hod_first(request):
 	user = request.user
 	hod_dept = user.department

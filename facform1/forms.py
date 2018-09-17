@@ -58,13 +58,13 @@ class form_remarks(forms.ModelForm):
 class form_remarks1(forms.ModelForm):
 
 	class Meta:
-		model = remarks
+		model = remarks1
 		fields = '__all__'
 		exclude = ['info']
 
 class form_remarks2(forms.ModelForm):
 
 	class Meta:
-		model = remarks
+		model = remarks2
 		fields = '__all__'
 		exclude = ['info']

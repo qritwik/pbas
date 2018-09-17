@@ -32,8 +32,5 @@ class Migration(migrations.Migration):
             old_name='emp_id',
             new_name='username',
         ),
-        migrations.RemoveField(
-            model_name='user',
-            name='emp_id',
-        ),
+        
     ]
