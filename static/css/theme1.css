@@ -8,7 +8,7 @@
 background-color: #ddccaa !important;
 }
 
-}
+
 
 .q1
 {
@@ -57,6 +57,7 @@ button:focus {
 }
 body {
   position:relative;
+   
 }
 .main-title {
     position: absolute;

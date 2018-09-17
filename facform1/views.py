@@ -119,6 +119,8 @@ def hod_display(request):
 
 
 
+
+
 	context = {'name':c1,'hod_dept':hod_dept}
 
 	# print(data6)

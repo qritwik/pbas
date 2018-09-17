@@ -27,16 +27,16 @@
  </div>
 </div>
 </div>
-<div class="login-page">
-  <div style="margin-top:-5%;" class="form">
+<div class="login-page" style="align:center">
+  <div style="margin-top:-5%;" class="container">
 
-    <p><h3>FACULTY LIST</h3></p>
+    <p><h2>Faculy List <span class="badge badge-success"><em>{{ hod_dept }}</em></span></h2></p>
     <form class="login-form" method="post">
 
-    <div class="list-group">
+    <div class="list-group" style="align:center">
       {{pk}}
 
-          <ul class="list-group">
+          <!-- <ul class="list-group">
             {% for info in name %}
 
               <li class="list-group-item d-flex justify-content-between align-items-center" value="{{info.pk}}">
@@ -52,7 +52,28 @@
 
             {% endfor %}
 
-          </ol>
+          </ul> -->
+
+  {% for info in name %}
+
+
+  <div class="card border-dark mb-3 ">
+
+
+  <div class="card-body">
+    <a href="/hod_teacher_display/{{info.pk}}" class="list-group-item list-group-item-action list-group-item-info">{{info.first_name}}</a>
+
+  </div>
+
+  <div class="card-footer">
+    <span class="badge badge-primary  pull-left">{{info.teach_status}}</span>
+    <span class="badge badge-danger ">{{info.hod_status}}</span>
+  </div>
+
+
+</div>
+
+{% endfor %}
 
 
 
