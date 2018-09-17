@@ -78,19 +78,19 @@ $(function(){
 
 	o_t_avg = (o_t_avg)/c;
 	if(isNaN(o_t_avg)){
-		$('.o_t_avg').val(0);
+		$('.o_t_f_avg').val(0);
 	}
 	else{
-		$('.o_t_avg').val(o_t_avg);
+		$('.o_t_f_avg').val(o_t_avg);
 	}
 
 	o_tr_avg =(o_tr_avg)/d;
 	o_tr_avg =Math.round(o_tr_avg * 100)/100;
 	if(isNaN(o_tr_avg)){
-		$('.o_tr_avg').val(0);
+		$('.o_t_r_avg').val(0);
 	}
 	else{
-		$('.o_tr_avg').val(o_tr_avg);
+		$('.o_t_r_avg').val(o_tr_avg);
 	}
 
  });
@@ -208,10 +208,10 @@ $('.o_l').on("click",function(){
 
 	o_l_avg = (o_l_avg)/c;
 	if(isNaN(o_l_avg)){
-		$('.o_l_avg').val(0);
+		$('.o_l_f_avg').val(0);
 	}
 	else{
-		$('.o_l_avg').val(o_l_avg);
+		$('.o_l_f_avg').val(o_l_avg);
 	}
 	
 
@@ -219,11 +219,11 @@ $('.o_l').on("click",function(){
 	o_lr_avg =Math.round(o_lr_avg * 100)/100;
 
 	if(isNaN(o_lr_avg)){
-	$('.o_lr_avg').val(0);
+	$('.o_l_r_avg').val(0);
 
 	}
 	else{
-	$('.o_lr_avg').val(o_lr_avg);
+	$('.o_l_r_avg').val(o_lr_avg);
 
 	}
 	
@@ -309,11 +309,11 @@ $('.o_l').on("click",function(){
 	e_t_avg = (e_t_avg)/c;
 
 	if(isNaN(e_t_avg)){
-	$('.e_t_avg').val(0);
+	$('.e_t_f_avg').val(0);
 
 	}
 	else{
-	$('.e_t_avg').val(e_t_avg);
+	$('.e_t_f_avg').val(e_t_avg);
 
 	}
 
@@ -321,11 +321,11 @@ $('.o_l').on("click",function(){
 	e_tr_avg =Math.round(e_tr_avg * 100)/100;
 
 	if(isNaN(e_tr_avg)){
-	$('.e_tr_avg').val(0);
+	$('.e_t_r_avg').val(0);
 
 	}
 	else{
-	$('.e_tr_avg').val(e_tr_avg);
+	$('.e_t_r_avg').val(e_tr_avg);
 
 	}
 	
@@ -444,10 +444,10 @@ $('.e_l').on("click",function(){
 	e_l_avg = (e_l_avg)/c;
 
 	if(isNaN(e_l_avg)){
-	$('.e_l_avg').val(0);
+	$('.e_l_f_avg').val(0);
 	}
 	else{
-	$('.e_l_avg').val(e_l_avg);
+	$('.e_l_f_avg').val(e_l_avg);
 
 	}
 
@@ -455,10 +455,10 @@ $('.e_l').on("click",function(){
 	e_lr_avg =Math.round(e_lr_avg * 100)/100;
 
 	if(isNaN(e_lr_avg)){
-	$('.e_lr_avg').val(0);
+	$('.e_l_r_avg').val(0);
 	}
 	else{
-	$('.e_lr_avg').val(e_lr_avg);
+	$('.e_l_r_avg').val(e_lr_avg);
 
 	}
 
@@ -494,10 +494,10 @@ $('.e_p').on("click",function(){
 
 	p_avg = p_avg/c;
 	if(isNaN(p_avg)){
-	$('.p_avg').val(0);
+	$('.p_f_avg').val(0);
 	}
 	else{
-	$('.p_avg').val(p_avg);
+	$('.p_f_avg').val(p_avg);
 		
 	}
  });
@@ -605,7 +605,7 @@ $('.f_calc').on("click",function(){
 		f_marks = f_marks + 10;
 
 
-	$('.f_marks').val(f_marks);
+	$('.e_o_f_r_final').val(f_marks);
  });
 
 
@@ -641,11 +641,11 @@ $('.rd').on("click",function(){
 
 	//max 5
 	if(a>=5){
-		$('.w_s').val(5);
+		$('.w_m').val(5);
 		a = 5;
 	}
 	else{
-		$('.w_s').val(a);
+		$('.w_m').val(a);
 	}
 	
 
@@ -669,11 +669,11 @@ $('.rd').on("click",function(){
 
 	//max 5
 	if(b>=5){
-		$('.p_s').val(5);
+		$('.p_m').val(5);
 		b= 5;
 	}
 	else{
-		$('.p_s').val(b);
+		$('.p_m').val(b);
 	}
 	
 
@@ -689,7 +689,55 @@ $('.rd').on("click",function(){
 	if(c>=10){
 		c = 10;
 	}
-	$('.o_m').val(c);
+	$('.onl_course_m').val(c);
+
+	///
+	var m=0;
+
+	if($('.s_c_name').val()){
+		$('.s_c_m').val(5)
+		m = m+5	
+	}
+	
+
+	if($('.f_c_name').val()){
+		$('.f_c_m').val(3)
+		m = m+3	
+	}
+	
+
+	if($('.o_c_name').val()){
+		$('.o_c_m').val(2)
+		m = m+2	
+	}
+	
+	if(m>8){
+		m= 8
+	}
+
+////
+	n= 0
+
+	if($('.s_j_name').val()){
+		$('.s_j_m').val(10)
+		n = n+10
+	}
+	
+
+	if($('.f_j_name').val()){
+		$('.f_j_m').val(6)
+		n = n+6	
+	}
+	
+
+	if($('.o_j_name').val()){
+		$('.o_j_m').val(4)
+		n = n+4	
+	}
+	
+	if(m>12){
+		n = 12
+	}
 	
 
 	var book_i = parseFloat($('.book_i').val());
@@ -731,11 +779,11 @@ $('.rd').on("click",function(){
 
 	//max 10
 	if(d>=10){
-		$('.b_t').val(10);
+		$('.book_m').val(10);
 		d = 10;
 	}
 	else{
-		$('.b_t').val(d);
+		$('.book_m').val(d);
 	}
 
 	var if_s = parseFloat($('.if_s').val());
@@ -803,22 +851,22 @@ $('.rd').on("click",function(){
 
 	//max 5
 	if(e>=5){
-		$('.rp_m').val(5);
+		$('.rp_marks').val(5);
 		e =5;
 	}
 	else{
-		$('.rp_m').val(e);
+		$('.rp_marks').val(e);
 	}
 
-	 f = a+b+c+d+e;
+	 f = a+b+c+d+e+m+n;
 	
 	//out of 35
 	if(f>=35){
-		$('.r_marks').val(35);
+		$('.rd_tot_marks').val(35);
 		f =35;
 	}
 	else{
-		$('.r_marks').val(f);
+		$('.rd_tot_marks').val(f);
 	}
 
  });

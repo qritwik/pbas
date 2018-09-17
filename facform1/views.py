@@ -186,6 +186,56 @@ def principal_display(request,dept):
 	return render(request,'principal_display.html',context=dept)
 
 
+def principal_teacher_display(request,pk):
+	name =  User.objects.get(pk = pk);
+	print(name)
+	data1 = User.objects.get(username=name);
+	print(data1.department)
+
+	data2 = empDetailForm.objects.get(info__username=name);
+	data3 = feedbackTab.objects.get(info__username=name);
+	data4 = rd.objects.get(info__username=name);
+	data5 = remarks.objects.get(info__username=name);
+	data6 = remarks1.objects.get(info__username=name);
+
+
+
+
+	if request.method == 'POST':
+		form1 = forms.form_remarks2(request.POST)
+
+		if form1.is_valid():
+			print("logout")
+			sendme = User.objects.get(username=name)
+			obj = form1.save(commit=False)
+
+			obj.info = name
+			obj.department = data1.department
+			obj.save()
+
+			if sendme.principal_status == False:
+				sendme.principal_status = True
+				sendme.save()
+			
+			return HttpResponseRedirect("/logout/")
+
+	else:
+		form1 = forms.form_remarks2()
+
+
+	context1 = {
+	"key1":data1,
+	"key2":data2,
+	"key3":data3,
+	"key4":data4,
+	"key5":data5,
+	"key6":data6,
+	"form1":form1
+	}
+
+	return render(request,'principal_teacher_display.html',context=context1)
+
+
 
 def ao_first(request):
 	dept = Department.objects.all()

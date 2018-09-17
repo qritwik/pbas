@@ -853,11 +853,11 @@ $('.rd').on("click",function(){
 
 	//max 5
 	if(e>=5){
-		$('.rp_m').val(5);
+		$('.rp_marks').val(5);
 		e =5;
 	}
 	else{
-		$('.rp_m').val(e);
+		$('.rp_marks').val(e);
 	}
 
 	 f = a+b+c+d+e+m+n;

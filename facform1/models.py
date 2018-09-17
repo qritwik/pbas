@@ -269,7 +269,7 @@ class feedbackTab(models.Model):
 
 	e_l4_stu_app = models.CharField(max_length=30, blank=True, null=True)
 	e_l4_stu_pass = models.CharField(max_length=30, blank=True, null=True)
-	e_t4_stu_perpass = models.CharField(max_length=30, blank=True, null=True)
+	e_l4_stu_perpass = models.CharField(max_length=30, blank=True, null=True)
 
 	e_l5_stu_app = models.CharField(max_length=30, blank=True, null=True)
 	e_l5_stu_pass = models.CharField(max_length=30, blank=True, null=True)

@@ -65,8 +65,8 @@
     <div class="list-group">
       {% for name in teach %}
 
-      <li class="list-group-item d-flex justify-content-between align-items-center">
-        <a href="#" class="list-group-item list-group-item-action list-group-item-dark">{{name.first_name}}
+      <li class="list-group-item d-flex justify-content-between align-items-center" value="{{name.pk}}">
+        <a href="/principal_teacher_display/{{name.pk}}"class="list-group-item list-group-item-action list-group-item-dark">{{name.first_name}}
             <span class="badge badge-primary badge-pill">Pending</span>
         </a>
 

@@ -67,4 +67,4 @@ class form_remarks2(forms.ModelForm):
 	class Meta:
 		model = remarks2
 		fields = '__all__'
-		exclude = ['info']
+		exclude = ['info','prin_marks2','department']
