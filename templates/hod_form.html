@@ -12,13 +12,16 @@
 <body>
   <div class="container">
 
-      <div class="card poi" style="background:#ddccaa">
+      <div class="card poi" style="background: #B79891;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #94716B, #B79891);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #94716B, #B79891); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+">
         <div class="form-row">
         <div class="form-group col-md-3">
         <img src={% static "image/bms.logo.png" %} class="" width="150px"/>
       </div>
         <div class="form-group col-md-9">
-        <h2 class="display-4 al" >BMS Institute of Technology&Management</h2>
+        <h2 class="display-4 al" >BMS Institute of Technology & Management</h2>
       </div>
     </div>
         <h3 class="lead" align="center">Faculty appraisal form</h3>
@@ -29,7 +32,7 @@
       <form>
         {% csrf_token %}
 
-        <div class="form-row">
+        <div class="table-bordered poi form-row">
           <div class="form-group col-md-6">
             <label for="">Internship Company Name</label>
             {% render_field form2.it_name class="form-control" %}
@@ -64,8 +67,8 @@
           {% render_field form2.doj class="form-control" %}
         </div>
         <div class="form-group col-md-6">
-          <label for="inputPresentPosition">PresentPosition</label>
-            {% render_field form2.Present_pos class="form-control" %}
+          <label for="inputPresentPosition">Designation</label>
+					<input type="text" class="form-control" id="inputEmployeeIdNo" disabled value="{{info.designation}}">
         </div>
         <div class="form-group col-md-6">
           <label for="inputHeldFrom">HeldFrom</label>
@@ -133,35 +136,38 @@
   <tbody>
     <tr>
       <td>1</td>
+
       <td>{% render_field form3.o_t1_name class="form-control" %}</td>
-      <td class="right aligned">{% render_field form3.o_t1_f1 class="form-control" %}</td>
-      <td class="center aligned">{% render_field form3.o_t1_f2 class="form-control" %}</td>
-      <td></td>
-      <td> {% render_field form3.o_t1_stu_app class="form-control" %}</td>
-      <td>{% render_field form3.o_t1_stu_pass class="form-control" %}</td>
-      <td></td>
+      <td class="right aligned">{% render_field form3.o_t1_f1 class="form-control o_t1_f1"  %}</td>
+      <td class="center aligned">{% render_field form3.o_t1_f2 class="form-control o_t1_f2" %}</td>
+      <td>{% render_field form3.o_t1_favg class="form-control o_t1_favg"  %}</td>
+      <td> {% render_field form3.o_t1_stu_app class="form-control o_t1_stu_app " %}</td>
+      <td>{% render_field form3.o_t1_stu_pass class="form-control o_t1_stu_pass " %}</td>
+      <td>{% render_field form3.o_t1_stu_perpass class="form-control o_t1_stu_perpass"  %}</td>
     </tr>
     <tr>
       <td>2</td>
+
       <td>{% render_field form3.o_t2_name class="form-control" %}</td>
-      <td class="right aligned">{% render_field form3.o_t2_f1 class="form-control" %}</td>
-      <td class="center aligned">{% render_field form3.o_t2_f2 class="form-control" %}</td>
-      <td></td>
-      <td> {% render_field form3.o_t2_stu_app class="form-control" %}</td>
-      <td>{% render_field form3.o_t2_stu_pass class="form-control" %}</td>
-      <td></td>
+      <td class="right aligned">{% render_field form3.o_t2_f1 class="form-control o_t2_f1"  %}</td>
+      <td class="center aligned">{% render_field form3.o_t2_f2 class="form-control o_t2_f2" %}</td>
+      <td>{% render_field form3.o_t2_favg class="form-control o_t2_favg"  %}</td>
+      <td> {% render_field form3.o_t2_stu_app class="form-control o_t2_stu_app " %}</td>
+      <td>{% render_field form3.o_t2_stu_pass class="form-control o_t2_stu_pass " %}</td>
+      <td>{% render_field form3.o_t2_stu_perpass class="form-control o_t2_stu_perpass"  %}</td>
     </tr>
     <tr>
       <tr>
-      <td>3</td>
-      <td>{% render_field form3.o_t3_name class="form-control" %}</td>
-      <td class="right aligned">{% render_field form3.o_t3_f1 class="form-control" %}</td>
-      <td class="center aligned">{% render_field form3.o_t3_f2 class="form-control" %}</td>
-      <td></td>
-      <td> {% render_field form3.o_t3_stu_app class="form-control" %}</td>
-      <td>{% render_field form3.o_t3_stu_pass class="form-control" %}</td>
-      <td></td>
+        <td>3</td>
+        <td>{% render_field form3.o_t3_name class="form-control" %}</td>
+        <td class="right aligned">{% render_field form3.o_t3_f1 class="form-control o_t3_f1"  %}</td>
+        <td class="center aligned">{% render_field form3.o_t3_f2 class="form-control o_t3_f2" %}</td>
+        <td>{% render_field form3.o_t3_favg class="form-control o_t3_favg"  %}</td>
+        <td> {% render_field form3.o_t3_stu_app class="form-control o_t3_stu_app " %}</td>
+        <td>{% render_field form3.o_t3_stu_pass class="form-control o_t3_stu_pass " %}</td>
+        <td>{% render_field form3.o_t3_stu_perpass class="form-control o_t3_stu_perpass"  %}</td>
     </tr>
+
   </tbody>
 </table>
 <div class="container-fluid">
@@ -212,52 +218,52 @@
     <tr>
       <td>1</td>
       <td>{% render_field form3.o_l1_name class="form-control" %}</td>
-      <td class="right aligned">{% render_field form3.o_l1_f1 class="form-control" %}</td>
-      <td class="center aligned">{% render_field form3.o_l1_f2 class="form-control" %}</td>
-      <td></td>
-      <td> {% render_field form3.o_l1_stu_app class="form-control" %}</td>
-      <td>{% render_field form3.o_l1_stu_pass class="form-control" %}</td>
-      <td></td>
+      <td class="right aligned">{% render_field form3.o_l1_f1 class="form-control o_l1_f1" %}</td>
+      <td class="center aligned">{% render_field form3.o_l1_f2 class="form-control o_l1_f2" %}</td>
+      <td>{% render_field form3.o_l1_favg class="form-control o_l1_favg" %}</td>
+      <td> {% render_field form3.o_l1_stu_app class="form-control o_l1_stu_app" %}</td>
+      <td>{% render_field form3.o_l1_stu_pass class="form-control o_l1_stu_pass" %}</td>
+      <td>{% render_field form3.o_l1_stu_perpass class="form-control o_l1_stu_perpass"  %}</td>
     </tr>
     <tr>
       <td>2</td>
       <td>{% render_field form3.o_l2_name class="form-control" %}</td>
-      <td class="right aligned">{% render_field form3.o_l2_f1 class="form-control" %}</td>
-      <td class="center aligned">{% render_field form3.o_l2_f2 class="form-control" %}</td>
-      <td></td>
-      <td> {% render_field form3.o_l2_stu_app class="form-control" %}</td>
-      <td>{% render_field form3.o_l2_stu_pass class="form-control" %}</td>
-      <td></td>
+      <td class="right aligned">{% render_field form3.o_l2_f1 class="form-control o_l2_f1" %}</td>
+      <td class="center aligned">{% render_field form3.o_l2_f2 class="form-control o_l2_f2" %}</td>
+      <td>{% render_field form3.o_l2_favg class="form-control o_l2_favg" %}</td>
+      <td> {% render_field form3.o_l2_stu_app class="form-control o_l2_stu_app" %}</td>
+      <td>{% render_field form3.o_l2_stu_pass class="form-control o_l2_stu_pass" %}</td>
+      <td>{% render_field form3.o_l2_stu_perpass class="form-control o_l2_stu_perpass"  %}</td>
     </tr>
      <tr>
       <td>3</td>
       <td>{% render_field form3.o_l3_name class="form-control" %}</td>
-      <td class="right aligned">{% render_field form3.o_l3_f1 class="form-control" %}</td>
-      <td class="center aligned">{% render_field form3.o_l3_f2 class="form-control" %}</td>
-      <td></td>
-      <td> {% render_field form3.o_l3_stu_app class="form-control" %}</td>
-      <td>{% render_field form3.o_l3_stu_pass class="form-control" %}</td>
-      <td></td>
+      <td class="right aligned">{% render_field form3.o_l3_f1 class="form-control o_l3_f1" %}</td>
+      <td class="center aligned">{% render_field form3.o_l3_f2 class="form-control o_l3_f2" %}</td>
+      <td>{% render_field form3.o_l3_favg class="form-control o_l3_favg" %}</td>
+      <td> {% render_field form3.o_l3_stu_app class="form-control o_l3_stu_app" %}</td>
+      <td>{% render_field form3.o_l3_stu_pass class="form-control o_l3_stu_pass" %}</td>
+      <td>{% render_field form3.o_l3_stu_perpass class="form-control o_l3_stu_perpass"  %}</td>
     </tr>
     <tr>
       <td>4</td>
       <td>{% render_field form3.o_l4_name class="form-control" %}</td>
-      <td class="right aligned">{% render_field form3.o_l4_f1 class="form-control" %}</td>
-      <td class="center aligned">{% render_field form3.o_l4_f2 class="form-control" %}</td>
-      <td></td>
-      <td> {% render_field form3.o_l4_stu_app class="form-control" %}</td>
-      <td>{% render_field form3.o_l4_stu_pass class="form-control" %}</td>
-      <td></td>
+      <td class="right aligned">{% render_field form3.o_l4_f1 class="form-control o_l4_f1" %}</td>
+      <td class="center aligned">{% render_field form3.o_l4_f2 class="form-control o_l4_f2" %}</td>
+      <td>{% render_field form3.o_l4_favg class="form-control o_l4_favg" %}</td>
+      <td> {% render_field form3.o_l4_stu_app class="form-control o_l4_stu_app" %}</td>
+      <td>{% render_field form3.o_l4_stu_pass class="form-control o_l4_stu_pass" %}</td>
+      <td>{% render_field form3.o_l4_stu_perpass class="form-control o_l4_stu_perpass"  %}</td>
     </tr>
     <tr>
       <td>5</td>
       <td>{% render_field form3.o_l5_name class="form-control" %}</td>
-      <td class="right aligned">{% render_field form3.o_l5_f1 class="form-control" %}</td>
-      <td class="center aligned">{% render_field form3.o_l5_f2 class="form-control" %}</td>
-      <td></td>
-      <td> {% render_field form3.o_l5_stu_app class="form-control" %}</td>
-      <td>{% render_field form3.o_l5_stu_pass class="form-control" %}</td>
-      <td></td>
+      <td class="right aligned">{% render_field form3.o_l5_f1 class="form-control o_l5_f1" %}</td>
+      <td class="center aligned">{% render_field form3.o_l5_f2 class="form-control o_l5_f2" %}</td>
+			<td>{% render_field form3.o_l5_favg class="form-control o_l5_favg" %}</td>
+      <td> {% render_field form3.o_l5_stu_app class="form-control o_l5_stu_app" %}</td>
+      <td>{% render_field form3.o_l5_stu_pass class="form-control o_l5_stu_pass" %}</td>
+			<td>{% render_field form3.o_l5_stu_perpass class="form-control o_l5_stu_perpass"  %}</td>
     </tr>
   </tbody>
 </table>
@@ -322,32 +328,32 @@
    <tr>
       <td>1</td>
       <td>{% render_field form3.e_t1_name class="form-control" %}</td>
-      <td class="right aligned">{% render_field form3.e_t1_f1 class="form-control" %}</td>
-      <td class="center aligned">{% render_field form3.e_t1_f2 class="form-control" %}</td>
-      <td></td>
-      <td> {% render_field form3.e_t1_stu_app class="form-control" %}</td>
-      <td>{% render_field form3.e_t1_stu_pass class="form-control" %}</td>
-      <td></td>
+      <td class="right aligned">{% render_field form3.e_t1_f1 class="form-control e_t1_f1" %}</td>
+      <td class="center aligned">{% render_field form3.e_t1_f2 class="form-control e_t1_f2" %}</td>
+      <td>{% render_field form3.e_t1_favg class="form-control e_t1_favg" %}</td>
+      <td> {% render_field form3.e_t1_stu_app class="form-control e_t1_stu_app" %}</td>
+      <td>{% render_field form3.e_t1_stu_pass class="form-control e_t1_stu_pass" %}</td>
+      <td>{% render_field form3.e_t1_stu_perpass class="form-control e_t1_stu_perpass" %}</td>
     </tr>
      <tr>
       <td>2</td>
       <td>{% render_field form3.e_t2_name class="form-control" %}</td>
-      <td class="right aligned">{% render_field form3.e_t2_f1 class="form-control" %}</td>
-      <td class="center aligned">{% render_field form3.e_t2_f2 class="form-control" %}</td>
-      <td></td>
-      <td> {% render_field form3.e_t2_stu_app class="form-control" %}</td>
-      <td>{% render_field form3.e_t2_stu_pass class="form-control" %}</td>
-      <td></td>
+      <td class="right aligned">{% render_field form3.e_t2_f1 class="form-control e_t2_f1" %}</td>
+      <td class="center aligned">{% render_field form3.e_t2_f2 class="form-control e_t2_f2" %}</td>
+      <td>{% render_field form3.e_t2_favg class="form-control e_t2_favg" %}</td>
+      <td> {% render_field form3.e_t2_stu_app class="form-control e_t2_stu_app" %}</td>
+      <td>{% render_field form3.e_t2_stu_pass class="form-control e_t2_stu_pass" %}</td>
+      <td>{% render_field form3.e_t2_stu_perpass class="form-control e_t2_stu_perpass" %}</td>
     </tr>
      <tr>
       <td>3</td>
       <td>{% render_field form3.e_t3_name class="form-control" %}</td>
-      <td class="right aligned">{% render_field form3.e_t3_f1 class="form-control" %}</td>
-      <td class="center aligned">{% render_field form3.e_t3_f2 class="form-control" %}</td>
-      <td></td>
-      <td> {% render_field form3.e_t3_stu_app class="form-control" %}</td>
-      <td>{% render_field form3.e_t3_stu_pass class="form-control" %}</td>
-      <td></td>
+      <td class="right aligned">{% render_field form3.e_t3_f1 class="form-control e_t3_f1" %}</td>
+      <td class="center agned">{% render_field form3.e_t3_f2 class="form-control e_t3_f2" %}</td>
+      <td>{% render_field form3.e_t3_favg class="form-control e_t3_favg" %}</td>
+      <td> {% render_field form3.e_t3_stu_app class="form-control e_t3_stu_app" %}</td>
+      <td>{% render_field form3.e_t3_stu_pass class="form-control e_t3_stu_pass" %}</td>
+      <td>{% render_field form3.e_t3_stu_perpass class="form-control e_t3_stu_perpass" %}</td>
     </tr>
   </tbody>
 </table>
@@ -398,53 +404,53 @@
     <tr>
       <td>1</td>
       <td>{% render_field form3.e_l1_name class="form-control" %}</td>
-      <td class="right aligned">{% render_field form3.e_l1_f1 class="form-control" %}</td>
-      <td class="center aligned">{% render_field form3.e_l1_f2 class="form-control" %}</td>
-      <td></td>
-      <td> {% render_field form3.e_l1_stu_app class="form-control" %}</td>
-      <td>{% render_field form3.e_l1_stu_pass class="form-control" %}</td>
-      <td></td>
+      <td class="right aligned">{% render_field form3.e_l1_f1 class="form-control e_l1_f1" %}</td>
+      <td class="center aligned">{% render_field form3.e_l1_f2 class="form-control e_l1_f2" %}</td>
+      <td>{% render_field form3.e_l1_favg class="form-control e_l1_favg" %}</td>
+      <td> {% render_field form3.e_l1_stu_app class="form-control e_l1_stu_app" %}</td>
+      <td>{% render_field form3.e_l1_stu_pass class="form-control e_l1_stu_pass" %}</td>
+      <td>{% render_field form3.e_l1_stu_perpass class="form-control e_l1_stu_perpass" %}</td>
     </tr>
      <tr>
       <td>2</td>
       <td>{% render_field form3.e_l2_name class="form-control" %}</td>
-      <td class="right aligned">{% render_field form3.e_l2_f1 class="form-control" %}</td>
-      <td class="center aligned">{% render_field form3.e_l2_f2 class="form-control" %}</td>
-      <td></td>
-      <td> {% render_field form3.e_l2_stu_app class="form-control" %}</td>
-      <td>{% render_field form3.e_l2_stu_pass class="form-control" %}</td>
-      <td></td>
+      <td class="right aligned">{% render_field form3.e_l2_f1 class="form-control e_l2_f1" %}</td>
+      <td class="center aligned">{% render_field form3.e_l2_f2 class="form-control e_l2_f2" %}</td>
+      <td>{% render_field form3.e_l2_favg class="form-control e_l2_favg" %}</td>
+      <td> {% render_field form3.e_l2_stu_app class="form-control e_l2_stu_app" %}</td>
+      <td>{% render_field form3.e_l2_stu_pass class="form-control e_l2_stu_pass" %}</td>
+      <td>{% render_field form3.e_l2_stu_perpass class="form-control e_l2_stu_perpass" %}</td>
     </tr>
      <tr>
       <td>3</td>
       <td>{% render_field form3.e_l3_name class="form-control" %}</td>
-      <td class="right aligned">{% render_field form3.e_l3_f1 class="form-control" %}</td>
-      <td class="center aligned">{% render_field form3.e_l3_f2 class="form-control" %}</td>
-      <td></td>
-      <td> {% render_field form3.e_l3_stu_app class="form-control" %}</td>
-      <td>{% render_field form3.e_l3_stu_pass class="form-control" %}</td>
-      <td></td>
+      <td class="right aligned">{% render_field form3.e_l3_f1 class="form-control e_l3_f1" %}</td>
+      <td class="center aligned">{% render_field form3.e_l3_f2 class="form-control e_l3_f2" %}</td>
+      <td>{% render_field form3.e_l3_favg class="form-control e_l3_favg" %}</td>
+      <td> {% render_field form3.e_l3_stu_app class="form-control e_l3_stu_app" %}</td>
+      <td>{% render_field form3.e_l3_stu_pass class="form-control e_l3_stu_pass" %}</td>
+      <td>{% render_field form3.e_l3_stu_perpass class="form-control e_l3_stu_perpass" %}</td>
     </tr>
     <tr>
      <tr>
       <td>4</td>
       <td>{% render_field form3.e_l4_name class="form-control" %}</td>
-      <td class="right aligned">{% render_field form3.e_l4_f1 class="form-control" %}</td>
-      <td class="center aligned">{% render_field form3.e_l4_f2 class="form-control" %}</td>
-      <td></td>
-      <td> {% render_field form3.e_l4_stu_app class="form-control" %}</td>
-      <td>{% render_field form3.e_l4_stu_pass class="form-control" %}</td>
-      <td></td>
+      <td class="right aligned">{% render_field form3.e_l4_f1 class="form-control e_l4_f1" %}</td>
+      <td class="center aligned">{% render_field form3.e_l4_f2 class="form-control e_l4_f2" %}</td>
+      <td>{% render_field form3.e_l4_favg class="form-control e_l4_favg" %}</td>
+      <td> {% render_field form3.e_l4_stu_app class="form-control e_l4_stu_app" %}</td>
+      <td>{% render_field form3.e_l4_stu_pass class="form-control e_l4_stu_pass" %}</td>
+    <td>{% render_field form3.e_l4_stu_perpass class="form-control e_l4_stu_perpass" %}</td>
     </tr>
     <tr>
       <td>5</td>
       <td>{% render_field form3.e_l5_name class="form-control" %}</td>
-      <td class="right aligned">{% render_field form3.e_l5_f1 class="form-control" %}</td>
-      <td class="center aligned">{% render_field form3.e_l5_f2 class="form-control" %}</td>
-      <td></td>
-      <td> {% render_field form3.e_l5_stu_app class="form-control" %}</td>
-      <td>{% render_field form3.e_l5_stu_pass class="form-control" %}</td>
-      <td></td>
+      <td class="right aligned">{% render_field form3.e_l5_f1 class="form-control e_l5_f1" %}</td>
+      <td class="center aligned">{% render_field form3.e_l5_f2 class="form-control e_l5_f2" %}</td>
+      <td>{% render_field form3.e_l5_favg class="form-control e_l5_favg" %}</td>
+      <td> {% render_field form3.e_l5_stu_app class="form-control e_l5_stu_app" %}</td>
+      <td>{% render_field form3.e_l5_stu_pass class="form-control e_l5_stu_pass" %}</td>
+      <td>{% render_field form3.e_l5_stu_perpass class="form-control e_l5_stu_perpass" %}</td>
     </tr>
   </tbody>
 </table>
@@ -503,16 +509,16 @@
     <tr>
       <td>1</td>
       <td>{% render_field form3.p1_name class="form-control" %}</td>
-      <td class="right aligned">{% render_field form3.p1_f1 class="form-control" %}</td>
-      <td class="center aligned">{% render_field form3.p1_f2 class="form-control" %}</td>
-      <td></td>
+      <td class="right aligned">{% render_field form3.p1_f1 class="form-control p1_f1" %}</td>
+      <td class="center aligned">{% render_field form3.p1_f2 class="form-control p1_f2" %}</td>
+      <td>{% render_field form3.p1_favg class="form-control p1_favg" %}</td>
     </tr>
      <tr>
       <td>2</td>
       <td>{% render_field form3.p2_name class="form-control" %}</td>
-      <td class="right aligned">{% render_field form3.p2_f1 class="form-control" %}</td>
-      <td class="center aligned">{% render_field form3.p2_f2 class="form-control" %}</td>
-      <td></td>
+      <td class="right aligned">{% render_field form3.p2_f1 class="form-control p2_f1" %}</td>
+      <td class="center aligned">{% render_field form3.p2_f2 class="form-control p2_f2" %}</td>
+      <td>{% render_field form3.p2_favg class="form-control p2_favg" %}</td>
     </tr>
 </tbody>
 </table>
@@ -543,7 +549,7 @@
 <div class="col-10">
  <div class="form-row dis">
                <div class="form-group col-md-6">
-              <h6 class="po color1">TOTAL MARKS<span class="sp">_(Maximum Score: 30)</span></h6>
+              <h6 class="po color1">TOTAL MARKS<span class="sp">_(Maximum Score: 20)</span></h6>
                </div>
 
                   <div class="orm-group col-md-6">
@@ -574,7 +580,7 @@
 </div>
 
 
-<div class="accordion" id="accordionExample">
+<div class="accordion dis1" id="accordionExample">
   <h5 class="po color1">2: RESEARCH & DEVELOPMENT AND CONSULTANCY<span class="sp">(Maximum Score: 35 marks)</span></h5>
   <div class="card">
     <div class="card-header" id="headingOne">
@@ -725,7 +731,9 @@
       <h5 class="mb-0">
         <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
          2C: Number of Online Courses Completed
-        </button><span class="sp">(Maximum Score: 10 marks)</span>
+           <span class="sp">(Maximum Score: 10 marks)</span>
+        </button>
+
       </h5>
     </div>
     <div class="form-group">
@@ -753,56 +761,167 @@
         </button>
       </h5>
     </div>
-    <div class="form-group col-md-12" >
-<div class="form-row">
-<div class="form-group col-sm-6">
-<label >Name of conference: </label>
-{% render_field form4.c_name class="form-control" %}
-</div>
 
-<div class="form-group col-sm-6">
-<label >Title of the paper: </label>
-{% render_field form4.c_title class="form-control" %}
-</div>
+    <div class="form-row dis">
+    <div class="form-group col-md-4 " >
+      <div class="form-row">
+      <div class="form-group col-sm-12">
+      <h4 class="mb-0" align = "center" >Sole Authored </h4>
+    </div>
+      </div>
+    <div class="form-row">
+    <div class="form-group col-sm-12">
+    <label >Name of conference: </label>
+    {% render_field form4.s_c_name class="form-control s_c_name" %}
+    </div>
+    </div>
+    <div class="form-row">
+    <div class="form-group col-sm-12">
+    <label >Title of the paper: </label>
+    {% render_field form4.s_c_title class="form-control" %}
+    </div>
+    </div>
+    <div class="form-row">
+    <div class="form-group col-sm-12">
+    <label>Place: </label>
+    {% render_field form4.s_c_place class="form-control" %}
+    </div>
+    </div>
+    <div class="form-row">
+    <div class="form-group col-sm-12">
+    <label >Date: </label>
+    {% render_field form4.s_c_date class="form-control" %}
+    </div>
+    </div>
+    <div class="form-row">
+    <div class="form-group col-sm-12">
+    <label>Indexed: </label>
+    {% render_field form4.s_c_index class="form-control" %}
+    </div>
+    </div>
+    <div class="form-row">
+    <div class="form-group col-sm-12">
+    <div class="form-row dis">
+               <div class="orm-group col-md-2">
 
-<div class="form-group col-sm-6">
-<label>Place: </label>
-{% render_field form4.c_place class="form-control" %}
-</div>
-
-<div class="form-group col-sm-6">
-<label >Date: </label>
-{% render_field form4.c_date class="form-control" %}
-</div>
-
-<div class="form-group col-sm-6">
-<label>Indexed: </label>
-{% render_field form4.c_index class="form-control" %}
-</div>
-<div class="form-group col-sm-6">
-  <label> </label>
- <div class="form-row dis">
-               <div class="form-group col-md-8">
-                 <div class="btn-group dropright">
-       <button type="button" class="btn btn-danger btn-block">Select Here</button>
-       <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-         <span class="sr-only">Toggle Dropdown</span>
-       </button>
-       <div class="dropdown-menu">
-         <a class="dropdown-item active" href="#">Sole Author (5m/Publication)</a>
-         <a class="dropdown-item" href="#">First & Second Author (3m/Publication)</a>
-         <a class="dropdown-item" href="#">Other Author (2m/Publication)</a>
-
-       </div>
-     </div>
                </div>
-                  <div class="form-group col-md-4">
+                  <div class="orm-group col-md-8">
+                    {% render_field form4.s_c_m class="form-control s_c_m" %}
+                        </div>
+                        <div class="orm-group col-md-2">
 
                         </div>
                     </div>
-</div>
-</div>
-</div>
+    </div>
+    </div>
+    </div>
+    <div class="form-group col-md-4 " style="  border-left: thin solid #ff0000" >
+    <div class="form-row">
+    <div class="form-group col-sm-12">
+    <h4 class="mb-0" align ="center" >First & Second Author </h4>
+
+    </div>
+    </div>
+    <div class="form-row">
+    <div class="form-group col-sm-12">
+    <label >Name of conference: </label>
+    {% render_field form4.f_c_name class="form-control f_c_name" %}
+    </div>
+    </div>
+    <div class="form-row">
+    <div class="form-group col-sm-12">
+    <label >Title of the paper: </label>
+    {% render_field form4.f_c_title class="form-control" %}
+    </div>
+    </div>
+    <div class="form-row">
+    <div class="form-group col-sm-12">
+    <label>Place: </label>
+    {% render_field form4.f_c_place class="form-control" %}
+    </div>
+    </div>
+    <div class="form-row">
+    <div class="form-group col-sm-12">
+    <label >Date: </label>
+    {% render_field form4.f_c_date class="form-control" %}
+    </div>
+    </div>
+    <div class="form-row">
+    <div class="form-group col-sm-12">
+    <label>Indexed: </label>
+    {% render_field form4.f_c_index class="form-control" %}
+    </div>
+    </div>
+    <div class="form-row">
+    <div class="form-group col-sm-12">
+    <div class="form-row dis">
+           <div class="orm-group col-md-2">
+
+           </div>
+              <div class="orm-group col-md-8">
+                {% render_field form4.f_c_m class="form-control f_c_m" %}
+                    </div>
+                    <div class="orm-group col-md-2">
+
+                    </div>
+                </div>
+    </div>
+    </div>
+    </div>
+    <div class="form-group col-md-4" style="  border-left: thin solid #ff0000" >
+    <div class="form-row">
+    <div class="form-group col-sm-12">
+    <h4 class="mb-0" align ="center" >Other Author </h4>
+
+    </div>
+    </div>
+    <div class="form-row">
+    <div class="form-group col-sm-12">
+    <label >Name of conference: </label>
+    {% render_field form4.o_c_name class="form-control o_c_name" %}
+    </div>
+    </div>
+    <div class="form-row">
+    <div class="form-group col-sm-12">
+    <label >Title of the paper: </label>
+    {% render_field form4.o_c_title class="form-control" %}
+    </div>
+    </div>
+    <div class="form-row">
+    <div class="form-group col-sm-12">
+    <label>Place: </label>
+    {% render_field form4.o_c_place class="form-control" %}
+    </div>
+    </div>
+    <div class="form-row">
+    <div class="form-group col-sm-12">
+    <label >Date: </label>
+    {% render_field form4.o_c_date class="form-control" %}
+    </div>
+    </div>
+    <div class="form-row">
+    <div class="form-group col-sm-12">
+    <label>Indexed: </label>
+    {% render_field form4.o_c_index class="form-control" %}
+    </div>
+    </div>
+    <div class="form-row">
+    <div class="form-group col-sm-12">
+    <div class="form-row dis">
+           <div class="orm-group col-md-2">
+
+           </div>
+              <div class="orm-group col-md-8">
+                {% render_field form4.o_c_m class="form-control o_c_m" %}
+                    </div>
+                    <div class="orm-group col-md-2">
+
+                    </div>
+                </div>
+    </div>
+    </div>
+    </div>
+    </div>
 <!-- form>
         <div class="form-row dis">
           <div class="form-group col-md-6">
@@ -849,57 +968,204 @@
         </button>
       </h5>
     </div>
-      <div class="form-group col-md-12">
-        <div class="form-row">
-<div class="form-group col-sm-6">
+
+    <div class="form-row dis">
+   <div class="form-group col-md-4">
+     <div class="form-row">
+<div class="form-group col-sm-11">
+      <div class="form-group col-sm-12">
+      <h4 class="mb-0" align ="center" >Sole Authored </h4>
+</div>
+      </div>
+<div class="form-group col-sm-11">
 <label >Name of journal: </label>
-{% render_field form4.j_name class="form-control" %}
+{% render_field form4.s_j_name class="form-control s_j_name" %}
 </div>
-<div class="form-group col-sm-6">
+</div>
+ <div class="form-row">
+<div class="form-group col-sm-11">
 <label >Title of the paper: </label>
-{% render_field form4.j_title class="form-control" %}
+{% render_field form4.s_j_title class="form-control" %}
 </div>
-<div class="form-group col-sm-6">
+</div>
+ <div class="form-row">
+<div class="form-group col-sm-11">
 <label >Volume: </label>
-{% render_field form4.j_volume class="form-control" %}
+{% render_field form4.s_j_volume class="form-control" %}
 </div>
-<div class="form-group col-sm-6">
+</div>
+ <div class="form-row">
+<div class="form-group col-sm-11">
 <label >Issn/Doi: </label>
-{% render_field form4.j_issn class="form-control" %}
+{% render_field form4.s_j_issn class="form-control" %}
 </div>
-<div class="form-group col-sm-6">
+</div>
+ <div class="form-row">
+<div class="form-group col-sm-11">
 <label >Date: </label>
-{% render_field form4.c_date class="form-control" %}
+{% render_field form4.s_c_date class="form-control" %}
 </div>
-<div class="form-group col-sm-6">
+</div>
+ <div class="form-row">
+<div class="form-group col-sm-11">
 <label >Page no: </label>
-{% render_field form4.j_page class="form-control" %}
+{% render_field form4.s_j_page class="form-control" %}
 </div>
-<div class="form-group col-sm-6">
+</div>
+ <div class="form-row">
+<div class="form-group col-sm-11">
 <label>Indexed: </label>
-{% render_field form4.j_index class="form-control" %}
+{% render_field form4.s_j_index class="form-control" %}
 </div>
-<div class="form-group col-sm-6">
-  <label> </label>
- <div class="form-row dis">
-               <div class="form-group col-md-8">
-                 <div class="btn-group dropright">
-       <button type="button" class="btn btn-danger btn-block">Select Here</button>
-       <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-         <span class="sr-only">Toggle Dropdown</span>
-       </button>
-       <div class="dropdown-menu">
-         <a class="dropdown-item active" href="#">Sole Author (10m/Publication)</a>
-         <a class="dropdown-item" href="#">First & Second Author (6m/Publication)</a>
-         <a class="dropdown-item" href="#">Other Author (4m/Publication)</a>
+</div>
+ <div class="form-row">
+<div class="form-group col-sm-11">
+<div class="form-row dis">
+            <div class="orm-group col-md-2">
 
-       </div>
-     </div>
-               </div>
-                  <div class="form-group col-md-4">
+            </div>
+               <div class="orm-group col-md-8">
+                {% render_field form4.s_j_m class="form-control s_j_m" %}
+                     </div>
+                    <div class="orm-group col-md-2">
 
-                        </div>
                     </div>
+                 </div>
+
+</div>
+</div>
+
+</div>
+
+<div class="form-group col-md-4 " style="  border-left: thin solid #ff0000">
+<div class="form-row">
+<div class="form-group col-sm-11">
+          <div class="form-group col-sm-12">
+          <h4 class="mb-0" align ="center" >First & Second Author </h4>
+</div>
+          </div>
+<div class="form-group col-sm-11">
+<label >Name of journal: </label>
+{% render_field form4.f_j_name class="form-control f_j_name" %}
+</div>
+</div>
+<div class="form-row">
+<div class="form-group col-sm-11">
+<label >Title of the paper: </label>
+{% render_field form4.f_j_title class="form-control" %}
+</div>
+</div>
+<div class="form-row">
+<div class="form-group col-sm-11">
+<label >Volume: </label>
+{% render_field form4.f_j_volume class="form-control" %}
+</div>
+</div>
+<div class="form-row">
+<div class="form-group col-sm-11">
+<label >Issn/Doi: </label>
+{% render_field form4.f_j_issn class="form-control" %}
+</div>
+</div>
+<div class="form-row">
+<div class="form-group col-sm-11">
+<label >Date: </label>
+{% render_field form4.f_c_date class="form-control" %}
+</div>
+</div>
+<div class="form-row">
+<div class="form-group col-sm-11">
+<label >Page no: </label>
+{% render_field form4.f_j_page class="form-control" %}
+</div>
+</div>
+<div class="form-row">
+<div class="form-group col-sm-11">
+<label>Indexed: </label>
+{% render_field form4.f_j_index class="form-control" %}
+</div>
+</div>
+<div class="form-row">
+<div class="form-group col-sm-11">
+<div class="form-row dis">
+     <div class="orm-group col-md-2">
+
+     </div>
+        <div class="orm-group col-md-8">
+          {% render_field form4.f_j_m class="form-control f_j_m" %}
+              </div>
+              <div class="orm-group col-md-2">
+
+              </div>
+          </div>
+
+</div>
+</div>
+
+</div>
+<div class="form-group col-md-4 " style="border-left: thin solid #ff0000">
+<div class="form-row">
+<div class="form-group col-sm-11">
+          <div class="form-group col-sm-12">
+          <h4 class="mb-0" align ="center" >Other Author </h4>
+</div>
+          </div>
+<div class="form-group col-sm-11">
+<label >Name of journal: </label>
+{% render_field form4.o_j_name class="form-control o_j_name" %}
+</div>
+</div>
+<div class="form-row">
+<div class="form-group col-sm-11">
+<label >Title of the paper: </label>
+{% render_field form4.o_j_title class="form-control" %}
+</div>
+</div>
+<div class="form-row">
+<div class="form-group col-sm-11">
+<label >Volume: </label>
+{% render_field form4.o_j_volume class="form-control" %}
+</div>
+</div>
+<div class="form-row">
+<div class="form-group col-sm-11">
+<label >Issn/Doi: </label>
+{% render_field form4.o_j_issn class="form-control" %}
+</div>
+</div>
+<div class="form-row">
+<div class="form-group col-sm-11">
+<label >Date: </label>
+{% render_field form4.o_c_date class="form-control" %}
+</div>
+</div>
+<div class="form-row">
+<div class="form-group col-sm-11">
+<label >Page no: </label>
+{% render_field form4.o_j_page class="form-control" %}
+</div>
+</div>
+<div class="form-row">
+<div class="form-group col-sm-11">
+<label>Indexed: </label>
+{% render_field form4.o_j_index class="form-control" %}
+</div>
+</div>
+<div class="form-row">
+<div class="form-group col-sm-11">
+<div class="form-row dis">
+     <div class="orm-group col-md-2">
+
+     </div>
+        <div class="orm-group col-md-8">
+          {% render_field form4.o_j_m class="form-control o_j_m" %}
+              </div>
+              <div class="orm-group col-md-2">
+
+              </div>
+          </div>
+
+</div>
 </div>
 
 </div>
@@ -955,7 +1221,7 @@
           </div>
         <div class="form-group col-md-6">
 
-           {% render_field form4.book_i class="form-control" %}
+           {% render_field form4.book_i class="form-control book_i" %}
         </div>
     </div>
 
@@ -966,7 +1232,7 @@
           </div>
         <div class="form-group col-md-6">
 
-            {% render_field form4.book_n class="form-control" %}
+            {% render_field form4.book_n class="form-control book_n" %}
         </div>
     </div>
 
@@ -977,7 +1243,7 @@
           </div>
         <div class="form-group col-md-6">
 
-             {% render_field form4.book_ci class="form-control" %}
+             {% render_field form4.book_ci class="form-control book_ci" %}
         </div>
     </div>
 
@@ -987,7 +1253,7 @@
 
           </div>
         <div class="form-group col-md-6">
-        {% render_field form4.book_cn class="form-control" %}
+        {% render_field form4.book_cn class="form-control book_cn" %}
         </div>
     </div>
 
@@ -998,7 +1264,7 @@
           </div>
         <div class="form-group col-md-6">
 
-             {% render_field form4.book_ai class="form-control" %}
+             {% render_field form4.book_ai class="form-control book_ai" %}
         </div>
     </div>
 
@@ -1009,47 +1275,45 @@
           </div>
         <div class="form-group col-md-6">
 
-             {% render_field form4.book_nm class="form-control" %}
+             {% render_field form4.book_nm class="form-control book_nm" %}
         </div>
     </div>
 
-    <div class="form-row dis">
-              <div class="form-group col-md-2">
+    <div class="form-row ">
+          <div class="form-group col-md-6">
 
 
-              </div>
+          </div>
+        <div class="form-group col-md-4">
 
 
-             <div class="form-group col-md-8">
-                   <div class="form-row dis">
-                 <div class="orm-group col-md-4">
 
-                  </div>
-                        <div class="form-group col-md-2"></div>
-                      <div class="orm-group col-md-6">
-                            <input type="text" class="form-control"  placeholder="Calculated Marks" >
-                            </div>
-                        </div>
+                        <input type="text" class="form-control b_t"  placeholder="Calculated Marks" >
 
-              </div>
-              <div class="form-group col-md-2"></div>
+										 <div class="col-md-2"></div>
 
+
+
+
+
+   </div>
         </div>
     </div>
 <!-- </form> -->
-
+  </div>
+</div>
 <div class="card ">
 
     <div class="card-header" id="headingTwo">
       <h5 class="mb-0">
         <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
 
-3D: Research Project<span class="sp">(Maximum Score: 5 marks)</span>
+3D: Research Project<span class="sp">(Maximum Score: 10 marks)</span>
         </button>
       </h5>
     </div>
         </button>
-  <table class="table table-bordered">
+	<table class="table table-bordered">
   <thead>
     <tr>
       <th scope="col">Funding</th>
@@ -1060,23 +1324,25 @@
   </thead>
   <tbody>
     <tr>
-      <th scope="row">Internally Funded<span class="sp"> 5 marks/project</span></th>
-      <td> {% render_field form4.if_s class="form-control" %}</td>
-      <td>{% render_field form4.if_f class="form-control" %}</td>
-      <td>{% render_field form4.if_c class="form-control" %}</td>
+      <th scope="row">Internally Funded<span class="sp">( 5 marks/project)</span></th>
+      <td> {% render_field form4.if_s class="form-control if_s" %}</td>
+      <td>{% render_field form4.if_f class="form-control if_f" %}</td>
+      <td>{% render_field form4.if_c class="form-control if_c" %}</td>
     </tr>
     <tr>
-      <th scope="row">Externally Funded Less than 5Lakhs<span class="sp">( 5 marks/project )</span> </th>
-       <td> {% render_field form4.ef_s class="form-control" %}</td>
-      <td>{% render_field form4.ef_f class="form-control" %}</td>
-      <td>{% render_field form4.ef_c class="form-control" %}</td>
+      <th scope="row">Externally Funded Less than 5_Lakhs<span class="sp">( 5 marks/project )</span> </th>
+       <td> {% render_field form4.ef_s class="form-control ef_s" %}</td>
+      <td>{% render_field form4.ef_f class="form-control ef_f" %}</td>
+      <td>{% render_field form4.ef_c class="form-control ef_c" %}</td>
     </tr>
     <tr>
-      <th scope="row">Externally Funded Btw 5Lakhs to 10Lakhs<span class="sp"> 10 marks/project</span> </th>
-      <td> {% render_field form4.eef_s class="form-control" %}</td>
-      <td>{% render_field form4.eef_f class="form-control" %}</td>
-      <td>{% render_field form4.eef_c class="form-control" %}</td>
+      <th scope="row">Externally Funded more than 5_Lakhs<span class="sp"> (10 marks/project)</span> </th>
+      <td> {% render_field form4.eef_s class="form-control eef_s" %}</td>
+      <td>{% render_field form4.eef_f class="form-control eef_f" %}</td>
+      <td>{% render_field form4.eef_c class="form-control eef_c" %}</td>
     </tr>
+		<tr>
+
   </tbody>
 </table>
 
@@ -1092,51 +1358,48 @@
   <tbody>
     <tr>
       <th scope="row">Consultancy Work</th>
-      <td> {% render_field form4.Cw_2 class="form-control" %}</td>
-      <td>{% render_field form4.Cw_2_5 class="form-control" %}</td>
-      <td>{% render_field form4.Cw_5 class="form-control" %}</td>
+      <td> {% render_field form4.Cw_2 class="form-control cw_2" %}</td>
+      <td>{% render_field form4.Cw_2_5 class="form-control cw_2_5" %}</td>
+      <td>{% render_field form4.Cw_5 class="form-control cw_5" %}</td>
     </tr>
     </tbody>
 </table>
 <div class="card poi">
-
- <div class="form-group ">
+<div class="form-group ">
                  <div class="form-row dis">
-                 <div class="form-group col-md-2">
-                 </div>
-        <div class="form-group col-md-3 align-center"><h4> IPR Type :</h4>
+        <div class="form-group col-md-2 align-center"><h4> IPR Status :</h4>
         </div>
 
-      <div class="form-group col-md-3"> <input type="text" class="form-control"  placeholder="Enter Here" ></div>
+      <div class="form-group col-md-4"> <input type="text" class="form-control"  placeholder="Enter Here" ></div>
  </div>
  </div>
  <div class="form-group ">
                  <div class="form-row dis">
-                 <div class="form-group col-md-2">
-                 </div>
-        <div class="form-group col-md-3 align-center"><h4> IPR Status :</h4>
+        <div class="form-group col-md-2 align-center"><h4> IPR Type :</h4>
         </div>
 
-      <div class="form-group col-md-5">
-      <div class="btn-group">
-  <button type="button" class="btn btn-danger btn-lg">Select</button>
-  <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    <span class="sr-only">Toggle Dropdown</span>
-  </button>
-  <div class="dropdown-menu">
-    <a class="dropdown-item" href="#">Filed</a>
-    <a class="dropdown-item" href="#">Received</a>
-    <a class="dropdown-item" href="#">Something else here</a>
+      <div class="form-group col-md-4">
+    <div class="form-group">
+      <label for="sel1">(select one):</label>
+      <select class="form-control" id="sel1">
+        <option>Filed</option>
+        <option>Received</option>
+        <option>Pending</option>
 
-</div>
+      </select>
+
+    </div>
   </div>
-</div>
- </div>
  </div>
 </div>
+
+<div class="form-group">
+
+
+
+
 </div>
-
-
+</div>
 <div class="form-group">
 
 
@@ -1151,11 +1414,11 @@
            <div class="form-group col-md-8">
                  <div class="form-row dis">
                <div class="orm-group col-md-4">
-                    
+
                 </div>
                       <div class="form-group col-md-2"></div>
                     <div class="orm-group col-md-6">
-                          <input type="text" class="form-control"  placeholder="Calculated Marks" >
+                          <input type="text" class="form-control rp_m"  placeholder="Calculated Marks" >
                           </div>
                       </div>
 
@@ -1164,25 +1427,19 @@
 
       </div>
 </div>
-
 </div>
-</div>
-</div>
-</div>
-<div class="accordion" id="accordionExample">
 <div class="card poi card-header" id="headingOne">
-
 <div class="form-group">
 <div class="form-row dis">
 <div class="col-1"></div>
 <div class="col-10">
  <div class="form-row dis">
                <div class="orm-group col-md-6">
-              <h6 class="po color1">TOTAL MARKS<span class="sp">_(Maximum Score: 30)</span></h6>
+              <h6 class="po color1">TOTAL MARKS<span class="sp">_(Maximum Score: 35)</span></h6>
                </div>
 
                   <div class="orm-group col-md-6">
-                        <input type="text" class="form-control"  placeholder="Calculated Marks" >
+                        <input type="text" class="form-control r_marks"  placeholder="Calculated Marks" >
                         </div>
                     </div>
 </div>
@@ -1196,7 +1453,7 @@
 
 
 
-   <button type="button" class="btn btn-success btn-lg btn-block">Calculate</button>
+   <input type="button" class="btn btn-success btn-lg btn-block rd" value="Calculate">
 
 
 
@@ -1207,27 +1464,58 @@
 </div>
 
 </div>
-<div class="card poi">
+<div class="card dis1">
 
 
 
-<div class="card po">
-  <h5 class="po"> Innovative contributions to teaching learning process provide description below with Initiation,Implementation, Impact Analysis<span class="sp">(Maximum Score: 5 marks)</span></h5>
- <div class="input-group text12">
-  <div class="input-group-prepend">
-  </div>
-  {% render_field form5.ta_ic class="form-control" %}
-  <input type="text" class="form-control col-md-2 poi" placeholder="marks" aria-label="Username" aria-describedby="basic-addon1" disabled >
+
+<div class="card dis1 ">
+  <table class="table table-bordered">
+  <thead class="thead-dark">
+    <tr>
+
+      <th scope="col">Innovative contributions to teaching learning process provide description below with Initiation,Implementation, Impact Analysis<span class="sp">(Maximum Score: 5 marks)</</span></th>
+      <th scope="col">PRINCIPAL'S MARKS</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+
+      <td><div class="input-group text12">
+       <div class="input-group-prepend">
+       </div>
+       {% render_field form5.ta_ic class="form-control" %}
+
+     </div></td>
+       <td rowspan="4"><input type="text" class="form-control" placeholder="marks" aria-label="Username" aria-describedby="basic-addon1" disabled></td>
+    </tr>
+  </tbody>
+</table>
 </div>
-</div>
+
+
+
+
+
 
 <div class="card dis1 po">
   <h5 class="po">Departmental  Responsibilities (Please list only those where you have made significant contribution)</h5>
  <div class="input-group text12">
+  {% render_field form5.ta_dr class="form-control" %}
+</div>
+</div>
+
+
+
+
+
+<div class="card po dis1">
+  <h5 class="po">Institutional  Responsibilities (Please list only those where you have made significant contribution)</h5>
+ <div class="input-group text12">
   <div class="input-group-prepend">
 
   </div>
-  {% render_field form5.ta_dr class="form-control" %}
+   {% render_field form5.ta_ir class="form-control" %}
 </div>
 </div>
 
@@ -1236,15 +1524,15 @@
   <thead class="thead-dark">
     <tr>
       <th scope="col"></th>
-      <th scope="col">Attitude and Commitment to Departmental and Regular Teaching and Examination works:<span class="sp">(Maximum Score: 15 marks)</span></th>
-      <th scope="col">HOD'S MARKS</th>
+      <th scope="col">Attitude and Commitment to Departmental and Regular Teaching and Examination works:<span class="sp">(Min Score:25| Max Score:40)</span></th>
+      <th scope="col">PRINCIPAL'S MARKS</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th scope="row">1</th>
-      <td>Contribution to Department Developmental Activites<span class="sp"> (Maximum Score: 5 marks)</span></td>
-       <td rowspan="3"><input type="text" class="form-control" placeholder="marks" aria-label="Username" aria-describedby="basic-addon1" disabled></td>
+      <td>Contribution to Department Developmental Activites<span class="sp"> (Maximum Score:15 marks)</span></td>
+       <td rowspan="4"><input type="text" class="form-control" placeholder="marks" aria-label="Username" aria-describedby="basic-addon1" disabled></td>
     </tr>
     <tr>
       <th scope="row">2</th>
@@ -1257,43 +1545,19 @@
       <td>Examination/Test duties, Question paper preparation, Evaluation Preparation of Course material and Dedicaton in conducting Theory and Laboratory classes<span class="sp"> (Maximum Score: 5 marks)</span></td>
 
     </tr>
-  </tbody>
-</table>
 
-</div>
-
-<div class="card dis1">
- <div class="input-group text12">
-  <div class="input-group-prepend">
-    <span class="input-group-text">Brief Remarks of the HOD</span>
-  </div>
-  <textarea class="form-control" aria-label="With textarea"></textarea>
-</div>
-</div>
-
-<div class="card po dis1">
-  <h5 class="po">Institutional  Responsibilities (Please list only those where you have made significant contribution)</h5>
- <div class="input-group text12">
-  {% render_field form5.ta_ir class="form-control" %}
-</div>
-</div>
-
-<div class="card dis1 ">
-  <table class="table table-bordered">
-  <thead class="thead-dark">
     <tr>
-      <th scope="col"></th>
-      <th scope="col">PRINCIPAL'S MARKS</th>
+      <th scope="row">4</th>
+      <td>Contribution to Institutional Developmental Activites<span class="sp">(Maximum Score: 15 marks)</span></td>
+
     </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Contribution to Institutional Developmental Activites<span class="sp">(Maximum Score: 10 marks)</span></td>
-       <td rowspan="3"><input type="text" class="form-control" placeholder="marks" aria-label="Username" aria-describedby="basic-addon1" disabled></td>
-     </tr>
+
   </tbody>
 </table>
+
 </div>
+
+
 
 <div class="card dis1">
  <div class="input-group text12">
@@ -1310,11 +1574,11 @@
 <div class="col-1"></div>
 <div class="col-10">
  <div class="form-row dis">
-               <div class="form-group col-md-6">
+               <div class="orm-group col-md-6">
               <h6 class="po color1">TOTAL MARKS<span class="sp">_(Maximum Score: 100)</span></h6>
                </div>
 
-                  <div class="form-group col-md-6">
+                  <div class="orm-group col-md-6">
                         <input type="text" class="form-control"  placeholder="Calculated Marks" >
                         </div>
                     </div>
@@ -1341,12 +1605,15 @@
 
 </div>
 
+
 </div>
+
 
 
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
 </body>
 </html>

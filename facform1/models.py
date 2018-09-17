@@ -51,6 +51,14 @@ class User(AbstractUser):
 			return True
 		return False
 
+	def is_professor(self):
+		faculty = Designation.objects.get(name="professor")
+		faculty1 = str(faculty)
+		faculty2 = str(self.designation.name)
+		if faculty1 == faculty2:
+			return True
+		return False
+
 	def is_hod(self):
 		faculty = Designation.objects.get(name="hod")
 		faculty1 = str(faculty)
