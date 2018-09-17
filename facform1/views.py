@@ -43,7 +43,8 @@ def login(request):
 
 def decide_view(request):
 	if request.user.is_assistant_professor():
-		# print('assis')
+		if request.user.teach_status == True:
+			return HttpResponseRedirect("/logout/")
 		return HttpResponseRedirect("/assistant_form/")
 
 	elif request.user.is_associate_professor():
@@ -253,14 +254,15 @@ def ao_display(request,dept):
 	below = remarks2.objects.filter(total_marks__lt = 60).filter(department__name=dept)
 
 	dept = {'dept':dept,'above':above,'below':below}
-	print(above)
-	print(below)
+	# print(above)
+	# print(below.info)
+	# print(below.first_name)
+
 
 	return render(request,'ao_display.html',context=dept)
 
 
-def ao_teacher_display(request,pk):
-	name =  User.objects.get(pk = pk);
+def ao_teacher_display(request,name):
 	print(name)
 	data1 = User.objects.get(username=name);
 	data2 = empDetailForm.objects.get(info__username=name);
@@ -270,7 +272,6 @@ def ao_teacher_display(request,pk):
 	data6 = remarks1.objects.get(info__username=name);
 	data7 = remarks2.objects.get(info__username=name);
 
-	print(data2.Present_pos)
 
 
 	context1 = {

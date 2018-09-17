@@ -23,7 +23,7 @@ urlpatterns = [
 
     url(r'^ao_first/', views.ao_first,name="ao_first"),
     url(r'^ao_display/(?P<dept>[\w\-]+)$', views.ao_display,name="ao_display"),
-    url(r'^ao_teacher_display/(?P<pk>[\w\-]+)$',views.ao_teacher_display,name="ao_teacher_display"),
+    url(r'^ao_teacher_display/(?P<name>[\w\-]+)$',views.ao_teacher_display,name="ao_teacher_display"),
 
  #    url(r'^success/', views.success,name="success"),
   ]
