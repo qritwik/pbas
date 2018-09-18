@@ -34,25 +34,6 @@
     <form class="login-form" method="post">
 
     <div class="list-group" style="align:center">
-      {{pk}}
-
-          <!-- <ul class="list-group">
-            {% for info in name %}
-
-              <li class="list-group-item d-flex justify-content-between align-items-center" value="{{info.pk}}">
-                <a href="/hod_teacher_display/{{info.pk}}" class="list-group-item list-group-item-action list-group-item-dark">{{info.first_name}}
-                    <span class="badge badge-primary badge-pill">{{info.teach_status}}</span>
-                </a>
-
-
-              </li>
-
-
-
-
-            {% endfor %}
-
-          </ul> -->
 
   {% for info in name %}
 
@@ -85,6 +66,40 @@
 
     </div>
 
+
+
+     <div class="list-group" style="align:center">
+
+  {% for info in name1 %}
+
+
+  <div class="card border-dark mb-3 ">
+
+    <div class="card-header">
+      <a href="{{info.doc_link}}" class="list-group-item list-group-item-action list-group-item-success">Documents</a>
+
+    </div>
+
+
+  <div class="card-body">
+    <a href="/hod_teacher1_display/{{info.pk}}" class="list-group-item list-group-item-action list-group-item-info">{{info.first_name}}</a>
+
+  </div>
+
+  <div class="card-footer">
+    <span class="badge badge-primary  pull-left">{{info.teach_status}}</span>
+    <span class="badge badge-danger ">{{info.hod_status}}</span>
+  </div>
+
+
+</div>
+
+{% endfor %}
+
+
+
+
+    </div>
 
     </form>
   </div>

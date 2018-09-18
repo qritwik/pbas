@@ -36,7 +36,30 @@
   <div style="margin-top:-5%;" class="form">
 
     <p><h3>Below 60 LIST</h3></p>
-    <form class="login-form" method="post">
+
+
+    <div class="list-group">
+      {% for below_name in below3 %}
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        <a href="/ao_hod_display/{{below_name.info}}" class="list-group-item list-group-item-action list-group-item-dark">{{below_name.info}}
+        </a>
+
+
+      </li>
+      {% endfor %}
+    </div>
+
+    <div class="list-group">
+      {% for below_name in below1 %}
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        <a href="/ao_teacher1_display/{{below_name.info}}" class="list-group-item list-group-item-action list-group-item-dark">{{below_name.info}}
+        </a>
+
+
+      </li>
+      {% endfor %}
+    </div>
+
 
     <div class="list-group">
       {% for below_name in below %}
@@ -44,16 +67,17 @@
         <a href="/ao_teacher_display/{{below_name.info}}" class="list-group-item list-group-item-action list-group-item-dark">{{below_name.info}}
         </a>
 
-
       </li>
       {% endfor %}
+    
 
-
-  </form>
   </div>
   </div>
 </div>
 </div>
+
+
+
 <div class="col-6">
  <div class="login-page">
   <div style="margin-top:-5%;" class="form">
@@ -62,12 +86,23 @@
     <form class="login-form" method="post">
 
     <div class="list-group">
-      {% for name in above %}
+      {% for name in above3 %}
 
       <li class="list-group-item d-flex justify-content-between align-items-center">
-        <a href="/ao_teacher_display/{{name.info}}" class="list-group-item list-group-item-action list-group-item-dark">
+        <a href="/ao_hod_display/{{name.info}}" class="list-group-item list-group-item-action list-group-item-dark">
           {{name.info}}
-            <span class="badge badge-primary badge-pill">Pending</span>
+        </a>
+      </li>
+      {% endfor %}
+
+
+    </div>
+    <div class="list-group">
+      {% for name in above1 %}
+
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        <a href="/ao_teacher1_display/{{name.info}}" class="list-group-item list-group-item-action list-group-item-dark">
+          {{name.info}}
         </a>
 
 
@@ -77,11 +112,53 @@
 
     </div>
 
+    <div class="list-group">
+      {% for name in above %}
+
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        <a href="/ao_teacher_display/{{name.info}}" class="list-group-item list-group-item-action list-group-item-dark">
+          {{name.info}}
+        </a>
+
+
+      </li>
+      {% endfor %}
+
+
+    </div>
 
      </form>
     </div>
    </div>
   </div>
+<div class="container">
+  
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>NAME</th>
+      <th>Teacher submitted</th>
+      <th>Hod submitted</th>
+      <th>Principal submitted</th>
+
+    </tr>
+  </thead>
+
+  <tbody>
+    {% for x in general %}
+    <tr>
+      <td>{{x}}</td>
+      <td>{{x.teach_status}}</td>
+      <td>{{x.hod_status}}</td>
+      <td>{{x.principal_status}}</td>
+
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+</div>
+
  </div>
 
 
