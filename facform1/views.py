@@ -127,7 +127,7 @@ def hod_teacher_display(request,pk):
 			if sendme.hod_status == False:
 				sendme.hod_status = True
 				sendme.save()
-			return HttpResponseRedirect("/logout/")
+			return HttpResponseRedirect("/hod_first/")
 
 	else:
 		form1 = forms.form_remarks1()
@@ -171,7 +171,7 @@ def hod_teacher1_display(request,pk):
 			if sendme.hod_status == False:
 				sendme.hod_status = True
 				sendme.save()
-			return HttpResponseRedirect("/logout/")
+			return HttpResponseRedirect("/hod_first/")
 
 	else:
 		form1 = forms.form_remarks1()
@@ -251,7 +251,7 @@ def principal_teacher_display(request,pk):
 				sendme.principal_status = True
 				sendme.save()
 
-			return HttpResponseRedirect("/logout/")
+			return HttpResponseRedirect("/principal_display/"+sendme__department)
 
 	else:
 		form1 = forms.form_remarks2()
@@ -300,7 +300,7 @@ def principal_teacher1_display(request,pk):
 				sendme.principal_status = True
 				sendme.save()
 
-			return HttpResponseRedirect("/logout/")
+			return HttpResponseRedirect("/principal_display/"+sendme__department)
 
 	else:
 		form1 = forms.form_remarks2()
@@ -348,7 +348,7 @@ def principal_hod_display(request,pk):
 				sendme.principal_status = True
 				sendme.save()
 
-			return HttpResponseRedirect("/logout/")
+			return HttpResponseRedirect("/principal_display/sendme"+__department)
 
 	else:
 		form1 = forms.form_remarks2()
