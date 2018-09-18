@@ -240,10 +240,8 @@ def principal_display(request,dept):
 	teach3 = list(chain(teach,teach1))
 	teach2 = User.objects.filter(department__name=dept).filter(designation__pk = 11)
 
-	dept = {'dept':dept,'hod':hod,'teach':teach3,'teach2':teach2}
+	dept = {'dept':dept,'hod':hod,'teach3':teach3,'teach2':teach2}
 
-	teach = User.objects.filter(department__name=dept).filter(~Q(designation__pk = 8)).filter(hod_status=True)
-	dept = {'dept':dept,'hod':hod,'teach':teach}
 
 	print(hod)
 	print(teach)

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 {% load staticfiles %}
 <html>
  <head>
@@ -52,7 +52,7 @@
 
       </li> -->
 
-      <div class="card border-dark mb-3 ">
+      <!-- <div class="card border-dark mb-3 ">
 
         <div class="card-header">
           <a href="{{hod_name.doc_link}}" class="list-group-item list-group-item-action list-group-item-success">Documents</a>
@@ -86,9 +86,9 @@
   <div style="margin-top:-5%;" class="">
 
     <p><h3>FACULTY LIST</h3></p>
-    <form class="login-form" method="post">
+    <form class="login-form" method="post"> -->
 
-    <div class="list-group">
+    <!-- <div class="list-group">
       {% for name in teach %}
 <!--
       <li class="list-group-item d-flex justify-content-between align-items-center" value="{{name.pk}}">
@@ -100,15 +100,15 @@
       </li> -->
 
 
-      <div class="card border-dark mb-3 ">
+      <!-- <div class="card border-dark mb-3 ">
 
         <div class="card-header">
           <a href="{{name.doc_link}}" class="list-group-item list-group-item-action list-group-item-success">Documents</a>
 
-        </div>
+        </div> --> -->
 
 
-      <div class="card-body">
+      <!-- <div class="card-body">
         <a href="/principal_teacher_display/{{name.pk}}" class="list-group-item list-group-item-action list-group-item-info">{{name.first_name}}</a>
 
       </div>
@@ -127,9 +127,9 @@
       {% endfor %}
 
 
-    </div>
+    </div> -->
 
-     <div class="list-group">
+     <!-- <div class="list-group">
       {% for name in teach2 %}
 
       <li class="list-group-item d-flex justify-content-between align-items-center" value="{{name.pk}}">
@@ -150,18 +150,206 @@
    </div>
   </div>
  </div>
-
-
-
-
-
-
-
-
-
-
-
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+ -->
+<!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.bundle.min.js" integrity="sha384-pjaaA8dDz/5BgdFUPX6M/9SUZv4d12SUPF0axWc+VRZkx5xU3daN+lYb49+Ax+Tl" crossorigin="anonymous"></script><script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.bundle.min.js" integrity="sha384-pjaaA8dDz/5BgdFUPX6M/9SUZv4d12SUPF0axWc+VRZkx5xU3daN+lYb49+Ax+Tl" crossorigin="anonymous"></script>
+</body>
+</html> --> -->
+
+
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+	<title>Principal Display</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="{% static "images/favicon.ico" %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static "vendor/bootstrap/css/bootstrap.min.css" %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static "fonts/font-awesome-4.7.0/css/font-awesome.min.css" %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static "vendor/animate/animate.css" %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static "vendor/select2/select2.min.css" %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static "vendor/perfect-scrollbar/perfect-scrollbar.css" %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static "css/util.css" %}">
+	<link rel="stylesheet" type="text/css" href="{% static "css/main1.css" %}">
+<!--===============================================================================================-->
+</head>
+<body style="background:#c3d1f8">
+
+
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #736de3;">
+    <a class="navbar-brand" href="#">
+    <img src="{% static "image/bms.logo.png" %}" width="30" height="30" alt="">
+  </a>
+  <a class="navbar-brand" href="#">BMSIT&M</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item disabled">
+        <a class="navbar-brand" href="#">Principal View<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item disabled">
+        <a class="navbar-brand" href="#">Department of <em>{{dept}}</em></a>
+      </li>
+
+    </ul>
+  </div>
+</nav>
+
+	<div style="margin-top:4%;" class="limiter">
+		<div class="container-table100">
+			<div class="wrap-table100">
+					<div class="table">
+
+						<div class="row header">
+							<div class="cell">
+								Faculty Name
+							</div>
+							<div class="cell">
+								Documents
+							</div>
+
+							<div class="cell">
+								Faculty Submission
+							</div>
+							<div class="cell">
+								HOD's Review
+							</div>
+              <div class="cell">
+								Principal's Review
+							</div>
+            </div>
+
+            {% for hod_name in hod %}
+
+						<div class="row">
+							<div class="cell" data-title="Faculty Name">
+								  <a href="/principal_hod_display/{{hod_name.pk}}">{{hod_name.first_name}}</a>
+							</div>
+							<div class="cell" data-title="Documents">
+								<a href="{{hod_name.doc_link}}">Drive link</a>
+							</div>
+
+							<div class="cell" data-title="f-sub">
+                {% if hod_name.teach_status %}
+								<span class="badge badge-success">{{hod_name.teach_status}}</span>
+                {% else %}
+                <span class="badge badge-danger">{{hod_name.teach_status}}</span>
+                {% endif %}
+							</div>
+							<div class="cell" data-title="hod-review">
+                <span class="">-----</span>
+							</div>
+              <div class="cell" data-title="prin-review">
+                {% if hod_name.principal_status %}
+								<span class="badge badge-success">{{hod_name.principal_status}}</span>
+                {% else %}
+                <span class="badge badge-danger">{{hod_name.principal_status}}</span>
+                {% endif %}
+							</div>
+						</div>
+
+            {% endfor %}
+
+
+            {% for name in teach3 %}
+
+						<div class="row">
+							<div class="cell" data-title="Faculty Name">
+								  <a href="/principal_teacher1_display/{{name.pk}}">{{name.first_name}}</a>
+							</div>
+							<div class="cell" data-title="Documents">
+								<a href="{{name.doc_link}}">Drive link</a>
+							</div>
+
+							<div class="cell" data-title="f-sub">
+                {% if name.teach_status %}
+                <span class="badge badge-success">{{name.teach_status}}</span>
+                {% else %}
+                <span class="badge badge-danger">{{name.teach_status}}</span>
+                {% endif %}
+							</div>
+							<div class="cell" data-title="hod-review">
+                {% if name.hod_status %}
+                <span class="badge badge-danger">{{name.hod_status}}</span>
+                {% else %}
+                <span class="badge badge-danger">{{name.hod_status}}</span>
+                {% endif %}
+							</div>
+              <div class="cell" data-title="prin-review">
+                {% if name.principal_status %}
+                <span class="badge badge-success">{{name.principal_status}}</span>
+                {% else %}
+                <span class="badge badge-danger">{{name.principal_status}}</span>
+                {% endif %}
+							</div>
+						</div>
+
+            {% endfor %}
+
+
+            {% for name1 in teach2 %}
+
+            <div class="row">
+              <div class="cell" data-title="Faculty Name">
+                  <a href="/principal_teacher_display/{{name1.pk}}">{{name1.first_name}}</a>
+              </div>
+              <div class="cell" data-title="Documents">
+                <a href="{{name1.doc_link}}">Drive link</a>
+              </div>
+
+              <div class="cell" data-title="f-sub">
+                {% if name1.teach_status %}
+                <span class="badge badge-success">{{name1.teach_status}}</span>
+                {% else %}
+                <span class="badge badge-danger">{{name1.teach_status}}</span>
+                {% endif %}
+              </div>
+              <div class="cell" data-title="hod-review">
+                {% if name1.hod_status %}
+                <span class="badge badge-success">{{name1.hod_status}}</span>
+                {% else %}
+                <span class="badge badge-danger">{{name1.hod_status}}</span>
+                {% endif %}
+              </div>
+              <div class="cell" data-title="prin-review">
+                {% if name1.principal_status %}
+                <span class="badge badge-success">{{name1.principal_status}}</span>
+                {% else %}
+                <span class="badge badge-danger">{{name1.principal_status}}</span>
+                {% endif %}
+              </div>
+            </div>
+
+            {% endfor %}
+
+
+					</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+<!--===============================================================================================-->
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="js/main.js"></script>
+
 </body>
 </html>
