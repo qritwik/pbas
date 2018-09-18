@@ -77,7 +77,7 @@
 
 						<div class="row">
 							<div class="cell" data-title="Faculty Name">
-								  <a href="/principal_hod_display/{{hod_name.pk}}">{{hod_name.first_name}}</a>
+								  <a {% if hod_name.principal_status == False %}  href="/principal_hod_display/{{hod_name.pk}}" {% else %} href="#" {% endif %}>{{hod_name.first_name}}</a>
 							</div>
 							<div class="cell" data-title="Documents">
 								<a href="{{hod_name.doc_link}}">Drive link</a>
@@ -109,7 +109,7 @@
 
 						<div class="row">
 							<div class="cell" data-title="Faculty Name">
-								  <a href="/principal_teacher1_display/{{name.pk}}">{{name.first_name}}</a>
+								  <a {% if name.principal_status == False %} href="/principal_teacher1_display/{{name.pk}}" {% else %} href="#" {% endif %}>{{name.first_name}}</a>
 							</div>
 							<div class="cell" data-title="Documents">
 								<a href="{{name.doc_link}}">Drive link</a>
@@ -145,7 +145,7 @@
 
             <div class="row">
               <div class="cell" data-title="Faculty Name">
-                  <a href="/principal_teacher_display/{{name1.pk}}">{{name1.first_name}}</a>
+                  <a {% if name1.principal_status == False %} href="/principal_teacher_display/{{name1.pk}}" {% else %} href="#" {% endif %}>{{name1.first_name}}</a>
               </div>
               <div class="cell" data-title="Documents">
                 <a href="{{name1.doc_link}}">Drive link</a>
