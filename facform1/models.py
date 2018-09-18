@@ -375,12 +375,6 @@ class rd(models.Model):
 	o_c_m = models.CharField(max_length=30, blank=True, null=True)
 
 
-	department = models.ForeignKey('Department', on_delete=models.CASCADE,null=True)
-	designation = models.ForeignKey('Designation', on_delete=models.CASCADE,null=True)
-
-
-
-
 	book_i = models.IntegerField(blank=True, null=True)
 	book_n = models.IntegerField( blank=True, null=True)
 	book_ci = models.IntegerField(blank=True, null=True)

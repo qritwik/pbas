@@ -17,7 +17,7 @@ class form_User(forms.ModelForm):
 
 	class Meta:
 		model = User
-		fields = ('teach_status','doc_link')
+		fields = ('doc_link',)
 
 
 
