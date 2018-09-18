@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 {% load staticfiles %}
 <html>
  <head>
@@ -76,5 +76,136 @@
 
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.bundle.min.js" integrity="sha384-pjaaA8dDz/5BgdFUPX6M/9SUZv4d12SUPF0axWc+VRZkx5xU3daN+lYb49+Ax+Tl" crossorigin="anonymous"></script><script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.bundle.min.js" integrity="sha384-pjaaA8dDz/5BgdFUPX6M/9SUZv4d12SUPF0axWc+VRZkx5xU3daN+lYb49+Ax+Tl" crossorigin="anonymous"></script>
+</body>
+</html> -->
+
+
+
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+	<title>AO Approved</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="{% static "images/favicon.ico" %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static "vendor/bootstrap/css/bootstrap.min.css" %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static "fonts/font-awesome-4.7.0/css/font-awesome.min.css" %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static "vendor/animate/animate.css" %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static "vendor/select2/select2.min.css" %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static "vendor/perfect-scrollbar/perfect-scrollbar.css" %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static "css/util.css" %}">
+	<link rel="stylesheet" type="text/css" href="{% static "css/main1.css" %}">
+<!--===============================================================================================-->
+</head>
+<body style="background:#c3d1f8">
+
+
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #736de3;">
+    <a class="navbar-brand" href="#">
+    <img src="{% static "image/bms.logo.png" %}" width="30" height="30" alt="">
+  </a>
+  <a class="navbar-brand" href="#">BMSIT&M</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item disabled">
+        <a class="nav-link" href="#">AO View (Approved Teachers)<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item disabled">
+        <a class="nav-link" href="#">Department of <em>{{dept}}</em></a>
+      </li>
+
+    </ul>
+  </div>
+</nav>
+
+	<div style="margin-top:10%;" class="limiter">
+		<div class="container">
+			<div class="wrap-table150">
+					<div class="table">
+
+						<div class="row header">
+							<div class="cell">
+								Faculty Name
+							</div>
+							<div class="cell">
+								Documents
+							</div>
+
+							<div class="cell">
+								Designation
+							</div>
+
+
+              <div class="cell">
+								Status
+							</div>
+
+              <div class="cell">
+								Marks
+							</div>
+            </div>
+
+            {% for x in general %}
+
+						<div class="row">
+							<div class="cell" data-title="Faculty Name">
+                <a {% if x.info.designation == 'hod' %} href="/ao_hod_display/{{x.info}}"
+                 {% elif x.info.designation.name == 'associate' %} href="/ao_teacher1_display/{{x.info}}"
+                 {% elif x.info.designation.name == 'professor' %} href="/ao_teacher1_display/{{x.info}}"
+                 {% elif x.info.designation.name == 'assistant' %} href="/ao_teacher_display/{{x.info}}"
+                 {% endif %}>{{x.info.first_name}}</a>
+              </div>
+							<div class="cell" data-title="Documents">
+								<a href="{{x.info.doc_link}}">Drive link</a>
+							</div>
+
+							<div class="cell" data-title="designation">
+								<p>{{x.info.designation}}</p>
+							</div>
+								<div class="cell" data-title="status">
+                  {% if x.total_marks >= 60 %} approved {% else  %} not approved {% endif %}
+							</div>
+
+              <div class="cell" data-title="Marks">
+
+                <h3><span class="badge badge-primary">{{x.total_marks}}</span></h3>
+
+            </div>
+						</div>
+
+            {% endfor %}
+
+
+
+
+					</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+<!--===============================================================================================-->
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="js/main.js"></script>
+
 </body>
 </html>

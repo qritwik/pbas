@@ -1,18 +1,17 @@
 $(function(){
 	$('.tm').on("click",function(){
-		 $(".c_marks").slideToggle("slow");
-	});
-
-	$('.tm').on("click",function(){
-	var g = 0; 
 	var	a = parseFloat($('.m1').html())
+	alert("a")
+	alert(a)
 	var	b = parseFloat($('.m2').html())
+	alert(b)
 	var	c = parseFloat($('.m3').html())
+	alert(c)
 	var	d = parseFloat($('.m4').html())
+	alert(d)
 	var	e = parseFloat($('.m5').val())
-	 g = parseFloat($('.m6').val())
+	alert(e)
 	var f = a+b+c+d+e
-	alert(f)
 	$('.total_marks').val(f)
 
 	});

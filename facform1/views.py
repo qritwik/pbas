@@ -190,7 +190,15 @@ def hod_teacher1_display(request,pk):
 
 def principal_first(request):
 	dept = Department.objects.all()
+
+
+
+
+
+
 	context = {'dept':dept}
+
+
 	return render(request,'principal_first.html',context=context)
 
 def principal_display(request,dept):
@@ -198,11 +206,11 @@ def principal_display(request,dept):
 	print(dept)
 	hod = User.objects.filter(department__name=dept).filter(designation__pk = 8)
 
-	teach = User.objects.filter(department__name=dept).filter(designation__pk = 9)
-	teach1 = User.objects.filter(department__name=dept).filter(designation__pk = 10)
+	teach = User.objects.filter(department__name=dept).filter(designation__pk = 9).filter(hod_status=True)
+	teach1 = User.objects.filter(department__name=dept).filter(designation__pk = 10).filter(hod_status=True)
 
 	teach3 = list(chain(teach,teach1))
-	teach2 = User.objects.filter(department__name=dept).filter(designation__pk = 11)
+	teach2 = User.objects.filter(department__name=dept).filter(designation__pk = 11).filter(hod_status=True)
 
 
 	dept = {'dept':dept,'hod':hod,'teach':teach3,'teach2':teach2}

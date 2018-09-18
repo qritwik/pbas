@@ -39,10 +39,10 @@
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
       <li class="nav-item disabled">
-        <a class="navbar-brand" href="#">Principal View<span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="#">Principal View<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item disabled">
-        <a class="navbar-brand" href="#">Department of <em>{{dept}}</em></a>
+        <a class="nav-link" href="#">Department of <em>{{dept}}</em></a>
       </li>
 
     </ul>
@@ -63,11 +63,10 @@
 							</div>
 
 							<div class="cell">
-								Faculty Submission
+								Designation
 							</div>
-							<div class="cell">
-								HOD's Review
-							</div>
+
+
               <div class="cell">
 								Principal's Review
 							</div>
@@ -83,17 +82,10 @@
 								<a href="{{hod_name.doc_link}}">Drive link</a>
 							</div>
 
-							<div class="cell" data-title="f-sub">
-                {% if hod_name.teach_status %}
-								<span class="badge badge-success">{{hod_name.teach_status}}</span>
-                {% else %}
-                <span class="badge badge-danger">{{hod_name.teach_status}}</span>
-                {% endif %}
+							<div class="cell" data-title="designation">
+								<p>{{hod_name.designation}}</p>
 							</div>
-							<div class="cell" data-title="hod-review">
-                <span class="">-----</span>
-							</div>
-              <div class="cell" data-title="prin-review">
+								<div class="cell" data-title="prin-review">
                 {% if hod_name.principal_status %}
 								<span class="badge badge-success">{{hod_name.principal_status}}</span>
                 {% else %}
@@ -115,20 +107,11 @@
 								<a href="{{name.doc_link}}">Drive link</a>
 							</div>
 
-							<div class="cell" data-title="f-sub">
-                {% if name.teach_status %}
-                <span class="badge badge-success">{{name.teach_status}}</span>
-                {% else %}
-                <span class="badge badge-danger">{{name.teach_status}}</span>
-                {% endif %}
+							<div class="cell" data-title="designation">
+								<p>{{name.designation}}</p>
 							</div>
-							<div class="cell" data-title="hod-review">
-                {% if name.hod_status %}
-                <span class="badge badge-danger">{{name.hod_status}}</span>
-                {% else %}
-                <span class="badge badge-danger">{{name.hod_status}}</span>
-                {% endif %}
-							</div>
+
+
               <div class="cell" data-title="prin-review">
                 {% if name.principal_status %}
                 <span class="badge badge-success">{{name.principal_status}}</span>
@@ -151,20 +134,10 @@
                 <a href="{{name1.doc_link}}">Drive link</a>
               </div>
 
-              <div class="cell" data-title="f-sub">
-                {% if name1.teach_status %}
-                <span class="badge badge-success">{{name1.teach_status}}</span>
-                {% else %}
-                <span class="badge badge-danger">{{name1.teach_status}}</span>
-                {% endif %}
-              </div>
-              <div class="cell" data-title="hod-review">
-                {% if name1.hod_status %}
-                <span class="badge badge-success">{{name1.hod_status}}</span>
-                {% else %}
-                <span class="badge badge-danger">{{name1.hod_status}}</span>
-                {% endif %}
-              </div>
+							<div class="cell" data-title="designation">
+								<p>{{name1.designation}}</p>
+							</div>
+
               <div class="cell" data-title="prin-review">
                 {% if name1.principal_status %}
                 <span class="badge badge-success">{{name1.principal_status}}</span>

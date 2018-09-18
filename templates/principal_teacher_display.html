@@ -9,7 +9,7 @@
 	<link rel="stylesheet" type="text/css" href={% static "css/index.css" %}>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 
-<script type="text/javascript" src={% static "js/t.js" %}></script>
+<script type="text/javascript" src="{% static "js/t.js" %}"></script>
 
 </head>
 <body>
@@ -1459,7 +1459,7 @@
 
 
 			 </div></td>
-	       <td rowspan="3" class="m4"><em class="m3" style="font-size:55px">{{ key6.hod_marks1 }}</em></td>
+	       <td rowspan="3"><em class="m3" style="font-size:55px">{{ key6.hod_marks1 }}</em></td>
 	    </tr>
 
 
@@ -1500,7 +1500,7 @@
     <tr>
       <th scope="row">1</th>
       <td>Contribution to Department Developmental Activites<span class="sp"> (Maximum Score: 5 marks)</span></td>
-       <td rowspan="3" class="m4" style="font-size:55px">{{ key6.hod_marks1 }}</td>
+       <td rowspan="3" class="m4" style="font-size:55px">{{ key6.hod_marks2 }}</td>
     </tr>
     <tr>
       <th scope="row">2</th>
@@ -1588,7 +1588,7 @@
 										{% render_field form1.total_marks class="form-control total_marks" %}
                         </div>
                     </div>
-                    <div class="form-group col-md-6"> 
+                    <div class="form-group col-md-6">
                     <button type="button" class="btn btn-sucess btn-lg btn-block tm">Calculate</button>
                   </div>
 </div>
