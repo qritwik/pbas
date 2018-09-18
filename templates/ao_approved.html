@@ -179,7 +179,12 @@
 
               <div class="cell" data-title="Marks">
 
-                <h3><span class="badge badge-primary">{{x.total_marks}}</span></h3>
+                {% if x.total_marks >= 60 %}
+                <h3><span class="badge badge-success">{{x.total_marks}}</span></h3>
+                {% else %}
+                <h3><span class="badge badge-danger">{{x.total_marks}}</span></h3>
+                {% endif %}
+
 
             </div>
 						</div>
