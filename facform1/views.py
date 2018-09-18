@@ -24,7 +24,7 @@ def login(request):
 
 		userna = request.POST.get('username')
 		username = userna.upper()
-		
+
 		if(User.objects.filter(username=username).exists()):
 			user = User.objects.get(username=username)
 			first_name = user.first_name
@@ -233,13 +233,18 @@ def principal_display(request,dept):
 
 	print(dept)
 	hod = User.objects.filter(department__name=dept).filter(designation__pk = 8)
+
 	teach = User.objects.filter(department__name=dept).filter(designation__pk = 9)
 	teach1 = User.objects.filter(department__name=dept).filter(designation__pk = 10)
-	
+
 	teach3 = list(chain(teach,teach1))
 	teach2 = User.objects.filter(department__name=dept).filter(designation__pk = 11)
 
 	dept = {'dept':dept,'hod':hod,'teach':teach3,'teach2':teach2}
+
+	teach = User.objects.filter(department__name=dept).filter(~Q(designation__pk = 8)).filter(hod_status=True)
+	dept = {'dept':dept,'hod':hod,'teach':teach}
+
 	print(hod)
 	print(teach)
 
@@ -420,7 +425,7 @@ def ao_display(request,dept):
 	general = User.objects.filter(department__name=dept)
 
 	dept = {'dept':dept,'above':above,'above1':above4,'above3':above3,'below':below,'below1':below4,'below3':below3,'general':general}
-	
+
 
 
 	return render(request,'ao_display.html',context=dept)

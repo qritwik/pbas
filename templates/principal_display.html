@@ -33,7 +33,7 @@
 
 <div class="col-6">
  <div class="login-page">
-  <div style="margin-top:-5%;" class="form">
+  <div style="margin-top:-5%;" class="">
 
     <p><h3>HOD</h3></p>
     <form class="login-form" method="post">
@@ -43,10 +43,36 @@
       <li class="list-group-item d-flex justify-content-between align-items-center">
         <a href="/principal_hod_display/{{hod_name.pk}}" class="list-group-item list-group-item-action list-group-item-dark">{{hod_name.first_name}}
             <span class="badge badge-primary badge-pill">Pending</span>
+      <!-- <li class="list-group-item d-flex justify-content-between align-items-center">
+        <a href="#" class="list-group-item list-group-item-action list-group-item-dark">{{hod_name.first_name}}
+            <span class="badge badge-primary badge-pill">{{hod_name.teach_status}}</span>
+>>>>>>> Stashed changes
         </a>
 
 
-      </li>
+      </li> -->
+
+      <div class="card border-dark mb-3 ">
+
+        <div class="card-header">
+          <a href="{{hod_name.doc_link}}" class="list-group-item list-group-item-action list-group-item-success">Documents</a>
+
+        </div>
+
+
+      <div class="card-body">
+        <a href="#" class="list-group-item list-group-item-action list-group-item-info">{{hod_name.first_name}}</a>
+
+      </div>
+
+      <div class="card-footer">
+
+        <span class="badge badge-danger ">{{hod_name.teach_status}}</span>
+        <span class="badge badge-danger ">{{hod_name.principal_status}}</span>
+      </div>
+
+
+    </div>
       {% endfor %}
 
 
@@ -57,21 +83,47 @@
 </div>
 <div class="col-6">
  <div class="login-page">
-  <div style="margin-top:-5%;" class="form">
+  <div style="margin-top:-5%;" class="">
 
     <p><h3>FACULTY LIST</h3></p>
     <form class="login-form" method="post">
 
     <div class="list-group">
       {% for name in teach %}
-
+<!--
       <li class="list-group-item d-flex justify-content-between align-items-center" value="{{name.pk}}">
         <a href="/principal_teacher_display/{{name.pk}}"class="list-group-item list-group-item-action list-group-item-dark">{{name.first_name}}
-            <span class="badge badge-primary badge-pill">Pending</span>
+            <span class="badge badge-primary badge-pill">{{name.principal_status}}</span>
         </a>
 
 
-      </li>
+      </li> -->
+
+
+      <div class="card border-dark mb-3 ">
+
+        <div class="card-header">
+          <a href="{{name.doc_link}}" class="list-group-item list-group-item-action list-group-item-success">Documents</a>
+
+        </div>
+
+
+      <div class="card-body">
+        <a href="/principal_teacher_display/{{name.pk}}" class="list-group-item list-group-item-action list-group-item-info">{{name.first_name}}</a>
+
+      </div>
+
+      <div class="card-footer">
+{% if name.principal_status %}
+
+        <span class="badge badge-success ">Reviewed</span>
+        {% else %}
+        <span class="badge badge-success ">Not Reviewed</span>
+      {% endif %}
+      </div>
+
+
+    </div>
       {% endfor %}
 
 

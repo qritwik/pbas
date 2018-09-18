@@ -4,9 +4,6 @@
   background-color: #ddccaa !important;
 }
 
-.jumbotron{
-background-color: #ddccaa !important;
-}
 
 
 
@@ -57,7 +54,7 @@ button:focus {
 }
 body {
   position:relative;
-   
+
 }
 .main-title {
     position: absolute;

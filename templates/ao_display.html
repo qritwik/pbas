@@ -16,9 +16,13 @@
 
 <div class="row">
 <div class="col-3"><center><img  src="{% static "image/bms.logo.png" %}" alt="BMS Institute of Technology of management" ></center></div>
+<<<<<<< Updated upstream
  <div class="col-6 q1"><h1 align="center" class="display-4"> AO</h1>
+=======
+ <div class="col-6 q1"><h1 align="center" class="display-4">AO</h1>
+>>>>>>> Stashed changes
  <h1 id="qw" align="center" class="display-4">BMSIT</h1>
- <h1 id="qw" align="center" class="display-4">Department of {{dept}}</h1>
+ <h1 id="qw" align="center" class="display-4">Department of <em>{{dept}}</em></h1>
  </div>
  </div>
 </div>
@@ -33,12 +37,13 @@
 
 <div class="col-6">
  <div class="login-page">
-  <div style="margin-top:-5%;" class="form">
+  <div style="margin-top:-5%;" class="">
 
     <p><h3>Below 60 LIST</h3></p>
 
 
     <div class="list-group">
+<<<<<<< Updated upstream
       {% for below_name in below3 %}
       <li class="list-group-item d-flex justify-content-between align-items-center">
         <a href="/ao_hod_display/{{below_name.info}}" class="list-group-item list-group-item-action list-group-item-dark">{{below_name.info}}
@@ -53,10 +58,34 @@
       {% for below_name in below1 %}
       <li class="list-group-item d-flex justify-content-between align-items-center">
         <a href="/ao_teacher1_display/{{below_name.info}}" class="list-group-item list-group-item-action list-group-item-dark">{{below_name.info}}
+=======
+      {% for below_name in below %}
+      <!-- <li class="list-group-item d-flex justify-content-between align-items-center">
+        <a href="/ao_teacher_display/{{below_name.info}}" class="list-group-item list-group-item-action list-group-item-dark">{{below_name.info.first_name}}
+
+>>>>>>> Stashed changes
         </a>
 
 
-      </li>
+      </li> -->
+
+      <div class="card border-dark mb-3 ">
+
+        <div class="card-header">
+          <a href="{{below_name.info.doc_link}}" class="list-group-item list-group-item-action list-group-item-success">Documents</a>
+
+        </div>
+
+
+      <div class="card-body">
+        <a href="/ao_teacher_display/{{below_name.info.username}}" class="list-group-item list-group-item-action list-group-item-info">{{below_name.info.first_name}}</a>
+
+      </div>
+
+
+
+
+    </div>
       {% endfor %}
     </div>
 
@@ -80,7 +109,7 @@
 
 <div class="col-6">
  <div class="login-page">
-  <div style="margin-top:-5%;" class="form">
+  <div style="margin-top:-5%;" class="">
 
     <p><h3>Above 60 LIST</h3></p>
     <form class="login-form" method="post">
@@ -115,13 +144,33 @@
     <div class="list-group">
       {% for name in above %}
 
-      <li class="list-group-item d-flex justify-content-between align-items-center">
+      <!-- <li class="list-group-item d-flex justify-content-between align-items-center">
         <a href="/ao_teacher_display/{{name.info}}" class="list-group-item list-group-item-action list-group-item-dark">
           {{name.info}}
         </a>
 
 
-      </li>
+      </li> -->
+
+      <div class="card border-dark mb-3 ">
+
+        <div class="card-header">
+          <a href="{{name.info.doc_link}}" class="list-group-item list-group-item-action list-group-item-success">Documents</a>
+
+        </div>
+
+
+      <div class="card-body">
+        <a href="/ao_teacher_display/{{below_name.info.username}}" class="list-group-item list-group-item-action list-group-item-info">{{name.info.first_name}}</a>
+
+      </div>
+
+
+
+
+    </div>
+    {% empty %}
+    No Teachers
       {% endfor %}
 
 
