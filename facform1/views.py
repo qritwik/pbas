@@ -204,19 +204,10 @@ def principal_display(request,dept):
 	teach3 = list(chain(teach,teach1))
 	teach2 = User.objects.filter(department__name=dept).filter(designation__pk = 11)
 
-<<<<<<< Updated upstream
 
-	dept = {'dept':dept,'hod':hod,'teach3':teach3,'teach2':teach2}
-
-
-
-	print(hod)
-	print(teach)
-
-=======
 	dept = {'dept':dept,'hod':hod,'teach':teach3,'teach2':teach2}
 
->>>>>>> Stashed changes
+
 
 	return render(request,'principal_display.html',context=dept)
 
@@ -401,13 +392,6 @@ def ao_display(request,dept):
 
 
 	dept = {'dept':dept,'above':above,'above1':above4,'above3':above3,'below':below,'below1':below4,'below3':below3,'general':general,'p':principal_completed,'h':hod_completed,'t':teach_completed,'total':tt}
-<<<<<<< Updated upstream
-
->>>>>>> Stashed changes
-=======
-	
->>>>>>> Stashed changes
-
 
 	return render(request,'ao_display.html',context=dept)
 
@@ -520,8 +504,10 @@ def f_assistant(request):
 		form3 = forms.form_feedbackTab(request.POST)
 		form4 = forms.form_rd(request.POST)
 		form5 = forms.form_remarks(request.POST)
-		if form1.is_valid() and form2.is_valid() and form3.is_valid() and form4.is_valid() and form5.is_valid():
 
+		
+		if form1.is_valid() and form2.is_valid() and form3.is_valid() and form4.is_valid() and form5.is_valid():
+			print("hello")
 			sendme = User.objects.get(username=request.user)
 
 			obj0 = form1.save(commit=False)
