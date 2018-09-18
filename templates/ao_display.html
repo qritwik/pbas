@@ -29,13 +29,18 @@
 </div>
 
 <div class="container-fluid">
-<div class="row">
 
 
+    <h3>Status of completion</h3>
+    <p>Number of teachers completed {{ t }} out of {{ total }}</p>
+    <p>Reviewed by Hod {{ h }}</p>
+
+    <p>Reviewed by Principal {{p}}</p>
+
+    <a href="/ao_approved/{{dept}}">Review approval status</a>
 
 
-
-<div class="col-6">
+<!-- <div class="col-6">
  <div class="login-page">
   <div style="margin-top:-5%;" class="">
 
@@ -179,7 +184,11 @@
      </form>
     </div>
    </div>
-  </div>
+  </div> -->
+
+
+
+
 <div class="container">
   
 
@@ -196,13 +205,15 @@
 
   <tbody>
     {% for x in general %}
+
     <tr>
-      <td>{{x}}</td>
+      <td>{{x.first_name}}</a></td>
       <td>{{x.teach_status}}</td>
       <td>{{x.hod_status}}</td>
       <td>{{x.principal_status}}</td>
 
     </tr>
+  
     {% endfor %}
   </tbody>
 </table>
