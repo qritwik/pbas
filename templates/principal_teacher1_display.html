@@ -10,7 +10,7 @@
   <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script type="text/javascript" src={% static "js/calc.js" %}></script>
+<script type="text/javascript" src={% static "js/t.js" %}></script>
 
 </head>
 <body>
@@ -1562,6 +1562,17 @@
 </div>
 
 </div>
+
+<button class="s_case">Special Case</button>
+<div class="c_marks">
+  <div>
+  {% render_field form1.ta_prin_remarks1 class="form-control"  %}
+</div>
+<div>
+{% render_field form1.prin_marks2 class="form-control m6"  %}
+</div>
+</div>
+
 <div class="card poi card-header" id="headingOne">
 <div class="form-group">
 <div class="form-row dis">

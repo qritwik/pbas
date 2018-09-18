@@ -17,7 +17,7 @@ class form_User(forms.ModelForm):
 
 	class Meta:
 		model = User
-		fields = ('teach_status',)
+		fields = ('teach_status','doc_link')
 
 
 
@@ -67,4 +67,4 @@ class form_remarks2(forms.ModelForm):
 	class Meta:
 		model = remarks2
 		fields = '__all__'
-		exclude = ['info','prin_marks2','department']
+		exclude = ['info','department']
