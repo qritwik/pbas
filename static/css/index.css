@@ -41,6 +41,11 @@ background: linear-gradient(to right, #48b1bf, #06beb6); /* W3C, IE 10+/ Edge, F
 
 .color1{
 	color: blue;
+	font-size:30px;
+}
+.color2{
+	color: blue;
+	font-size:24px;
 }
 
 .text12{
@@ -52,5 +57,13 @@ background: linear-gradient(to right, #48b1bf, #06beb6); /* W3C, IE 10+/ Edge, F
 }
 
 .sp{
-	color: white;
+	color: #F09819;
+	font-size: 20px;
+}
+#inputEmployeeIdNo
+{
+	font-size: 20px;
+}
+th{
+	font-size: 18px
 }

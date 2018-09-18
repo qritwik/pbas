@@ -179,7 +179,7 @@
 
       	   <div class="form-group col-md-4">
 
-            <label for="inputteaching">teaching</label>
+            <label for="inputteaching">Teaching</label>
 
             {% render_field form2.exp_teach class="form-control" %}
 
@@ -1071,7 +1071,7 @@
 
                <div class="form-group col-md-6">
 
-              <h6 class="po color1">TOTAL MARKS<span class="sp">_(Maximum Score: 40)</span></h6>
+              <h6 class="po color2">TOTAL MARKS<span class="sp">_(Maximum Score: 40)</span></h6>
 
                </div>
 
@@ -1137,7 +1137,7 @@
 
     <div class="card-header" id="headingOne">
 
-      <h5 class="mb-0">
+      <h5 class="mb-0 ">
 
         <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
 
@@ -1260,7 +1260,7 @@
 												<div class="form-group col-md-2"></div>
 
 											<div class="form-group col-md-6">
-
+<label for="inputResearch">Marks Here:</label>
 												{% render_field form4.w_m class="form-control w_m" %}
 
 														</div>
@@ -1406,7 +1406,7 @@
 												<div class="form-group col-md-2"></div>
 
 											<div class="form-group col-md-6">
-
+<label for="inputResearch">Marks Here:</label>
 												{% render_field form4.p_m class="form-control p_m" %}
 
 														</div>
@@ -1446,13 +1446,13 @@
 		<div class="form-row dis">
 
 	 <div class="form-group col-md-6">
-
+<label for="inputResearch">Online courses Count:</label>
 						{% render_field form4.onl_course_c class="form-control onl_course_c" %}
 
 				</div>
 
 				<div class="form-group col-md-6">
-
+<label for="inputResearch">Marks Here:</label>
 					{% render_field form4.onl_course_m class="form-control onl_course_m" %}
 
 											</div>
@@ -1578,7 +1578,7 @@
                </div>
 
                   <div class="orm-group col-md-8">
-
+<label for="inputResearch">Marks Here:</label>
 										{% render_field form4.s_c_m class="form-control s_c_m" %}
 
                         </div>
@@ -1684,7 +1684,7 @@
 					 </div>
 
 							<div class="orm-group col-md-8">
-
+<label for="inputResearch">Marks Here:</label>
 								{% render_field form4.f_c_m class="form-control f_c_m" %}
 
 										</div>
@@ -1790,7 +1790,7 @@
 					 </div>
 
 							<div class="orm-group col-md-8">
-
+<label for="inputResearch">Marks Here:</label>
 								{% render_field form4.o_c_m class="form-control o_c_m" %}
 
 										</div>
@@ -2016,7 +2016,7 @@
                </div>
 
                   <div class="orm-group col-md-8">
-
+<label for="inputResearch">Marks Here:</label>
 										{% render_field form4.s_j_m class="form-control s_j_m" %}
 
                         </div>
@@ -2150,7 +2150,7 @@
 				 </div>
 
 						<div class="orm-group col-md-8">
-
+<label for="inputResearch">Marks Here:</label>
 							{% render_field form4.f_j_m class="form-control f_j_m" %}
 
 									</div>
@@ -2282,7 +2282,7 @@
 				 </div>
 
 						<div class="orm-group col-md-8">
-
+<label for="inputResearch">Marks Here:</label>
 							{% render_field form4.o_j_m class="form-control o_j_m" %}
 
 									</div>
@@ -2542,7 +2542,7 @@
                  <div class="form-row">
 
 									 <div clas="col-md-9">
-
+<label for="inputResearch">Marks Here:</label>
 										 {% render_field form4.book_m class="form-control book_m" %}
 
                      </div>
@@ -2707,7 +2707,25 @@
 
 
 
-      <div class="form-group col-md-10"> <input type="text" class="form-control"  placeholder="Enter Here" ></div>
+      <div class="form-group col-md-4">   <div class="form-group">
+
+		      <label for="sel1"> select one:</label>
+
+		      <select class="form-control" id="sel1">
+
+		        <option>Being Reviewed/Under Consideration</option>
+
+		        <option>Filed</option>
+
+		        <option>Granted</option>
+
+
+
+		      </select>
+
+
+
+		    </div></div>
 
  </div>
 
@@ -2727,25 +2745,28 @@
 
     <div class="form-group">
 
-      <label for="sel1">Select list (select one):</label>
+      <label for="sel1">select one:</label>
 
       <select class="form-control" id="sel1">
 
-        <option>Filed</option>
+        <option>Patent</option>
 
-        <option>Received</option>
+        <option>Copyright</option>
 
-        <option>Pending</option>
+        <option>Others</option>
 
-
-
-      </select>
+  </select>
 
 
 
     </div>
 
   </div>
+	<div class="form-group col-md-4">
+<label>&nbsp</label>
+<input type="text" class="form-control"  disabled placeholder="For others enter here" >
+
+</div>
 
  </div>
 
@@ -2788,7 +2809,7 @@
                       <div class="form-group col-md-2"></div>
 
                     <div class="orm-group col-md-6">
-
+<label for="inputResearch">Marks Here:</label>
 											{% render_field form4.rp_marks class="form-control" %}
 
                           </div>
@@ -2825,7 +2846,7 @@
 
       <div class="form-group col-md-6">
 
-              <h5 class="po color1">Document link</h5>
+              <h5 class="po color2">Document link</h5>
 
                </div>
 
@@ -2837,11 +2858,11 @@
 
                         </div>
 
-                   
+
 
                <div class="form-group col-md-6">
 
-              <h5 class="po color1">TOTAL MARKS<span class="sp">_(Maximum Score: 35)</span></h5>
+              <h5 class="po color2">TOTAL MARKS<span class="sp">_(Maximum Score: 35)</span></h5>
 
                </div>
 
@@ -3103,7 +3124,7 @@
 
                <div class="orm-group col-md-6">
 
-              <h6 class="po color1">TOTAL MARKS<span class="sp">_(Maximum Score: 100)</span></h6>
+              <h6 class="po color2">TOTAL MARKS<span class="sp">_(Maximum Score: 100)</span></h6>
 
                </div>
 
@@ -3178,4 +3199,3 @@
 </body>
 
 </html>
-
