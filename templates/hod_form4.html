@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+{% load widget_tweaks %}
+<html>
+
+<head>
+  <title>asp1</title>
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+  <link rel="stylesheet" type="text/css" href={% static "css/index.css" %}>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+<script type="text/javascript" src={% static "js/h.js" %}></script>
+</head>
+<body>
+  <div class="container">
+  	<form method="POST">
+        {% csrf_token %}
+<div class="card dis1 ">
+  <table class="table table-bordered">
+  <thead class="thead-dark">
+    <tr>
+
+      <th scope="col">Innovative contributions to teaching learning process provide description below with Initiation,Implementation, Impact Analysis<span class="sp">(Maximum Score: 5 marks)</</span></th>
+      <th scope="col">PRINCIPAL'S MARKS</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+
+      <td><div class="input-group text12">
+       <div class="input-group-prepend">
+       </div>
+       {% render_field form5.ta_ic class="form-control" %}
+
+     </div></td>
+       <td rowspan="4"><input type="text" class="form-control" placeholder="marks" aria-label="Username" aria-describedby="basic-addon1" disabled></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+
+
+<div class="card dis1 po">
+  <h5 class="po">Departmental  Responsibilities (Please list only those where you have made significant contribution)</h5>
+ <div class="input-group text12">
+  {% render_field form5.ta_dr class="form-control" %}
+</div>
+</div>
+
+
+
+
+
+<div class="card po dis1">
+  <h5 class="po">Institutional  Responsibilities (Please list only those where you have made significant contribution)</h5>
+ <div class="input-group text12">
+  <div class="input-group-prepend">
+
+  </div>
+   {% render_field form5.ta_ir class="form-control" %}
+</div>
+</div>
+
+<div class="card dis1 ">
+  <table class="table table-bordered">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col"></th>
+      <th scope="col">Attitude and Commitment to Departmental and Regular Teaching and Examination works:<span class="sp">(Min Score:25| Max Score:40)</span></th>
+      <th scope="col">PRINCIPAL'S MARKS</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Contribution to Department Developmental Activites<span class="sp"> (Maximum Score:15 marks)</span></td>
+       <td rowspan="4"><input type="text" class="form-control" placeholder="marks" aria-label="Username" aria-describedby="basic-addon1" disabled></td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Attitude/Behaviour/Discipline/Punctuality<span class="sp"> (Maximum Score: 5 marks)</span></td>
+
+
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Examination/Test duties, Question paper preparation, Evaluation Preparation of Course material and Dedicaton in conducting Theory and Laboratory classes<span class="sp"> (Maximum Score: 5 marks)</span></td>
+
+    </tr>
+
+    <tr>
+      <th scope="row">4</th>
+      <td>Contribution to Institutional Developmental Activites<span class="sp">(Maximum Score: 15 marks)</span></td>
+
+    </tr>
+
+  </tbody>
+</table>
+
+</div>
+
+
+
+<div class="card dis1">
+ <div class="input-group text12">
+  <div class="input-group-prepend">
+    <span class="input-group-text">Brief Remarks of the Principal</span>
+  </div>
+  <textarea class="form-control" aria-label="With textarea"></textarea>
+</div>
+</div>
+</div>
+<div class="card poi card-header" id="headingOne">
+<div class="form-group">
+<div class="form-row dis">
+<div class="col-1"></div>
+<div class="col-10">
+ <div class="form-row dis">
+               <div class="orm-group col-md-6">
+              <h6 class="po color2">TOTAL MARKS<span class="sp">_(Maximum Score: 100)</span></h6>
+               </div>
+
+                  <div class="orm-group col-md-6">
+                        <input type="text" class="form-control"  placeholder="Calculated Marks" >
+                        </div>
+                    </div>
+</div>
+<div class="col-1"></div>
+</div>
+
+<div class="form-row dis">
+<div class="col-4"></div>
+<div class="col-4">
+ <div class="form-row dis">
+
+
+ <button type="button" class="btn btn-success btn-lg btn-block">Submit</button>
+</form>
+
+</div>
+</div>
+</div>
+</div>
+
+ <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+</body>
+</html>

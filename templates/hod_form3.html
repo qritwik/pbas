@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+{% load widget_tweaks %}
+<html>
+
+<head>
+  <title>asp1</title>
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+  <link rel="stylesheet" type="text/css" href={% static "css/index.css" %}>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+<script type="text/javascript" src={% static "js/h.js" %}></script>
+</head>
+<body>
+  <div class="container">
+  	<form method="POST">
+        {% csrf_token %}
+<div class="accordion dis1" id="accordionExample">
+  <h5 class="po color1">2: RESEARCH & DEVELOPMENT AND CONSULTANCY<span class="sp">(Maximum Score: 35 marks)</span></h5>
+  <div class="">
+    <div class="card-header" id="headingOne">
+      <h5 class="mb-0">
+        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+         2A: Workshops/FDP attended
+        </button>
+      </h5>
+    </div>
+
+<div class="form-row dis">
+          <div class="form-group col-md-6">
+                        <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="State Level (.5 m/day)" >
+
+          </div>
+        <div class="form-group col-md-6">
+
+            {% render_field form4.w_s_d class="form-control" %}
+        </div>
+
+    </div>
+
+    <div class="form-row dis">
+          <div class="form-group col-md-6">
+                        <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="National Level (1 m/day)">
+
+          </div>
+        <div class="form-group col-md-6">
+
+            {% render_field form4.w_n_d class="form-control" %}
+        </div>
+
+
+
+    </div>
+
+    <div class="form-row dis">
+          <div class="form-group col-md-6">
+                        <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="International Level (1 m/day)">
+
+          </div>
+        <div class="form-group col-md-6">
+
+            {% render_field form4.w_i_d class="form-control" %}
+        </div>
+
+
+
+    </div>
+    <div class="form-row dis">
+              <div class="form-group col-md-2">
+
+
+              </div>
+
+
+             <div class="form-group col-md-8">
+                   <div class="form-row dis">
+                 <div class="orm-group col-md-4">
+
+                  </div>
+                        <div class="form-group col-md-2"></div>
+                      <div class="orm-group col-md-6">
+                        <label for="inputResearch">Marks Here:</label>
+                            {% render_field form4.w_m class="form-control w_m" %}
+                            </div>
+                        </div>
+
+              </div>
+              <div class="form-group col-md-2"></div>
+
+        </div>
+</div>
+  <div class="">
+    <div class="card-header" id="headingTwo">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+
+2B: Invited talk/panel/keynote
+        </button>
+      </h5>
+    </div>
+
+        <div class="form-row dis">
+          <div class="form-group col-md-6">
+                        <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="State Level (2 m/session)">
+
+          </div>
+        <div class="form-group col-md-6">
+
+            {% render_field form4.p_s_d class="form-control" %}
+        </div>
+
+    </div>
+
+    <div class="form-row dis">
+          <div class="form-group col-md-6">
+                        <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="National Level (4 m/session)">
+
+          </div>
+        <div class="form-group col-md-6">
+
+            {% render_field form4.p_n_d class="form-control" %}
+
+        </div>
+
+
+    </div>
+
+    <div class="form-row dis">
+          <div class="form-group col-md-6">
+                        <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="International Level (5 m/session)">
+
+          </div>
+        <div class="form-group col-md-6">
+
+            {% render_field form4.p_i_d class="form-control" %}
+
+        </div>
+
+
+
+    </div>
+    <div class="form-row dis">
+              <div class="form-group col-md-2">
+
+
+              </div>
+
+
+             <div class="form-group col-md-8">
+                   <div class="form-row dis">
+                 <div class="orm-group col-md-4">
+
+                  </div>
+                        <div class="form-group col-md-2"></div>
+                      <div class="orm-group col-md-6">
+                        <label for="inputResearch">Marks Here:</label>
+                            {% render_field form4.w_m class="form-control p_m" %}
+                            </div>
+                        </div>
+
+              </div>
+              <div class="form-group col-md-2"></div>
+
+        </div>
+  </div>
+  <div class="">
+    <div class="card-header" id="headingThree">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+         2C: Number of Online Courses Completed
+           <span class="sp">(Maximum Score: 10 marks)</span>
+        </button>
+
+      </h5>
+    </div>
+    <div class="form-group">
+    <div class="form-row dis">
+   <div class="form-group col-md-6">
+     <label for="inputResearch">Online courses count:</label>
+            {% render_field form4.onl_course_c class="form-control" %}
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputResearch">Marks Here:</label>
+                        {% render_field form4.onl_course_m class="form-control onl_course_m" %}</div>
+  </div>
+</div>
+</div>
+</div>
+
+
+
+
+<div class="accordion dis1" id="accordionExample">
+  <h5 class="po color1">3: Publications</h5>
+  <div class="card">
+    <div class="card-header" id="headingOne">
+      <h5 class="mb-0">
+        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          3A: Number of Publications in National/International Journals/Conferences<span class="sp">(Maximum Score: 08 marks)</span>
+        </button>
+      </h5>
+    </div>
+
+    <div class="form-row dis">
+    <div class="form-group col-md-4 " >
+      <div class="form-row">
+      <div class="form-group col-sm-12">
+      <h4 class="mb-0" align = "center" >Sole Authored </h4>
+    </div>
+      </div>
+    <div class="form-row">
+    <div class="form-group col-sm-12">
+    <label >Name of conference: </label>
+    {% render_field form4.s_c_name class="form-control s_c_name" %}
+    </div>
+    </div>
+    <div class="form-row">
+    <div class="form-group col-sm-12">
+    <label >Title of the paper: </label>
+    {% render_field form4.s_c_title class="form-control" %}
+    </div>
+    </div>
+    <div class="form-row">
+    <div class="form-group col-sm-12">
+    <label>Place: </label>
+    {% render_field form4.s_c_place class="form-control" %}
+    </div>
+    </div>
+    <div class="form-row">
+    <div class="form-group col-sm-12">
+    <label >Date: </label>
+    {% render_field form4.s_c_date class="form-control" %}
+    </div>
+    </div>
+    <div class="form-row">
+    <div class="form-group col-sm-12">
+    <label>Indexed: </label>
+    {% render_field form4.s_c_index class="form-control" %}
+    </div>
+    </div>
+    <div class="form-row">
+    <div class="form-group col-sm-12">
+    <div class="form-row dis">
+               <div class="orm-group col-md-2">
+
+               </div>
+                  <div class="orm-group col-md-8">
+                    <label for="inputResearch">Marks Here:</label>
+                    {% render_field form4.s_c_m class="form-control s_c_m" %}
+                        </div>
+                        <div class="orm-group col-md-2">
+
+                        </div>
+                    </div>
+    </div>
+    </div>
+    </div>
+    <div class="form-group col-md-4 " style="  border-left: thin solid #ff0000" >
+    <div class="form-row">
+    <div class="form-group col-sm-12">
+    <h4 class="mb-0" align ="center" >First & Second Author </h4>
+
+    </div>
+    </div>
+    <div class="form-row">
+    <div class="form-group col-sm-12">
+    <label >Name of conference: </label>
+    {% render_field form4.f_c_name class="form-control f_c_name" %}
+    </div>
+    </div>
+    <div class="form-row">
+    <div class="form-group col-sm-12">
+    <label >Title of the paper: </label>
+    {% render_field form4.f_c_title class="form-control" %}
+    </div>
+    </div>
+    <div class="form-row">
+    <div class="form-group col-sm-12">
+    <label>Place: </label>
+    {% render_field form4.f_c_place class="form-control" %}
+    </div>
+    </div>
+    <div class="form-row">
+    <div class="form-group col-sm-12">
+    <label >Date: </label>
+    {% render_field form4.f_c_date class="form-control" %}
+    </div>
+    </div>
+    <div class="form-row">
+    <div class="form-group col-sm-12">
+    <label>Indexed: </label>
+    {% render_field form4.f_c_index class="form-control" %}
+    </div>
+    </div>
+    <div class="form-row">
+    <div class="form-group col-sm-12">
+    <div class="form-row dis">
+           <div class="orm-group col-md-2">
+
+           </div>
+              <div class="orm-group col-md-8">
+                <label for="inputResearch">Marks Here:</label>
+                {% render_field form4.f_c_m class="form-control f_c_m" %}
+                    </div>
+                    <div class="orm-group col-md-2">
+
+                    </div>
+                </div>
+    </div>
+    </div>
+    </div>
+    <div class="form-group col-md-4" style="  border-left: thin solid #ff0000" >
+    <div class="form-row">
+    <div class="form-group col-sm-12">
+    <h4 class="mb-0" align ="center" >Other Author </h4>
+
+    </div>
+    </div>
+    <div class="form-row">
+    <div class="form-group col-sm-12">
+    <label >Name of conference: </label>
+    {% render_field form4.o_c_name class="form-control o_c_name" %}
+    </div>
+    </div>
+    <div class="form-row">
+    <div class="form-group col-sm-12">
+    <label >Title of the paper: </label>
+    {% render_field form4.o_c_title class="form-control" %}
+    </div>
+    </div>
+    <div class="form-row">
+    <div class="form-group col-sm-12">
+    <label>Place: </label>
+    {% render_field form4.o_c_place class="form-control" %}
+    </div>
+    </div>
+    <div class="form-row">
+    <div class="form-group col-sm-12">
+    <label >Date: </label>
+    {% render_field form4.o_c_date class="form-control" %}
+    </div>
+    </div>
+    <div class="form-row">
+    <div class="form-group col-sm-12">
+    <label>Indexed: </label>
+    {% render_field form4.o_c_index class="form-control" %}
+    </div>
+    </div>
+    <div class="form-row">
+    <div class="form-group col-sm-12">
+    <div class="form-row dis">
+           <div class="orm-group col-md-2">
+
+           </div>
+              <div class="orm-group col-md-8">
+                <label for="inputResearch">Marks Here:</label>
+                {% render_field form4.o_c_m class="form-control o_c_m" %}
+                    </div>
+                    <div class="orm-group col-md-2">
+
+                    </div>
+                </div>
+    </div>
+    </div>
+    </div>
+    </div>
+<!-- form>
+        <div class="form-row dis">
+          <div class="form-group col-md-6">
+                        <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="Sole Authored">
+
+          </div>
+        <div class="form-group col-md-6">
+
+            <input type="text" class="form-control" id="inputEmployeeIdNo" placeholder="Count Eg. 3">
+        </div>
+    </div>
+
+    <div class="form-row dis">
+          <div class="form-group col-md-6">
+                        <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="Being first and second author">
+
+          </div>
+        <div class="form-group col-md-6">
+
+            <input type="text" class="form-control" id="inputEmployeeIdNo" placeholder="Count Eg. 3">
+        </div>
+    </div>
+
+    <div class="form-row dis">
+          <div class="form-group col-md-6">
+                        <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="Being other author ">
+
+          </div>
+        <div class="form-group col-md-6">
+
+            <input type="text" class="form-control" id="inputEmployeeIdNo" placeholder="Count Eg. 3">
+        </div>
+    </div>
+</form>
+</div> -->
+
+
+  <div class="card">
+    <div class="card-header" id="headingTwo">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+
+3B: Number of journal papers with Scopus/DBLP/ Google Scholar Indexed Publications<span class="sp">(Maximum Score: 12 marks)</span>
+        </button>
+      </h5>
+    </div>
+
+    <div class="form-row dis">
+   <div class="form-group col-md-4">
+     <div class="form-row">
+<div class="form-group col-sm-11">
+      <div class="form-group col-sm-12">
+      <h4 class="mb-0" align ="center" >Sole Authored </h4>
+</div>
+      </div>
+<div class="form-group col-sm-11">
+<label >Name of journal: </label>
+{% render_field form4.s_j_name class="form-control s_j_name" %}
+</div>
+</div>
+ <div class="form-row">
+<div class="form-group col-sm-11">
+<label >Title of the paper: </label>
+{% render_field form4.s_j_title class="form-control" %}
+</div>
+</div>
+ <div class="form-row">
+<div class="form-group col-sm-11">
+<label >Volume: </label>
+{% render_field form4.s_j_volume class="form-control" %}
+</div>
+</div>
+ <div class="form-row">
+<div class="form-group col-sm-11">
+<label >Issn/Doi: </label>
+{% render_field form4.s_j_issn class="form-control" %}
+</div>
+</div>
+ <div class="form-row">
+<div class="form-group col-sm-11">
+<label >Date: </label>
+{% render_field form4.s_c_date class="form-control" %}
+</div>
+</div>
+ <div class="form-row">
+<div class="form-group col-sm-11">
+<label >Page no: </label>
+{% render_field form4.s_j_page class="form-control" %}
+</div>
+</div>
+ <div class="form-row">
+<div class="form-group col-sm-11">
+<label>Indexed: </label>
+{% render_field form4.s_j_index class="form-control" %}
+</div>
+</div>
+ <div class="form-row">
+<div class="form-group col-sm-11">
+<div class="form-row dis">
+            <div class="orm-group col-md-2">
+
+            </div>
+               <div class="orm-group col-md-8">
+                 <label for="inputResearch">Marks Here:</label>
+                {% render_field form4.s_j_m class="form-control s_j_m" %}
+                     </div>
+                    <div class="orm-group col-md-2">
+
+                    </div>
+                 </div>
+
+</div>
+</div>
+
+</div>
+
+<div class="form-group col-md-4 " style="  border-left: thin solid #ff0000">
+<div class="form-row">
+<div class="form-group col-sm-11">
+          <div class="form-group col-sm-12">
+          <h4 class="mb-0" align ="center" >First & Second Author </h4>
+</div>
+          </div>
+<div class="form-group col-sm-11">
+<label >Name of journal: </label>
+{% render_field form4.f_j_name class="form-control f_j_name" %}
+</div>
+</div>
+<div class="form-row">
+<div class="form-group col-sm-11">
+<label >Title of the paper: </label>
+{% render_field form4.f_j_title class="form-control" %}
+</div>
+</div>
+<div class="form-row">
+<div class="form-group col-sm-11">
+<label >Volume: </label>
+{% render_field form4.f_j_volume class="form-control" %}
+</div>
+</div>
+<div class="form-row">
+<div class="form-group col-sm-11">
+<label >Issn/Doi: </label>
+{% render_field form4.f_j_issn class="form-control" %}
+</div>
+</div>
+<div class="form-row">
+<div class="form-group col-sm-11">
+<label >Date: </label>
+{% render_field form4.f_c_date class="form-control" %}
+</div>
+</div>
+<div class="form-row">
+<div class="form-group col-sm-11">
+<label >Page no: </label>
+{% render_field form4.f_j_page class="form-control" %}
+</div>
+</div>
+<div class="form-row">
+<div class="form-group col-sm-11">
+<label>Indexed: </label>
+{% render_field form4.f_j_index class="form-control" %}
+</div>
+</div>
+<div class="form-row">
+<div class="form-group col-sm-11">
+<div class="form-row dis">
+     <div class="orm-group col-md-2">
+
+     </div>
+        <div class="orm-group col-md-8">
+          <label for="inputResearch">Marks Here:</label>
+          {% render_field form4.f_j_m class="form-control f_j_m" %}
+              </div>
+              <div class="orm-group col-md-2">
+
+              </div>
+          </div>
+
+</div>
+</div>
+
+</div>
+<div class="form-group col-md-4 " style="border-left: thin solid #ff0000">
+<div class="form-row">
+<div class="form-group col-sm-11">
+          <div class="form-group col-sm-12">
+          <h4 class="mb-0" align ="center" >Other Author </h4>
+</div>
+          </div>
+<div class="form-group col-sm-11">
+<label >Name of journal: </label>
+{% render_field form4.o_j_name class="form-control o_j_name" %}
+</div>
+</div>
+<div class="form-row">
+<div class="form-group col-sm-11">
+<label >Title of the paper: </label>
+{% render_field form4.o_j_title class="form-control" %}
+</div>
+</div>
+<div class="form-row">
+<div class="form-group col-sm-11">
+<label >Volume: </label>
+{% render_field form4.o_j_volume class="form-control" %}
+</div>
+</div>
+<div class="form-row">
+<div class="form-group col-sm-11">
+<label >Issn/Doi: </label>
+{% render_field form4.o_j_issn class="form-control" %}
+</div>
+</div>
+<div class="form-row">
+<div class="form-group col-sm-11">
+<label >Date: </label>
+{% render_field form4.o_c_date class="form-control" %}
+</div>
+</div>
+<div class="form-row">
+<div class="form-group col-sm-11">
+<label >Page no: </label>
+{% render_field form4.o_j_page class="form-control" %}
+</div>
+</div>
+<div class="form-row">
+<div class="form-group col-sm-11">
+<label>Indexed: </label>
+{% render_field form4.o_j_index class="form-control" %}
+</div>
+</div>
+<div class="form-row">
+<div class="form-group col-sm-11">
+<div class="form-row dis">
+     <div class="orm-group col-md-2">
+
+     </div>
+        <div class="orm-group col-md-8">
+          <label for="inputResearch">Marks Here:</label>
+          {% render_field form4.o_j_m class="form-control o_j_m" %}
+              </div>
+              <div class="orm-group col-md-2">
+
+              </div>
+          </div>
+
+</div>
+</div>
+
+</div>
+</div>
+<!--    <form>
+        <div class="form-row dis">
+          <div class="form-group col-md-6">
+                        <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="Sole Authored">
+
+          </div>
+        <div class="form-group col-md-6">
+
+            <input type="text" class="form-control" id="inputEmployeeIdNo" placeholder="Count Eg. 3">
+        </div>
+    </div>
+
+    <div class="form-row dis">
+          <div class="form-group col-md-6">
+                        <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="Being first and second author">
+
+          </div>
+        <div class="form-group col-md-6">
+
+            <input type="text" class="form-control" id="inputEmployeeIdNo" placeholder="Count Eg. 3">
+        </div>
+    </div>
+
+    <div class="form-row dis">
+          <div class="form-group col-md-6">
+                        <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="Being other author ">
+
+          </div>
+        <div class="form-group col-md-6">
+
+            <input type="text" class="form-control" id="inputEmployeeIdNo" placeholder="Count Eg. 3">
+        </div>
+    </div>
+</form> -->
+  </div>
+  <div class="card">
+    <div class="card-header" id="headingThree">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+         3C: Number of Books/Book chapter Published/Publication in News media<span class="sp">(Maximum Score: 10 marks)</span>
+        </button>
+      </h5>
+    </div>
+
+        <div class="form-row dis">
+          <div class="form-group col-md-6">
+                        <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="Book Authored  International (10 marks/Book)">
+
+          </div>
+        <div class="form-group col-md-6">
+
+           {% render_field form4.book_i class="form-control book_i" %}
+        </div>
+    </div>
+
+    <div class="form-row dis">
+          <div class="form-group col-md-6">
+                        <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="Book Authored  National (08 marks/Book)">
+
+          </div>
+        <div class="form-group col-md-6">
+
+            {% render_field form4.book_n class="form-control book_n" %}
+        </div>
+    </div>
+
+    <div class="form-row dis">
+          <div class="form-group col-md-6">
+                        <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="Book chapterAuthored  International (06 marks/Book Chapter)">
+
+          </div>
+        <div class="form-group col-md-6">
+
+             {% render_field form4.book_ci class="form-control book_ci" %}
+        </div>
+    </div>
+
+    <div class="form-row dis">
+          <div class="form-group col-md-6">
+                        <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="Book chapterAuthored  National (04 marks/Book Chapter)">
+
+          </div>
+        <div class="form-group col-md-6">
+        {% render_field form4.book_cn class="form-control book_cn" %}
+        </div>
+    </div>
+
+    <div class="form-row dis">
+          <div class="form-group col-md-6">
+                        <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="Articles Published in International (10 marks/Article)">
+
+          </div>
+        <div class="form-group col-md-6">
+
+             {% render_field form4.book_ai class="form-control book_ai" %}
+        </div>
+    </div>
+
+    <div class="form-row dis">
+          <div class="form-group col-md-6">
+                        <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="National  Media (06 marks/Article)">
+
+          </div>
+        <div class="form-group col-md-6">
+
+             {% render_field form4.book_nm class="form-control book_nm" %}
+        </div>
+    </div>
+
+    <div class="form-row ">
+          <div class="form-group col-md-6">
+
+
+          </div>
+        <div class="form-group col-md-4">
+
+
+<label for="inputResearch">Marks Here:</label>
+                        {% render_field form4.book_m class="form-control book_m" %}
+
+										 <div class="col-md-2"></div>
+
+
+
+
+
+   </div>
+        </div>
+    </div>
+<!-- </form> -->
+  </div>
+</div>
+<div class="card ">
+
+    <div class="card-header" id="headingTwo">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+
+3D: Research Project<span class="sp">(Maximum Score: 10 marks)</span>
+        </button>
+      </h5>
+    </div>
+        </button>
+	<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Funding</th>
+      <th scope="col">Being Sole Principal Investigator</th>
+      <th scope="col">Being first Principal Investigator</th>
+      <th scope="col">Being Co-Investigator</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Internally Funded<span class="sp">( 5 marks/project)</span></th>
+      <td> {% render_field form4.if_s class="form-control if_s" %}</td>
+      <td>{% render_field form4.if_f class="form-control if_f" %}</td>
+      <td>{% render_field form4.if_c class="form-control if_c" %}</td>
+    </tr>
+    <tr>
+      <th scope="row">Externally Funded Less than 5_Lakhs<span class="sp">( 5 marks/project )</span> </th>
+       <td> {% render_field form4.ef_s class="form-control ef_s" %}</td>
+      <td>{% render_field form4.ef_f class="form-control ef_f" %}</td>
+      <td>{% render_field form4.ef_c class="form-control ef_c" %}</td>
+    </tr>
+    <tr>
+      <th scope="row">Externally Funded more than 5_Lakhs<span class="sp"> (10 marks/project)</span> </th>
+      <td> {% render_field form4.eef_s class="form-control eef_s" %}</td>
+      <td>{% render_field form4.eef_f class="form-control eef_f" %}</td>
+      <td>{% render_field form4.eef_c class="form-control eef_c" %}</td>
+    </tr>
+		<tr>
+
+  </tbody>
+</table>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Funding</th>
+      <th scope="col">Upto 2 Lakhs</th>
+      <th scope="col">Upto 2-5 Lakhs</th>
+      <th scope="col">Above 5 Lakhs</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Consultancy Work</th>
+      <td> {% render_field form4.Cw_2 class="form-control cw_2" %}</td>
+      <td>{% render_field form4.Cw_2_5 class="form-control cw_2_5" %}</td>
+      <td>{% render_field form4.Cw_5 class="form-control cw_5" %}</td>
+    </tr>
+    </tbody>
+</table>
+<div class="card poi">
+
+<div class="form-group ">
+
+                 <div class="form-row dis">
+
+        <div class="form-group col-md-2 align-center"><h4> IPR Status :</h4>
+
+        </div>
+
+
+
+      <div class="form-group col-md-4">   <div class="form-group">
+
+		      <label for="sel1"> select one:</label>
+
+		      <select class="form-control" id="sel1">
+
+		        <option>Being Reviewed/Under Consideration</option>
+
+		        <option>Filed</option>
+
+		        <option>Granted</option>
+
+
+
+		      </select>
+
+
+
+		    </div></div>
+
+ </div>
+
+ </div>
+
+ <div class="form-group ">
+
+                 <div class="form-row dis">
+
+        <div class="form-group col-md-2 align-center"><h4> IPR Type :</h4>
+
+        </div>
+
+
+
+      <div class="form-group col-md-4">
+
+    <div class="form-group">
+
+      <label for="sel1">select one:</label>
+
+      <select class="form-control" id="sel1">
+
+        <option>Patent</option>
+
+        <option>Copyright</option>
+
+        <option>Others</option>
+
+  </select>
+
+
+
+    </div>
+
+  </div>
+	<div class="form-group col-md-4">
+<label>&nbsp</label>
+<input type="text" class="form-control"  disabled placeholder="For others enter here" >
+
+</div>
+
+ </div>
+
+</div>
+
+
+
+<div class="form-group">
+
+
+
+
+
+
+
+  <div class="form-row dis">
+
+            <div class="form-group col-md-2">
+
+
+
+
+
+            </div>
+
+
+
+
+
+           <div class="form-group col-md-8">
+
+                 <div class="form-row dis">
+
+               <div class="orm-group col-md-4">
+
+
+
+                </div>
+
+                      <div class="form-group col-md-2"></div>
+
+                    <div class="orm-group col-md-6">
+<label for="inputResearch">Marks Here:</label>
+											{% render_field form4.rp_marks class="form-control" %}
+
+                          </div>
+
+                      </div>
+
+
+
+            </div>
+
+            <div class="form-group col-md-2"></div>
+
+
+
+      </div>
+
+</div>
+
+</div>
+
+</div>
+<div class="card poi card-header" id="headingOne">
+<div class="form-group">
+<div class="form-row dis">
+<div class="col-1"></div>
+<div class="col-10">
+
+ <div class="form-row dis">
+               <div class="orm-group col-md-6">
+             <h5 class="po color2">Document link</h5>
+
+               </div>
+
+
+
+                  <div class="form-group col-md-6">
+
+                    {% render_field form1.doc_link class="form-control " %}
+
+                        </div>
+
+
+
+               <div class="form-group col-md-6">
+
+              <h5 class="po color2">TOTAL MARKS<span class="sp">_(Maximum Score: 35)</span></h5>
+
+               </div>
+
+
+
+                  <div class="orm-group col-md-6">
+
+                    {% render_field form4.rd_tot_marks class="form-control rd_tot_marks" %}
+
+                        </div>
+
+                    </div>
+</div>
+<div class="col-1"></div>
+</div>
+
+<div class="form-row dis">
+<div class="col-4"></div>
+<div class="col-4">
+ <div class="form-row dis">
+
+
+
+   <input type="button" class="btn btn-success btn-lg btn-block rd" value="Calculate">
+
+
+
+</div>
+<div class="col-4"></div>
+</div>
+</div>
+</div>
+
+</div>
+
+  <button type="button" class="btn btn-success btn-lg btn-block">Submit</button>
+</form>
+
+</div>
+
+
+ <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+</body>
+</html>
