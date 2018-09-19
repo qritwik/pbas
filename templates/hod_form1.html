@@ -14,26 +14,42 @@
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
 <script type="text/javascript" src={% static "js/h.js" %}></script>
-</head>
-<body>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- Bootstrap core CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.10/css/mdb.min.css" rel="stylesheet">
+<!-- JQuery -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.10/js/mdb.min.js"></script>
+
+  </head>
+  <body style="background:#c3d1f8">
+
+    <div class="jumbotron" style="background:#736de3">
+
+    <div class="container-fluid">
+    <center><img  width="125px" src="{% static "image/bms.logo.png" %}" alt="BMS Institute of Technology of management" ></center>
+    <div class="row">
+
+     <div class="col-12"><h1 align="center" class="display-4" style="color:#f5f5f5"> BMS Institute of Technology and management</h1>
+       <h3 class="lead" style="color:white" align="center">Faculty appraisal form</h3>
+         <h3 class="lead" style="color:white" align="center">2017-2018</h3>
+       <hr class="my-4" style="color:white">
+       <h5 style="color:white; margin-left:108px;">Report must be submitted.</h5>
+     </div>
+     </div>
+    </div>
+    </div>
+
   <div class="container">
 
-      <div class="card poi" style="background: #B79891;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #94716B, #B79891);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #94716B, #B79891); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-">
-        <div class="form-row">
-        <div class="form-group col-md-3">
-        <img src={% static "image/bms.logo.png" %} class="" width="150px"/>
-      </div>
-        <div class="form-group col-md-9">
-        <h2 class="display-4 al" >BMS Institute of Technology & Management</h2>
-      </div>
-    </div>
-        <h3 class="lead" align="center">Faculty appraisal form</h3>
-        <hr class="my-4">
-        <h5>Report must be submitted.</h5>
-      </div>
+
 
        <form method="POST">
         {% csrf_token %}
@@ -120,12 +136,12 @@ background: linear-gradient(to right, #94716B, #B79891); /* W3C, IE 10+/ Edge, F
                 </div>
 
 
-  
+
 
 
 <div class="card dis1">
 
-
+<div>
       <input type="submit" value= " save" class="btn btn-success btn-lg btn-block"/>
 </div>
 

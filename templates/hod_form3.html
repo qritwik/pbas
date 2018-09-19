@@ -14,8 +14,38 @@
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
 <script type="text/javascript" src={% static "js/h.js" %}></script>
-</head>
-<body>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- Bootstrap core CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.10/css/mdb.min.css" rel="stylesheet">
+<!-- JQuery -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.10/js/mdb.min.js"></script>
+
+  </head>
+  <body style="background:#c3d1f8">
+
+    <div class="jumbotron" style="background:#736de3">
+
+    <div class="container-fluid">
+    <center><img  width="125px" src="{% static "image/bms.logo.png" %}" alt="BMS Institute of Technology of management" ></center>
+    <div class="row">
+
+     <div class="col-12"><h1 align="center" class="display-4" style="color:#f5f5f5"> BMS Institute of Technology and management</h1>
+       <h3 class="lead" style="color:white" align="center">Faculty appraisal form</h3>
+         <h3 class="lead" style="color:white" align="center">2017-2018</h3>
+       <hr class="my-4" style="color:white">
+       <h5 style="color:white; margin-left:108px;">Report must be submitted.</h5>
+     </div>
+     </div>
+    </div>
+    </div>
   <div class="container">
   	<form method="POST">
         {% csrf_token %}
@@ -817,31 +847,35 @@
 
 <div class="form-group ">
 
-                 <div class="form-row dis">
-
-        <div class="form-group col-md-2 align-center"><h4> IPR Status :</h4>
-
-        </div>
-
-         {% render_field form4.ipr_status class="form-control" %}
 
 
- </div>
 
- </div>
 
- <div class="form-group ">
+                    <div class="orm-group col-md-6">
+<label for="inputResearch">Marks Here:</label>
+                      {% render_field form4.rp_marks class="form-control rp_marks" %}
 
-                 <div class="form-row dis">
+                          </div>
 
-        <div class="form-group col-md-2 align-center"><h4> IPR Type :</h4>
+                      </div>
 
-        </div>
+ <div class="form-group row">
 
+
+
+
+        <div class="form-group col-md-6">
+          <h4>IPR Type :</h4>
         {% render_field form4.ipr_type class="form-control" %}
+        </div>
+        <div class="form-group col-md-6">
+          <h4>IPR Status :</h4>
+         {% render_field form4.ipr_status class="form-control" %}
+</div>
 
+ </div>
 
-	<div class="form-group col-md-4">
+  <div class="form-group col-md-12">
 <label>Details</label>
 {% render_field form4.ipr_info class="form-control" %}
 
@@ -850,72 +884,13 @@
  </div>
 
 </div>
-
-
-
-<div class="form-group">
-
-
-
-
-
-
-
-  <div class="form-row dis">
-
-            <div class="form-group col-md-2">
-
-
-
-
-
-            </div>
-
-
-
-
-
-           <div class="form-group col-md-8">
-
-                 <div class="form-row dis">
-
-               <div class="orm-group col-md-4">
-
-
-
-                </div>
-
-                      <div class="form-group col-md-2"></div>
-
-                    <div class="orm-group col-md-6">
-<label for="inputResearch">Marks Here:</label>
-											{% render_field form4.rp_marks class="form-control" %}
-
-                          </div>
-
-                      </div>
-
-
-
-            </div>
-
-            <div class="form-group col-md-2"></div>
-
-
-
-      </div>
-
-</div>
-
-</div>
-
-</div>
 <div class="card poi card-header" id="headingOne">
 <div class="form-group">
 <div class="form-row dis">
 <div class="col-1"></div>
 <div class="col-10">
 
+ <div class="form-row dis">
 
 
 
@@ -953,10 +928,13 @@
 <div class="col-4"></div>
 </div>
 </div>
+<input type="submit" value= " Save and Continue" class="btn btn-success btn-lg btn-block"/>
 </div>
 
 </div>
-   <input type="submit" value= " save" class="btn btn-success btn-lg btn-block"/>
+
+</div>
+   
 </form>
 
 </div>
