@@ -400,9 +400,16 @@ class rd(models.Model):
 	Cw_2_5 = models.CharField(max_length=30, blank=True, null=True)
 	Cw_5 = models.CharField(max_length=30, blank=True, null=True)
 
+	ipr_status = models.CharField(max_length=30, blank=True, null=True)
+	ipr_type = models.CharField(max_length=30, blank=True, null=True)
+	ipr_info = models.CharField(max_length=30, blank=True, null=True)
+
+
 	rp_marks = models.CharField(max_length=30, blank=True, null=True)
 
 	rd_tot_marks = models.CharField(max_length=30, blank=True, null=True)
+
+
 
 	info = models.ForeignKey('User', on_delete=models.CASCADE,null=True)
 
@@ -422,8 +429,10 @@ class remarks1(models.Model):
 
 class remarks2(models.Model):
 	ta_prin_remarks = models.TextField( blank=True, null=True)
+	ta_prin_remarks1 = models.TextField( blank=True, null=True)
 	prin_marks1 = models.IntegerField( blank=True, null=True)
 	prin_marks2 = models.IntegerField( blank=True, null=True)
+	prin_marks3 = models.IntegerField( blank=True, null=True)
 	total_marks = models.IntegerField( blank=True, null=True)
 	info = models.ForeignKey('User', on_delete=models.CASCADE,null=True)
 	department = models.ForeignKey('Department', on_delete=models.CASCADE,null=True)
