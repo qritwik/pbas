@@ -1438,63 +1438,45 @@
     </tbody>
 </table>
 <div class="card poi">
+
 <div class="form-group ">
-                 <div class="form-row dis">
-        <div class="form-group col-md-2 align-center"><h4> IPR Status :</h4>
-        </div>
-
-      <div class="form-group col-md-10"> <input type="text" class="form-control"  placeholder="Enter Here" ></div>
- </div>
- </div>
- <div class="form-group ">
-                 <div class="form-row dis">
-        <div class="form-group col-md-2 align-center"><h4> IPR Type :</h4>
-        </div>
-
-      <div class="form-group col-md-4">
-    <div class="form-group">
-      <label for="sel1">Select list (select one):</label>
-      <select class="form-control" id="sel1">
-        <option>Filed</option>
-        <option>Received</option>
-        <option>Pending</option>
-
-      </select>
-
-    </div>
-  </div>
- </div>
-</div>
-
-<div class="form-group">
 
 
 
-  <div class="form-row dis">
-            <div class="form-group col-md-2">
 
 
-            </div>
-
-
-           <div class="form-group col-md-8">
-                 <div class="form-row dis">
-               <div class="orm-group col-md-4">
-
-                </div>
-                      <div class="form-group col-md-2"></div>
                     <div class="orm-group col-md-6">
-                        <h6 class="color1">TOTAL MARKS</h6>
-											{{ key4.rp_marks }}
+<label for="inputResearch">Marks Here:</label>
+                      {{ key4.rp_marks }}
+
                           </div>
+
                       </div>
 
-            </div>
-            <div class="form-group col-md-2"></div>
+ <div class="form-group row">
 
-      </div>
+
+
+
+        <div class="form-group col-md-6">
+          <h4>IPR Type :</h4>
+        {{ key4.ipr_type }}
+        </div>
+        <div class="form-group col-md-6">
+          <h4>IPR Status :</h4>
+         {{ key4.ipr_status }}
 </div>
+
+ </div>
+
+  <div class="form-group col-md-12">
+<label>Details</label>
+{{ key4.ipr_info }}
+
 </div>
+
+ </div>
+
 </div>
 <div class="card poi card-header" id="headingOne">
 <div class="form-group">

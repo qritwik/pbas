@@ -50,10 +50,6 @@
 	<div class="container">
 
 
-
-      <form method="POST">
-      {% csrf_token %}
-
         <div class="table-bordered poi form-row">
           <div class="form-group col-md-6">
             <label for="">Internship Company Name</label>
@@ -1417,47 +1413,65 @@
 	    </tr>
 	    </tbody>
 	</table>
-<div class="card poi">
+	<div class="card poi">
+	<div class="form-group ">
+	                 <div class="form-row dis">
+	        <div class="form-group col-md-2 align-center"><h4> IPR Status :</h4>
+	        </div>
 
-<div class="form-group ">
+	      <div class="form-group col-md-10"> <input type="text" class="form-control"  placeholder="Enter Here" ></div>
+	 </div>
+	 </div>
+	 <div class="form-group ">
+	                 <div class="form-row dis">
+	        <div class="form-group col-md-2 align-center"><h4> IPR Type :</h4>
+	        </div>
+
+	      <div class="form-group col-md-4">
+	    <div class="form-group">
+	      <label for="sel1">Select list (select one):</label>
+	      <select class="form-control" id="sel1">
+	        <option>Filed</option>
+	        <option>Received</option>
+	        <option>Pending</option>
+
+	      </select>
+
+	    </div>
+	  </div>
+	 </div>
+	</div>
+
+	<div class="form-group ">
 
 
 
+	  <div class="form-row dis">
+	            <div class="form-group col-md-2">
 
 
-                    <div class="orm-group col-md-6">
-<label for="inputResearch">Marks Here:</label>
-                      {{ key4.rp_marks }}
-
-                          </div>
-
-                      </div>
-
- <div class="form-group row">
+	            </div>
 
 
+	           <div class="form-group col-md-8">
+	                 <div class="form-row dis">
+	               <div class="orm-group col-md-4">
 
+	                </div>
+	                      <div class="form-group col-md-2"></div>
+	                    <div class="orm-group col-md-6">
+	                        <h6 class="color1">TOTAL MARKS</h6>
+												{{ key4.rp_marks }}
+	                          </div>
+	                      </div>
 
-        <div class="form-group col-md-6">
-          <h4>IPR Type :</h4>
-        {{ key4.ipr_type }}
-        </div>
-        <div class="form-group col-md-6">
-          <h4>IPR Status :</h4>
-         {{ key4.ipr_status }}
-</div>
+	            </div>
+	            <div class="form-group col-md-2"></div>
 
- </div>
-
-  <div class="form-group col-md-12">
-<label>Details</label>
-{{ key4.ipr_info }}
-
-</div>
-
- </div>
-
-</div>
+	      </div>
+	</div>
+	</div>
+	</div>
 	<div class="card po card-header" id="headingOne">
 	<div class="form-group">
 	<div class="form-row dis">
@@ -1507,7 +1521,6 @@
 
 
 			 </div></td>
-	       <td rowspan="3"><em class="m3" style="font-size:55px">{{ key6.hod_marks1 }}</em></td>
 	    </tr>
 
 
@@ -1537,44 +1550,7 @@
   </tbody>
 </table>
 
-<div class="card poi ">
-  <table class="table table-bordered">
-  <thead class="thead-dark">
-    <tr>
-      <th scope="col"></th>
-      <th scope="col">Attitude and Commitment to Departmental and Regular Teaching and Examination works:<span class="sp">(Maximum Score: 15 marks)</span></th>
-      <th scope="col">HOD MARKS-2</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Contribution to Department Developmental Activites<span class="sp"> (Maximum Score: 5 marks)</span></td>
-       <td rowspan="3" class="m4" style="font-size:55px">{{ key6.hod_marks2 }}</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Attitude/Behaviour/Discipline/Punctuality<span class="sp"> (Maximum Score: 5 marks)</span></td>
 
-
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Examination/Test duties, Question paper preparation, Evaluation Preparation of Course material and Dedicaton in conducting Theory and Laboratory classes<span class="sp"> (Maximum Score: 5 marks)</span></td>
-
-    </tr>
-  </tbody>
-</table>
-
-</div>
-
-<div class="card poi">
- <div class="input-group text12">
-  <div class="input-group-prepend">
-    <span class="input-group-text">Brief Remarks of the HOD</span>
-  </div>
-{{ key6.ta_hod_remarks }}</div>
-</div>
 
 <div class="card po poi">
   <h5 class="po">Institutional  Responsibilities (Please list only those where you have made significant contribution)</h5>
@@ -1585,140 +1561,7 @@
    {{ key5.ta_ir }}
 </div>
 </div>
-
-<div class="card poi ">
-  <table class="table table-bordered">
-  <thead class="thead-dark">
-    <tr>
-      <th scope="col"></th>
-      <th scope="col">PRINCIPAL'S MARKS</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Contribution to Institutional Developmental Activites<span class="sp">(Maximum Score: 5 marks)</span></td>
-       <td rowspan="3"> {% render_field form1.prin_marks1 class="form-control m5"  %}</td>
-     </tr>
-  </tbody>
-</table>
 </div>
 
-<div class="card poi">
- <div class="input-group text12">
-  <div class="input-group-prepend">
-    <span class="input-group-text">Brief Remarks of the Principal</span>
-  </div>
-  {% render_field form1.ta_prin_remarks class="form-control"  %}
-</div>
-</div>
-</div>
-
-</div>
-<button type="button" class="btn btn-info btn-lg btn-block s_case col-md-4">Special Case</button>
-<div class="c_marks" style="display: none;">
-  <div>
-    <label>Reason for marks</label>
-  {% render_field form1.ta_prin_remarks1 class="form-control"  %}
-</div>
-<div class="form-group col-md-4">
-  <label>Bonus marks</label>
-{% render_field form1.prin_marks2 class="form-control m6"  %}
-</div>
-</div>
-
-<div class="card poi card-header" id="headingOne">
-<div class="form-group">
-<div class="form-row dis">
-<div class="col-1"></div>
-<div class="col-10">
- <div class="form-row dis">
-               <div class="orm-group col-md-6">
-              <h6 class=" color1">TOTAL MARKS<span class="sp">_(Maximum Score: 100)</span></h6>
-               </div>
-
-                  <div class="form-group col-md-6">
-										{% render_field form1.total_marks class="form-control total_marks" %}
-                        </div>
-                    </div>
-                    <div class="form-group col-md-6">
-                    <button type="button" class="btn btn-sucess btn-lg btn-block tm">Calculate</button>
-                  </div>
-</div>
-<div class="col-1"></div>
-</div>
-
-<div class="form-row dis">
-<div class="col-4"></div>
-<div class="col-4">
- <div class="form-row dis">
-
-
-
-   <input type="submit" class="btn btn-danger btn-lg btn-block"></button>
-
-
-</form>
-</div>
-<div class="col-4"></div>
-</div>
-</div>
-</div>
-
-</div>
-
-
-</div>
-
-<script>
-  $(function(){
-    $('.s_case').click(function() {
-      $('.c_marks').css('display', 'block');
-    });
-
-
-  $('.tm').on("click",function(){
-  var a = parseFloat($('.m1').html())
-  var b = parseFloat($('.m2').html())
-  var c = parseFloat($('.m3').html())
-  var d = parseFloat($('.m4').html())
-  var e = parseFloat($('.m5').val())
-
-  var g = parseFloat($('.m6').val())
-
-    if($('.m6').val()){
-    e = 0;
-    $('.m5').val(0);
-
-  }
-  var g = parseFloat($('.m6').val())
-
-  if(isNaN(a)){
-    a = 0;
-  }
-
-  if(isNaN(b)){
-    b = 0;
-  }
-  if(isNaN(c)){
-    c = 0;
-  }
-  if(isNaN(d)){
-    d = 0;
-  }
-  if(isNaN(e)){
-    e = 0;
-  }
-  if(isNaN(g)){
-    g = 0;
-  }
-
-
-  var f = a+b+c+d+e+g
-  $('.total_marks').val(f)
-
-  });
-});
-
-  </script>
 </body>
 </html>

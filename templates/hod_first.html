@@ -43,7 +43,7 @@
   <div class="login-form">
 
 
-      <button class="btn btn-deep-purple btn-lg" {% if user.teach_status == False %} onclick="location.href='/hod_form1/'" {% else %} onclick="location.href='#'"{% endif %} type="button">
+      <button class="btn btn-deep-purple btn-lg" {% if user.teach_status == False %} onclick="location.href='/hod_form1/'" {% else %} onclick="location.href='/hod_preview/'"{% endif %} type="button">
      <strong>Submit your own form</strong></button>
       <!-- <a href="/hod_display/"><input type="button" style="background:#03a9f4;" class="list-group-item list-group-item-action list-group-item-success" value="view faculty form"></a> -->
       <button class="btn btn-purple btn-lg" onclick="location.href='/hod_display/'" type="button">

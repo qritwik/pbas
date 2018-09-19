@@ -45,17 +45,17 @@ def login(request):
 def decide_view(request):
 	if request.user.is_assistant_professor():
 		if request.user.teach_status == True:
-			return HttpResponseRedirect("/logout/")
+			return HttpResponseRedirect("/assistant_preview/")
 		return HttpResponseRedirect("/assistant_form1/")
 
 	elif request.user.is_associate_professor():
 		if request.user.teach_status == True:
-			return HttpResponseRedirect("/logout/")
+			return HttpResponseRedirect("/associate_preview/")
 		return HttpResponseRedirect("/associate_form1/")
 
 	elif request.user.is_professor():
 		if request.user.teach_status == True:
-			return HttpResponseRedirect("/logout/")
+			return HttpResponseRedirect("/associate_preview/")
 		return HttpResponseRedirect("/associate_form1/")
 
 	elif request.user.is_hod():
@@ -763,3 +763,60 @@ def hod_form1(request):
 				return HttpResponseRedirect("/hod_form2/")
 		return render(request,'hod_form1.html',{'form1':form1,'form2':form2,'info':data_final})
 	return render(request,'hod_form1.html',{'form1':form1,'form2':form2,'info':data_final})
+
+
+
+
+def assistant_preview(request):
+	name = request.user
+	data1 = User.objects.get(username=name)
+	data2 = empDetailForm.objects.get(info=name);
+	data3 = feedbackTab.objects.get(info=name);
+	data4 = rd.objects.get(info=name);
+	data5 = remarks.objects.get(info=name);
+
+	context1 = {
+	"key1":data1,
+	"key2":data2,
+	"key3":data3,
+	"key4":data4,
+	"key5":data5,
+	}
+
+	return render(request,'assistant_preview.html',context=context1)
+
+def associate_preview(request):
+	name = request.user
+	data1 = User.objects.get(username=name)
+	data2 = empDetailForm.objects.get(info=name);
+	data3 = feedbackTab.objects.get(info=name);
+	data4 = rd.objects.get(info=name);
+	data5 = remarks.objects.get(info=name);
+
+	context1 = {
+	"key1":data1,
+	"key2":data2,
+	"key3":data3,
+	"key4":data4,
+	"key5":data5,
+	}
+
+	return render(request,'associate_preview.html',context=context1)
+
+def hod_preview(request):
+	name = request.user
+	data1 = User.objects.get(username=name)
+	data2 = empDetailForm.objects.get(info=name);
+	data3 = feedbackTab.objects.get(info=name);
+	data4 = rd.objects.get(info=name);
+	data5 = remarks.objects.get(info=name);
+
+	context1 = {
+	"key1":data1,
+	"key2":data2,
+	"key3":data3,
+	"key4":data4,
+	"key5":data5,
+	}
+
+	return render(request,'hod_preview.html',context=context1)
