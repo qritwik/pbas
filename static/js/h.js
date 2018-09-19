@@ -786,68 +786,69 @@ $('.rd').on("click",function(){
 		$('.book_m').val(d);
 	}
 
-	var if_s = parseFloat($('.if_s').val());
-	var if_f = parseFloat($('.if_f').val());
-	var if_c = parseFloat($('.if_c').val());
-	var ef_s = parseFloat($('.ef_s').val());
-	var ef_f = parseFloat($('.ef_f').val());
-	var ef_c = parseFloat($('.ef_c').val());
-	var eef_s = parseFloat($('.eef_s').val());
-	var eef_f = parseFloat($('.eef_f').val());
-	var eef_c = parseFloat($('.eef_c').val());
-	var cw_2 = parseFloat($('.cw_2').val());
-	var cw_2_5 = parseFloat($('.cw_2_5').val());
-	var cw_5 = parseFloat($('.cw_5').val());
+	var if_s = 0;
+	var if_f = 0;
+	var if_c = 0;
+	var ef_s = 0;
+	var ef_f = 0;
+	var ef_c = 0;
+	var eef_s = 0;
+	var eef_f = 0;
+	var eef_c = 0;
+	var cw_2 = 0;
+	var cw_2_5 = 0;
+	var cw_5 = 0;
 
-	if(isNaN(if_s)){
-		if_s = 0;
+	if($('.if_s').val()){
+		if_s = 5;
+
 	}
 
-	if(isNaN(if_f)){
-		if_f = 0;
+	if($('.if_f').val()){
+		if_f = 3;
 	}
 
-	if(isNaN(if_c)){
-		if_c = 0;
+	if($('.if_c').val()){
+		if_c = 2;
 	}
 
-	if(isNaN(ef_s)){
-		ef_s = 0;
+	if($('.ef_s').val()){
+		ef_s = 5;
 	}
 
-	if(isNaN(ef_f)){
-		ef_f = 0;
+	if($('.ef_f').val()){
+		ef_f = 3;
 	}
 
-	if(isNaN(ef_c)){
-		ef_c = 0;
+	if($('.ef_c').val()){
+		ef_c = 2;
 	}
 
-	if(isNaN(eef_s)){
-		eef_s = 0;
+	if($('.eef_s').val()){
+		eef_s = 10;
 	}
 
-	if(isNaN(eef_f)){
-		eef_f = 0;
+	if($('.eef_f').val()){
+		eef_f = 6;
 	}
 
-	if(isNaN(eef_c)){
-		eef_c = 0;
+	if($('.eef_c').val()){
+		eef_c = 4;
 	}
 
-	if(isNaN(cw_2)){
-		cw_2 = 0;
+	if($('.cw_2').val()){
+		cw_2 = 5;
 	}
 
-	if(isNaN(cw_2_5)){
-		cw_2_5 = 0;
+	if($('.cw_2_5').val()){
+		cw_2_5 = 8;
 	}
 
-	if(isNaN(cw_5)){
-		cw_5 = 0;
+	if($('.cw_5').val()){
+		cw_5 = 10;
 	}
 
-	e = if_s*5 + if_f*3 +if_c*2 + ef_s*5 +ef_f*3 +ef_c*2 + eef_s*10 + eef_f*6 + eef_c*4 + cw_2*5 + cw_2_5*8 + cw_5*10 ;
+	e = if_s + if_f +if_c + ef_s +ef_f +ef_c + eef_s + eef_f + eef_c + cw_2 + cw_2_5 + cw_5 ;
 
 	//max 5
 	if(e>=5){
