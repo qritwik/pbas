@@ -204,7 +204,7 @@ def principal_first(request):
 def principal_display(request,dept):
 
 	print(dept)
-	hod = User.objects.filter(department__name=dept).filter(designation__pk = 8)
+	hod = User.objects.filter(department__name=dept).filter(designation__pk = 8).filter(teach_status=True)
 
 	teach = User.objects.filter(department__name=dept).filter(designation__pk = 9).filter(hod_status=True)
 	teach1 = User.objects.filter(department__name=dept).filter(designation__pk = 10).filter(hod_status=True)
@@ -412,13 +412,13 @@ def ao_approved(request,dept):
 
 def ao_teacher_display(request,name):
 	print(name)
-	data1 = User.objects.get(username=name);
-	data2 = empDetailForm.objects.get(info__username=name);
-	data3 = feedbackTab.objects.get(info__username=name);
-	data4 = rd.objects.get(info__username=name);
-	data5 = remarks.objects.get(info__username=name);
-	data6 = remarks1.objects.get(info__username=name);
-	data7 = remarks2.objects.get(info__username=name);
+	data1 = User.objects.get(username=name)
+	data2 = empDetailForm.objects.get(info__username=name)
+	data3 = feedbackTab.objects.get(info__username=name)
+	data4 = rd.objects.get(info__username=name)
+	data5 = remarks.objects.get(info__username=name)
+	data6 = remarks1.objects.get(info__username=name)
+	data7 = remarks2.objects.get(info__username=name)
 
 
 
@@ -438,13 +438,13 @@ def ao_teacher_display(request,name):
 
 def ao_teacher1_display(request,name):
 	print(name)
-	data1 = User.objects.get(username=name);
-	data2 = empDetailForm.objects.get(info__username=name);
-	data3 = feedbackTab.objects.get(info__username=name);
-	data4 = rd.objects.get(info__username=name);
-	data5 = remarks.objects.get(info__username=name);
-	data6 = remarks1.objects.get(info__username=name);
-	data7 = remarks2.objects.get(info__username=name);
+	data1 = User.objects.get(username=name)
+	data2 = empDetailForm.objects.get(info__username=name)
+	data3 = feedbackTab.objects.get(info__username=name)
+	data4 = rd.objects.get(info__username=name)
+	data5 = remarks.objects.get(info__username=name)
+	data6 = remarks1.objects.get(info__username=name)
+	data7 = remarks2.objects.get(info__username=name)
 
 
 
@@ -463,12 +463,12 @@ def ao_teacher1_display(request,name):
 
 def ao_hod_display(request,name):
 	print(name)
-	data1 = User.objects.get(username=name);
-	data2 = empDetailForm.objects.get(info__username=name);
-	data3 = feedbackTab.objects.get(info__username=name);
-	data4 = rd.objects.get(info__username=name);
-	data5 = remarks.objects.get(info__username=name);
-	data7 = remarks2.objects.get(info__username=name);
+	data1 = User.objects.get(username=name)
+	data2 = empDetailForm.objects.get(info__username=name)
+	data3 = feedbackTab.objects.get(info__username=name)
+	data4 = rd.objects.get(info__username=name)
+	data5 = remarks.objects.get(info__username=name)
+	data7 = remarks2.objects.get(info__username=name)
 
 
 
@@ -505,7 +505,7 @@ def f_assistant4(request):
 	if remarks.objects.filter(info=request.user).exists():
 
 		return HttpResponseRedirect("/logout/")
-	else:	
+	else:
 		if request.method == 'POST':
 			sendme = User.objects.get(username=request.user)
 			form5 = forms.form_remarks(request.POST)
@@ -515,17 +515,17 @@ def f_assistant4(request):
 				obj3.save()
 				if sendme.teach_status == False:
 					sendme.teach_status = True
-				sendme.save()	
+				sendme.save()
 				return HttpResponseRedirect("/logout/")
 		return render(request,'assistant_form4.html',{'form5':form5})
-	return render(request,'assistant_form4.html',{'form5':form5})			
+	return render(request,'assistant_form4.html',{'form5':form5})
 
 def f_assistant3(request):
-	form4 = forms.form_rd()	
+	form4 = forms.form_rd()
 	if rd.objects.filter(info=request.user).exists():
 
 		return HttpResponseRedirect("/assistant_form4/")
-	else:	
+	else:
 		if request.method == 'POST':
 			form4 = forms.form_rd(request.POST)
 			if form4.is_valid():
@@ -534,7 +534,7 @@ def f_assistant3(request):
 				obj2.save()
 				return HttpResponseRedirect("/assistant_form4/")
 		return render(request,'assistant_form3.html',{'form4':form4})
-	return render(request,'assistant_form3.html',{'form4':form4})	
+	return render(request,'assistant_form3.html',{'form4':form4})
 
 def f_assistant2(request):
 	form3 = forms.form_feedbackTab()
@@ -542,17 +542,17 @@ def f_assistant2(request):
 	if feedbackTab.objects.filter(info=request.user).exists():
 
 		return HttpResponseRedirect("/assistant_form3/")
-	else:	
+	else:
 		if request.method == 'POST':
 			form3 = forms.form_feedbackTab(request.POST)
 			if form3.is_valid():
 				obj1 = form3.save(commit=False)
 				obj1.info = request.user
 				obj1.save()
-				return HttpResponseRedirect("/assistant_form3/")	
+				return HttpResponseRedirect("/assistant_form3/")
 		return render(request,'assistant_form2.html',{'form3':form3})
-		
-	return render(request,'assistant_form2.html',{'form3':form3})	
+
+	return render(request,'assistant_form2.html',{'form3':form3})
 
 def f_assistant1(request):
 
@@ -566,12 +566,12 @@ def f_assistant1(request):
 
 		return HttpResponseRedirect("/assistant_form2/")
 
-	else:	
+	else:
 
 		if request.method == 'POST':
 			form1 = forms.form_User(request.POST)
 			form2 = forms.form_empDetailForm(request.POST)
-			
+
 
 			if form1.is_valid() and form2.is_valid():
 
@@ -584,7 +584,7 @@ def f_assistant1(request):
 				sendme.doc_link  = 	form1.cleaned_data['doc_link']
 				sendme.save()
 
-				return HttpResponseRedirect("/assistant_form2/")	
+				return HttpResponseRedirect("/assistant_form2/")
 		return render(request,'assistant_form1.html',{'form1':form1,'form2':form2,'info':data_final})
 	return render(request,'assistant_form1.html',{'form1':form1,'form2':form2,'info':data_final})
 
@@ -593,7 +593,7 @@ def f_associate4(request):
 	if remarks.objects.filter(info=request.user).exists():
 
 		return HttpResponseRedirect("/logout/")
-	else:	
+	else:
 		if request.method == 'POST':
 			sendme = User.objects.get(username=request.user)
 			form5 = forms.form_remarks(request.POST)
@@ -603,17 +603,17 @@ def f_associate4(request):
 				obj3.save()
 				if sendme.teach_status == False:
 					sendme.teach_status = True
-				sendme.save()	
+				sendme.save()
 				return HttpResponseRedirect("/logout/")
 		return render(request,'associate_form4.html',{'form5':form5})
-	return render(request,'associate_form4.html',{'form5':form5})			
+	return render(request,'associate_form4.html',{'form5':form5})
 
 def f_associate3(request):
-	form4 = forms.form_rd()	
+	form4 = forms.form_rd()
 	if rd.objects.filter(info=request.user).exists():
 
 		return HttpResponseRedirect("/associate_form4/")
-	else:	
+	else:
 		if request.method == 'POST':
 			form4 = forms.form_rd(request.POST)
 			if form4.is_valid():
@@ -622,7 +622,7 @@ def f_associate3(request):
 				obj2.save()
 				return HttpResponseRedirect("/associate_form4/")
 		return render(request,'associate_form3.html',{'form4':form4})
-	return render(request,'associate_form3.html',{'form4':form4})	
+	return render(request,'associate_form3.html',{'form4':form4})
 
 def f_associate2(request):
 	form3 = forms.form_feedbackTab()
@@ -630,17 +630,17 @@ def f_associate2(request):
 	if feedbackTab.objects.filter(info=request.user).exists():
 
 		return HttpResponseRedirect("/associate_form3/")
-	else:	
+	else:
 		if request.method == 'POST':
 			form3 = forms.form_feedbackTab(request.POST)
 			if form3.is_valid():
 				obj1 = form3.save(commit=False)
 				obj1.info = request.user
 				obj1.save()
-				return HttpResponseRedirect("/associate_form3/")	
+				return HttpResponseRedirect("/associate_form3/")
 		return render(request,'associate_form2.html',{'form3':form3})
-		
-	return render(request,'associate_form2.html',{'form3':form3})	
+
+	return render(request,'associate_form2.html',{'form3':form3})
 
 def f_associate1(request):
 
@@ -654,7 +654,7 @@ def f_associate1(request):
 
 		return HttpResponseRedirect("/associate_form2/")
 
-	else:	
+	else:
 
 		if request.method == 'POST':
 			form1 = forms.form_User(request.POST)
@@ -672,7 +672,7 @@ def f_associate1(request):
 				sendme.doc_link  = 	form1.cleaned_data['doc_link']
 				sendme.save()
 
-				return HttpResponseRedirect("/associate_form2/")	
+				return HttpResponseRedirect("/associate_form2/")
 		return render(request,'associate_form1.html',{'form1':form1,'form2':form2,'info':data_final})
 	return render(request,'associate_form1.html',{'form1':form1,'form2':form2,'info':data_final})
 
@@ -681,7 +681,7 @@ def hod_form4(request):
 	if remarks.objects.filter(info=request.user).exists():
 
 		return HttpResponseRedirect("/logout/")
-	else:	
+	else:
 		if request.method == 'POST':
 			sendme = User.objects.get(username=request.user)
 			form5 = forms.form_remarks(request.POST)
@@ -691,17 +691,17 @@ def hod_form4(request):
 				obj3.save()
 				if sendme.teach_status == False:
 					sendme.teach_status = True
-				sendme.save()	
+				sendme.save()
 				return HttpResponseRedirect("/logout/")
 		return render(request,'hod_form4.html',{'form5':form5})
-	return render(request,'hod_form4.html',{'form5':form5})			
+	return render(request,'hod_form4.html',{'form5':form5})
 
 def hod_form3(request):
-	form4 = forms.form_rd()	
+	form4 = forms.form_rd()
 	if rd.objects.filter(info=request.user).exists():
 
 		return HttpResponseRedirect("/hod_form4/")
-	else:	
+	else:
 		if request.method == 'POST':
 			form4 = forms.form_rd(request.POST)
 			if form4.is_valid():
@@ -710,7 +710,7 @@ def hod_form3(request):
 				obj2.save()
 				return HttpResponseRedirect("/hod_form4/")
 		return render(request,'hod_form3.html',{'form4':form4})
-	return render(request,'hod_form3.html',{'form4':form4})	
+	return render(request,'hod_form3.html',{'form4':form4})
 
 def hod_form2(request):
 	form3 = forms.form_feedbackTab()
@@ -718,17 +718,17 @@ def hod_form2(request):
 	if feedbackTab.objects.filter(info=request.user).exists():
 
 		return HttpResponseRedirect("/hod_form3/")
-	else:	
+	else:
 		if request.method == 'POST':
 			form3 = forms.form_feedbackTab(request.POST)
 			if form3.is_valid():
 				obj1 = form3.save(commit=False)
 				obj1.info = request.user
 				obj1.save()
-				return HttpResponseRedirect("/hod_form3/")	
+				return HttpResponseRedirect("/hod_form3/")
 		return render(request,'hod_form2.html',{'form3':form3})
-		
-	return render(request,'hod_form2.html',{'form3':form3})	
+
+	return render(request,'hod_form2.html',{'form3':form3})
 
 def hod_form1(request):
 
@@ -742,12 +742,12 @@ def hod_form1(request):
 
 		return HttpResponseRedirect("/hod_form2/")
 
-	else:	
+	else:
 
 		if request.method == 'POST':
 			form1 = forms.form_User(request.POST)
 			form2 = forms.form_empDetailForm(request.POST)
-			
+
 
 			if form1.is_valid() and form2.is_valid():
 
@@ -760,9 +760,6 @@ def hod_form1(request):
 				sendme.doc_link  = 	form1.cleaned_data['doc_link']
 				sendme.save()
 
-				return HttpResponseRedirect("/hod_form2/")	
+				return HttpResponseRedirect("/hod_form2/")
 		return render(request,'hod_form1.html',{'form1':form1,'form2':form2,'info':data_final})
 	return render(request,'hod_form1.html',{'form1':form1,'form2':form2,'info':data_final})
-
-
-

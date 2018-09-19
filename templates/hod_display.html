@@ -25,28 +25,30 @@
 </head>
 <body style="background:#c3d1f8">
 
-  <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #736de3;">
-    <a class="navbar-brand" href="#">
-    <img src="{% static "image/bms.logo.png" %}" width="30" height="30" alt="">
-  </a>
-  <a class="navbar-brand" href="#">BMSIT&M</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
-      <li class="nav-item disabled">
-        <a class="nav-link" href="#">HOD View<span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item disabled">
-        <a class="nav-link" href="#"><em>Department of {{hod_dept}}</em></a>
-      </li>
+	{% include 'partials/nav_primary.html' %}
 
-    </ul>
-  </div>
-</nav>
+	<div style="margin-top:-18%;" class="limiter">
+		<div class="container-table100">
+			<div class="wrap-table100">
+					<div class="table">
 
-	<div style="margin-top:5%;" class="limiter">
+						<div class="row header">
+							<div class="cell">
+								<h3>HOD View</h3>
+							</div>
+
+							<div class="cell">
+								<h3>Department of <em>{{hod_dept}}</em></h3>
+							</div>
+
+
+						</div>
+					</div>
+						</div>
+							</div>
+						</div>
+
+	<div style="margin-top:-25%;" class="limiter">
 		<div class="container-table100">
 			<div class="wrap-table100">
 					<div class="table">

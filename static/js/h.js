@@ -15,7 +15,7 @@ $(function(){
 
 	var	d=0;
 
-	
+
 
 	var o_t1_f1 = parseFloat($('.o_t1_f1').val());
 	var o_t1_f2 = parseFloat($('.o_t1_f2').val());
@@ -25,7 +25,7 @@ $(function(){
 		o_t_avg = o_t_avg + o_t1_favg;
 		c++;
 	}
-	
+
 
     var o_t2_f1 = parseFloat($('.o_t2_f1').val());
 	var o_t2_f2 = parseFloat($('.o_t2_f2').val());
@@ -35,7 +35,7 @@ $(function(){
 		o_t_avg = o_t_avg + o_t2_favg;
 		c++;
 	}
-	
+
 
 	var o_t3_f1 = parseFloat($('.o_t3_f1').val());
 	var o_t3_f2 = parseFloat($('.o_t3_f2').val());
@@ -55,7 +55,7 @@ $(function(){
 		o_tr_avg = o_tr_avg + o_t1;
 		d++;
 	}
-	
+
 
 	var o_t2_stu_app = parseFloat($('.o_t2_stu_app').val());
 	var o_t2_stu_pass = parseFloat($('.o_t2_stu_pass').val());
@@ -74,7 +74,7 @@ $(function(){
 		o_tr_avg = o_tr_avg + o_t3 ;
 		d++;
 	}
-	
+
 
 	o_t_avg = (o_t_avg)/c;
 	if(isNaN(o_t_avg)){
@@ -104,7 +104,7 @@ $('.o_l').on("click",function(){
 	var o_l3_favg = 0;
 	var o_l4_favg = 0;
 	var o_l5_favg = 0;
-	
+
 
 	var c=0 ;
 
@@ -121,7 +121,7 @@ $('.o_l').on("click",function(){
 		o_l_avg = o_l_avg + o_l1_favg;
 		c++;
 	}
-	
+
 
     var o_l2_f1 = parseFloat($('.o_l2_f1').val());
 	var o_l2_f2 = parseFloat($('.o_l2_f2').val());
@@ -131,7 +131,7 @@ $('.o_l').on("click",function(){
 		o_l_avg = o_l_avg + o_l2_favg;
 		c++;
 	}
-	
+
 
 	var o_l3_f1 = parseFloat($('.o_l3_f1').val());
 	var o_l3_f2 = parseFloat($('.o_l3_f2').val());
@@ -168,7 +168,7 @@ $('.o_l').on("click",function(){
 		o_lr_avg = o_lr_avg + o_l1;
 		d++;
 	}
-	
+
 
 	var o_l2_stu_app = parseFloat($('.o_l2_stu_app').val());
 	var o_l2_stu_pass = parseFloat($('.o_l2_stu_pass').val());
@@ -187,7 +187,7 @@ $('.o_l').on("click",function(){
 		o_lr_avg = o_lr_avg + o_l3;
 		d++;
 	}
-	
+
 	var o_l4_stu_app = parseFloat($('.o_l4_stu_app').val());
 	var o_l4_stu_pass = parseFloat($('.o_l4_stu_pass').val());
 	if(o_l4_stu_pass<=o_l4_stu_app){
@@ -213,7 +213,7 @@ $('.o_l').on("click",function(){
 	else{
 		$('.o_l_f_avg').val(o_l_avg);
 	}
-	
+
 
 	o_lr_avg =(o_lr_avg)/d;
 	o_lr_avg =Math.round(o_lr_avg * 100)/100;
@@ -226,7 +226,7 @@ $('.o_l').on("click",function(){
 	$('.o_l_r_avg').val(o_lr_avg);
 
 	}
-	
+
 
  });
 
@@ -256,7 +256,7 @@ $('.o_l').on("click",function(){
 		e_t_avg = e_t_avg + e_t1_favg;
 		c++;
 	}
-	
+
 
     var e_t2_f1 = parseFloat($('.e_t2_f1').val());
 	var e_t2_f2 = parseFloat($('.e_t2_f2').val());
@@ -266,7 +266,7 @@ $('.o_l').on("click",function(){
 		e_t_avg = e_t_avg + e_t2_favg;
 		c++;
 	}
-	
+
 
 	var e_t3_f1 = parseFloat($('.e_t3_f1').val());
 	var e_t3_f2 = parseFloat($('.e_t3_f2').val());
@@ -286,7 +286,7 @@ $('.o_l').on("click",function(){
 		e_tr_avg = e_tr_avg + e_t1;
 		d++;
 	}
-	
+
 
 	var e_t2_stu_app = parseFloat($('.e_t2_stu_app').val());
 	var e_t2_stu_pass = parseFloat($('.e_t2_stu_pass').val());
@@ -305,7 +305,7 @@ $('.o_l').on("click",function(){
 		e_tr_avg = e_tr_avg + e_t3;
 		d++;
 	}
-	
+
 	e_t_avg = (e_t_avg)/c;
 
 	if(isNaN(e_t_avg)){
@@ -328,7 +328,7 @@ $('.o_l').on("click",function(){
 	$('.e_t_r_avg').val(e_tr_avg);
 
 	}
-	
+
 
  });
 
@@ -341,7 +341,7 @@ $('.e_l').on("click",function(){
 	var e_l3_favg = 0;
 	var e_l4_favg = 0;
 	var e_l5_favg = 0;
-	
+
 
 	var c=0 ;
 
@@ -356,7 +356,7 @@ $('.e_l').on("click",function(){
 		e_l_avg = e_l_avg + e_l1_favg;
 		c++;
 	}
-	
+
 
     var e_l2_f1 = parseFloat($('.e_l2_f1').val());
 	var e_l2_f2 = parseFloat($('.e_l2_f2').val());
@@ -366,7 +366,7 @@ $('.e_l').on("click",function(){
 		e_l_avg = e_l_avg + e_l2_favg;
 		c++;
 	}
-	
+
 
 	var e_l3_f1 = parseFloat($('.e_l3_f1').val());
 	var e_l3_f2 = parseFloat($('.e_l3_f2').val());
@@ -403,7 +403,7 @@ $('.e_l').on("click",function(){
 		e_lr_avg = e_lr_avg + e_l1;
 		d++;
 	}
-	
+
 
 	var e_l2_stu_app = parseFloat($('.e_l2_stu_app').val());
 	var e_l2_stu_pass = parseFloat($('.e_l2_stu_pass').val());
@@ -422,7 +422,7 @@ $('.e_l').on("click",function(){
 		e_lr_avg = e_lr_avg + e_l3;
 		d++;
 	}
-	
+
 	var e_l4_stu_app = parseFloat($('.e_l4_stu_app').val());
 	var e_l4_stu_pass = parseFloat($('.e_l4_stu_pass').val());
 	if(e_l4_stu_pass<=e_l4_stu_app){
@@ -469,7 +469,7 @@ $('.e_l').on("click",function(){
 //
 
 $('.e_p').on("click",function(){
-	
+
 	var p_avg = 0;
 	var c=0;
 
@@ -498,30 +498,30 @@ $('.e_p').on("click",function(){
 	}
 	else{
 	$('.p_f_avg').val(p_avg);
-		
+
 	}
  });
 
 //out of 40
 
 $('.f_calc').on("click",function(){
-	
+
 	var c = 5;
 	var d = 4;
 
-	
-	var o_t_avg = parseFloat($('.o_t_avg').val());
-	var o_l_avg = parseFloat($('.o_l_avg').val());
-	var e_t_avg = parseFloat($('.e_t_avg').val());
-	var e_l_avg = parseFloat($('.e_l_avg').val());
+
+	var o_t_avg = parseFloat($('.o_t_f_avg').val());
+	var o_l_avg = parseFloat($('.o_l_f_avg').val());
+	var e_t_avg = parseFloat($('.e_t_f_avg').val());
+	var e_l_avg = parseFloat($('.e_l_f_avg').val());
 	var p_avg = parseFloat($('.p_avg').val());
 
-	var o_tr_avg = parseFloat($('.o_tr_avg').val());
-	var o_lr_avg = parseFloat($('.o_lr_avg').val());
-	var e_tr_avg = parseFloat($('.e_tr_avg').val());
-	var e_lr_avg = parseFloat($('.e_lr_avg').val());
+	var o_tr_avg = parseFloat($('.o_t_r_avg').val());
+	var o_lr_avg = parseFloat($('.o_l_r_avg').val());
+	var e_tr_avg = parseFloat($('.e_t_r_avg').val());
+	var e_lr_avg = parseFloat($('.e_l_r_avg').val());
 
-	
+
 	if(isNaN(o_t_avg)){
 		o_t_avg  = 0;
 		c--;
@@ -549,13 +549,13 @@ $('.f_calc').on("click",function(){
 	}
 
 	if(isNaN(o_lr_avg)){
-		
+
 		o_lr_avg  = 0;
 		d--;
 	}
 	if(isNaN(e_tr_avg)){
 		e_tr_avg  = 0;
-		
+
 		d--;
 	}
 	if(isNaN(e_lr_avg)){
@@ -566,7 +566,7 @@ $('.f_calc').on("click",function(){
 
 	var a = (o_t_avg + o_l_avg + e_t_avg + e_l_avg + p_avg)/c;
 	var b = (o_tr_avg + o_lr_avg + e_tr_avg + e_lr_avg)/d;
-	
+
 	console.log(a);
 
 	console.log(b);
@@ -647,7 +647,7 @@ $('.rd').on("click",function(){
 	else{
 		$('.w_m').val(a);
 	}
-	
+
 
 	var p_s_d = parseFloat($('.p_s_d').val());
 	var p_n_d = parseFloat($('.p_n_d').val());
@@ -675,17 +675,17 @@ $('.rd').on("click",function(){
 	else{
 		$('.p_m').val(b);
 	}
-	
+
 
 	//max 10
 	var onl_course_c = parseFloat($('.onl_course_c').val())
-	
+
 	if(isNaN(onl_course_c)){
 		onl_course_c = 0;
 	}
 
 	var c = onl_course_c*5;
-	
+
 	if(c>=10){
 		c = 10;
 	}
@@ -696,21 +696,21 @@ $('.rd').on("click",function(){
 
 	if($('.s_c_name').val()){
 		$('.s_c_m').val(5)
-		m = m+5	
+		m = m+5
 	}
-	
+
 
 	if($('.f_c_name').val()){
 		$('.f_c_m').val(3)
-		m = m+3	
+		m = m+3
 	}
-	
+
 
 	if($('.o_c_name').val()){
 		$('.o_c_m').val(2)
-		m = m+2	
+		m = m+2
 	}
-	
+
 	if(m>8){
 		m= 8
 	}
@@ -722,23 +722,23 @@ $('.rd').on("click",function(){
 		$('.s_j_m').val(10)
 		n = n+10
 	}
-	
+
 
 	if($('.f_j_name').val()){
 		$('.f_j_m').val(6)
-		n = n+6	
+		n = n+6
 	}
-	
+
 
 	if($('.o_j_name').val()){
 		$('.o_j_m').val(4)
-		n = n+4	
+		n = n+4
 	}
-	
+
 	if(m>12){
 		n = 12
 	}
-	
+
 
 	var book_i = parseFloat($('.book_i').val());
 	var book_n = parseFloat($('.book_n').val());
@@ -775,7 +775,7 @@ $('.rd').on("click",function(){
 
 
 
-	d = (book_i * 10) + (book_n * 8) + (book_ci * 6) + (book_cn * 4) + (book_ai * 10) + (book_nm * 6) ; 
+	d = (book_i * 10) + (book_n * 8) + (book_ci * 6) + (book_cn * 4) + (book_ai * 10) + (book_nm * 6) ;
 
 	//max 10
 	if(d>=10){
@@ -798,7 +798,7 @@ $('.rd').on("click",function(){
 	var cw_2 = parseFloat($('.cw_2').val());
 	var cw_2_5 = parseFloat($('.cw_2_5').val());
 	var cw_5 = parseFloat($('.cw_5').val());
-	
+
 	if(isNaN(if_s)){
 		if_s = 0;
 	}
@@ -859,7 +859,7 @@ $('.rd').on("click",function(){
 	}
 
 	 f = a+b+c+d+e+m+n;
-	
+
 	//out of 35
 	if(f>=35){
 		$('.rd_tot_marks').val(35);
@@ -872,7 +872,3 @@ $('.rd').on("click",function(){
  });
 
 });
-
-
-
-

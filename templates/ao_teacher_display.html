@@ -3,19 +3,12 @@
 {% load widget_tweaks %}
 <html>
 
-<head>
-	<title>asp1</title>
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-	<link rel="stylesheet" type="text/css" href={% static "css/index.css" %}>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-
-<script type="text/javascript" src={% static "js/t.js" %}></script>
-
-</head>
+{% include 'base.html' %}
 <body>
+<div id='content'>
 	<div class="container">
 
-		  <div class="card poi" style="background:#00acc1">
+		  <div class="card poi">
         <div class="form-row">
         <div class="form-group col-md-3">
         <img src={% static "image/logo.png" %} class="img-thumbnail" width="150px"/>
@@ -34,6 +27,7 @@
         <div class="table-bordered poi form-row">
           <div class="form-group col-md-6">
             <label for="">Internship Company Name</label>
+
             <input type="text" class="form-control" id="inputEmpName" disabled value="{{ key2.it_name }}">
           </div>
           <div class="form-group col-md-3">
@@ -126,6 +120,7 @@
     </tr>
   </thead>
   <tbody>
+		{% if key3.o_t1_name %}
     <tr>
       <td>1</td>
       <td>{{ key3.o_t1_name }}</td>
@@ -136,6 +131,8 @@
       <td>{{ key3.o_t1_stu_pass }}</td>
       <td>{{ key3.o_t1_stu_perpass }}</td>
     </tr>
+			{% endif %}
+			{% if key3.o_t2_name %}
     <tr>
       <td>2</td>
       <td>{{ key3.o_t2_name }}</td>
@@ -146,8 +143,9 @@
       <td>{{ key3.o_t2_stu_pass }}</td>
       <td>{{ key3.o_t2_stu_perpass }}</td>
     </tr>
+		{% endif %}
+		{% if key3.o_t3_name %}
     <tr>
-      <tr>
       <td>3</td>
       <td>{{ key3.o_t3_name }}</td>
       <td class="right aligned">{{ key3.o_t3_f1 }}</td>
@@ -157,7 +155,7 @@
       <td>{{ key3.o_t3_stu_pass }}</td>
       <td>{{ key3.o_t3_stu_perpass }}</td>
     </tr>
-
+		{% endif %}
   </tbody>
 </table>
 <div class="container-fluid">
@@ -207,6 +205,7 @@
     </tr>
   </thead>
   <tbody>
+		{% if key3.o_l1_name %}
     <tr>
       <td>1</td>
       <td>{{ key3.o_l1_name }}</td>
@@ -217,6 +216,8 @@
       <td>{{ key3.o_l1_stu_pass }}</td>
 			<td>{{ key3.o_l1_stu_perpass }}</td>
     </tr>
+		{% endif %}
+		{% if key3.o_l2_name %}
     <tr>
       <td>2</td>
       <td>{{ key3.o_l2_name }}</td>
@@ -227,6 +228,8 @@
       <td>{{ key3.o_l2_stu_pass }}</td>
 			<td>{{ key3.o_l2_stu_perpass }}</td>
     </tr>
+		{% endif %}
+		{% if key3.o_l3_name %}
      <tr>
       <td>3</td>
       <td>{{ key3.o_l3_name }}</td>
@@ -237,6 +240,8 @@
       <td>{{ key3.o_l3_stu_pass }}</td>
 			<td>{{ key3.o_l3_stu_perpass }}</td>
     </tr>
+		{% endif %}
+		{% if key3.o_l4_name %}
     <tr>
       <td>4</td>
       <td>{{ key3.o_l4_name }}</td>
@@ -247,6 +252,8 @@
       <td>{{ key3.o_l4_stu_pass }}</td>
       <td>{{ key3.o_l4_stu_perpass }}</td>
     </tr>
+		{% endif %}
+		{% if key3.o_l5_name %}
     <tr>
       <td>5</td>
       <td>{{ key3.o_l5_name }}</td>
@@ -257,6 +264,7 @@
       <td>{{ key3.o_l5_stu_pass }}</td>
       <td>{{ key3.o_l5_stu_perpass }}</td>
     </tr>
+		{% endif %}
   </tbody>
 
 </table>
@@ -312,6 +320,7 @@
     </tr>
   </thead>
   <tbody>
+		{% if key3.e_t1_name %}
     <tr>
       <td>1</td>
       <td>{{ key3.e_t1_name }}</td>
@@ -322,6 +331,8 @@
       <td>{{ key3.e_t1_stu_pass }}</td>
       <td>{{ key3.e_t1_stu_perpass }}</td>
     </tr>
+		{% endif %}
+		{% if key3.e_t2_name %}
     <tr>
       <td>2</td>
       <td>{{ key3.e_t2_name }}</td>
@@ -332,7 +343,9 @@
       <td>{{ key3.e_t2_stu_pass }}</td>
       <td>{{ key3.e_t2_stu_perpass }}</td>
     </tr>
-    <tr>
+		{% endif %}
+		{% if key3.e_t3_name %}
+
       <tr>
       <td>3</td>
       <td>{{ key3.e_t3_name }}</td>
@@ -343,6 +356,7 @@
       <td>{{ key3.e_t3_stu_pass }}</td>
       <td>{{ key3.e_t3_stu_perpass }}</td>
     </tr>
+		{% endif %}
   </tbody>
 </table>
 <div class="container-fluid">
@@ -388,6 +402,7 @@
     </tr>
   </thead>
   <tbody>
+		{% if key3.e_l1_name %}
     <tr>
       <td>1</td>
       <td>{{ key3.e_l1_name }}</td>
@@ -398,6 +413,8 @@
       <td>{{ key3.e_l1_stu_pass }}</td>
 			<td>{{ key3.e_l1_stu_perpass }}</td>
     </tr>
+		{% endif %}
+		{% if key3.e_l2_name %}
     <tr>
       <td>2</td>
       <td>{{ key3.e_l2_name }}</td>
@@ -408,7 +425,9 @@
       <td>{{ key3.e_l2_stu_pass }}</td>
 			<td>{{ key3.e_l2_stu_perpass }}</td>
     </tr>
-     <tr>
+		{% endif %}
+		{% if key3.e_l3_name %}
+		<tr>
       <td>3</td>
       <td>{{ key3.e_l3_name }}</td>
       <td class="right aligned">{{ key3.e_l3_f1 }}</td>
@@ -418,6 +437,9 @@
       <td>{{ key3.e_l3_stu_pass }}</td>
 			<td>{{ key3.e_l3_stu_perpass }}</td>
     </tr>
+		{% endif %}
+		{% if key3.e_l4_name %}
+
     <tr>
       <td>4</td>
       <td>{{ key3.e_l4_name }}</td>
@@ -428,6 +450,9 @@
       <td>{{ key3.e_l4_stu_pass }}</td>
       <td>{{ key3.e_l4_stu_perpass }}</td>
     </tr>
+		{% endif %}
+		{% if key3.e_l5_name %}
+
     <tr>
       <td>5</td>
       <td>{{ key3.e_l5_name }}</td>
@@ -438,6 +463,7 @@
       <td>{{ key3.e_l5_stu_pass }}</td>
       <td>{{ key3.e_l5_stu_perpass }}</td>
     </tr>
+		{% endif %}
   </tbody>
 </table>
 <div class="container-fluid">
@@ -485,6 +511,8 @@
     </tr>
   </thead>
   <tbody>
+		{% if key3.p1_name %}
+
     <tr>
       <td>1</td>
       <td>{{ key3.p1_name }}</td>
@@ -492,6 +520,9 @@
       <td class="center aligned">{{ key3.p1_f2 }}</td>
       <td>{{ key3.p1_favg }}</td>
     </tr>
+		{% endif %}
+		{% if key3.p2_name %}
+
      <tr>
       <td>2</td>
       <td>{{ key3.p2_name }}</td>
@@ -499,6 +530,7 @@
       <td class="center aligned">{{ key3.p2_f2 }}</td>
       <td>{{ key3.p2_favg }}</td>
     </tr>
+		{% endif %}
 </tbody>
 
 </table>
@@ -1564,6 +1596,7 @@
 
 
 </form>
+<button id="download">download</button>
 </div>
 <div class="col-4"></div>
 </div>
@@ -1571,12 +1604,29 @@
 </div>
 
 </div>
-
-
 </div>
-
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</div>
+</div>
+<!-- <script>
+window.onload = function(e){
+html2canvas(document.body).then(function(canvas) {
+		canvas.id = "mycanvas";
+    document.body.appendChild(canvas);
+});
+var canvas = document.getElementById("mycanvas");
+var img = canvas.toDataURL("image/jpeg");
+document.write('<img src="'+img+'"/>');
+//
+// var imgData = document.getElementsByTagName('canvas').toDataURL("image/jpeg", 1.0);
+//
+//
+//   // only jpeg is supported by jsPDF
+//
+// 	window.alert(imgData)
+//   var pdf = new jsPDF();
+//   pdf.addImage(imgData, 'JPEG', 0, 0);
+//   pdf.save("download.pdf");
+};
+</script> -->
 </body>
 </html>
