@@ -726,9 +726,9 @@ def hod_form2(request):
 				obj1.info = request.user
 				obj1.save()
 				return HttpResponseRedirect("/hod_form3/")	
-		return render(request,'hod_form3.html',{'form3':form3})
+		return render(request,'hod_form2.html',{'form3':form3})
 		
-	return render(request,'hod_form3.html',{'form3':form3})	
+	return render(request,'hod_form2.html',{'form3':form3})	
 
 def hod_form1(request):
 
