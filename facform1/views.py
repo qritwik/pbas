@@ -51,12 +51,12 @@ def decide_view(request):
 	elif request.user.is_associate_professor():
 		if request.user.teach_status == True:
 			return HttpResponseRedirect("/logout/")
-		return HttpResponseRedirect("/associate_form/")
+		return HttpResponseRedirect("/associate_form1/")
 
 	elif request.user.is_professor():
 		if request.user.teach_status == True:
 			return HttpResponseRedirect("/logout/")
-		return HttpResponseRedirect("/associate_form/")
+		return HttpResponseRedirect("/associate_form1/")
 
 	elif request.user.is_hod():
 		# print('hod')
@@ -213,7 +213,7 @@ def principal_display(request,dept):
 	teach2 = User.objects.filter(department__name=dept).filter(designation__pk = 11).filter(hod_status=True)
 
 
-	dept = {'dept':dept,'hod':hod,'teach':teach3,'teach2':teach2}
+	dept = {'dept':dept,'hod':hod,'teach3':teach3,'teach2':teach2}
 
 
 
@@ -251,7 +251,7 @@ def principal_teacher_display(request,pk):
 				sendme.principal_status = True
 				sendme.save()
 
-			return HttpResponseRedirect("/principal_display/"+sendme__department)
+			return HttpResponseRedirect("/principal_display/"+ data1.department.name)
 
 	else:
 		form1 = forms.form_remarks2()
@@ -300,7 +300,7 @@ def principal_teacher1_display(request,pk):
 				sendme.principal_status = True
 				sendme.save()
 
-			return HttpResponseRedirect("/principal_display/"+sendme__department)
+			return HttpResponseRedirect("/principal_display/"+data1.department.name)
 
 	else:
 		form1 = forms.form_remarks2()
@@ -348,7 +348,7 @@ def principal_hod_display(request,pk):
 				sendme.principal_status = True
 				sendme.save()
 
-			return HttpResponseRedirect("/principal_display/sendme"+__department)
+			return HttpResponseRedirect("/principal_display/"+data1.department.name)
 
 	else:
 		form1 = forms.form_remarks2()
@@ -652,15 +652,15 @@ def f_associate1(request):
 
 	if empDetailForm.objects.filter(info=user).exists():
 
-		return HttpResponseRedirect("/f_associate_form2/")
+		return HttpResponseRedirect("/associate_form2/")
 
 	else:	
 
 		if request.method == 'POST':
 			form1 = forms.form_User(request.POST)
 			form2 = forms.form_empDetailForm(request.POST)
-			
-
+			print(form1.errors)
+			print(form2.errors)
 			if form1.is_valid() and form2.is_valid():
 
 				sendme = User.objects.get(username=request.user)

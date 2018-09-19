@@ -41,3 +41,5 @@ admin.site.register(remarks2)
 admin.site.register(Designation)
 
 admin.site.register(Department)
+admin.site.register(ipr_type)
+admin.site.register(ipr_status)

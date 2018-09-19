@@ -817,72 +817,37 @@
 
 <div class="form-group ">
 
-                 <div class="form-row dis">
 
-        <div class="form-group col-md-2 align-center"><h4> IPR Status :</h4>
 
+          
+
+                    <div class="orm-group col-md-6">
+<label for="inputResearch">Marks Here:</label>
+                      {% render_field form4.rp_marks class="form-control rp_marks" %}
+
+                          </div>
+
+                      </div>
+
+ <div class="form-group row">
+
+
+        
+
+        <div class="form-group col-md-6">
+          <h4>IPR Type :</h4>
+        {% render_field form4.ipr_type class="form-control" %}
         </div>
-
-
-
-      <div class="form-group col-md-4">   <div class="form-group">
-
-		      <label for="sel1"> select one:</label>
-
-		      <select class="form-control" id="sel1">
-
-		        <option>Being Reviewed/Under Consideration</option>
-
-		        <option>Filed</option>
-
-		        <option>Granted</option>
-
-
-
-		      </select>
-
-
-
-		    </div></div>
+        <div class="form-group col-md-6">
+          <h4>IPR Status :</h4>
+         {% render_field form4.ipr_status class="form-control" %}
+</div>
 
  </div>
 
- </div>
-
- <div class="form-group ">
-
-                 <div class="form-row dis">
-
-        <div class="form-group col-md-2 align-center"><h4> IPR Type :</h4>
-
-        </div>
-
-
-
-      <div class="form-group col-md-4">
-
-    <div class="form-group">
-
-      <label for="sel1">select one:</label>
-
-      <select class="form-control" id="sel1">
-
-        <option>Patent</option>
-
-        <option>Copyright</option>
-
-        <option>Others</option>
-
-  </select>
-
-
-
-    </div>
-
-  </div>
-	<div class="form-group col-md-4">
-<label>&nbsp</label>
-<input type="text" class="form-control"  disabled placeholder="For others enter here" >
+  <div class="form-group col-md-12">
+<label>Details</label>
+{% render_field form4.ipr_info class="form-control" %}
 
 </div>
 
@@ -924,15 +889,6 @@
 
                 </div>
 
-                      <div class="form-group col-md-2"></div>
-
-                    <div class="orm-group col-md-6">
-<label for="inputResearch">Marks Here:</label>
-											{% render_field form4.rp_marks class="form-control" %}
-
-                          </div>
-
-                      </div>
 
 
 
@@ -1014,7 +970,7 @@
 
 
 
-   <button type="button" class="btn btn-success btn-lg btn-block">Submit</button>
+      <input type="submit" value= "Save and Continue" class="btn btn-success btn-lg btn-block"/>
 
 
 

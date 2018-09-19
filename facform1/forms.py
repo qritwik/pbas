@@ -13,6 +13,8 @@ class LoginForm(AuthenticationForm):
 							   widget=forms.PasswordInput(attrs={'class': 'form-control', 'name': 'otp', 'id': 'otp', 'placeholder': 'Enter OTP'}))
 
 
+		
+
 class form_User(forms.ModelForm):
 
 	class Meta:

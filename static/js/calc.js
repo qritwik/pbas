@@ -801,8 +801,8 @@ $('.rd').on("click",function(){
 	var cw_2_5 = parseFloat($('.cw_2_5').val());
 	var cw_5 = parseFloat($('.cw_5').val());
 	
-	if(isNaN(if_s)){
-		if_s = 0;
+	if($('.if_s').val()){
+		if_s = 5;
 	}
 
 	if(isNaN(if_f)){

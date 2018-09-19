@@ -1610,27 +1610,8 @@
 
         </div>
 
+         {% render_field form4.ipr_status class="form-control" %}
 
-
-      <div class="form-group col-md-4">   <div class="form-group">
-
-		      <label for="sel1"> select one:</label>
-
-		      <select class="form-control" id="sel1">
-
-		        <option>Being Reviewed/Under Consideration</option>
-
-		        <option>Filed</option>
-
-		        <option>Granted</option>
-
-
-
-		      </select>
-
-
-
-		    </div></div>
 
  </div>
 
@@ -1644,32 +1625,12 @@
 
         </div>
 
+        {% render_field form4.ipr_type class="form-control" %}
 
 
-      <div class="form-group col-md-4">
-
-    <div class="form-group">
-
-      <label for="sel1">select one:</label>
-
-      <select class="form-control" id="sel1">
-
-        <option>Patent</option>
-
-        <option>Copyright</option>
-
-        <option>Others</option>
-
-  </select>
-
-
-
-    </div>
-
-  </div>
 	<div class="form-group col-md-4">
-<label>&nbsp</label>
-<input type="text" class="form-control"  disabled placeholder="For others enter here" >
+<label>Details</label>
+{% render_field form4.ipr_info class="form-control" %}
 
 </div>
 

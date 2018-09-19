@@ -10,7 +10,9 @@
   <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script type="text/javascript" src={% static "js/t.js" %}></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
 </head>
 <body>
@@ -1564,12 +1566,15 @@
 </div>
 
 
-<button class="s_case">Special Case</button>
+</div>
+<button type="button" class="btn btn-info btn-lg btn-block s_case col-md-4">Special Case</button>
 <div class="c_marks" style="display: none;">
   <div>
+    <label>Reason for marks</label>
   {% render_field form1.ta_prin_remarks1 class="form-control"  %}
 </div>
-<div>
+<div class="form-group col-md-4">
+  <label>Bonus marks</label>
 {% render_field form1.prin_marks2 class="form-control m6"  %}
 </div>
 </div>
@@ -1579,15 +1584,20 @@
 <div class="form-row dis">
 <div class="col-1"></div>
 <div class="col-10">
+
+
  <div class="form-row dis">
                <div class="orm-group col-md-6">
               <h6 class="po color1">TOTAL MARKS<span class="sp">_(Maximum Score: 100)</span></h6>
                </div>
 
                   <div class="orm-group col-md-6">
-										{% render_field form1.total_marks class="form-control disabled" %}
+										{% render_field form1.total_marks class="form-control disabled total_marks" %}
                         </div>
-                    </div>
+                    </div> <div class="form-group col-md-6">
+                    
+                    <button type="button" class="btn btn-success btn-lg btn-block tm">Calculate</button>
+                  </div>
 </div>
 <div class="col-1"></div>
 </div>
@@ -1595,6 +1605,8 @@
 <div class="form-row dis">
 <div class="col-4"></div>
 <div class="col-4">
+
+
  <div class="form-row dis">
 
 
@@ -1616,10 +1628,56 @@
 </div>
 
 
+<script>
+  $(function(){
+    $('.s_case').click(function() {
+      $('.c_marks').css('display', 'block');
+    });
 
 
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  $('.tm').on("click",function(){
+  var a = parseFloat($('.m1').html())
+  var b = parseFloat($('.m2').html())
+  var c = parseFloat($('.m3').html())
+  var d = parseFloat($('.m4').html())
+  var e = parseFloat($('.m5').val())
+  
+  if($('.m6').val()){
+    e = 0;
+    $('.m5').val(0);
+
+  }
+  var g = parseFloat($('.m6').val())
+
+  if(isNaN(a)){
+    a = 0;
+  }
+
+  if(isNaN(b)){
+    b = 0;
+  }
+  if(isNaN(c)){
+    c = 0;
+  }
+  if(isNaN(d)){
+    d = 0;
+  }
+  if(isNaN(e)){
+    e = 0;
+  }
+  if(isNaN(g)){
+    g = 0;
+  }
+
+  
+  var f = a+b+c+d+e+g
+  $('.total_marks').val(f)
+
+  });
+});
+
+  </script>
+
+
 </body>
 </html>

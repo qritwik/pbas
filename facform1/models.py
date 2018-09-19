@@ -21,6 +21,25 @@ class Department(models.Model):
 	def __str__(self):
 		return self.name
 
+class ipr_type(models.Model):
+	"""
+	Description: Model Description
+	"""
+	name = models.CharField(max_length=40, blank=True, null=True)
+
+	def __str__(self):
+		return self.name	
+
+
+class ipr_status(models.Model):
+	"""
+	Description: Model Description
+	"""
+	name = models.CharField(max_length=40, blank=True, null=True)
+
+	def __str__(self):
+		return self.name	
+
 class User(AbstractUser):
 	phone = models.BigIntegerField(null=True)
 	department = models.ForeignKey('Department', on_delete=models.CASCADE,null=True)
@@ -400,9 +419,9 @@ class rd(models.Model):
 	Cw_2_5 = models.CharField(max_length=30, blank=True, null=True)
 	Cw_5 = models.CharField(max_length=30, blank=True, null=True)
 
-	ipr_status = models.CharField(max_length=30, blank=True, null=True)
-	ipr_type = models.CharField(max_length=30, blank=True, null=True)
-	ipr_info = models.CharField(max_length=30, blank=True, null=True)
+	ipr_status = models.ForeignKey('ipr_status', on_delete=models.CASCADE,null=True)
+	ipr_type = models.ForeignKey('ipr_type', on_delete=models.CASCADE,null=True)
+	ipr_info = models.TextField(blank=True, null=True)
 
 
 	rp_marks = models.CharField(max_length=30, blank=True, null=True)
