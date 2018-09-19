@@ -46,7 +46,7 @@ def decide_view(request):
 	if request.user.is_assistant_professor():
 		if request.user.teach_status == True:
 			return HttpResponseRedirect("/logout/")
-		return HttpResponseRedirect("/assistant_form/")
+		return HttpResponseRedirect("/assistant_form1/")
 
 	elif request.user.is_associate_professor():
 		if request.user.teach_status == True:
@@ -499,55 +499,94 @@ def logout(request):
 
 
 
-def f_assistant(request):
+
+def f_assistant4(request):
+	form5 = forms.form_remarks()
+	if remarks.objects.get(info=user):
+
+		return HttpResponseRedirect("/logout/")
+	else:	
+		if request.method == 'POST':
+			sendme = User.objects.get(username=request.user)
+			form5 = forms.form_remarks(request.POST)
+			if form5.is_valid():
+				obj3 = form5.save(commit=False)
+				obj3.info = request.user
+				obj3.save()
+				if sendme.teach_status == False:
+					sendme.teach_status = True
+				sendme.save()	
+				return HttpResponseRedirect("/logout/")
+	
+	return render(request,'assistant_form4.html',{'form5':form5})			
+
+def f_assistant3(request):
+	form4 = forms.form_rd()	
+	if rd.objects.get(info=user):
+
+		return HttpResponseRedirect("/assistant_form4/")
+	else:	
+		if request.method == 'POST':
+			form4 = forms.form_rd(request.POST)
+			if form4.is_valid():
+				obj2 = form4.save(commit=False)
+				obj2.info = request.user
+				obj2.save()
+				return HttpResponseRedirect("/assistant_form4/")
+		
+	return render(request,'assistant_form3.html',{'form4':form4})	
+
+def f_assistant2(request):
+	form3 = forms.form_feedbackTab()
+
+	if feedbackTab.objects.get(info=user):
+
+		return HttpResponseRedirect("/assistant_form3/")
+	else:	
+		if request.method == 'POST':
+			form3 = forms.form_feedbackTab(request.POST)
+			if form3.is_valid():
+				obj1 = form3.save(commit=False)
+				obj1.info = request.user
+				obj1.save()
+				return HttpResponseRedirect("/assistant_form3/")	
+
+		
+	return render(request,'assistant_form2.html',{'form3':form3})	
+
+def f_assistant1(request):
+
 	user = request.user
 	print(user)
 	data_final = User.objects.get(username=user)
+	form1 = forms.form_User()
+	form2 = forms.form_empDetailForm()
 
+	if empDetailForm.objects.get(info=user):
 
+		return HttpResponseRedirect("/assistant_form2/")
 
-	if request.method == 'POST':
-		form1 = forms.form_User(request.POST)
-		form2 = forms.form_empDetailForm(request.POST)
-		form3 = forms.form_feedbackTab(request.POST)
-		form4 = forms.form_rd(request.POST)
-		form5 = forms.form_remarks(request.POST)
+	else:	
 
-		if form1.is_valid() and form2.is_valid() and form3.is_valid() and form4.is_valid() and form5.is_valid():
+		if request.method == 'POST':
+			form1 = forms.form_User(request.POST)
+			form2 = forms.form_empDetailForm(request.POST)
+			
 
-			sendme = User.objects.get(username=request.user)
+			if form1.is_valid() and form2.is_valid():
 
-			obj = form2.save(commit=False)
-			obj1 = form3.save(commit=False)
-			obj2 = form4.save(commit=False)
-			obj3 = form5.save(commit=False)
+				sendme = User.objects.get(username=request.user)
 
-			obj.info = request.user
-			obj1.info = request.user
-			obj2.info = request.user
-			obj3.info = request.user
+				obj = form2.save(commit=False)
+				obj.info = request.user
+				obj.save()
 
-			obj.save()
-			obj1.save()
-			obj2.save()
-			obj3.save()
+				sendme.doc_link  = 	form1.cleaned_data['doc_link']
+				sendme.save()
 
-			if sendme.teach_status == False:
-				sendme.teach_status = True
-			sendme.doc_link  = 	form1.cleaned_data['doc_link']
-			sendme.save()
+				return HttpResponseRedirect("/assistant_form2/")	
 
-			return HttpResponseRedirect("/logout/")
-		else:
-			print(form4.errors)
-
-	else:
-		form1 = forms.form_User()
-		form2 = forms.form_empDetailForm()
-		form3 = forms.form_feedbackTab()
-		form4 = forms.form_rd()
-		form5 = forms.form_remarks()
-	return render(request,'assistant_form.html',{'form1':form1,'form2':form2,'form3':form3,'form4':form4,'form5':form5,'info':data_final})
+	return render(request,'assistant_form1.html',{'form1':form1,'form2':form2,'info':data_final})
 
 def f_associate(request):
 	user = request.user
