@@ -29,7 +29,7 @@
   <div class="login-form">
 
     <form class="" action="" method="post">
-      <a href="/hod_form/"><input type="button" style="background:#8bc34a;" class="list-group-item list-group-item-action list-group-item-success" value="Submit your own form"></a>
+      <a {% if user.teach_status == True %} href="/hod_form1/" {% else %} href="#" ><input type="button" style="background:#8bc34a;" class="list-group-item list-group-item-action list-group-item-success" value="Submit your own form"></a>
       <a href="/hod_display/"><input type="button" style="background:#03a9f4;" class="list-group-item list-group-item-action list-group-item-success" value="view faculty form"></a>
 
     </form>

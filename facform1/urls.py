@@ -14,8 +14,20 @@ urlpatterns = [
     url(r'^assistant_form3/', views.f_assistant3,name="assistant_form3"),
     url(r'^assistant_form4/', views.f_assistant4,name="assistant_form4"),
 
-    url(r'^associate_form/', views.f_associate,name="associate_form"),
-    url(r'^hod_form/', views.hod_form,name="hod_form"),
+    url(r'^associate_form1/', views.f_associate1,name="associate_form1"),
+    url(r'^associate_form2/', views.f_associate2,name="associate_form2"),
+    url(r'^associate_form3/', views.f_associate3,name="associate_form3"),
+    url(r'^associate_form4/', views.f_associate4,name="associate_form4"),
+
+
+
+    url(r'^hod_form1/', views.hod_form1,name="hod_form1"),
+    url(r'^hod_form2/', views.hod_form2,name="hod_form2"),
+    url(r'^hod_form3/', views.hod_form3,name="hod_form3"),
+    url(r'^hod_form4/', views.hod_form4,name="hod_form4"),
+
+
+
     url(r'^hod_first/', views.hod_first,name="hod_first"),
     url(r'^hod_display/', views.hod_display,name="hod_display"),
     url(r'^hod_teacher_display/(?P<pk>[\w\-]+)$', views.hod_teacher_display,name="hod_teacher_display"),

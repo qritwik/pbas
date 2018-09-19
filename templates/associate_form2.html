@@ -1,47 +1,31 @@
-
 <!DOCTYPE html>
-
 {% load staticfiles %}
-
 {% load widget_tweaks %}
-
 <html>
 
-
-
 <head>
-
   <title>asp1</title>
-
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   <link rel="stylesheet" type="text/css" href={% static "css/index.css" %}>
+  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-
-
-
-<script type="text/javascript" src={% static "js/asc.js" %}></script>
-
-
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script type="text/javascript" src={% static "js/calc.js" %}></script>
 
 </head>
-
 <body>
-
-  <div class="container">   
-
-   <h3 class="poi">1: Course Feedback and results<span class="sp">(Maximum Score: 40 marks)</span></h3>
-
- <form method="POST">
+  <div class="container">
+    <form method="POST">
 
          {% csrf_token %}
 
-<div class="table-bordered poi">
+ <h3>Course Feedback and results<span class="sp">(Maximum Score: 30 marks)</span></h3>
+
+<div class="poi">
 
 
-
-    <h4>1A: Odd Semester</h4>
+<h4>1A: Odd Semester</h4>
 
   <table class="table table-bordered">
 
@@ -115,7 +99,7 @@
 
       <td>{% render_field form3.o_t2_stu_pass class="form-control o_t2_stu_pass" %}</td>
 
-			<td>{% render_field form3.o_t2_stu_perpass class="form-control o_t2_stu_perpass"  %}</td>
+      <td>{% render_field form3.o_t2_stu_perpass class="form-control o_t2_stu_perpass"  %}</td>
 
     </tr>
 
@@ -131,13 +115,13 @@
 
       <td class="center aligned">{% render_field form3.o_t3_f2 class="form-control o_t3_f2" %}</td>
 
-			<td>{% render_field form3.o_t3_favg class="form-control o_t3_favg" %}</td>
+      <td>{% render_field form3.o_t3_favg class="form-control o_t3_favg" %}</td>
 
       <td> {% render_field form3.o_t3_stu_app class="form-control o_t3_stu_app" %}</td>
 
       <td>{% render_field form3.o_t3_stu_pass class="form-control o_t3_stu_pass" %}</td>
 
-			<td>{% render_field form3.o_t3_stu_perpass class="form-control o_t3_stu_perpass"  %}</td>
+      <td>{% render_field form3.o_t3_stu_perpass class="form-control o_t3_stu_perpass"  %}</td>
 
     </tr>
 
@@ -251,13 +235,13 @@
 
       <td class="center aligned">{% render_field form3.o_l1_f2 class="form-control o_l1_f2" %}</td>
 
-			<td>{% render_field form3.o_l1_favg class="form-control o_l1_favg" %}</td>
+      <td>{% render_field form3.o_l1_favg class="form-control o_l1_favg" %}</td>
 
       <td> {% render_field form3.o_l1_stu_app class="form-control o_l1_stu_app" %}</td>
 
       <td>{% render_field form3.o_l1_stu_pass class="form-control o_l1_stu_pass" %}</td>
 
-			<td>{% render_field form3.o_l1_stu_perpass class="form-control o_l1_stu_perpass"  %}</td>
+      <td>{% render_field form3.o_l1_stu_perpass class="form-control o_l1_stu_perpass"  %}</td>
 
     </tr>
 
@@ -271,13 +255,13 @@
 
       <td class="center aligned">{% render_field form3.o_l2_f2 class="form-control o_l2_f2" %}</td>
 
-			<td>{% render_field form3.o_l2_favg class="form-control o_l2_favg" %}</td>
+      <td>{% render_field form3.o_l2_favg class="form-control o_l2_favg" %}</td>
 
       <td> {% render_field form3.o_l2_stu_app class="form-control o_l2_stu_app" %}</td>
 
       <td>{% render_field form3.o_l2_stu_pass class="form-control o_l2_stu_pass" %}</td>
 
-			<td>{% render_field form3.o_l2_stu_perpass class="form-control o_l2_stu_perpass"  %}</td>
+      <td>{% render_field form3.o_l2_stu_perpass class="form-control o_l2_stu_perpass"  %}</td>
 
     </tr>
 
@@ -291,13 +275,13 @@
 
       <td class="center aligned">{% render_field form3.o_l3_f2 class="form-control o_l3_f2" %}</td>
 
-			<td>{% render_field form3.o_l3_favg class="form-control o_l3_favg" %}</td>
+      <td>{% render_field form3.o_l3_favg class="form-control o_l3_favg" %}</td>
 
       <td> {% render_field form3.o_l3_stu_app class="form-control o_l3_stu_app" %}</td>
 
       <td>{% render_field form3.o_l3_stu_pass class="form-control o_l3_stu_pass" %}</td>
 
-			<td>{% render_field form3.o_l3_stu_perpass class="form-control o_l3_stu_perpass"  %}</td>
+      <td>{% render_field form3.o_l3_stu_perpass class="form-control o_l3_stu_perpass"  %}</td>
 
     </tr>
 
@@ -311,13 +295,13 @@
 
       <td class="center aligned">{% render_field form3.o_l4_f2 class="form-control o_l4_f2" %}</td>
 
-			<td>{% render_field form3.o_l4_favg class="form-control o_l4_favg" %}</td>
+      <td>{% render_field form3.o_l4_favg class="form-control o_l4_favg" %}</td>
 
       <td> {% render_field form3.o_l4_stu_app class="form-control o_l4_stu_app" %}</td>
 
       <td>{% render_field form3.o_l4_stu_pass class="form-control o_l4_stu_pass" %}</td>
 
-			<td>{% render_field form3.o_l4_stu_perpass class="form-control o_l4_stu_perpass"  %}</td>
+      <td>{% render_field form3.o_l4_stu_perpass class="form-control o_l4_stu_perpass"  %}</td>
 
     </tr>
 
@@ -331,13 +315,13 @@
 
       <td class="center aligned">{% render_field form3.o_l5_f2 class="form-control o_l5_f2" %}</td>
 
-			<td>{% render_field form3.o_l5_favg class="form-control o_l5_favg" %}</td>
+      <td>{% render_field form3.o_l5_favg class="form-control o_l5_favg" %}</td>
 
       <td> {% render_field form3.o_l5_stu_app class="form-control o_l5_stu_app" %}</td>
 
       <td>{% render_field form3.o_l5_stu_pass class="form-control o_l5_stu_pass" %}</td>
 
-			<td>{% render_field form3.o_l5_stu_perpass class="form-control o_l5_stu_perpass"  %}</td>
+      <td>{% render_field form3.o_l5_stu_perpass class="form-control o_l5_stu_perpass"  %}</td>
 
     </tr>
 
@@ -481,13 +465,13 @@
 
       <td class="center aligned">{% render_field form3.e_t2_f2 class="form-control e_t2_f2" %}</td>
 
-			<td>{% render_field form3.e_t2_favg class="form-control e_t2_favg" %}</td>
+      <td>{% render_field form3.e_t2_favg class="form-control e_t2_favg" %}</td>
 
       <td> {% render_field form3.e_t2_stu_app class="form-control e_t2_stu_app" %}</td>
 
       <td>{% render_field form3.e_t2_stu_pass class="form-control e_t2_stu_pass" %}</td>
 
-			<td>{% render_field form3.e_t2_stu_perpass class="form-control e_t2_stu_perpass" %}</td>
+      <td>{% render_field form3.e_t2_stu_perpass class="form-control e_t2_stu_perpass" %}</td>
 
     </tr>
 
@@ -501,13 +485,13 @@
 
       <td class="center agned">{% render_field form3.e_t3_f2 class="form-control e_t3_f2" %}</td>
 
-			<td>{% render_field form3.e_t3_favg class="form-control e_t3_favg" %}</td>
+      <td>{% render_field form3.e_t3_favg class="form-control e_t3_favg" %}</td>
 
       <td> {% render_field form3.e_t3_stu_app class="form-control e_t3_stu_app" %}</td>
 
       <td>{% render_field form3.e_t3_stu_pass class="form-control e_t3_stu_pass" %}</td>
 
-			<td>{% render_field form3.e_t3_stu_perpass class="form-control e_t3_stu_perpass" %}</td>
+      <td>{% render_field form3.e_t3_stu_perpass class="form-control e_t3_stu_perpass" %}</td>
 
     </tr>
 
@@ -615,13 +599,13 @@
 
       <td class="center aligned">{% render_field form3.e_l1_f2 class="form-control e_l1_f2" %}</td>
 
-			<td>{% render_field form3.e_l1_favg class="form-control e_l1_favg" %}</td>
+      <td>{% render_field form3.e_l1_favg class="form-control e_l1_favg" %}</td>
 
       <td> {% render_field form3.e_l1_stu_app class="form-control e_l1_stu_app" %}</td>
 
       <td>{% render_field form3.e_l1_stu_pass class="form-control e_l1_stu_pass" %}</td>
 
-			<td>{% render_field form3.e_l1_stu_perpass class="form-control e_l1_stu_perpass" %}</td>
+      <td>{% render_field form3.e_l1_stu_perpass class="form-control e_l1_stu_perpass" %}</td>
 
     </tr>
 
@@ -635,13 +619,13 @@
 
       <td class="center aligned">{% render_field form3.e_l2_f2 class="form-control e_l2_f2" %}</td>
 
-			<td>{% render_field form3.e_l2_favg class="form-control e_l2_favg" %}</td>
+      <td>{% render_field form3.e_l2_favg class="form-control e_l2_favg" %}</td>
 
       <td> {% render_field form3.e_l2_stu_app class="form-control e_l2_stu_app" %}</td>
 
       <td>{% render_field form3.e_l2_stu_pass class="form-control e_l2_stu_pass" %}</td>
 
-			<td>{% render_field form3.e_l2_stu_perpass class="form-control e_l2_stu_perpass" %}</td>
+      <td>{% render_field form3.e_l2_stu_perpass class="form-control e_l2_stu_perpass" %}</td>
 
     </tr>
 
@@ -655,13 +639,13 @@
 
       <td class="center aligned">{% render_field form3.e_l3_f2 class="form-control e_l3_f2" %}</td>
 
-			<td>{% render_field form3.e_l3_favg class="form-control e_l3_favg" %}</td>
+      <td>{% render_field form3.e_l3_favg class="form-control e_l3_favg" %}</td>
 
       <td> {% render_field form3.e_l3_stu_app class="form-control e_l3_stu_app" %}</td>
 
       <td>{% render_field form3.e_l3_stu_pass class="form-control e_l3_stu_pass" %}</td>
 
-			<td>{% render_field form3.e_l3_stu_perpass class="form-control e_l3_stu_perpass" %}</td>
+      <td>{% render_field form3.e_l3_stu_perpass class="form-control e_l3_stu_perpass" %}</td>
 
     </tr>
 
@@ -677,13 +661,13 @@
 
       <td class="center aligned">{% render_field form3.e_l4_f2 class="form-control e_l4_f2" %}</td>
 
-			<td>{% render_field form3.e_l4_favg class="form-control e_l4_favg" %}</td>
+      <td>{% render_field form3.e_l4_favg class="form-control e_l4_favg" %}</td>
 
       <td> {% render_field form3.e_l4_stu_app class="form-control e_l4_stu_app" %}</td>
 
       <td>{% render_field form3.e_l4_stu_pass class="form-control e_l4_stu_pass" %}</td>
 
-				<td>{% render_field form3.e_l4_stu_perpass class="form-control e_l4_stu_perpass" %}</td>
+        <td>{% render_field form3.e_l4_stu_perpass class="form-control e_l4_stu_perpass" %}</td>
 
     </tr>
 
@@ -697,13 +681,13 @@
 
       <td class="center aligned">{% render_field form3.e_l5_f2 class="form-control e_l5_f2" %}</td>
 
-			<td>{% render_field form3.e_l5_favg class="form-control e_l5_favg" %}</td>
+      <td>{% render_field form3.e_l5_favg class="form-control e_l5_favg" %}</td>
 
       <td> {% render_field form3.e_l5_stu_app class="form-control e_l5_stu_app" %}</td>
 
       <td>{% render_field form3.e_l5_stu_pass class="form-control e_l5_stu_pass" %}</td>
 
-			<td>{% render_field form3.e_l5_stu_perpass class="form-control e_l5_stu_perpass" %}</td>
+      <td>{% render_field form3.e_l5_stu_perpass class="form-control e_l5_stu_perpass" %}</td>
 
     </tr>
 
@@ -827,7 +811,7 @@
 
       <td class="center aligned">{% render_field form3.p2_f2 class="form-control p2_f2" %}</td>
 
-			<td>{% render_field form3.p2_favg class="form-control p2_favg" %}</td>
+      <td>{% render_field form3.p2_favg class="form-control p2_favg" %}</td>
 
     </tr>
 
@@ -893,7 +877,7 @@
 
                <div class="form-group col-md-6">
 
-              <h6 class="po color2">TOTAL MARKS<span class="sp">_(Maximum Score: 40)</span></h6>
+              <h6 class="po color2">TOTAL MARKS<span class="sp">_(Maximum Score: 30)</span></h6>
 
                </div>
 
@@ -947,19 +931,27 @@
 
 </div>
 
- <input type="submit" class="btn btn-danger btn-lg btn-block"></button>
-</form>
+
+
 </div>
 
+ <div class="form-row dis">
 
 
 
- <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+   <button type="button" class="btn btn-success btn-lg btn-block">Submit</button>
+
+
+
+</div>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+
 
 
 
