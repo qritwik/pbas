@@ -1643,7 +1643,7 @@
 window.onload = function(e){
 html2canvas(document.body).then(function(canvas) {
 		canvas.id = "mycanvas";
-    document.body.appendChild(canvas).style.visiblity = "hidden";
+    document.body.appendChild(canvas).style.visibility = "hidden";
 });
 var canvas = document.getElementById("mycanvas");
 var img = canvas.toDataURL("image/jpeg");
