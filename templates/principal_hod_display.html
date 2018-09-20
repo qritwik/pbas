@@ -156,6 +156,7 @@
               </tr>
             </thead>
             <tbody>
+              {% if key3.o_t1_name %}
               <tr>
                 <td>1</td>
                 <td>{{ key3.o_t1_name }}</td>
@@ -166,6 +167,8 @@
                 <td>{{ key3.o_t1_stu_pass }}</td>
                 <td>{{ key3.o_t1_stu_perpass }}</td>
               </tr>
+              {% endif %}
+              {% if key3.o_t2_name %}
               <tr>
                 <td>2</td>
                 <td>{{ key3.o_t2_name }}</td>
@@ -176,7 +179,9 @@
                 <td>{{ key3.o_t2_stu_pass }}</td>
                 <td>{{ key3.o_t2_stu_perpass }}</td>
               </tr>
-              <tr>
+              {% endif %}
+              {% if key3.o_t3_name %}
+
                 <tr>
                 <td>3</td>
                 <td>{{ key3.o_t3_name }}</td>
@@ -187,6 +192,7 @@
                 <td>{{ key3.o_t3_stu_pass }}</td>
                 <td>{{ key3.o_t3_stu_perpass }}</td>
               </tr>
+              {% endif %}
 
             </tbody>
           </table>
@@ -236,6 +242,7 @@
               </tr>
             </thead>
             <tbody>
+              {% if key3.o_l1_name %}
               <tr>
                 <td>1</td>
                 <td>{{ key3.o_l1_name }}</td>
@@ -246,6 +253,8 @@
                 <td>{{ key3.o_l1_stu_pass }}</td>
           			<td>{{ key3.o_l1_stu_perpass }}</td>
               </tr>
+              {% endif %}
+              {% if key3.o_l2_name %}
               <tr>
                 <td>2</td>
                 <td>{{ key3.o_l2_name }}</td>
@@ -256,6 +265,8 @@
                 <td>{{ key3.o_l2_stu_pass }}</td>
           			<td>{{ key3.o_l2_stu_perpass }}</td>
               </tr>
+              {% endif %}
+              {% if key3.o_l3_name %}
                <tr>
                 <td>3</td>
                 <td>{{ key3.o_l3_name }}</td>
@@ -266,6 +277,8 @@
                 <td>{{ key3.o_l3_stu_pass }}</td>
           			<td>{{ key3.o_l3_stu_perpass }}</td>
               </tr>
+              {% endif %}
+              {% if key3.o_l4_name %}
               <tr>
                 <td>4</td>
                 <td>{{ key3.o_l4_name }}</td>
@@ -276,6 +289,8 @@
                 <td>{{ key3.o_l4_stu_pass }}</td>
                 <td>{{ key3.o_l4_stu_perpass }}</td>
               </tr>
+              {% endif %}
+              {% if key3.o_l5_name %}
               <tr>
                 <td>5</td>
                 <td>{{ key3.o_l5_name }}</td>
@@ -286,6 +301,7 @@
                 <td>{{ key3.o_l5_stu_pass }}</td>
                 <td>{{ key3.o_l5_stu_perpass }}</td>
               </tr>
+              {% endif %}
             </tbody>
 
           </table>
@@ -341,6 +357,7 @@
               </tr>
             </thead>
             <tbody>
+              {% if key3.e_t1_name %}
               <tr>
                 <td>1</td>
                 <td>{{ key3.e_t1_name }}</td>
@@ -351,6 +368,8 @@
                 <td>{{ key3.e_t1_stu_pass }}</td>
                 <td>{{ key3.e_t1_stu_perpass }}</td>
               </tr>
+              {% endif %}
+              {% if key3.e_t2_name %}
               <tr>
                 <td>2</td>
                 <td>{{ key3.e_t2_name }}</td>
@@ -361,7 +380,8 @@
                 <td>{{ key3.e_t2_stu_pass }}</td>
                 <td>{{ key3.e_t2_stu_perpass }}</td>
               </tr>
-              <tr>
+              {% endif %}
+            {% if key3.e_t3_name %}
                 <tr>
                 <td>3</td>
                 <td>{{ key3.e_t3_name }}</td>
@@ -372,6 +392,7 @@
                 <td>{{ key3.e_t3_stu_pass }}</td>
                 <td>{{ key3.e_t3_stu_perpass }}</td>
               </tr>
+              {% endif %}
             </tbody>
           </table>
           <div class="container-fluid">
@@ -416,6 +437,7 @@
               </tr>
             </thead>
             <tbody>
+              {% if key3.e_l1_name %}
               <tr>
                 <td>1</td>
                 <td>{{ key3.e_l1_name }}</td>
@@ -426,6 +448,8 @@
                 <td>{{ key3.e_l1_stu_pass }}</td>
           			<td>{{ key3.e_l1_stu_perpass }}</td>
               </tr>
+              {% endif %}
+              {% if key3.e_l2_name %}
               <tr>
                 <td>2</td>
                 <td>{{ key3.e_l2_name }}</td>
@@ -436,6 +460,8 @@
                 <td>{{ key3.e_l2_stu_pass }}</td>
           			<td>{{ key3.e_l2_stu_perpass }}</td>
               </tr>
+              {% endif %}
+              {% if key3.e_l3_name %}
                <tr>
                 <td>3</td>
                 <td>{{ key3.e_l3_name }}</td>
@@ -446,6 +472,8 @@
                 <td>{{ key3.e_l3_stu_pass }}</td>
           			<td>{{ key3.e_l3_stu_perpass }}</td>
               </tr>
+              {% endif %}
+              {% if key3.e_l4_name %}
               <tr>
                 <td>4</td>
                 <td>{{ key3.e_l4_name }}</td>
@@ -456,6 +484,8 @@
                 <td>{{ key3.e_l4_stu_pass }}</td>
                 <td>{{ key3.e_l4_stu_perpass }}</td>
               </tr>
+              {% endif %}
+              {% if key3.e_l5_name %}
               <tr>
                 <td>5</td>
                 <td>{{ key3.e_l5_name }}</td>
@@ -466,6 +496,7 @@
                 <td>{{ key3.e_l5_stu_pass }}</td>
                 <td>{{ key3.e_l5_stu_perpass }}</td>
               </tr>
+              {% endif %}
             </tbody>
           </table>
           <div class="container-fluid">
@@ -520,6 +551,7 @@
               </tr>
             </thead>
             <tbody>
+              {% if key3.p1_name %}
               <tr>
                 <td>1</td>
                 <td>{{ key3.p1_name }}</td>
@@ -527,6 +559,8 @@
                 <td class="center aligned">{{ key3.p1_f2 }}</td>
                 <td>{{ key3.p1_favg }}</td>
               </tr>
+              {% endif %}
+              {% if key3.p2_name %}
                <tr>
                 <td>2</td>
                 <td>{{ key3.p2_name }}</td>
@@ -534,6 +568,7 @@
                 <td class="center aligned">{{ key3.p2_f2 }}</td>
                 <td>{{ key3.p2_favg }}</td>
               </tr>
+              {% endif %}
           </tbody>
 
           </table>
