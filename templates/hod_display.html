@@ -22,6 +22,11 @@
 	<link rel="stylesheet" type="text/css" href="{% static "css/util.css" %}">
 	<link rel="stylesheet" type="text/css" href="{% static "css/main1.css" %}">
 <!--===============================================================================================-->
+
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
 </head>
 <body style="background:#c3d1f8">
 
@@ -72,7 +77,14 @@
 
 						<div class="row">
 							<div class="cell" data-title="Faculty Name">
-								  <a {% if info.hod_status == False %} href="/hod_teacher_display/{{info.pk}}" {% else %} href="#" {% endif %}>{{info.first_name}}</a>
+								{% if info.teach_status and info.hod_status %}
+								<a href="" id="h2p">{{info.first_name}}</a>
+								{% elif info.teach_status %}
+								<a href="/hod_teacher_display/{{info.pk}}">{{info.first_name}}</a>
+								{% else %}
+								<a href="#" id="h3p">{{info.first_name}}</a>
+								{% endif %}
+								  <!-- <a {% if info.hod_status == False %} href="/hod_teacher_display/{{info.pk}}" {% else %} href="#" {% endif %}>{{info.first_name}}</a> -->
 							</div>
 							<div class="cell" data-title="Documents">
 								<a href="{{info.doc_link}}">Drive link</a>
@@ -101,7 +113,13 @@
 
 						<div class="row">
 							<div class="cell" data-title="Faculty Name">
-								  <a {% if info.hod_status == False %} href="/hod_teacher1_display/{{info.pk}}" {% else %} href="#" {% endif %}>{{info.first_name}}</a>
+								{% if info.teach_status and info.hod_status %}
+								<a href="" id="h2p">{{info.first_name}}</a>
+								{% elif info.teach_status %}
+								<a href="/hod_teacher_display/{{info.pk}}">{{info.first_name}}</a>
+								{% else %}
+								<a href="#" id="h3p">{{info.first_name}}</a>
+								{% endif %}
 							</div>
 							<div class="cell" data-title="Documents">
 								<a href="{{info.doc_link}}">Drive link</a>
@@ -134,15 +152,16 @@
 
 
 
+
 <!--===============================================================================================-->
-	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+	<script src="{% static "vendor/jquery/jquery-3.2.1.min.js" %}"></script>
 <!--===============================================================================================-->
-	<script src="vendor/bootstrap/js/popper.js"></script>
-	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script src="{% static "vendor/bootstrap/js/popper.js" %}"></script>
+	<script src="{% static "vendor/bootstrap/js/bootstrap.min.js" %}"></script>
 <!--===============================================================================================-->
-	<script src="vendor/select2/select2.min.js"></script>
+	<script src="{% static "vendor/select2/select2.min.js" %}"></script>
 <!--===============================================================================================-->
-	<script src="js/main.js"></script>
+	<script src="{% static "js/main.js" %}"></script>
 
 </body>
 </html>

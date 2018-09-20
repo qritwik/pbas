@@ -28,7 +28,7 @@ class ipr_type(models.Model):
 	name = models.CharField(max_length=40, blank=True, null=True)
 
 	def __str__(self):
-		return self.name	
+		return self.name
 
 
 class ipr_status(models.Model):
@@ -38,7 +38,7 @@ class ipr_status(models.Model):
 	name = models.CharField(max_length=40, blank=True, null=True)
 
 	def __str__(self):
-		return self.name	
+		return self.name
 
 class User(AbstractUser):
 	phone = models.BigIntegerField(null=True)
@@ -452,7 +452,7 @@ class remarks2(models.Model):
 	prin_marks1 = models.IntegerField( blank=True, null=True)
 	prin_marks2 = models.IntegerField( blank=True, null=True)
 	prin_marks3 = models.IntegerField( blank=True, null=True)
-	total_marks = models.IntegerField( blank=True, null=True)
+	total_marks = models.FloatField( blank=True, null=True)
 	info = models.ForeignKey('User', on_delete=models.CASCADE,null=True)
 	department = models.ForeignKey('Department', on_delete=models.CASCADE,null=True)
 
