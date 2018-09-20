@@ -1575,7 +1575,7 @@
     <tr>
       <th scope="row">1</th>
       <td>Contribution to Department Developmental Activites<span class="sp"> (Maximum Score:15 marks)</span></td>
-       <td rowspan="4">{{ key7.prin_marks2 }}</td>
+       <td rowspan="4"> {% if key7.prin_marks2 == 0 %} {{key7.prin_marks3}} {% else %} {{key7.prin_marks2}} {% endif %}</td>
     </tr>
     <tr>
       <th scope="row">2</th>

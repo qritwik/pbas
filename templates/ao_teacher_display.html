@@ -1570,7 +1570,7 @@
   <tbody>
     <tr>
       <td>Contribution to Institutional Developmental Activites<span class="sp">(Maximum Score: 5 marks)</span></td>
-       <td rowspan="3" class="fo1"> {{key7.prin_marks1}}</td>
+       <td rowspan="3" class="fo1"> {% if key7.prin_marks1 == 0 %} {{key7.prin_marks2}} {% else %} {{key7.prin_marks1}} {% endif %}</td>
      </tr>
   </tbody>
 </table>
