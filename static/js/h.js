@@ -664,7 +664,7 @@ $('.rd').on("click",function(){
 		p_i_d = 0;
 	}
 
-	b = (p_s_d * 2) + (p_n_d * 4) + (p_s_d * 5) ;
+	b = (p_s_d * 2) + (p_n_d * 4) + (p_i_d * 5) ;
 
 	//max 5
 	if(b>=5){
