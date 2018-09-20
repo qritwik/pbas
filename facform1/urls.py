@@ -9,6 +9,9 @@ urlpatterns = [
     url(r'^logout/$', logout, {'template_name': 'success.html'}, name='logout'),
     url(r'^main/', views.decide_view, name="decide-view"),
     # url(r'^front/', views.front,name="front"),
+
+    url(r'^invalid/',views.invalid,name="invalid"),
+
     url(r'^assistant_form1/', views.f_assistant1,name="assistant_form1"),
     url(r'^assistant_form2/', views.f_assistant2,name="assistant_form2"),
     url(r'^assistant_form3/', views.f_assistant3,name="assistant_form3"),
