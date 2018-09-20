@@ -9,6 +9,7 @@ import random
 from django.db.models import Q
 from itertools import chain
 
+from django.contrib.auth.decorators import login_required
 
 
 # def phone_otp(random_otp, phone):
@@ -77,11 +78,11 @@ def decide_view(request):
 
 
 
-
+@login_required
 def hod_first(request):
 	return render(request,'hod_first.html')
 
-
+@login_required
 def hod_display(request):
 
 	user = request.user
@@ -100,6 +101,7 @@ def hod_display(request):
 	# print(data6)
 	return render(request,'hod_display.html',context=context)
 
+@login_required
 def hod_teacher_display(request,pk):
 	name =  User.objects.get(pk = pk);
 	print(name)
@@ -144,6 +146,7 @@ def hod_teacher_display(request,pk):
 
 	return render(request,'hod_teacher_display.html',context=context1)
 
+@login_required
 def hod_teacher1_display(request,pk):
 	name =  User.objects.get(pk = pk);
 	print(name)
@@ -188,6 +191,7 @@ def hod_teacher1_display(request,pk):
 
 	return render(request,'hod_teacher1_display.html',context=context1)
 
+@login_required
 def principal_first(request):
 	dept = Department.objects.all()
 
@@ -201,6 +205,7 @@ def principal_first(request):
 
 	return render(request,'principal_first.html',context=context)
 
+@login_required
 def principal_display(request,dept):
 
 	print(dept)
@@ -220,6 +225,7 @@ def principal_display(request,dept):
 	return render(request,'principal_display.html',context=dept)
 
 
+@login_required
 def principal_teacher_display(request,pk):
 	name =  User.objects.get(pk = pk);
 	print(name)
@@ -269,6 +275,7 @@ def principal_teacher_display(request,pk):
 
 	return render(request,'principal_teacher_display.html',context=context1)
 
+@login_required
 def principal_teacher1_display(request,pk):
 	name =  User.objects.get(pk = pk);
 	print(name)
@@ -318,6 +325,7 @@ def principal_teacher1_display(request,pk):
 
 	return render(request,'principal_teacher1_display.html',context=context1)
 
+@login_required
 def principal_hod_display(request,pk):
 	name =  User.objects.get(pk = pk);
 	print(name)
@@ -365,6 +373,7 @@ def principal_hod_display(request,pk):
 
 	return render(request,'principal_hod_display.html',context=context1)
 
+@login_required
 def ao_first(request):
 	dept = Department.objects.all()
 	context = {'dept':dept}
@@ -372,6 +381,7 @@ def ao_first(request):
 
 
 
+@login_required
 def ao_display(request,dept):
 
 	print(dept)
@@ -402,7 +412,8 @@ def ao_display(request,dept):
 	dept = {'dept':dept,'above':above,'above1':above4,'above3':above3,'below':below,'below1':below4,'below3':below3,'general':general,'p':principal_completed,'h':hod_completed,'t':teach_completed,'total':tt}
 
 	return render(request,'ao_display.html',context=dept)
-
+	
+@login_required
 def ao_approved(request,dept):
 
 	general = remarks2.objects.filter(department__name=dept)
@@ -410,6 +421,7 @@ def ao_approved(request,dept):
 	return render(request,'ao_approved.html',context=dept)
 
 
+@login_required
 def ao_teacher_display(request,name):
 	print(name)
 	data1 = User.objects.get(username=name)
@@ -435,7 +447,7 @@ def ao_teacher_display(request,name):
 	}
 	return render(request,'ao_teacher_display.html',context=context1)
 
-
+@login_required
 def ao_teacher1_display(request,name):
 	print(name)
 	data1 = User.objects.get(username=name)
@@ -461,6 +473,7 @@ def ao_teacher1_display(request,name):
 	}
 	return render(request,'ao_teacher1_display.html',context=context1)
 
+@login_required
 def ao_hod_display(request,name):
 	print(name)
 	data1 = User.objects.get(username=name)
@@ -484,7 +497,7 @@ def ao_hod_display(request,name):
 	}
 	return render(request,'ao_hod_display.html',context=context1)
 
-
+@login_required
 def hod_first(request):
 	user = request.user
 	hod_dept = user.department
@@ -499,7 +512,7 @@ def logout(request):
 
 
 
-
+@login_required
 def f_assistant4(request):
 	form5 = forms.form_remarks()
 	if remarks.objects.filter(info=request.user).exists():
@@ -520,6 +533,7 @@ def f_assistant4(request):
 		return render(request,'assistant_form4.html',{'form5':form5})
 	return render(request,'assistant_form4.html',{'form5':form5})
 
+@login_required
 def f_assistant3(request):
 	form4 = forms.form_rd()
 	if rd.objects.filter(info=request.user).exists():
@@ -536,6 +550,7 @@ def f_assistant3(request):
 		return render(request,'assistant_form3.html',{'form4':form4})
 	return render(request,'assistant_form3.html',{'form4':form4})
 
+@login_required
 def f_assistant2(request):
 	form3 = forms.form_feedbackTab()
 
@@ -552,8 +567,10 @@ def f_assistant2(request):
 				return HttpResponseRedirect("/assistant_form3/")
 		return render(request,'assistant_form2.html',{'form3':form3})
 
+
 	return render(request,'assistant_form2.html',{'form3':form3})
 
+@login_required
 def f_assistant1(request):
 
 	user = request.user
@@ -588,6 +605,7 @@ def f_assistant1(request):
 		return render(request,'assistant_form1.html',{'form1':form1,'form2':form2,'info':data_final})
 	return render(request,'assistant_form1.html',{'form1':form1,'form2':form2,'info':data_final})
 
+@login_required
 def f_associate4(request):
 	form5 = forms.form_remarks()
 	if remarks.objects.filter(info=request.user).exists():
@@ -608,6 +626,7 @@ def f_associate4(request):
 		return render(request,'associate_form4.html',{'form5':form5})
 	return render(request,'associate_form4.html',{'form5':form5})
 
+@login_required
 def f_associate3(request):
 	form4 = forms.form_rd()
 	if rd.objects.filter(info=request.user).exists():
@@ -624,6 +643,8 @@ def f_associate3(request):
 		return render(request,'associate_form3.html',{'form4':form4})
 	return render(request,'associate_form3.html',{'form4':form4})
 
+
+@login_required
 def f_associate2(request):
 	form3 = forms.form_feedbackTab()
 
@@ -642,6 +663,7 @@ def f_associate2(request):
 
 	return render(request,'associate_form2.html',{'form3':form3})
 
+@login_required
 def f_associate1(request):
 
 	user = request.user
@@ -676,6 +698,7 @@ def f_associate1(request):
 		return render(request,'associate_form1.html',{'form1':form1,'form2':form2,'info':data_final})
 	return render(request,'associate_form1.html',{'form1':form1,'form2':form2,'info':data_final})
 
+@login_required
 def hod_form4(request):
 	form5 = forms.form_remarks()
 	if remarks.objects.filter(info=request.user).exists():
@@ -696,6 +719,7 @@ def hod_form4(request):
 		return render(request,'hod_form4.html',{'form5':form5})
 	return render(request,'hod_form4.html',{'form5':form5})
 
+@login_required
 def hod_form3(request):
 	form4 = forms.form_rd()
 	if rd.objects.filter(info=request.user).exists():
@@ -712,6 +736,8 @@ def hod_form3(request):
 		return render(request,'hod_form3.html',{'form4':form4})
 	return render(request,'hod_form3.html',{'form4':form4})
 
+
+@login_required
 def hod_form2(request):
 	form3 = forms.form_feedbackTab()
 
@@ -730,6 +756,7 @@ def hod_form2(request):
 
 	return render(request,'hod_form2.html',{'form3':form3})
 
+@login_required
 def hod_form1(request):
 
 	user = request.user
@@ -767,6 +794,7 @@ def hod_form1(request):
 
 
 
+@login_required
 def assistant_preview(request):
 	name = request.user
 	data1 = User.objects.get(username=name)
@@ -785,6 +813,7 @@ def assistant_preview(request):
 
 	return render(request,'assistant_preview.html',context=context1)
 
+@login_required
 def associate_preview(request):
 	name = request.user
 	data1 = User.objects.get(username=name)
@@ -803,6 +832,7 @@ def associate_preview(request):
 
 	return render(request,'associate_preview.html',context=context1)
 
+@login_required
 def hod_preview(request):
 	name = request.user
 	data1 = User.objects.get(username=name)

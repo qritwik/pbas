@@ -21,6 +21,7 @@
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="{% static "css/util.css" %}">
 	<link rel="stylesheet" type="text/css" href="{% static "css/main1.css" %}">
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <!--===============================================================================================-->
 
 <script
@@ -78,11 +79,11 @@
 						<div class="row">
 							<div class="cell" data-title="Faculty Name">
 								{% if info.teach_status and info.hod_status %}
-								<a href="" id="h2p">{{info.first_name}}</a>
+								<a href="" class="h2p">{{info.first_name}}</a>
 								{% elif info.teach_status %}
 								<a href="/hod_teacher_display/{{info.pk}}">{{info.first_name}}</a>
 								{% else %}
-								<a href="#" id="h3p">{{info.first_name}}</a>
+								<a href="#" class="h3p">{{info.first_name}}</a>
 								{% endif %}
 								  <!-- <a {% if info.hod_status == False %} href="/hod_teacher_display/{{info.pk}}" {% else %} href="#" {% endif %}>{{info.first_name}}</a> -->
 							</div>
@@ -114,11 +115,11 @@
 						<div class="row">
 							<div class="cell" data-title="Faculty Name">
 								{% if info.teach_status and info.hod_status %}
-								<a href="" id="h2p">{{info.first_name}}</a>
+								<a href="" class="h2p">{{info.first_name}}</a>
 								{% elif info.teach_status %}
 								<a href="/hod_teacher_display/{{info.pk}}">{{info.first_name}}</a>
 								{% else %}
-								<a href="#" id="h3p">{{info.first_name}}</a>
+								<a href="#" class="h3p">{{info.first_name}}</a>
 								{% endif %}
 							</div>
 							<div class="cell" data-title="Documents">
@@ -161,7 +162,24 @@
 <!--===============================================================================================-->
 	<script src="{% static "vendor/select2/select2.min.js" %}"></script>
 <!--===============================================================================================-->
-	<script src="{% static "js/main.js" %}"></script>
+<script>
+$(function() {
+		$('.h2p').each(function() {
+			$(this).click(function(){
+				alert("Already reviewed by HOD");
+			});
+		})
+	})
+</script>
+<script>
+		$(function() {
+			$('.h3p').each(function() {
+				$(this).click(function(){
+					alert("Not submitted by Faculty");
+				});
+			})
+		})
+</script>
 
 </body>
 </html>
