@@ -198,7 +198,7 @@
           <em>{{ key3.o_t_f_avg }}</em></div>
           <div class="form-group col-sm-6">
           <label >TOTAL RESULTS AVG.</label>
-          <em>{{ key3.o_t_m_avg }}</em></div>
+          <em>{{ key3.o_t_r_avg }}</em></div>
           </div>
           </div>
           <div class="dis1 row">
@@ -382,7 +382,7 @@
             <em>{{ key3.e_t_f_avg }}</em></div>
             <div class="form-group col-sm-6">
             <label >TOTAL RESULTS AVG.</label>
-            <em>{{ key3.e_t_m_avg }}</em></div>
+            <em>{{ key3.e_t_r_avg }}</em></div>
             </div>
             <div class="dis1 row">
 
@@ -476,7 +476,7 @@
             <em>{{ key3.e_l_f_avg }}</em></div>
             <div class="form-group col-sm-6">
             <label >TOTAL RESULTS AVG.</label>
-            <em>{{ key3.e_l_m_avg }}</em></div>
+            <em>{{ key3.e_l_r_avg }}</em></div>
             </div>
 
           <div class="dis1 row">
@@ -1398,71 +1398,47 @@
                     </tr>
                     </tbody>
                 </table>
-          <div class="card poi">
-          <div class="form-group ">
-                           <div class="form-row dis">
-                  <div class="form-group col-md-2 align-center"><h4> IPR Status :</h4>
-                  </div>
+                <div class="card poi">
 
-                <div class="form-group col-md-4"> <input type="text" class="form-control"  placeholder="Enter Here" ></div>
-           </div>
-           </div>
-           <div class="form-group ">
-                           <div class="form-row dis">
-                  <div class="form-group col-md-2 align-center"><h4> IPR Type :</h4>
-                  </div>
-
-                <div class="form-group col-md-4">
-              <div class="form-group">
-                <label for="sel1">(select one):</label>
-                <select class="form-control" id="sel1">
-                  <option>Filed</option>
-                  <option>Received</option>
-                  <option>Pending</option>
-
-                </select>
-
-              </div>
-            </div>
-           </div>
-          </div>
-
-          </div>
+              	<div class="form-group ">
 
 
 
 
-          </div>
 
-          <div class="form-group">
+              	                    <div class="orm-group col-md-6">
+              	<label for="inputResearch">Marks Here:</label>
+              	                      {{ key4.rp_marks }}
+
+              	                          </div>
+
+              	                      </div>
+
+              	 <div class="form-group row">
 
 
 
-            <div class="form-row dis">
-                      <div class="form-group col-md-2">
 
+              	        <div class="form-group col-md-6">
+              	          <h4>IPR Type :</h4>
+              	        {{ key4.ipr_type }}
+              	        </div>
+              	        <div class="form-group col-md-6">
+              	          <h4>IPR Status :</h4>
+              	         {{ key4.ipr_status }}
+              	</div>
 
-                      </div>
+              	 </div>
 
+              	  <div class="form-group col-md-12">
+              	<label>Details</label>
+              	{{ key4.ipr_info }}
 
-                     <div class="form-group col-md-8">
-                           <div class="form-row dis">
-                         <div class="orm-group col-md-4">
+              	</div>
 
-                          </div>
-                                <div class="form-group col-md-2"></div>
-                              <div class="orm-group col-md-6">
-                                  <h6 class=" color1">TOTAL MARKS</h6>
-          											{{ key4.rp_marks }}
-                                    </div>
-                                </div>
+              	 </div>
 
-                      </div>
-                      <div class="form-group col-md-2"></div>
-
-                </div>
-          </div>
-          </div>
+              	</div>
           <div class="card poi card-header" id="headingOne">
           <div class="form-group">
           <div class="form-row dis">
@@ -1552,7 +1528,7 @@
 <thead class="thead-dark">
 	<tr>
 		<th scope="col"></th>
-		<th scope="col">Institutional  Responsibilities (Please list only those where you have made significant contribution)</th>
+    <h5 style="background:#212121" class="po"><span style="color:#f5f5f5">Institutional  Responsibilities (Please list only those where you have made significant contribution)</span></h5>
 
 	</tr>
 </thead>
