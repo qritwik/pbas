@@ -23,6 +23,13 @@
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="{% static "css/util.css" %}">
 	<link rel="stylesheet" type="text/css" href="{% static "css/main1.css" %}">
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<!--===============================================================================================-->
+
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
 <!--===============================================================================================-->
 </head>
 <body style="background:#c3d1f8">
@@ -78,7 +85,11 @@
 
 						<div class="row">
 							<div class="cell" data-title="Faculty Name">
-								  <a {% if hod_name.principal_status == False %}  href="/principal_hod_display/{{hod_name.pk}}" {% else %} href="#" {% endif %}>{{hod_name.first_name}}</a>
+								{% if hod_name.principal_status %}
+								<a href="" class="h2p">{{hod_name.first_name}}</a>
+								{% else %}
+								<a href="/principal_hod_display/{{hod_name.pk}}" class="">{{hod_name.first_name}}</a>
+								{% endif %}
 							</div>
 							<div class="cell" data-title="Documents">
 								<a href="{{hod_name.doc_link}}">Drive link</a>
@@ -105,7 +116,12 @@
 
 						<div class="row">
 							<div class="cell" data-title="Faculty Name">
-								  <a {% if name.principal_status == False %} href="/principal_teacher1_display/{{name.pk}}" {% else %} href="#" {% endif %}>{{name.first_name}}</a>
+								{% if name.principal_status %}
+								<a href="" class="h2p">{{name.first_name}}</a>
+								{% else %}
+								<a href="/principal_teacher1_display/{{name.pk}}" class="">{{name.first_name}}</a>
+								{% endif %}
+								  <!-- <a {% if name.principal_status == False %} href="/principal_teacher1_display/{{name.pk}}" {% else %} href="#" {% endif %}>{{name.first_name}}</a> -->
 							</div>
 							<div class="cell" data-title="Documents">
 								<a href="{{name.doc_link}}">Drive link</a>
@@ -137,7 +153,13 @@
 
             <div class="row">
               <div class="cell" data-title="Faculty Name">
-                  <a {% if name1.principal_status == False %} href="/principal_teacher_display/{{name1.pk}}" {% else %} href="#" {% endif %}>{{name1.first_name}}</a>
+								{% if name1.principal_status %}
+								<a href="" class="h2p">{{name1.first_name}}</a>
+								{% else %}
+								<a href="/principal_teacher_display/{{name1.pk}}" class="">{{name1.first_name}}</a>
+								{% endif %}
+
+                  <!-- <a {% if name1.principal_status == False %} href="/principal_teacher_display/{{name1.pk}}" {% else %} href="#" {% endif %}>{{name1.first_name}}</a> -->
               </div>
               <div class="cell" data-title="Documents">
                 <a href="{{name1.doc_link}}">Drive link</a>
@@ -178,6 +200,18 @@
 	<script src="vendor/select2/select2.min.js"></script>
 <!--===============================================================================================-->
 	<script src="js/main.js"></script>
+
+	<script>
+	$(function() {
+			$('.h2p').each(function() {
+				$(this).click(function(){
+					swal("Already reviewed by Principal");
+				});
+			})
+		})
+	</script>
+
+
 
 </body>
 </html>

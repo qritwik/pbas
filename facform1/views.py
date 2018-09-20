@@ -12,12 +12,12 @@ from itertools import chain
 from django.contrib.auth.decorators import login_required
 
 
-# def phone_otp(random_otp, phone):
-# 		phone1 = str(phone)
-# 		message = 'Please login with the OTP: '+random_otp
-# 		params = { 'number' : phone1, 'text' : message }
-# 		baseUrl = 'https://www.smsgatewayhub.com/api/mt/SendSMS?APIKey=62sxGWT6MkCjDul6eNKejw&senderid=BMSITM&channel=2&DCS=0&flashsms=0&' + ap.urlencode(params)
-# 		urllib.request.urlopen(baseUrl).read(1000)
+def phone_otp(random_otp, phone):
+		phone1 = str(phone)
+		message = 'Please login with the OTP: '+random_otp
+		params = { 'number' : phone1, 'text' : message }
+		baseUrl = 'https://www.smsgatewayhub.com/api/mt/SendSMS?APIKey=62sxGWT6MkCjDul6eNKejw&senderid=BMSITM&channel=2&DCS=0&flashsms=0&' + ap.urlencode(params)
+		urllib.request.urlopen(baseUrl).read(1000)
 
 
 def invalid(request):
@@ -34,10 +34,10 @@ def login(request):
 			first_name = user.first_name
 			email = user.email
 			phone = user.phone
-			# random_otp = r''.join(random.choice('01234ABCD') for i in range(8))
-			random_otp = "123456"
+			random_otp = r''.join(random.choice('01234ABCD') for i in range(8))
+			
 			print(random_otp)
-			#phone_otp(random_otp,phone)
+			phone_otp(random_otp,phone)
 
 			hashed_pwd = make_password(random_otp)
 			User.objects.filter(username=username).update(password=hashed_pwd)
