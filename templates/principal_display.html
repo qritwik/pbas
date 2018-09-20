@@ -51,7 +51,7 @@
 							</div>
 						</div>
 
-	<div style="margin-top:-40%;" class="limiter">
+	<div style="margin-top:-35%;" class="limiter">
 		<div class="container-table100">
 			<div class="wrap-table100">
 					<div class="table">
@@ -85,7 +85,9 @@
 							</div>
 
 							<div class="cell" data-title="designation">
-								<p>{{hod_name.designation}}</p>
+								{% if hod_name.designation.name == 'hod' %}
+								<p>HOD</p>
+								{% endif %}
 							</div>
 								<div class="cell" data-title="prin-review">
                 {% if hod_name.principal_status %}
@@ -110,7 +112,12 @@
 							</div>
 
 							<div class="cell" data-title="designation">
-								<p>{{name.designation}}</p>
+								{% if name.designation.name == 'associate' %}
+								<p>Associate</p>
+								{% elif name.designation.name == 'professor' %}
+								<p>Professor</p>
+								{% endif %}
+
 							</div>
 
 
@@ -137,7 +144,9 @@
               </div>
 
 							<div class="cell" data-title="designation">
-								<p>{{name1.designation}}</p>
+								{% if name1.designation.name == 'assistant' %}
+								<p>Assistant</p>
+								{% endif %}
 							</div>
 
               <div class="cell" data-title="prin-review">

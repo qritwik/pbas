@@ -25,33 +25,7 @@
 </head>
 <body style="background:#c3d1f8">
 
-	<nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #736de3;">
-	  <a class="navbar-brand" href="#">
-	  <img src="{% static "image/bms.logo.png" %}" width="30" height="30" alt="">
-	</a>
-	<a class="navbar-brand" href="#">BMSIT&M</a>
-	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-	  <span class="navbar-toggler-icon"></span>
-	</button>
-	<div class="collapse navbar-collapse" id="navbarNav">
-<ul class="navbar-nav mr-auto">
-
-		<!-- <li class="nav-item">
-        	<a class="nav-link" href="/ao_approved/{{dept}}">Approved Teachers</a>
-      </li> -->
-
-		</ul>
-
-	</div>
-
-	<span class="navbar-text">
-		<ul class="navbar-nav mr-auto">
-		<li class="nav-item">
-					<a class="nav-link" href="/">LOGOUT</a>
-			</li>
-		</ul>
-	    </span>
-	</nav>
+	{% include 'partials/nav_primary.html' %}
 
 
 

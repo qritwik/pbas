@@ -1605,6 +1605,7 @@ background: linear-gradient(to right, #94716B, #B79891); /* W3C, IE 10+/ Edge, F
 
 
 </form>
+<button type="button" id="download" class="btn btn-blue-grey btn-lg btn-block">Generate PDF</button></div>
 </div>
 <div class="col-4"></div>
 </div>
@@ -1615,6 +1616,38 @@ background: linear-gradient(to right, #94716B, #B79891); /* W3C, IE 10+/ Edge, F
 
 
 </div>
+
+<script>
+window.onload = function(e){
+html2canvas(document.body).then(function(canvas) {
+		canvas.id = "mycanvas";
+    document.body.appendChild(canvas).style.visiblity = "hidden";
+});
+var canvas = document.getElementById("mycanvas");
+var img = canvas.toDataURL("image/jpeg");
+document.write('<img src="'+img+'"/>');
+
+
+
+};
+
+
+download.addEventListener("click", function() {
+	html2canvas(document.body).then(function(canvas) {
+			canvas.id = "mycanvas";
+	    document.body.appendChild(canvas);
+	});
+	var canvas = document.getElementById("mycanvas");
+  var imgData = canvas.toDataURL("image/jpeg", 1.0);
+	var a4 = [1595.28, 1841.89];
+  var pdf = new jsPDF('p', 'mm', [1297, 8210]);
+	var width = pdf.internal.pageSize.width;
+	var height = pdf.internal.pageSize.height;
+
+  pdf.addImage(imgData, 'JPEG',0,0, width, height);
+  pdf.save("download.pdf");
+}, false);
+</script>
 
 
 

@@ -800,7 +800,7 @@ $('.rd').on("click",function(){
 	var cw_2 = 0;
 	var cw_2_5 = 0;
 	var cw_5 = 0;
-	
+
 	if($('.if_s').val()){
 		if_s = 5;
 
@@ -872,6 +872,19 @@ $('.rd').on("click",function(){
 	else{
 		$('.rd_tot_marks').val(f);
 	}
+ });
+ $('.p12').on("click",function(){
+	var a = parseFloat($('.m3').val())
+
+	if(a > 5){
+
+ 		$('.m3').val(5);
+ 	}
+ var b = parseFloat($('.m4').val())
+
+ 	if(b>15){
+ 		$('.m4').val(15);
+ 	}
  });
 
 });
