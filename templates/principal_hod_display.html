@@ -51,7 +51,7 @@
 
 
 
-      <form>
+      <form method="post">
         {% csrf_token %}
 
 
@@ -604,7 +604,7 @@
                          </div>
 
                             <div class="orm-group col-md-6">
-          										<em>{{ key3.e_o_f_r_final }}</em>
+          										<em class="m1">{{ key3.e_o_f_r_final }}</em>
                                   </div>
                               </div>
           </div>
@@ -1485,7 +1485,7 @@
                         <h6 class="color1">TOTAL MARKS<span class="sp">_(Maximum Score: 35)</span></h6>
                          </div>
 
-                            <div class="orm-group col-md-6">
+                            <div class="orm-group m2 col-md-6">
           										{{ key4.rd_tot_marks }}
                                   </div>
                               </div>
@@ -1515,7 +1515,7 @@
 
       <th scope="col">Innovative contributions to teaching learning process provide description below with Initiation,Implementation, Impact Analysis<span class="sp">(Maximum Score: 5 marks)</</span></th>
       <th scope="col">PRINCIPAL'S MARKS</th>
-      {% render_field form1.prin_marks1 class="form-control m3"  %}
+
     </tr>
   </thead>
   <tbody>
@@ -1527,7 +1527,8 @@
        {{ key5.ta_ic }}
 
      </div></td>
-       <td rowspan="4"><input type="text" class="form-control" placeholder="marks" aria-label="Username" aria-describedby="basic-addon1" disabled></td>
+      <td rowspan="4">{% render_field form1.prin_marks1 class="form-control m3" %}</td>
+       <!-- <td rowspan="4"><input type="text" class="form-control" placeholder="marks" aria-label="Username" aria-describedby="basic-addon1" disabled></td> -->
     </tr>
   </tbody>
 </table>
@@ -1630,8 +1631,6 @@
 </div>
 </div>
 <button type="button" class="btn btn-info btn-lg btn-block s_case col-md-4">Special Case</button>
-
-</div>
 <div class="c_marks" style="display: none;">
   <div>
     <label>Reason for marks</label>
@@ -1687,12 +1686,12 @@
 
 </div>
 <script>
-$(function(){
 
-  $('.s_case').on("click",function(){
-    $('.c_marks').style.display = "block";
-  });
 
+  $(function(){
+    $('.s_case').click(function() {
+      $('.c_marks').css('display', 'block');
+    });
 
 
   $('.tm').on("click",function(){

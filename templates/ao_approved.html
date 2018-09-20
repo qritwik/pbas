@@ -1,84 +1,3 @@
-<!-- <!DOCTYPE html>
-{% load staticfiles %}
-<html>
- <head>
-  <Title>Appraisal</title>
-  </head>
-
-  <body>
-
-<link rel="stylesheet" type="text/css" href="{% static "css/theme1.css" %}"><link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-
-
-<div class="jumbotron p1">
-
-<div class="container-fluid ">
-
-<div class="row">
-<div class="col-3"><center><img  src="{% static "image/bms.logo.png" %}" alt="BMS Institute of Technology of management" ></center></div>
- <div class="col-6 q1"><h1 align="center" class="display-4"> AO</h1>
- <h1 id="qw" align="center" class="display-4">BMSIT</h1>
- <h1 id="qw" align="center" class="display-4">Department of {{dept}}</h1>
- </div>
- </div>
-</div>
-</div>
-
-<div class="container-fluid">
-
-
-
-<div class="container">
-
-
-<table class="table table-bordered">
-  <thead>
-    <tr>
-      <th>NAME</th>
-      <th>Designation</th>
-      <th>Status</th>
-      <th>Marks</th>
-
-    </tr>
-  </thead>
-
-  <tbody>
-    {% for x in general %}
-
-    <tr>
-      <td><a {% if x.info.designation == 'hod' %} href="/ao_hod_display/{{x.info}}"
-       {% elif x.info.designation.name == 'associate' %} href="/ao_teacher1_display/{{x.info}}"
-       {% elif x.info.designation.name == 'professor' %} href="/ao_teacher1_display/{{x.info}}"
-       {% elif x.info.designation.name == 'assistant' %} href="/ao_teacher_display/{{x.info}}"
-       {% endif %}>{{x.info.first_name}}</a></td>
-      <td>{{x.info.designation}}</td>
-      <td>{% if x.total_marks >= 60 %} approved {% else  %} not approved {% endif %}</td>
-      <td>{{x.total_marks}}</td>
-
-    </tr>
-
-    {% endfor %}
-  </tbody>
-</table>
-</div>
-
- </div>
-
-
-
-
-
-
-
-
-
-
-
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.bundle.min.js" integrity="sha384-pjaaA8dDz/5BgdFUPX6M/9SUZv4d12SUPF0axWc+VRZkx5xU3daN+lYb49+Ax+Tl" crossorigin="anonymous"></script><script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.bundle.min.js" integrity="sha384-pjaaA8dDz/5BgdFUPX6M/9SUZv4d12SUPF0axWc+VRZkx5xU3daN+lYb49+Ax+Tl" crossorigin="anonymous"></script>
-</body>
-</html> -->
-
 
 
 <!DOCTYPE html>
@@ -169,7 +88,7 @@
 
 						<div class="row">
 							<div class="cell" data-title="Faculty Name">
-                <a {% if x.info.designation == 'hod' %} href="/ao_hod_display/{{x.info}}"
+                <a {% if x.info.designation.name == 'hod' %} href="/ao_hod_display/{{x.info}}"
                  {% elif x.info.designation.name == 'associate' %} href="/ao_teacher1_display/{{x.info}}"
                  {% elif x.info.designation.name == 'professor' %} href="/ao_teacher1_display/{{x.info}}"
                  {% elif x.info.designation.name == 'assistant' %} href="/ao_teacher_display/{{x.info}}"

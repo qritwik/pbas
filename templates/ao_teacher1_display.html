@@ -3,20 +3,12 @@
 {% load widget_tweaks %}
 <html>
 
-<head>
-  <title>asp1</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href={% static "css/index1.css" %}>
-  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+{% include 'base.html' %}
 
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script type="text/javascript" src={% static "js/calc.js" %}></script>
-
-</head>
 <body>
   <div class="container">
 
-      <div class="card poi" style="background: #ddccaa">
+      <div class="card poi">
         <div class="form-row">
         <div class="form-group col-md-3">
         <img src={% static "image/bms.logo.png" %} class="" width="150px"/>
@@ -27,7 +19,7 @@
     </div>
         <h3 class="lead" align="center">Faculty appraisal form</h3>
         <hr class="my-4">
-        <h3>Report must be submitted.</h3>
+
         <h1>2017-18</h1>
       </div>
 
@@ -1459,12 +1451,15 @@
 
 </div>
 </div>
-<div class="card poi card-header" id="headingOne">
+<div class="container">
+
+
+<div class="container card poi card-header" id="headingOne">
 <div class="form-group">
 <div class="form-row dis">
 <div class="col-1"></div>
 <div class="col-10">
- <div class="form-row dis">
+ <div class="container form-row dis">
                <div class="orm-group col-md-6">
               <h6 class=" color1">TOTAL MARKS<span class="sp">_(Maximum Score: 40)</span></h6>
                </div>
@@ -1487,6 +1482,7 @@
 </div>
 
 </div>
+
 <div class="card poi">
 
 
@@ -1639,6 +1635,7 @@
 </div>
 
 </div>
+</div>
 
 
 </div>
@@ -1650,7 +1647,7 @@ html2canvas(document.body).then(function(canvas) {
 });
 var canvas = document.getElementById("mycanvas");
 var img = canvas.toDataURL("image/jpeg");
-document.write('<img src="'+img+'"/>');
+// document.write('<img src="'+img+'"/>');
 
 
 
