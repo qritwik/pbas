@@ -180,8 +180,13 @@
 							</div>
 
 							<div class="cell" data-title="designation">
-
-								<p>{{x.info.designation}}</p>
+								{% if x.info.designation.name == 'assistant' %}
+								<p>Assistant</p>
+								{% elif x.info.designation.name == 'associate' %}
+								<p>Associate</p>
+								{% elif x.info.designation.name == 'hod' %}
+								<p>HOD</p>
+								{% endif %}
 							</div>
 								<div class="cell" data-title="status">
                   {% if x.total_marks >= 60 %} Approved {% else  %} Not approved {% endif %}
