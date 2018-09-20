@@ -30,8 +30,10 @@
     <div class="row">
 
      <div class="col-12"><h1 align="center" class="display-4" style="color:#f5f5f5"> BMS Institute of Technology and management</h1>
-     <h3 id="qw" align="center" class="display-4" style="color:#f5f5f5">Department of {{dept}}</h3>
-      <h2 align="center" style="color:#f5f5f5"><strong>HOD View</strong></h2>
+       <h2 class="lead" style="color:white" align="center">Department of {{dept}}</h2>
+         <h3 class="lead" style="color:white" align="center">HOD VIEW</h3>
+       <hr class="my-4" style="color:white">
+
      </div>
      </div>
     </div>
@@ -43,11 +45,13 @@
   <div class="login-form">
 
 
-      <button class="btn btn-deep-purple btn-lg" {% if user.teach_status == False %} onclick="location.href='/hod_form1/'" {% else %} onclick="location.href='/hod_preview/'"{% endif %} type="button">
-     <strong>Submit your own form</strong></button>
-      <!-- <a href="/hod_display/"><input type="button" style="background:#03a9f4;" class="list-group-item list-group-item-action list-group-item-success" value="view faculty form"></a> -->
-      <button class="btn btn-purple btn-lg" onclick="location.href='/hod_display/'" type="button">
-     <strong>View faculty form</strong></button>
+
+
+     <a {% if user.teach_status == False %} href="/hod_form1/" {% else %} href="/hod_preview/" {% endif %} style="background:#9ccc65;margin-top:1%;width:100%;" class="list-group-item list-group-item-action">Submit your own form</a>
+
+
+     <a href="/hod_display/" style="background:#7e5ae6;margin-top:6%;width:100%;" class="list-group-item list-group-item-action">View faculty form</a>
+
 
 
 
