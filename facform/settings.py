@@ -28,7 +28,7 @@ SECRET_KEY = '0&mt7*ddqn#+62-jvql4*mm3#-t1inp#4vi(i58(i^7nv923h^'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 AUTH_USER_MODEL = 'facform1.User'
 
 LOGIN_REDIRECT_URL = '/main'
