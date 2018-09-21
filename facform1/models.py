@@ -419,8 +419,8 @@ class rd(models.Model):
 	Cw_2_5 = models.CharField(max_length=30, blank=True, null=True)
 	Cw_5 = models.CharField(max_length=30, blank=True, null=True)
 
-	ipr_status = models.ForeignKey('ipr_status', on_delete=models.CASCADE,null=True)
-	ipr_type = models.ForeignKey('ipr_type', on_delete=models.CASCADE,null=True)
+	ipr_status = models.ForeignKey('ipr_status', on_delete=models.CASCADE,null=True,blank=True)
+	ipr_type = models.ForeignKey('ipr_type', on_delete=models.CASCADE,null=True,blank=True)
 	ipr_info = models.TextField(blank=True, null=True)
 
 

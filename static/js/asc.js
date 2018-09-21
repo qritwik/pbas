@@ -887,4 +887,18 @@ $('.rd').on("click",function(){
  	}
  });
 
+ $('.ipr_type').change(function(){
+ 	if ($(this).val() == 4){
+ 		$('.ipr_status').attr('disabled',true)
+ 		$('.ipr_status').val(4)
+ 		$('.ipr_info').attr('disabled',true)
+ 		$('.ipr_info').val("None")
+ 	}
+ 	else{
+ 		$('.ipr_status').attr('disabled',false)
+ 		$('.ipr_info').attr('disabled',false)
+ 	}
+
+ });
+
 });
