@@ -12,6 +12,8 @@ from itertools import chain
 from django.contrib.auth.decorators import login_required
 
 
+	
+
 def phone_otp(random_otp, phone):
 		phone1 = str(phone)
 		message = 'Please login with the OTP: '+random_otp
@@ -570,7 +572,39 @@ def hod_first(request):
 def logout(request):
 	return render(request,'hod_success.html')
 
+@login_required
+def f_assistant5(request):
+	if request.user.is_assistant_professor():
+		formset = conference_form(queryset=Course.objects.none())
+		formset1 = journal_form(queryset=Course.objects.none())
 
+		if conference.objects.filter(info=request.user).exists():
+			return HttpResponseRedirect("/logout/")
+		else:
+			if request.method == 'POST':
+				sendme = User.objects.get(username=request.user)
+				formset = conference_form(request.POST, request.FILES)
+				formset1 = journal_form(request.POST, request.FILES)
+
+				if formset.is_valid():
+					for form in formset:
+						obj3 = form.save(commit=False)
+						obj3.info = request.user
+						obj3.save()
+
+					for form in formset1:
+						obj3 = form.save(commit=False)
+						obj3.info = request.user
+						obj3.save()
+
+					if sendme.teach_status == False:
+							sendme.teach_status = True
+							sendme.save()
+					return HttpResponseRedirect("/logout/")
+			return render(request,'assistant_form5.html',{'formset':formset,'formset1':formset1})
+		return render(request,'assistant_form5.html',{'formset':formset,'formset1':formset1})	
+	else:
+		return HttpResponseRedirect('/invalid')	
 
 @login_required
 def f_assistant4(request):
@@ -581,16 +615,16 @@ def f_assistant4(request):
 			return HttpResponseRedirect("/logout/")
 		else:
 			if request.method == 'POST':
-				sendme = User.objects.get(username=request.user)
+				
 				form5 = forms.form_remarks(request.POST)
 				if form5.is_valid():
 					obj3 = form5.save(commit=False)
 					obj3.info = request.user
 					obj3.save()
-					if sendme.teach_status == False:
-						sendme.teach_status = True
-					sendme.save()
-					return HttpResponseRedirect("/logout/")
+					# if sendme.teach_status == False:
+					# 	sendme.teach_status = True
+					# sendme.save()
+					return HttpResponseRedirect("/assistant_form5/")
 			return render(request,'assistant_form4.html',{'form5':form5})
 		return render(request,'assistant_form4.html',{'form5':form5})
 	else:

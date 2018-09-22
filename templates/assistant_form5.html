@@ -14,15 +14,21 @@
 				<td>Author</td>
 			</tr>	
 		</thead>
+		{{ formset.management_form }}
+		{% for form in formset %}
 		<tbody>
 			<tr>
-				<td>{% render_field form4.c_title class="form-control" %}</td>
-				<td>{% render_field form4.c_place class="form-control" %}</td>
-				<td>{% render_field form4.c_date class="form-control" %}</td>
-				<td>{% render_field form4.c_index class="form-control" %}</td>
-				<td>{% render_field form4.c_author class="form-control" %}</td>
+				<td>{% render_field form.c_title class="form-control" %}</td>
+				<td>{% render_field form.c_place class="form-control" %}</td>
+				<td>{% render_field form.c_date class="form-control" %}</td>
+				<td>{% render_field form.c_index class="form-control" %}</td>
+				<td>{% render_field form.c_author class="form-control" %}</td>
 			</tr>
 		</tbody>
+		{% endfor %}
 	</table>
+
+
+	
 </body>
 </html>

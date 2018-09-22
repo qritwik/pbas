@@ -2,6 +2,7 @@ from django import forms
 from .models import *
 from django.contrib.auth.forms import AuthenticationForm
 from django import forms
+from django.forms import modelformset_factory
 
 class LoginForm(AuthenticationForm):
 	'''
@@ -12,8 +13,22 @@ class LoginForm(AuthenticationForm):
 	password = forms.CharField(label="Password", max_length=30,
 							   widget=forms.PasswordInput(attrs={'class': 'form-control', 'name': 'otp', 'id': 'otp', 'placeholder': 'Enter OTP'}))
 
+class form_conference(forms.ModelForm):
+	class Meta:
+		model = conference
+		fields = '__all__'
+		exclude = ['info']
 
-		
+conference_form = modelformset_factory(conference, form=form_conference, extra=10)	
+						
+
+class form_journal(forms.ModelForm):
+	class Meta:
+		model = journal
+		fields = '__all__'
+		exclude = ['info']
+
+journal_form = modelformset_factory(journal, form=form_journal, extra=10)
 
 class form_User(forms.ModelForm):
 
