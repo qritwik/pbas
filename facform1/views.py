@@ -573,7 +573,7 @@ def hod_first(request):
 def logout(request):
 	return render(request,'hod_success.html')
 
-# @login_required
+@login_required
 def f_assistant5(request):
 	if request.user.is_assistant_professor():
 		
@@ -709,6 +709,39 @@ def f_assistant1(request):
 		return HttpResponseRedirect('/invalid')
 
 @login_required
+def f_associate5(request):
+	if request.user.is_associate_professor() or request.user.is_professor():
+		
+		form6 = forms.form_conference()
+		form7 = forms.form_journal()
+
+		if conference.objects.filter(info=request.user).exists():
+
+			return HttpResponseRedirect("/logout/")
+		else:
+			if request.method == 'POST':
+				sendme = User.objects.get(username=request.user)
+				form6 = forms.form_conference(request.POST)
+				form7 = forms.form_journal(request.POST)
+				if form6.is_valid() and form7.is_valid():
+					obj3 = form6.save(commit=False)
+					obj4 = form7.save(commit=False)
+					obj3.info = request.user
+					obj4.info = request.user
+
+					obj3.save()
+					obj4.save()
+
+					if sendme.teach_status == False:
+						sendme.teach_status = True
+						sendme.save()
+					return HttpResponseRedirect("/logout/")
+			return render(request,'associate_form5.html',{'form6':form6,'form7':form7})
+		return render(request,'associate_form5.html',{'form6':form6,'form7':form7})
+	else:
+		return HttpResponseRedirect('/invalid')
+
+@login_required
 def f_associate4(request):
 	if request.user.is_associate_professor() or request.user.is_professor():
 		form5 = forms.form_remarks()
@@ -723,10 +756,7 @@ def f_associate4(request):
 					obj3 = form5.save(commit=False)
 					obj3.info = request.user
 					obj3.save()
-					if sendme.teach_status == False:
-						sendme.teach_status = True
-					sendme.save()
-					return HttpResponseRedirect("/logout/")
+					return HttpResponseRedirect("/associate_form5/")
 			return render(request,'associate_form4.html',{'form5':form5})
 		return render(request,'associate_form4.html',{'form5':form5})
 	else:
@@ -815,6 +845,39 @@ def f_associate1(request):
 		return HttpResponseRedirect('/invalid')
 
 @login_required
+def hod_form5(request):
+	if request.user.is_hod():
+		
+		form6 = forms.form_conference()
+		form7 = forms.form_journal()
+
+		if conference.objects.filter(info=request.user).exists():
+
+			return HttpResponseRedirect("/logout/")
+		else:
+			if request.method == 'POST':
+				sendme = User.objects.get(username=request.user)
+				form6 = forms.form_conference(request.POST)
+				form7 = forms.form_journal(request.POST)
+				if form6.is_valid() and form7.is_valid():
+					obj3 = form6.save(commit=False)
+					obj4 = form7.save(commit=False)
+					obj3.info = request.user
+					obj4.info = request.user
+
+					obj3.save()
+					obj4.save()
+
+					if sendme.teach_status == False:
+						sendme.teach_status = True
+						sendme.save()
+					return HttpResponseRedirect("/logout/")
+			return render(request,'hod_form5.html',{'form6':form6,'form7':form7})
+		return render(request,'hod_form5.html',{'form6':form6,'form7':form7})
+	else:
+		return HttpResponseRedirect('/invalid')
+
+@login_required
 def hod_form4(request):
 	if request.user.is_hod():
 		form5 = forms.form_remarks()
@@ -823,16 +886,12 @@ def hod_form4(request):
 			return HttpResponseRedirect("/logout/")
 		else:
 			if request.method == 'POST':
-				sendme = User.objects.get(username=request.user)
 				form5 = forms.form_remarks(request.POST)
 				if form5.is_valid():
 					obj3 = form5.save(commit=False)
 					obj3.info = request.user
 					obj3.save()
-					if sendme.teach_status == False:
-						sendme.teach_status = True
-					sendme.save()
-					return HttpResponseRedirect("/logout/")
+					return HttpResponseRedirect("/hod_form5/")
 			return render(request,'hod_form4.html',{'form5':form5})
 		return render(request,'hod_form4.html',{'form5':form5})
 	else:

@@ -24,7 +24,7 @@ urlpatterns = [
     url(r'^associate_form2/', views.f_associate2,name="associate_form2"),
     url(r'^associate_form3/', views.f_associate3,name="associate_form3"),
     url(r'^associate_form4/', views.f_associate4,name="associate_form4"),
-
+    url(r'^associate_form5/', views.f_associate5,name="associate_form5"),
 
     url(r'^associate_preview/', views.associate_preview,name="associate_preview"),
 
@@ -33,6 +33,7 @@ urlpatterns = [
     url(r'^hod_form2/', views.hod_form2,name="hod_form2"),
     url(r'^hod_form3/', views.hod_form3,name="hod_form3"),
     url(r'^hod_form4/', views.hod_form4,name="hod_form4"),
+    url(r'^hod_form5/', views.hod_form5,name="hod_form5"),
 
     url(r'^hod_preview/', views.hod_preview,name="hod_preview"),
 
