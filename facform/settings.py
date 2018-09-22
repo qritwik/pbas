@@ -26,7 +26,7 @@ STATIC_DIR = os.path.join(BASE_DIR,"static")
 SECRET_KEY = '0&mt7*ddqn#+62-jvql4*mm3#-t1inp#4vi(i58(i^7nv923h^'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 AUTH_USER_MODEL = 'facform1.User'
