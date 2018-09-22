@@ -518,6 +518,8 @@ class journal(models.Model):
 	j1_issn = models.CharField(max_length=100, blank=True, null=True)
 	j1_date = models.DateField(blank=True, null=True)
 	j1_page = models.IntegerField( blank=True, null=True)
+	j1_author =	models.CharField(max_length=100, blank=True, null=True)
+
 
 	j2_index = models.CharField(max_length=100, blank=True, null=True)
 	j2_name = models.CharField(max_length=100, blank=True, null=True)
@@ -526,6 +528,7 @@ class journal(models.Model):
 	j2_issn = models.CharField(max_length=100, blank=True, null=True)
 	j2_date = models.DateField(blank=True, null=True)
 	j2_page = models.IntegerField( blank=True, null=True)
+	j2_author =	models.CharField(max_length=100, blank=True, null=True)
 	
 
 	j3_index = models.CharField(max_length=100, blank=True, null=True)
@@ -535,6 +538,7 @@ class journal(models.Model):
 	j3_issn = models.CharField(max_length=100, blank=True, null=True)
 	j3_date = models.DateField(blank=True, null=True)
 	j3_page = models.IntegerField( blank=True, null=True)
+	j3_author =	models.CharField(max_length=100, blank=True, null=True)
 
 	j4_index = models.CharField(max_length=100, blank=True, null=True)
 	j4_name = models.CharField(max_length=100, blank=True, null=True)
@@ -543,6 +547,7 @@ class journal(models.Model):
 	j4_issn = models.CharField(max_length=100, blank=True, null=True)
 	j4_date = models.DateField(blank=True, null=True)
 	j4_page = models.IntegerField( blank=True, null=True)
+	j4_author =	models.CharField(max_length=100, blank=True, null=True)
 
 	j5_index = models.CharField(max_length=100, blank=True, null=True)
 	j5_name = models.CharField(max_length=100, blank=True, null=True)
@@ -551,6 +556,7 @@ class journal(models.Model):
 	j5_issn = models.CharField(max_length=100, blank=True, null=True)
 	j5_date = models.DateField(blank=True, null=True)
 	j5_page = models.IntegerField( blank=True, null=True)
+	j5_author =	models.CharField(max_length=100, blank=True, null=True)
 
 	j6_index = models.CharField(max_length=100, blank=True, null=True)
 	j6_name = models.CharField(max_length=100, blank=True, null=True)
@@ -559,6 +565,7 @@ class journal(models.Model):
 	j6_issn = models.CharField(max_length=100, blank=True, null=True)
 	j6_date = models.DateField(blank=True, null=True)
 	j6_page = models.IntegerField( blank=True, null=True)
+	j6_author =	models.CharField(max_length=100, blank=True, null=True)
 	
 	
 	j7_index = models.CharField(max_length=100, blank=True, null=True)
@@ -568,6 +575,7 @@ class journal(models.Model):
 	j7_issn = models.CharField(max_length=100, blank=True, null=True)
 	j7_date = models.DateField(blank=True, null=True)
 	j7_page = models.IntegerField( blank=True, null=True)
+	j7_author =	models.CharField(max_length=100, blank=True, null=True)
 
 	j8_index = models.CharField(max_length=100, blank=True, null=True)
 	j8_name = models.CharField(max_length=100, blank=True, null=True)
@@ -576,6 +584,7 @@ class journal(models.Model):
 	j8_issn = models.CharField(max_length=100, blank=True, null=True)
 	j8_date = models.DateField(blank=True, null=True)
 	j8_page = models.IntegerField( blank=True, null=True)
+	j8_author =	models.CharField(max_length=100, blank=True, null=True)
 
 	info = models.ForeignKey('User', on_delete=models.CASCADE,null=True)
 

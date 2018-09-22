@@ -576,7 +576,7 @@ def logout(request):
 # @login_required
 def f_assistant5(request):
 	if request.user.is_assistant_professor():
-		sendme = User.objects.get(username=request.user)
+		
 		form6 = forms.form_conference()
 		form7 = forms.form_journal()
 
@@ -585,7 +585,7 @@ def f_assistant5(request):
 			return HttpResponseRedirect("/logout/")
 		else:
 			if request.method == 'POST':
-				
+				sendme = User.objects.get(username=request.user)
 				form6 = forms.form_conference(request.POST)
 				form7 = forms.form_journal(request.POST)
 				if form6.is_valid() and form7.is_valid():
@@ -595,14 +595,14 @@ def f_assistant5(request):
 					obj4.info = request.user
 
 					obj3.save()
-					obj3.save()
+					obj4.save()
 
 					if sendme.teach_status == False:
 						sendme.teach_status = True
 						sendme.save()
 					return HttpResponseRedirect("/logout/")
-			return render(request,'assistant_form4.html',{'form6':form6,'form7':form7})
-		return render(request,'assistant_form4.html',{'form6':form6,'form7':form7})
+			return render(request,'assistant_form5.html',{'form6':form6,'form7':form7})
+		return render(request,'assistant_form5.html',{'form6':form6,'form7':form7})
 	else:
 		return HttpResponseRedirect('/invalid')
 
@@ -621,10 +621,7 @@ def f_assistant4(request):
 					obj3 = form5.save(commit=False)
 					obj3.info = request.user
 					obj3.save()
-					if sendme.teach_status == False:
-						sendme.teach_status = True
-						sendme.save()
-					return HttpResponseRedirect("/logout/")
+					return HttpResponseRedirect("/assistant_form5/")
 			return render(request,'assistant_form4.html',{'form5':form5})
 		return render(request,'assistant_form4.html',{'form5':form5})
 	else:
