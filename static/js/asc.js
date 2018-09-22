@@ -806,7 +806,7 @@ $('.rd').on("click",function(){
 		n = n+4
 	}
 
-	if(m>12){
+	if(n>12){
 		n = 12
 	}
 
