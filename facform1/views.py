@@ -995,6 +995,9 @@ def assistant_preview(request):
 		data3 = feedbackTab.objects.get(info=name);
 		data4 = rd.objects.get(info=name);
 		data5 = remarks.objects.get(info=name);
+		data5 = conference.objects.get(info=name);
+		data5 = journal.objects.get(info=name);
+
 
 		context1 = {
 		"key1":data1,
@@ -1002,6 +1005,9 @@ def assistant_preview(request):
 		"key3":data3,
 		"key4":data4,
 		"key5":data5,
+		"key6":data6,
+		"key7":data7,
+
 		}
 
 		return render(request,'assistant_preview.html',context=context1)
