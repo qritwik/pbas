@@ -392,9 +392,17 @@ class rd(models.Model):
 
 	onl_course_m = models.CharField(max_length=100, blank=True, null=True)
 
+	s_c_n = models.CharField(max_length=100, blank=True, null=True)
+	f_c_n = models.CharField(max_length=100, blank=True, null=True)
+	o_c_n = models.CharField(max_length=100, blank=True, null=True)
+
 	s_c_m = models.CharField(max_length=100, blank=True, null=True)
 	f_c_m = models.CharField(max_length=100, blank=True, null=True)
 	o_c_m = models.CharField(max_length=100, blank=True, null=True)
+
+	s_j_n = models.CharField(max_length=100, blank=True, null=True)
+	f_j_n = models.CharField(max_length=100, blank=True, null=True)
+	o_j_n = models.CharField(max_length=100, blank=True, null=True)
 
 	s_j_m = models.CharField(max_length=100, blank=True, null=True)
 	f_j_m = models.CharField(max_length=100, blank=True, null=True)

@@ -43,3 +43,9 @@ admin.site.register(Designation)
 admin.site.register(Department)
 admin.site.register(ipr_type)
 admin.site.register(ipr_status)
+admin.site.register(conference)
+admin.site.register(journal)
+admin.site.register(author)
+
+
+
