@@ -37,10 +37,8 @@ def login(request):
 			first_name = user.first_name
 			email = user.email
 			phone = user.phone
-			# random_otp = r''.join(random.choice('01234ABCD') for i in range(8))
-			random_otp = "12345"
-			print(random_otp)
-			# phone_otp(random_otp,phone)
+			random_otp = r''.join(random.choice('01234ABCD') for i in range(8))
+			phone_otp(random_otp,phone)
 
 			hashed_pwd = make_password(random_otp)
 			User.objects.filter(username=username).update(password=hashed_pwd)
