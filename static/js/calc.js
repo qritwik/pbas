@@ -888,9 +888,9 @@ $('.rd').on("click",function(){
  });
 
   $('.ipr_type').change(function(){
- 	if ($(this).val() == 4){
+ 	if ($(this).val() == 5){
  		$('.ipr_status').attr('disabled',true)
- 		$('.ipr_status').val(4)
+ 		$('.ipr_status').val(5)
  		$('.ipr_info').attr('disabled',true)
  		$('.ipr_info').val("None")
  	}

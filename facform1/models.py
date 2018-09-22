@@ -123,202 +123,202 @@ class empDetailForm(models.Model):
 
 #TABLE-3
 class feedbackTab(models.Model):
-	o_l1_name = models.CharField(max_length=30, blank=True, null=True)
-	o_l1_f1 = models.CharField(max_length=30, blank=True, null=True)
-	o_l1_f2 = models.CharField(max_length=30, blank=True, null=True)
-	o_l1_favg = models.CharField(max_length=30, blank=True, null=True)
+	o_l1_name = models.CharField(max_length=100, blank=True, null=True)
+	o_l1_f1 = models.CharField(max_length=100, blank=True, null=True)
+	o_l1_f2 = models.CharField(max_length=100, blank=True, null=True)
+	o_l1_favg = models.CharField(max_length=100, blank=True, null=True)
 
-	o_l2_name =models.CharField(max_length=30, blank=True, null=True)
-	o_l2_f1 = models.CharField(max_length=30, blank=True, null=True)
-	o_l2_f2 = models.CharField(max_length=30, blank=True, null=True)
-	o_l2_favg = models.CharField(max_length=30, blank=True, null=True)
+	o_l2_name =models.CharField(max_length=100, blank=True, null=True)
+	o_l2_f1 = models.CharField(max_length=100, blank=True, null=True)
+	o_l2_f2 = models.CharField(max_length=100, blank=True, null=True)
+	o_l2_favg = models.CharField(max_length=100, blank=True, null=True)
 
-	o_l3_name =models.CharField(max_length=30, blank=True, null=True)
-	o_l3_f1 = models.CharField(max_length=30, blank=True, null=True)
-	o_l3_f2 = models.CharField(max_length=30, blank=True, null=True)
-	o_l3_favg = models.CharField(max_length=30, blank=True, null=True)
+	o_l3_name =models.CharField(max_length=100, blank=True, null=True)
+	o_l3_f1 = models.CharField(max_length=100, blank=True, null=True)
+	o_l3_f2 = models.CharField(max_length=100, blank=True, null=True)
+	o_l3_favg = models.CharField(max_length=100, blank=True, null=True)
 
 
-	o_l4_name = models.CharField(max_length=30, blank=True, null=True)
-	o_l4_f1 = models.CharField(max_length=30, blank=True, null=True)
-	o_l4_f2 = models.CharField(max_length=30, blank=True, null=True)
-	o_l4_favg = models.CharField(max_length=30, blank=True, null=True)
+	o_l4_name = models.CharField(max_length=100, blank=True, null=True)
+	o_l4_f1 = models.CharField(max_length=100, blank=True, null=True)
+	o_l4_f2 = models.CharField(max_length=100, blank=True, null=True)
+	o_l4_favg = models.CharField(max_length=100, blank=True, null=True)
 
 
-	o_l5_name = models.CharField(max_length=30, blank=True, null=True)
-	o_l5_f1 = models.CharField(max_length=30, blank=True, null=True)
-	o_l5_f2 = models.CharField(max_length=30, blank=True, null=True)
-	o_l5_favg = models.CharField(max_length=30, blank=True, null=True)
+	o_l5_name = models.CharField(max_length=100, blank=True, null=True)
+	o_l5_f1 = models.CharField(max_length=100, blank=True, null=True)
+	o_l5_f2 = models.CharField(max_length=100, blank=True, null=True)
+	o_l5_favg = models.CharField(max_length=100, blank=True, null=True)
 
-	o_l_f_avg = models.CharField(max_length=30, blank=True, null=True)
+	o_l_f_avg = models.CharField(max_length=100, blank=True, null=True)
 
 
-	o_t3_name = models.CharField(max_length=30, blank=True, null=True)
-	o_t3_f1 = models.CharField(max_length=30, blank=True, null=True)
-	o_t3_f2 = models.CharField(max_length=30, blank=True, null=True)
-	o_t3_favg = models.CharField(max_length=30, blank=True, null=True)
+	o_t3_name = models.CharField(max_length=100, blank=True, null=True)
+	o_t3_f1 = models.CharField(max_length=100, blank=True, null=True)
+	o_t3_f2 = models.CharField(max_length=100, blank=True, null=True)
+	o_t3_favg = models.CharField(max_length=100, blank=True, null=True)
 
 
-	o_t2_name = models.CharField(max_length=30, blank=True, null=True)
-	o_t2_f1 = models.CharField(max_length=30, blank=True, null=True)
-	o_t2_f2 = models.CharField(max_length=30, blank=True, null=True)
-	o_t2_favg = models.CharField(max_length=30, blank=True, null=True)
+	o_t2_name = models.CharField(max_length=100, blank=True, null=True)
+	o_t2_f1 = models.CharField(max_length=100, blank=True, null=True)
+	o_t2_f2 = models.CharField(max_length=100, blank=True, null=True)
+	o_t2_favg = models.CharField(max_length=100, blank=True, null=True)
 
 
-	o_t1_name = models.CharField(max_length=30, blank=True, null=True)
-	o_t1_f1 = models.CharField(max_length=30, blank=True, null=True)
-	o_t1_f2 = models.CharField(max_length=30, blank=True, null=True)
-	o_t1_favg = models.CharField(max_length=30, blank=True, null=True)
+	o_t1_name = models.CharField(max_length=100, blank=True, null=True)
+	o_t1_f1 = models.CharField(max_length=100, blank=True, null=True)
+	o_t1_f2 = models.CharField(max_length=100, blank=True, null=True)
+	o_t1_favg = models.CharField(max_length=100, blank=True, null=True)
 
-	o_t_f_avg = models.CharField(max_length=30, blank=True, null=True)
+	o_t_f_avg = models.CharField(max_length=100, blank=True, null=True)
 
 
 
-	e_l1_name = models.CharField(max_length=30, blank=True, null=True)
-	e_l1_f1 = models.CharField(max_length=30, blank=True, null=True)
-	e_l1_f2 = models.CharField(max_length=30, blank=True, null=True)
-	e_l1_favg = models.CharField(max_length=30, blank=True, null=True)
+	e_l1_name = models.CharField(max_length=100, blank=True, null=True)
+	e_l1_f1 = models.CharField(max_length=100, blank=True, null=True)
+	e_l1_f2 = models.CharField(max_length=100, blank=True, null=True)
+	e_l1_favg = models.CharField(max_length=100, blank=True, null=True)
 
 
-	e_l2_name = models.CharField(max_length=30, blank=True, null=True)
-	e_l2_f1 = models.CharField(max_length=30, blank=True, null=True)
-	e_l2_f2 = models.CharField(max_length=30, blank=True, null=True)
-	e_l2_favg = models.CharField(max_length=30, blank=True, null=True)
+	e_l2_name = models.CharField(max_length=100, blank=True, null=True)
+	e_l2_f1 = models.CharField(max_length=100, blank=True, null=True)
+	e_l2_f2 = models.CharField(max_length=100, blank=True, null=True)
+	e_l2_favg = models.CharField(max_length=100, blank=True, null=True)
 
 
-	e_l3_name = models.CharField(max_length=30, blank=True, null=True)
-	e_l3_f1 = models.CharField(max_length=30, blank=True, null=True)
-	e_l3_f2 = models.CharField(max_length=30, blank=True, null=True)
-	e_l3_favg = models.CharField(max_length=30, blank=True, null=True)
+	e_l3_name = models.CharField(max_length=100, blank=True, null=True)
+	e_l3_f1 = models.CharField(max_length=100, blank=True, null=True)
+	e_l3_f2 = models.CharField(max_length=100, blank=True, null=True)
+	e_l3_favg = models.CharField(max_length=100, blank=True, null=True)
 
 
-	e_l4_name = models.CharField(max_length=30, blank=True, null=True)
-	e_l4_f1 = models.CharField(max_length=30, blank=True, null=True)
-	e_l4_f2 = models.CharField(max_length=30, blank=True, null=True)
-	e_l4_favg = models.CharField(max_length=30, blank=True, null=True)
+	e_l4_name = models.CharField(max_length=100, blank=True, null=True)
+	e_l4_f1 = models.CharField(max_length=100, blank=True, null=True)
+	e_l4_f2 = models.CharField(max_length=100, blank=True, null=True)
+	e_l4_favg = models.CharField(max_length=100, blank=True, null=True)
 
 
-	e_l5_name = models.CharField(max_length=30, blank=True, null=True)
-	e_l5_f1 = models.CharField(max_length=30, blank=True, null=True)
-	e_l5_f2 = models.CharField(max_length=30, blank=True, null=True)
-	e_l5_favg = models.CharField(max_length=30, blank=True, null=True)
+	e_l5_name = models.CharField(max_length=100, blank=True, null=True)
+	e_l5_f1 = models.CharField(max_length=100, blank=True, null=True)
+	e_l5_f2 = models.CharField(max_length=100, blank=True, null=True)
+	e_l5_favg = models.CharField(max_length=100, blank=True, null=True)
 
-	e_l_f_avg = models.CharField(max_length=30, blank=True, null=True)
+	e_l_f_avg = models.CharField(max_length=100, blank=True, null=True)
 
 
 
-	e_t3_name = models.CharField(max_length=30, blank=True, null=True)
-	e_t3_f1 = models.CharField(max_length=30, blank=True, null=True)
-	e_t3_f2 = models.CharField(max_length=30, blank=True, null=True)
-	e_t3_favg = models.CharField(max_length=30, blank=True, null=True)
+	e_t3_name = models.CharField(max_length=100, blank=True, null=True)
+	e_t3_f1 = models.CharField(max_length=100, blank=True, null=True)
+	e_t3_f2 = models.CharField(max_length=100, blank=True, null=True)
+	e_t3_favg = models.CharField(max_length=100, blank=True, null=True)
 
 
-	e_t2_name = models.CharField(max_length=30, blank=True, null=True)
-	e_t2_f1 = models.CharField(max_length=30, blank=True, null=True)
-	e_t2_f2 = models.CharField(max_length=30, blank=True, null=True)
-	e_t2_favg = models.CharField(max_length=30, blank=True, null=True)
+	e_t2_name = models.CharField(max_length=100, blank=True, null=True)
+	e_t2_f1 = models.CharField(max_length=100, blank=True, null=True)
+	e_t2_f2 = models.CharField(max_length=100, blank=True, null=True)
+	e_t2_favg = models.CharField(max_length=100, blank=True, null=True)
 
 
-	e_t1_name = models.CharField(max_length=30, blank=True, null=True)
-	e_t1_f1 = models.CharField(max_length=30, blank=True, null=True)
-	e_t1_f2 = models.CharField(max_length=30, blank=True, null=True)
-	e_t1_favg = models.CharField(max_length=30, blank=True, null=True)
+	e_t1_name = models.CharField(max_length=100, blank=True, null=True)
+	e_t1_f1 = models.CharField(max_length=100, blank=True, null=True)
+	e_t1_f2 = models.CharField(max_length=100, blank=True, null=True)
+	e_t1_favg = models.CharField(max_length=100, blank=True, null=True)
 
-	e_t_f_avg = models.CharField(max_length=30, blank=True, null=True)
+	e_t_f_avg = models.CharField(max_length=100, blank=True, null=True)
 
 
 
-	o_t1_stu_app = models.CharField(max_length=30, blank=True, null=True)
-	o_t1_stu_pass = models.CharField(max_length=30, blank=True, null=True)
-	o_t1_stu_perpass = models.CharField(max_length=30, blank=True, null=True)
+	o_t1_stu_app = models.CharField(max_length=100, blank=True, null=True)
+	o_t1_stu_pass = models.CharField(max_length=100, blank=True, null=True)
+	o_t1_stu_perpass = models.CharField(max_length=100, blank=True, null=True)
 
-	o_t2_stu_app = models.CharField(max_length=30, blank=True, null=True)
-	o_t2_stu_pass = models.CharField(max_length=30, blank=True, null=True)
-	o_t2_stu_perpass = models.CharField(max_length=30, blank=True, null=True)
+	o_t2_stu_app = models.CharField(max_length=100, blank=True, null=True)
+	o_t2_stu_pass = models.CharField(max_length=100, blank=True, null=True)
+	o_t2_stu_perpass = models.CharField(max_length=100, blank=True, null=True)
 
-	o_t3_stu_app = models.CharField(max_length=30, blank=True, null=True)
-	o_t3_stu_pass = models.CharField(max_length=30, blank=True, null=True)
-	o_t3_stu_perpass = models.CharField(max_length=30, blank=True, null=True)
+	o_t3_stu_app = models.CharField(max_length=100, blank=True, null=True)
+	o_t3_stu_pass = models.CharField(max_length=100, blank=True, null=True)
+	o_t3_stu_perpass = models.CharField(max_length=100, blank=True, null=True)
 
-	o_t_r_avg = models.CharField(max_length=30, blank=True, null=True)
+	o_t_r_avg = models.CharField(max_length=100, blank=True, null=True)
 
-	o_l1_stu_app = models.CharField(max_length=30, blank=True, null=True)
-	o_l1_stu_pass = models.CharField(max_length=30, blank=True, null=True)
-	o_l1_stu_perpass = models.CharField(max_length=30, blank=True, null=True)
+	o_l1_stu_app = models.CharField(max_length=100, blank=True, null=True)
+	o_l1_stu_pass = models.CharField(max_length=100, blank=True, null=True)
+	o_l1_stu_perpass = models.CharField(max_length=100, blank=True, null=True)
 
-	o_l2_stu_app = models.CharField(max_length=30, blank=True, null=True)
-	o_l2_stu_pass = models.CharField(max_length=30, blank=True, null=True)
-	o_l2_stu_perpass = models.CharField(max_length=30, blank=True, null=True)
+	o_l2_stu_app = models.CharField(max_length=100, blank=True, null=True)
+	o_l2_stu_pass = models.CharField(max_length=100, blank=True, null=True)
+	o_l2_stu_perpass = models.CharField(max_length=100, blank=True, null=True)
 
-	o_l3_stu_app = models.CharField(max_length=30, blank=True, null=True)
-	o_l3_stu_pass = models.CharField(max_length=30, blank=True, null=True)
-	o_l3_stu_perpass = models.CharField(max_length=30, blank=True, null=True)
+	o_l3_stu_app = models.CharField(max_length=100, blank=True, null=True)
+	o_l3_stu_pass = models.CharField(max_length=100, blank=True, null=True)
+	o_l3_stu_perpass = models.CharField(max_length=100, blank=True, null=True)
 
-	o_l4_stu_app = models.CharField(max_length=30, blank=True, null=True)
-	o_l4_stu_pass = models.CharField(max_length=30, blank=True, null=True)
-	o_l4_stu_perpass = models.CharField(max_length=30, blank=True, null=True)
+	o_l4_stu_app = models.CharField(max_length=100, blank=True, null=True)
+	o_l4_stu_pass = models.CharField(max_length=100, blank=True, null=True)
+	o_l4_stu_perpass = models.CharField(max_length=100, blank=True, null=True)
 
-	o_l5_stu_app = models.CharField(max_length=30, blank=True, null=True)
-	o_l5_stu_pass = models.CharField(max_length=30, blank=True, null=True)
-	o_l5_stu_perpass = models.CharField(max_length=30, blank=True, null=True)
+	o_l5_stu_app = models.CharField(max_length=100, blank=True, null=True)
+	o_l5_stu_pass = models.CharField(max_length=100, blank=True, null=True)
+	o_l5_stu_perpass = models.CharField(max_length=100, blank=True, null=True)
 
-	o_l_r_avg = models.CharField(max_length=30, blank=True, null=True)
+	o_l_r_avg = models.CharField(max_length=100, blank=True, null=True)
 
 
 
 
 
-	e_t1_stu_app = models.CharField(max_length=30, blank=True, null=True)
-	e_t1_stu_pass = models.CharField(max_length=30, blank=True, null=True)
-	e_t1_stu_perpass = models.CharField(max_length=30, blank=True, null=True)
+	e_t1_stu_app = models.CharField(max_length=100, blank=True, null=True)
+	e_t1_stu_pass = models.CharField(max_length=100, blank=True, null=True)
+	e_t1_stu_perpass = models.CharField(max_length=100, blank=True, null=True)
 
-	e_t2_stu_app = models.CharField(max_length=30, blank=True, null=True)
-	e_t2_stu_pass = models.CharField(max_length=30, blank=True, null=True)
-	e_t2_stu_perpass = models.CharField(max_length=30, blank=True, null=True)
+	e_t2_stu_app = models.CharField(max_length=100, blank=True, null=True)
+	e_t2_stu_pass = models.CharField(max_length=100, blank=True, null=True)
+	e_t2_stu_perpass = models.CharField(max_length=100, blank=True, null=True)
 
-	e_t3_stu_app = models.CharField(max_length=30, blank=True, null=True)
-	e_t3_stu_pass = models.CharField(max_length=30, blank=True, null=True)
-	e_t3_stu_perpass = models.CharField(max_length=30, blank=True, null=True)
+	e_t3_stu_app = models.CharField(max_length=100, blank=True, null=True)
+	e_t3_stu_pass = models.CharField(max_length=100, blank=True, null=True)
+	e_t3_stu_perpass = models.CharField(max_length=100, blank=True, null=True)
 
-	e_t_r_avg = models.CharField(max_length=30, blank=True, null=True)
+	e_t_r_avg = models.CharField(max_length=100, blank=True, null=True)
 
 
-	e_l1_stu_app = models.CharField(max_length=30, blank=True, null=True)
-	e_l1_stu_pass = models.CharField(max_length=30, blank=True, null=True)
-	e_l1_stu_perpass = models.CharField(max_length=30, blank=True, null=True)
+	e_l1_stu_app = models.CharField(max_length=100, blank=True, null=True)
+	e_l1_stu_pass = models.CharField(max_length=100, blank=True, null=True)
+	e_l1_stu_perpass = models.CharField(max_length=100, blank=True, null=True)
 
-	e_l2_stu_app = models.CharField(max_length=30, blank=True, null=True)
-	e_l2_stu_pass = models.CharField(max_length=30, blank=True, null=True)
-	e_l2_stu_perpass = models.CharField(max_length=30, blank=True, null=True)
+	e_l2_stu_app = models.CharField(max_length=100, blank=True, null=True)
+	e_l2_stu_pass = models.CharField(max_length=100, blank=True, null=True)
+	e_l2_stu_perpass = models.CharField(max_length=100, blank=True, null=True)
 
-	e_l3_stu_app = models.CharField(max_length=30, blank=True, null=True)
-	e_l3_stu_pass = models.CharField(max_length=30, blank=True, null=True)
-	e_l3_stu_perpass = models.CharField(max_length=30, blank=True, null=True)
+	e_l3_stu_app = models.CharField(max_length=100, blank=True, null=True)
+	e_l3_stu_pass = models.CharField(max_length=100, blank=True, null=True)
+	e_l3_stu_perpass = models.CharField(max_length=100, blank=True, null=True)
 
-	e_l4_stu_app = models.CharField(max_length=30, blank=True, null=True)
-	e_l4_stu_pass = models.CharField(max_length=30, blank=True, null=True)
-	e_l4_stu_perpass = models.CharField(max_length=30, blank=True, null=True)
+	e_l4_stu_app = models.CharField(max_length=100, blank=True, null=True)
+	e_l4_stu_pass = models.CharField(max_length=100, blank=True, null=True)
+	e_l4_stu_perpass = models.CharField(max_length=100, blank=True, null=True)
 
-	e_l5_stu_app = models.CharField(max_length=30, blank=True, null=True)
-	e_l5_stu_pass = models.CharField(max_length=30, blank=True, null=True)
-	e_l5_stu_perpass = models.CharField(max_length=30, blank=True, null=True)
+	e_l5_stu_app = models.CharField(max_length=100, blank=True, null=True)
+	e_l5_stu_pass = models.CharField(max_length=100, blank=True, null=True)
+	e_l5_stu_perpass = models.CharField(max_length=100, blank=True, null=True)
 
-	e_l_r_avg = models.CharField(max_length=30, blank=True, null=True)
+	e_l_r_avg = models.CharField(max_length=100, blank=True, null=True)
 
 
-	p1_name = models.CharField(max_length=30, blank=True, null=True)
-	p1_f1 = models.CharField(max_length=30, blank=True, null=True)
-	p1_f2 = models.CharField(max_length=30, blank=True, null=True)
-	p1_favg = models.CharField(max_length=30, blank=True, null=True)
+	p1_name = models.CharField(max_length=100, blank=True, null=True)
+	p1_f1 = models.CharField(max_length=100, blank=True, null=True)
+	p1_f2 = models.CharField(max_length=100, blank=True, null=True)
+	p1_favg = models.CharField(max_length=100, blank=True, null=True)
 
-	p2_name = models.CharField(max_length=30, blank=True, null=True)
-	p2_f1 = models.CharField(max_length=30, blank=True, null=True)
-	p2_f2 = models.CharField(max_length=30, blank=True, null=True)
-	p2_favg = models.CharField(max_length=30, blank=True, null=True)
+	p2_name = models.CharField(max_length=100, blank=True, null=True)
+	p2_f1 = models.CharField(max_length=100, blank=True, null=True)
+	p2_f2 = models.CharField(max_length=100, blank=True, null=True)
+	p2_favg = models.CharField(max_length=100, blank=True, null=True)
 
-	p_f_avg = models.CharField(max_length=30, blank=True, null=True)
+	p_f_avg = models.CharField(max_length=100, blank=True, null=True)
 
-	e_o_f_r_final = models.CharField(max_length=30, blank=True, null=True)
+	e_o_f_r_final = models.CharField(max_length=100, blank=True, null=True)
 
 	info = models.ForeignKey('User', on_delete=models.CASCADE,null=True)
 
@@ -330,68 +330,68 @@ class rd(models.Model):
 	w_n_d = models.IntegerField( blank=True, null=True)
 	w_i_d = models.IntegerField( blank=True, null=True)
 
-	w_m = models.CharField(max_length=30, blank=True, null=True)
+	w_m = models.CharField(max_length=100, blank=True, null=True)
 
 	p_s_d = models.IntegerField( blank=True, null=True)
 	p_n_d = models.IntegerField( blank=True, null=True)
 	p_i_d = models.IntegerField( blank=True, null=True)
 
-	p_m = models.CharField(max_length=30, blank=True, null=True)
+	p_m = models.CharField(max_length=100, blank=True, null=True)
 
 	onl_course_c = models.IntegerField( blank=True, null=True)
 
-	onl_course_m = models.CharField(max_length=30, blank=True, null=True)
+	onl_course_m = models.CharField(max_length=100, blank=True, null=True)
 
-	s_j_index = models.CharField(max_length=30, blank=True, null=True)
-	s_j_name = models.CharField(max_length=30, blank=True, null=True)
-	s_j_title = models.CharField(max_length=30, blank=True, null=True)
-	s_j_volume = models.CharField(max_length=30, blank=True, null=True)
-	s_j_issn = models.CharField(max_length=30, blank=True, null=True)
+	s_j_index = models.CharField(max_length=100, blank=True, null=True)
+	s_j_name = models.CharField(max_length=100, blank=True, null=True)
+	s_j_title = models.CharField(max_length=100, blank=True, null=True)
+	s_j_volume = models.CharField(max_length=100, blank=True, null=True)
+	s_j_issn = models.CharField(max_length=100, blank=True, null=True)
 	s_j_date = models.DateField(blank=True, null=True)
 	s_j_page = models.IntegerField( blank=True, null=True)
 
-	f_j_index = models.CharField(max_length=30, blank=True, null=True)
-	f_j_name = models.CharField(max_length=30, blank=True, null=True)
-	f_j_title = models.CharField(max_length=30, blank=True, null=True)
-	f_j_volume = models.CharField(max_length=30, blank=True, null=True)
-	f_j_issn = models.CharField(max_length=30, blank=True, null=True)
+	f_j_index = models.CharField(max_length=100, blank=True, null=True)
+	f_j_name = models.CharField(max_length=100, blank=True, null=True)
+	f_j_title = models.CharField(max_length=100, blank=True, null=True)
+	f_j_volume = models.CharField(max_length=100, blank=True, null=True)
+	f_j_issn = models.CharField(max_length=100, blank=True, null=True)
 	f_j_date = models.DateField(blank=True, null=True)
 	f_j_page = models.IntegerField( blank=True, null=True)
 
-	o_j_index = models.CharField(max_length=30, blank=True, null=True)
-	o_j_name = models.CharField(max_length=30, blank=True, null=True)
-	o_j_title = models.CharField(max_length=30, blank=True, null=True)
-	o_j_volume = models.CharField(max_length=30, blank=True, null=True)
-	o_j_issn = models.CharField(max_length=30, blank=True, null=True)
+	o_j_index = models.CharField(max_length=100, blank=True, null=True)
+	o_j_name = models.CharField(max_length=100, blank=True, null=True)
+	o_j_title = models.CharField(max_length=100, blank=True, null=True)
+	o_j_volume = models.CharField(max_length=100, blank=True, null=True)
+	o_j_issn = models.CharField(max_length=100, blank=True, null=True)
 	o_j_date = models.DateField(blank=True, null=True)
 	o_j_page = models.IntegerField( blank=True, null=True)
 
-	s_j_m = models.CharField(max_length=30, blank=True, null=True)
-	f_j_m = models.CharField(max_length=30, blank=True, null=True)
-	o_j_m = models.CharField(max_length=30, blank=True, null=True)
+	s_j_m = models.CharField(max_length=100, blank=True, null=True)
+	f_j_m = models.CharField(max_length=100, blank=True, null=True)
+	o_j_m = models.CharField(max_length=100, blank=True, null=True)
 
 
-	s_c_name = models.CharField(max_length=30, blank=True, null=True)
-	s_c_title = models.CharField(max_length=30, blank=True, null=True)
-	s_c_place = models.CharField(max_length=30, blank=True, null=True)
+	s_c_name = models.CharField(max_length=100, blank=True, null=True)
+	s_c_title = models.CharField(max_length=100, blank=True, null=True)
+	s_c_place = models.CharField(max_length=100, blank=True, null=True)
 	s_c_date = models.DateField(blank=True, null=True)
-	s_c_index = models.CharField(max_length=30, blank=True, null=True)
+	s_c_index = models.CharField(max_length=100, blank=True, null=True)
 
-	f_c_name = models.CharField(max_length=30, blank=True, null=True)
-	f_c_title = models.CharField(max_length=30, blank=True, null=True)
-	f_c_place = models.CharField(max_length=30, blank=True, null=True)
+	f_c_name = models.CharField(max_length=100, blank=True, null=True)
+	f_c_title = models.CharField(max_length=100, blank=True, null=True)
+	f_c_place = models.CharField(max_length=100, blank=True, null=True)
 	f_c_date = models.DateField(blank=True, null=True)
-	f_c_index = models.CharField(max_length=30, blank=True, null=True)
+	f_c_index = models.CharField(max_length=100, blank=True, null=True)
 
-	o_c_name = models.CharField(max_length=30, blank=True, null=True)
-	o_c_title = models.CharField(max_length=30, blank=True, null=True)
-	o_c_place = models.CharField(max_length=30, blank=True, null=True)
+	o_c_name = models.CharField(max_length=100, blank=True, null=True)
+	o_c_title = models.CharField(max_length=100, blank=True, null=True)
+	o_c_place = models.CharField(max_length=100, blank=True, null=True)
 	o_c_date = models.DateField(blank=True, null=True)
-	o_c_index = models.CharField(max_length=30, blank=True, null=True)
+	o_c_index = models.CharField(max_length=100, blank=True, null=True)
 
-	s_c_m = models.CharField(max_length=30, blank=True, null=True)
-	f_c_m = models.CharField(max_length=30, blank=True, null=True)
-	o_c_m = models.CharField(max_length=30, blank=True, null=True)
+	s_c_m = models.CharField(max_length=100, blank=True, null=True)
+	f_c_m = models.CharField(max_length=100, blank=True, null=True)
+	o_c_m = models.CharField(max_length=100, blank=True, null=True)
 
 
 	book_i = models.IntegerField(blank=True, null=True)
@@ -401,32 +401,32 @@ class rd(models.Model):
 	book_ai = models.IntegerField( blank=True, null=True)
 	book_nm = models.IntegerField( blank=True, null=True)
 
-	book_m = models.CharField(max_length=30, blank=True, null=True)
+	book_m = models.CharField(max_length=100, blank=True, null=True)
 
-	if_s = models.CharField(max_length=30, blank=True, null=True)
-	if_f = models.CharField(max_length=30, blank=True, null=True)
-	if_c = models.CharField(max_length=30, blank=True, null=True)
+	if_s = models.CharField(max_length=100, blank=True, null=True)
+	if_f = models.CharField(max_length=100, blank=True, null=True)
+	if_c = models.CharField(max_length=100, blank=True, null=True)
 
-	ef_s = models.CharField(max_length=30, blank=True, null=True)
-	ef_f = models.CharField(max_length=30, blank=True, null=True)
-	ef_c = models.CharField(max_length=30, blank=True, null=True)
+	ef_s = models.CharField(max_length=100, blank=True, null=True)
+	ef_f = models.CharField(max_length=100, blank=True, null=True)
+	ef_c = models.CharField(max_length=100, blank=True, null=True)
 
-	eef_s = models.CharField(max_length=30, blank=True, null=True)
-	eef_f = models.CharField(max_length=30, blank=True, null=True)
-	eef_c = models.CharField(max_length=30, blank=True, null=True)
+	eef_s = models.CharField(max_length=100, blank=True, null=True)
+	eef_f = models.CharField(max_length=100, blank=True, null=True)
+	eef_c = models.CharField(max_length=100, blank=True, null=True)
 
-	Cw_2 = models.CharField(max_length=30, blank=True, null=True)
-	Cw_2_5 = models.CharField(max_length=30, blank=True, null=True)
-	Cw_5 = models.CharField(max_length=30, blank=True, null=True)
+	Cw_2 = models.CharField(max_length=100, blank=True, null=True)
+	Cw_2_5 = models.CharField(max_length=100, blank=True, null=True)
+	Cw_5 = models.CharField(max_length=100, blank=True, null=True)
 
 	ipr_status = models.ForeignKey('ipr_status', on_delete=models.CASCADE,null=True,blank=True)
 	ipr_type = models.ForeignKey('ipr_type', on_delete=models.CASCADE,null=True,blank=True)
 	ipr_info = models.TextField(blank=True, null=True)
 
 
-	rp_marks = models.CharField(max_length=30, blank=True, null=True)
+	rp_marks = models.CharField(max_length=100, blank=True, null=True)
 
-	rd_tot_marks = models.CharField(max_length=30, blank=True, null=True)
+	rd_tot_marks = models.CharField(max_length=100, blank=True, null=True)
 
 
 
