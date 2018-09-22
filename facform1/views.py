@@ -122,6 +122,9 @@ def hod_teacher_display(request,pk):
 			data3 = feedbackTab.objects.get(info__username=name);
 			data4 = rd.objects.get(info__username=name);
 			data5 = remarks.objects.get(info__username=name);
+			data6 = conference.objects.get(info__username=name);
+			data7 = journal.objects.get(info__username=name);
+
 
 
 
@@ -152,6 +155,8 @@ def hod_teacher_display(request,pk):
 			"key3":data3,
 			"key4":data4,
 			"key5":data5,
+			"key6":data6,
+			"key7":data7,
 			"form1":form1
 			}
 
@@ -171,6 +176,8 @@ def hod_teacher1_display(request,pk):
 		data3 = feedbackTab.objects.get(info__username=name);
 		data4 = rd.objects.get(info__username=name);
 		data5 = remarks.objects.get(info__username=name);
+		data6 = conference.objects.get(info__username=name);
+		data7 = journal.objects.get(info__username=name);
 
 
 
@@ -201,6 +208,8 @@ def hod_teacher1_display(request,pk):
 		"key3":data3,
 		"key4":data4,
 		"key5":data5,
+		"key6":data6,
+		"key7":data7,
 		"form1":form1
 		}
 
@@ -262,7 +271,9 @@ def principal_teacher_display(request,pk):
 		data3 = feedbackTab.objects.get(info__username=name);
 		data4 = rd.objects.get(info__username=name);
 		data5 = remarks.objects.get(info__username=name);
-		data6 = remarks1.objects.get(info__username=name);
+		data6 = conference.objects.get(info__username=name);
+		data7 = journal.objects.get(info__username=name);
+		data8 = remarks1.objects.get(info__username=name);
 
 
 
@@ -296,6 +307,8 @@ def principal_teacher_display(request,pk):
 		"key4":data4,
 		"key5":data5,
 		"key6":data6,
+		"key7":data7,
+		"key8":data8,
 		"form1":form1
 		}
 
@@ -316,7 +329,9 @@ def principal_teacher1_display(request,pk):
 		data3 = feedbackTab.objects.get(info__username=name);
 		data4 = rd.objects.get(info__username=name);
 		data5 = remarks.objects.get(info__username=name);
-		data6 = remarks1.objects.get(info__username=name);
+		data6 = conference.objects.get(info__username=name);
+		data7 = journal.objects.get(info__username=name);
+		data8 = remarks1.objects.get(info__username=name);
 
 
 
@@ -350,6 +365,8 @@ def principal_teacher1_display(request,pk):
 		"key4":data4,
 		"key5":data5,
 		"key6":data6,
+		"key7":data7,
+		"key8":data8,
 		"form1":form1
 		}
 
@@ -370,6 +387,8 @@ def principal_hod_display(request,pk):
 		data3 = feedbackTab.objects.get(info__username=name);
 		data4 = rd.objects.get(info__username=name);
 		data5 = remarks.objects.get(info__username=name);
+		data6 = conference.objects.get(info__username=name);
+		data7 = journal.objects.get(info__username=name);
 
 
 
@@ -402,6 +421,8 @@ def principal_hod_display(request,pk):
 		"key3":data3,
 		"key4":data4,
 		"key5":data5,
+		"key6":data6,
+		"key7":data7,
 		"form1":form1
 		}
 
@@ -477,8 +498,10 @@ def ao_teacher_display(request,name):
 		data3 = feedbackTab.objects.get(info__username=name)
 		data4 = rd.objects.get(info__username=name)
 		data5 = remarks.objects.get(info__username=name)
-		data6 = remarks1.objects.get(info__username=name)
-		data7 = remarks2.objects.get(info__username=name)
+		data6 = conference.objects.get(info__username=name);
+		data7 = journal.objects.get(info__username=name);
+		data8 = remarks1.objects.get(info__username=name)
+		data9 = remarks2.objects.get(info__username=name)
 
 
 
@@ -490,6 +513,8 @@ def ao_teacher_display(request,name):
 		"key5":data5,
 		"key6":data6,
 		"key7":data7,
+		"key8":data8,
+		"key9":data9,
 
 
 		}
@@ -507,8 +532,10 @@ def ao_teacher1_display(request,name):
 		data3 = feedbackTab.objects.get(info__username=name)
 		data4 = rd.objects.get(info__username=name)
 		data5 = remarks.objects.get(info__username=name)
-		data6 = remarks1.objects.get(info__username=name)
-		data7 = remarks2.objects.get(info__username=name)
+		data6 = conference.objects.get(info__username=name);
+		data7 = journal.objects.get(info__username=name);
+		data8 = remarks1.objects.get(info__username=name)
+		data9 = remarks2.objects.get(info__username=name)
 
 
 
@@ -520,6 +547,8 @@ def ao_teacher1_display(request,name):
 		"key5":data5,
 		"key6":data6,
 		"key7":data7,
+		"key8":data8,
+		"key9":data9,
 
 
 		}
@@ -536,7 +565,9 @@ def ao_hod_display(request,name):
 		data3 = feedbackTab.objects.get(info__username=name)
 		data4 = rd.objects.get(info__username=name)
 		data5 = remarks.objects.get(info__username=name)
-		data7 = remarks2.objects.get(info__username=name)
+		data6 = conference.objects.get(info__username=name);
+		data7 = journal.objects.get(info__username=name);
+		data8 = remarks2.objects.get(info__username=name)
 
 
 
@@ -546,7 +577,9 @@ def ao_hod_display(request,name):
 		"key3":data3,
 		"key4":data4,
 		"key5":data5,
+		"key6":data5,
 		"key7":data7,
+		"key8":data8,
 
 
 		}
@@ -738,7 +771,7 @@ def f_associate5(request):
 					return HttpResponseRedirect("/logout/")
 			else:
 				print(form6.errors)
-				print(form7.errors)		
+				print(form7.errors)
 			return render(request,'associate_form5.html',{'form6':form6,'form7':form7})
 		return render(request,'associate_form5.html',{'form6':form6,'form7':form7})
 	else:
@@ -998,8 +1031,8 @@ def assistant_preview(request):
 		data3 = feedbackTab.objects.get(info=name);
 		data4 = rd.objects.get(info=name);
 		data5 = remarks.objects.get(info=name);
-		data5 = conference.objects.get(info=name);
-		data5 = journal.objects.get(info=name);
+		data6 = conference.objects.get(info=name);
+		data7 = journal.objects.get(info=name);
 
 
 		context1 = {
@@ -1026,6 +1059,8 @@ def associate_preview(request):
 	data3 = feedbackTab.objects.get(info=name);
 	data4 = rd.objects.get(info=name);
 	data5 = remarks.objects.get(info=name);
+	data6 = conference.objects.get(info=name);
+	data7 = journal.objects.get(info=name);
 
 	context1 = {
 	"key1":data1,
@@ -1033,6 +1068,8 @@ def associate_preview(request):
 	"key3":data3,
 	"key4":data4,
 	"key5":data5,
+	"key6":data6,
+	"key7":data7,
 	}
 
 	return render(request,'associate_preview.html',context=context1)
@@ -1045,6 +1082,8 @@ def hod_preview(request):
 	data3 = feedbackTab.objects.get(info=name);
 	data4 = rd.objects.get(info=name);
 	data5 = remarks.objects.get(info=name);
+	data6 = conference.objects.get(info=name);
+	data7 = journal.objects.get(info=name);
 
 	context1 = {
 	"key1":data1,
@@ -1052,6 +1091,7 @@ def hod_preview(request):
 	"key3":data3,
 	"key4":data4,
 	"key5":data5,
+
 	}
 
 	return render(request,'hod_preview.html',context=context1)
