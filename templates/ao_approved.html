@@ -88,10 +88,10 @@
 
 						<div class="row">
 							<div class="cell" data-title="Faculty Name">
-                <a {% if x.info.designation.name == 'hod' %} href="/ao_hod_display/{{x.info}}"
-                 {% elif x.info.designation.name == 'associate' %} href="/ao_teacher1_display/{{x.info}}"
-                 {% elif x.info.designation.name == 'professor' %} href="/ao_teacher1_display/{{x.info}}"
-                 {% elif x.info.designation.name == 'assistant' %} href="/ao_teacher_display/{{x.info}}"
+                <a {% if x.info.designation.pk == 8 %} href="/ao_hod_display/{{x.info}}"
+                 {% elif x.info.designation.pk == 9 %} href="/ao_teacher1_display/{{x.info}}"
+                 {% elif x.info.designation.pk == 10 %} href="/ao_teacher1_display/{{x.info}}"
+                 {% elif x.info.designation.pk == 11 %} href="/ao_teacher_display/{{x.info}}"
                  {% endif %}>{{x.info.first_name}}</a>
               </div>
 							<div class="cell" data-title="Documents">
@@ -99,15 +99,8 @@
 							</div>
 
 							<div class="cell" data-title="designation">
-								{% if x.info.designation.name == 'assistant' %}
-								<p>Assistant</p>
-								{% elif x.info.designation.name == 'associate' %}
-								<p>Associate</p>
-								{% elif x.info.designation.name == 'professor' %}
-								<p>Professor</p>
-								{% elif x.info.designation.name == 'hod' %}
-								<p>HOD</p>
-								{% endif %}
+								{% x.info.designation.name %}
+
 							</div>
 								<div class="cell" data-title="status">
                   {% if x.total_marks >= 60 %} Approved {% else  %} Not approved {% endif %}
