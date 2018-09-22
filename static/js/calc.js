@@ -642,8 +642,14 @@ $('.f_calc').on("click",function(){
 	console.log(a);
 
 	console.log(b);
-
 	var f_marks = 0;
+
+	if(isNaN(a)){
+		a  = 0;
+	}
+	if(isNaN(b)){
+		b  = 0;
+	}
 
 	if(a<60){
 		f_marks = 0;

@@ -13,7 +13,7 @@ from django.contrib.auth.decorators import login_required
 from django.forms import formset_factory
 
 
-	
+
 
 def phone_otp(random_otp, phone):
 		phone1 = str(phone)
@@ -576,7 +576,7 @@ def logout(request):
 @login_required
 def f_assistant5(request):
 	if request.user.is_assistant_professor():
-		
+
 		form6 = forms.form_conference()
 		form7 = forms.form_journal()
 
@@ -615,7 +615,7 @@ def f_assistant4(request):
 			return HttpResponseRedirect("/logout/")
 		else:
 			if request.method == 'POST':
-				
+
 				form5 = forms.form_remarks(request.POST)
 				if form5.is_valid():
 					obj3 = form5.save(commit=False)
@@ -711,7 +711,7 @@ def f_assistant1(request):
 @login_required
 def f_associate5(request):
 	if request.user.is_associate_professor() or request.user.is_professor():
-		
+
 		form6 = forms.form_conference()
 		form7 = forms.form_journal()
 
@@ -736,6 +736,9 @@ def f_associate5(request):
 						sendme.teach_status = True
 						sendme.save()
 					return HttpResponseRedirect("/logout/")
+			else:
+				print(form6.errors)
+				print(form7.errors)		
 			return render(request,'associate_form5.html',{'form6':form6,'form7':form7})
 		return render(request,'associate_form5.html',{'form6':form6,'form7':form7})
 	else:
@@ -847,7 +850,7 @@ def f_associate1(request):
 @login_required
 def hod_form5(request):
 	if request.user.is_hod():
-		
+
 		form6 = forms.form_conference()
 		form7 = forms.form_journal()
 
