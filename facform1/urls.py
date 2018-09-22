@@ -16,7 +16,7 @@ urlpatterns = [
     url(r'^assistant_form2/', views.f_assistant2,name="assistant_form2"),
     url(r'^assistant_form3/', views.f_assistant3,name="assistant_form3"),
     url(r'^assistant_form4/', views.f_assistant4,name="assistant_form4"),
-    url(r'^assistant_form5/', views.f_assistant5,name="assistant_form5"),
+    # url(r'^assistant_form5/', views.f_assistant5,name="assistant_form5"),
 
     url(r'^assistant_preview/', views.assistant_preview,name="assistant_preview"),
 
