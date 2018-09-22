@@ -40,6 +40,15 @@ class ipr_status(models.Model):
 	def __str__(self):
 		return self.name
 
+class author(models.Model):
+	"""
+	Description: Model Description
+	"""
+	name = models.CharField(max_length=100, blank=True, null=True)
+
+	def __str__(self):
+		return self.name		
+
 class User(AbstractUser):
 	phone = models.BigIntegerField(null=True)
 	department = models.ForeignKey('Department', on_delete=models.CASCADE,null=True)
@@ -55,7 +64,7 @@ class User(AbstractUser):
 		return self.username
 
 	def is_assistant_professor(self):
-		faculty = Designation.objects.get(name="assistant")
+		faculty = Designation.objects.get(pk=11)
 		faculty1 = str(faculty)
 		faculty2 = str(self.designation.name)
 		if faculty1 == faculty2:
@@ -63,7 +72,7 @@ class User(AbstractUser):
 		return False
 
 	def is_associate_professor(self):
-		faculty = Designation.objects.get(name="associate")
+		faculty = Designation.objects.get(pk=9)
 		faculty1 = str(faculty)
 		faculty2 = str(self.designation.name)
 		if faculty1 == faculty2:
@@ -71,7 +80,7 @@ class User(AbstractUser):
 		return False
 
 	def is_professor(self):
-		faculty = Designation.objects.get(name="professor")
+		faculty = Designation.objects.get(pk=10)
 		faculty1 = str(faculty)
 		faculty2 = str(self.designation.name)
 		if faculty1 == faculty2:
@@ -79,7 +88,7 @@ class User(AbstractUser):
 		return False
 
 	def is_hod(self):
-		faculty = Designation.objects.get(name="hod")
+		faculty = Designation.objects.get(pk=10)
 		faculty1 = str(faculty)
 		faculty2 = str(self.designation.name)
 		if faculty1 == faculty2:
@@ -87,7 +96,7 @@ class User(AbstractUser):
 		return False
 
 	def is_principal(self):
-		faculty = Designation.objects.get(name="principal")
+		faculty = Designation.objects.get(pk=7)
 		faculty1 = str(faculty)
 		faculty2 = str(self.designation.name)
 		if faculty1 == faculty2:
@@ -95,7 +104,7 @@ class User(AbstractUser):
 		return False
 
 	def is_ao(self):
-		faculty = Designation.objects.get(name="AO")
+		faculty = Designation.objects.get(pk=6)
 		faculty1 = str(faculty)
 		faculty2 = str(self.designation.name)
 		if faculty1 == faculty2:
@@ -316,6 +325,47 @@ class feedbackTab(models.Model):
 	p2_f2 = models.CharField(max_length=100, blank=True, null=True)
 	p2_favg = models.CharField(max_length=100, blank=True, null=True)
 
+	p3_name = models.CharField(max_length=100, blank=True, null=True)
+	p3_f1 = models.CharField(max_length=100, blank=True, null=True)
+	p3_f2 = models.CharField(max_length=100, blank=True, null=True)
+	p3_favg = models.CharField(max_length=100, blank=True, null=True)
+
+	p4_name = models.CharField(max_length=100, blank=True, null=True)
+	p4_f1 = models.CharField(max_length=100, blank=True, null=True)
+	p4_f2 = models.CharField(max_length=100, blank=True, null=True)
+	p4_favg = models.CharField(max_length=100, blank=True, null=True)
+
+	p5_name = models.CharField(max_length=100, blank=True, null=True)
+	p5_f1 = models.CharField(max_length=100, blank=True, null=True)
+	p5_f2 = models.CharField(max_length=100, blank=True, null=True)
+	p5_favg = models.CharField(max_length=100, blank=True, null=True)
+
+	p6_name = models.CharField(max_length=100, blank=True, null=True)
+	p6_f1 = models.CharField(max_length=100, blank=True, null=True)
+	p6_f2 = models.CharField(max_length=100, blank=True, null=True)
+	p6_favg = models.CharField(max_length=100, blank=True, null=True)
+
+	p7_name = models.CharField(max_length=100, blank=True, null=True)
+	p7_f1 = models.CharField(max_length=100, blank=True, null=True)
+	p7_f2 = models.CharField(max_length=100, blank=True, null=True)
+	p7_favg = models.CharField(max_length=100, blank=True, null=True)
+
+	p8_name = models.CharField(max_length=100, blank=True, null=True)
+	p8_f1 = models.CharField(max_length=100, blank=True, null=True)
+	p8_f2 = models.CharField(max_length=100, blank=True, null=True)
+	p8_favg = models.CharField(max_length=100, blank=True, null=True)
+
+	p9_name = models.CharField(max_length=100, blank=True, null=True)
+	p9_f1 = models.CharField(max_length=100, blank=True, null=True)
+	p9_f2 = models.CharField(max_length=100, blank=True, null=True)
+	p9_favg = models.CharField(max_length=100, blank=True, null=True)
+
+	p10_name = models.CharField(max_length=100, blank=True, null=True)
+	p10_f1 = models.CharField(max_length=100, blank=True, null=True)
+	p10_f2 = models.CharField(max_length=100, blank=True, null=True)
+	p10_favg = models.CharField(max_length=100, blank=True, null=True)
+
+
 	p_f_avg = models.CharField(max_length=100, blank=True, null=True)
 
 	e_o_f_r_final = models.CharField(max_length=100, blank=True, null=True)
@@ -342,57 +392,13 @@ class rd(models.Model):
 
 	onl_course_m = models.CharField(max_length=100, blank=True, null=True)
 
-	s_j_index = models.CharField(max_length=100, blank=True, null=True)
-	s_j_name = models.CharField(max_length=100, blank=True, null=True)
-	s_j_title = models.CharField(max_length=100, blank=True, null=True)
-	s_j_volume = models.CharField(max_length=100, blank=True, null=True)
-	s_j_issn = models.CharField(max_length=100, blank=True, null=True)
-	s_j_date = models.DateField(blank=True, null=True)
-	s_j_page = models.IntegerField( blank=True, null=True)
-
-	f_j_index = models.CharField(max_length=100, blank=True, null=True)
-	f_j_name = models.CharField(max_length=100, blank=True, null=True)
-	f_j_title = models.CharField(max_length=100, blank=True, null=True)
-	f_j_volume = models.CharField(max_length=100, blank=True, null=True)
-	f_j_issn = models.CharField(max_length=100, blank=True, null=True)
-	f_j_date = models.DateField(blank=True, null=True)
-	f_j_page = models.IntegerField( blank=True, null=True)
-
-	o_j_index = models.CharField(max_length=100, blank=True, null=True)
-	o_j_name = models.CharField(max_length=100, blank=True, null=True)
-	o_j_title = models.CharField(max_length=100, blank=True, null=True)
-	o_j_volume = models.CharField(max_length=100, blank=True, null=True)
-	o_j_issn = models.CharField(max_length=100, blank=True, null=True)
-	o_j_date = models.DateField(blank=True, null=True)
-	o_j_page = models.IntegerField( blank=True, null=True)
-
-	s_j_m = models.CharField(max_length=100, blank=True, null=True)
-	f_j_m = models.CharField(max_length=100, blank=True, null=True)
-	o_j_m = models.CharField(max_length=100, blank=True, null=True)
-
-
-	s_c_name = models.CharField(max_length=100, blank=True, null=True)
-	s_c_title = models.CharField(max_length=100, blank=True, null=True)
-	s_c_place = models.CharField(max_length=100, blank=True, null=True)
-	s_c_date = models.DateField(blank=True, null=True)
-	s_c_index = models.CharField(max_length=100, blank=True, null=True)
-
-	f_c_name = models.CharField(max_length=100, blank=True, null=True)
-	f_c_title = models.CharField(max_length=100, blank=True, null=True)
-	f_c_place = models.CharField(max_length=100, blank=True, null=True)
-	f_c_date = models.DateField(blank=True, null=True)
-	f_c_index = models.CharField(max_length=100, blank=True, null=True)
-
-	o_c_name = models.CharField(max_length=100, blank=True, null=True)
-	o_c_title = models.CharField(max_length=100, blank=True, null=True)
-	o_c_place = models.CharField(max_length=100, blank=True, null=True)
-	o_c_date = models.DateField(blank=True, null=True)
-	o_c_index = models.CharField(max_length=100, blank=True, null=True)
-
 	s_c_m = models.CharField(max_length=100, blank=True, null=True)
 	f_c_m = models.CharField(max_length=100, blank=True, null=True)
 	o_c_m = models.CharField(max_length=100, blank=True, null=True)
 
+	s_j_m = models.CharField(max_length=100, blank=True, null=True)
+	f_j_m = models.CharField(max_length=100, blank=True, null=True)
+	o_j_m = models.CharField(max_length=100, blank=True, null=True)
 
 	book_i = models.IntegerField(blank=True, null=True)
 	book_n = models.IntegerField( blank=True, null=True)
@@ -440,6 +446,41 @@ class remarks(models.Model):
 	ta_dr = models.TextField( blank=True, null=True)
 	info = models.ForeignKey('User', on_delete=models.CASCADE,null=True)
 
+
+class conference(models.Model):
+
+	c_name = models.CharField(max_length=100, blank=True, null=True)
+	c_title = models.CharField(max_length=100, blank=True, null=True)
+	c_place = models.CharField(max_length=100, blank=True, null=True)
+	c_date = models.DateField(blank=True, null=True)
+	c_index = models.CharField(max_length=100, blank=True, null=True)
+
+
+	
+	author = models.ForeignKey('author', on_delete=models.CASCADE,null=True)
+
+	info = models.ForeignKey('User', on_delete=models.CASCADE,null=True)
+
+
+
+class journal(models.Model):
+
+	j_index = models.CharField(max_length=100, blank=True, null=True)
+	j_name = models.CharField(max_length=100, blank=True, null=True)
+	j_title = models.CharField(max_length=100, blank=True, null=True)
+	j_volume = models.CharField(max_length=100, blank=True, null=True)
+	j_issn = models.CharField(max_length=100, blank=True, null=True)
+	j_date = models.DateField(blank=True, null=True)
+	j_page = models.IntegerField( blank=True, null=True)
+
+
+	
+
+	author = models.ForeignKey('author', on_delete=models.CASCADE,null=True)
+
+	info = models.ForeignKey('User', on_delete=models.CASCADE,null=True)
+
+
 class remarks1(models.Model):
 	hod_marks1 = models.IntegerField(blank=True, null=True)
 	hod_marks2 = models.IntegerField( blank=True, null=True)
@@ -458,210 +499,3 @@ class remarks2(models.Model):
 
 
 
-
-
-
-
-
-# O_Theory_1
-# O_Theory_2
-# O_Theory_3
-# O_T1_f1
-# O_T1_f2
-# O_T2_f1
-# O_T2_f2
-# O_T3_f1
-# O_T3_f2
-
-# O_T1_F_avg
-# O_T2_F_avg
-# O_T3_F_avg
-# O_T1_app
-
-# O_T2_app
-# O_T3_app
-
-# O_T1_pass
-# O_T2_pass
-# O_T3_pass
-
-# O_T1_%
-# O_T2_%
-# O_T3_%
-
-# O_L1
-# O_L2
-# O_L3
-# O_L4
-# O_L5
-
-# O_L1_f1
-# O_L1_f2
-# O_L2_f1
-# O_L2_f2
-# O_L3_f1
-# O_L3_f2
-# O_L4_f1
-# O_L4_f2
-# O_L5_f1
-# O_L5_f2
-
-# O_L1_F_avg
-# O_L2_F_avg
-# O_L3_F_avg
-# O_L4_F_avg
-# O_L5_F_avg
-
-# O_L1_app
-# O_L2_app
-# O_L3_app
-# O_L4_app
-# O_L5_app
-
-# O_L1_pass
-# O_L2_pass
-# O_L3_pass
-# O_L4_pass
-# O_L5_pass
-
-# O_L1_%
-# O_L2_%
-# O_L3_%
-# O_L4_%
-# O_L5_%
-
-# E_Theory_1
-# E_Theory_2
-# E_Theory_3
-# E_T1_f1
-# E_T1_f2
-# E_T2_f1
-# E_T2_f2
-# E_T3_f1
-# E_T3_f2
-
-# E_T1_F_avg
-# E_T2_F_avg
-# E_T3_F_avg
-# E_T1_app
-
-# E_T2_app
-# E_T3_app
-
-# E_T1_pass
-# E_T2_pass
-# E_T3_pass
-
-# E_T1_%
-# E_T2_%
-# E_T3_%
-
-# E_L1
-# E_L2
-# E_L3
-# E_L4
-# E_L5
-
-# E_L1_f1
-# E_L1_f2
-# E_L2_f1
-# E_L2_f2
-# E_L3_f1
-# E_L3_f2
-# E_L4_f1
-# E_L4_f2
-# E_L5_f1
-# E_L5_f2
-
-# E_L1_F_avg
-# E_L2_F_avg
-# E_L3_F_avg
-# E_L4_F_avg
-# E_L5_F_avg
-
-# E_L1_app
-# E_L2_app
-# E_L3_app
-# E_L4_app
-# E_L5_app
-
-# E_L1_pass
-# E_L2_pass
-# E_L3_pass
-# E_L4_pass
-# E_L5_pass
-
-# E_L1_%
-# E_L2_%
-# E_L3_%
-# E_L4_%
-# E_L5_%
-
-# Project1_name
-# Project2_name
-# P1_f1
-# P1_f2
-# P2_f1
-# P2_f2
-
-# W_S
-# W_N
-# W_I
-
-# P_S
-# P_N
-# P_I
-
-# Online_Course
-
-# Pu_sa
-# Pu_fs
-# Pu_oa
-
-# Jp_sa
-# Jp_fs
-# Jp_oa
-
-# Book_I
-# Book_N
-# Book_Ci
-# Book_Cn
-# Book_Ai
-# Book_Nm
-
-# If_S
-# If_Pi
-# If_ci
-
-# Ef_S
-# Ef_Pi
-# Ef_ci
-
-# Eef_S
-# Eef_Pi
-# Eef_ci
-
-# Cw_2
-# Cw_2_5
-# Cw_5
-
-# #textarea
-# Inno_contri
-
-# Hod_marks_1
-
-# #textarea
-# Dept_respo
-
-# Hod_marks_2
-
-# #textarea
-# Remarks_hod
-
-# #textarea
-# Inst_respo
-
-# Principal_marks
-
-
-# Total_marks
