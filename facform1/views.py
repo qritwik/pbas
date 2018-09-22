@@ -679,7 +679,7 @@ def f_assistant1(request):
 
 @login_required
 def f_associate4(request):
-	if request.user.is_associate_professor():
+	if request.user.is_associate_professor() or request.user.is_professor():
 		form5 = forms.form_remarks()
 		if remarks.objects.filter(info=request.user).exists():
 
@@ -703,7 +703,7 @@ def f_associate4(request):
 
 @login_required
 def f_associate3(request):
-	if request.user.is_associate_professor():
+	if request.user.is_associate_professor() or request.user.is_professor():
 		form4 = forms.form_rd()
 		if rd.objects.filter(info=request.user).exists():
 
@@ -724,7 +724,7 @@ def f_associate3(request):
 
 @login_required
 def f_associate2(request):
-	if request.user.is_associate_professor():
+	if request.user.is_associate_professor() or request.user.is_professor():
 		form3 = forms.form_feedbackTab()
 
 		if feedbackTab.objects.filter(info=request.user).exists():
@@ -747,7 +747,7 @@ def f_associate2(request):
 
 @login_required
 def f_associate1(request):
-	if request.user.is_associate_professor():
+	if request.user.is_associate_professor() or request.user.is_professor():
 
 		user = request.user
 		print(user)
