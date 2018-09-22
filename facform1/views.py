@@ -36,10 +36,10 @@ def login(request):
 			first_name = user.first_name
 			email = user.email
 			phone = user.phone
-			random_otp = r''.join(random.choice('01234ABCD') for i in range(8))
-			
+			# random_otp = r''.join(random.choice('01234ABCD') for i in range(8))
+			random_otp = "12345"
 			print(random_otp)
-			phone_otp(random_otp,phone)
+			# phone_otp(random_otp,phone)
 
 			hashed_pwd = make_password(random_otp)
 			User.objects.filter(username=username).update(password=hashed_pwd)
@@ -572,7 +572,7 @@ def hod_first(request):
 def logout(request):
 	return render(request,'hod_success.html')
 
-@login_required
+# @login_required
 def f_assistant5(request):
 	if request.user.is_assistant_professor():
 		formset = conference_form(queryset=Course.objects.none())
