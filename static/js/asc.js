@@ -491,6 +491,77 @@ $('.e_p').on("click",function(){
 		c++;
 	}
 
+	var p3_f1 = parseFloat($('.p3_f1').val());
+	var p3_f2 = parseFloat($('.p3_f2').val());
+	var p3_favg = (p3_f1+p3_f2)/2;
+	if(p3_favg<=100){
+		$('.p3_favg').val(p3_favg);
+		p_avg = p_avg + p3_favg;
+		c++;
+	}
+
+	var p4_f1 = parseFloat($('.p4_f1').val());
+	var p4_f2 = parseFloat($('.p4_f2').val());
+	var p4_favg = (p4_f1+p4_f2)/2;
+	if(p4_favg<=100){
+		$('.p4_favg').val(p4_favg);
+		p_avg = p_avg + p4_favg;
+		c++;
+	}
+
+	var p5_f1 = parseFloat($('.p5_f1').val());
+	var p5_f2 = parseFloat($('.p5_f2').val());
+	var p5_favg = (p5_f1+p5_f2)/2;
+	if(p5_favg<=100){
+		$('.p5_favg').val(p5_favg);
+		p_avg = p_avg + p5_favg;
+		c++;
+	}
+
+	var p6_f1 = parseFloat($('.p6_f1').val());
+	var p6_f2 = parseFloat($('.p6_f2').val());
+	var p6_favg = (p6_f1+p6_f2)/2;
+	if(p6_favg<=100){
+		$('.p6_favg').val(p6_favg);
+		p_avg = p_avg + p6_favg;
+		c++;
+	}
+
+	var p7_f1 = parseFloat($('.p7_f1').val());
+	var p7_f2 = parseFloat($('.p7_f2').val());
+	var p7_favg = (p7_f1+p7_f2)/2;
+	if(p7_favg<=100){
+		$('.p7_favg').val(p7_favg);
+		p_avg = p_avg + p7_favg;
+		c++;
+	}
+
+	var p8_f1 = parseFloat($('.p8_f1').val());
+	var p8_f2 = parseFloat($('.p8_f2').val());
+	var p8_favg = (p8_f1+p8_f2)/2;
+	if(p8_favg<=100){
+		$('.p8_favg').val(p8_favg);
+		p_avg = p_avg + p8_favg;
+		c++;
+	}
+
+	var p9_f1 = parseFloat($('.p9_f1').val());
+	var p9_f2 = parseFloat($('.p9_f2').val());
+	var p9_favg = (p9_f1+p9_f2)/2;
+	if(p9_favg<=100){
+		$('.p9_favg').val(p9_favg);
+		p_avg = p_avg + p9_favg;
+		c++;
+	}
+
+	var p10_f1 = parseFloat($('.p10_f1').val());
+	var p10_f2 = parseFloat($('.p10_f2').val());
+	var p10_favg = (p10_f1+p10_f2)/2;
+	if(p10_favg<=100){
+		$('.p10_favg').val(p10_favg);
+		p_avg = p_avg + p10_favg;
+		c++;
+	}
 
 	p_avg = p_avg/c;
 	if(isNaN(p_avg)){
