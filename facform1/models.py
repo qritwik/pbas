@@ -39,15 +39,7 @@ class ipr_status(models.Model):
 
 	def __str__(self):
 		return self.name
-
-class author(models.Model):
-	"""
-	Description: Model Description
-	"""
-	name = models.CharField(max_length=100, blank=True, null=True)
-
-	def __str__(self):
-		return self.name		
+		
 
 class User(AbstractUser):
 	phone = models.BigIntegerField(null=True)
@@ -457,15 +449,61 @@ class remarks(models.Model):
 
 class conference(models.Model):
 
-	c_name = models.CharField(max_length=100, blank=True, null=True)
-	c_title = models.CharField(max_length=100, blank=True, null=True)
-	c_place = models.CharField(max_length=100, blank=True, null=True)
-	c_date = models.DateField(blank=True, null=True)
-	c_index = models.CharField(max_length=100, blank=True, null=True)
+	c1_name = models.CharField(max_length=100, blank=True, null=True)
+	c1_title = models.CharField(max_length=100, blank=True, null=True)
+	c1_place = models.CharField(max_length=100, blank=True, null=True)
+	c1_date = models.DateField(blank=True, null=True)
+	c1_index = models.CharField(max_length=100, blank=True, null=True)
+	c1_author =	models.CharField(max_length=100, blank=True, null=True)
 
+	c2_name = models.CharField(max_length=100, blank=True, null=True)
+	c2_title = models.CharField(max_length=100, blank=True, null=True)
+	c2_place = models.CharField(max_length=100, blank=True, null=True)
+	c2_date = models.DateField(blank=True, null=True)
+	c2_index = models.CharField(max_length=100, blank=True, null=True)
+	c2_author =	models.CharField(max_length=100, blank=True, null=True)
 
-	
-	author = models.ForeignKey('author', on_delete=models.CASCADE,null=True)
+	c3_name = models.CharField(max_length=100, blank=True, null=True)
+	c3_title = models.CharField(max_length=100, blank=True, null=True)
+	c3_place = models.CharField(max_length=100, blank=True, null=True)
+	c3_date = models.DateField(blank=True, null=True)
+	c3_index = models.CharField(max_length=100, blank=True, null=True)
+	c3_author =	models.CharField(max_length=100, blank=True, null=True)
+
+	c4_name = models.CharField(max_length=100, blank=True, null=True)
+	c4_title = models.CharField(max_length=100, blank=True, null=True)
+	c4_place = models.CharField(max_length=100, blank=True, null=True)
+	c4_date = models.DateField(blank=True, null=True)
+	c4_index = models.CharField(max_length=100, blank=True, null=True)
+	c4_author =	models.CharField(max_length=100, blank=True, null=True)
+
+	c5_name = models.CharField(max_length=100, blank=True, null=True)
+	c5_title = models.CharField(max_length=100, blank=True, null=True)
+	c5_place = models.CharField(max_length=100, blank=True, null=True)
+	c5_date = models.DateField(blank=True, null=True)
+	c5_index = models.CharField(max_length=100, blank=True, null=True)
+	c5_author =	models.CharField(max_length=100, blank=True, null=True)
+
+	c6_name = models.CharField(max_length=100, blank=True, null=True)
+	c6_title = models.CharField(max_length=100, blank=True, null=True)
+	c6_place = models.CharField(max_length=100, blank=True, null=True)
+	c6_date = models.DateField(blank=True, null=True)
+	c6_index = models.CharField(max_length=100, blank=True, null=True)
+	c6_author =	models.CharField(max_length=100, blank=True, null=True)
+
+	c7_name = models.CharField(max_length=100, blank=True, null=True)
+	c7_title = models.CharField(max_length=100, blank=True, null=True)
+	c7_place = models.CharField(max_length=100, blank=True, null=True)
+	c7_date = models.DateField(blank=True, null=True)
+	c7_index = models.CharField(max_length=100, blank=True, null=True)
+	c7_author =	models.CharField(max_length=100, blank=True, null=True)
+
+	c8_name = models.CharField(max_length=100, blank=True, null=True)
+	c8_title = models.CharField(max_length=100, blank=True, null=True)
+	c8_place = models.CharField(max_length=100, blank=True, null=True)
+	c8_date = models.DateField(blank=True, null=True)
+	c8_index = models.CharField(max_length=100, blank=True, null=True)
+	c8_author =	models.CharField(max_length=100, blank=True, null=True)
 
 	info = models.ForeignKey('User', on_delete=models.CASCADE,null=True)
 
@@ -473,18 +511,71 @@ class conference(models.Model):
 
 class journal(models.Model):
 
-	j_index = models.CharField(max_length=100, blank=True, null=True)
-	j_name = models.CharField(max_length=100, blank=True, null=True)
-	j_title = models.CharField(max_length=100, blank=True, null=True)
-	j_volume = models.CharField(max_length=100, blank=True, null=True)
-	j_issn = models.CharField(max_length=100, blank=True, null=True)
-	j_date = models.DateField(blank=True, null=True)
-	j_page = models.IntegerField( blank=True, null=True)
+	j1_index = models.CharField(max_length=100, blank=True, null=True)
+	j1_name = models.CharField(max_length=100, blank=True, null=True)
+	j1_title = models.CharField(max_length=100, blank=True, null=True)
+	j1_volume = models.CharField(max_length=100, blank=True, null=True)
+	j1_issn = models.CharField(max_length=100, blank=True, null=True)
+	j1_date = models.DateField(blank=True, null=True)
+	j1_page = models.IntegerField( blank=True, null=True)
 
-
+	j2_index = models.CharField(max_length=100, blank=True, null=True)
+	j2_name = models.CharField(max_length=100, blank=True, null=True)
+	j2_title = models.CharField(max_length=100, blank=True, null=True)
+	j2_volume = models.CharField(max_length=100, blank=True, null=True)
+	j2_issn = models.CharField(max_length=100, blank=True, null=True)
+	j2_date = models.DateField(blank=True, null=True)
+	j2_page = models.IntegerField( blank=True, null=True)
 	
 
-	author = models.ForeignKey('author', on_delete=models.CASCADE,null=True)
+	j3_index = models.CharField(max_length=100, blank=True, null=True)
+	j3_name = models.CharField(max_length=100, blank=True, null=True)
+	j3_title = models.CharField(max_length=100, blank=True, null=True)
+	j3_volume = models.CharField(max_length=100, blank=True, null=True)
+	j3_issn = models.CharField(max_length=100, blank=True, null=True)
+	j3_date = models.DateField(blank=True, null=True)
+	j3_page = models.IntegerField( blank=True, null=True)
+
+	j4_index = models.CharField(max_length=100, blank=True, null=True)
+	j4_name = models.CharField(max_length=100, blank=True, null=True)
+	j4_title = models.CharField(max_length=100, blank=True, null=True)
+	j4_volume = models.CharField(max_length=100, blank=True, null=True)
+	j4_issn = models.CharField(max_length=100, blank=True, null=True)
+	j4_date = models.DateField(blank=True, null=True)
+	j4_page = models.IntegerField( blank=True, null=True)
+
+	j5_index = models.CharField(max_length=100, blank=True, null=True)
+	j5_name = models.CharField(max_length=100, blank=True, null=True)
+	j5_title = models.CharField(max_length=100, blank=True, null=True)
+	j5_volume = models.CharField(max_length=100, blank=True, null=True)
+	j5_issn = models.CharField(max_length=100, blank=True, null=True)
+	j5_date = models.DateField(blank=True, null=True)
+	j5_page = models.IntegerField( blank=True, null=True)
+
+	j6_index = models.CharField(max_length=100, blank=True, null=True)
+	j6_name = models.CharField(max_length=100, blank=True, null=True)
+	j6_title = models.CharField(max_length=100, blank=True, null=True)
+	j6_volume = models.CharField(max_length=100, blank=True, null=True)
+	j6_issn = models.CharField(max_length=100, blank=True, null=True)
+	j6_date = models.DateField(blank=True, null=True)
+	j6_page = models.IntegerField( blank=True, null=True)
+	
+	
+	j7_index = models.CharField(max_length=100, blank=True, null=True)
+	j7_name = models.CharField(max_length=100, blank=True, null=True)
+	j7_title = models.CharField(max_length=100, blank=True, null=True)
+	j7_volume = models.CharField(max_length=100, blank=True, null=True)
+	j7_issn = models.CharField(max_length=100, blank=True, null=True)
+	j7_date = models.DateField(blank=True, null=True)
+	j7_page = models.IntegerField( blank=True, null=True)
+
+	j8_index = models.CharField(max_length=100, blank=True, null=True)
+	j8_name = models.CharField(max_length=100, blank=True, null=True)
+	j8_title = models.CharField(max_length=100, blank=True, null=True)
+	j8_volume = models.CharField(max_length=100, blank=True, null=True)
+	j8_issn = models.CharField(max_length=100, blank=True, null=True)
+	j8_date = models.DateField(blank=True, null=True)
+	j8_page = models.IntegerField( blank=True, null=True)
 
 	info = models.ForeignKey('User', on_delete=models.CASCADE,null=True)
 

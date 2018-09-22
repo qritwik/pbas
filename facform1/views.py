@@ -574,39 +574,37 @@ def logout(request):
 	return render(request,'hod_success.html')
 
 # @login_required
-# def f_assistant5(request):
-# 	if request.user.is_assistant_professor():
-# 		conferenceformset = formset_factory(conference, form=forms.form_conference, extra=10)
-# 		formset = conferenceformset(queryset=conference.objects.none())
-# 		#formset1 = journal_form(queryset=Course.objects.none())
+def f_assistant5(request):
+	if request.user.is_assistant_professor():
+		sendme = User.objects.get(username=request.user)
+		form6 = forms.form_conference()
+		form7 = forms.form_journal()
 
-# 		if conference.objects.filter(info=request.user).exists():
-# 			return HttpResponseRedirect("/logout/")
-# 		else:
-# 			if request.method == 'POST':
-# 				sendme = User.objects.get(username=request.user)
-# 				formset = conferenceformset(request.POST, request.FILES)
-# 				#formset1 = journal_form(request.POST, request.FILES)
+		if conference.objects.filter(info=request.user).exists():
 
-# 				if formset.is_valid():
-# 					for form in formset:
-# 						obj3 = form.save(commit=False)
-# 						obj3.info = request.user
-# 						obj3.save()
+			return HttpResponseRedirect("/logout/")
+		else:
+			if request.method == 'POST':
+				
+				form6 = forms.form_conference(request.POST)
+				form7 = forms.form_journal(request.POST)
+				if form6.is_valid() and form7.is_valid():
+					obj3 = form6.save(commit=False)
+					obj4 = form7.save(commit=False)
+					obj3.info = request.user
+					obj4.info = request.user
 
-# 					# for form in formset1:
-# 					# 	obj3 = form.save(commit=False)
-# 					# 	obj3.info = request.user
-# 					# 	obj3.save()
+					obj3.save()
+					obj3.save()
 
-# 					if sendme.teach_status == False:
-# 							sendme.teach_status = True
-# 							sendme.save()
-# 					return HttpResponseRedirect("/logout/")
-# 			return render(request,'assistant_form5.html',{'formset':formset,'formset1':formset1})
-# 		return render(request,'assistant_form5.html',{'formset':formset,'formset1':formset1})	
-# 	else:
-# 		return HttpResponseRedirect('/invalid')	
+					if sendme.teach_status == False:
+						sendme.teach_status = True
+						sendme.save()
+					return HttpResponseRedirect("/logout/")
+			return render(request,'assistant_form4.html',{'form6':form6,'form7':form7})
+		return render(request,'assistant_form4.html',{'form6':form6,'form7':form7})
+	else:
+		return HttpResponseRedirect('/invalid')
 
 @login_required
 def f_assistant4(request):

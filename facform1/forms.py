@@ -19,7 +19,6 @@ class form_conference(forms.ModelForm):
 		fields = '__all__'
 		exclude = ['info']
 
-conference_form = modelformset_factory(conference, form=form_conference, extra=10)	
 						
 
 class form_journal(forms.ModelForm):
@@ -28,7 +27,6 @@ class form_journal(forms.ModelForm):
 		fields = '__all__'
 		exclude = ['info']
 
-journal_form = modelformset_factory(journal, form=form_journal, extra=10)
 
 class form_User(forms.ModelForm):
 
