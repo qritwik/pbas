@@ -19,7 +19,7 @@ $(function(){
 
 	var o_t1_f1 = parseFloat($('.o_t1_f1').val());
 	var o_t1_f2 = parseFloat($('.o_t1_f2').val());
-	o_t1_favg = (o_t1_f1+o_t1_f2)/2;
+	o_t1_favg = Math.round((o_t1_f1+o_t1_f2)/2);
 	if(o_t1_favg<=100){
 		$('.o_t1_favg').val(o_t1_favg);
 		o_t_avg = o_t_avg + o_t1_favg;
@@ -29,7 +29,7 @@ $(function(){
 
     var o_t2_f1 = parseFloat($('.o_t2_f1').val());
 	var o_t2_f2 = parseFloat($('.o_t2_f2').val());
-	o_t2_favg = (o_t2_f1+o_t2_f2)/2;
+	o_t2_favg = Math.round((o_t2_f1+o_t2_f2)/2);
 	if(o_t2_favg<=100){
 		$('.o_t2_favg').val(o_t2_favg);
 		o_t_avg = o_t_avg + o_t2_favg;
@@ -39,7 +39,7 @@ $(function(){
 
 	var o_t3_f1 = parseFloat($('.o_t3_f1').val());
 	var o_t3_f2 = parseFloat($('.o_t3_f2').val());
-	o_t3_favg = (o_t3_f1+o_t3_f2)/2;
+	o_t3_favg = Math.round((o_t3_f1+o_t3_f2)/2);
 	if(o_t3_favg<=100){
 		$('.o_t3_favg').val(o_t3_favg);
 		o_t_avg = o_t_avg + o_t3_favg;
@@ -50,8 +50,8 @@ $(function(){
 	var o_t1_stu_app = parseFloat($('.o_t1_stu_app').val());
 	var o_t1_stu_pass = parseFloat($('.o_t1_stu_pass').val());
 	if(o_t1_stu_pass<=o_t1_stu_app){
-		var o_t1 = (o_t1_stu_pass/o_t1_stu_app)*100
-		$('.o_t1_stu_perpass').val(Math.round( o_t1*100)/100);
+		var o_t1 = Math.round((o_t1_stu_pass/o_t1_stu_app)*100);
+		$('.o_t1_stu_perpass').val(o_t1);
 		o_tr_avg = o_tr_avg + o_t1;
 		d++;
 	}
@@ -60,8 +60,8 @@ $(function(){
 	var o_t2_stu_app = parseFloat($('.o_t2_stu_app').val());
 	var o_t2_stu_pass = parseFloat($('.o_t2_stu_pass').val());
 	if(o_t2_stu_pass<=o_t2_stu_app){
-		var o_t2 = (o_t2_stu_pass/o_t2_stu_app)*100
-		$('.o_t2_stu_perpass').val(Math.round( o_t2*100)/100);
+		var o_t2 = Math.round((o_t2_stu_pass/o_t2_stu_app)*100);
+		$('.o_t2_stu_perpass').val(o_t2);
 		o_tr_avg = o_tr_avg + o_t2;
 		d++;
 	}
@@ -69,8 +69,8 @@ $(function(){
 	var o_t3_stu_app = parseFloat($('.o_t3_stu_app').val());
 	var o_t3_stu_pass = parseFloat($('.o_t3_stu_pass').val());
 	if(o_t3_stu_pass<=o_t3_stu_app){
-		o_t3 = (o_t3_stu_pass/o_t3_stu_app)*100
-		$('.o_t3_stu_perpass').val(Math.round( o_t3*100)/100);
+		o_t3 = Math.round((o_t3_stu_pass/o_t3_stu_app)*100);
+		$('.o_t3_stu_perpass').val(o_t3);
 		o_tr_avg = o_tr_avg + o_t3 ;
 		d++;
 	}
@@ -115,7 +115,7 @@ $('.o_l').on("click",function(){
 
 	var o_l1_f1 = parseFloat($('.o_l1_f1').val());
 	var o_l1_f2 = parseFloat($('.o_l1_f2').val());
-	o_l1_favg = (o_l1_f1+o_l1_f2)/2;
+	o_l1_favg = Math.round((o_l1_f1+o_l1_f2)/2);
 	if(o_l1_favg<=100){
 		$('.o_l1_favg').val(o_l1_favg);
 		o_l_avg = o_l_avg + o_l1_favg;
@@ -125,7 +125,7 @@ $('.o_l').on("click",function(){
 
     var o_l2_f1 = parseFloat($('.o_l2_f1').val());
 	var o_l2_f2 = parseFloat($('.o_l2_f2').val());
-	o_l2_favg = (o_l2_f1+o_l2_f2)/2;
+	o_l2_favg = Math.round((o_l2_f1+o_l2_f2)/2);
 	if(o_l2_favg<=100){
 		$('.o_l2_favg').val(o_l2_favg);
 		o_l_avg = o_l_avg + o_l2_favg;
@@ -135,7 +135,7 @@ $('.o_l').on("click",function(){
 
 	var o_l3_f1 = parseFloat($('.o_l3_f1').val());
 	var o_l3_f2 = parseFloat($('.o_l3_f2').val());
-	o_l3_favg = (o_l3_f1+o_l3_f2)/2;
+	o_l3_favg = Math.round((o_l3_f1+o_l3_f2)/2);
 	if(o_l3_favg<=100){
 		$('.o_l3_favg').val(o_l3_favg);
 		o_l_avg = o_l_avg + o_l3_favg;
@@ -144,7 +144,7 @@ $('.o_l').on("click",function(){
 
 	var o_l4_f1 = parseFloat($('.o_l4_f1').val());
 	var o_l4_f2 = parseFloat($('.o_l4_f2').val());
-	o_l4_favg = (o_l4_f1+o_l4_f2)/2;
+	o_l4_favg = Math.round((o_l4_f1+o_l4_f2)/2);
 	if(o_l4_favg<=100){
 		$('.o_l4_favg').val(o_l4_favg);
 		o_l_avg = o_l_avg + o_l4_favg;
@@ -153,7 +153,7 @@ $('.o_l').on("click",function(){
 
 	var o_l5_f1 = parseFloat($('.o_l5_f1').val());
 	var o_l5_f2 = parseFloat($('.o_l5_f2').val());
-	o_l5_favg = (o_l5_f1+o_l5_f2)/2;
+	o_l5_favg = Math.round((o_l5_f1+o_l5_f2)/2);
 	if(o_l5_favg<=100){
 		$('.o_l5_favg').val(o_l5_favg);
 		o_l_avg = o_l_avg + o_l5_favg;
@@ -163,8 +163,8 @@ $('.o_l').on("click",function(){
 	var o_l1_stu_app = parseFloat($('.o_l1_stu_app').val());
 	var o_l1_stu_pass = parseFloat($('.o_l1_stu_pass').val());
 	if(o_l1_stu_pass<=o_l1_stu_app){
-		var o_l1 = (o_l1_stu_pass/o_l1_stu_app)*100
-		$('.o_l1_stu_perpass').val(Math.round( o_l1*100)/100);
+		var o_l1 = Math.round((o_l1_stu_pass/o_l1_stu_app)*100);
+		$('.o_l1_stu_perpass').val(o_l1);
 		o_lr_avg = o_lr_avg + o_l1;
 		d++;
 	}
@@ -173,8 +173,8 @@ $('.o_l').on("click",function(){
 	var o_l2_stu_app = parseFloat($('.o_l2_stu_app').val());
 	var o_l2_stu_pass = parseFloat($('.o_l2_stu_pass').val());
 	if(o_l2_stu_pass<=o_l2_stu_app){
-		var o_l2 = (o_l2_stu_pass/o_l2_stu_app)*100
-		$('.o_l2_stu_perpass').val(Math.round( o_l2*100)/100);
+		var o_l2 = Math.round((o_l2_stu_pass/o_l2_stu_app)*100);
+		$('.o_l2_stu_perpass').val(o_l2);
 		o_lr_avg = o_lr_avg + o_l2;
 		d++;
 	}
@@ -182,8 +182,8 @@ $('.o_l').on("click",function(){
 	var o_l3_stu_app = parseFloat($('.o_l3_stu_app').val());
 	var o_l3_stu_pass = parseFloat($('.o_l3_stu_pass').val());
 	if(o_l3_stu_pass<=o_l3_stu_app){
-		var o_l3 = (o_l3_stu_pass/o_l3_stu_app)*100
-		$('.o_l3_stu_perpass').val(Math.round( o_l3*100)/100);
+		var o_l3 = Math.round((o_l3_stu_pass/o_l3_stu_app)*100);
+		$('.o_l3_stu_perpass').val(o_l3);
 		o_lr_avg = o_lr_avg + o_l3;
 		d++;
 	}
@@ -191,17 +191,17 @@ $('.o_l').on("click",function(){
 	var o_l4_stu_app = parseFloat($('.o_l4_stu_app').val());
 	var o_l4_stu_pass = parseFloat($('.o_l4_stu_pass').val());
 	if(o_l4_stu_pass<=o_l4_stu_app){
-		var o_l4 = (o_l4_stu_pass/o_l4_stu_app)*100
-		$('.o_l4_stu_perpass').val(Math.round( o_l4*100)/100);
+		var o_l4 = Math.round((o_l4_stu_pass/o_l4_stu_app)*100);
+		$('.o_l4_stu_perpass').val(o_l4);
 		o_lr_avg = o_lr_avg + o_l4;
 		d++;
 	}
 
 	var o_l5_stu_app = parseFloat($('.o_l5_stu_app').val());
 	var o_l5_stu_pass = parseFloat($('.o_l5_stu_pass').val());
-	var o_l5 = (o_l5_stu_pass/o_l5_stu_app)*100
+	var o_l5 = Math.round((o_l5_stu_pass/o_l5_stu_app)*100);
 	if(o_l5_stu_pass<=o_l5_stu_app){
-		$('.o_l5_stu_perpass').val(Math.round( o_l5*100)/100);
+		$('.o_l5_stu_perpass').val(o_l5);
 		o_lr_avg = o_lr_avg + o_l5;
 		d++;
 	}
@@ -250,7 +250,7 @@ $('.o_l').on("click",function(){
 
 	var e_t1_f1 = parseFloat($('.e_t1_f1').val());
 	var e_t1_f2 = parseFloat($('.e_t1_f2').val());
-	e_t1_favg = (e_t1_f1+e_t1_f2)/2;
+	e_t1_favg = Math.round((e_t1_f1+e_t1_f2)/2);
 	if(e_t1_favg<=100){
 		$('.e_t1_favg').val(e_t1_favg);
 		e_t_avg = e_t_avg + e_t1_favg;
@@ -260,7 +260,7 @@ $('.o_l').on("click",function(){
 
     var e_t2_f1 = parseFloat($('.e_t2_f1').val());
 	var e_t2_f2 = parseFloat($('.e_t2_f2').val());
-	e_t2_favg = (e_t2_f1+e_t2_f2)/2;
+	e_t2_favg = Math.round((e_t2_f1+e_t2_f2)/2);
 	if(e_t2_favg<=100){
 		$('.e_t2_favg').val(e_t2_favg);
 		e_t_avg = e_t_avg + e_t2_favg;
@@ -270,7 +270,7 @@ $('.o_l').on("click",function(){
 
 	var e_t3_f1 = parseFloat($('.e_t3_f1').val());
 	var e_t3_f2 = parseFloat($('.e_t3_f2').val());
-	e_t3_favg = (e_t3_f1+e_t3_f2)/2;
+	e_t3_favg = Math.round((e_t3_f1+e_t3_f2)/2);
 	if(e_t3_favg<=100){
 		$('.e_t3_favg').val(e_t3_favg);
 		e_t_avg = e_t_avg + e_t3_favg;
@@ -281,8 +281,8 @@ $('.o_l').on("click",function(){
 	var e_t1_stu_app = parseFloat($('.e_t1_stu_app').val());
 	var e_t1_stu_pass = parseFloat($('.e_t1_stu_pass').val());
 	if(e_t1_stu_pass<=e_t1_stu_app){
-		var e_t1 = (e_t1_stu_pass/e_t1_stu_app)*100
-		$('.e_t1_stu_perpass').val(Math.round( e_t1*100)/100);
+		var e_t1 = Math.round((e_t1_stu_pass/e_t1_stu_app)*100);
+		$('.e_t1_stu_perpass').val(e_t1);
 		e_tr_avg = e_tr_avg + e_t1;
 		d++;
 	}
@@ -291,8 +291,8 @@ $('.o_l').on("click",function(){
 	var e_t2_stu_app = parseFloat($('.e_t2_stu_app').val());
 	var e_t2_stu_pass = parseFloat($('.e_t2_stu_pass').val());
 	if(e_t2_stu_pass<=e_t2_stu_app){
-		var e_t2 = (e_t2_stu_pass/e_t2_stu_app)*100
-		$('.e_t2_stu_perpass').val(Math.round( e_t2*100)/100);
+		var e_t2 = Math.round((e_t2_stu_pass/e_t2_stu_app)*100);
+		$('.e_t2_stu_perpass').val(e_t2);
 		e_tr_avg = e_tr_avg + e_t2;
 		d++;
 	}
@@ -300,8 +300,8 @@ $('.o_l').on("click",function(){
 	var e_t3_stu_app = parseFloat($('.e_t3_stu_app').val());
 	var e_t3_stu_pass = parseFloat($('.e_t3_stu_pass').val());
 	if(e_t3_stu_pass<=e_t3_stu_app){
-		var e_t3 = (e_t3_stu_pass/e_t3_stu_app)*100
-		$('.e_t3_stu_perpass').val(Math.round( e_t3*100)/100);
+		var e_t3 = Math.round((e_t3_stu_pass/e_t3_stu_app)*100);
+		$('.e_t3_stu_perpass').val(e_t3);
 		e_tr_avg = e_tr_avg + e_t3;
 		d++;
 	}
@@ -350,7 +350,7 @@ $('.e_l').on("click",function(){
 
 	var e_l1_f1 = parseFloat($('.e_l1_f1').val());
 	var e_l1_f2 = parseFloat($('.e_l1_f2').val());
-	 e_l1_favg = (e_l1_f1+e_l1_f2)/2;
+	 e_l1_favg = Math.round((e_l1_f1+e_l1_f2)/2);
 	if(e_l1_favg<=100){
 		$('.e_l1_favg').val(e_l1_favg);
 		e_l_avg = e_l_avg + e_l1_favg;
@@ -360,7 +360,7 @@ $('.e_l').on("click",function(){
 
     var e_l2_f1 = parseFloat($('.e_l2_f1').val());
 	var e_l2_f2 = parseFloat($('.e_l2_f2').val());
-	e_l2_favg = (e_l2_f1+e_l2_f2)/2;
+	e_l2_favg = Math.round((e_l2_f1+e_l2_f2)/2);
 	if(e_l2_favg<=100){
 		$('.e_l2_favg').val(e_l2_favg);
 		e_l_avg = e_l_avg + e_l2_favg;
@@ -370,7 +370,7 @@ $('.e_l').on("click",function(){
 
 	var e_l3_f1 = parseFloat($('.e_l3_f1').val());
 	var e_l3_f2 = parseFloat($('.e_l3_f2').val());
-	e_l3_favg = (e_l3_f1+e_l3_f2)/2;
+	e_l3_favg = Math.round((e_l3_f1+e_l3_f2)/2);
 	if(e_l3_favg<=100){
 		$('.e_l3_favg').val(e_l3_favg);
 		e_l_avg = e_l_avg + e_l3_favg;
@@ -379,7 +379,7 @@ $('.e_l').on("click",function(){
 
 	var e_l4_f1 = parseFloat($('.e_l4_f1').val());
 	var e_l4_f2 = parseFloat($('.e_l4_f2').val());
-	e_l4_favg = (e_l4_f1+e_l4_f2)/2;
+	e_l4_favg = Math.round((e_l4_f1+e_l4_f2)/2);
 	if(e_l4_favg<=100){
 		$('.e_l4_favg').val(e_l4_favg);
 		e_l_avg = e_l_avg + e_l4_favg;
@@ -388,7 +388,7 @@ $('.e_l').on("click",function(){
 
 	var e_l5_f1 = parseFloat($('.e_l5_f1').val());
 	var e_l5_f2 = parseFloat($('.e_l5_f2').val());
-	e_l5_favg = (e_l5_f1+e_l5_f2)/2;
+	e_l5_favg = Math.round((e_l5_f1+e_l5_f2)/2);
 	if(e_l5_favg<=100){
 		$('.e_l5_favg').val(e_l5_favg);
 		e_l_avg = e_l_avg + e_l5_favg;
@@ -398,8 +398,8 @@ $('.e_l').on("click",function(){
 	var e_l1_stu_app = parseFloat($('.e_l1_stu_app').val());
 	var e_l1_stu_pass = parseFloat($('.e_l1_stu_pass').val());
 	if(e_l1_stu_pass<=e_l1_stu_app){
-		var e_l1 = (e_l1_stu_pass/e_l1_stu_app)*100
-		$('.e_l1_stu_perpass').val(Math.round( e_l1*100)/100);
+		var e_l1 = Math.round((e_l1_stu_pass/e_l1_stu_app)*100);
+		$('.e_l1_stu_perpass').val(e_l1);
 		e_lr_avg = e_lr_avg + e_l1;
 		d++;
 	}
@@ -408,8 +408,8 @@ $('.e_l').on("click",function(){
 	var e_l2_stu_app = parseFloat($('.e_l2_stu_app').val());
 	var e_l2_stu_pass = parseFloat($('.e_l2_stu_pass').val());
 	if(e_l2_stu_pass<=e_l2_stu_app){
-		var e_l2 = (e_l2_stu_pass/e_l2_stu_app)*100
-		$('.e_l2_stu_perpass').val(Math.round( e_l2*100)/100);
+		var e_l2 = Math.round((e_l2_stu_pass/e_l2_stu_app)*100);
+		$('.e_l2_stu_perpass').val(e_l2);
 		e_lr_avg = e_lr_avg + e_l2;
 		d++;
 	}
@@ -417,8 +417,8 @@ $('.e_l').on("click",function(){
 	var e_l3_stu_app = parseFloat($('.e_l3_stu_app').val());
 	var e_l3_stu_pass = parseFloat($('.e_l3_stu_pass').val());
 	if(e_l3_stu_pass<=e_l3_stu_app){
-		var e_l3 = (e_l3_stu_pass/e_l3_stu_app)*100
-		$('.e_l3_stu_perpass').val(Math.round( e_l3*100)/100);
+		var e_l3 = Math.round((e_l3_stu_pass/e_l3_stu_app)*100);
+		$('.e_l3_stu_perpass').val(e_l3);
 		e_lr_avg = e_lr_avg + e_l3;
 		d++;
 	}
@@ -426,8 +426,8 @@ $('.e_l').on("click",function(){
 	var e_l4_stu_app = parseFloat($('.e_l4_stu_app').val());
 	var e_l4_stu_pass = parseFloat($('.e_l4_stu_pass').val());
 	if(e_l4_stu_pass<=e_l4_stu_app){
-		var e_l4 = (e_l4_stu_pass/e_l4_stu_app)*100
-		$('.e_l4_stu_perpass').val(Math.round( e_l4*100)/100);
+		var e_l4 = Math.round((e_l4_stu_pass/e_l4_stu_app)*100);
+		$('.e_l4_stu_perpass').val(e_l4);
 		e_lr_avg = e_lr_avg + e_l4;
 		d++;
 	}
@@ -435,8 +435,8 @@ $('.e_l').on("click",function(){
 	var e_l5_stu_app = parseFloat($('.e_l5_stu_app').val());
 	var e_l5_stu_pass = parseFloat($('.e_l5_stu_pass').val());
 	if(e_l5_stu_pass<=e_l5_stu_app){
-		var e_l5 = (e_l5_stu_pass/e_l5_stu_app)*100
-		$('.e_l5_stu_perpass').val(Math.round( e_l5*100)/100);
+		var e_l5 = Math.round((e_l5_stu_pass/e_l5_stu_app)*100);
+		$('.e_l5_stu_perpass').val(e_l5);
 		e_lr_avg = e_lr_avg + e_l5;
 		d++;
 	}
@@ -475,7 +475,7 @@ $('.e_p').on("click",function(){
 
 	var p1_f1 = parseFloat($('.p1_f1').val());
 	var p1_f2 = parseFloat($('.p1_f2').val());
-	var p1_favg = (p1_f1+p1_f2)/2;
+	var p1_favg = Math.round((p1_f1+p1_f2)/2);
 	if(p1_favg<=100){
 		$('.p1_favg').val(p1_favg);
 		p_avg = p_avg + p1_favg;
@@ -484,7 +484,7 @@ $('.e_p').on("click",function(){
 
 	var p2_f1 = parseFloat($('.p2_f1').val());
 	var p2_f2 = parseFloat($('.p2_f2').val());
-	var p2_favg = (p2_f1+p2_f2)/2;
+	var p2_favg = Math.round((p2_f1+p2_f2)/2);
 	if(p2_favg<=100){
 		$('.p2_favg').val(p2_favg);
 		p_avg = p_avg + p2_favg;
@@ -493,7 +493,7 @@ $('.e_p').on("click",function(){
 
 	var p3_f1 = parseFloat($('.p3_f1').val());
 	var p3_f2 = parseFloat($('.p3_f2').val());
-	var p3_favg = (p3_f1+p3_f2)/2;
+	var p3_favg = Math.round((p3_f1+p3_f2)/2);
 	if(p3_favg<=100){
 		$('.p3_favg').val(p3_favg);
 		p_avg = p_avg + p3_favg;
@@ -502,7 +502,7 @@ $('.e_p').on("click",function(){
 
 	var p4_f1 = parseFloat($('.p4_f1').val());
 	var p4_f2 = parseFloat($('.p4_f2').val());
-	var p4_favg = (p4_f1+p4_f2)/2;
+	var p4_favg = Math.round((p4_f1+p4_f2)/2);
 	if(p4_favg<=100){
 		$('.p4_favg').val(p4_favg);
 		p_avg = p_avg + p4_favg;
@@ -511,7 +511,7 @@ $('.e_p').on("click",function(){
 
 	var p5_f1 = parseFloat($('.p5_f1').val());
 	var p5_f2 = parseFloat($('.p5_f2').val());
-	var p5_favg = (p5_f1+p5_f2)/2;
+	var p5_favg = Math.round((p5_f1+p5_f2)/2);
 	if(p5_favg<=100){
 		$('.p5_favg').val(p5_favg);
 		p_avg = p_avg + p5_favg;
@@ -520,7 +520,7 @@ $('.e_p').on("click",function(){
 
 	var p6_f1 = parseFloat($('.p6_f1').val());
 	var p6_f2 = parseFloat($('.p6_f2').val());
-	var p6_favg = (p6_f1+p6_f2)/2;
+	var p6_favg = Math.round((p6_f1+p6_f2)/2);
 	if(p6_favg<=100){
 		$('.p6_favg').val(p6_favg);
 		p_avg = p_avg + p6_favg;
@@ -529,7 +529,7 @@ $('.e_p').on("click",function(){
 
 	var p7_f1 = parseFloat($('.p7_f1').val());
 	var p7_f2 = parseFloat($('.p7_f2').val());
-	var p7_favg = (p7_f1+p7_f2)/2;
+	var p7_favg = Math.round((p7_f1+p7_f2)/2);
 	if(p7_favg<=100){
 		$('.p7_favg').val(p7_favg);
 		p_avg = p_avg + p7_favg;
@@ -538,7 +538,7 @@ $('.e_p').on("click",function(){
 
 	var p8_f1 = parseFloat($('.p8_f1').val());
 	var p8_f2 = parseFloat($('.p8_f2').val());
-	var p8_favg = (p8_f1+p8_f2)/2;
+	var p8_favg = Math.round((p8_f1+p8_f2)/2);
 	if(p8_favg<=100){
 		$('.p8_favg').val(p8_favg);
 		p_avg = p_avg + p8_favg;
@@ -547,7 +547,7 @@ $('.e_p').on("click",function(){
 
 	var p9_f1 = parseFloat($('.p9_f1').val());
 	var p9_f2 = parseFloat($('.p9_f2').val());
-	var p9_favg = (p9_f1+p9_f2)/2;
+	var p9_favg = Math.round((p9_f1+p9_f2)/2);
 	if(p9_favg<=100){
 		$('.p9_favg').val(p9_favg);
 		p_avg = p_avg + p9_favg;
@@ -556,7 +556,7 @@ $('.e_p').on("click",function(){
 
 	var p10_f1 = parseFloat($('.p10_f1').val());
 	var p10_f2 = parseFloat($('.p10_f2').val());
-	var p10_favg = (p10_f1+p10_f2)/2;
+	var p10_favg = Math.round((p10_f1+p10_f2)/2);
 	if(p10_favg<=100){
 		$('.p10_favg').val(p10_favg);
 		p_avg = p_avg + p10_favg;
