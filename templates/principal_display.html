@@ -96,9 +96,8 @@
 							</div>
 
 							<div class="cell" data-title="designation">
-								{% if hod_name.designation.name == 'hod' %}
-								<p>HOD</p>
-								{% endif %}
+								<p>{{ hod_name.designation }}</p>
+								
 							</div>
 								<div class="cell" data-title="prin-review">
                 {% if hod_name.principal_status %}
@@ -128,11 +127,8 @@
 							</div>
 
 							<div class="cell" data-title="designation">
-								{% if name.designation.name == 'associate' %}
-								<p>Associate</p>
-								{% elif name.designation.name == 'professor' %}
-								<p>Professor</p>
-								{% endif %}
+								
+								<p>{{ name.designation }}</p>
 
 							</div>
 
@@ -166,9 +162,7 @@
               </div>
 
 							<div class="cell" data-title="designation">
-								{% if name1.designation.name == 'assistant' %}
-								<p>Assistant</p>
-								{% endif %}
+								<p>{{ name1.designation }}</p>
 							</div>
 
               <div class="cell" data-title="prin-review">

@@ -644,35 +644,35 @@ $('.f_calc').on("click",function(){
 	console.log(b);
 	var f_marks = 0;
 
-	if(a<60){
+	if(a<59.5){
 		f_marks = 0;
 	}
-	else if(a>60 && a<=70)
+	else if(a>59.5 && a<=69.5)
 		f_marks = 3;
 
-	else if(a>70 && a<=80)
+	else if(a>69.5 && a<=79.5)
 		f_marks = 5;
 
-	else if(a>80 && a<=90)
+	else if(a>79.5 && a<=89.5)
 		f_marks = 8;
 
-	else if(a>90)
+	else if(a>89.5)
 		f_marks = 10;
 
 
-	if(b<60){
+	if(b<59.5){
 		f_marks = f_marks + 0;
 	}
-	else if(b>60 && b<=70)
+	else if(b>59.5 && b<=69.5)
 		f_marks = f_marks + 3;
 
-	else if(b>70 && b<=80)
+	else if(b>69.5 && b<=79.5)
 		f_marks = f_marks + 5;
 
-	else if(b>80 && b<=90)
+	else if(b>79.5 && b<=89.5)
 		f_marks = f_marks+ 8;
 
-	else if(b>90)
+	else if(b>89.5)
 		f_marks = f_marks + 10;
 
 
