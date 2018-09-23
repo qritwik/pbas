@@ -116,9 +116,9 @@ class empDetailForm(models.Model):
 	doj = models.DateField(null=True)
 	# Present_pos = models.CharField(max_length=50,null=True,blank=True)
 	Held_from = models.DateField(null=True)
-	exp_teach = models.IntegerField(blank=True, null=True)
-	exp_res = models.IntegerField( blank=True, null=True)
-	exp_indus = models.IntegerField(blank=True, null=True)
+	exp_teach = models.FloatField(blank=True, null=True)
+	exp_res = models.FloatField( blank=True, null=True)
+	exp_indus = models.FloatField(blank=True, null=True)
 	info = models.ForeignKey('User', on_delete=models.CASCADE,null=True)
 
 
