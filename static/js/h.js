@@ -763,23 +763,30 @@ $('.rd').on("click",function(){
 	$('.onl_course_m').val(c);
 
 	///
+		///
 	var m=0;
 
 	if($('.s_c_name').val()){
-		$('.s_c_m').val(5)
-		m = m+5
+		var s_c_m = parseFloat($('.s_c_name').val());
+		s_c_m = s_c_m*5
+		$('.s_c_m').val(s_c_m)
+		m = m+s_c_m
 	}
 
 
 	if($('.f_c_name').val()){
-		$('.f_c_m').val(3)
-		m = m+3
+		var f_c_m = parseFloat($('.f_c_name').val());
+		f_c_m = f_c_m*3
+		$('.f_c_m').val(f_c_m)
+		m = m+f_c_m
 	}
 
 
 	if($('.o_c_name').val()){
-		$('.o_c_m').val(2)
-		m = m+2
+		var o_c_m = parseFloat($('.o_c_name').val());
+		o_c_m = o_c_m*2
+		$('.o_c_m').val(o_c_m)
+		m = m+o_c_m
 	}
 
 	if(m>8){
@@ -790,25 +797,32 @@ $('.rd').on("click",function(){
 	n= 0
 
 	if($('.s_j_name').val()){
-		$('.s_j_m').val(10)
-		n = n+10
+		var s_j_m = parseFloat($('.s_j_name').val());
+		s_j_m=s_j_m*10
+		$('.s_j_m').val(s_j_m)
+		n = n+s_j_m
 	}
 
 
 	if($('.f_j_name').val()){
-		$('.f_j_m').val(6)
-		n = n+6
+		var f_j_m = parseFloat($('.f_j_name').val());
+		f_j_m=f_j_m*6
+		$('.f_j_m').val(f_j_m)
+		n = n+f_j_m
 	}
 
 
 	if($('.o_j_name').val()){
-		$('.o_j_m').val(4)
-		n = n+4
+		var o_j_m = parseFloat($('.o_j_name').val());
+		o_j_m=o_j_m*4
+		$('.o_j_m').val(o_j_m)
+		n = n+o_j_m
 	}
 
 	if(n>12){
 		n = 12
 	}
+
 
 
 	var book_i = parseFloat($('.book_i').val());
