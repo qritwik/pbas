@@ -19,6 +19,7 @@ $(function(){
 
 	var o_t1_f1 = parseFloat($('.o_t1_f1').val());
 	var o_t1_f2 = parseFloat($('.o_t1_f2').val());
+	alert("a");
 	o_t1_favg = Math.round((o_t1_f1+o_t1_f2)/2);
 	if(o_t1_favg<=100){
 		$('.o_t1_favg').val(o_t1_favg);

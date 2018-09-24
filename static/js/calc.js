@@ -27,7 +27,7 @@ $(function(){
 	}
 
 
-    var o_t2_f1 = parseFloat($('.o_t2_f1').val());
+  var o_t2_f1 = parseFloat($('.o_t2_f1').val());
 	var o_t2_f2 = parseFloat($('.o_t2_f2').val());
 	o_t2_favg = Math.round((o_t2_f1+o_t2_f2)/2);
 	if(o_t2_favg<=100){
