@@ -585,7 +585,7 @@ $('.f_calc').on("click",function(){
 	var o_l_avg = parseFloat($('.o_l_f_avg').val());
 	var e_t_avg = parseFloat($('.e_t_f_avg').val());
 	var e_l_avg = parseFloat($('.e_l_f_avg').val());
-	var p_avg = parseFloat($('.p_avg').val());
+	var p_avg = parseFloat($('.p_f_avg').val());
 
 	var o_tr_avg = parseFloat($('.o_t_r_avg').val());
 	var o_lr_avg = parseFloat($('.o_l_r_avg').val());
@@ -594,7 +594,7 @@ $('.f_calc').on("click",function(){
 
 
 	if(isNaN(o_t_avg)){
-		o_t_avg  = 0;
+		o_t_avg = 0;
 		c--;
 	}
 	if(isNaN(o_l_avg)){
@@ -633,7 +633,6 @@ $('.f_calc').on("click",function(){
 		e_lr_avg  = 0;
 		d--;
 	}
-
 
 	var a = (o_t_avg + o_l_avg + e_t_avg + e_l_avg + p_avg);
 	a=a/c;
