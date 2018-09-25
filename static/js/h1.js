@@ -4,7 +4,7 @@ $(function(){
 		$('.c_marks').style.display = "block";
 	});
 
-	
+
 
 	$('.tm').on("click",function(){
 	var	a = parseFloat($('.m1').html())

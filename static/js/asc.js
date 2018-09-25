@@ -19,7 +19,7 @@ $(function(){
 
 	var o_t1_f1 = parseFloat($('.o_t1_f1').val());
 	var o_t1_f2 = parseFloat($('.o_t1_f2').val());
-	alert("a");
+
 	o_t1_favg = Math.round((o_t1_f1+o_t1_f2)/2);
 	if(o_t1_favg<=100){
 		$('.o_t1_favg').val(o_t1_favg);
@@ -77,7 +77,7 @@ $(function(){
 	}
 
 
-	o_t_avg = (o_t_avg)/c;
+	o_t_avg = Math.round((o_t_avg)/c);
 	if(isNaN(o_t_avg)){
 		$('.o_t_f_avg').val(0);
 	}
@@ -85,7 +85,7 @@ $(function(){
 		$('.o_t_f_avg').val(o_t_avg);
 	}
 
-	o_tr_avg =(o_tr_avg)/d;
+	o_tr_avg = Math.round((o_tr_avg)/d);
 	o_tr_avg =Math.round(o_tr_avg * 100)/100;
 	if(isNaN(o_tr_avg)){
 		$('.o_t_r_avg').val(0);
@@ -207,7 +207,7 @@ $('.o_l').on("click",function(){
 		d++;
 	}
 
-	o_l_avg = (o_l_avg)/c;
+	o_l_avg = Math.round((o_l_avg)/c);
 	if(isNaN(o_l_avg)){
 		$('.o_l_f_avg').val(0);
 	}
@@ -216,7 +216,7 @@ $('.o_l').on("click",function(){
 	}
 
 
-	o_lr_avg =(o_lr_avg)/d;
+	o_lr_avg = Math.round((o_lr_avg)/d);
 	o_lr_avg =Math.round(o_lr_avg * 100)/100;
 
 	if(isNaN(o_lr_avg)){
@@ -307,7 +307,7 @@ $('.o_l').on("click",function(){
 		d++;
 	}
 
-	e_t_avg = (e_t_avg)/c;
+	e_t_avg = Math.round((e_t_avg)/c);
 
 	if(isNaN(e_t_avg)){
 	$('.e_t_f_avg').val(0);
@@ -318,7 +318,7 @@ $('.o_l').on("click",function(){
 
 	}
 
-	e_tr_avg =(e_tr_avg)/d;
+	e_tr_avg =Math.round((e_tr_avg)/d);
 	e_tr_avg =Math.round(e_tr_avg * 100)/100;
 
 	if(isNaN(e_tr_avg)){
@@ -442,7 +442,7 @@ $('.e_l').on("click",function(){
 		d++;
 	}
 
-	e_l_avg = (e_l_avg)/c;
+	e_l_avg = Math.round((e_l_avg)/c);
 
 	if(isNaN(e_l_avg)){
 	$('.e_l_f_avg').val(0);
@@ -452,7 +452,7 @@ $('.e_l').on("click",function(){
 
 	}
 
-	e_lr_avg =(e_lr_avg)/d;
+	e_lr_avg = Math.round((e_lr_avg)/d);
 	e_lr_avg =Math.round(e_lr_avg * 100)/100;
 
 	if(isNaN(e_lr_avg)){
@@ -564,7 +564,7 @@ $('.e_p').on("click",function(){
 		c++;
 	}
 
-	p_avg = p_avg/c;
+	p_avg = Math.round(p_avg/c);
 	if(isNaN(p_avg)){
 	$('.p_f_avg').val(0);
 	}
