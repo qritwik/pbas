@@ -122,7 +122,7 @@ class empDetailForm(models.Model):
 	info = models.ForeignKey('User', on_delete=models.CASCADE,null=True)
 
 	def __str__(self):
-		return self.info.username
+		return self.info.first_name
 
 #TABLE-3
 class feedbackTab(models.Model):
