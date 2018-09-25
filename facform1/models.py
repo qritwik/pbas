@@ -367,7 +367,7 @@ class feedbackTab(models.Model):
 	info = models.ForeignKey('User', on_delete=models.CASCADE,null=True)
 
 	def __str__(self):
-		return self.info.username
+		return self.info.first_name
 
 
 
@@ -444,7 +444,7 @@ class rd(models.Model):
 	info = models.ForeignKey('User', on_delete=models.CASCADE,null=True)
 
 	def __str__(self):
-		return self.info.username
+		return self.info.first_name
 
 
 #TABLE-5
@@ -453,6 +453,9 @@ class remarks(models.Model):
 	ta_ic = models.TextField( blank=True, null=True)
 	ta_dr = models.TextField( blank=True, null=True)
 	info = models.ForeignKey('User', on_delete=models.CASCADE,null=True)
+
+	def __str__(self):
+		return self.info.first_name
 
 
 class conference(models.Model):
@@ -516,7 +519,7 @@ class conference(models.Model):
 	info = models.ForeignKey('User', on_delete=models.CASCADE,null=True)
 
 	def __str__(self):
-		return self.info.username
+		return self.info.first_name
 
 
 
@@ -600,7 +603,7 @@ class journal(models.Model):
 	info = models.ForeignKey('User', on_delete=models.CASCADE,null=True)
 
 	def __str__(self):
-		return self.info.username
+		return self.info.first_name
 
 
 class remarks1(models.Model):
@@ -608,6 +611,9 @@ class remarks1(models.Model):
 	hod_marks2 = models.IntegerField( blank=True, null=True)
 	ta_hod_remarks = models.TextField( blank=True, null=True)
 	info = models.ForeignKey('User', on_delete=models.CASCADE,null=True)
+
+	def __str__(self):
+		return self.info.first_name
 
 class remarks2(models.Model):
 	ta_prin_remarks = models.TextField( blank=True, null=True)
@@ -618,3 +624,6 @@ class remarks2(models.Model):
 	total_marks = models.FloatField( blank=True, null=True)
 	info = models.ForeignKey('User', on_delete=models.CASCADE,null=True)
 	department = models.ForeignKey('Department', on_delete=models.CASCADE,null=True)
+
+	def __str__(self):
+		return self.info.first_name
