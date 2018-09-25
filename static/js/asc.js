@@ -581,7 +581,6 @@ $('.f_calc').on("click",function(){
 	var c = 5;
 	var d = 4;
 
-
 	var o_t_avg = parseFloat($('.o_t_f_avg').val());
 	var o_l_avg = parseFloat($('.o_l_f_avg').val());
 	var e_t_avg = parseFloat($('.e_t_f_avg').val());
