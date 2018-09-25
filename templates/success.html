@@ -19,7 +19,28 @@
 	<link rel="stylesheet" type="text/css" href="{% static "css/main1.css" %}">
 </head>
 <body>
-	{% include 'partials/nav_primary.html' %}
+
+
+	<nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #736de3;">
+	  <a class="navbar-brand" href="#">
+	  <img src="{% static "image/bms.logo.png" %}" width="30" height="30" alt="">
+	</a>
+	<a class="navbar-brand" href="#">BMSIT&M</a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+	  <span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarNav">
+
+	</div>
+
+	
+	</nav>
+
+
+
+
+
+
 	<div class="container card" style="margin-top:12%">
 		<h1>You are successfully Logout</h1>
 		<h5><a href="/" style="margin-top:5%">Login Again</a></h5>
@@ -28,7 +49,7 @@
 	<footer style="position:fixed;bottom:0;" class="col-md-12 page-footer fixed-bottom center-on-small-only footer-main">
     <div class="col-md-12 container-fluid">
         <h5><strong><center style="margin-top:5%;float:left;"><span style="color:black;">A product by</span><a style="color:#ffc05b;" href="#" target="blank"> DevX<img id="logo" src="https://bmsit.ac.in/devx.png" style="width:50px; vertical-align: middle;"></a></center></strong></h5>
-    </div> 
+    </div>
 </footer>
 
 </body>
