@@ -636,9 +636,10 @@ $('.f_calc').on("click",function(){
 	}
 
 
-	var a = (o_t_avg + o_l_avg + e_t_avg + e_l_avg + p_avg)/c;
-	var b = (o_tr_avg + o_lr_avg + e_tr_avg + e_lr_avg)/d;
-
+	var a = (o_t_avg + o_l_avg + e_t_avg + e_l_avg + p_avg);
+	a=a/c;
+	var b = (o_tr_avg + o_lr_avg + e_tr_avg + e_lr_avg);
+	b=b/d;
 	console.log(a);
 
 	console.log(b);

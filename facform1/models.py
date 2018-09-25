@@ -121,6 +121,8 @@ class empDetailForm(models.Model):
 	exp_indus = models.FloatField(blank=True, null=True)
 	info = models.ForeignKey('User', on_delete=models.CASCADE,null=True)
 
+	def __str__(self):
+		return self.info.username
 
 #TABLE-3
 class feedbackTab(models.Model):
@@ -364,6 +366,9 @@ class feedbackTab(models.Model):
 
 	info = models.ForeignKey('User', on_delete=models.CASCADE,null=True)
 
+	def __str__(self):
+		return self.info.username
+
 
 
 #TABLE-4
@@ -438,6 +443,9 @@ class rd(models.Model):
 
 	info = models.ForeignKey('User', on_delete=models.CASCADE,null=True)
 
+	def __str__(self):
+		return self.info.username
+
 
 #TABLE-5
 class remarks(models.Model):
@@ -506,6 +514,9 @@ class conference(models.Model):
 	c8_author =	models.CharField(max_length=100, blank=True, null=True)
 
 	info = models.ForeignKey('User', on_delete=models.CASCADE,null=True)
+
+	def __str__(self):
+		return self.info.username
 
 
 
@@ -587,6 +598,9 @@ class journal(models.Model):
 	j8_author =	models.CharField(max_length=100, blank=True, null=True)
 
 	info = models.ForeignKey('User', on_delete=models.CASCADE,null=True)
+
+	def __str__(self):
+		return self.info.username
 
 
 class remarks1(models.Model):
