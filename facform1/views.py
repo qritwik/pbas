@@ -24,6 +24,7 @@ def phone_otp(random_otp, phone):
 
 
 def invalid(request):
+	]
 	return render(request,'invalid.html')
 
 def login(request):
@@ -479,7 +480,7 @@ def ao_approved(request,dept):
 	if request.user.is_ao():
 
 
-		general = remarks2.objects.filter(department__name=dept)
+		general = User.objects.filter(department=dept).filter(teach_status=True)
 		dept = {'dept':dept,'general':general}
 		return render(request,'ao_approved.html',context=dept)
 	else:
