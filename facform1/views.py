@@ -643,7 +643,7 @@ def f_assistant4(request):
 		form5 = forms.form_remarks()
 		if remarks.objects.filter(info=request.user).exists():
 
-			return HttpResponseRedirect("/logout/")
+			return HttpResponseRedirect("/assistant_form5/")
 		else:
 			if request.method == 'POST':
 
@@ -781,7 +781,7 @@ def f_associate4(request):
 		form5 = forms.form_remarks()
 		if remarks.objects.filter(info=request.user).exists():
 
-			return HttpResponseRedirect("/logout/")
+			return HttpResponseRedirect("/associate_form5/")
 		else:
 			if request.method == 'POST':
 				sendme = User.objects.get(username=request.user)
@@ -917,7 +917,7 @@ def hod_form4(request):
 		form5 = forms.form_remarks()
 		if remarks.objects.filter(info=request.user).exists():
 
-			return HttpResponseRedirect("/logout/")
+			return HttpResponseRedirect("/hod_form5/")
 		else:
 			if request.method == 'POST':
 				form5 = forms.form_remarks(request.POST)
