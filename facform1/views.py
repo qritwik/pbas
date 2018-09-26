@@ -1089,6 +1089,8 @@ def hod_preview(request):
 	"key3":data3,
 	"key4":data4,
 	"key5":data5,
+	"key6":data6,
+	"key7":data7,
 
 	}
 
