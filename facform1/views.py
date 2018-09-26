@@ -479,8 +479,7 @@ def ao_approved(request,dept):
 	if request.user.is_ao():
 
 
-		general = User.objects.filter(department=dept).filter(teach_status=True)
-		
+		general = remarks2.objects.filter(department__name=dept)
 		dept = {'dept':dept,'general':general}
 		return render(request,'ao_approved.html',context=dept)
 	else:
