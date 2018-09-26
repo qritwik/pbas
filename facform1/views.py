@@ -480,8 +480,7 @@ def ao_approved(request,dept):
 
 
 		general = User.objects.filter(department=dept).filter(teach_status=True)
-		for i in general:
-			print(i)
+		
 		dept = {'dept':dept,'general':general}
 		return render(request,'ao_approved.html',context=dept)
 	else:
