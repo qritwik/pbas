@@ -8,6 +8,7 @@ from django.contrib.auth.admin import UserAdmin as DjangoUserAdmin
 
 # Register your models here.
 
+admin.site.site_header = "PBAS System";
 
 # Register your models here.
 class UserResource(resources.ModelResource):
@@ -52,6 +53,3 @@ admin.site.register(ipr_type)
 admin.site.register(ipr_status)
 admin.site.register(conference)
 admin.site.register(journal)
-
-
-
