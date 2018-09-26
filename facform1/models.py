@@ -498,7 +498,7 @@ class conference(models.Model):
 	c6_name = models.CharField(max_length=500, blank=True, null=True)
 	c6_title = models.CharField(max_length=500, blank=True, null=True)
 	c6_place = models.CharField(max_length=500, blank=True, null=True)
-	c6_date = models.DateField(max_length=500,blank=True, null=True)
+	c6_date = models.CharField(max_length=500,blank=True, null=True)
 	c6_index = models.CharField(max_length=500, blank=True, null=True)
 	c6_author =	models.CharField(max_length=500, blank=True, null=True)
 
