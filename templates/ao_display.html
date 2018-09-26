@@ -147,10 +147,10 @@
 						<div class="row">
 
 							<div class="cell" data-title="Faculty Name">
-								<a {% if x.designation.pk == 8 %} href="/ao_hod_display/{{x.username}}"
-                 {% elif x.designation.pk == 9 %} href="/ao_teacher1_display/{{x.username}}"
-                 {% elif x.designation.pk == 10 %} href="/ao_teacher1_display/{{x.username}}"
-                 {% elif x.designation.pk == 11 %} href="/ao_teacher_display/{{x.username}}"
+								<a {% if x.designation.pk == 8 %} href="/ao_hod_display/{{x.info}}"
+                 {% elif x.designation.pk == 9 %} href="/ao_teacher1_display/{{x.info}}"
+                 {% elif x.designation.pk == 10 %} href="/ao_teacher1_display/{{x.info}}"
+                 {% elif x.designation.pk == 11 %} href="/ao_teacher_display/{{x.info}}"
                  {% endif %}>{{x.first_name}}</a>
 						 </div>
 							<div class="cell" data-title="f-s">
