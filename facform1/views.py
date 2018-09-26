@@ -24,7 +24,6 @@ def phone_otp(random_otp, phone):
 
 
 def invalid(request):
-	]
 	return render(request,'invalid.html')
 
 def login(request):
