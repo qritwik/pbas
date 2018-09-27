@@ -500,11 +500,11 @@ def ao_teacher_display(request,name):
 		data7 = journal.objects.get(info__username=name)
 
 		if User.objects.filter(hod_status=True, username=name):
-			data8 = remarks1.objects.get(info__username=name)
+			data8 = remarks1.objects.filter(info__username=name)
 		else:
 			data8 = []
 		if User.objects.filter(principal_status=True, username=name):
-			data9 = remarks2.objects.get(info__username=name)
+			data9 = remarks2.objects.filter(info__username=name)
 		else:
 			data9 = []
 		# if remarks1.objects.get(info__username=name):
