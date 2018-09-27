@@ -147,11 +147,16 @@
 						<div class="row">
 
 							<div class="cell" data-title="Faculty Name">
+								{% if x.teach_status %}
 								<a {% if x.designation.pk == 8 %} href="/ao_hod_display/{{x.username}}"
 								 {% elif x.designation.pk == 9 %} href="/ao_teacher1_display/{{x.username}}"
 								 {% elif x.designation.pk == 10 %} href="/ao_teacher1_display/{{x.username}}"
 								 {% elif x.designation.pk == 11 %} href="/ao_teacher_display/{{x.username}}"
 								 {% endif %}>{{x.first_name}}</a>
+								 {% else %}
+								 {{x.first_name}}
+								 {% endif %}
+
 						 </div>
 							<div class="cell" data-title="f-s">
 									{% if x.teach_status %}
