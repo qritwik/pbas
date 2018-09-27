@@ -496,10 +496,17 @@ def ao_teacher_display(request,name):
 		data3 = feedbackTab.objects.get(info__username=name)
 		data4 = rd.objects.get(info__username=name)
 		data5 = remarks.objects.get(info__username=name)
-		data6 = conference.objects.get(info__username=name);
-		data7 = journal.objects.get(info__username=name);
-		data8 = remarks1.objects.get(info__username=name)
-		data9 = remarks2.objects.get(info__username=name)
+		data6 = conference.objects.get(info__username=name)
+		data7 = journal.objects.get(info__username=name)
+		if(remarks1.exists()):
+			data8 = remarks1.objects.get(info__username=name)
+
+		if(remarks2.exists()):
+			data9 = remarks2.objects.get(info__username=name)
+
+
+
+
 
 
 
