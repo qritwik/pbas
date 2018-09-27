@@ -448,19 +448,19 @@ def ao_display(request,dept):
 		b = "associate"
 		c = "professor"
 		d = "hod"
-		above = remarks2.objects.filter(total_marks__gte = 60).filter(department__name=dept).filter(info__designation__pk=11)
-		above1 = remarks2.objects.filter(total_marks__gte = 60).filter(department__name=dept).filter(info__designation__pk=9)
-		above2 = remarks2.objects.filter(total_marks__gte = 60).filter(department__name=dept).filter(info__designation__pk=10)
-		above3 = remarks2.objects.filter(total_marks__gte = 60).filter(department__name=dept).filter(info__designation__pk=8)
-
-		above4 = list(chain(above1,above2))
-
-		below = remarks2.objects.filter(total_marks__lt = 60).filter(department__name=dept).filter(info__designation__pk=11)
-		below1 = remarks2.objects.filter(total_marks__lt = 60).filter(department__name=dept).filter(info__designation__pk=9)
-		below2 = remarks2.objects.filter(total_marks__lt = 60).filter(department__name=dept).filter(info__designation__pk=10)
-		below3 = remarks2.objects.filter(total_marks__lt = 60).filter(department__name=dept).filter(info__designation__pk=8)
-
-		below4 = list(chain(below1,below2))
+		# above = remarks2.objects.filter(total_marks__gte = 60).filter(department__name=dept).filter(info__designation__pk=11)
+		# above1 = remarks2.objects.filter(total_marks__gte = 60).filter(department__name=dept).filter(info__designation__pk=9)
+		# above2 = remarks2.objects.filter(total_marks__gte = 60).filter(department__name=dept).filter(info__designation__pk=10)
+		# above3 = remarks2.objects.filter(total_marks__gte = 60).filter(department__name=dept).filter(info__designation__pk=8)
+		#
+		# above4 = list(chain(above1,above2))
+		#
+		# below = remarks2.objects.filter(total_marks__lt = 60).filter(department__name=dept).filter(info__designation__pk=11)
+		# below1 = remarks2.objects.filter(total_marks__lt = 60).filter(department__name=dept).filter(info__designation__pk=9)
+		# below2 = remarks2.objects.filter(total_marks__lt = 60).filter(department__name=dept).filter(info__designation__pk=10)
+		# below3 = remarks2.objects.filter(total_marks__lt = 60).filter(department__name=dept).filter(info__designation__pk=8)
+		#
+		# below4 = list(chain(below1,below2))
 		general = User.objects.filter(department__name=dept)
 		tt = general.count()
 		principal_completed = (User.objects.filter(department__name=dept).filter(principal_status=True)).count()
@@ -468,7 +468,7 @@ def ao_display(request,dept):
 		teach_completed  = (User.objects.filter(department__name=dept).filter(teach_status=True)).count()
 
 
-		dept = {'dept':dept,'above':above,'above1':above4,'above3':above3,'below':below,'below1':below4,'below3':below3,'general':general,'p':principal_completed,'h':hod_completed,'t':teach_completed,'total':tt}
+		dept = {'dept':dept,'general':general,'p':principal_completed,'h':hod_completed,'t':teach_completed,'total':tt}
 
 		return render(request,'ao_display.html',context=dept)
 	else:
