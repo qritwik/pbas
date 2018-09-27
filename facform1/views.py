@@ -498,10 +498,11 @@ def ao_teacher_display(request,name):
 		data5 = remarks.objects.get(info__username=name)
 		data6 = conference.objects.get(info__username=name)
 		data7 = journal.objects.get(info__username=name)
-		if(remarks1.exists()):
+		
+		if remarks1.objects.get(info__username=name):
 			data8 = remarks1.objects.get(info__username=name)
 
-		if(remarks2.exists()):
+		if remarks2.objects.get(info__username=name):
 			data9 = remarks2.objects.get(info__username=name)
 
 
