@@ -468,9 +468,9 @@ def ao_display(request,dept):
 		teach_completed  = (User.objects.filter(department__name=dept).filter(teach_status=True)).count()
 
 
-		dept = {'dept':dept,'general':general,'p':principal_completed,'h':hod_completed,'t':teach_completed,'total':tt}
+		context = {'dept':dept,'general':general,'p':principal_completed,'h':hod_completed,'t':teach_completed,'total':tt}
 
-		return render(request,'ao_display.html',context=dept)
+		return render(request,'ao_display.html',context=context)
 	else:
 		return HttpResponseRedirect('/invalid')
 
