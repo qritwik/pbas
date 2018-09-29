@@ -500,11 +500,11 @@ def ao_teacher_display(request,name):
 		data7 = journal.objects.get(info__username=name)
 
 		if User.objects.filter(username=name).filter(hod_status=True):
-			data8 = remarks1.objects.filter(info__username=name)
+			data8 = remarks1.objects.get(info__username=name)
 		else:
 			data8 = []
 		if User.objects.filter(username=name).filter(principal_status=True):
-			data9 = remarks2.objects.filter(info__username=name)
+			data9 = remarks2.objects.get(info__username=name)
 		else:
 			data9 = []
 		# if remarks1.objects.get(info__username=name):
@@ -549,11 +549,11 @@ def ao_teacher1_display(request,name):
 		data6 = conference.objects.get(info__username=name);
 		data7 = journal.objects.get(info__username=name);
 		if User.objects.filter(username=name).filter(hod_status=True):
-			data8 = remarks1.objects.filter(info__username=name)
+			data8 = remarks1.objects.get(info__username=name)
 		else:
 			data8 = []
 		if User.objects.filter(username=name).filter(principal_status=True):
-			data9 = remarks2.objects.filter(info__username=name)
+			data9 = remarks2.objects.get(info__username=name)
 		else:
 			data9 = []
 
@@ -588,7 +588,7 @@ def ao_hod_display(request,name):
 		data6 = conference.objects.get(info__username=name);
 		data7 = journal.objects.get(info__username=name);
 		if User.objects.filter(username=name).filter(principal_status=True):
-			data8 = remarks2.objects.filter(info__username=name)
+			data8 = remarks2.objects.get(info__username=name)
 		else:
 			data8 = []
 
