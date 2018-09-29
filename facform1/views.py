@@ -259,118 +259,112 @@ def principal_display(request,dept):
 
 @login_required
 def principal_teacher_display(request,pk):
-	if request.user.is_principal():
-		name =  User.objects.get(pk = pk);
-		print(name)
-		data1 = User.objects.get(username=name);
-		print(data1.department)
+	name =  User.objects.get(pk = pk);
+	print(name)
+	data1 = User.objects.get(username=name);
+	print(data1.department)
 
-		data2 = empDetailForm.objects.get(info__username=name);
-		data3 = feedbackTab.objects.get(info__username=name);
-		data4 = rd.objects.get(info__username=name);
-		data5 = remarks.objects.get(info__username=name);
-		data6 = conference.objects.get(info__username=name);
-		data7 = journal.objects.get(info__username=name);
-		data8 = remarks1.objects.get(info__username=name);
-
+	data2 = empDetailForm.objects.get(info__username=name);
+	data3 = feedbackTab.objects.get(info__username=name);
+	data4 = rd.objects.get(info__username=name);
+	data5 = remarks.objects.get(info__username=name);
+	data6 = conference.objects.get(info__username=name);
+	data7 = journal.objects.get(info__username=name);
+	data8 = remarks1.objects.get(info__username=name);
 
 
 
-		if request.method == 'POST':
-			form1 = forms.form_remarks2(request.POST)
 
-			if form1.is_valid():
-				print("logout")
-				sendme = User.objects.get(username=name)
-				obj = form1.save(commit=False)
+	if request.method == 'POST':
+		form1 = forms.form_remarks2(request.POST)
 
-				obj.info = name
-				obj.department = data1.department
-				obj.save()
+		if form1.is_valid():
+			print("logout")
+			sendme = User.objects.get(username=name)
+			obj = form1.save(commit=False)
 
-				if sendme.principal_status == False:
-					sendme.principal_status = True
-					sendme.save()
+			obj.info = name
+			obj.department = data1.department
+			obj.save()
 
-				return HttpResponseRedirect("/principal_display/"+ data1.department.name)
+			if sendme.principal_status == False:
+				sendme.principal_status = True
+				sendme.save()
 
-		else:
-			form1 = forms.form_remarks2()
+			return HttpResponseRedirect("/principal_display/"+ data1.department.name)
 
-
-		context1 = {
-		"key1":data1,
-		"key2":data2,
-		"key3":data3,
-		"key4":data4,
-		"key5":data5,
-		"key6":data6,
-		"key7":data7,
-		"key8":data8,
-		"form1":form1
-		}
-
-		return render(request,'principal_teacher_display.html',context=context1)
 	else:
-		return HttpResponseRedirect('/invalid')
+		form1 = forms.form_remarks2()
+
+
+	context1 = {
+	"key1":data1,
+	"key2":data2,
+	"key3":data3,
+	"key4":data4,
+	"key5":data5,
+	"key6":data6,
+	"key7":data7,
+	"key8":data8,
+	"form1":form1
+	}
+
+	return render(request,'principal_teacher_display.html',context=context1)
 
 
 @login_required
 def principal_teacher1_display(request,pk):
-	if request.user.is_principal():
-		name =  User.objects.get(pk = pk);
-		print(name)
-		data1 = User.objects.get(username=name);
-		print(data1.department)
+	name =  User.objects.get(pk = pk);
+	print(name)
+	data1 = User.objects.get(username=name);
+	print(data1.department)
 
-		data2 = empDetailForm.objects.get(info__username=name);
-		data3 = feedbackTab.objects.get(info__username=name);
-		data4 = rd.objects.get(info__username=name);
-		data5 = remarks.objects.get(info__username=name);
-		data6 = conference.objects.get(info__username=name);
-		data7 = journal.objects.get(info__username=name);
-		data8 = remarks1.objects.get(info__username=name);
-
+	data2 = empDetailForm.objects.get(info__username=name);
+	data3 = feedbackTab.objects.get(info__username=name);
+	data4 = rd.objects.get(info__username=name);
+	data5 = remarks.objects.get(info__username=name);
+	data6 = conference.objects.get(info__username=name);
+	data7 = journal.objects.get(info__username=name);
+	data8 = remarks1.objects.get(info__username=name);
 
 
 
-		if request.method == 'POST':
-			form1 = forms.form_remarks2(request.POST)
 
-			if form1.is_valid():
-				print("logout")
-				sendme = User.objects.get(username=name)
-				obj = form1.save(commit=False)
+	if request.method == 'POST':
+		form1 = forms.form_remarks2(request.POST)
 
-				obj.info = name
-				obj.department = data1.department
-				obj.save()
+		if form1.is_valid():
+			print("logout")
+			sendme = User.objects.get(username=name)
+			obj = form1.save(commit=False)
 
-				if sendme.principal_status == False:
-					sendme.principal_status = True
-					sendme.save()
+			obj.info = name
+			obj.department = data1.department
+			obj.save()
 
-				return HttpResponseRedirect("/principal_display/"+data1.department.name)
+			if sendme.principal_status == False:
+				sendme.principal_status = True
+				sendme.save()
 
-		else:
-			form1 = forms.form_remarks2()
+			return HttpResponseRedirect("/principal_display/"+data1.department.name)
 
-
-		context1 = {
-		"key1":data1,
-		"key2":data2,
-		"key3":data3,
-		"key4":data4,
-		"key5":data5,
-		"key6":data6,
-		"key7":data7,
-		"key8":data8,
-		"form1":form1
-		}
-
-		return render(request,'principal_teacher1_display.html',context=context1)
 	else:
-		return HttpResponseRedirect('/invalid')
+		form1 = forms.form_remarks2()
+
+
+	context1 = {
+	"key1":data1,
+	"key2":data2,
+	"key3":data3,
+	"key4":data4,
+	"key5":data5,
+	"key6":data6,
+	"key7":data7,
+	"key8":data8,
+	"form1":form1
+	}
+
+	return render(request,'principal_teacher1_display.html',context=context1)
 
 
 @login_required
