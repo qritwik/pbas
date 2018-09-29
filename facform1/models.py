@@ -608,7 +608,11 @@ class journal(models.Model):
 
 class remarks1(models.Model):
 	hod_marks1 = models.IntegerField(blank=True, null=True)
+	hod_marks2_1 = models.IntegerField( blank=True, null=True)
+	hod_marks2_2 = models.IntegerField( blank=True, null=True)
+	hod_marks2_3 = models.IntegerField( blank=True, null=True)
 	hod_marks2 = models.IntegerField( blank=True, null=True)
+
 	ta_hod_remarks = models.TextField( blank=True, null=True)
 	info = models.ForeignKey('User', on_delete=models.CASCADE,null=True)
 
@@ -619,7 +623,13 @@ class remarks2(models.Model):
 	ta_prin_remarks = models.TextField( blank=True, null=True)
 	ta_prin_remarks1 = models.TextField( blank=True, null=True)
 	prin_marks1 = models.IntegerField( blank=True, null=True)
+	prin_marks2_1 = models.IntegerField( blank=True, null=True)
+	prin_marks2_2 = models.IntegerField( blank=True, null=True)
+	prin_marks2_3 = models.IntegerField( blank=True, null=True)
+	prin_marks2_4 = models.IntegerField( blank=True, null=True)
+
 	prin_marks2 = models.IntegerField( blank=True, null=True)
+
 	prin_marks3 = models.IntegerField( blank=True, null=True)
 	total_marks = models.FloatField( blank=True, null=True)
 	info = models.ForeignKey('User', on_delete=models.CASCADE,null=True)

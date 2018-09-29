@@ -1707,21 +1707,30 @@
     <tr>
       <th scope="row">1</th>
       <td>Contribution to Department Developmental Activites<span class="sp"> (Maximum Score: 5 marks)</span></td>
-       <td rowspan="3" class="fo1">{% render_field form1.hod_marks2 class="form-control m4" %}</td>
+       <td rowspan="3" class="fo1">{% render_field form1.hod_marks2_1 class="form-control h1" %}</td>
     </tr>
     <tr>
       <th scope="row">2</th>
       <td>Attitude/Behaviour/Discipline/Punctuality<span class="sp"> (Maximum Score: 5 marks)</span></td>
+      <td rowspan="3" class="fo1">{% render_field form1.hod_marks2_2 class="form-control h2" %}</td>
 
 
     </tr>
     <tr>
       <th scope="row">3</th>
       <td>Examination/Test duties, Question paper preparation, Evaluation Preparation of Course material and Dedicaton in conducting Theory and Laboratory classes<span class="sp"> (Maximum Score: 5 marks)</span></td>
+      <td rowspan="3" class="fo1">{% render_field form1.hod_marks2_3 class="form-control h3" %}</td>
+    </tr>
 
+    <tr>
+      <th scope="row"></th>
+      <td></td>
+      <td rowspan="3" class="fo1">{% render_field form1.hod_marks2 class="form-control m4" disabled %}</td>
     </tr>
   </tbody>
 </table>
+
+<input type="button" class="btn btn-success btn-lg btn-block hf" value="Calculate">
 
 </div>
 
@@ -1824,5 +1833,33 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+<script>
+  $(function(){
+    $('.hf').click(function(){
+      var b = parseFloat($('.h1').val());
+      if(b>5){
+        b=5;
+       }
+
+       var c = parseFloat($('.h2').val());
+      if(c>5){
+        c=5;
+       }
+
+       var d = parseFloat($('.h3').val()) ;
+       if(d>5){
+        d=5;
+       }
+       
+       var a = b+c+d;
+       if(a>15){
+        a=15;
+       }
+      $('.m4').val(a);
+    });
+   
+  });
+</script>
 </body>
 </html>
