@@ -49,7 +49,12 @@
 
 
 
-     <a {% if user.teach_status == False %} href="/hod_form1/" {% else %} href="/hod_preview/" {% endif %} style="background:#9ccc65;margin-top:1%;width:100%;" class="list-group-item list-group-item-action">Submit your own form</a>
+     <a {% if user.username== "HOD_CIVIL" %}
+     {% if user.teach_status == False %} href="/associate_form1/" {% else %} href="/associate_preview/" {% endif %}
+     {% else %}
+     {% if user.teach_status == False %} href="/hod_form1/" {% else %} href="/hod_preview/" {% endif %} 
+     {% endif %}
+     style="background:#9ccc65;margin-top:1%;width:100%;" class="list-group-item list-group-item-action">Submit your own form</a>
 
 
      <a href="/hod_display/" style="background:#7e5ae6;margin-top:6%;width:100%;" class="list-group-item list-group-item-action">View faculty form</a>
