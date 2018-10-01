@@ -88,7 +88,7 @@
 								{% if hod_name.principal_status %}
 								<a href="" class="h2p">{{hod_name.first_name}}</a>
 								{% else %}
-								{% if user.username == "HOD_CIVIL" %}
+								{% if hod_name.username == "HOD_CIVIL" %}
 								<a href="/principal_teacher1_display/{{hod_name.pk}}" class="">{{hod_name.first_name}}</a>
 								{% else %}
 								<a href="/principal_hod_display/{{hod_name.pk}}" class="">{{hod_name.first_name}}</a>
