@@ -329,8 +329,10 @@ def principal_teacher1_display(request,pk):
 		data5 = remarks.objects.get(info__username=name);
 		data6 = conference.objects.get(info__username=name);
 		data7 = journal.objects.get(info__username=name);
-		data8 = remarks1.objects.get(info__username=name);
-
+		if User.objects.filter(username=name).filter(hod_status=True):
+			data8 = remarks1.objects.get(info__username=name)
+		else:
+			data8 = []
 
 
 
