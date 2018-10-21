@@ -37,7 +37,7 @@ def login(request):
 			first_name = user.first_name
 			email = user.email
 			phone = user.phone
-			random_otp = r''.join(random.choice('01234ABCD') for i in range(8))
+			random_otp = r''.join(random.choice('0123456789') for i in range(4))
 			phone_otp(random_otp,phone)
 
 			hashed_pwd = make_password(random_otp)
@@ -259,7 +259,7 @@ def principal_display(request,dept):
 
 @login_required
 def principal_teacher_display(request,pk):
-	if request.user.is_principal():	
+	if request.user.is_principal():
 		name =  User.objects.get(pk = pk);
 		print(name)
 		data1 = User.objects.get(username=name);
@@ -372,7 +372,7 @@ def principal_teacher1_display(request,pk):
 
 		return render(request,'principal_teacher1_display.html',context=context1)
 	else:
-		return HttpResponseRedirect('/invalid')	
+		return HttpResponseRedirect('/invalid')
 
 
 @login_required
@@ -570,7 +570,7 @@ def ao_teacher1_display(request,name):
 
 	}
 	return render(request,'ao_teacher1_display.html',context=context1)
-	
+
 @login_required
 def ao_hod_display(request,name):
 	if request.user.is_ao():
