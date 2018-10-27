@@ -38,7 +38,6 @@ class UserAdmin(DjangoUserAdmin, ImportExportModelAdmin):
 	ordering = ('username',)
 	read_only = "password"
 	resource_class = UserResource
-	list_filter = ('info__department',)
 
 class empDetailResource(resources.ModelResource):
 	class Meta:
@@ -91,6 +90,7 @@ class Userrd(ImportExportModelAdmin):
 
 
 	list_display = ('name',)
+	list_filter = ('info__department',)
 	search_fields = ('info__first_name',)
 	ordering = ('id',)
 	resource_class = rdResource
@@ -173,6 +173,7 @@ class Userconference(ImportExportModelAdmin):
 
 
 	list_display = ('name',)
+	list_filter = ('info__department',)
 	search_fields = ('info__first_name',)
 	ordering = ('id',)
 	resource_class = conferenceResource
@@ -191,6 +192,7 @@ class Userjournal(ImportExportModelAdmin):
 
 
 	list_display = ('name',)
+	list_filter = ('info__department',)
 	search_fields = ('info__first_name',)
 	ordering = ('id',)
 	resource_class = journalResource
