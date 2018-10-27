@@ -12,7 +12,7 @@ from itertools import chain
 from django.contrib.auth.decorators import login_required
 from django.forms import formset_factory
 
-@login_required
+
 def ao_consolidated(request):
 	data1 = User.objects.all().order_by('department')
 	data2 = feedbackTab.objects.all()
