@@ -14,7 +14,7 @@ from django.forms import formset_factory
 
 
 def ao_consolidated(request):
-	data1 = User.objects.all()
+	data1 = User.objects.all().order_by('department')
 	data2 = feedbackTab.objects.all()
 	data3 = rd.objects.all()
 	data4 = remarks1.objects.all()
