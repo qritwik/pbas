@@ -44,7 +44,7 @@ class ipr_status(models.Model):
 class User(AbstractUser):
 	phone = models.BigIntegerField(null=True)
 	department = models.ForeignKey('Department', on_delete=models.CASCADE,null=True)
-	designation = models.ForeignKey('Designation', on_delete=models.CASCADE,null=True)
+	# designation = models.ForeignKey('Designation', on_delete=models.CASCADE,null=True)
 	teach_status = models.BooleanField(default=False)
 	hod_status = models.BooleanField(default=False)
 	principal_status = models.BooleanField(default=False)
