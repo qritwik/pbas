@@ -24,7 +24,7 @@
     <th>Total Marks</th>
   </tr></thead>
   <tbody>
-    {% for a,b,c,d in data6 %}
+    {% for a,b,c,d,e in data6 %}
      <tr>
       <td data-label="Name">{{a.first_name}}</td>
       <td data-label="Name">{{a.designation}}</td>
@@ -32,8 +32,8 @@
       <td data-label="department">{{a.department}}</td>
       <td data-label="selfmarks">{{b.e_o_f_r_final}} + {{c.rd_tot_marks}}</td>
       <td data-label="hodmarks">{{d.hod_marks1}} + {{d.hod_marks2}}</td>
-      <!-- <td data-label="principalmarks">{{e.prin_marks1}} + {{e.prin_marks2}} + {{e.prin_marks3}}</td>
-      <td data-label="totalmarks">{{e.total_marks}}</td> -->
+      <td data-label="principalmarks">{{e.prin_marks1}} + {{e.prin_marks2}} + {{e.prin_marks3}}</td>
+      <td data-label="totalmarks">{{e.total_marks}}</td>
     </tr>
     {% endfor %}
 

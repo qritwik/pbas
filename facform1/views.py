@@ -18,7 +18,7 @@ def ao_consolidated(request):
 	data2 = feedbackTab.objects.all()
 	data3 = rd.objects.all()
 	data4 = remarks1.objects.all()
-	# data5 = remarks2.objects.all()
+	data5 = remarks2.objects.all()
 
 	print(data1.count())
 	print(data2.count())
@@ -27,7 +27,7 @@ def ao_consolidated(request):
 
 
 
-	data6 = zip(data1,data2,data3,data4)
+	data6 = zip(data1,data2,data3,data4,data5)
 
 
 
@@ -40,6 +40,7 @@ def ao_consolidated(request):
 			'data2':data2,
 			'data3':data3,
 			'data4':data4,
+			'data5':data5,
 			'data6':data6
 
 
