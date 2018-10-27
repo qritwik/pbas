@@ -156,7 +156,7 @@ class Userremarks2(ImportExportModelAdmin):
 
 # admin.site.register(remarks2)
 
-admin.site.register(Designation)
+# admin.site.register(Designation)
 
 admin.site.register(Department)
 admin.site.register(ipr_type)
