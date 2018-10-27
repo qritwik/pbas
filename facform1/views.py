@@ -13,6 +13,41 @@ from django.contrib.auth.decorators import login_required
 from django.forms import formset_factory
 
 
+def ao_consolidated(request):
+	data1 = User.objects.all()
+	data2 = feedbackTab.objects.all()
+	data3 = rd.objects.all()
+	data4 = remarks1.objects.all()
+	# data5 = remarks2.objects.all()
+
+	print(data1.count())
+	print(data2.count())
+	print(data3.count())
+	print(data4.count())
+
+
+
+	data6 = zip(data1,data2,data3,data4)
+
+
+
+
+
+	# cwe = list(chain(data1,data2,data3,data4,data5))
+
+
+	context = {
+			'data1':data1,
+			'data2':data2,
+			'data3':data3,
+			'data4':data4,
+			'data6':data6
+
+
+		}
+	return render(request,'ao_consolidated.html',context = context)
+
+
 
 
 def phone_otp(random_otp, phone):

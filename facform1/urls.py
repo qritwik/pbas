@@ -3,6 +3,8 @@ from . import views
 from django.contrib.auth.views import login, logout
 from . import forms
 
+app_name = 'facform1'
+
 urlpatterns = [
     url(r'^$', views.login, name="login-username-view"),
     url(r'^login/', login, {'template_name': 'otp.html','authentication_form': forms.LoginForm}, name='login'),
@@ -55,6 +57,7 @@ urlpatterns = [
 
 
     url(r'^ao_first/', views.ao_first,name="ao_first"),
+    url(r'^ao_consolidated/', views.ao_consolidated,name="ao_consolidated"),
     url(r'^ao_display/(?P<dept>[\w\-]+)$', views.ao_display,name="ao_display"),
     url(r'^ao_approved/(?P<dept>[\w\-]+)$', views.ao_approved,name="ao_approved"),
     url(r'^ao_teacher_display/(?P<name>[\w\-\.\w]+)$',views.ao_teacher_display,name="ao_teacher_display"),
