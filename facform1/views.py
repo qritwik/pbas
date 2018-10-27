@@ -34,7 +34,7 @@ def report(request,dept):
 
 	rd1 = book['Rd']
 	journal1 = book['Journal']
-	conference1 = book['conference']
+	conference1 = book['Conference']
 
 
 	#-------------------rd-------------------
