@@ -38,6 +38,7 @@ class UserAdmin(DjangoUserAdmin, ImportExportModelAdmin):
 	ordering = ('username',)
 	read_only = "password"
 	resource_class = UserResource
+	list_filter = ('info__department',)
 
 class empDetailResource(resources.ModelResource):
 	class Meta:
