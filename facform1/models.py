@@ -3,14 +3,14 @@ from django.contrib.auth.models import AbstractUser, User
 
 #TABLE-1
 
-class Designation(models.Model):
-	"""
-	Description: Holds the Designations avbailable
-	"""
-	name = models.CharField(max_length=20, blank=True, null=True)
-
-	def __str__(self):
-		return self.name
+# class Designation(models.Model):
+# 	"""
+# 	Description: Holds the Designations avbailable
+# 	"""
+# 	name = models.CharField(max_length=20, blank=True, null=True)
+#
+# 	def __str__(self):
+# 		return self.name
 
 class Department(models.Model):
 	"""
