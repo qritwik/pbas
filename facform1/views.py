@@ -8,9 +8,173 @@ from django.contrib.auth.hashers import make_password, check_password
 import random
 from django.db.models import Q
 from itertools import chain
+from openpyxl import Workbook
+from django.http import HttpResponse, HttpResponseRedirect
+from openpyxl.writer.excel import save_virtual_workbook
+
 
 from django.contrib.auth.decorators import login_required
 from django.forms import formset_factory
+
+
+
+
+def report(request,dept):
+
+	data1 = rd.objects.filter(info__department__name=dept)
+	data2 = journal.objects.filter(info__department__name=dept)
+	data3 = journal.objects.filter(info__department__name=dept)
+
+	book = Workbook()
+	book.create_sheet('Rd')
+	book.create_sheet('Journal')
+	book.create_sheet('Conference')
+
+
+
+	rd = book['Rd']
+	journal = book['Journal']
+	conference = book['conference']
+
+
+	#-------------------rd-------------------
+
+	rd['A1'] = "Name"
+	rd['B1'] = "Department"
+	rd['C1'] = "Designation"
+
+
+
+	for i,rd in zip(range(2,40),data1):
+
+		info = rd.info
+		data4 = User.objects.get(info=info)
+
+
+
+		rd.cell(row = i, column = 1).value = data4.first_name
+		rd.cell(row = i, column = 2).value = data4.department
+		rd.cell(row = i, column = 3).value = data4.designation
+
+
+		rd.cell(row = i, column = 4).value = rd.w_s_d
+		rd.cell(row = i, column = 5).value = rd.w_n_d
+		rd.cell(row = i, column = 6).value = rd.w_i_d
+		rd.cell(row = i, column = 7).value = rd.w_m
+
+		rd.cell(row = i, column = 8).value = rd.p_s_d
+		rd.cell(row = i, column = 9).value = rd.p_n_d
+		rd.cell(row = i, column = 10).value = rd.p_i_d
+		rd.cell(row = i, column = 11).value = rd.p_m
+
+		rd.cell(row = i, column = 12).value = rd.onl_course_c
+		rd.cell(row = i, column = 13).value = rd.onl_course_m
+
+		rd.cell(row = i, column = 14).value = rd.s_c_n
+		rd.cell(row = i, column = 15).value = rd.f_c_n
+		rd.cell(row = i, column = 16).value = rd.o_c_n
+
+		rd.cell(row = i, column = 17).value = rd.s_c_m
+		rd.cell(row = i, column = 18).value = rd.f_c_m
+		rd.cell(row = i, column = 19).value = rd.o_c_m
+
+		rd.cell(row = i, column = 20).value = rd.s_j_n
+		rd.cell(row = i, column = 21).value = rd.f_j_n
+		rd.cell(row = i, column = 22).value = rd.o_j_n
+
+		rd.cell(row = i, column = 23).value = rd.s_j_m
+		rd.cell(row = i, column = 24).value = rd.f_j_m
+		rd.cell(row = i, column = 25).value = rd.o_j_m
+
+
+		rd.cell(row = i, column = 26).value = rd.book_i
+		rd.cell(row = i, column = 27).value = rd.book_n
+		rd.cell(row = i, column = 28).value = rd.book_ci
+		rd.cell(row = i, column = 29).value = rd.book_cn
+		rd.cell(row = i, column = 30).value = rd.book_ai
+		rd.cell(row = i, column = 31).value = rd.book_nm
+
+
+		rd.cell(row = i, column = 32).value = rd.book_m
+
+
+		rd.cell(row = i, column = 33).value = rd.if_s
+		rd.cell(row = i, column = 34).value = rd.if_f
+		rd.cell(row = i, column = 35).value = rd.if_c
+
+		rd.cell(row = i, column = 36).value = rd.ef_s
+		rd.cell(row = i, column = 37).value = rd.ef_f
+		rd.cell(row = i, column = 38).value = rd.ef_c
+
+
+		rd.cell(row = i, column = 39).value = rd.eef_c
+		rd.cell(row = i, column = 40).value = rd.eef_c
+		rd.cell(row = i, column = 41).value = rd.eef_c
+
+		rd.cell(row = i, column = 42).value = rd.Cw_2
+		rd.cell(row = i, column = 43).value = rd.Cw_2_5
+		rd.cell(row = i, column = 44).value = rd.Cw_5
+
+		rd.cell(row = i, column = 45).value = rd.ipr_status
+		rd.cell(row = i, column = 46).value = rd.ipr_type
+		rd.cell(row = i, column = 47).value = rd.ipr_info
+
+		rd.cell(row = i, column = 48).value = rd.rp_marks
+		rd.cell(row = i, column = 49).value = rd.rd_tot_marks
+
+		rd.cell(row = i, column = 50).value = rd.info
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	response = HttpResponse(save_virtual_workbook(book), content_type='application/vnd.ms-excel')
+	response['Content-Disposition'] = 'attachment; filename="final_report.xlsx"'
+	return response
+
+
+
+
+
+
+
+
 
 
 @login_required
