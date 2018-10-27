@@ -3,14 +3,14 @@ from django.contrib.auth.models import AbstractUser, User
 
 #TABLE-1
 
-# class Designation(models.Model):
-# 	"""
-# 	Description: Holds the Designations avbailable
-# 	"""
-# 	name = models.CharField(max_length=20, blank=True, null=True)
-#
-# 	def __str__(self):
-# 		return self.name
+class Designation(models.Model):
+	"""
+	Description: Holds the Designations avbailable
+	"""
+	name = models.CharField(max_length=20, blank=True, null=True)
+
+	def __str__(self):
+		return self.name
 
 class Department(models.Model):
 	"""
@@ -44,7 +44,7 @@ class ipr_status(models.Model):
 class User(AbstractUser):
 	phone = models.BigIntegerField(null=True)
 	department = models.ForeignKey('Department', on_delete=models.CASCADE,null=True)
-	# designation = models.ForeignKey('Designation', on_delete=models.CASCADE,null=True)
+	designation = models.ForeignKey('Designation', on_delete=models.CASCADE,null=True)
 	teach_status = models.BooleanField(default=False)
 	hod_status = models.BooleanField(default=False)
 	principal_status = models.BooleanField(default=False)
