@@ -16,7 +16,7 @@ from openpyxl.writer.excel import save_virtual_workbook
 from django.contrib.auth.decorators import login_required
 from django.forms import formset_factory
 
-# 
+#
 #
 #
 # def report(request,dept):
@@ -182,9 +182,9 @@ from django.forms import formset_factory
 def ao_consolidated(request):
 	if request.user.is_ao():
 		data1 = User.objects.all().order_by('department')
-		data2 = feedbackTab.objects.all()
-		data3 = rd.objects.all()
-		data4 = remarks1.objects.all()
+		data2 = feedbackTab.objects.all().order_by('info__department')
+		data3 = rd.objects.all().order_by('info__department')
+		data4 = remarks1.objects.all().order_by('info__department')
 		# data5 = remarks2.objects.all()
 
 		print(data1.count())
