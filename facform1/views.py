@@ -58,71 +58,80 @@ def report(request,dept):
 		rd1.cell(row = i, column = 3).value = data4.designation.name
 
 
-		rd1.cell(row = i, column = 4).value = rx.w_s_d
-		rd1.cell(row = i, column = 5).value = rx.w_n_d
-		rd1.cell(row = i, column = 6).value = rx.w_i_d
-		rd1.cell(row = i, column = 7).value = rx.w_m
-
-		rd1.cell(row = i, column = 8).value = rx.p_s_d
-		rd1.cell(row = i, column = 9).value = rx.p_n_d
-		rd1.cell(row = i, column = 10).value = rx.p_i_d
-		rd1.cell(row = i, column = 11).value = rx.p_m
-
-		rd1.cell(row = i, column = 12).value = rx.onl_course_c
-		rd1.cell(row = i, column = 13).value = rx.onl_course_m
-
-		rd1.cell(row = i, column = 14).value = rx.s_c_n
-		rd1.cell(row = i, column = 15).value = rx.f_c_n
-		rd1.cell(row = i, column = 16).value = rx.o_c_n
-
-		rd1.cell(row = i, column = 17).value = rx.s_c_m
-		rd1.cell(row = i, column = 18).value = rx.f_c_m
-		rd1.cell(row = i, column = 19).value = rx.o_c_m
-
-		rd1.cell(row = i, column = 20).value = rx.s_j_n
-		rd1.cell(row = i, column = 21).value = rx.f_j_n
-		rd1.cell(row = i, column = 22).value = rx.o_j_n
-
-		rd1.cell(row = i, column = 23).value = rx.s_j_m
-		rd1.cell(row = i, column = 24).value = rx.f_j_m
-		rd1.cell(row = i, column = 25).value = rx.o_j_m
+		try:
 
 
-		rd1.cell(row = i, column = 26).value = rx.book_i
-		rd1.cell(row = i, column = 27).value = rx.book_n
-		rd1.cell(row = i, column = 28).value = rx.book_ci
-		rd1.cell(row = i, column = 29).value = rx.book_cn
-		rd1.cell(row = i, column = 30).value = rx.book_ai
-		rd1.cell(row = i, column = 31).value = rx.book_nm
 
 
-		rd1.cell(row = i, column = 32).value = rx.book_m
+			rd1.cell(row = i, column = 4).value = rx.w_s_d
+			rd1.cell(row = i, column = 5).value = rx.w_n_d
+			rd1.cell(row = i, column = 6).value = rx.w_i_d
+			rd1.cell(row = i, column = 7).value = rx.w_m
+
+			rd1.cell(row = i, column = 8).value = rx.p_s_d
+			rd1.cell(row = i, column = 9).value = rx.p_n_d
+			rd1.cell(row = i, column = 10).value = rx.p_i_d
+			rd1.cell(row = i, column = 11).value = rx.p_m
+
+			rd1.cell(row = i, column = 12).value = rx.onl_course_c
+			rd1.cell(row = i, column = 13).value = rx.onl_course_m
+
+			rd1.cell(row = i, column = 14).value = rx.s_c_n
+			rd1.cell(row = i, column = 15).value = rx.f_c_n
+			rd1.cell(row = i, column = 16).value = rx.o_c_n
+
+			rd1.cell(row = i, column = 17).value = rx.s_c_m
+			rd1.cell(row = i, column = 18).value = rx.f_c_m
+			rd1.cell(row = i, column = 19).value = rx.o_c_m
+
+			rd1.cell(row = i, column = 20).value = rx.s_j_n
+			rd1.cell(row = i, column = 21).value = rx.f_j_n
+			rd1.cell(row = i, column = 22).value = rx.o_j_n
+
+			rd1.cell(row = i, column = 23).value = rx.s_j_m
+			rd1.cell(row = i, column = 24).value = rx.f_j_m
+			rd1.cell(row = i, column = 25).value = rx.o_j_m
 
 
-		rd1.cell(row = i, column = 33).value = rx.if_s
-		rd1.cell(row = i, column = 34).value = rx.if_f
-		rd1.cell(row = i, column = 35).value = rx.if_c
+			rd1.cell(row = i, column = 26).value = rx.book_i
+			rd1.cell(row = i, column = 27).value = rx.book_n
+			rd1.cell(row = i, column = 28).value = rx.book_ci
+			rd1.cell(row = i, column = 29).value = rx.book_cn
+			rd1.cell(row = i, column = 30).value = rx.book_ai
+			rd1.cell(row = i, column = 31).value = rx.book_nm
 
-		rd1.cell(row = i, column = 36).value = rx.ef_s
-		rd1.cell(row = i, column = 37).value = rx.ef_f
-		rd1.cell(row = i, column = 38).value = rx.ef_c
+
+			rd1.cell(row = i, column = 32).value = rx.book_m
 
 
-		rd1.cell(row = i, column = 39).value = rx.eef_c
-		rd1.cell(row = i, column = 40).value = rx.eef_c
-		rd1.cell(row = i, column = 41).value = rx.eef_c
+			rd1.cell(row = i, column = 33).value = rx.if_s
+			rd1.cell(row = i, column = 34).value = rx.if_f
+			rd1.cell(row = i, column = 35).value = rx.if_c
 
-		rd1.cell(row = i, column = 42).value = rx.Cw_2
-		rd1.cell(row = i, column = 43).value = rx.Cw_2_5
-		rd1.cell(row = i, column = 44).value = rx.Cw_5
+			rd1.cell(row = i, column = 36).value = rx.ef_s
+			rd1.cell(row = i, column = 37).value = rx.ef_f
+			rd1.cell(row = i, column = 38).value = rx.ef_c
 
-		rd1.cell(row = i, column = 45).value = rx.ipr_status
-		rd1.cell(row = i, column = 46).value = rx.ipr_type
-		rd1.cell(row = i, column = 47).value = rx.ipr_info
 
-		rd1.cell(row = i, column = 48).value = rx.rp_marks
-		rd1.cell(row = i, column = 49).value = rx.rd_tot_marks
+			rd1.cell(row = i, column = 39).value = rx.eef_c
+			rd1.cell(row = i, column = 40).value = rx.eef_c
+			rd1.cell(row = i, column = 41).value = rx.eef_c
 
+			rd1.cell(row = i, column = 42).value = rx.Cw_2
+			rd1.cell(row = i, column = 43).value = rx.Cw_2_5
+			rd1.cell(row = i, column = 44).value = rx.Cw_5
+
+			rd1.cell(row = i, column = 45).value = rx.ipr_status
+			rd1.cell(row = i, column = 46).value = rx.ipr_type
+			rd1.cell(row = i, column = 47).value = rx.ipr_info
+
+			rd1.cell(row = i, column = 48).value = rx.rp_marks
+			rd1.cell(row = i, column = 49).value = rx.rd_tot_marks
+
+
+
+		except ValueError:
+    		continue
 
 
 
