@@ -71,33 +71,34 @@ def report(request,dept):
 	rd1['AC1'] = "book_cn"
 	rd1['AD1'] = "book_ai"
 	rd1['AE1'] = "book_nm"
-	rd1['AF1'] = "if_s"
+	rd1['AF1'] = "book_m"
+	rd1['AG1'] = "if_s"
 
-	rd1['AG1'] = "if_f"
+	rd1['AH1'] = "if_f"
 
-	rd1['AH1'] = "if_c"
+	rd1['AI1'] = "if_c"
 
-	rd1['AI1'] = "ef_s"
+	rd1['AJ1'] = "ef_s"
 
-	rd1['AJ1'] = "ef_f"
+	rd1['AK1'] = "ef_f"
 
-	rd1['AK1'] = "ef_c"
+	rd1['AL1'] = "ef_c"
 
-	rd1['AL1'] = "eef_s"
+	rd1['AM1'] = "eef_s"
 
-	rd1['AM1'] = "eef_f"
+	rd1['AN1'] = "eef_f"
 
-	rd1['AN1'] = "eef_c"
+	rd1['AO1'] = "eef_c"
 
-	rd1['AO1'] = "Cw_2"
+	rd1['AP1'] = "Cw_2"
 
-	rd1['AP1'] = "Cw_2_5"
-	rd1['AQ1'] = "Cw_5"
+	rd1['AQ1'] = "Cw_2_5"
+	rd1['AR1'] = "Cw_5"
 
 
-	rd1['AR1'] = "ipr_info"
-	rd1['AS1'] = "rp_marks"
-	rd1['AT1'] = "R&D TOTAL MARKS"
+	rd1['AS1'] = "ipr_info"
+	rd1['AT1'] = "rp_marks"
+	rd1['AU1'] = "R&D TOTAL MARKS"
 
 
 
