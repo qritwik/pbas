@@ -123,7 +123,6 @@ def report(request,dept):
 		rd1.cell(row = i, column = 48).value = rx.rp_marks
 		rd1.cell(row = i, column = 49).value = rx.rd_tot_marks
 
-		rd1.cell(row = i, column = 50).value = rx.info
 
 
 
