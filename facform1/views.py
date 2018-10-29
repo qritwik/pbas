@@ -96,12 +96,10 @@ def report(request,dept):
 	rd1['AS1'] = "Cw_2_5"
 	rd1['AT1'] = "Cw_5"
 
-	rd1['AU1'] = "ipr_status"
 
-	rd1['AV1'] = "ipr_type"
-	rd1['AW1'] = "ipr_info"
-	rd1['AX1'] = "rp_marks"
-	rd1['AY1'] = "R&D TOTAL MARKS"
+	rd1['AU1'] = "ipr_info"
+	rd1['AV1'] = "rp_marks"
+	rd1['AW1'] = "R&D TOTAL MARKS"
 
 
 
