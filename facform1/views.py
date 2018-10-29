@@ -124,80 +124,78 @@ def report(request,dept):
 		rd1.cell(row = i, column = 3).value = data4.designation.name
 
 
-		try:
 
 
 
 
-			rd1.cell(row = i, column = 4).value = rx.w_s_d
-			rd1.cell(row = i, column = 5).value = rx.w_n_d
-			rd1.cell(row = i, column = 6).value = rx.w_i_d
-			rd1.cell(row = i, column = 7).value = rx.w_m
 
-			rd1.cell(row = i, column = 8).value = rx.p_s_d
-			rd1.cell(row = i, column = 9).value = rx.p_n_d
-			rd1.cell(row = i, column = 10).value = rx.p_i_d
-			rd1.cell(row = i, column = 11).value = rx.p_m
+		rd1.cell(row = i, column = 4).value = rx.w_s_d
+		rd1.cell(row = i, column = 5).value = rx.w_n_d
+		rd1.cell(row = i, column = 6).value = rx.w_i_d
+		rd1.cell(row = i, column = 7).value = rx.w_m
 
-			rd1.cell(row = i, column = 12).value = rx.onl_course_c
-			rd1.cell(row = i, column = 13).value = rx.onl_course_m
+		rd1.cell(row = i, column = 8).value = rx.p_s_d
+		rd1.cell(row = i, column = 9).value = rx.p_n_d
+		rd1.cell(row = i, column = 10).value = rx.p_i_d
+		rd1.cell(row = i, column = 11).value = rx.p_m
 
-			rd1.cell(row = i, column = 14).value = rx.s_c_n
-			rd1.cell(row = i, column = 15).value = rx.f_c_n
-			rd1.cell(row = i, column = 16).value = rx.o_c_n
+		rd1.cell(row = i, column = 12).value = rx.onl_course_c
+		rd1.cell(row = i, column = 13).value = rx.onl_course_m
 
-			rd1.cell(row = i, column = 17).value = rx.s_c_m
-			rd1.cell(row = i, column = 18).value = rx.f_c_m
-			rd1.cell(row = i, column = 19).value = rx.o_c_m
+		rd1.cell(row = i, column = 14).value = rx.s_c_n
+		rd1.cell(row = i, column = 15).value = rx.f_c_n
+		rd1.cell(row = i, column = 16).value = rx.o_c_n
 
-			rd1.cell(row = i, column = 20).value = rx.s_j_n
-			rd1.cell(row = i, column = 21).value = rx.f_j_n
-			rd1.cell(row = i, column = 22).value = rx.o_j_n
+		rd1.cell(row = i, column = 17).value = rx.s_c_m
+		rd1.cell(row = i, column = 18).value = rx.f_c_m
+		rd1.cell(row = i, column = 19).value = rx.o_c_m
 
-			rd1.cell(row = i, column = 23).value = rx.s_j_m
-			rd1.cell(row = i, column = 24).value = rx.f_j_m
-			rd1.cell(row = i, column = 25).value = rx.o_j_m
+		rd1.cell(row = i, column = 20).value = rx.s_j_n
+		rd1.cell(row = i, column = 21).value = rx.f_j_n
+		rd1.cell(row = i, column = 22).value = rx.o_j_n
 
-
-			rd1.cell(row = i, column = 26).value = rx.book_i
-			rd1.cell(row = i, column = 27).value = rx.book_n
-			rd1.cell(row = i, column = 28).value = rx.book_ci
-			rd1.cell(row = i, column = 29).value = rx.book_cn
-			rd1.cell(row = i, column = 30).value = rx.book_ai
-			rd1.cell(row = i, column = 31).value = rx.book_nm
+		rd1.cell(row = i, column = 23).value = rx.s_j_m
+		rd1.cell(row = i, column = 24).value = rx.f_j_m
+		rd1.cell(row = i, column = 25).value = rx.o_j_m
 
 
-			rd1.cell(row = i, column = 32).value = rx.book_m
+		rd1.cell(row = i, column = 26).value = rx.book_i
+		rd1.cell(row = i, column = 27).value = rx.book_n
+		rd1.cell(row = i, column = 28).value = rx.book_ci
+		rd1.cell(row = i, column = 29).value = rx.book_cn
+		rd1.cell(row = i, column = 30).value = rx.book_ai
+		rd1.cell(row = i, column = 31).value = rx.book_nm
 
 
-			rd1.cell(row = i, column = 33).value = rx.if_s
-			rd1.cell(row = i, column = 34).value = rx.if_f
-			rd1.cell(row = i, column = 35).value = rx.if_c
-
-			rd1.cell(row = i, column = 36).value = rx.ef_s
-			rd1.cell(row = i, column = 37).value = rx.ef_f
-			rd1.cell(row = i, column = 38).value = rx.ef_c
+		rd1.cell(row = i, column = 32).value = rx.book_m
 
 
-			rd1.cell(row = i, column = 39).value = rx.eef_s
-			rd1.cell(row = i, column = 40).value = rx.eef_f
-			rd1.cell(row = i, column = 41).value = rx.eef_c
+		rd1.cell(row = i, column = 33).value = rx.if_s
+		rd1.cell(row = i, column = 34).value = rx.if_f
+		rd1.cell(row = i, column = 35).value = rx.if_c
 
-			rd1.cell(row = i, column = 42).value = rx.Cw_2
-			rd1.cell(row = i, column = 43).value = rx.Cw_2_5
-			rd1.cell(row = i, column = 44).value = rx.Cw_5
-
-			rd1.cell(row = i, column = 45).value = rx.ipr_status
-			rd1.cell(row = i, column = 46).value = rx.ipr_type
-			rd1.cell(row = i, column = 47).value = rx.ipr_info
-
-			rd1.cell(row = i, column = 48).value = rx.rp_marks
-			rd1.cell(row = i, column = 49).value = rx.rd_tot_marks
+		rd1.cell(row = i, column = 36).value = rx.ef_s
+		rd1.cell(row = i, column = 37).value = rx.ef_f
+		rd1.cell(row = i, column = 38).value = rx.ef_c
 
 
+		rd1.cell(row = i, column = 39).value = rx.eef_s
+		rd1.cell(row = i, column = 40).value = rx.eef_f
+		rd1.cell(row = i, column = 41).value = rx.eef_c
 
-		except ValueError:
-			continue
+		rd1.cell(row = i, column = 42).value = rx.Cw_2
+		rd1.cell(row = i, column = 43).value = rx.Cw_2_5
+		rd1.cell(row = i, column = 44).value = rx.Cw_5
+
+
+		rd1.cell(row = i, column = 45).value = rx.ipr_info
+
+		rd1.cell(row = i, column = 46).value = rx.rp_marks
+		rd1.cell(row = i, column = 47).value = rx.rd_tot_marks
+
+
+
+
 
 
 
@@ -294,90 +292,90 @@ def report(request,dept):
 
 		data5 = User.objects.get(username=info2)
 
-		journal1.cell(row = i, column = 1).value = data5.first_name
-		journal1.cell(row = i, column = 2).value = data5.department.name
-		journal1.cell(row = i, column = 3).value = data5.designation.name
+		journal1.cell(row = j, column = 1).value = data5.first_name
+		journal1.cell(row = j, column = 2).value = data5.department.name
+		journal1.cell(row = j, column = 3).value = data5.designation.name
 
 		try:
 
 
 
 
-			journal1.cell(row = i, column = 4).value = jx.j1_index
-			journal1.cell(row = i, column = 5).value = jx.j1_name
-			journal1.cell(row = i, column = 6).value = jx.j1_title
-			journal1.cell(row = i, column = 7).value = jx.j1_volume
-			journal1.cell(row = i, column = 8).value = jx.j1_issn
-			journal1.cell(row = i, column = 9).value = jx.j1_date
-			journal1.cell(row = i, column = 10).value = jx.j1_page
-			journal1.cell(row = i, column = 11).value = jx.j1_author
+			journal1.cell(row = j, column = 4).value = jx.j1_index
+			journal1.cell(row = j, column = 5).value = jx.j1_name
+			journal1.cell(row = j, column = 6).value = jx.j1_title
+			journal1.cell(row = j, column = 7).value = jx.j1_volume
+			journal1.cell(row = j, column = 8).value = jx.j1_issn
+			journal1.cell(row = j, column = 9).value = jx.j1_date
+			journal1.cell(row = j, column = 10).value = jx.j1_page
+			journal1.cell(row = j, column = 11).value = jx.j1_author
 
-			journal1.cell(row = i, column = 12).value = jx.j2_index
-			journal1.cell(row = i, column = 13).value = jx.j2_name
-			journal1.cell(row = i, column = 14).value = jx.j2_title
-			journal1.cell(row = i, column = 15).value = jx.j2_volume
-			journal1.cell(row = i, column = 16).value = jx.j2_issn
-			journal1.cell(row = i, column = 17).value = jx.j2_date
-			journal1.cell(row = i, column = 18).value = jx.j2_page
-			journal1.cell(row = i, column = 19).value = jx.j2_author
-
-
-			journal1.cell(row = i, column = 20).value = jx.j3_index
-			journal1.cell(row = i, column = 21).value = jx.j3_name
-			journal1.cell(row = i, column = 22).value = jx.j3_title
-			journal1.cell(row = i, column = 23).value = jx.j3_volume
-			journal1.cell(row = i, column = 24).value = jx.j3_issn
-			journal1.cell(row = i, column = 25).value = jx.j3_date
-			journal1.cell(row = i, column = 26).value = jx.j3_page
-			journal1.cell(row = i, column = 27).value = jx.j3_author
+			journal1.cell(row = j, column = 12).value = jx.j2_index
+			journal1.cell(row = j, column = 13).value = jx.j2_name
+			journal1.cell(row = j, column = 14).value = jx.j2_title
+			journal1.cell(row = j, column = 15).value = jx.j2_volume
+			journal1.cell(row = j, column = 16).value = jx.j2_issn
+			journal1.cell(row = j, column = 17).value = jx.j2_date
+			journal1.cell(row = j, column = 18).value = jx.j2_page
+			journal1.cell(row = j, column = 19).value = jx.j2_author
 
 
-			journal1.cell(row = i, column = 28).value = jx.j4_index
-			journal1.cell(row = i, column = 29).value = jx.j4_name
-			journal1.cell(row = i, column = 30).value = jx.j4_title
-			journal1.cell(row = i, column = 31).value = jx.j4_volume
-			journal1.cell(row = i, column = 32).value = jx.j4_issn
-			journal1.cell(row = i, column = 33).value = jx.j4_date
-			journal1.cell(row = i, column = 34).value = jx.j4_page
-			journal1.cell(row = i, column = 35).value = jx.j4_author
+			journal1.cell(row = j, column = 20).value = jx.j3_index
+			journal1.cell(row = j, column = 21).value = jx.j3_name
+			journal1.cell(row = j, column = 22).value = jx.j3_title
+			journal1.cell(row = j, column = 23).value = jx.j3_volume
+			journal1.cell(row = j, column = 24).value = jx.j3_issn
+			journal1.cell(row = j, column = 25).value = jx.j3_date
+			journal1.cell(row = j, column = 26).value = jx.j3_page
+			journal1.cell(row = j, column = 27).value = jx.j3_author
 
 
-			journal1.cell(row = i, column = 36).value = jx.j5_index
-			journal1.cell(row = i, column = 37).value = jx.j5_name
-			journal1.cell(row = i, column = 38).value = jx.j5_title
-			journal1.cell(row = i, column = 39).value = jx.j5_volume
-			journal1.cell(row = i, column = 40).value = jx.j5_issn
-			journal1.cell(row = i, column = 41).value = jx.j5_date
-			journal1.cell(row = i, column = 42).value = jx.j5_page
-			journal1.cell(row = i, column = 43).value = jx.j5_author
+			journal1.cell(row = j, column = 28).value = jx.j4_index
+			journal1.cell(row = j, column = 29).value = jx.j4_name
+			journal1.cell(row = j, column = 30).value = jx.j4_title
+			journal1.cell(row = j, column = 31).value = jx.j4_volume
+			journal1.cell(row = j, column = 32).value = jx.j4_issn
+			journal1.cell(row = j, column = 33).value = jx.j4_date
+			journal1.cell(row = j, column = 34).value = jx.j4_page
+			journal1.cell(row = j, column = 35).value = jx.j4_author
 
 
-			journal1.cell(row = i, column = 44).value = jx.j6_index
-			journal1.cell(row = i, column = 45).value = jx.j6_name
-			journal1.cell(row = i, column = 46).value = jx.j6_title
-			journal1.cell(row = i, column = 47).value = jx.j6_volume
-			journal1.cell(row = i, column = 48).value = jx.j6_issn
-			journal1.cell(row = i, column = 49).value = jx.j6_date
-			journal1.cell(row = i, column = 50).value = jx.j6_page
-			journal1.cell(row = i, column = 51).value = jx.j6_author
+			journal1.cell(row = j, column = 36).value = jx.j5_index
+			journal1.cell(row = j, column = 37).value = jx.j5_name
+			journal1.cell(row = j, column = 38).value = jx.j5_title
+			journal1.cell(row = j, column = 39).value = jx.j5_volume
+			journal1.cell(row = j, column = 40).value = jx.j5_issn
+			journal1.cell(row = j, column = 41).value = jx.j5_date
+			journal1.cell(row = j, column = 42).value = jx.j5_page
+			journal1.cell(row = j, column = 43).value = jx.j5_author
 
-			journal1.cell(row = i, column = 52).value = jx.j7_index
-			journal1.cell(row = i, column = 53).value = jx.j7_name
-			journal1.cell(row = i, column = 54).value = jx.j7_title
-			journal1.cell(row = i, column = 55).value = jx.j7_volume
-			journal1.cell(row = i, column = 56).value = jx.j7_issn
-			journal1.cell(row = i, column = 57).value = jx.j7_date
-			journal1.cell(row = i, column = 58).value = jx.j7_page
-			journal1.cell(row = i, column = 59).value = jx.j7_author
 
-			journal1.cell(row = i, column = 60).value = jx.j8_index
-			journal1.cell(row = i, column = 61).value = jx.j8_name
-			journal1.cell(row = i, column = 62).value = jx.j8_title
-			journal1.cell(row = i, column = 63).value = jx.j8_volume
-			journal1.cell(row = i, column = 64).value = jx.j8_issn
-			journal1.cell(row = i, column = 65).value = jx.j8_date
-			journal1.cell(row = i, column = 66).value = jx.j8_page
-			journal1.cell(row = i, column = 67).value = jx.j8_author
+			journal1.cell(row = j, column = 44).value = jx.j6_index
+			journal1.cell(row = j, column = 45).value = jx.j6_name
+			journal1.cell(row = j, column = 46).value = jx.j6_title
+			journal1.cell(row = j, column = 47).value = jx.j6_volume
+			journal1.cell(row = j, column = 48).value = jx.j6_issn
+			journal1.cell(row = j, column = 49).value = jx.j6_date
+			journal1.cell(row = j, column = 50).value = jx.j6_page
+			journal1.cell(row = j, column = 51).value = jx.j6_author
+
+			journal1.cell(row = j, column = 52).value = jx.j7_index
+			journal1.cell(row = j, column = 53).value = jx.j7_name
+			journal1.cell(row = j, column = 54).value = jx.j7_title
+			journal1.cell(row = j, column = 55).value = jx.j7_volume
+			journal1.cell(row = j, column = 56).value = jx.j7_issn
+			journal1.cell(row = j, column = 57).value = jx.j7_date
+			journal1.cell(row = j, column = 58).value = jx.j7_page
+			journal1.cell(row = j, column = 59).value = jx.j7_author
+
+			journal1.cell(row = j, column = 60).value = jx.j8_index
+			journal1.cell(row = j, column = 61).value = jx.j8_name
+			journal1.cell(row = j, column = 62).value = jx.j8_title
+			journal1.cell(row = j, column = 63).value = jx.j8_volume
+			journal1.cell(row = j, column = 64).value = jx.j8_issn
+			journal1.cell(row = j, column = 65).value = jx.j8_date
+			journal1.cell(row = j, column = 66).value = jx.j8_page
+			journal1.cell(row = j, column = 67).value = jx.j8_author
 
 
 
@@ -458,82 +456,82 @@ def report(request,dept):
 
 
 
-	for j,cx in zip(range(2,40),data3):
+	for k,cx in zip(range(2,40),data3):
 
 		info3 = cx.info
 
 		data6 = User.objects.get(username=info3)
 
-		conference1.cell(row = i, column = 1).value = data6.first_name
-		conference1.cell(row = i, column = 2).value = data6.department.name
-		conference1.cell(row = i, column = 3).value = data6.designation.name
+		conference1.cell(row = k, column = 1).value = data6.first_name
+		conference1.cell(row = k, column = 2).value = data6.department.name
+		conference1.cell(row = k, column = 3).value = data6.designation.name
 
 		try:
 
 
 
 
-			conference1.cell(row = i, column = 4).value = cx.c1_index
-			conference1.cell(row = i, column = 5).value = cx.c1_name
-			conference1.cell(row = i, column = 6).value = cx.c1_place
-			conference1.cell(row = i, column = 7).value = cx.c1_date
-			conference1.cell(row = i, column = 8).value = cx.c1_index
-			conference1.cell(row = i, column = 9).value = cx.c1_author
+			conference1.cell(row = k, column = 4).value = cx.c1_index
+			conference1.cell(row = k, column = 5).value = cx.c1_name
+			conference1.cell(row = k, column = 6).value = cx.c1_place
+			conference1.cell(row = k, column = 7).value = cx.c1_date
+			conference1.cell(row = k, column = 8).value = cx.c1_index
+			conference1.cell(row = k, column = 9).value = cx.c1_author
 
 
-			conference1.cell(row = i, column = 10).value = cx.c2_index
-			conference1.cell(row = i, column = 11).value = cx.c2_name
-			conference1.cell(row = i, column = 12).value = cx.c2_place
-			conference1.cell(row = i, column = 13).value = cx.c2_date
-			conference1.cell(row = i, column = 14).value = cx.c2_index
-			conference1.cell(row = i, column = 15).value = cx.c2_author
+			conference1.cell(row = k, column = 10).value = cx.c2_index
+			conference1.cell(row = k, column = 11).value = cx.c2_name
+			conference1.cell(row = k, column = 12).value = cx.c2_place
+			conference1.cell(row = k, column = 13).value = cx.c2_date
+			conference1.cell(row = k, column = 14).value = cx.c2_index
+			conference1.cell(row = k, column = 15).value = cx.c2_author
 
 
-			conference1.cell(row = i, column = 16).value = cx.c3_index
-			conference1.cell(row = i, column = 17).value = cx.c3_name
-			conference1.cell(row = i, column = 18).value = cx.c3_place
-			conference1.cell(row = i, column = 19).value = cx.c3_date
-			conference1.cell(row = i, column = 20).value = cx.c3_index
-			conference1.cell(row = i, column = 21).value = cx.c3_author
+			conference1.cell(row = k, column = 16).value = cx.c3_index
+			conference1.cell(row = k, column = 17).value = cx.c3_name
+			conference1.cell(row = k, column = 18).value = cx.c3_place
+			conference1.cell(row = k, column = 19).value = cx.c3_date
+			conference1.cell(row = k, column = 20).value = cx.c3_index
+			conference1.cell(row = k, column = 21).value = cx.c3_author
 
 
-			conference1.cell(row = i, column = 22).value = cx.c4_index
-			conference1.cell(row = i, column = 23).value = cx.c4_name
-			conference1.cell(row = i, column = 24).value = cx.c4_place
-			conference1.cell(row = i, column = 25).value = cx.c4_date
-			conference1.cell(row = i, column = 26).value = cx.c4_index
-			conference1.cell(row = i, column = 27).value = cx.c4_author
+			conference1.cell(row = k, column = 22).value = cx.c4_index
+			conference1.cell(row = k, column = 23).value = cx.c4_name
+			conference1.cell(row = k, column = 24).value = cx.c4_place
+			conference1.cell(row = k, column = 25).value = cx.c4_date
+			conference1.cell(row = k, column = 26).value = cx.c4_index
+			conference1.cell(row = k, column = 27).value = cx.c4_author
 
 
-			conference1.cell(row = i, column = 28).value = cx.c5_index
-			conference1.cell(row = i, column = 29).value = cx.c5_name
-			conference1.cell(row = i, column = 30).value = cx.c5_place
-			conference1.cell(row = i, column = 31).value = cx.c5_date
-			conference1.cell(row = i, column = 32).value = cx.c5_index
-			conference1.cell(row = i, column = 33).value = cx.c5_author
+			conference1.cell(row = k, column = 28).value = cx.c5_index
+			conference1.cell(row = k, column = 29).value = cx.c5_name
+			conference1.cell(row = k, column = 30).value = cx.c5_place
+			conference1.cell(row = k, column = 31).value = cx.c5_date
+			conference1.cell(row = k, column = 32).value = cx.c5_index
+			conference1.cell(row = k, column = 33).value = cx.c5_author
 
-			conference1.cell(row = i, column = 34).value = cx.c6_index
-			conference1.cell(row = i, column = 35).value = cx.c6_name
-			conference1.cell(row = i, column = 36).value = cx.c6_place
-			conference1.cell(row = i, column = 37).value = cx.c6_date
-			conference1.cell(row = i, column = 38).value = cx.c6_index
-			conference1.cell(row = i, column = 39).value = cx.c6_author
-
-
-			conference1.cell(row = i, column = 40).value = cx.c7_index
-			conference1.cell(row = i, column = 41).value = cx.c7_name
-			conference1.cell(row = i, column = 42).value = cx.c7_place
-			conference1.cell(row = i, column = 43).value = cx.c7_date
-			conference1.cell(row = i, column = 44).value = cx.c7_index
-			conference1.cell(row = i, column = 45).value = cx.c7_author
+			conference1.cell(row = k, column = 34).value = cx.c6_index
+			conference1.cell(row = k, column = 35).value = cx.c6_name
+			conference1.cell(row = k, column = 36).value = cx.c6_place
+			conference1.cell(row = k, column = 37).value = cx.c6_date
+			conference1.cell(row = k, column = 38).value = cx.c6_index
+			conference1.cell(row = k, column = 39).value = cx.c6_author
 
 
-			conference1.cell(row = i, column = 46).value = cx.c8_index
-			conference1.cell(row = i, column = 47).value = cx.c8_name
-			conference1.cell(row = i, column = 48).value = cx.c8_place
-			conference1.cell(row = i, column = 49).value = cx.c8_date
-			conference1.cell(row = i, column = 50).value = cx.c8_index
-			conference1.cell(row = i, column = 51).value = cx.c8_author
+			conference1.cell(row = k, column = 40).value = cx.c7_index
+			conference1.cell(row = k, column = 41).value = cx.c7_name
+			conference1.cell(row = k, column = 42).value = cx.c7_place
+			conference1.cell(row = k, column = 43).value = cx.c7_date
+			conference1.cell(row = k, column = 44).value = cx.c7_index
+			conference1.cell(row = k, column = 45).value = cx.c7_author
+
+
+			conference1.cell(row = k, column = 46).value = cx.c8_index
+			conference1.cell(row = k, column = 47).value = cx.c8_name
+			conference1.cell(row = k, column = 48).value = cx.c8_place
+			conference1.cell(row = k, column = 49).value = cx.c8_date
+			conference1.cell(row = k, column = 50).value = cx.c8_index
+			conference1.cell(row = k, column = 51).value = cx.c8_author
 
 
 
