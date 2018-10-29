@@ -75,7 +75,7 @@ def report(request,dept):
 	rd1['AH1'] = "book_nm"
 	rd1['AI1'] = "if_s"
 
-	rd1['AJ1'] = "if_f
+	rd1['AJ1'] = "if_f"
 
 	rd1['AK1'] = "if_c"
 
