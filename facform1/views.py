@@ -316,7 +316,7 @@ def report(request,dept):
 			journal1.cell(row = i, column = 13).value = jx.j2_name
 			journal1.cell(row = i, column = 14).value = jx.j2_title
 			journal1.cell(row = i, column = 15).value = jx.j2_volume
-			journal1.cell(row = i, column = 16.value = jx.j2_issn
+			journal1.cell(row = i, column = 16).value = jx.j2_issn
 			journal1.cell(row = i, column = 17).value = jx.j2_date
 			journal1.cell(row = i, column = 18).value = jx.j2_page
 			journal1.cell(row = i, column = 19).value = jx.j2_author
