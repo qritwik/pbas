@@ -178,42 +178,41 @@ from django.forms import formset_factory
 
 
 
-@login_required
+
 def ao_consolidated(request):
-	if request.user.is_ao():
-		data1 = User.objects.all().order_by('department')
-		data2 = feedbackTab.objects.all().order_by('info__department')
-		data3 = rd.objects.all().order_by('info__department')
-		data4 = remarks1.objects.all().order_by('info__department')
-		# data5 = remarks2.objects.all()
 
-		print(data1.count())
-		print(data2.count())
-		print(data3.count())
-		print(data4.count())
+	data1 = User.objects.all().order_by('department')
+	data2 = feedbackTab.objects.all().order_by('info__department')
+	data3 = rd.objects.all().order_by('info__department')
+	data4 = remarks1.objects.all().order_by('info__department')
+	# data5 = remarks2.objects.all()
 
-
-
-		data6 = zip(data1,data2,data3,data4)
+	print(data1.count())
+	print(data2.count())
+	print(data3.count())
+	print(data4.count())
 
 
+
+	data6 = zip(data1,data2,data3,data4)
 
 
 
 
 
-		context = {
-				'data1':data1,
-				'data2':data2,
-				'data3':data3,
-				'data4':data4,
-				'data6':data6
 
 
-			}
-		return render(request,'ao_consolidated.html',context = context)
-	else:
-		return HttpResponseRedirect('/invalid')
+	context = {
+			'data1':data1,
+			'data2':data2,
+			'data3':data3,
+			'data4':data4,
+			'data6':data6
+
+
+		}
+	return render(request,'ao_consolidated.html',context = context)
+
 
 
 
