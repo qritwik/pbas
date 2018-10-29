@@ -48,8 +48,8 @@ def report(request,dept):
 	for i,rx in zip(range(2,40),data1):
 
 		info1 = rx.info
-		return HttpResponse(info1)
-		data4 = User.objects.get(info=info1)
+		
+		data4 = User.objects.get(username=info1)
 
 
 
