@@ -111,6 +111,7 @@ class Userremarks(ImportExportModelAdmin):
 
 
 	list_display = ('name',)
+	list_filter = ('info__department',)
 	search_fields = ('info__first_name',)
 	ordering = ('id',)
 	resource_class = remarksResource
@@ -129,6 +130,7 @@ class Userremarks1(ImportExportModelAdmin):
 
 
 	list_display = ('name',)
+	list_filter = ('info__department',)
 	search_fields = ('info__first_name',)
 	ordering = ('id',)
 	resource_class = remarks1Resource
@@ -148,6 +150,7 @@ class Userremarks2(ImportExportModelAdmin):
 
 
 	list_display = ('name',)
+	list_filter = ('info__department',)
 	search_fields = ('info__first_name',)
 	ordering = ('id',)
 	resource_class = remarks2Resource
