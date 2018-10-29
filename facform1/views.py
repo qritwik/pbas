@@ -48,14 +48,14 @@ def report(request,dept):
 	for i,rx in zip(range(2,40),data1):
 
 		info1 = rx.info
-		
+
 		data4 = User.objects.get(username=info1)
 
 
 
 		rd1.cell(row = i, column = 1).value = data4.first_name
-		rd1.cell(row = i, column = 2).value = data4.department
-		rd1.cell(row = i, column = 3).value = data4.designation
+		rd1.cell(row = i, column = 2).value = data4.department.name
+		rd1.cell(row = i, column = 3).value = data4.designation.name
 
 
 		rd1.cell(row = i, column = 4).value = rx.w_s_d
