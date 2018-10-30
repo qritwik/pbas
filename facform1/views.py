@@ -11,7 +11,7 @@ from itertools import chain
 from openpyxl import Workbook
 from django.http import HttpResponse, HttpResponseRedirect
 from openpyxl.writer.excel import save_virtual_workbook
-import pandas as pd
+
 from django.contrib.auth.decorators import login_required
 from django.forms import formset_factory
 
@@ -31,10 +31,11 @@ def ao_consolidated(request):
 	dic = {}
 
 	for i in data1:
-		data2 = feedbackTab.objects.filter(i__pk=info)
-		data3 = rd.objects.filter(i__pk=info)
-		if remarks1.objects.filter(i__pk=info)
-			data4 = remarks1.objects.filter(i__pk=info)
+
+		data2 = feedbackTab.objects.filter(info=i.pk)
+		data3 = rd.objects.filter(info=i.pk)
+		if remarks1.objects.filter(info=i.pk):
+			data4 = remarks1.objects.filter(info=i.pk)
 		else:
 			data4 = []
 		dic[i] = [data2,data3,data4]
@@ -48,7 +49,7 @@ def ao_consolidated(request):
 	# 	}
 
 	context = {
-			data6:dic
+			'data6':dic
 		}
 
 	return render(request,'ao_consolidated.html',context = context)
