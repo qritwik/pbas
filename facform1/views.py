@@ -26,19 +26,31 @@ def ao_consolidated(request):
 	# data5 = remarks2.objects.all()
 
 
-	data6 = zip(data1,data2,data3,data4)
+	# data6 = zip(data1,data2,data3,data4)
 
+	dic = {}
 
+	for i in data1:
+		data2 = feedbackTab.objects.filter(i__pk=info)
+		data3 = rd.objects.filter(i__pk=info)
+		if remarks1.objects.filter(i__pk=info)
+			data4 = remarks1.objects.filter(i__pk=info)
+		else:
+			data4 = []
+		dic[i] = [data2,data3,data4]
+
+	# context = {
+	# 		data1: {
+	# 		'data2':data2,
+	# 		'data3':data3,
+	# 		'data4':data4,
+	# 		'data6':data6},
+	# 	}
 
 	context = {
-			'data1':data1,
-			'data2':data2,
-			'data3':data3,
-			'data4':data4,
-			'data6':data6
-
-
+			data6:dic
 		}
+
 	return render(request,'ao_consolidated.html',context = context)
 
 
