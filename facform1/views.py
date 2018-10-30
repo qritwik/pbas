@@ -11,16 +11,9 @@ from itertools import chain
 from openpyxl import Workbook
 from django.http import HttpResponse, HttpResponseRedirect
 from openpyxl.writer.excel import save_virtual_workbook
-
-
+import pandas as pd
 from django.contrib.auth.decorators import login_required
 from django.forms import formset_factory
-
-
-
-
-
-
 
 
 
@@ -32,18 +25,20 @@ def ao_consolidated(request):
 	data4 = remarks1.objects.all().order_by('info__department')
 	# data5 = remarks2.objects.all()
 
-	print(data1.count())
-	print(data2.count())
-	print(data3.count())
-	print(data4.count())
+	df = data1['pk','first_name','designation','department']
+	df1 = data2['e_o_f_r_final','info']
+	df2 = data3['rd_tot_marks','info']
+	df3 = data4['hod_marks1','hod_marks2','info']
 
+	df.rename(columns={'pk': 'info'}, inplace=True)
 
+	data6 = pd.merge(df,
+                 df1[['e_o_f_r_final']],
+                 df2[['rd_tot_marks']],
+                 df3[['hod_marks1','hod_marks2']],
+                 on='info')
 
-	data6 = zip(data1,data2,data3,data4)
-
-
-
-
+	# data6 = zip(data1,data2,data3,data4)
 
 
 
