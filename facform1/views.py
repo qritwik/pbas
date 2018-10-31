@@ -18,35 +18,32 @@ from django.forms import formset_factory
 
 
 def ao_consolidated(request):
-
-	data1 = User.objects.all().order_by('department')
-	data2 = feedbackTab.objects.all().order_by('info__department')
-	data3 = rd.objects.all().order_by('info__department')
-	data4 = remarks1.objects.all().order_by('info__department')
-	# data5 = remarks2.objects.all()
-
-
-	# data6 = zip(data1,data2,data3,data4)
-
+	data1 = User.objects.filter(Q(department__name='CSE')|Q(department__name='ISE')|Q(department__name='ECE')|Q(department__name='EEE')|Q(department__name='CIV')|Q(department__name='MCA')|Q(department__name='TCE')|Q(department__name='MECH')|Q(department__name='maths')|Q(department__name='physics')|Q(department__name='chemistry')).order_by('department')
 	dic = {}
 
 	for i in data1:
 
-		data2 = feedbackTab.objects.filter(info=i.pk)
-		data3 = rd.objects.filter(info=i.pk)
-		if remarks1.objects.filter(info=i.pk):
-			data4 = remarks1.objects.filter(info=i.pk)
-		else:
-			data4 = []
-		dic[i] = [data2,data3,data4]
+		try:
+		    data2 = feedbackTab.objects.get(info=i.pk)
+		except feedbackTab.DoesNotExist:
+		    data2 = None
 
-	# context = {
-	# 		data1: {
-	# 		'data2':data2,
-	# 		'data3':data3,
-	# 		'data4':data4,
-	# 		'data6':data6},
-	# 	}
+		try:
+		    data3 = rd.objects.get(info=i.pk)
+		except rd.DoesNotExist:
+		    data3 = None
+		
+		try:
+		    data4 = remarks1.objects.get(info=i.pk)
+		except remarks1.DoesNotExist:
+		    data4 = None
+
+		try:
+		    data5 = remarks2.objects.get(info=i.pk)
+		except remarks2.DoesNotExist:
+		    data5 = None
+
+		dic[i] = [data2,data3,data4,data5]
 
 	context = {
 			'data6':dic
