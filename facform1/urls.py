@@ -14,7 +14,7 @@ urlpatterns = [
 
     url(r'^invalid/',views.invalid,name="invalid"),
 
-    url(r'^report/(?P<dept>[\w\-]+)$', views.report,name="report"),
+    url(r'^report/(?P<dept>[\w\-]+)$',views.report,name="report"),
 
     url(r'^assistant_form1/', views.f_assistant1,name="assistant_form1"),
     url(r'^assistant_form2/', views.f_assistant2,name="assistant_form2"),
