@@ -647,12 +647,12 @@ def ao_consolidated(request):
 
 
 
-def phone_otp(random_otp, phone):
-		phone1 = str(phone)
-		message = 'Please login with the OTP: '+random_otp
-		params = { 'number' : phone1, 'text' : message }
-		baseUrl = 'https://www.smsgatewayhub.com/api/mt/SendSMS?APIKey=62sxGWT6MkCjDul6eNKejw&senderid=BMSITM&channel=2&DCS=0&flashsms=0&' + ap.urlencode(params)
-		urllib.request.urlopen(baseUrl).read(1000)
+# def phone_otp(random_otp, phone):
+# 		phone1 = str(phone)
+# 		message = 'Please login with the OTP: '+random_otp
+# 		params = { 'number' : phone1, 'text' : message }
+# 		baseUrl = 'https://www.smsgatewayhub.com/api/mt/SendSMS?APIKey=62sxGWT6MkCjDul6eNKejw&senderid=BMSITM&channel=2&DCS=0&flashsms=0&' + ap.urlencode(params)
+# 		urllib.request.urlopen(baseUrl).read(1000)
 
 
 def invalid(request):

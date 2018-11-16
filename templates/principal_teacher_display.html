@@ -1730,7 +1730,7 @@
     <tr>
       <th scope="row">1</th>
       <td>Contribution to Department Developmental Activites<span class="sp"> (Maximum Score: 5 marks)</span></td>
-       <td  class="m4" >{{ key8.hod_marks2_1 }}</td>
+       <td  class="fo1" >{{ key8.hod_marks2_1 }}</td>
     </tr>
     <tr>
       <th scope="row">2</th>
@@ -1748,7 +1748,7 @@
     <tr>
       <th scope="row"></th>
       <td></td>
-      <td  class="fo1" style="font-size:55px">{{ key8.hod_marks2 }}</td>
+      <td  class="m4" style="font-size:55px">{{ key8.hod_marks2 }}</td>
     </tr>
   </tbody>
 </table>
@@ -1907,7 +1907,9 @@
   }
 
   $('.total_marks').val(f)
-
+  var z=a+b;
+  var y=c+d;
+  alert("Self marks "+z+"\nHod marks "+y);
   });
 });
 
