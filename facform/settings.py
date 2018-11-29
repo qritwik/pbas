@@ -140,6 +140,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 if DEBUG:
 	STATIC_URL = '/static/'
+	
 else:
 	STATIC_URL = 'https://aayush-n.github.io/pbas-static/'
 STATICFILES_DIRS = [
