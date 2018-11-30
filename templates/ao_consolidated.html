@@ -42,7 +42,12 @@
       <td data-label="hodmarks"></td>
       {%endif%}
       {%if value.3%}
-      <td data-label="principalmarks">{{value.3.prin_marks1}} + {{value.3.prin_marks2}}
+      <td
+      {% if key.designation.name == "HOD" %}
+      data-label="principalmarks">{{value.3.prin_marks1}} + {{value.3.prin_marks2}}
+      {% else %}
+      data-label="principalmarks">{{value.3.prin_marks1}}
+      {% endif %}
       </td>
       <td data-label="totalmarks">{{value.3.total_marks}}</td>
       {%else%}
