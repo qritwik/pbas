@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>AO Consolidated</title>
+    <title>Consolidated Report</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.0/dist/semantic.min.css">
    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.0/dist/semantic.min.js"></script>
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -10,10 +10,13 @@
   </head>
   <body>
 
-<div class="ui container" style="margin-top:5%">
+
+
+<div class="ui container" style="margin-top:3%">
+  <h3>Consolidated Report: PBAS</h3>
 
   <!-- <p>{{ data6 }}</p> -->
-    <table id="consolidated" class="ui celled table">
+    <table id="consolidated" class="ui celled table" style="margin-top:2%">
   <thead>
     <tr><th>Name</th>
       <th>Designation</th>
@@ -42,7 +45,12 @@
       <td data-label="hodmarks"></td>
       {%endif%}
       {%if value.3%}
-      <td data-label="principalmarks">{{value.3.prin_marks1}} + {{value.3.prin_marks2}}
+      <td
+      {% if key.designation.name == "HOD" %}
+      data-label="principalmarks">{{value.3.prin_marks1}} + {{value.3.prin_marks2}}
+      {% else %}
+      data-label="principalmarks">{{value.3.prin_marks1}}
+      {% endif %}
       </td>
       <td data-label="totalmarks">{{value.3.total_marks}}</td>
       {%else%}

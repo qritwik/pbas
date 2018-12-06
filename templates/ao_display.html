@@ -151,7 +151,7 @@
 
 							<div class="cell" data-title="Faculty Name">
 								{% if x.teach_status %}
-								<a {% if x.designation.pk == 8 %} 
+								<a {% if x.designation.pk == 8 %}
 								{% if x.username == "HOD_CIVIL" %}
 								href="/ao_teacher1_display/{{x.username}}"
 								{% else %}
@@ -178,10 +178,16 @@
 
 							</div>
 							<div class="cell" data-title="h-s">
+								{% if x.designation.name == "HOD" %}
+
+								{% else %}
+
 								{% if x.hod_status %}
 								<h6><span class="badge badge-success">{{x.hod_status}}</span></h6>
 								{% else %}
 								<h6><span class="badge badge-danger">{{x.hod_status}}</span></h6>
+								{% endif %}
+
 								{% endif %}
 
 
