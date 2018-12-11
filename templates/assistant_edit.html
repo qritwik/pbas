@@ -213,11 +213,11 @@
 
 	<div class="form-group col-sm-6">
 	<label >TOTAL FEEDBACK AVG. </label>
-	<em>{% render_field form3.o_t_f_avg class="form-control" value="key3.o_t_f_avg" %}</em></div>
+	<em>{{key3.o_t_f_avg}}</em></div>
 
 	<div class="form-group col-sm-6">
 	<label >TOTAL RESULTS AVG.</label>
-	<em>{% render_field form3.o_t_r_avg class="form-control" value="key3.o_t_r_avg" %}</em></div>
+	<em>{{key3.o_t_r_avg}}</em></div>
 	</div>
 
 
@@ -324,12 +324,13 @@
 
 	<div class="form-group col-sm-6">
 	<label >TOTAL FEEDBACK AVG. </label>
-	<em>{% render_field form3.o_l_f_avg class="form-control" value="key3.o_l_f_avg" %}</em>
+	<em>{{key3.o_l_f_avg}}</em>
+
 
 	</div>
 	<div class="form-group col-sm-6">
 	<label >TOTAL RESULTS AVG.</label>
-	<em>{% render_field form3.o_l_r_avg class="form-control" value="key3.o_l_r_avg" %}</em>
+	<em>{{key3.o_l_r_avg}}</em>
 	</div>
 
 	</div>
@@ -416,11 +417,12 @@
 
 	 <div class="form-group col-sm-6">
 	<label >TOTAL FEEDBACK AVG. </label>
-	<em>{% render_field form3.e_t_f_avg class="form-control" value="key3.e_t_f_avg" %}</em></div>
+	<em>{{key3.e_t_f_avg}}</em></div>
+
 
 	<div class="form-group col-sm-6">
 	<label >TOTAL RESULTS AVG.</label>
-	<em>{% render_field form3.e_t_r_avg class="form-control" value="key3.e_t_r_avg" %}</em></div>
+	<em>{{key3.e_t_r_avg}}</em></div>
 	  </div>
 
 	<div class="dis1 row">
@@ -522,12 +524,14 @@
 
 	  <div class="form-group col-sm-6">
 	<label >TOTAL FEEDBACK AVG. </label>
-	<em>{% render_field form3.e_l_f_avg class="form-control" value="key3.e_l_f_avg" %}</em>
+	<em>{{key3.e_l_f_avg}}</em>
+	
 
 	</div>
 	<div class="form-group col-sm-6">
 	<label >TOTAL RESULTS AVG.</label>
-	<em>{% render_field form3.e_l_r_avg class="form-control" value="key3.e_l_r_avg" %}</em>
+	<em>{{key3.e_l_r_avg}}</em>
+
 	</div>
 
 
@@ -699,7 +703,7 @@
 
 	<div class="form-group col-sm-6">
 	<label >TOTAL FEEDBACK AVG.</label>
-	<em>{% render_field form3.p_f_avg class="form-control" value="key3.p_f_avg" %}</em>
+	<em>{{ key3.p_f_avg }}</em>
 
 	</div>
 	</div>
@@ -716,7 +720,7 @@
 	               </div>
 
 	                  <div class="orm-group col-md-6">
-			<em class="m1">{% render_field form3.e_o_f_r_final class="form-control" value="key3.e_o_f_r_final" %}</em>
+			<em class="m1">{{ key3.e_o_f_r_final }}</em>
 
 	                        </div>
 	                    </div>
@@ -1506,6 +1510,10 @@
 	        <div class="form-group col-md-6">
 
 	           {{ key4.book_i }}
+
+			
+			{% render_field form4.book_i class="form-control" value="key4.book_i" %}
+		
 	        </div>
 	    </div>
 
@@ -1516,7 +1524,8 @@
 	          </div>
 	        <div class="form-group col-md-6">
 
-	          {{ key4.book_n }}
+	          
+	          {% render_field form4.book_n class="form-control" value="key4.book_n" %}
 	        </div>
 	    </div>
 
@@ -1527,7 +1536,9 @@
 	          </div>
 	        <div class="form-group col-md-6">
 
-	          {{ key4.book_ci }}
+	          
+	          {% render_field form4.book_ci class="form-control" value="key4.book_ci" %}
+
 	        </div>
 	    </div>
 
@@ -1537,7 +1548,9 @@
 
 	          </div>
 	        <div class="form-group col-md-6">
-	          {{ key4.book_cn }}
+	          
+	          {% render_field form4.book_cn class="form-control" value="key4.book_cn" %}
+
 	        </div>
 	    </div>
 
@@ -1548,7 +1561,8 @@
 	          </div>
 	        <div class="form-group col-md-6">
 
-	          {{ key4.book_ai }}
+	          
+	          {% render_field form4.book_ai class="form-control" value="key4.book_ai" %}
 	        </div>
 	    </div>
 
@@ -1559,7 +1573,8 @@
 	          </div>
 	        <div class="form-group col-md-6">
 
-	          {{ key4.book_nm }}
+	          {% render_field form4.book_nm class="form-control" value="key4.book_nm" %}
+
 	        </div>
 	    </div>
 
@@ -1573,7 +1588,8 @@
 	                 <div class="form-row">
 										 <div clas="col-md-9">
 											     <h6 class=" color1">TOTAL MARKS<span class="sp"></span></h6>
-	                     {{ key4.book_m }}
+	                     
+	                      {% render_field form4.book_m class="form-control" value="key4.book_m" %}
 	                     </div>
 											 <div class="col-md-3"></div>
 
@@ -1610,21 +1626,22 @@
 	  <tbody>
 	    <tr>
 	      <th scope="row">Internally Funded<span class="sp">( 5 marks/project)</span></th>
-	      <td>{{ key4.if_s }}</td>
-	      <td>{{ key4.if_f }}</td>
-	      <td>{{ key4.if_c }}</td>
+	      <td>{% render_field form4.if_s class="form-control" value="key4.if_s" %}</td>
+	      <td>{% render_field form4.if_f class="form-control" value="key4.if_f" %}</td>
+	      <td>{% render_field form4.if_c class="form-control" value="key4.if_c" %}</td>
+
 	    </tr>
 	    <tr>
 	      <th scope="row">Externally Funded Less than 5_Lakhs<span class="sp">( 5 marks/project )</span> </th>
-	      <td>{{ key4.ef_s }}</td>
-	      <td>{{ key4.ef_f }}</td>
-	      <td>{{ key4.ef_c }}</td>
+	      <td>{% render_field form4.ef_s class="form-control" value="key4.ef_s" %}</td>
+	      <td>{% render_field form4.ef_f class="form-control" value="key4.ef_f" %}</td>
+	      <td>{% render_field form4.ef_c class="form-control" value="key4.ef_c" %}</td>
 	    </tr>
 	    <tr>
 	      <th scope="row">Externally Funded more than 5_Lakhs<span class="sp"> (10 marks/project)</span> </th>
-	      <td>{{ key4.eef_s }}</td>
-	      <td>{{ key4.eef_f }}</td>
-	      <td>{{ key4.eef_c }}</td>
+	      <td>{% render_field form4.eef_s class="form-control" value="key4.eef_s" %}</td>
+	      <td>{% render_field form4.eef_f class="form-control" value="key4.eef_f" %}</td>
+	      <td>{% render_field form4.eef_c class="form-control" value="key4.eef_c" %}</td>
 	    </tr>
 			<tr>
 
@@ -1643,9 +1660,12 @@
 	  <tbody>
 	    <tr>
 	      <th scope="row">Consultancy Work</th>
-	      <td>{{ key4.Cw_2 }}</td>
-	      <td>{{ key4.Cw_2_5 }}</td>
-	      <td>{{ key4.Cw_5 }}</td>
+	      
+
+	      <td>{% render_field form4.Cw_2 class="form-control" value="key4.Cw_2" %}</td>
+	      <td>{% render_field form4.Cw_2_5 class="form-control" value="key4.Cw_2_5" %}</td>
+	      <td>{% render_field form4.Cw_5 class="form-control" value="key4.Cw_5" %}</td>
+
 	    </tr>
 	    </tbody>
 	</table>
@@ -1672,18 +1692,25 @@
 
 	        <div class="form-group col-md-6">
 	          <h4>IPR Type :</h4>
-	        {{ key4.ipr_type }}
+	       
+	        {% render_field form4.ipr_type class="form-control" value="key4.ipr_type" %}
 	        </div>
 	        <div class="form-group col-md-6">
 	          <h4>IPR Status :</h4>
-	         {{ key4.ipr_status }}
+	        
+
+	          {% render_field form4.ipr_status class="form-control" value="key4.ipr_status" %}
+
+	        
 	</div>
 
 	 </div>
 
 	  <div class="form-group col-md-12">
 	<label>Details</label>
-	{{ key4.ipr_info }}
+	
+	{% render_field form4.ipr_info class="form-control" value="key4.ipr_info" %}
+
 
 	</div>
 
