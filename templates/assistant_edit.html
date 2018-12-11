@@ -59,67 +59,66 @@
         <div class="table-bordered poi form-row">
           <div class="form-group col-md-6">
             <label for="">Internship Company Name</label>
-             {% render_field form2.it_name class="form-control" value="key2.it_name" %}
+             {% render_field form2.it_name class="form-control" value=key2.it_name %}
 
 
           </div>
           <div class="form-group col-md-3">
             <label for="">From</label>
-             {% render_field form2.it_f class="form-control" value="key2.it_f" %}
+             {% render_field form2.it_f class="form-control" value=key2.it_f %}
 
 
           </div>
           <div class="form-group col-md-3">
             <label for="">To</label>
-             {% render_field form2.it_t class="form-control" value="key2.it_t" %}
+             {% render_field form2.it_t class="form-control" value=key2.it_t %}
 
 
           </div>
 
           <div class="form-group col-md-6">
             <label for="inputEmpName">Employee Name</label>
-             {% render_field form1.first_name class="form-control" value="key1.first_name" %}
-
+             <input type="text" class="form-control" id="inputEmpName" disabled value="{{ key1.first_name }}">
           </div>
         <div class="form-group col-md-6">
             <label for="inputEmployeeIdNo">Username</label>
-            {% render_field form1.username class="form-control" value="key1.username" %}
+            <input type="text" class="form-control" id="inputEmployeeIdNo" disabled value="{{key1.username}}">
 
         </div>
         <div class="form-group col-md-6">
             <label for="inputHighestQuali">Highest Qualification</label>
-        {% render_field form2.high_qual class="form-control" value="key2.high_qual" %}
+        {% render_field form2.high_qual class="form-control" value=key2.high_qual %}
 
         </div>
         <div class="form-group col-md-6">
           <label for="inputDept">Department</label>
-           {% render_field form1.department class="form-control" value="key1.department" %}
+           <input type="text" class="form-control" id="inputEmployeeIdNo" disabled value="{{key1.department}}">
 
         </div>
         <div class="form-group col-md-12">
           <label for="inputDOJ">Date of joining</label>
-           {% render_field form2.doj class="form-control" value="key2.doj" %}
+           {% render_field form2.doj class="form-control" value=key2.doj %}
 
         </div>
         <div class="form-group col-md-6">
           <label for="inputPresentPosition">Designation</label>
-				{% render_field form1.designation class="form-control" value="key1.designation" %}
+				<input type="text" class="form-control" id="inputEmployeeIdNo" disabled value="{{key1.designation}}">
 
         </div>
         <div class="form-group col-md-6">
           <label for="inputHeldFrom">Held From</label>
-            {% render_field form2.Held_from class="form-control" value="key2.Held_from" %}
+            {% render_field form2.Held_from class="form-control" value=key2.Held_from %}
 
         </div>
 
         <div class="form-group col-md-6">
           <label for="inputPhoneNo">Phone No.</label>
-			{% render_field form1.phone class="form-control" value="key1.phone" %}
+			<input type="text" class="form-control" id="inputPhoneNo" disabled placeholder="PhoneNo" value="{{key1.phone}}">
 
         </div>
         <div class="form-group col-md-6">
           <label for="inputEmail">Email Address</label>
-        	   {% render_field form1.email class="form-control" value="key1.email" %}
+        	   <input type="email" class="form-control" id="inputEmail" disabled placeholder="Email" value="{{key1.email}}">
 
         </div>
 
@@ -128,18 +127,17 @@
 
       	   <div class="form-group col-md-4">
             <label for="inputteaching">teaching</label>
-      		{% render_field form2.exp_teach class="form-control" value="key2.exp_teach" %}
+      		{% render_field form2.exp_teach class="form-control" value=key2.exp_teach %}
 
            </div>
             <div class="form-group col-md-4">
               <label for="inputResearch">Research</label>
-               {% render_field form2.exp_res class="form-control" value="key2.exp_res" %}
+               {% render_field form2.exp_res class="form-control" value=key2.exp_res %}
 
             </div>
             <div class="form-group col-md-4">
               <label for="inputIndustry">Industry</label>
-              <input type="text" class="form-control" id="inputEmpName" disabled value="{{ key2.exp_indus }}">
-             {% render_field form2.exp_indus class="form-control" value="key2.exp_indus" %}
+             {% render_field form2.exp_indus class="form-control" value=key2.exp_indus %}
 
             </div>
 	       </div>
@@ -173,25 +171,25 @@
 			{% if key3.o_t1_name %}
 	    <tr>
 	      <td>1</td>
-	      <td>{% render_field form3.o_t1_name class="form-control" value="key3.o_t1_name" %}</td>
-	      <td class="right aligned">{% render_field form3.o_t1_f1 class="form-control" value="key3.o_t1_f1" %}</td>
-	      <td class="center aligned">{% render_field form3.o_t1_f2 class="form-control" value="key3.o_t1_f2" %}</td>
-	      <td>{% render_field form3.o_t1_favg class="form-control" value="key3.o_t1_favg" %}</td>
-	      <td>{% render_field form3.o_t1_stu_app class="form-control" value="key3.o_t1_stu_app" %}</td>
-	       <td>{% render_field form3.o_t1_stu_pass class="form-control" value="key3.o_t1_stu_pass" %}</td>
-	       <td>{% render_field form3.o_t1_stu_perpass class="form-control" value="key3.o_t1_stu_perpass" %}</td>
+	      <td>{% render_field form3.o_t1_name class="form-control" value=key3.o_t1_name %}</td>
+	      <td class="right aligned">{% render_field form3.o_t1_f1 class="form-control" value=key3.o_t1_f1 %}</td>
+	      <td class="center aligned">{% render_field form3.o_t1_f2 class="form-control" value=key3.o_t1_f2 %}</td>
+	      <td>{% render_field form3.o_t1_favg class="form-control" value=key3.o_t1_favg %}</td>
+	      <td>{% render_field form3.o_t1_stu_app class="form-control" value=key3.o_t1_stu_app %}</td>
+	       <td>{% render_field form3.o_t1_stu_pass class="form-control" value=key3.o_t1_stu_pass %}</td>
+	       <td>{% render_field form3.o_t1_stu_perpass class="form-control" value=key3.o_t1_stu_perpass %}</td>
 	    </tr>
 				{% endif %}
 				{% if key3.o_t2_name %}
 	     <tr>
 	      <td>2</td>
-	      <td>{% render_field form3.o_t2_name class="form-control" value="key3.o_t2_name" %}</td>
-	      <td class="right aligned">{% render_field form3.o_t2_f1 class="form-control" value="key3.o_t2_f1" %}</td>
-	      <td class="center aligned">{% render_field form3.o_t2_f2 class="form-control" value="key3.o_t2_f2" %}</td>
-	      <td>{% render_field form3.o_t2_favg class="form-control" value="key3.o_t2_favg" %}</td>
-	      <td>{% render_field form3.o_t2_stu_app class="form-control" value="key3.o_t2_stu_app" %}</td>
-	       <td>{% render_field form3.o_t2_stu_pass class="form-control" value="key3.o_t2_stu_pass" %}</td>
-	       <td>{% render_field form3.o_t2_stu_perpass class="form-control" value="key3.o_t2_stu_perpass" %}</td>
+	      <td>{% render_field form3.o_t2_name class="form-control" value=key3.o_t2_name %}</td>
+	      <td class="right aligned">{% render_field form3.o_t2_f1 class="form-control" value=key3.o_t2_f1 %}</td>
+	      <td class="center aligned">{% render_field form3.o_t2_f2 class="form-control" value=key3.o_t2_f2 %}</td>
+	      <td>{% render_field form3.o_t2_favg class="form-control" value=key3.o_t2_favg %}</td>
+	      <td>{% render_field form3.o_t2_stu_app class="form-control" value=key3.o_t2_stu_app %}</td>
+	       <td>{% render_field form3.o_t2_stu_pass class="form-control" value=key3.o_t2_stu_pass %}</td>
+	       <td>{% render_field form3.o_t2_stu_perpass class="form-control" value=key3.o_t2_stu_perpass %}</td>
 	    </tr>
 			{% endif %}
 			{% if key3.o_t3_name %}

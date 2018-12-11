@@ -32,6 +32,7 @@ urlpatterns = [
 
     url(r'^associate_preview/', views.associate_preview,name="associate_preview"),
 
+    url(r'^assistant_edit/', views.assistant_edit,name="assistant_edit"),
 
     url(r'^hod_form1/', views.hod_form1,name="hod_form1"),
     url(r'^hod_form2/', views.hod_form2,name="hod_form2"),

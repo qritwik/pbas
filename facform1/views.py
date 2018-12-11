@@ -15,6 +15,99 @@ from openpyxl.writer.excel import save_virtual_workbook
 from django.contrib.auth.decorators import login_required
 from django.forms import formset_factory
 
+def assistant_edit(request):
+    if request.user.is_assistant_professor():
+        if request.method == "POST":
+
+            # User = get_object_or_404(User, id=id)
+            name = request.user
+
+            user = User.objects.get(username=name)
+            empdetailForm = empDetailForm.objects.get(info=name)
+            feedbacktab = feedbackTab.objects.get(info=name)
+            Rd = rd.objects.get(info=name)
+            Remarks = remarks.objects.get(info=name)
+            Conference = conference.objects.get(info=name)
+            Journal = journal.objects.get(info=name)
+
+            form1 = forms.form_User(request.POST, instance=user)
+            form2 = forms.form_empDetailForm(request.POST, instance=empdetailForm)
+            form3 = forms.form_feedbackTab(request.POST, instance=feedbacktab)
+            form4 = forms.form_rd(request.POST, instance=Rd)
+            form5 = forms.form_remarks(request.POST, instance=Remarks)
+            form6 = forms.form_conference(request.POST, instance=Conference)
+            form7 = forms.form_journal(request.POST, instance=Journal)
+
+            if form1.is_valid() and form2.is_valid() and form3.is_valid() and form4.is_valid() and form5.is_valid() and form6.is_valid() and form7.is_valid():
+                obj1 = form1.save(commit=False)
+                obj1.save()
+
+                obj2 = form2.save(commit=False)
+                obj2.info = request.user
+                obj2.save()
+
+                obj3 = form3.save(commit=False)
+                obj3.info = request.user
+                obj3.save()
+
+                obj4 = form4.save(commit=False)
+                obj4.info = request.user
+                obj4.save()
+
+                obj5 = form5.save(commit=False)
+                obj5.info = request.user
+                obj5.save()
+
+                obj6 = form6.save(commit=False)
+                obj6.info = request.user
+                obj6.save()
+
+                obj7 = form7.save(commit=False)
+                obj7.info = request.user
+                obj7.save()
+
+                return HttpResponseRedirect("/assistant_preview/")
+        else:
+
+            form1 = forms.form_User()
+            form2 = forms.form_empDetailForm()
+            form3 = forms.form_feedbackTab()
+            form4 = forms.form_rd()
+            form5 = forms.form_remarks()
+            form6 = forms.form_conference()
+            form7 = forms.form_journal()
+
+            name = request.user
+            data1 = User.objects.get(username=name)
+            data2 = empDetailForm.objects.get(info=name);
+            data3 = feedbackTab.objects.get(info=name);
+            data4 = rd.objects.get(info=name);
+            data5 = remarks.objects.get(info=name);
+            data6 = conference.objects.get(info=name);
+            data7 = journal.objects.get(info=name);
+
+
+            context1 = {
+            "form1":form1,
+            "form2":form2,
+            "form3":form3,
+            "form4":form4,
+            "form5":form5,
+            "form6":form6,
+            "form7":form7,
+            "key1":data1,
+            "key2":data2,
+            "key3":data3,
+            "key4":data4,
+            "key5":data5,
+            "key6":data6,
+            "key7":data7,
+
+            }
+
+            return render(request,'assistant_edit.html',context=context1)
+    else:
+        return HttpResponseRedirect('/invalid')
 
 
 
@@ -647,12 +740,12 @@ def ao_consolidated(request):
 
 
 
-def phone_otp(random_otp, phone):
-		phone1 = str(phone)
-		message = 'Please login with the OTP: '+random_otp
-		params = { 'number' : phone1, 'text' : message }
-		baseUrl = 'https://www.smsgatewayhub.com/api/mt/SendSMS?APIKey=62sxGWT6MkCjDul6eNKejw&senderid=BMSITM&channel=2&DCS=0&flashsms=0&' + ap.urlencode(params)
-		urllib.request.urlopen(baseUrl).read(1000)
+# def phone_otp(random_otp, phone):
+# 		phone1 = str(phone)
+# 		message = 'Please login with the OTP: '+random_otp
+# 		params = { 'number' : phone1, 'text' : message }
+# 		baseUrl = 'https://www.smsgatewayhub.com/api/mt/SendSMS?APIKey=62sxGWT6MkCjDul6eNKejw&senderid=BMSITM&channel=2&DCS=0&flashsms=0&' + ap.urlencode(params)
+# 		urllib.request.urlopen(baseUrl).read(1000)
 
 
 def invalid(request):
@@ -669,9 +762,9 @@ def login(request):
 			first_name = user.first_name
 			email = user.email
 			phone = user.phone
-			random_otp = r''.join(random.choice('0123456789') for i in range(4))
-			phone_otp(random_otp,phone)
-			# random_otp="1234"
+			# random_otp = r''.join(random.choice('0123456789') for i in range(4))
+			# phone_otp(random_otp,phone)
+			random_otp="1234"
 			hashed_pwd = make_password(random_otp)
 			User.objects.filter(username=username).update(password=hashed_pwd)
 

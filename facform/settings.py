@@ -28,7 +28,7 @@ STATIC_DIR = os.path.join(BASE_DIR,"static")
 SECRET_KEY = '0&mt7*ddqn#+62-jvql4*mm3#-t1inp#4vi(i58(i^7nv923h^'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 
 ALLOWED_HOSTS = ['*']
@@ -83,23 +83,23 @@ WSGI_APPLICATION = 'facform.wsgi.application'
 #Database
 #https://docs.djangoproject.com/en/1.11/ref/settings/
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'pbas',
-        'USER': 'devx',
-        'PASSWORD': 'devx123',
-        'HOST': 'localhost',
-        'PORT': '5432',
-    }
-}
-
 # DATABASES = {
 #     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'pbas',
+#         'USER': 'devx',
+#         'PASSWORD': 'devx123',
+#         'HOST': 'localhost',
+#         'PORT': '5432',
 #     }
 # }
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+}
 
 
 
