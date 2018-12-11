@@ -59,56 +59,68 @@
         <div class="table-bordered poi form-row">
           <div class="form-group col-md-6">
             <label for="">Internship Company Name</label>
-            <input type="text" class="form-control" id="inputEmpName" disabled value="{{ key2.it_name }}">
+             {% render_field form2.it_name class="form-control" value="key2.it_name" %}
+
 
           </div>
           <div class="form-group col-md-3">
             <label for="">From</label>
-            <input type="text" class="form-control" id="inputEmpName" disabled value="{{ key2.it_f }}">
+             {% render_field form2.it_f class="form-control" value="key2.it_f" %}
+
 
           </div>
           <div class="form-group col-md-3">
             <label for="">To</label>
-            <input type="text" class="form-control" id="inputEmpName" disabled value="{{ key2.it_t }}">
+             {% render_field form2.it_t class="form-control" value="key2.it_t" %}
+
 
           </div>
 
           <div class="form-group col-md-6">
             <label for="inputEmpName">Employee Name</label>
-            <input type="text" class="form-control" id="inputEmpName" disabled value="{{ key1.first_name }}">
+             {% render_field form1.first_name class="form-control" value="key1.first_name" %}
+
           </div>
         <div class="form-group col-md-6">
             <label for="inputEmployeeIdNo">Username</label>
-            <input type="text" class="form-control" id="inputEmployeeIdNo" disabled value="{{key1.username}}">
+            {% render_field form1.username class="form-control" value="key1.username" %}
+
         </div>
         <div class="form-group col-md-6">
             <label for="inputHighestQuali">Highest Qualification</label>
-            <input type="text" class="form-control" id="inputEmpName" disabled value="{{ key2.high_qual }}">
+        {% render_field form2.high_qual class="form-control" value="key2.high_qual" %}
+
         </div>
         <div class="form-group col-md-6">
           <label for="inputDept">Department</label>
-          <input type="text" class="form-control" id="inputEmployeeIdNo" disabled value="{{key1.department}}">
+           {% render_field form1.department class="form-control" value="key1.department" %}
+
         </div>
         <div class="form-group col-md-12">
           <label for="inputDOJ">Date of joining</label>
-          <input type="text" class="form-control" id="inputEmpName" disabled value="{{ key2.doj }}">
+           {% render_field form2.doj class="form-control" value="key2.doj" %}
+
         </div>
         <div class="form-group col-md-6">
           <label for="inputPresentPosition">Designation</label>
-					<input type="text" class="form-control" id="inputEmployeeIdNo" disabled value="{{key1.designation}}">
+				{% render_field form1.designation class="form-control" value="key1.designation" %}
+
         </div>
         <div class="form-group col-md-6">
           <label for="inputHeldFrom">Held From</label>
-          <input type="text" class="form-control" id="inputEmpName" disabled value="{{ key2.Held_from }}">
+            {% render_field form2.Held_from class="form-control" value="key2.Held_from" %}
+
         </div>
 
         <div class="form-group col-md-6">
           <label for="inputPhoneNo">Phone No.</label>
-          <input type="text" class="form-control" id="inputPhoneNo" disabled placeholder="PhoneNo" value="{{key1.phone}}">
+			{% render_field form1.phone class="form-control" value="key1.phone" %}
+
         </div>
         <div class="form-group col-md-6">
           <label for="inputEmail">Email Address</label>
-          <input type="email" class="form-control" id="inputEmail" disabled placeholder="Email" value="{{key1.email}}">
+        	   {% render_field form1.email class="form-control" value="key1.email" %}
+
         </div>
 
         <h3>Experience</h3>
@@ -116,15 +128,19 @@
 
       	   <div class="form-group col-md-4">
             <label for="inputteaching">teaching</label>
-            <input type="text" class="form-control" id="inputEmpName" disabled value="{{ key2.exp_teach }}">
+      		{% render_field form2.exp_teach class="form-control" value="key2.exp_teach" %}
+
            </div>
             <div class="form-group col-md-4">
               <label for="inputResearch">Research</label>
-              <input type="text" class="form-control" id="inputEmpName" disabled value="{{ key2.exp_res }}">
+               {% render_field form2.exp_res class="form-control" value="key2.exp_res" %}
+
             </div>
             <div class="form-group col-md-4">
               <label for="inputIndustry">Industry</label>
               <input type="text" class="form-control" id="inputEmpName" disabled value="{{ key2.exp_indus }}">
+             {% render_field form2.exp_indus class="form-control" value="key2.exp_indus" %}
+
             </div>
 	       </div>
 	   </div>
@@ -157,37 +173,37 @@
 			{% if key3.o_t1_name %}
 	    <tr>
 	      <td>1</td>
-	      <td>{{ key3.o_t1_name }}</td>
-	      <td class="right aligned">{{ key3.o_t1_f1 }}</td>
-	      <td class="center aligned">{{ key3.o_t1_f2 }}</td>
-	      <td>{{ key3.o_t1_favg }}</td>
-	      <td>{{ key3.o_t1_stu_app }}</td>
-	      <td>{{ key3.o_t1_stu_pass }}</td>
-	      <td>{{ key3.o_t1_stu_perpass }}</td>
+	      <td>{% render_field form3.o_t1_name class="form-control" value="key3.o_t1_name" %}</td>
+	      <td class="right aligned">{% render_field form3.o_t1_f1 class="form-control" value="key3.o_t1_f1" %}</td>
+	      <td class="center aligned">{% render_field form3.o_t1_f2 class="form-control" value="key3.o_t1_f2" %}</td>
+	      <td>{% render_field form3.o_t1_favg class="form-control" value="key3.o_t1_favg" %}</td>
+	      <td>{% render_field form3.o_t1_stu_app class="form-control" value="key3.o_t1_stu_app" %}</td>
+	       <td>{% render_field form3.o_t1_stu_pass class="form-control" value="key3.o_t1_stu_pass" %}</td>
+	       <td>{% render_field form3.o_t1_stu_perpass class="form-control" value="key3.o_t1_stu_perpass" %}</td>
 	    </tr>
 				{% endif %}
 				{% if key3.o_t2_name %}
-	    <tr>
+	     <tr>
 	      <td>2</td>
-	      <td>{{ key3.o_t2_name }}</td>
-	      <td class="right aligned">{{ key3.o_t2_f1 }}</td>
-	      <td class="center aligned">{{ key3.o_t2_f2 }}</td>
-	      <td>{{ key3.o_t2_favg }}</td>
-	      <td>{{ key3.o_t2_stu_app }}</td>
-	      <td>{{ key3.o_t2_stu_pass }}</td>
-	      <td>{{ key3.o_t2_stu_perpass }}</td>
+	      <td>{% render_field form3.o_t2_name class="form-control" value="key3.o_t2_name" %}</td>
+	      <td class="right aligned">{% render_field form3.o_t2_f1 class="form-control" value="key3.o_t2_f1" %}</td>
+	      <td class="center aligned">{% render_field form3.o_t2_f2 class="form-control" value="key3.o_t2_f2" %}</td>
+	      <td>{% render_field form3.o_t2_favg class="form-control" value="key3.o_t2_favg" %}</td>
+	      <td>{% render_field form3.o_t2_stu_app class="form-control" value="key3.o_t2_stu_app" %}</td>
+	       <td>{% render_field form3.o_t2_stu_pass class="form-control" value="key3.o_t2_stu_pass" %}</td>
+	       <td>{% render_field form3.o_t2_stu_perpass class="form-control" value="key3.o_t2_stu_perpass" %}</td>
 	    </tr>
 			{% endif %}
 			{% if key3.o_t3_name %}
-	    <tr>
+	     <tr>
 	      <td>3</td>
-	      <td>{{ key3.o_t3_name }}</td>
-	      <td class="right aligned">{{ key3.o_t3_f1 }}</td>
-	      <td class="center aligned">{{ key3.o_t3_f2 }}</td>
-	      <td>{{ key3.o_t3_favg }}</td>
-	      <td>{{ key3.o_t3_stu_app }}</td>
-	      <td>{{ key3.o_t3_stu_pass }}</td>
-	      <td>{{ key3.o_t3_stu_perpass }}</td>
+	      <td>{% render_field form3.o_t3_name class="form-control" value="key3.o_t3_name" %}</td>
+	      <td class="right aligned">{% render_field form3.o_t3_f1 class="form-control" value="key3.o_t3_f1" %}</td>
+	      <td class="center aligned">{% render_field form3.o_t3_f2 class="form-control" value="key3.o_t3_f2" %}</td>
+	      <td>{% render_field form3.o_t3_favg class="form-control" value="key3.o_t3_favg" %}</td>
+	      <td>{% render_field form3.o_t3_stu_app class="form-control" value="key3.o_t3_stu_app" %}</td>
+	       <td>{% render_field form3.o_t3_stu_pass class="form-control" value="key3.o_t3_stu_pass" %}</td>
+	       <td>{% render_field form3.o_t3_stu_perpass class="form-control" value="key3.o_t3_stu_perpass" %}</td>
 	    </tr>
 			{% endif %}
 	  </tbody>
@@ -197,10 +213,11 @@
 
 	<div class="form-group col-sm-6">
 	<label >TOTAL FEEDBACK AVG. </label>
-	<em>{{ key3.o_t_f_avg }}</em></div>
+	<em>{% render_field form3.o_t_f_avg class="form-control" value="key3.o_t_f_avg" %}</em></div>
+
 	<div class="form-group col-sm-6">
 	<label >TOTAL RESULTS AVG.</label>
-	<em>{{ key3.o_t_r_avg }}</em></div>
+	<em>{% render_field form3.o_t_r_avg class="form-control" value="key3.o_t_r_avg" %}</em></div>
 	</div>
 
 
@@ -241,62 +258,62 @@
 	  <tbody>
 			{% if key3.o_l1_name %}
 	    <tr>
-	      <td>1</td>
-	      <td>{{ key3.o_l1_name }}</td>
-	      <td class="right aligned">{{ key3.o_l1_f1 }}</td>
-	      <td class="center aligned">{{ key3.o_l1_f2 }}</td>
-				<td>{{ key3.o_l1_favg }}</td>
-	      <td>{{ key3.o_l1_stu_app }}</td>
-	      <td>{{ key3.o_l1_stu_pass }}</td>
-				<td>{{ key3.o_l1_stu_perpass }}</td>
+	      	<td>1</td>
+	      	<td>{% render_field form3.o_l1_name class="form-control" value="key3.o_l1_name" %}</td>
+		  	<td class="right aligned">{% render_field form3.o_l1_f1 class="form-control" value="key3.o_l1_f1" %}</td>
+	      	<td class="center aligned">{% render_field form3.o_l1_f2 class="form-control" value="key3.o_l1_f2" %}</td>
+			<td>{% render_field form3.o_l1_favg class="form-control" value="key3.o_l1_favg" %}</td>
+			<td>{% render_field form3.o_l1_stu_app class="form-control" value="key3.o_l1_stu_app" %}</td>
+	      	<td>{% render_field form3.o_l1_stu_pass class="form-control" value="key3.o_l1_stu_pass" %}</td>
+			<td>{% render_field form3.o_l1_stu_perpass class="form-control" value="key3.o_l1_stu_perpass" %}</td>
 	    </tr>
 			{% endif %}
 			{% if key3.o_l2_name %}
 	    <tr>
-	      <td>2</td>
-	      <td>{{ key3.o_l2_name }}</td>
-	      <td class="right aligned">{{ key3.o_l2_f1 }}</td>
-	      <td class="center aligned">{{ key3.o_l2_f2 }}</td>
-				<td>{{ key3.o_l2_favg }}</td>
-	      <td>{{ key3.o_l2_stu_app }}</td>
-	      <td>{{ key3.o_l2_stu_pass }}</td>
-				<td>{{ key3.o_l2_stu_perpass }}</td>
+	      	<td>2</td>
+	      	<td>{% render_field form3.o_l2_name class="form-control" value="key3.o_l2_name" %}</td>
+		  	<td class="right aligned">{% render_field form3.o_l2_f1 class="form-control" value="key3.o_l2_f1" %}</td>
+	      	<td class="center aligned">{% render_field form3.o_l2_f2 class="form-control" value="key3.o_l2_f2" %}</td>
+			<td>{% render_field form3.o_l2_favg class="form-control" value="key3.o_l2_favg" %}</td>
+			<td>{% render_field form3.o_l2_stu_app class="form-control" value="key3.o_l2_stu_app" %}</td>
+	      	<td>{% render_field form3.o_l2_stu_pass class="form-control" value="key3.o_l2_stu_pass" %}</td>
+			<td>{% render_field form3.o_l2_stu_perpass class="form-control" value="key3.o_l2_stu_perpass" %}</td>
 	    </tr>
 			{% endif %}
 			{% if key3.o_l3_name %}
 	     <tr>
-	      <td>3</td>
-	      <td>{{ key3.o_l3_name }}</td>
-	      <td class="right aligned">{{ key3.o_l3_f1 }}</td>
-	      <td class="center aligned">{{ key3.o_l3_f2 }}</td>
-				<td>{{ key3.o_l3_favg }}</td>
-	      <td>{{ key3.o_l3_stu_app }}</td>
-	      <td>{{ key3.o_l3_stu_pass }}</td>
-				<td>{{ key3.o_l3_stu_perpass }}</td>
+	      	<td>3</td>
+	      	<td>{% render_field form3.o_l3_name class="form-control" value="key3.o_l3_name" %}</td>
+		  	<td class="right aligned">{% render_field form3.o_l3_f1 class="form-control" value="key3.o_l3_f1" %}</td>
+	      	<td class="center aligned">{% render_field form3.o_l3_f2 class="form-control" value="key3.o_l3_f2" %}</td>
+			<td>{% render_field form3.o_l3_favg class="form-control" value="key3.o_l3_favg" %}</td>
+			<td>{% render_field form3.o_l3_stu_app class="form-control" value="key3.o_l3_stu_app" %}</td>
+	      	<td>{% render_field form3.o_l3_stu_pass class="form-control" value="key3.o_l3_stu_pass" %}</td>
+			<td>{% render_field form3.o_l3_stu_perpass class="form-control" value="key3.o_l3_stu_perpass" %}</td>
 	    </tr>
 			{% endif %}
 			{% if key3.o_l4_name %}
 	    <tr>
-	      <td>4</td>
-	      <td>{{ key3.o_l4_name }}</td>
-	      <td class="right aligned">{{ key3.o_l4_f1 }}</td>
-	      <td class="center aligned">{{ key3.o_l4_f2 }}</td>
-	      <td>{{ key3.o_l4_favg }}</td>
-	      <td>{{ key3.o_l4_stu_app }}</td>
-	      <td>{{ key3.o_l4_stu_pass }}</td>
-	      <td>{{ key3.o_l4_stu_perpass }}</td>
+	      	<td>4</td>
+	      	<td>{% render_field form3.o_l4_name class="form-control" value="key3.o_l4_name" %}</td>
+		  	<td class="right aligned">{% render_field form3.o_l4_f1 class="form-control" value="key3.o_l4_f1" %}</td>
+	      	<td class="center aligned">{% render_field form3.o_l4_f2 class="form-control" value="key3.o_l4_f2" %}</td>
+			<td>{% render_field form3.o_l4_favg class="form-control" value="key3.o_l4_favg" %}</td>
+			<td>{% render_field form3.o_l4_stu_app class="form-control" value="key3.o_l4_stu_app" %}</td>
+	      	<td>{% render_field form3.o_l4_stu_pass class="form-control" value="key3.o_l4_stu_pass" %}</td>
+			<td>{% render_field form3.o_l4_stu_perpass class="form-control" value="key3.o_l4_stu_perpass" %}</td>
 	    </tr>
 			{% endif %}
 			{% if key3.o_l5_name %}
-	    <tr>
-	      <td>5</td>
-	      <td>{{ key3.o_l5_name }}</td>
-	      <td class="right aligned">{{ key3.o_l5_f1 }}</td>
-	      <td class="center aligned">{{ key3.o_l5_f2 }}</td>
-	      <td>{{ key3.o_l5_favg }}</td>
-	      <td>{{ key3.o_l5_stu_app }}</td>
-	      <td>{{ key3.o_l5_stu_pass }}</td>
-	      <td>{{ key3.o_l5_stu_perpass }}</td>
+	     <tr>
+	      	<td>5</td>
+	      	<td>{% render_field form3.o_l5_name class="form-control" value="key3.o_l5_name" %}</td>
+		  	<td class="right aligned">{% render_field form3.o_l5_f1 class="form-control" value="key3.o_l5_f1" %}</td>
+	      	<td class="center aligned">{% render_field form3.o_l5_f2 class="form-control" value="key3.o_l5_f2" %}</td>
+			<td>{% render_field form3.o_l5_favg class="form-control" value="key3.o_l5_favg" %}</td>
+			<td>{% render_field form3.o_l5_stu_app class="form-control" value="key3.o_l5_stu_app" %}</td>
+	      	<td>{% render_field form3.o_l5_stu_pass class="form-control" value="key3.o_l5_stu_pass" %}</td>
+			<td>{% render_field form3.o_l5_stu_perpass class="form-control" value="key3.o_l5_stu_perpass" %}</td>
 	    </tr>
 			{% endif %}
 	  </tbody>
@@ -307,11 +324,12 @@
 
 	<div class="form-group col-sm-6">
 	<label >TOTAL FEEDBACK AVG. </label>
-	<em>{{key3.o_l_f_avg }}</em>
+	<em>{% render_field form3.o_l_f_avg class="form-control" value="key3.o_l_f_avg" %}</em>
+
 	</div>
 	<div class="form-group col-sm-6">
 	<label >TOTAL RESULTS AVG.</label>
-	<em>{{ key3.o_l_r_avg }}</em>
+	<em>{% render_field form3.o_l_r_avg class="form-control" value="key3.o_l_r_avg" %}</em>
 	</div>
 
 	</div>
@@ -355,40 +373,40 @@
 	  </thead>
 	  <tbody>
 			{% if key3.e_t1_name %}
-	    <tr>
+	     <tr>
 	      <td>1</td>
-	      <td>{{ key3.e_t1_name }}</td>
-	      <td class="right aligned">{{ key3.e_t1_f1 }}</td>
-	      <td class="center aligned">{{ key3.e_t1_f2 }}</td>
-	      <td>{{ key3.e_t1_favg }}</td>
-	      <td>{{ key3.e_t1_stu_app }}</td>
-	      <td>{{ key3.e_t1_stu_pass }}</td>
-	      <td>{{ key3.e_t1_stu_perpass }}</td>
+	      <td>{% render_field form3.e_t1_name class="form-control" value="key3.e_t1_name" %}</td>
+	      <td class="right aligned">{% render_field form3.e_t1_f1 class="form-control" value="key3.e_t1_f1" %}</td>
+	      <td class="center aligned">{% render_field form3.e_t1_f2 class="form-control" value="key3.e_t1_f2" %}</td>
+	      <td>{% render_field form3.e_t1_favg class="form-control" value="key3.e_t1_favg" %}</td>
+	      <td>{% render_field form3.e_t1_stu_app class="form-control" value="key3.e_t1_stu_app" %}</td>
+	       <td>{% render_field form3.e_t1_stu_pass class="form-control" value="key3.e_t1_stu_pass" %}</td>
+	       <td>{% render_field form3.e_t1_stu_perpass class="form-control" value="key3.e_t1_stu_perpass" %}</td>
 	    </tr>
 			{% endif %}
 			{% if key3.e_t2_name %}
-	    <tr>
+	   <tr>
 	      <td>2</td>
-	      <td>{{ key3.e_t2_name }}</td>
-	      <td class="right aligned">{{ key3.e_t2_f1 }}</td>
-	      <td class="center aligned">{{ key3.e_t2_f2 }}</td>
-	      <td>{{ key3.e_t2_favg }}</td>
-	      <td>{{ key3.e_t2_stu_app }}</td>
-	      <td>{{ key3.e_t2_stu_pass }}</td>
-	      <td>{{ key3.e_t2_stu_perpass }}</td>
+	      <td>{% render_field form3.e_t2_name class="form-control" value="key3.e_t2_name" %}</td>
+	      <td class="right aligned">{% render_field form3.e_t2_f1 class="form-control" value="key3.e_t2_f1" %}</td>
+	      <td class="center aligned">{% render_field form3.e_t2_f2 class="form-control" value="key3.e_t2_f2" %}</td>
+	      <td>{% render_field form3.e_t2_favg class="form-control" value="key3.e_t2_favg" %}</td>
+	      <td>{% render_field form3.e_t2_stu_app class="form-control" value="key3.e_t2_stu_app" %}</td>
+	       <td>{% render_field form3.e_t2_stu_pass class="form-control" value="key3.e_t2_stu_pass" %}</td>
+	       <td>{% render_field form3.e_t2_stu_perpass class="form-control" value="key3.e_t2_stu_perpass" %}</td>
 	    </tr>
 			{% endif %}
 			{% if key3.e_t3_name %}
 
 	      <tr>
 	      <td>3</td>
-	      <td>{{ key3.e_t3_name }}</td>
-	      <td class="right aligned">{{ key3.e_t3_f1 }}</td>
-	      <td class="center aligned">{{ key3.e_t3_f2 }}</td>
-	      <td>{{ key3.e_t3_favg }}</td>
-	      <td>{{ key3.e_t3_stu_app }}</td>
-	      <td>{{ key3.e_t3_stu_pass }}</td>
-	      <td>{{ key3.e_t3_stu_perpass }}</td>
+	      <td>{% render_field form3.e_t3_name class="form-control" value="key3.e_t3_name" %}</td>
+	      <td class="right aligned">{% render_field form3.e_t3_f1 class="form-control" value="key3.e_t3_f1" %}</td>
+	      <td class="center aligned">{% render_field form3.e_t3_f2 class="form-control" value="key3.e_t3_f2" %}</td>
+	      <td>{% render_field form3.e_t3_favg class="form-control" value="key3.e_t3_favg" %}</td>
+	      <td>{% render_field form3.e_t3_stu_app class="form-control" value="key3.e_t3_stu_app" %}</td>
+	       <td>{% render_field form3.e_t3_stu_pass class="form-control" value="key3.e_t3_stu_pass" %}</td>
+	       <td>{% render_field form3.e_t3_stu_perpass class="form-control" value="key3.e_t3_stu_perpass" %}</td>
 	    </tr>
 			{% endif %}
 	  </tbody>
@@ -396,12 +414,13 @@
 	<div class="container-fluid">
 	  <div class="row">
 
-	  <div class="form-group col-sm-6">
-	  <label >TOTAL FEEDBACK AVG. </label>
-	  <em>{{ key3.e_t_f_avg }}</em></div>
-	  <div class="form-group col-sm-6">
-	  <label >TOTAL RESULTS AVG.</label>
-	  <em>{{ key3.e_t_r_avg }}</em></div>
+	 <div class="form-group col-sm-6">
+	<label >TOTAL FEEDBACK AVG. </label>
+	<em>{% render_field form3.e_t_f_avg class="form-control" value="key3.e_t_f_avg" %}</em></div>
+
+	<div class="form-group col-sm-6">
+	<label >TOTAL RESULTS AVG.</label>
+	<em>{% render_field form3.e_t_r_avg class="form-control" value="key3.e_t_r_avg" %}</em></div>
 	  </div>
 
 	<div class="dis1 row">
@@ -438,64 +457,62 @@
 	  <tbody>
 			{% if key3.e_l1_name %}
 	    <tr>
-	      <td>1</td>
-	      <td>{{ key3.e_l1_name }}</td>
-	      <td class="right aligned">{{ key3.e_l1_f1 }}</td>
-	      <td class="center aligned">{{ key3.e_l1_f2 }}</td>
-				<td>{{ key3.e_l1_favg }}</td>
-	      <td>{{ key3.e_l1_stu_app }}</td>
-	      <td>{{ key3.e_l1_stu_pass }}</td>
-				<td>{{ key3.e_l1_stu_perpass }}</td>
+	      	<td>1</td>
+	      	<td>{% render_field form3.e_l1_name class="form-control" value="key3.e_l1_name" %}</td>
+		  	<td class="right aligned">{% render_field form3.e_l1_f1 class="form-control" value="key3.e_l1_f1" %}</td>
+	      	<td class="center aligned">{% render_field form3.e_l1_f2 class="form-control" value="key3.e_l1_f2" %}</td>
+			<td>{% render_field form3.e_l1_favg class="form-control" value="key3.e_l1_favg" %}</td>
+			<td>{% render_field form3.e_l1_stu_app class="form-control" value="key3.e_l1_stu_app" %}</td>
+	      	<td>{% render_field form3.e_l1_stu_pass class="form-control" value="key3.e_l1_stu_pass" %}</td>
+			<td>{% render_field form3.e_l1_stu_perpass class="form-control" value="key3.e_l1_stu_perpass" %}</td>
 	    </tr>
 			{% endif %}
 			{% if key3.e_l2_name %}
 	    <tr>
-	      <td>2</td>
-	      <td>{{ key3.e_l2_name }}</td>
-	      <td class="right aligned">{{ key3.e_l2_f1 }}</td>
-	      <td class="center aligned">{{ key3.e_l2_f2 }}</td>
-				<td>{{ key3.e_l2_favg }}</td>
-	      <td>{{ key3.e_l2_stu_app }}</td>
-	      <td>{{ key3.e_l2_stu_pass }}</td>
-				<td>{{ key3.e_l2_stu_perpass }}</td>
+	      	<td>2</td>
+	      	<td>{% render_field form3.e_l2_name class="form-control" value="key3.e_l2_name" %}</td>
+		  	<td class="right aligned">{% render_field form3.e_l2_f1 class="form-control" value="key3.e_l2_f1" %}</td>
+	      	<td class="center aligned">{% render_field form3.e_l2_f2 class="form-control" value="key3.e_l2_f2" %}</td>
+			<td>{% render_field form3.e_l2_favg class="form-control" value="key3.e_l2_favg" %}</td>
+			<td>{% render_field form3.e_l2_stu_app class="form-control" value="key3.e_l2_stu_app" %}</td>
+	      	<td>{% render_field form3.e_l2_stu_pass class="form-control" value="key3.e_l2_stu_pass" %}</td>
+			<td>{% render_field form3.e_l2_stu_perpass class="form-control" value="key3.e_l2_stu_perpass" %}</td>
 	    </tr>
 			{% endif %}
 			{% if key3.e_l3_name %}
-			<tr>
-	      <td>3</td>
-	      <td>{{ key3.e_l3_name }}</td>
-	      <td class="right aligned">{{ key3.e_l3_f1 }}</td>
-	      <td class="center aligned">{{ key3.e_l3_f2 }}</td>
-				<td>{{ key3.e_l3_favg }}</td>
-	      <td>{{ key3.e_l3_stu_app }}</td>
-	      <td>{{ key3.e_l3_stu_pass }}</td>
-				<td>{{ key3.e_l3_stu_perpass }}</td>
+	     <tr>
+	      	<td>3</td>
+	      	<td>{% render_field form3.e_l3_name class="form-control" value="key3.e_l3_name" %}</td>
+		  	<td class="right aligned">{% render_field form3.e_l3_f1 class="form-control" value="key3.e_l3_f1" %}</td>
+	      	<td class="center aligned">{% render_field form3.e_l3_f2 class="form-control" value="key3.e_l3_f2" %}</td>
+			<td>{% render_field form3.e_l3_favg class="form-control" value="key3.e_l3_favg" %}</td>
+			<td>{% render_field form3.e_l3_stu_app class="form-control" value="key3.e_l3_stu_app" %}</td>
+	      	<td>{% render_field form3.e_l3_stu_pass class="form-control" value="key3.e_l3_stu_pass" %}</td>
+			<td>{% render_field form3.e_l3_stu_perpass class="form-control" value="key3.e_l3_stu_perpass" %}</td>
 	    </tr>
 			{% endif %}
 			{% if key3.e_l4_name %}
-
 	    <tr>
-	      <td>4</td>
-	      <td>{{ key3.e_l4_name }}</td>
-	      <td class="right aligned">{{ key3.e_l4_f1 }}</td>
-	      <td class="center aligned">{{ key3.e_l4_f2 }}</td>
-	      <td>{{ key3.e_l4_favg }}</td>
-	      <td>{{ key3.e_l4_stu_app }}</td>
-	      <td>{{ key3.e_l4_stu_pass }}</td>
-	      <td>{{ key3.e_l4_stu_perpass }}</td>
+	      	<td>4</td>
+	      	<td>{% render_field form3.e_l4_name class="form-control" value="key3.e_l4_name" %}</td>
+		  	<td class="right aligned">{% render_field form3.e_l4_f1 class="form-control" value="key3.e_l4_f1" %}</td>
+	      	<td class="center aligned">{% render_field form3.e_l4_f2 class="form-control" value="key3.e_l4_f2" %}</td>
+			<td>{% render_field form3.e_l4_favg class="form-control" value="key3.e_l4_favg" %}</td>
+			<td>{% render_field form3.e_l4_stu_app class="form-control" value="key3.e_l4_stu_app" %}</td>
+	      	<td>{% render_field form3.e_l4_stu_pass class="form-control" value="key3.e_l4_stu_pass" %}</td>
+			<td>{% render_field form3.e_l4_stu_perpass class="form-control" value="key3.e_l4_stu_perpass" %}</td>
 	    </tr>
 			{% endif %}
 			{% if key3.e_l5_name %}
-
-	    <tr>
-	      <td>5</td>
-	      <td>{{ key3.e_l5_name }}</td>
-	      <td class="right aligned">{{ key3.e_l5_f1 }}</td>
-	      <td class="center aligned">{{ key3.e_l5_f2 }}</td>
-	      <td>{{ key3.e_l5_favg }}</td>
-	      <td>{{ key3.e_l5_stu_app }}</td>
-	      <td>{{ key3.e_l5_stu_pass }}</td>
-	      <td>{{ key3.e_l5_stu_perpass }}</td>
+	     <tr>
+	      	<td>5</td>
+	      	<td>{% render_field form3.e_l5_name class="form-control" value="key3.e_l5_name" %}</td>
+		  	<td class="right aligned">{% render_field form3.e_l5_f1 class="form-control" value="key3.e_l5_f1" %}</td>
+	      	<td class="center aligned">{% render_field form3.e_l5_f2 class="form-control" value="key3.e_l5_f2" %}</td>
+			<td>{% render_field form3.e_l5_favg class="form-control" value="key3.e_l5_favg" %}</td>
+			<td>{% render_field form3.e_l5_stu_app class="form-control" value="key3.e_l5_stu_app" %}</td>
+	      	<td>{% render_field form3.e_l5_stu_pass class="form-control" value="key3.e_l5_stu_pass" %}</td>
+			<td>{% render_field form3.e_l5_stu_perpass class="form-control" value="key3.e_l5_stu_perpass" %}</td>
 	    </tr>
 			{% endif %}
 	  </tbody>
@@ -504,11 +521,16 @@
 	  <div class="row">
 
 	  <div class="form-group col-sm-6">
-	  <label >TOTAL FEEDBACK AVG. </label>
-	  <em>{{ key3.e_l_f_avg }}</em></div>
-	  <div class="form-group col-sm-6">
-	  <label >TOTAL RESULTS AVG.</label>
-	  <em>{{ key3.e_l_r_avg }}</em></div>
+	<label >TOTAL FEEDBACK AVG. </label>
+	<em>{% render_field form3.e_l_f_avg class="form-control" value="key3.e_l_f_avg" %}</em>
+
+	</div>
+	<div class="form-group col-sm-6">
+	<label >TOTAL RESULTS AVG.</label>
+	<em>{% render_field form3.e_l_r_avg class="form-control" value="key3.e_l_r_avg" %}</em>
+	</div>
+
+
 	  </div>
 
 	<div class="dis1 row">
@@ -548,88 +570,88 @@
 			{% if key3.p1_name %}
 
 	    <tr>
-	      <td>1</td>
-	      <td>{{ key3.p1_name }}</td>
-	      <td class="right aligned">{{ key3.p1_f1 }}</td>
-	      <td class="center aligned">{{ key3.p1_f2 }}</td>
-	      <td>{{ key3.p1_favg }}</td>
+	      	<td>1</td>
+	      	<td>{% render_field form3.p1_name class="form-control" value="key3.p1_name" %}</td>
+			<td class="right aligned">{% render_field form3.p1_f1 class="form-control" value="key3.p1_f1" %}</td>
+	      	<td class="center aligned">{% render_field form3.p1_f2 class="form-control" value="key3.p1_f2" %}</td>
+	     	<td>{% render_field form3.p1_favg class="form-control" value="key3.p1_favg" %}</td>
 	    </tr>
 			{% endif %}
 			{% if key3.p2_name %}
 
 	     <tr>
-	      <td>2</td>
-	      <td>{{ key3.p2_name }}</td>
-	      <td class="right aligned">{{ key3.p2_f1 }}</td>
-	      <td class="center aligned">{{ key3.p2_f2 }}</td>
-	      <td>{{ key3.p2_favg }}</td>
+	      	<td>2</td>
+	      	<td>{% render_field form3.p2_name class="form-control" value="key3.p2_name" %}</td>
+			<td class="right aligned">{% render_field form3.p2_f1 class="form-control" value="key3.p2_f1" %}</td>
+	      	<td class="center aligned">{% render_field form3.p2_f2 class="form-control" value="key3.p2_f2" %}</td>
+	     	<td>{% render_field form3.p2_favg class="form-control" value="key3.p2_favg" %}</td>
 	    </tr>
 			{% endif %}
 
 			{% if key3.p3_name %}
 
 	    <tr>
-	      <td>3</td>
-	      <td>{{ key3.p3_name }}</td>
-	      <td class="right aligned">{{ key3.p3_f1 }}</td>
-	      <td class="center aligned">{{ key3.p3_f2 }}</td>
-	      <td>{{ key3.p3_favg }}</td>
+	      	<td>3</td>
+	      	<td>{% render_field form3.p3_name class="form-control" value="key3.p3_name" %}</td>
+			<td class="right aligned">{% render_field form3.p3_f1 class="form-control" value="key3.p3_f1" %}</td>
+	      	<td class="center aligned">{% render_field form3.p3_f2 class="form-control" value="key3.p3_f2" %}</td>
+	     	<td>{% render_field form3.p3_favg class="form-control" value="key3.p3_favg" %}</td>
 	    </tr>
 			{% endif %}
 
 			{% if key3.p4_name %}
 
 	    <tr>
-	      <td>4</td>
-	      <td>{{ key3.p4_name }}</td>
-	      <td class="right aligned">{{ key3.p4_f1 }}</td>
-	      <td class="center aligned">{{ key3.p4_f2 }}</td>
-	      <td>{{ key3.p4_favg }}</td>
+	      	<td>4</td>
+	      	<td>{% render_field form3.p4_name class="form-control" value="key3.p4_name" %}</td>
+			<td class="right aligned">{% render_field form3.p4_f1 class="form-control" value="key3.p4_f1" %}</td>
+	      	<td class="center aligned">{% render_field form3.p4_f2 class="form-control" value="key3.p4_f2" %}</td>
+	     	<td>{% render_field form3.p4_favg class="form-control" value="key3.p4_favg" %}</td>
 	    </tr>
 			{% endif %}
 
 			{% if key3.p5_name %}
 
-	    <tr>
-	      <td>5</td>
-	      <td>{{ key3.p5_name }}</td>
-	      <td class="right aligned">{{ key3.p5_f1 }}</td>
-	      <td class="center aligned">{{ key3.p5_f2 }}</td>
-	      <td>{{ key3.p5_favg }}</td>
+	   <tr>
+	      	<td>5</td>
+	      	<td>{% render_field form3.p5_name class="form-control" value="key3.p5_name" %}</td>
+			<td class="right aligned">{% render_field form3.p5_f1 class="form-control" value="key3.p5_f1" %}</td>
+	      	<td class="center aligned">{% render_field form3.p5_f2 class="form-control" value="key3.p5_f2" %}</td>
+	     	<td>{% render_field form3.p5_favg class="form-control" value="key3.p5_favg" %}</td>
 	    </tr>
 			{% endif %}
 
 			{% if key3.p6_name %}
 
 	    <tr>
-	      <td>6</td>
-	      <td>{{ key3.p6_name }}</td>
-	      <td class="right aligned">{{ key3.p6_f1 }}</td>
-	      <td class="center aligned">{{ key3.p6_f2 }}</td>
-	      <td>{{ key3.p6_favg }}</td>
+	      	<td>6</td>
+	      	<td>{% render_field form3.p6_name class="form-control" value="key3.p6_name" %}</td>
+			<td class="right aligned">{% render_field form3.p6_f1 class="form-control" value="key3.p6_f1" %}</td>
+	      	<td class="center aligned">{% render_field form3.p6_f2 class="form-control" value="key3.p6_f2" %}</td>
+	     	<td>{% render_field form3.p6_favg class="form-control" value="key3.p6_favg" %}</td>
 	    </tr>
 			{% endif %}
 
 			{% if key3.p7_name %}
 
 	    <tr>
-	      <td>7</td>
-	      <td>{{ key3.p7_name }}</td>
-	      <td class="right aligned">{{ key3.p7_f1 }}</td>
-	      <td class="center aligned">{{ key3.p7_f2 }}</td>
-	      <td>{{ key3.p7_favg }}</td>
+	      	<td>7</td>
+	      	<td>{% render_field form3.p7_name class="form-control" value="key3.p7_name" %}</td>
+			<td class="right aligned">{% render_field form3.p7_f1 class="form-control" value="key3.p7_f1" %}</td>
+	      	<td class="center aligned">{% render_field form3.p7_f2 class="form-control" value="key3.p7_f2" %}</td>
+	     	<td>{% render_field form3.p7_favg class="form-control" value="key3.p7_favg" %}</td>
 	    </tr>
 			{% endif %}
 
 
 			{% if key3.p8_name %}
 
-	    <tr>
-	      <td>8</td>
-	      <td>{{ key3.p8_name }}</td>
-	      <td class="right aligned">{{ key3.p8_f1 }}</td>
-	      <td class="center aligned">{{ key3.p8_f2 }}</td>
-	      <td>{{ key3.p8_favg }}</td>
+	   <tr>
+	      	<td>8</td>
+	      	<td>{% render_field form3.p8_name class="form-control" value="key3.p8_name" %}</td>
+			<td class="right aligned">{% render_field form3.p8_f1 class="form-control" value="key3.p8_f1" %}</td>
+	      	<td class="center aligned">{% render_field form3.p8_f2 class="form-control" value="key3.p8_f2" %}</td>
+	     	<td>{% render_field form3.p8_favg class="form-control" value="key3.p8_favg" %}</td>
 	    </tr>
 			{% endif %}
 
@@ -639,23 +661,23 @@
 			{% if key3.p9_name %}
 
 	    <tr>
-	      <td>9</td>
-	      <td>{{ key3.p9_name }}</td>
-	      <td class="right aligned">{{ key3.p9_f1 }}</td>
-	      <td class="center aligned">{{ key3.p9_f2 }}</td>
-	      <td>{{ key3.p9_favg }}</td>
+	      	<td>9</td>
+	      	<td>{% render_field form3.p9_name class="form-control" value="key3.p9_name" %}</td>
+			<td class="right aligned">{% render_field form3.p9_f1 class="form-control" value="key3.p9_f1" %}</td>
+	      	<td class="center aligned">{% render_field form3.p9_f2 class="form-control" value="key3.p9_f2" %}</td>
+	     	<td>{% render_field form3.p9_favg class="form-control" value="key3.p9_favg" %}</td>
 	    </tr>
 			{% endif %}
 
 
 			{% if key3.p10_name %}
 
-	    <tr>
-	      <td>10</td>
-	      <td>{{ key3.p10_name }}</td>
-	      <td class="right aligned">{{ key3.p10_f1 }}</td>
-	      <td class="center aligned">{{ key3.p10_f2 }}</td>
-	      <td>{{ key3.p10_favg }}</td>
+	     <tr>
+	      	<td>10</td>
+	      	<td>{% render_field form3.p10_name class="form-control" value="key3.p10_name" %}</td>
+			<td class="right aligned">{% render_field form3.p10_f1 class="form-control" value="key3.p10_f1" %}</td>
+	      	<td class="center aligned">{% render_field form3.p10_f2 class="form-control" value="key3.p10_f2" %}</td>
+	     	<td>{% render_field form3.p10_favg class="form-control" value="key3.p10_favg" %}</td>
 	    </tr>
 			{% endif %}
 
@@ -677,7 +699,8 @@
 
 	<div class="form-group col-sm-6">
 	<label >TOTAL FEEDBACK AVG.</label>
-	<em>{{ key3.p_f_avg }}</em>
+	<em>{% render_field form3.p_f_avg class="form-control" value="key3.p_f_avg" %}</em>
+
 	</div>
 	</div>
 	</div>
@@ -693,7 +716,8 @@
 	               </div>
 
 	                  <div class="orm-group col-md-6">
-											<em class="m1">{{ key3.e_o_f_r_final }}</em>
+			<em class="m1">{% render_field form3.e_o_f_r_final class="form-control" value="key3.e_o_f_r_final" %}</em>
+
 	                        </div>
 	                    </div>
 	</div>
@@ -731,7 +755,7 @@
 
 	<div class="form-row dis">
 	          <div class="form-group col-md-6">
-	                        <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="State Level (.5 m/day)" >
+	 <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="State Level (.5 m/day)" >
 
 	          </div>
 	        <div class="form-group col-md-6">
@@ -1234,82 +1258,90 @@
 		<tbody>
 			{% if key6.c1_name %}
 			<tr>
-				<td>{{ key6.c1_name }}</td>
-				<td>{{ key6.c1_title }}</td>
-				<td>{{ key6.c1_place }}</td>
-				<td>{{ key6.c1_date }}</td>
-				<td>{{ key6.c1_index }}</td>
-				<td>{{ key6.c1_author }}</td>
+				<td>{% render_field form6.c1_name class="form-control" value="key6.c1_name" %}</td>
+				<td>{% render_field form6.c1_title class="form-control" value="key6.c1_title" %}</td>
+				<td>{% render_field form6.c1_place class="form-control" value="key6.c1_place" %}</td>
+				<td>{% render_field form6.c1_date class="form-control" value="key6.c1_date" %}</td>
+				<td>{% render_field form6.c1_index class="form-control" value="key6.c1_index" %}</td>
+				<td>{% render_field form6.c1_author class="form-control" value="key6.c1_author" %}</td>
+				
 			</tr>
 			{% endif %}
 			{% if key6.c2_name %}
-			<tr>
-				<td>{{ key6.c2_name }}</td>
-				<td>{{ key6.c2_title }}</td>
-				<td>{{ key6.c2_place }}</td>
-				<td>{{ key6.c2_date }}</td>
-				<td>{{ key6.c2_index }}</td>
-				<td>{{ key6.c2_author }}</td>
+				<tr>
+				<td>{% render_field form6.c2_name class="form-control" value="key6.c2_name" %}</td>
+				<td>{% render_field form6.c2_title class="form-control" value="key6.c2_title" %}</td>
+				<td>{% render_field form6.c2_place class="form-control" value="key6.c2_place" %}</td>
+				<td>{% render_field form6.c2_date class="form-control" value="key6.c2_date" %}</td>
+				<td>{% render_field form6.c2_index class="form-control" value="key6.c2_index" %}</td>
+				<td>{% render_field form6.c2_author class="form-control" value="key6.c2_author" %}</td>
+				
 			</tr>
 			{% endif %}
 			{% if key6.c3_name %}
-			<tr>
-				<td>{{ key6.c3_name }}</td>
-				<td>{{ key6.c3_title }}</td>
-				<td>{{ key6.c3_place }}</td>
-				<td>{{ key6.c3_date }}</td>
-				<td>{{ key6.c3_index }}</td>
-				<td>{{ key6.c3_author }}</td>
+				<tr>
+				<td>{% render_field form6.c3_name class="form-control" value="key6.c3_name" %}</td>
+				<td>{% render_field form6.c3_title class="form-control" value="key6.c3_title" %}</td>
+				<td>{% render_field form6.c3_place class="form-control" value="key6.c3_place" %}</td>
+				<td>{% render_field form6.c3_date class="form-control" value="key6.c3_date" %}</td>
+				<td>{% render_field form6.c3_index class="form-control" value="key6.c3_index" %}</td>
+				<td>{% render_field form6.c3_author class="form-control" value="key6.c3_author" %}</td>
+				
 			</tr>
 			{% endif %}
 			{% if key6.c4_name %}
 			<tr>
-				<td>{{ key6.c4_name }}</td>
-				<td>{{ key6.c4_title }}</td>
-				<td>{{ key6.c4_place }}</td>
-				<td>{{ key6.c4_date }}</td>
-				<td>{{ key6.c4_index }}</td>
-				<td>{{ key6.c4_author }}</td>
+				<td>{% render_field form6.c4_name class="form-control" value="key6.c4_name" %}</td>
+				<td>{% render_field form6.c4_title class="form-control" value="key6.c4_title" %}</td>
+				<td>{% render_field form6.c4_place class="form-control" value="key6.c4_place" %}</td>
+				<td>{% render_field form6.c4_date class="form-control" value="key6.c4_date" %}</td>
+				<td>{% render_field form6.c4_index class="form-control" value="key6.c4_index" %}</td>
+				<td>{% render_field form6.c4_author class="form-control" value="key6.c4_author" %}</td>
+				
 			</tr>
 			{% endif %}
 			{% if key6.c5_name %}
-			<tr>
-				<td>{{ key6.c5_name }}</td>
-				<td>{{ key6.c5_title }}</td>
-				<td>{{ key6.c5_place }}</td>
-				<td>{{ key6.c5_date }}</td>
-				<td>{{ key6.c5_index }}</td>
-				<td>{{ key6.c5_author }}</td>
+				<tr>
+				<td>{% render_field form6.c5_name class="form-control" value="key6.c5_name" %}</td>
+				<td>{% render_field form6.c5_title class="form-control" value="key6.c5_title" %}</td>
+				<td>{% render_field form6.c5_place class="form-control" value="key6.c5_place" %}</td>
+				<td>{% render_field form6.c5_date class="form-control" value="key6.c5_date" %}</td>
+				<td>{% render_field form6.c5_index class="form-control" value="key6.c5_index" %}</td>
+				<td>{% render_field form6.c5_author class="form-control" value="key6.c5_author" %}</td>
+				
 			</tr>
 			{% endif %}
 			{% if key6.c6_name %}
-			<tr>
-				<td>{{ key6.c6_name }}</td>
-				<td>{{ key6.c6_title }}</td>
-				<td>{{ key6.c6_place }}</td>
-				<td>{{ key6.c6_date }}</td>
-				<td>{{ key6.c6_index }}</td>
-				<td>{{ key6.c6_author }}</td>
+				<tr>
+				<td>{% render_field form6.c6_name class="form-control" value="key6.c6_name" %}</td>
+				<td>{% render_field form6.c6_title class="form-control" value="key6.c6_title" %}</td>
+				<td>{% render_field form6.c6_place class="form-control" value="key6.c6_place" %}</td>
+				<td>{% render_field form6.c6_date class="form-control" value="key6.c6_date" %}</td>
+				<td>{% render_field form6.c6_index class="form-control" value="key6.c6_index" %}</td>
+				<td>{% render_field form6.c6_author class="form-control" value="key6.c6_author" %}</td>
+				
 			</tr>
 			{% endif %}
 			{% if key6.c7_name %}
-			<tr>
-				<td>{{ key6.c7_name }}</td>
-				<td>{{ key6.c7_title }}</td>
-				<td>{{ key6.c7_place }}</td>
-				<td>{{ key6.c7_date }}</td>
-				<td>{{ key6.c7_index }}</td>
-				<td>{{ key6.c7_author }}</td>
+				<tr>
+				<td>{% render_field form6.c7_name class="form-control" value="key6.c7_name" %}</td>
+				<td>{% render_field form6.c7_title class="form-control" value="key6.c7_title" %}</td>
+				<td>{% render_field form6.c7_place class="form-control" value="key6.c7_place" %}</td>
+				<td>{% render_field form6.c7_date class="form-control" value="key6.c7_date" %}</td>
+				<td>{% render_field form6.c7_index class="form-control" value="key6.c7_index" %}</td>
+				<td>{% render_field form6.c7_author class="form-control" value="key6.c7_author" %}</td>
+				
 			</tr>
 			{% endif %}
 			{% if key6.c8_name %}
-			<tr>
-				<td>{{ key6.c8_name }}</td>
-				<td>{{ key6.c8_title }}</td>
-				<td>{{ key6.c8_place }}</td>
-				<td>{{ key6.c8_date }}</td>
-				<td>{{ key6.c8_index }}</td>
-				<td>{{ key6.c8_author }}</td>
+				<tr>
+				<td>{% render_field form6.c8_name class="form-control" value="key6.c8_name" %}</td>
+				<td>{% render_field form6.c8_title class="form-control" value="key6.c8_title" %}</td>
+				<td>{% render_field form6.c8_place class="form-control" value="key6.c8_place" %}</td>
+				<td>{% render_field form6.c8_date class="form-control" value="key6.c8_date" %}</td>
+				<td>{% render_field form6.c8_index class="form-control" value="key6.c8_index" %}</td>
+				<td>{% render_field form6.c8_author class="form-control" value="key6.c8_author" %}</td>
+				
 			</tr>
 			{% endif %}
 		</tbody>
@@ -1333,105 +1365,121 @@
 	<tbody>
 		{% if key7.j1_name %}
 		<tr>
-			<td>{{ key7.j1_name }}</td>
-			<td>{{ key7.j1_title }}</td>
-			<td>{{ key7.j1_volume }}</td>
-			<td>{{ key7.j1_date }}</td>
-			<td>{{ key7.j1_index }}</td>
-			<td>{{ key7.j1_issn }}</td>
-			<td>{{ key7.j1_page }}</td>
-			<td>{{ key7.j1_author }}</td>
+			
+			<td>{% render_field form7.j1_name class="form-control" value="key7.j1_name" %}</td>
+			<td>{% render_field form7.j1_title class="form-control" value="key7.j1_title" %}</td>
+			<td>{% render_field form7.j1_volume class="form-control" value="key7.j1_volume" %}</td>
+			<td>{% render_field form7.j1_date class="form-control" value="key7.j1_date" %}</td>
+			<td>{% render_field form7.j1_index class="form-control" value="key7.j1_index" %}</td>
+			<td>{% render_field form7.j1_issn class="form-control" value="key7.j1_issn" %}</td>
+			<td>{% render_field form7.j1_page class="form-control" value="key7.j1_page" %}</td>
+			<td>{% render_field form7.j1_author class="form-control" value="key7.j1_author" %}</td>
+
 
 		</tr>
 		{% endif %}
 		{% if key7.j2_name %}
 		<tr>
-			<td>{{ key7.j2_name }}</td>
-			<td>{{ key7.j2_title }}</td>
-			<td>{{ key7.j2_volume }}</td>
-			<td>{{ key7.j2_date }}</td3
-			<td>{{ key7.j2_index }}</td>
-			<td>{{ key7.j2_issn }}</td>
-			<td>{{ key7.j2_page }}</td>
-			<td>{{ key7.j2_author }}</td>
+			
+			<td>{% render_field form7.j2_name class="form-control" value="key7.j2_name" %}</td>
+			<td>{% render_field form7.j2_title class="form-control" value="key7.j2_title" %}</td>
+			<td>{% render_field form7.j2_volume class="form-control" value="key7.j2_volume" %}</td>
+			<td>{% render_field form7.j2_date class="form-control" value="key7.j2_date" %}</td>
+			<td>{% render_field form7.j2_index class="form-control" value="key7.j2_index" %}</td>
+			<td>{% render_field form7.j2_issn class="form-control" value="key7.j2_issn" %}</td>
+			<td>{% render_field form7.j2_page class="form-control" value="key7.j2_page" %}</td>
+			<td>{% render_field form7.j2_author class="form-control" value="key7.j2_author" %}</td>
+
 
 		</tr>
 		{% endif %}
 		{% if key7.j3_name %}
 		<tr>
-			<td>{{ key7.j3_name }}</td>
-			<td>{{ key7.j3_title }}</td>
-			<td>{{ key7.j3_volume }}</td>
-			<td>{{ key7.j3_date }}</td>
-			<td>{{ key7.j3_index }}</td>
-			<td>{{ key7.j3_issn }}</td>
-			<td>{{ key7.j3_page }}</td>
-			<td>{{ key7.j3_author }}</td>
+			
+			<td>{% render_field form7.j3_name class="form-control" value="key7.j3_name" %}</td>
+			<td>{% render_field form7.j3_title class="form-control" value="key7.j3_title" %}</td>
+			<td>{% render_field form7.j3_volume class="form-control" value="key7.j3_volume" %}</td>
+			<td>{% render_field form7.j3_date class="form-control" value="key7.j3_date" %}</td>
+			<td>{% render_field form7.j3_index class="form-control" value="key7.j3_index" %}</td>
+			<td>{% render_field form7.j3_issn class="form-control" value="key7.j3_issn" %}</td>
+			<td>{% render_field form7.j3_page class="form-control" value="key7.j3_page" %}</td>
+			<td>{% render_field form7.j3_author class="form-control" value="key7.j3_author" %}</td>
+
 
 		</tr>
 		{% endif %}
 		{% if key7.j4_name %}
 		<tr>
-			<td>{{ key7.j4_name }}</td>
-			<td>{{ key7.j4_title }}</td>
-			<td>{{ key7.j4_volume }}</td>
-			<td>{{ key7.j4_date }}</td>
-			<td>{{ key7.j4_index }}</td>
-			<td>{{ key7.j4_issn }}</td>
-			<td>{{ key7.j4_page }}</td>
-			<td>{{ key7.j4_author }}</td>
+			
+			<td>{% render_field form7.j4_name class="form-control" value="key7.j4_name" %}</td>
+			<td>{% render_field form7.j4_title class="form-control" value="key7.j4_title" %}</td>
+			<td>{% render_field form7.j4_volume class="form-control" value="key7.j4_volume" %}</td>
+			<td>{% render_field form7.j4_date class="form-control" value="key7.j4_date" %}</td>
+			<td>{% render_field form7.j4_index class="form-control" value="key7.j4_index" %}</td>
+			<td>{% render_field form7.j4_issn class="form-control" value="key7.j4_issn" %}</td>
+			<td>{% render_field form7.j4_page class="form-control" value="key7.j4_page" %}</td>
+			<td>{% render_field form7.j4_author class="form-control" value="key7.j4_author" %}</td>
+
 
 		</tr>
 		{% endif %}
 		{% if key7.j5_name %}
 		<tr>
-			<td>{{ key7.j5_name }}</td>
-			<td>{{ key7.j5_title }}</td>
-			<td>{{ key7.j5_volume }}</td>
-			<td>{{ key7.j5_date }}</td>
-			<td>{{ key7.j5_index }}</td>
-			<td>{{ key7.j5_issn }}</td>
-			<td>{{ key7.j5_page }}</td>
-			<td>{{ key7.j5_author }}</td>
+			
+			<td>{% render_field form7.j5_name class="form-control" value="key7.j5_name" %}</td>
+			<td>{% render_field form7.j5_title class="form-control" value="key7.j5_title" %}</td>
+			<td>{% render_field form7.j5_volume class="form-control" value="key7.j5_volume" %}</td>
+			<td>{% render_field form7.j5_date class="form-control" value="key7.j5_date" %}</td>
+			<td>{% render_field form7.j5_index class="form-control" value="key7.j5_index" %}</td>
+			<td>{% render_field form7.j5_issn class="form-control" value="key7.j5_issn" %}</td>
+			<td>{% render_field form7.j5_page class="form-control" value="key7.j5_page" %}</td>
+			<td>{% render_field form7.j5_author class="form-control" value="key7.j5_author" %}</td>
+
 
 		</tr>
 		{% endif %}
 		{% if key7.j6_name %}
 		<tr>
-			<td>{{ key7.j6_name }}</td>
-			<td>{{ key7.j6_title }}</td>
-			<td>{{ key7.j6_volume }}</td>
-			<td>{{ key7.j6_date }}</td>
-			<td>{{ key7.j6_index }}</td>
-			<td>{{ key7.j6_issn }}</td>
-			<td>{{ key7.j6_page }}</td>
-			<td>{{ key7.j6_author }}</td>
+			
+			<td>{% render_field form7.j6_name class="form-control" value="key7.j6_name" %}</td>
+			<td>{% render_field form7.j6_title class="form-control" value="key7.j6_title" %}</td>
+			<td>{% render_field form7.j6_volume class="form-control" value="key7.j6_volume" %}</td>
+			<td>{% render_field form7.j6_date class="form-control" value="key7.j6_date" %}</td>
+			<td>{% render_field form7.j6_index class="form-control" value="key7.j6_index" %}</td>
+			<td>{% render_field form7.j6_issn class="form-control" value="key7.j6_issn" %}</td>
+			<td>{% render_field form7.j6_page class="form-control" value="key7.j6_page" %}</td>
+			<td>{% render_field form7.j6_author class="form-control" value="key7.j6_author" %}</td>
+
 
 		</tr>
 		{% endif %}
 		{% if key7.j7_name %}
 		<tr>
-			<td>{{ key7.j7_name }}</td>
-			<td>{{ key7.j7_title }}</td>
-			<td>{{ key7.j7_volume }}</td>
-			<td>{{ key7.j7_date }}</td>
-			<td>{{ key7.j7_index }}</td>
-			<td>{{ key7.j7_issn }}</td>
-			<td>{{ key7.j7_page }}</td>
-			<td>{{ key7.j7_author }}</td>
+			
+			<td>{% render_field form7.j7_name class="form-control" value="key7.j7_name" %}</td>
+			<td>{% render_field form7.j7_title class="form-control" value="key7.j7_title" %}</td>
+			<td>{% render_field form7.j7_volume class="form-control" value="key7.j7_volume" %}</td>
+			<td>{% render_field form7.j7_date class="form-control" value="key7.j7_date" %}</td>
+			<td>{% render_field form7.j7_index class="form-control" value="key7.j7_index" %}</td>
+			<td>{% render_field form7.j7_issn class="form-control" value="key7.j7_issn" %}</td>
+			<td>{% render_field form7.j7_page class="form-control" value="key7.j7_page" %}</td>
+			<td>{% render_field form7.j7_author class="form-control" value="key7.j7_author" %}</td>
+
 
 		</tr>
 		{% endif %}
 		{% if key7.j8_name %}
 		<tr>
-			<td>{{ key7.j8_name }}</td>
-			<td>{{ key7.j8_title }}</td>
-			<td>{{ key7.j8_volume }}</td>
-			<td>{{ key7.j8_date }}</td>
-			<td>{{ key7.j8_index }}</td>
-			<td>{{ key7.j8_issn }}</td>
-			<td>{{ key7.j8_page }}</td>
-			<td>{{ key7.j8_author }}</td>
+			
+			<td>{% render_field form7.j8_name class="form-control" value="key7.j8_name" %}</td>
+			<td>{% render_field form7.j8_title class="form-control" value="key7.j8_title" %}</td>
+			<td>{% render_field form7.j8_volume class="form-control" value="key7.j8_volume" %}</td>
+			<td>{% render_field form7.j8_date class="form-control" value="key7.j8_date" %}</td>
+			<td>{% render_field form7.j8_index class="form-control" value="key7.j8_index" %}</td>
+			<td>{% render_field form7.j8_issn class="form-control" value="key7.j8_issn" %}</td>
+			<td>{% render_field form7.j8_page class="form-control" value="key7.j8_page" %}</td>
+			<td>{% render_field form7.j8_author class="form-control" value="key7.j8_author" %}</td>
+
 
 		</tr>
 		{% endif %}
