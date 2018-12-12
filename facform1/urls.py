@@ -14,6 +14,8 @@ urlpatterns = [
 
     url(r'^invalid/',views.invalid,name="invalid"),
 
+    url(r'^undo/', views.teach_fun, name="teach_fun"),
+
     url(r'^report/(?P<dept>[\w\-]+)$',views.report,name="report"),
 
     url(r'^assistant_form1/', views.f_assistant1,name="assistant_form1"),

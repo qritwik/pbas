@@ -19,6 +19,18 @@ from django.forms import formset_factory
 
 
 
+def teach_fun(request):
+
+	data1 = User.objects.all()
+	for i in data1:
+		i.teach_status = False
+		i.hod_status = False
+		i.principal_status = False
+		i.save()
+
+	return HttpResponse("Done")
+
+
 
 
 def report(request,dept):
