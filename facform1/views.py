@@ -32,7 +32,6 @@ def teach_fun(request):
 
 
 
-
 def report(request,dept):
 
 	data1 = rd.objects.filter(info__department__name=dept)
