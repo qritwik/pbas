@@ -50,6 +50,7 @@ class User(AbstractUser):
 	principal_status = models.BooleanField(default=False)
 	doc_link = models.CharField(max_length=2000,null=True)
 	info = models.CharField(max_length=20, blank=True, null=True)
+	file = models.FileField(blank=True, null=True)
 
 
 	def __str__(self):
@@ -120,6 +121,7 @@ class empDetailForm(models.Model):
 	exp_res = models.FloatField( blank=True, null=True)
 	exp_indus = models.FloatField(blank=True, null=True)
 	info = models.ForeignKey('User', on_delete=models.CASCADE,null=True)
+	file = models.FileField(blank=True, null=True)
 
 	def __str__(self):
 		return self.info.first_name
@@ -365,6 +367,7 @@ class feedbackTab(models.Model):
 	e_o_f_r_final = models.CharField(max_length=500, blank=True, null=True)
 
 	info = models.ForeignKey('User', on_delete=models.CASCADE,null=True)
+	file = models.FileField(blank=True, null=True)
 
 	def __str__(self):
 		return self.info.first_name
@@ -442,6 +445,7 @@ class rd(models.Model):
 
 
 	info = models.ForeignKey('User', on_delete=models.CASCADE,null=True)
+	file = models.FileField(blank=True, null=True)
 
 	def __str__(self):
 		return self.info.first_name
@@ -453,6 +457,7 @@ class remarks(models.Model):
 	ta_ic = models.TextField( blank=True, null=True)
 	ta_dr = models.TextField( blank=True, null=True)
 	info = models.ForeignKey('User', on_delete=models.CASCADE,null=True)
+	file = models.FileField(blank=True, null=True)
 
 	def __str__(self):
 		return self.info.first_name
@@ -517,6 +522,7 @@ class conference(models.Model):
 	c8_author =	models.CharField(max_length=500, blank=True, null=True)
 
 	info = models.ForeignKey('User', on_delete=models.CASCADE,null=True)
+	file = models.FileField(blank=True, null=True)
 
 	def __str__(self):
 		return self.info.first_name
@@ -601,6 +607,7 @@ class journal(models.Model):
 	j8_author =	models.CharField(max_length=500, blank=True, null=True)
 
 	info = models.ForeignKey('User', on_delete=models.CASCADE,null=True)
+	file = models.FileField(blank=True, null=True)
 
 	def __str__(self):
 		return self.info.first_name
@@ -615,6 +622,7 @@ class remarks1(models.Model):
 
 	ta_hod_remarks = models.TextField( blank=True, null=True)
 	info = models.ForeignKey('User', on_delete=models.CASCADE,null=True)
+	file = models.FileField(blank=True, null=True)
 
 	def __str__(self):
 		return self.info.first_name
@@ -634,6 +642,8 @@ class remarks2(models.Model):
 	total_marks = models.FloatField( blank=True, null=True)
 	info = models.ForeignKey('User', on_delete=models.CASCADE,null=True)
 	department = models.ForeignKey('Department', on_delete=models.CASCADE,null=True)
+
+	file = models.FileField(blank=True, null=True)
 
 	def __str__(self):
 		return self.info.first_name
