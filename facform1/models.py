@@ -115,6 +115,7 @@ class empDetailForm(models.Model):
 
 	high_qual = models.CharField(max_length=50,null=True)
 	doj = models.DateField(null=True)
+	month_of_increment = models.CharField(max_length=50,null=True, blank=True)
 	# Present_pos = models.CharField(max_length=50,null=True,blank=True)
 	Held_from = models.DateField(null=True)
 	exp_teach = models.FloatField(blank=True, null=True)
@@ -122,7 +123,7 @@ class empDetailForm(models.Model):
 	exp_indus = models.FloatField(blank=True, null=True)
 	info = models.ForeignKey('User', on_delete=models.CASCADE,null=True)
 	file = models.FileField(blank=True, null=True)
-	month_incr = models.CharField(max_length=50,null=True)
+	
 
 	def __str__(self):
 		return self.info.first_name
