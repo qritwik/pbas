@@ -121,7 +121,7 @@ class empDetailForm(models.Model):
 	exp_indus = models.FloatField(blank=True, null=True)
 	info = models.ForeignKey('User', on_delete=models.CASCADE,null=True)
 	internship_report_file = models.FileField(blank=True, null=True)
-	
+
 
 	def __str__(self):
 		return self.info.first_name
@@ -379,9 +379,9 @@ class rd(models.Model):
 	w_n_d = models.IntegerField( blank=True, null=True)
 	w_i_d = models.IntegerField( blank=True, null=True)
 	w_file = models.FileField(blank=True, null=True)
-	
+
 	w_m = models.CharField(max_length=500, blank=True, null=True)
-	
+
 	p_s_d = models.IntegerField( blank=True, null=True)
 	p_n_d = models.IntegerField( blank=True, null=True)
 	p_i_d = models.IntegerField( blank=True, null=True)
@@ -391,14 +391,13 @@ class rd(models.Model):
 
 	onl_course_c = models.IntegerField( blank=True, null=True)
 	onl_course_c_file = models.FileField(blank=True, null=True)
-	
+
 	onl_course_m = models.CharField(max_length=500, blank=True, null=True)
 
 	s_c_n = models.IntegerField(blank=True, null=True)
 	f_c_n = models.IntegerField(blank=True, null=True)
 	o_c_n = models.IntegerField(blank=True, null=True)
-	onl_course_c_file = models.FileField(blank=True, null=True)
-	
+
 	s_c_m = models.CharField(max_length=500, blank=True, null=True)
 	f_c_m = models.CharField(max_length=500, blank=True, null=True)
 	o_c_m = models.CharField(max_length=500, blank=True, null=True)
@@ -407,7 +406,7 @@ class rd(models.Model):
 	f_j_n = models.IntegerField(blank=True, null=True)
 	o_j_n = models.IntegerField(blank=True, null=True)
 	s_j_n_file = models.FileField(blank=True, null=True)
-	
+
 	s_j_m = models.CharField(max_length=500, blank=True, null=True)
 	f_j_m = models.CharField(max_length=500, blank=True, null=True)
 	o_j_m = models.CharField(max_length=500, blank=True, null=True)
@@ -419,7 +418,7 @@ class rd(models.Model):
 	book_ai = models.IntegerField( blank=True, null=True)
 	book_nm = models.IntegerField( blank=True, null=True)
 	book_file = models.FileField(blank=True, null=True)
-	
+
 	book_m = models.CharField(max_length=500, blank=True, null=True)
 
 	if_s = models.CharField(max_length=500, blank=True, null=True)
@@ -431,7 +430,7 @@ class rd(models.Model):
 	ef_f = models.CharField(max_length=500, blank=True, null=True)
 	ef_c = models.CharField(max_length=500, blank=True, null=True)
 	ef_file = models.FileField(blank=True, null=True)
-	
+
 	eef_s = models.CharField(max_length=500, blank=True, null=True)
 	eef_f = models.CharField(max_length=500, blank=True, null=True)
 	eef_c = models.CharField(max_length=500, blank=True, null=True)
@@ -456,7 +455,7 @@ class rd(models.Model):
 
 
 	info = models.ForeignKey('User', on_delete=models.CASCADE,null=True)
-	
+
 
 	def __str__(self):
 		return self.info.first_name
@@ -482,7 +481,7 @@ class conference(models.Model):
 	c1_index = models.CharField(max_length=500, blank=True, null=True)
 	c1_author =	models.CharField(max_length=500, blank=True, null=True)
 	c1_file = models.FileField(blank=True, null=True)
-	
+
 	c2_name = models.CharField(max_length=500, blank=True, null=True)
 	c2_title = models.CharField(max_length=500, blank=True, null=True)
 	c2_place = models.CharField(max_length=500, blank=True, null=True)
@@ -490,7 +489,7 @@ class conference(models.Model):
 	c2_index = models.CharField(max_length=500, blank=True, null=True)
 	c2_author =	models.CharField(max_length=500, blank=True, null=True)
 	c2_file = models.FileField(blank=True, null=True)
-	
+
 	c3_name = models.CharField(max_length=500, blank=True, null=True)
 	c3_title = models.CharField(max_length=500, blank=True, null=True)
 	c3_place = models.CharField(max_length=500, blank=True, null=True)
@@ -506,7 +505,7 @@ class conference(models.Model):
 	c4_index = models.CharField(max_length=500, blank=True, null=True)
 	c4_author =	models.CharField(max_length=500, blank=True, null=True)
 	c4_file = models.FileField(blank=True, null=True)
-	
+
 	c5_name = models.CharField(max_length=500, blank=True, null=True)
 	c5_title = models.CharField(max_length=500, blank=True, null=True)
 	c5_place = models.CharField(max_length=500, blank=True, null=True)
@@ -540,7 +539,7 @@ class conference(models.Model):
 	c8_file = models.FileField(blank=True, null=True)
 
 	info = models.ForeignKey('User', on_delete=models.CASCADE,null=True)
-	
+
 
 	def __str__(self):
 		return self.info.first_name
@@ -629,7 +628,7 @@ class journal(models.Model):
 	j8_page = models.CharField(max_length=500,blank=True, null=True)
 	j8_author =	models.CharField(max_length=500, blank=True, null=True)
 	j8_file = models.FileField(blank=True, null=True)
-	
+
 	info = models.ForeignKey('User', on_delete=models.CASCADE,null=True)
 
 	def __str__(self):

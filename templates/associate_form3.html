@@ -104,6 +104,15 @@
 
 
     </div>
+
+    <h3>Upload Documents</h3>
+    <div class="form-group col-md-6">
+
+
+
+        {% render_field form4.w_file class="form-control" %}
+
+    </div>
 <div class="form-row dis">
           <div class="form-group col-md-2">
 
@@ -175,6 +184,11 @@
 
         </div>
 
+        <h3>Upload Documents</h3>
+        <div class="form-group col-md-6">
+            {% render_field form4.p_file class="form-control" %}
+        </div>
+
 
 
     </div>
@@ -217,6 +231,12 @@
      <label for="inputResearch">Online courses count:</label>
             {% render_field form4.onl_course_c class="form-control onl_course_c" %}
         </div>
+
+        <div class="form-group col-md-6">
+        <label for="inputResearch">Online courses Documents:</label>
+                 {% render_field form4.onl_course_c_file class="form-control" %}
+
+             </div>
         <div class="form-group col-md-6">
           <label for="inputResearch">Marks Here:</label>
                         {% render_field form4.onl_course_m class="form-control onl_course_m disabled" %}</div>
@@ -463,6 +483,13 @@
 </div>
 
 
+<div class="orm-group col-md-8">
+<label for="inputResearch">Upload documents</label>
+  {% render_field form4.s_j_n_file class="form-control" %}
+
+      </div>
+
+
 
 <div class="form-row">
 <div class="form-group col-sm-11">
@@ -593,6 +620,16 @@
         </div>
     </div>
 
+    <div class="form-group col-md-6">
+<h3>Upload Document</h3>
+
+
+         {% render_field form4.book_file class="form-control" %}
+
+    </div>
+
+
+
     <div class="form-row dis">
           <div class="form-group col-md-6">
 
@@ -636,6 +673,7 @@
       <th scope="col">Being Sole Principal Investigator</th>
       <th scope="col">Being first Principal Investigator</th>
       <th scope="col">Being Co-Investigator</th>
+      <th scope="col">Documents</th>
     </tr>
   </thead>
   <tbody>
@@ -644,18 +682,21 @@
       <td> {% render_field form4.if_s class="form-control if_s" %}</td>
       <td>{% render_field form4.if_f class="form-control if_f" %}</td>
       <td>{% render_field form4.if_c class="form-control if_c" %}</td>
+        <td>{% render_field form4.if_file class="form-control" %}</td>
     </tr>
     <tr>
       <th scope="row">Externally Funded Less than 5_Lakhs<span class="sp">( 5 marks/project )</span> </th>
        <td> {% render_field form4.ef_s class="form-control ef_s" %}</td>
       <td>{% render_field form4.ef_f class="form-control ef_f" %}</td>
       <td>{% render_field form4.ef_c class="form-control ef_c" %}</td>
+        <td>{% render_field form4.ef_file class="form-control" %}</td>
     </tr>
     <tr>
       <th scope="row">Externally Funded more than 5_Lakhs<span class="sp"> (10 marks/project)</span> </th>
       <td> {% render_field form4.eef_s class="form-control eef_s" %}</td>
       <td>{% render_field form4.eef_f class="form-control eef_f" %}</td>
       <td>{% render_field form4.eef_c class="form-control eef_c" %}</td>
+        <td>{% render_field form4.eef_file class="form-control" %}</td>
     </tr>
 		<tr>
 
@@ -666,19 +707,47 @@
 <table class="table table-bordered">
   <thead>
     <tr>
+
       <th scope="col">Funding</th>
+
       <th scope="col">Upto 2 Lakhs</th>
+
+        <th scope="col">Documents(Upto 2 Lakhs)</th>
+
       <th scope="col">Upto 2-5 Lakhs</th>
+
+        <th scope="col">Documents(Upto 2-5 Lakhs)</th>
+
       <th scope="col">Above 5 Lakhs</th>
+
+        <th scope="col">Documents(Above 5 Lakhs)</th>
+
+
+
     </tr>
   </thead>
   <tbody>
+
     <tr>
+
       <th scope="row">Consultancy Work</th>
+
       <td> {% render_field form4.Cw_2 class="form-control cw_2" %}</td>
+
+      <td>{% render_field form4.Cw_2_file class="form-control" %}</td>
+
       <td>{% render_field form4.Cw_2_5 class="form-control cw_2_5" %}</td>
+
+      <td>{% render_field form4.Cw_2_5_file class="form-control" %}</td>
+
       <td>{% render_field form4.Cw_5 class="form-control cw_5" %}</td>
+
+      <td>{% render_field form4.Cw_5_file class="form-control" %}</td>
+
+
+
     </tr>
+
     </tbody>
 </table>
 
@@ -711,6 +780,12 @@
           <h4>IPR Status :</h4>
          {% render_field form4.ipr_status class="form-control ipr_status" %}
 </div>
+
+ </div>
+
+ <div class="form-group col-md-12">
+ <label>IPR File</label>
+ {% render_field form4.ipr_file class="form-control" %}
 
  </div>
 

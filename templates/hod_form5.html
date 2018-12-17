@@ -65,7 +65,9 @@
 				<td>Title of the paper</td>
 				<td>Place</td>
 				<td>Date</td>
+				<td>Index</td>
 				<td>Author</td>
+				<td>Documents</td>
 			</tr>
 		</thead>
 		<tbody>
@@ -74,56 +76,73 @@
 				<td>{% render_field form6.c1_title class="form-control" %}</td>
 				<td>{% render_field form6.c1_place class="form-control" %}</td>
 				<td>{% render_field form6.c1_date class="form-control" %}</td>
+				<td>{% render_field form6.c1_index class="form-control" %}</td>
 				<td>{% render_field form6.c1_author class="form-control" %}</td>
+				<td>{% render_field form6.c1_file class="form-control" %}</td>
 			</tr>
 			<tr>
 				<td>{% render_field form6.c2_name class="form-control" %}</td>
 				<td>{% render_field form6.c2_title class="form-control" %}</td>
 				<td>{% render_field form6.c2_place class="form-control" %}</td>
 				<td>{% render_field form6.c2_date class="form-control" %}</td>
+				<td>{% render_field form6.c2_index class="form-control" %}</td>
 				<td>{% render_field form6.c2_author class="form-control" %}</td>
+				<td>{% render_field form6.c2_file class="form-control" %}</td>
 			</tr>
 			<tr>
 				<td>{% render_field form6.c3_name class="form-control" %}</td>
 				<td>{% render_field form6.c3_title class="form-control" %}</td>
 				<td>{% render_field form6.c3_place class="form-control" %}</td>
 				<td>{% render_field form6.c3_date class="form-control" %}</td>
+				<td>{% render_field form6.c3_index class="form-control" %}</td>
 				<td>{% render_field form6.c3_author class="form-control" %}</td>
+				<td>{% render_field form6.c3_file class="form-control" %}</td>
 			</tr>
 			<tr>
 				<td>{% render_field form6.c4_name class="form-control" %}</td>
 				<td>{% render_field form6.c4_title class="form-control" %}</td>
 				<td>{% render_field form6.c4_place class="form-control" %}</td>
 				<td>{% render_field form6.c4_date class="form-control" %}</td>
+				<td>{% render_field form6.c4_index class="form-control" %}</td>
 				<td>{% render_field form6.c4_author class="form-control" %}</td>
+				<td>{% render_field form6.c4_file class="form-control" %}</td>
 			</tr>
 			<tr>
 				<td>{% render_field form6.c5_name class="form-control" %}</td>
 				<td>{% render_field form6.c5_title class="form-control" %}</td>
 				<td>{% render_field form6.c5_place class="form-control" %}</td>
 				<td>{% render_field form6.c5_date class="form-control" %}</td>
+				<td>{% render_field form6.c5_index class="form-control" %}</td>
 				<td>{% render_field form6.c5_author class="form-control" %}</td>
+				<td>{% render_field form6.c5_file class="form-control" %}</td>
 			</tr>
 			<tr>
 				<td>{% render_field form6.c6_name class="form-control" %}</td>
 				<td>{% render_field form6.c6_title class="form-control" %}</td>
 				<td>{% render_field form6.c6_place class="form-control" %}</td>
 				<td>{% render_field form6.c6_date class="form-control" %}</td>
+				<td>{% render_field form6.c6_index class="form-control" %}</td>
 				<td>{% render_field form6.c6_author class="form-control" %}</td>
+				<td>{% render_field form6.c6_file class="form-control" %}</td>
 			</tr>
 			<tr>
 				<td>{% render_field form6.c7_name class="form-control" %}</td>
 				<td>{% render_field form6.c7_title class="form-control" %}</td>
 				<td>{% render_field form6.c7_place class="form-control" %}</td>
 				<td>{% render_field form6.c7_date class="form-control" %}</td>
+				<td>{% render_field form6.c7_index class="form-control" %}</td>
 				<td>{% render_field form6.c7_author class="form-control" %}</td>
+				<td>{% render_field form6.c7_file class="form-control" %}</td>
+
 			</tr>
 			<tr>
 				<td>{% render_field form6.c8_name class="form-control" %}</td>
 				<td>{% render_field form6.c8_title class="form-control" %}</td>
 				<td>{% render_field form6.c8_place class="form-control" %}</td>
 				<td>{% render_field form6.c8_date class="form-control" %}</td>
+				<td>{% render_field form6.c8_index class="form-control" %}</td>
 				<td>{% render_field form6.c8_author class="form-control" %}</td>
+				<td>{% render_field form6.c8_file class="form-control" %}</td>
 			</tr>
 		</tbody>
 	</table>
@@ -141,6 +160,7 @@
 			<td>Issn/Doi no.</td>
 			<td>Page</td>
 			<td>Author</td>
+			<td>Documents</td>
 		</tr>
 	</thead>
 	<tbody>
@@ -153,6 +173,7 @@
 			<td>{% render_field form7.j1_issn class="form-control" %}</td>
 			<td>{% render_field form7.j1_page class="form-control" %}</td>
 			<td>{% render_field form7.j1_author class="form-control" %}</td>
+				<td>{% render_field form7.j1_file class="form-control" %}</td>
 		</tr>
 		<tr>
 			<td>{% render_field form7.j2_name class="form-control" %}</td>
@@ -163,6 +184,7 @@
 			<td>{% render_field form7.j2_issn class="form-control" %}</td>
 			<td>{% render_field form7.j2_page class="form-control" %}</td>
 			<td>{% render_field form7.j2_author class="form-control" %}</td>
+				<td>{% render_field form7.j2_file class="form-control" %}</td>
 		</tr>
 		<tr>
 			<td>{% render_field form7.j3_name class="form-control" %}</td>
@@ -173,6 +195,7 @@
 			<td>{% render_field form7.j3_issn class="form-control" %}</td>
 			<td>{% render_field form7.j3_page class="form-control" %}</td>
 			<td>{% render_field form7.j3_author class="form-control" %}</td>
+				<td>{% render_field form7.j3_file class="form-control" %}</td>
 		</tr>
 		<tr>
 			<td>{% render_field form7.j4_name class="form-control" %}</td>
@@ -183,6 +206,7 @@
 			<td>{% render_field form7.j4_issn class="form-control" %}</td>
 			<td>{% render_field form7.j4_page class="form-control" %}</td>
 			<td>{% render_field form7.j4_author class="form-control" %}</td>
+				<td>{% render_field form7.j4_file class="form-control" %}</td>
 		</tr>
 		<tr>
 			<td>{% render_field form7.j5_name class="form-control" %}</td>
@@ -193,6 +217,7 @@
 			<td>{% render_field form7.j5_issn class="form-control" %}</td>
 			<td>{% render_field form7.j5_page class="form-control" %}</td>
 			<td>{% render_field form7.j5_author class="form-control" %}</td>
+				<td>{% render_field form7.j5_file class="form-control" %}</td>
 		</tr>
 		<tr>
 			<td>{% render_field form7.j6_name class="form-control" %}</td>
@@ -203,6 +228,7 @@
 			<td>{% render_field form7.j6_issn class="form-control" %}</td>
 			<td>{% render_field form7.j6_page class="form-control" %}</td>
 			<td>{% render_field form7.j6_author class="form-control" %}</td>
+				<td>{% render_field form7.j6_file class="form-control" %}</td>
 		</tr>
 		<tr>
 			<td>{% render_field form7.j7_name class="form-control" %}</td>
@@ -213,6 +239,7 @@
 			<td>{% render_field form7.j7_issn class="form-control" %}</td>
 			<td>{% render_field form7.j7_page class="form-control" %}</td>
 			<td>{% render_field form7.j7_author class="form-control" %}</td>
+				<td>{% render_field form7.j7_file class="form-control" %}</td>
 		</tr>
 		<tr>
 			<td>{% render_field form7.j8_name class="form-control" %}</td>
@@ -223,6 +250,7 @@
 			<td>{% render_field form7.j8_issn class="form-control" %}</td>
 			<td>{% render_field form7.j8_page class="form-control" %}</td>
 			<td>{% render_field form7.j8_author class="form-control" %}</td>
+				<td>{% render_field form7.j8_file class="form-control" %}</td>
 		</tr>
 
 	</tbody>

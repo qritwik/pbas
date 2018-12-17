@@ -69,6 +69,14 @@
               {% render_field form2.it_t class="form-control" id="datepicker1" placeholder="YYYY-MM-DD" %}
           </div>
 
+          <div class="form-group col-md-3">
+
+            <label for="">Internship report file</label>
+
+            {% render_field form2.internship_report_file class="form-control" %}
+
+          </div>
+
           <div class="form-group col-md-6">
             <label for="inputEmpName">Emp Name</label>
             <input type="email" class="form-control" id="inputEmpName" placeholder="EmpName" value="{{ info.first_name }}" disabled>
