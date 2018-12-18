@@ -122,7 +122,7 @@ class empDetailForm(models.Model):
 	internship_report_file = models.FileField(blank=True, null=True)
 
 	def get_absolute_url1(self):
-    return reverse_lazy('assistant_form1', {'pk': self.pk})
+    return reverse_lazy('assistant_form1', kwargs={'pk': self.pk})
 
     # def get_absolute_url2(self):
     # return reverse_lazy('associate_form1', {'pk': self.pk})
