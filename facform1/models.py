@@ -23,7 +23,6 @@ class Department(models.Model):
 
 class ipr_type(models.Model):
 	"""
-	Description: Model Description
 	"""
 	name = models.CharField(max_length=40, blank=True, null=True)
 
