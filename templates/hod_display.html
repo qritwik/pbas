@@ -63,9 +63,7 @@
 							<div class="cell">
 								Faculty Name
 							</div>
-							<div class="cell">
-								Documents
-							</div>
+
 							<div class="cell">
 								Faculty Submission
 							</div>
@@ -87,9 +85,7 @@
 								{% endif %}
 								  <!-- <a {% if info.hod_status == False %} href="/hod_teacher_display/{{info.pk}}" {% else %} href="#" {% endif %}>{{info.first_name}}</a> -->
 							</div>
-							<div class="cell" data-title="Documents">
-								<a href="{{info.doc_link}}">Drive link</a>
-							</div>
+
 							<div class="cell" data-title="f-sub">
                 {% if info.teach_status %}
 								  <span class="badge badge-success pull-left">{{info.teach_status}}</span>
@@ -122,9 +118,7 @@
 								<a href="#" class="h3p">{{info.first_name}}</a>
 								{% endif %}
 							</div>
-							<div class="cell" data-title="Documents">
-								<a href="{{info.doc_link}}">Drive link</a>
-							</div>
+							
 							<div class="cell" data-title="f-sub">
                 {% if info.teach_status %}
                   <span class="badge badge-success pull-left">{{info.teach_status}}</span>

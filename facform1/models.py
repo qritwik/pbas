@@ -47,7 +47,6 @@ class User(AbstractUser):
 	teach_status = models.BooleanField(default=False)
 	hod_status = models.BooleanField(default=False)
 	principal_status = models.BooleanField(default=False)
-	doc_link = models.CharField(max_length=2000,null=True)
 	info = models.CharField(max_length=20, blank=True, null=True)
 
 	def __str__(self):

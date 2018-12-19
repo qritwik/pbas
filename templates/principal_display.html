@@ -82,9 +82,7 @@
 							<div class="cell">
 								Faculty Name
 							</div>
-							<div class="cell">
-								Documents
-							</div>
+
 
 							<div class="cell">
 								Designation
@@ -109,9 +107,6 @@
 								<a href="/principal_hod_display/{{hod_name.pk}}" class="">{{hod_name.first_name}}</a>
 								{% endif %}
 								{% endif %}
-							</div>
-							<div class="cell" data-title="Documents">
-								<a href="{{hod_name.doc_link}}">Drive link</a>
 							</div>
 
 							<div class="cell" data-title="designation">
@@ -141,9 +136,7 @@
 								{% endif %}
 								  <!-- <a {% if name.principal_status == False %} href="/principal_teacher1_display/{{name.pk}}" {% else %} href="#" {% endif %}>{{name.first_name}}</a> -->
 							</div>
-							<div class="cell" data-title="Documents">
-								<a href="{{name.doc_link}}">Drive link</a>
-							</div>
+
 
 							<div class="cell" data-title="designation">
 
@@ -176,9 +169,7 @@
 
                   <!-- <a {% if name1.principal_status == False %} href="/principal_teacher_display/{{name1.pk}}" {% else %} href="#" {% endif %}>{{name1.first_name}}</a> -->
               </div>
-              <div class="cell" data-title="Documents">
-                <a href="{{name1.doc_link}}">Drive link</a>
-              </div>
+              
 
 							<div class="cell" data-title="designation">
 								<p>{{ name1.designation }}</p>
