@@ -138,14 +138,10 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
-if DEBUG:
-	STATIC_URL = '/static/'
-	MEDIA_URL = '/mediafiles/'
 
+STATIC_URL = '/static/'
+MEDIA_URL = '/mediafiles/'
 
-else:
-	STATIC_URL = 'https://aayush-n.github.io/pbas-static/'
-	MEDIA_URL = 'https://github.com/qritwik/media.github.io/tree/master/media/'
 
 STATICFILES_DIRS = [
 	STATIC_DIR,
