@@ -120,6 +120,14 @@ class empDetailForm(models.Model):
 	info = models.ForeignKey('User', on_delete=models.CASCADE,null=True)
 	internship_report_file = models.FileField(blank=True, null=True)
 
+	# def get_absolute_url1(self):
+ #    return reverse_lazy('assistant_form1', kwargs={'pk': self.pk})
+
+    # def get_absolute_url2(self):
+    # return reverse_lazy('associate_form1', {'pk': self.pk})
+
+    # def get_absolute_url3(self):
+    # return reverse_lazy('hod_form1', {'pk': self.pk})
 
 	def __str__(self):
 		return self.info.first_name
