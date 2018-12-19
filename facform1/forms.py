@@ -19,7 +19,7 @@ class form_conference(forms.ModelForm):
 		fields = '__all__'
 		exclude = ['info']
 
-						
+
 
 class form_journal(forms.ModelForm):
 	class Meta:
@@ -32,7 +32,7 @@ class form_User(forms.ModelForm):
 
 	class Meta:
 		model = User
-		fields = ('doc_link',)
+		
 
 
 
