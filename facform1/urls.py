@@ -69,4 +69,4 @@ urlpatterns = [
     url(r'^ao_hod_display/(?P<name>[\w\-\.\w]+)$',views.ao_hod_display,name="ao_hod_display"),
 
  #    url(r'^success/', views.success,name="success"),
-  ]
+  ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
