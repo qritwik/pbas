@@ -1382,7 +1382,7 @@ def f_assistant1(request):
 
 			if request.method == 'POST':
 				# form1 = forms.form_User(request.POST)
-				form2 = forms.form_empDetailForm(request.POST,request.FILES)
+				form2 = forms.form_empDetailForm(request.POST)
 
 
 				if form2.is_valid():
