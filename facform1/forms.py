@@ -28,11 +28,11 @@ class form_journal(forms.ModelForm):
 		exclude = ['info']
 
 
-class form_User(forms.ModelForm):
-
-	class Meta:
-		model = User
-		fields = '__all__'
+# class form_User(forms.ModelForm):
+#
+# 	class Meta:
+# 		model = User
+# 		fields = '__all__'
 
 
 

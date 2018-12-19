@@ -1371,7 +1371,7 @@ def f_assistant1(request):
 		user = request.user
 		print(user)
 		data_final = User.objects.get(username=user)
-		form1 = forms.form_User()
+		# form1 = forms.form_User()
 		form2 = forms.form_empDetailForm()
 
 		if empDetailForm.objects.filter(info=user).exists():
@@ -1381,24 +1381,24 @@ def f_assistant1(request):
 		else:
 
 			if request.method == 'POST':
-				form1 = forms.form_User(request.POST)
+				# form1 = forms.form_User(request.POST)
 				form2 = forms.form_empDetailForm(request.POST)
 
 
-				if form1.is_valid() and form2.is_valid():
+				if form2.is_valid():
 
-					sendme = User.objects.get(username=request.user)
+					# sendme = User.objects.get(username=request.user)
 
 					obj = form2.save(commit=False)
 					obj.info = request.user
 					obj.save()
 
-					sendme.doc_link  = 	form1.cleaned_data['doc_link']
-					sendme.save()
+					# sendme.doc_link  = 	form1.cleaned_data['doc_link']
+					# sendme.save()
 
 					return HttpResponseRedirect("/assistant_form2/")
-			return render(request,'assistant_form1.html',{'form1':form1,'form2':form2,'info':data_final})
-		return render(request,'assistant_form1.html',{'form1':form1,'form2':form2,'info':data_final})
+			return render(request,'assistant_form1.html',{'form2':form2,'info':data_final})
+		return render(request,'assistant_form1.html',{'form2':form2,'info':data_final})
 	else:
 		return HttpResponseRedirect('/invalid')
 
@@ -1510,7 +1510,7 @@ def f_associate1(request):
 		user = request.user
 		print(user)
 		data_final = User.objects.get(username=user)
-		form1 = forms.form_User()
+		# form1 = forms.form_User()
 		form2 = forms.form_empDetailForm()
 
 		if empDetailForm.objects.filter(info=user).exists():
@@ -1520,24 +1520,24 @@ def f_associate1(request):
 		else:
 
 			if request.method == 'POST':
-				form1 = forms.form_User(request.POST)
+				# form1 = forms.form_User(request.POST)
 				form2 = forms.form_empDetailForm(request.POST)
-				print(form1.errors)
+				# print(form1.errors)
 				print(form2.errors)
-				if form1.is_valid() and form2.is_valid():
+				if form2.is_valid():
 
-					sendme = User.objects.get(username=request.user)
+					# sendme = User.objects.get(username=request.user)
 
 					obj = form2.save(commit=False)
 					obj.info = request.user
 					obj.save()
 
-					sendme.doc_link  = 	form1.cleaned_data['doc_link']
-					sendme.save()
+					# sendme.doc_link  = 	form1.cleaned_data['doc_link']
+					# sendme.save()
 
 					return HttpResponseRedirect("/associate_form2/")
-			return render(request,'associate_form1.html',{'form1':form1,'form2':form2,'info':data_final})
-		return render(request,'associate_form1.html',{'form1':form1,'form2':form2,'info':data_final})
+			return render(request,'associate_form1.html',{'form2':form2,'info':data_final})
+		return render(request,'associate_form1.html',{'form2':form2,'info':data_final})
 	else:
 		return HttpResponseRedirect('/invalid')
 
@@ -1646,7 +1646,7 @@ def hod_form1(request):
 		user = request.user
 		print(user)
 		data_final = User.objects.get(username=user)
-		form1 = forms.form_User()
+		# form1 = forms.form_User()
 		form2 = forms.form_empDetailForm()
 
 		if empDetailForm.objects.filter(info=user).exists():
@@ -1656,24 +1656,24 @@ def hod_form1(request):
 		else:
 
 			if request.method == 'POST':
-				form1 = forms.form_User(request.POST)
+				# form1 = forms.form_User(request.POST)
 				form2 = forms.form_empDetailForm(request.POST)
 
 
-				if form1.is_valid() and form2.is_valid():
+				if form2.is_valid():
 
-					sendme = User.objects.get(username=request.user)
+					# sendme = User.objects.get(username=request.user)
 
 					obj = form2.save(commit=False)
 					obj.info = request.user
 					obj.save()
 
-					sendme.doc_link  = 	form1.cleaned_data['doc_link']
-					sendme.save()
+					# sendme.doc_link  = 	form1.cleaned_data['doc_link']
+					# sendme.save()
 
 					return HttpResponseRedirect("/hod_form2/")
-			return render(request,'hod_form1.html',{'form1':form1,'form2':form2,'info':data_final})
-		return render(request,'hod_form1.html',{'form1':form1,'form2':form2,'info':data_final})
+			return render(request,'hod_form1.html',{'form2':form2,'info':data_final})
+		return render(request,'hod_form1.html',{'form2':form2,'info':data_final})
 
 	else:
 		return HttpResponseRedirect('/invalid')

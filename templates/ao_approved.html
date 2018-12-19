@@ -66,9 +66,6 @@
 							<div class="cell">
 								Faculty Name
 							</div>
-							<div class="cell">
-								Documents
-							</div>
 
 							<div class="cell">
 								Designation
@@ -88,7 +85,7 @@
 
 						<div class="row">
 							<div class="cell" data-title="Faculty Name">
-                <a {% if x.info.designation.pk == 8 %} 
+                <a {% if x.info.designation.pk == 8 %}
                 	{% if x.info == "HOD_CIVIL" %}
 					href="/ao_teacher1_display/{{x.info}}"
 					{% else %}
@@ -99,9 +96,7 @@
                  {% elif x.info.designation.pk == 11 %} href="/ao_teacher_display/{{x.info}}"
                  {% endif %}>{{x.info.first_name}}</a>
               </div>
-							<div class="cell" data-title="Documents">
-								<a href="{{x.info.doc_link}}">Drive link</a>
-							</div>
+						
 
 							<div class="cell" data-title="designation">
 								{{ x.info.designation }}
