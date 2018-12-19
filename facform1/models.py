@@ -1,5 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser, User
+from django.conf import settings
+
 # from django.urls import reverse
 
 #TABLE-1
@@ -119,7 +121,7 @@ class empDetailForm(models.Model):
 	exp_res = models.FloatField( blank=True, null=True)
 	exp_indus = models.FloatField(blank=True, null=True)
 	info = models.ForeignKey('User', on_delete=models.CASCADE,null=True)
-	internship_report_file = models.FileField(blank=True, null=True)
+	internship_report_file = models.FileField(blank=True, null=True, upload_to = settings.MEDIA_URL)
 
 	# def get_absolute_url(self):
  #    	return reverse('assistant_form1', kwargs={'pk': self.pk})
