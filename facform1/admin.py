@@ -25,8 +25,6 @@ class UserAdmin(DjangoUserAdmin, ImportExportModelAdmin):
 		(('Permissions'), {'fields': ('is_active', 'is_staff', 'is_superuser',
 									   )}),
 
-		(('Documents'), {'fields': ('doc_link',)}),
-
 		(('Status'), {'fields': ('teach_status','hod_status','principal_status')}),
 
 		(('Designation'), {'fields': ('designation',)}),
