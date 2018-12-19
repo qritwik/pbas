@@ -1280,8 +1280,8 @@ def f_assistant5(request):
 		else:
 			if request.method == 'POST':
 				sendme = User.objects.get(username=request.user)
-				form6 = forms.form_conference(request.POST)
-				form7 = forms.form_journal(request.POST)
+				form6 = forms.form_conference(request.POST,request.FILES)
+				form7 = forms.form_journal(request.POST,request.FILES)
 				if form6.is_valid() and form7.is_valid():
 					obj3 = form6.save(commit=False)
 					obj4 = form7.save(commit=False)
@@ -1330,7 +1330,7 @@ def f_assistant3(request):
 			return HttpResponseRedirect("/assistant_form4/")
 		else:
 			if request.method == 'POST':
-				form4 = forms.form_rd(request.POST)
+				form4 = forms.form_rd(request.POST,request.FILES)
 				if form4.is_valid():
 					obj2 = form4.save(commit=False)
 					obj2.info = request.user
@@ -1382,7 +1382,7 @@ def f_assistant1(request):
 
 			if request.method == 'POST':
 				# form1 = forms.form_User(request.POST)
-				form2 = forms.form_empDetailForm(request.POST)
+				form2 = forms.form_empDetailForm(request.POST,request.FILES)
 
 
 				if form2.is_valid():
@@ -1415,8 +1415,8 @@ def f_associate5(request):
 		else:
 			if request.method == 'POST':
 				sendme = User.objects.get(username=request.user)
-				form6 = forms.form_conference(request.POST)
-				form7 = forms.form_journal(request.POST)
+				form6 = forms.form_conference(request.POST,request.FILES)
+				form7 = forms.form_journal(request.POST,request.FILES)
 				if form6.is_valid() and form7.is_valid():
 					obj3 = form6.save(commit=False)
 					obj4 = form7.save(commit=False)
@@ -1468,7 +1468,7 @@ def f_associate3(request):
 			return HttpResponseRedirect("/associate_form4/")
 		else:
 			if request.method == 'POST':
-				form4 = forms.form_rd(request.POST)
+				form4 = forms.form_rd(request.POST,request.FILES)
 				if form4.is_valid():
 					obj2 = form4.save(commit=False)
 					obj2.info = request.user
@@ -1521,7 +1521,7 @@ def f_associate1(request):
 
 			if request.method == 'POST':
 				# form1 = forms.form_User(request.POST)
-				form2 = forms.form_empDetailForm(request.POST)
+				form2 = forms.form_empDetailForm(request.POST,request.FILES)
 				# print(form1.errors)
 				print(form2.errors)
 				if form2.is_valid():
@@ -1554,8 +1554,8 @@ def hod_form5(request):
 		else:
 			if request.method == 'POST':
 				sendme = User.objects.get(username=request.user)
-				form6 = forms.form_conference(request.POST)
-				form7 = forms.form_journal(request.POST)
+				form6 = forms.form_conference(request.POST,request.FILES)
+				form7 = forms.form_journal(request.POST,request.FILES)
 				if form6.is_valid() and form7.is_valid():
 					obj3 = form6.save(commit=False)
 					obj4 = form7.save(commit=False)
@@ -1603,7 +1603,7 @@ def hod_form3(request):
 			return HttpResponseRedirect("/hod_form4/")
 		else:
 			if request.method == 'POST':
-				form4 = forms.form_rd(request.POST)
+				form4 = forms.form_rd(request.POST,request.FILES)
 				if form4.is_valid():
 					obj2 = form4.save(commit=False)
 					obj2.info = request.user
@@ -1657,7 +1657,7 @@ def hod_form1(request):
 
 			if request.method == 'POST':
 				# form1 = forms.form_User(request.POST)
-				form2 = forms.form_empDetailForm(request.POST)
+				form2 = forms.form_empDetailForm(request.POST,request.FILES)
 
 
 				if form2.is_valid():
