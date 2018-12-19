@@ -1,5 +1,6 @@
 from django.conf.urls import url
 from . import views
+from django.conf.urls.static import static
 from django.contrib.auth.views import login, logout
 from . import forms
 
