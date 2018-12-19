@@ -145,7 +145,7 @@ if DEBUG:
 
 else:
 	STATIC_URL = 'https://aayush-n.github.io/pbas-static/'
-	MEDIA_URL = 'https://github.com/qritwik/media.github.io/media/'
+	MEDIA_URL = 'https://github.com/qritwik/media.github.io/tree/master/media/'
 
 STATICFILES_DIRS = [
 	STATIC_DIR,
