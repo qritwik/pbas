@@ -28,7 +28,7 @@ MEDIA_DIR = os.path.join(BASE_DIR,"media")
 SECRET_KEY = '0&mt7*ddqn#+62-jvql4*mm3#-t1inp#4vi(i58(i^7nv923h^'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 
 ALLOWED_HOSTS = ['*']
@@ -140,7 +140,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 if DEBUG:
 	STATIC_URL = '/static/'
-	
+
 else:
 	STATIC_URL = 'https://aayush-n.github.io/pbas-static/'
 STATICFILES_DIRS = [
