@@ -39,7 +39,7 @@
             <label for="">To</label>
             <input type="text" class="form-control" id="inputEmpName" disabled value="{{ key2.it_t }}">
           </div>
-          <div class="form-group col-md-3">
+          <div class="form-group col-md-6">
 
             <label for="">Internship report file</label> 
             {% if key2.internship_report_file %}
@@ -893,9 +893,9 @@
 	 <div class="form-group col-md-6">
 					<input type="text" class="form-control" disabled value="{{key4.onl_course_c}}">
 				</div>
-        <label>Online courses Documents:</label>
+        
         <div class="form-group col-md-6">
-
+          <label>Online courses Documents:</label>
 
           {% if key4.onl_course_c_file %}
            <a href="/media/{{key4.onl_course_c_file}}">Click to view</a>
@@ -1162,7 +1162,15 @@
               <h6 class=" color1">TOTAL MARKS<span class="sp"></span></h6>
               {{ key4.o_j_m }}
                   </div>
-                  <div class="orm-group col-md-8">
+                  
+                  <div class="orm-group col-md-2">
+
+                  </div>
+              </div>
+
+</div>
+</div>
+<div class="orm-group col-md-8">
 <label for="inputResearch">Documents</label>
 {% if key4.s_j_n_file %}
            <a href="/media/{{key4.s_j_n_file}}">Click to view</a>
@@ -1171,14 +1179,6 @@
             {% endif %}
 
       </div>
-                  <div class="orm-group col-md-2">
-
-                  </div>
-              </div>
-
-</div>
-</div>
-
 </div>
 </div>
 <!--    <form>
@@ -1239,7 +1239,7 @@
         <td>{{ key6.c1_place }}</td>
         <td>{{ key6.c1_date }}</td>
         <td>{{ key6.c1_author }}</td>
-        <td><a href="/media/{{key6.c1_file}}"></a></td>
+        <td><a href="/media/{{key6.c1_file}}">Click to view</a></td>
       </tr>
       {% endif %}
       {% if key6.c2_name %}
@@ -1249,7 +1249,7 @@
         <td>{{ key6.c2_place }}</td>
         <td>{{ key6.c2_date }}</td>
         <td>{{ key6.c2_author }}</td>
-        <td><a href="/media/{{key6.c2_file}}"></a></td>
+        <td><a href="/media/{{key6.c2_file}}">Click to view</a></td>
 
       </tr>
       {% endif %}
@@ -1260,7 +1260,7 @@
         <td>{{ key6.c3_place }}</td>
         <td>{{ key6.c3_date }}</td>
         <td>{{ key6.c3_author }}</td>
-        <td><a href="/media/{{key6.c3_file}}"></a></td>
+        <td><a href="/media/{{key6.c3_file}}">Click to view</a></td>
 
       </tr>
       {% endif %}
@@ -1271,7 +1271,7 @@
         <td>{{ key6.c4_place }}</td>
         <td>{{ key6.c4_date }}</td>
         <td>{{ key6.c4_author }}</td>
-        <td><a href="/media/{{key6.c4_file}}"></a></td>
+        <td><a href="/media/{{key6.c4_file}}">Click to view</a></td>
 
       </tr>
       {% endif %}
@@ -1282,7 +1282,7 @@
         <td>{{ key6.c5_place }}</td>
         <td>{{ key6.c5_date }}</td>
         <td>{{ key6.c5_author }}</td>
-        <td><a href="/media/{{key6.c5_file}}"></a></td>
+        <td><a href="/media/{{key6.c5_file}}">Click to view</a></td>
 
       </tr>
       {% endif %}
@@ -1293,7 +1293,7 @@
         <td>{{ key6.c6_place }}</td>
         <td>{{ key6.c6_date }}</td>
         <td>{{ key6.c6_author }}</td>
-        <td><a href="/media/{{key6.c6_file}}"></a></td>
+        <td><a href="/media/{{key6.c6_file}}">Click to view</a></td>
 
       </tr>
       {% endif %}
@@ -1304,7 +1304,7 @@
         <td>{{ key6.c7_place }}</td>
         <td>{{ key6.c7_date }}</td>
         <td>{{ key6.c7_author }}</td>
-        <td><a href="/media/{{key6.c7_file}}"></a></td>
+        <td><a href="/media/{{key6.c7_file}}">Click to view</a></td>
 
       </tr>
       {% endif %}
@@ -1315,7 +1315,7 @@
         <td>{{ key6.c8_place }}</td>
         <td>{{ key6.c8_date }}</td>
         <td>{{ key6.c8_author }}</td>
-        <td><a href="/media/{{key6.c8_file}}"></a></td>
+        <td><a href="/media/{{key6.c8_file}}">Click to view</a></td>
 
       </tr>
       {% endif %}
@@ -1349,7 +1349,7 @@
       <td>{{ key7.j1_issn }}</td>
       <td>{{ key7.j1_page }}</td>
       <td>{{ key7.j1_author }}</td>
-      <td><a href="/media/{{key7.j1_file}}"></a></td>
+      <td><a href="/media/{{key7.j1_file}}">Click to view</a></td>
 
 
     </tr>
@@ -1364,7 +1364,7 @@
       <td>{{ key7.j2_issn }}</td>
       <td>{{ key7.j2_page }}</td>
       <td>{{ key7.j2_author }}</td>
-      <td><a href="/media/{{key7.j2_file}}"></a></td>
+      <td><a href="/media/{{key7.j2_file}}">Click to view</a></td>
 
 
     </tr>
@@ -1379,7 +1379,7 @@
       <td>{{ key7.j3_issn }}</td>
       <td>{{ key7.j3_page }}</td>
       <td>{{ key7.j3_author }}</td>
-      <td><a href="/media/{{key7.j3_file}}"></a></td>
+      <td><a href="/media/{{key7.j3_file}}">Click to view</a></td>
 
 
     </tr>
@@ -1394,7 +1394,7 @@
       <td>{{ key7.j4_issn }}</td>
       <td>{{ key7.j4_page }}</td>
       <td>{{ key7.j4_author }}</td>
-      <td><a href="/media/{{key7.j4_file}}"></a></td>
+      <td><a href="/media/{{key7.j4_file}}">Click to view</a></td>
 
 
     </tr>
@@ -1409,7 +1409,7 @@
       <td>{{ key7.j5_issn }}</td>
       <td>{{ key7.j5_page }}</td>
       <td>{{ key7.j5_author }}</td>
-      <td><a href="/media/{{key7.j5_file}}"></a></td>
+      <td><a href="/media/{{key7.j5_file}}">Click to view</a></td>
 
 
     </tr>
@@ -1424,7 +1424,7 @@
       <td>{{ key7.j6_issn }}</td>
       <td>{{ key7.j6_page }}</td>
       <td>{{ key7.j6_author }}</td>
-      <td><a href="/media/{{key7.j6_file}}"></a></td>
+      <td><a href="/media/{{key7.j6_file}}">Click to view</a></td>
 
 
     </tr>
@@ -1439,7 +1439,7 @@
       <td>{{ key7.j7_issn }}</td>
       <td>{{ key7.j7_page }}</td>
       <td>{{ key7.j7_author }}</td>
-      <td><a href="/media/{{key7.j7_file}}"></a></td>
+      <td><a href="/media/{{key7.j7_file}}">Click to view</a></td>
 
 
     </tr>
@@ -1454,7 +1454,7 @@
       <td>{{ key7.j8_issn }}</td>
       <td>{{ key7.j8_page }}</td>
       <td>{{ key7.j8_author }}</td>
-      <td><a href="/media/{{key7.j8_file}}"></a></td>
+      <td><a href="/media/{{key7.j8_file}}">Click to view</a></td>
 
     </tr>
     {% endif %}
@@ -1660,11 +1660,11 @@
             <a href="#">Click to view</a>
             {% endif %}</td>
       <td>{{ key4.Cw_5 }}</td>
-      <td><td>{% if key4.Cw_5_file %}
+      <td>{% if key4.Cw_5_file %}
            <a href="/media/{{key4.Cw_5_file}}"></a>
             {% else %}
             <a href="#">Click to view</a>
-            {% endif %}</td></td>
+            {% endif %}</td>
     </tr>
     </tbody>
 </table>
