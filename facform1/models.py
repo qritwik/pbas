@@ -398,7 +398,7 @@ class rd(models.Model):
 	p_s_file = models.FileField(blank=True, null=True)
 
 	p_n_d = models.IntegerField( blank=True, null=True)
-	p_n_dfile = models.FileField(blank=True, null=True)
+	p_n_file = models.FileField(blank=True, null=True)
 
 	p_i_d = models.IntegerField( blank=True, null=True)
 	p_i_file = models.FileField(blank=True, null=True)
