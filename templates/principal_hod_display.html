@@ -71,6 +71,16 @@
                     <label for="">To</label>
                     <input type="text" class="form-control" id="inputEmpName" disabled value="{{ key2.it_t }}">
                   </div>
+                  <div class="form-group col-md-6">
+
+            <label for="">Internship report file</label> 
+            {% if key2.internship_report_file %}
+            <a href="/media/{{ key2.internship_report_file}}">Click to view</a>
+            {% else %}
+            <a href="#"></a>
+            {% endif %}
+
+          </div>
 
                   <div class="form-group col-md-6">
                     <label for="inputEmpName">Employee Name</label>
@@ -784,6 +794,17 @@
 
 
               </div>
+              <h3>Documents</h3>
+        <div class="form-group col-md-6">
+
+
+          {% if key4.w_file %}
+            <a href="/media/{{key4.w_file}}">Click to view</a>
+            {% else %}
+            <a href="#"></a>
+            {% endif %}
+
+        </div>
           		<div class="form-row dis">
           							<div class="form-group col-md-2">
 
@@ -863,6 +884,17 @@
 
 
             </div>
+            <h3>Documents</h3>
+        <div class="form-group col-md-6">
+
+
+          {% if key4.p_file %}
+            <a href="/media/{{key4.p_file}}">Click to view</a>
+            {% else %}
+            <a href="#"></a>
+            {% endif %}
+
+        </div>
             <div class="form-row dis">
                       <div class="form-group col-md-2">
 
@@ -905,6 +937,17 @@
            <div class="form-group col-md-6">
                   <input type="text" class="form-control" disabled value="{{key4.onl_course_c}}">
                 </div>
+                
+        <div class="form-group col-md-6">
+          <label>Online courses Documents:</label>
+
+          {% if key4.onl_course_c_file %}
+           <a href="/media/{{key4.onl_course_c_file}}">Click to view</a>
+            {% else %}
+            <a href="#"></a>
+            {% endif %}
+
+        </div>
 
                 <div class="form-group col-md-6">
                <h6 class="color1">TOTAL MARKS<span class="sp"></span></h6>
@@ -1187,6 +1230,7 @@
           						<div class="orm-group col-md-8">
                           <h6 class=" color1">TOTAL MARKS<span class="sp"></span></h6>
           {{ key4.o_j_m }}									</div>
+          
           									<div class="orm-group col-md-2">
 
           									</div>
@@ -1194,7 +1238,15 @@
 
           </div>
           </div>
+          <div class="orm-group col-md-8">
+<label for="inputResearch">Documents</label>
+{% if key4.s_j_n_file %}
+           <a href="/media/{{key4.s_j_n_file}}">Click to view</a>
+            {% else %}
+            <a href="#"></a>
+            {% endif %}
 
+      </div>
           </div>
           </div>
           <!--    <form>
@@ -1243,8 +1295,8 @@
         <td>Title of the paper</td>
         <td>Place</td>
         <td>Date</td>
-        <td>Indexed</td>
         <td>Author</td>
+        <td>Documents</td>
       </tr>
     </thead>
     <tbody>
@@ -1254,8 +1306,8 @@
         <td>{{ key6.c1_title }}</td>
         <td>{{ key6.c1_place }}</td>
         <td>{{ key6.c1_date }}</td>
-        <td>{{ key6.c1_index }}</td>
         <td>{{ key6.c1_author }}</td>
+        <td><a href="/media/{{key6.c1_file}}">Click to view</a></td>
       </tr>
       {% endif %}
       {% if key6.c2_name %}
@@ -1264,8 +1316,9 @@
         <td>{{ key6.c2_title }}</td>
         <td>{{ key6.c2_place }}</td>
         <td>{{ key6.c2_date }}</td>
-        <td>{{ key6.c2_index }}</td>
         <td>{{ key6.c2_author }}</td>
+        <td><a href="/media/{{key6.c2_file}}">Click to view</a></td>
+
       </tr>
       {% endif %}
       {% if key6.c3_name %}
@@ -1274,8 +1327,9 @@
         <td>{{ key6.c3_title }}</td>
         <td>{{ key6.c3_place }}</td>
         <td>{{ key6.c3_date }}</td>
-        <td>{{ key6.c3_index }}</td>
         <td>{{ key6.c3_author }}</td>
+        <td><a href="/media/{{key6.c3_file}}">Click to view</a></td>
+
       </tr>
       {% endif %}
       {% if key6.c4_name %}
@@ -1284,8 +1338,9 @@
         <td>{{ key6.c4_title }}</td>
         <td>{{ key6.c4_place }}</td>
         <td>{{ key6.c4_date }}</td>
-        <td>{{ key6.c4_index }}</td>
         <td>{{ key6.c4_author }}</td>
+        <td><a href="/media/{{key6.c4_file}}">Click to view</a></td>
+
       </tr>
       {% endif %}
       {% if key6.c5_name %}
@@ -1294,8 +1349,9 @@
         <td>{{ key6.c5_title }}</td>
         <td>{{ key6.c5_place }}</td>
         <td>{{ key6.c5_date }}</td>
-        <td>{{ key6.c5_index }}</td>
         <td>{{ key6.c5_author }}</td>
+        <td><a href="/media/{{key6.c5_file}}">Click to view</a></td>
+
       </tr>
       {% endif %}
       {% if key6.c6_name %}
@@ -1304,8 +1360,9 @@
         <td>{{ key6.c6_title }}</td>
         <td>{{ key6.c6_place }}</td>
         <td>{{ key6.c6_date }}</td>
-        <td>{{ key6.c6_index }}</td>
         <td>{{ key6.c6_author }}</td>
+        <td><a href="/media/{{key6.c6_file}}">Click to view</a></td>
+
       </tr>
       {% endif %}
       {% if key6.c7_name %}
@@ -1314,8 +1371,9 @@
         <td>{{ key6.c7_title }}</td>
         <td>{{ key6.c7_place }}</td>
         <td>{{ key6.c7_date }}</td>
-        <td>{{ key6.c7_index }}</td>
         <td>{{ key6.c7_author }}</td>
+        <td><a href="/media/{{key6.c7_file}}">Click to view</a></td>
+
       </tr>
       {% endif %}
       {% if key6.c8_name %}
@@ -1324,8 +1382,9 @@
         <td>{{ key6.c8_title }}</td>
         <td>{{ key6.c8_place }}</td>
         <td>{{ key6.c8_date }}</td>
-        <td>{{ key6.c8_index }}</td>
         <td>{{ key6.c8_author }}</td>
+        <td><a href="/media/{{key6.c8_file}}">Click to view</a></td>
+
       </tr>
       {% endif %}
     </tbody>
@@ -1344,6 +1403,7 @@
       <td>Issn/Doi no.</td>
       <td>Page</td>
       <td>Author</td>
+      <td>Documents</td>
     </tr>
   </thead>
   <tbody>
@@ -1357,6 +1417,8 @@
       <td>{{ key7.j1_issn }}</td>
       <td>{{ key7.j1_page }}</td>
       <td>{{ key7.j1_author }}</td>
+      <td><a href="/media/{{key7.j1_file}}">Click to view</a></td>
+
 
     </tr>
     {% endif %}
@@ -1365,11 +1427,13 @@
       <td>{{ key7.j2_name }}</td>
       <td>{{ key7.j2_title }}</td>
       <td>{{ key7.j2_volume }}</td>
-      <td>{{ key7.j2_date }}</td>
+      <td>{{ key7.j2_date }}</td3
       <td>{{ key7.j2_index }}</td>
       <td>{{ key7.j2_issn }}</td>
       <td>{{ key7.j2_page }}</td>
       <td>{{ key7.j2_author }}</td>
+      <td><a href="/media/{{key7.j2_file}}">Click to view</a></td>
+
 
     </tr>
     {% endif %}
@@ -1383,6 +1447,8 @@
       <td>{{ key7.j3_issn }}</td>
       <td>{{ key7.j3_page }}</td>
       <td>{{ key7.j3_author }}</td>
+      <td><a href="/media/{{key7.j3_file}}">Click to view</a></td>
+
 
     </tr>
     {% endif %}
@@ -1396,6 +1462,8 @@
       <td>{{ key7.j4_issn }}</td>
       <td>{{ key7.j4_page }}</td>
       <td>{{ key7.j4_author }}</td>
+      <td><a href="/media/{{key7.j4_file}}">Click to view</a></td>
+
 
     </tr>
     {% endif %}
@@ -1409,6 +1477,8 @@
       <td>{{ key7.j5_issn }}</td>
       <td>{{ key7.j5_page }}</td>
       <td>{{ key7.j5_author }}</td>
+      <td><a href="/media/{{key7.j5_file}}">Click to view</a></td>
+
 
     </tr>
     {% endif %}
@@ -1422,6 +1492,8 @@
       <td>{{ key7.j6_issn }}</td>
       <td>{{ key7.j6_page }}</td>
       <td>{{ key7.j6_author }}</td>
+      <td><a href="/media/{{key7.j6_file}}">Click to view</a></td>
+
 
     </tr>
     {% endif %}
@@ -1435,6 +1507,8 @@
       <td>{{ key7.j7_issn }}</td>
       <td>{{ key7.j7_page }}</td>
       <td>{{ key7.j7_author }}</td>
+      <td><a href="/media/{{key7.j7_file}}">Click to view</a></td>
+
 
     </tr>
     {% endif %}
@@ -1448,6 +1522,7 @@
       <td>{{ key7.j8_issn }}</td>
       <td>{{ key7.j8_page }}</td>
       <td>{{ key7.j8_author }}</td>
+      <td><a href="/media/{{key7.j8_file}}">Click to view</a></td>
 
     </tr>
     {% endif %}
@@ -1528,7 +1603,16 @@
                     {{ key4.book_nm }}
                   </div>
               </div>
+              <div class="form-group col-md-6">
+<h3>Document</h3>
 
+{% if key4.book_file %}
+           <a href="/media/{{key4.book_file}}">Click to view</a>
+            {% else %}
+            <a href="#"></a>
+            {% endif %}
+
+    </div>
               <div class="form-row dis">
                     <div class="form-group col-md-6">
 
@@ -1568,52 +1652,88 @@
                   <table class="table table-bordered">
                   <thead>
                     <tr>
-                      <th scope="col">Funding</th>
-                      <th scope="col">Being Sole Principal Investigator</th>
-                      <th scope="col">Being first Principal Investigator</th>
-                      <th scope="col">Being Co-Investigator</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <th scope="row">Internally Funded<span class="sp">( 5 marks/project)</span></th>
-                      <td>{{ key4.if_s }}</td>
-                      <td>{{ key4.if_f }}</td>
-                      <td>{{ key4.if_c }}</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">Externally Funded Less than 5_Lakhs<span class="sp">( 5 marks/project )</span> </th>
-                      <td>{{ key4.ef_s }}</td>
-                      <td>{{ key4.ef_f }}</td>
-                      <td>{{ key4.ef_c }}</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">Externally Funded more than 5_Lakhs<span class="sp"> (10 marks/project)</span> </th>
-                      <td>{{ key4.eef_s }}</td>
-                      <td>{{ key4.eef_f }}</td>
-                      <td>{{ key4.eef_c }}</td>
-                    </tr>
-                		<tr>
+      <th scope="col">Funding</th>
+      <th scope="col">Being Sole Principal Investigator</th>
+      <th scope="col">Being first Principal Investigator</th>
+      <th scope="col">Being Co-Investigator</th>
+      <th scope="col">Documents</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Internally Funded<span class="sp">( 5 marks/project)</span></th>
+      <td>{{ key4.if_s }}</td>
+      <td>{{ key4.if_f }}</td>
+      <td>{{ key4.if_c }}</td>
+      <td>
+        {% if key4.if_file %}
+           <a href="/media/{{key4.if_file}}">Click to view</a>
+            {% else %}
+            <a href="#"></a>
+            {% endif %}</td>
+    </tr>
+    <tr>
+      <th scope="row">Externally Funded Less than 5_Lakhs<span class="sp">( 5 marks/project )</span> </th>
+      <td>{{ key4.ef_s }}</td>
+      <td>{{ key4.ef_f }}</td>
+      <td>{{ key4.ef_c }}</td>
+      <td>{% if key4.ef_file %}
+           <a href="/media/{{key4.ef_file}}">Click to view</a>
+            {% else %}
+            <a href="#"></a>
+            {% endif %}</td>
+    </tr>
+    <tr>
+      <th scope="row">Externally Funded more than 5_Lakhs<span class="sp"> (10 marks/project)</span> </th>
+      <td>{{ key4.eef_s }}</td>
+      <td>{{ key4.eef_f }}</td>
+      <td>{{ key4.eef_c }}</td>
+      <td>{% if key4.eef_file %}
+           <a href="/media/{{key4.eef_file}}">Click to view</a>
+            {% else %}
+            <a href="#"></a>
+            {% endif %}</td>
+    </tr>
+    <tr>
 
                   </tbody>
                 </table>
                 <h5>Consultancy Work</h5>
                 <table class="table table-bordered">
                   <thead>
-                    <tr>
-                      <th scope="col">Funding</th>
-                      <th scope="col">Upto 2 Lakhs</th>
-                      <th scope="col">Upto 2-5 Lakhs</th>
-                      <th scope="col">Above 5 Lakhs</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <th scope="row">Consultancy Work</th>
-                      <td>{{ key4.Cw_2 }}</td>
-                      <td>{{ key4.Cw_2_5 }}</td>
-                      <td>{{ key4.Cw_5 }}</td>
-                    </tr>
+                   <tr>
+      <th scope="col">Funding</th>
+      <th scope="col">Upto 2 Lakhs</th>
+      <th scope="col">Documents(Upto 2 Lakhs)</th>
+      <th scope="col">Upto 2-5 Lakhs</th>
+      <th scope="col">Documents(Upto 2-5 Lakhs)</th>
+      <th scope="col">Above 5 Lakhs</th>
+      <th scope="col">Documents(Above 5 Lakhs)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Consultancy Work</th>
+      <td>{{ key4.Cw_2 }}</td>
+      <td>
+        {% if key4.Cw_2_file %}
+           <a href="/media/{{key4.Cw_2_file}}"></a>
+            {% else %}
+            <a href="#"></a>
+            {% endif %}</td>
+      <td>{{ key4.Cw_2_5 }}</td>
+      <td>{% if key4.Cw_2_5_file %}
+           <a href="/media/{{key4.Cw_2_5_file}}"></a>
+            {% else %}
+            <a href="#"></a>
+            {% endif %}</td>
+      <td>{{ key4.Cw_5 }}</td>
+      <td>{% if key4.Cw_5_file %}
+           <a href="/media/{{key4.Cw_5_file}}"></a>
+            {% else %}
+            <a href="#"></a>
+            {% endif %}</td>
+    </tr>
                     </tbody>
                 </table>
 
@@ -1652,6 +1772,15 @@
   <div class="form-group col-md-12">
 <label>Details</label>
 {{ key4.ipr_info }}
+
+</div>
+<div class="form-group col-md-12">
+<label>IPR File</label>
+{% if key4.ipr_file %}
+           <a href="/media/{{key4.ipr_file}}"></a>
+            {% else %}
+            <a href="#"></a>
+            {% endif %}
 
 </div>
 
