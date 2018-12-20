@@ -43,7 +43,7 @@
          <h3 class="lead" style="color:white" align="center">2017-2018</h3>
        <hr class="my-4" style="color:white">
        <h5 style="color:white; margin-left:108px;">Report must be submitted.</h5>
-      
+
      </div>
      </div>
     </div>
@@ -69,7 +69,7 @@
           </div>
           <div class="form-group col-md-6">
 
-            <label for="">Internship report file</label> 
+            <label for="">Internship report file</label>
             {% if key2.internship_report_file %}
             <a href="/media/{{ key2.internship_report_file}}">Click to view</a>
             {% else %}
@@ -764,6 +764,17 @@
 
             <input type="text" class="form-control" disabled value="{{key4.w_s_d}}">
         </div>
+        <h3>Documents</h3>
+        <div class="form-group col-md-6">
+          {% if key4.w_s_file %}
+            <a href="/media/{{key4.w_s_file}}">Click to view</a>
+            {% else %}
+            <a href="#"></a>
+            {% endif %}
+
+
+
+        </div>
 
 
     </div>
@@ -776,6 +787,18 @@
         <div class="form-group col-md-6">
 
           <input type="text" class="form-control" disabled value="{{key4.w_n_d}}">
+
+        </div>
+
+        <h3>Documents</h3>
+        <div class="form-group col-md-6">
+          {% if key4.w_n_file %}
+            <a href="/media/{{key4.w_n_file}}">Click to view</a>
+            {% else %}
+            <a href="#"></a>
+            {% endif %}
+
+
 
         </div>
 
@@ -797,8 +820,8 @@
         <div class="form-group col-md-6">
 
 
-          {% if key4.w_file %}
-            <a href="/media/{{key4.w_file}}">Click to view</a>
+          {% if key4.w_i_file %}
+            <a href="/media/{{key4.w_i_file}}">Click to view</a>
             {% else %}
             <a href="#"></a>
             {% endif %}
@@ -856,6 +879,18 @@
         <input type="text" class="form-control" disabled value="{{key4.p_s_d}}">
       </div>
 
+      <h3>Documents</h3>
+      <div class="form-group col-md-6">
+        {% if key4.p_s_file %}
+          <a href="/media/{{key4.p_s_file}}">Click to view</a>
+          {% else %}
+          <a href="#"></a>
+          {% endif %}
+
+
+
+      </div>
+
   </div>
 
   <div class="form-row dis">
@@ -866,6 +901,18 @@
       <div class="form-group col-md-6">
 
           <input type="text" class="form-control" disabled value="{{key4.p_n_d}}">
+
+      </div>
+
+      <h3>Documents</h3>
+      <div class="form-group col-md-6">
+        {% if key4.p_n_file %}
+          <a href="/media/{{key4.p_n_file}}">Click to view</a>
+          {% else %}
+          <a href="#"></a>
+          {% endif %}
+
+
 
       </div>
 
@@ -883,16 +930,16 @@
 
       </div>
       <h3>Documents</h3>
-       <div class="form-group col-md-6">
+      <div class="form-group col-md-6">
+        {% if key4.p_i_file %}
+          <a href="/media/{{key4.p_i_file}}">Click to view</a>
+          {% else %}
+          <a href="#"></a>
+          {% endif %}
 
 
-          {% if key4.p_file %}
-            <a href="/media/{{key4.p_file}}">Click to view</a>
-            {% else %}
-            <a href="#"></a>
-            {% endif %}
 
-        </div>
+      </div>
 
 
   </div>
@@ -939,17 +986,26 @@
         <input type="text" class="form-control" disabled value="{{key4.onl_course_c}}">
       </div>
 
-      
-        <div class="form-group col-md-6">
-          <label>Online courses Documents:</label>
 
-          {% if key4.onl_course_c_file %}
-           <a href="/media/{{key4.onl_course_c_file}}">Click to view</a>
-            {% else %}
-            <a href="#"></a>
-            {% endif %}
+      <div class="form-group col-md-6">
+        <label>Online courses Documents1:</label>
+        {% if key4.onl_course_c_file1 %}
+         <a href="/media/{{key4.onl_course_c_file1}}">Click to view</a>
+          {% else %}
+          <a href="#"></a>
+          {% endif %}
 
-        </div>
+      </div>
+
+      <div class="form-group col-md-6">
+        <label>Online courses Documents2:</label>
+        {% if key4.onl_course_c_file2 %}
+         <a href="/media/{{key4.onl_course_c_file2}}">Click to view</a>
+          {% else %}
+          <a href="#"></a>
+          {% endif %}
+
+      </div>
 
       <div class="form-group col-md-6">
      <h6 class=" color1">TOTAL MARKS<span class="sp"></span></h6>
