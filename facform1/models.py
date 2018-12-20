@@ -384,21 +384,31 @@ class feedbackTab(models.Model):
 #TABLE-4
 class rd(models.Model):
 	w_s_d = models.IntegerField( blank=True, null=True)
+	w_s_file = models.FileField(blank=True, null=True)
+
 	w_n_d = models.IntegerField( blank=True, null=True)
+	w_n_file = models.FileField(blank=True, null=True)
+
 	w_i_d = models.IntegerField( blank=True, null=True)
-	w_file = models.FileField(blank=True, null=True)
+	w_i_file = models.FileField(blank=True, null=True)
 
 	w_m = models.CharField(max_length=500, blank=True, null=True)
 
 	p_s_d = models.IntegerField( blank=True, null=True)
+	p_s_file = models.FileField(blank=True, null=True)
+
 	p_n_d = models.IntegerField( blank=True, null=True)
+	p_n_dfile = models.FileField(blank=True, null=True)
+
 	p_i_d = models.IntegerField( blank=True, null=True)
-	p_file = models.FileField(blank=True, null=True)
+	p_i_file = models.FileField(blank=True, null=True)
+
 
 	p_m = models.CharField(max_length=500, blank=True, null=True)
 
 	onl_course_c = models.IntegerField( blank=True, null=True)
-	onl_course_c_file = models.FileField(blank=True, null=True)
+	onl_course_c_file1 = models.FileField(blank=True, null=True)
+	onl_course_c_file2 = models.FileField(blank=True, null=True)
 
 	onl_course_m = models.CharField(max_length=500, blank=True, null=True)
 
@@ -413,19 +423,28 @@ class rd(models.Model):
 	s_j_n = models.IntegerField(blank=True, null=True)
 	f_j_n = models.IntegerField(blank=True, null=True)
 	o_j_n = models.IntegerField(blank=True, null=True)
-	s_j_n_file = models.FileField(blank=True, null=True)
 
 	s_j_m = models.CharField(max_length=500, blank=True, null=True)
 	f_j_m = models.CharField(max_length=500, blank=True, null=True)
 	o_j_m = models.CharField(max_length=500, blank=True, null=True)
 
 	book_i = models.IntegerField(blank=True, null=True)
+	book_i_file = models.FileField(blank=True, null=True)
+
 	book_n = models.IntegerField( blank=True, null=True)
+	book_n_file = models.FileField(blank=True, null=True)
+
 	book_ci = models.IntegerField(blank=True, null=True)
+	book_ci_file = models.FileField(blank=True, null=True)
+
 	book_cn = models.IntegerField(blank=True, null=True)
+	book_cn_file = models.FileField(blank=True, null=True)
+
 	book_ai = models.IntegerField( blank=True, null=True)
+	book_ai_file = models.FileField(blank=True, null=True)
+
 	book_nm = models.IntegerField( blank=True, null=True)
-	book_file = models.FileField(blank=True, null=True)
+	book_nm_file = models.FileField(blank=True, null=True)
 
 	book_m = models.CharField(max_length=500, blank=True, null=True)
 

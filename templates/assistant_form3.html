@@ -103,6 +103,14 @@
             {% render_field form4.w_s_d class="form-control w_s_d" %}
 
         </div>
+        <h3>Upload Documents</h3>
+        <div class="form-group col-md-6">
+
+
+
+            {% render_field form4.w_s_file class="form-control" %}
+
+        </div>
 
 
 
@@ -127,6 +135,15 @@
 
 
             {% render_field form4.w_n_d class="form-control w_n_d" %}
+
+        </div>
+
+        <h3>Upload Documents</h3>
+        <div class="form-group col-md-6">
+
+
+
+            {% render_field form4.w_n_file class="form-control" %}
 
         </div>
 
@@ -165,7 +182,7 @@
 
 
 
-            {% render_field form4.w_file class="form-control" %}
+            {% render_field form4.w_i_file class="form-control" %}
 
         </div>
 
@@ -261,6 +278,15 @@
 
         </div>
 
+        <h3>Upload Documents</h3>
+        <div class="form-group col-md-6">
+
+
+
+            {% render_field form4.p_s_file class="form-control" %}
+
+        </div>
+
 
 
     </div>
@@ -284,6 +310,14 @@
             {% render_field form4.p_n_d class="form-control p_n_d" %}
 
 
+
+        </div>
+        <h3>Upload Documents</h3>
+        <div class="form-group col-md-6">
+
+
+
+            {% render_field form4.p_n_file class="form-control" %}
 
         </div>
 
@@ -317,7 +351,7 @@
 
         <h3>Upload Documents</h3>
         <div class="form-group col-md-6">
-            {% render_field form4.p_file class="form-control" %}
+            {% render_field form4.p_i_file class="form-control" %}
         </div>
 
 
@@ -401,10 +435,16 @@
 				</div>
 
         <div class="form-group col-md-6">
-        <label for="inputResearch">Online courses Documents:</label>
-                 {% render_field form4.onl_course_c_file class="form-control" %}
+        <label for="inputResearch">Online courses Documents1:</label>
+                 {% render_field form4.onl_course_c_file1 class="form-control" %}
 
              </div>
+
+             <div class="form-group col-md-6">
+             <label for="inputResearch">Online courses Documents2:</label>
+                      {% render_field form4.onl_course_c_file2 class="form-control" %}
+
+                  </div>
 
 
 				<div class="form-group col-md-6">
@@ -888,11 +928,7 @@
 </div>
 
 
-<div class="orm-group col-md-8">
-<label for="inputResearch">Upload documents</label>
-  {% render_field form4.s_j_n_file class="form-control" %}
 
-      </div>
 
 </div>
 
@@ -1042,6 +1078,13 @@
            {% render_field form4.book_i class="form-control book_i" %}
 
         </div>
+        <div class="form-group col-md-6">
+    <h3>Upload Document</h3>
+
+
+             {% render_field form4.book_i_file class="form-control" %}
+
+        </div>
 
     </div>
 
@@ -1062,6 +1105,13 @@
 
 
             {% render_field form4.book_n class="form-control book_n" %}
+
+        </div>
+        <div class="form-group col-md-6">
+    <h3>Upload Document</h3>
+
+
+             {% render_field form4.book_n_file class="form-control" %}
 
         </div>
 
@@ -1087,6 +1137,14 @@
 
         </div>
 
+        <div class="form-group col-md-6">
+    <h3>Upload Document</h3>
+
+
+             {% render_field form4.book_ci_file class="form-control" %}
+
+        </div>
+
     </div>
 
 
@@ -1104,6 +1162,14 @@
         <div class="form-group col-md-6">
 
         {% render_field form4.book_cn class="form-control book_cn" %}
+
+        </div>
+
+        <div class="form-group col-md-6">
+    <h3>Upload Document</h3>
+
+
+             {% render_field form4.book_cn_file class="form-control" %}
 
         </div>
 
@@ -1126,6 +1192,13 @@
 
 
              {% render_field form4.book_ai class="form-control book_ai" %}
+
+        </div>
+        <div class="form-group col-md-6">
+    <h3>Upload Document</h3>
+
+
+             {% render_field form4.book_ai_file class="form-control" %}
 
         </div>
 
@@ -1151,15 +1224,17 @@
 
         </div>
 
+        <div class="form-group col-md-6">
+    <h3>Upload Document</h3>
+
+
+             {% render_field form4.book_nm_file class="form-control" %}
+
+        </div>
+
     </div>
 
-    <div class="form-group col-md-6">
-<h3>Upload Document</h3>
 
-
-         {% render_field form4.book_file class="form-control" %}
-
-    </div>
 
 
 
