@@ -68,6 +68,12 @@
             <label for="">To</label>
             <input type="text" class="form-control" id="inputEmpName" disabled value="{{ key2.it_t }}">
           </div>
+          <div class="form-group col-md-3">
+
+            <label for="">Internship report file</label> 
+            <a href="/media/{{ key2.internship_report_file}}">Click to view</a>
+
+          </div>
 
           <div class="form-group col-md-6">
             <label for="inputEmpName">Employee Name</label>
@@ -765,10 +771,18 @@
 
             <input type="text" class="form-control" disabled value="{{key4.w_i_d}}">
         </div>
+        <h3>Documents</h3>
+        <div class="form-group col-md-6">
 
+
+          <a href="/media/{{key4.w_file}}">Click to view</a>
+
+        </div>
 
 
     </div>
+
+
 		<div class="form-row dis">
 							<div class="form-group col-md-2">
 
@@ -844,7 +858,13 @@
           <input type="text" class="form-control" disabled value="{{key4.p_i_d}}">
 
         </div>
+        <h3>Documents</h3>
+        <div class="form-group col-md-6">
 
+
+          <a href="/media/{{key4.p_file}}">Click to view</a>
+
+        </div>
 
 
     </div>
@@ -890,6 +910,14 @@
 	 <div class="form-group col-md-6">
 					<input type="text" class="form-control" disabled value="{{key4.onl_course_c}}">
 				</div>
+
+        <label>Online courses Documents:</label>
+        <div class="form-group col-md-6">
+
+
+          <a href="/media/{{key4.onl_course_c_file}}">Click to view</a>
+
+        </div>
 
         <div class="form-group col-md-6">
        <h6 class=" color1">TOTAL MARKS<span class="sp"></span></h6>
@@ -1157,6 +1185,12 @@
 						<div class="orm-group col-md-8">
 							<h6 class=" color1">TOTAL MARKS<span class="sp"></span></h6>
 {{ key4.o_j_m }}									</div>
+
+<div class="orm-group col-md-8">
+<label for="inputResearch">Documents</label>
+<a href="/media/{{key4.s_j_n_file}}">Click to view</a>
+
+      </div>
 									<div class="orm-group col-md-2">
 
 									</div>
@@ -1213,6 +1247,7 @@
         <td>Place</td>
         <td>Date</td>
         <td>Author</td>
+        <td>Documents</td>
       </tr>
     </thead>
     <tbody>
@@ -1223,6 +1258,7 @@
         <td>{{ key6.c1_place }}</td>
         <td>{{ key6.c1_date }}</td>
         <td>{{ key6.c1_author }}</td>
+        <td><a href="/media/{{key6.c1_file}}"></a></td>
       </tr>
       {% endif %}
       {% if key6.c2_name %}
@@ -1232,6 +1268,8 @@
         <td>{{ key6.c2_place }}</td>
         <td>{{ key6.c2_date }}</td>
         <td>{{ key6.c2_author }}</td>
+        <td><a href="/media/{{key6.c2_file}}"></a></td>
+
       </tr>
       {% endif %}
       {% if key6.c3_name %}
@@ -1241,6 +1279,8 @@
         <td>{{ key6.c3_place }}</td>
         <td>{{ key6.c3_date }}</td>
         <td>{{ key6.c3_author }}</td>
+        <td><a href="/media/{{key6.c3_file}}"></a></td>
+
       </tr>
       {% endif %}
       {% if key6.c4_name %}
@@ -1250,6 +1290,8 @@
         <td>{{ key6.c4_place }}</td>
         <td>{{ key6.c4_date }}</td>
         <td>{{ key6.c4_author }}</td>
+        <td><a href="/media/{{key6.c4_file}}"></a></td>
+
       </tr>
       {% endif %}
       {% if key6.c5_name %}
@@ -1259,6 +1301,8 @@
         <td>{{ key6.c5_place }}</td>
         <td>{{ key6.c5_date }}</td>
         <td>{{ key6.c5_author }}</td>
+        <td><a href="/media/{{key6.c5_file}}"></a></td>
+
       </tr>
       {% endif %}
       {% if key6.c6_name %}
@@ -1268,6 +1312,8 @@
         <td>{{ key6.c6_place }}</td>
         <td>{{ key6.c6_date }}</td>
         <td>{{ key6.c6_author }}</td>
+        <td><a href="/media/{{key6.c6_file}}"></a></td>
+
       </tr>
       {% endif %}
       {% if key6.c7_name %}
@@ -1277,6 +1323,8 @@
         <td>{{ key6.c7_place }}</td>
         <td>{{ key6.c7_date }}</td>
         <td>{{ key6.c7_author }}</td>
+        <td><a href="/media/{{key6.c7_file}}"></a></td>
+
       </tr>
       {% endif %}
       {% if key6.c8_name %}
@@ -1286,6 +1334,8 @@
         <td>{{ key6.c8_place }}</td>
         <td>{{ key6.c8_date }}</td>
         <td>{{ key6.c8_author }}</td>
+        <td><a href="/media/{{key6.c8_file}}"></a></td>
+
       </tr>
       {% endif %}
     </tbody>
@@ -1304,6 +1354,7 @@
       <td>Issn/Doi no.</td>
       <td>Page</td>
       <td>Author</td>
+      <td>Documents</td>
     </tr>
   </thead>
   <tbody>
@@ -1317,6 +1368,8 @@
       <td>{{ key7.j1_issn }}</td>
       <td>{{ key7.j1_page }}</td>
       <td>{{ key7.j1_author }}</td>
+      <td><a href="/media/{{key7.j1_file}}"></a></td>
+
 
     </tr>
     {% endif %}
@@ -1330,6 +1383,8 @@
       <td>{{ key7.j2_issn }}</td>
       <td>{{ key7.j2_page }}</td>
       <td>{{ key7.j2_author }}</td>
+      <td><a href="/media/{{key7.j2_file}}"></a></td>
+
 
     </tr>
     {% endif %}
@@ -1343,6 +1398,8 @@
       <td>{{ key7.j3_issn }}</td>
       <td>{{ key7.j3_page }}</td>
       <td>{{ key7.j3_author }}</td>
+      <td><a href="/media/{{key7.j3_file}}"></a></td>
+
 
     </tr>
     {% endif %}
@@ -1356,6 +1413,8 @@
       <td>{{ key7.j4_issn }}</td>
       <td>{{ key7.j4_page }}</td>
       <td>{{ key7.j4_author }}</td>
+      <td><a href="/media/{{key7.j4_file}}"></a></td>
+
 
     </tr>
     {% endif %}
@@ -1369,6 +1428,8 @@
       <td>{{ key7.j5_issn }}</td>
       <td>{{ key7.j5_page }}</td>
       <td>{{ key7.j5_author }}</td>
+      <td><a href="/media/{{key7.j5_file}}"></a></td>
+
 
     </tr>
     {% endif %}
@@ -1382,6 +1443,8 @@
       <td>{{ key7.j6_issn }}</td>
       <td>{{ key7.j6_page }}</td>
       <td>{{ key7.j6_author }}</td>
+      <td><a href="/media/{{key7.j6_file}}"></a></td>
+
 
     </tr>
     {% endif %}
@@ -1395,6 +1458,8 @@
       <td>{{ key7.j7_issn }}</td>
       <td>{{ key7.j7_page }}</td>
       <td>{{ key7.j7_author }}</td>
+      <td><a href="/media/{{key7.j7_file}}"></a></td>
+
 
     </tr>
     {% endif %}
@@ -1408,6 +1473,7 @@
       <td>{{ key7.j8_issn }}</td>
       <td>{{ key7.j8_page }}</td>
       <td>{{ key7.j8_author }}</td>
+      <td><a href="/media/{{key7.j8_file}}"></a></td>
 
     </tr>
     {% endif %}
@@ -1490,6 +1556,13 @@
         </div>
     </div>
 
+    <div class="form-group col-md-6">
+<h3>Document</h3>
+
+<a href="/media/{{key4.book_file}}">Click to view</a>
+
+    </div>
+
     <div class="form-row dis">
           <div class="form-group col-md-6">
 
@@ -1533,6 +1606,7 @@
       <th scope="col">Being Sole Principal Investigator</th>
       <th scope="col">Being first Principal Investigator</th>
       <th scope="col">Being Co-Investigator</th>
+      <th scope="col">Documents</th>
     </tr>
   </thead>
   <tbody>
@@ -1541,18 +1615,21 @@
       <td>{{ key4.if_s }}</td>
       <td>{{ key4.if_f }}</td>
       <td>{{ key4.if_c }}</td>
+      <td><a href="/media/{{key4.if_file}}"></a></td>
     </tr>
     <tr>
       <th scope="row">Externally Funded Less than 5_Lakhs<span class="sp">( 5 marks/project )</span> </th>
       <td>{{ key4.ef_s }}</td>
       <td>{{ key4.ef_f }}</td>
       <td>{{ key4.ef_c }}</td>
+      <td><a href="/media/{{key4.ef_file}}"></a></td>
     </tr>
     <tr>
       <th scope="row">Externally Funded more than 5_Lakhs<span class="sp"> (10 marks/project)</span> </th>
       <td>{{ key4.eef_s }}</td>
       <td>{{ key4.eef_f }}</td>
       <td>{{ key4.eef_c }}</td>
+      <td><a href="/media/{{key4.eef_file}}"></a></td>
     </tr>
 		<tr>
 
@@ -1564,16 +1641,22 @@
     <tr>
       <th scope="col">Funding</th>
       <th scope="col">Upto 2 Lakhs</th>
+      <th scope="col">Documents(Upto 2 Lakhs)</th>
       <th scope="col">Upto 2-5 Lakhs</th>
+      <th scope="col">Documents(Upto 2-5 Lakhs)</th>
       <th scope="col">Above 5 Lakhs</th>
+      <th scope="col">Documents(Above 5 Lakhs)</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th scope="row">Consultancy Work</th>
       <td>{{ key4.Cw_2 }}</td>
+      <td><a href="/media/{{key4.Cw_2_file}}"></a></td>
       <td>{{ key4.Cw_2_5 }}</td>
+      <td><a href="/media/{{key4.Cw_2_5_file}}"></a></td>
       <td>{{ key4.Cw_5 }}</td>
+      <td><a href="/media/{{key4.Cw_5_file}}"></a></td>
     </tr>
     </tbody>
 </table>
@@ -1612,6 +1695,12 @@
   <div class="form-group col-md-12">
 <label>Details</label>
 {{ key4.ipr_info }}
+
+</div>
+
+<div class="form-group col-md-12">
+<label>IPR File</label>
+<a href="/media/{{key4.ipr_file}}"></a>
 
 </div>
 
