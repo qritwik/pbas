@@ -60,7 +60,7 @@
 
                 <div class="table-bordered poi form-row">
                   <div class="form-group col-md-6">
-                    <label for="">Internship Company Name</label>
+                    <label for="">Internship Company Name 1</label>
                     <input type="text" class="form-control" id="inputEmpName" disabled value="{{ key2.it_name }}">
                   </div>
                   <div class="form-group col-md-3">
@@ -76,6 +76,29 @@
             <label for="">Internship report file</label>
             {% if key2.internship_report_file %}
             <a href="/media/{{ key2.internship_report_file}}">Click to view</a>
+            {% else %}
+            <a href="#"></a>
+            {% endif %}
+
+          </div>
+
+           <div class="form-group col-md-6">
+                    <label for="">Internship Company Name 2</label>
+                    <input type="text" class="form-control" id="inputEmpName" disabled value="{{ key2.it_name2 }}">
+                  </div>
+                  <div class="form-group col-md-3">
+                    <label for="">From</label>
+                    <input type="text" class="form-control" id="inputEmpName" disabled value="{{ key2.it_f2 }}">
+                  </div>
+                  <div class="form-group col-md-3">
+                    <label for="">To</label>
+                    <input type="text" class="form-control" id="inputEmpName" disabled value="{{ key2.it_t2 }}">
+                  </div>
+                  <div class="form-group col-md-6">
+
+            <label for="">Internship report file</label>
+            {% if key2.internship_report_file2 %}
+            <a href="/media/{{ key2.internship_report_file2}}">Click to view</a>
             {% else %}
             <a href="#"></a>
             {% endif %}

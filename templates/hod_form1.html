@@ -59,7 +59,7 @@
         {% csrf_token %}
         <div class="table-bordered poi form-row">
           <div class="form-group col-md-6">
-            <label for="">Internship Company Name</label>
+            <label for="">Internship Company Name 1</label>
               {% render_field form2.it_name class="form-control"  %}
           </div>
           <div class="form-group col-md-3">
@@ -76,6 +76,27 @@
             <label for="">Internship report file</label>
 
             {% render_field form2.internship_report_file class="form-control" %}
+
+          </div>
+
+          <div class="form-group col-md-6">
+            <label for="">Internship Company Name 2</label>
+              {% render_field form2.it_name2 class="form-control"  %}
+          </div>
+          <div class="form-group col-md-3">
+            <label for="">From</label>
+              {% render_field form2.it_f2 class="form-control" id="datepicker4" placeholder="YYYY-MM-DD" %}
+          </div>
+          <div class="form-group col-md-3">
+            <label for="">To</label>
+              {% render_field form2.it_t2 class="form-control" id="datepicker5" placeholder="YYYY-MM-DD" %}
+          </div>
+
+          <div class="form-group col-md-3">
+
+            <label for="">Internship report file</label>
+
+            {% render_field form2.internship_report_file2 class="form-control" %}
 
           </div>
 
@@ -178,6 +199,12 @@
     dateFormat: "yy-mm-dd"
   });
    $( "#datepicker3" ).datepicker({
+    dateFormat: "yy-mm-dd"
+  });
+   $( "#datepicker4" ).datepicker({
+    dateFormat: "yy-mm-dd"
+  });
+   $( "#datepicker5" ).datepicker({
     dateFormat: "yy-mm-dd"
   });
   } );

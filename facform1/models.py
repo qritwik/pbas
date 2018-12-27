@@ -111,6 +111,10 @@ class empDetailForm(models.Model):
 	it_f = models.DateField(blank=True, null=True)
 	it_t = models.DateField(blank=True, null=True)
 
+	it_name2 = models.CharField(max_length=50, blank=True, null=True)
+	it_f2 = models.DateField(blank=True, null=True)
+	it_t2 = models.DateField(blank=True, null=True)
+
 	high_qual = models.CharField(max_length=50,null=True)
 	doj = models.DateField(null=True)
 	month_of_increment = models.CharField(max_length=50,null=True, blank=True)
@@ -121,6 +125,7 @@ class empDetailForm(models.Model):
 	exp_indus = models.FloatField(blank=True, null=True)
 	info = models.ForeignKey('User', on_delete=models.CASCADE,null=True)
 	internship_report_file = models.FileField(blank=True, null=True)
+	internship_report_file2 = models.FileField(blank=True, null=True)
 
 	# def get_absolute_url(self):
  #    	return reverse('assistant_form1', kwargs={'pk': self.pk})
