@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser, User
-from .formatChecker import ContentTypeRestrictedFileField
+from .formatChecker import validate_file_size
 
 # from django.urls import reverse
 
@@ -126,8 +126,8 @@ class empDetailForm(models.Model):
 	exp_res = models.FloatField( blank=True, null=True)
 	exp_indus = models.FloatField(blank=True, null=True)
 	info = models.ForeignKey('User', on_delete=models.CASCADE,null=True)
-	internship_report_file = ContentTypeRestrictedFileField(max_upload_size=5242880,blank=True, null=True)
-	internship_report_file2 = ContentTypeRestrictedFileField(max_upload_size=5242880,blank=True, null=True)
+	internship_report_file = models.FileField(validators=[validate_file_size],blank=True, null=True)
+	internship_report_file2 = models.FileField(validators=[validate_file_size],blank=True, null=True)
 
 	# def get_absolute_url(self):
  #    	return reverse('assistant_form1', kwargs={'pk': self.pk})
@@ -391,31 +391,31 @@ class feedbackTab(models.Model):
 #TABLE-4
 class rd(models.Model):
 	w_s_d = models.IntegerField( blank=True, null=True)
-	w_s_file = ContentTypeRestrictedFileField(max_upload_size=5242880,blank=True, null=True)
+	w_s_file = models.FileField(validators=[validate_file_size],blank=True, null=True)
 
 	w_n_d = models.IntegerField( blank=True, null=True)
-	w_n_file = ContentTypeRestrictedFileField(max_upload_size=5242880,blank=True, null=True)
+	w_n_file = models.FileField(validators=[validate_file_size],blank=True, null=True)
 
 	w_i_d = models.IntegerField( blank=True, null=True)
-	w_i_file = ContentTypeRestrictedFileField(max_upload_size=5242880,blank=True, null=True)
+	w_i_file = models.FileField(validators=[validate_file_size],blank=True, null=True)
 
 	w_m = models.CharField(max_length=500, blank=True, null=True)
 
 	p_s_d = models.IntegerField( blank=True, null=True)
-	p_s_file = ContentTypeRestrictedFileField(max_upload_size=5242880,blank=True, null=True)
+	p_s_file = models.FileField(validators=[validate_file_size],blank=True, null=True)
 
 	p_n_d = models.IntegerField( blank=True, null=True)
-	p_n_file = ContentTypeRestrictedFileField(max_upload_size=5242880,blank=True, null=True)
+	p_n_file = models.FileField(validators=[validate_file_size],blank=True, null=True)
 
 	p_i_d = models.IntegerField( blank=True, null=True)
-	p_i_file = ContentTypeRestrictedFileField(max_upload_size=5242880,blank=True, null=True)
+	p_i_file = models.FileField(validators=[validate_file_size],blank=True, null=True)
 
 
 	p_m = models.CharField(max_length=500, blank=True, null=True)
 
 	onl_course_c = models.IntegerField( blank=True, null=True)
-	onl_course_c_file1 = ContentTypeRestrictedFileField(max_upload_size=5242880,blank=True, null=True)
-	onl_course_c_file2 = ContentTypeRestrictedFileField(max_upload_size=5242880,blank=True, null=True)
+	onl_course_c_file1 = models.FileField(validators=[validate_file_size],blank=True, null=True)
+	onl_course_c_file2 = models.FileField(validators=[validate_file_size],blank=True, null=True)
 
 	onl_course_m = models.CharField(max_length=500, blank=True, null=True)
 
@@ -436,51 +436,51 @@ class rd(models.Model):
 	o_j_m = models.CharField(max_length=500, blank=True, null=True)
 
 	book_i = models.IntegerField(blank=True, null=True)
-	book_i_file = ContentTypeRestrictedFileField(max_upload_size=5242880,blank=True, null=True)
+	book_i_file = models.FileField(validators=[validate_file_size],blank=True, null=True)
 
 	book_n = models.IntegerField( blank=True, null=True)
-	book_n_file = ContentTypeRestrictedFileField(max_upload_size=5242880,blank=True, null=True)
+	book_n_file = models.FileField(validators=[validate_file_size],blank=True, null=True)
 
 	book_ci = models.IntegerField(blank=True, null=True)
-	book_ci_file = ContentTypeRestrictedFileField(max_upload_size=5242880,blank=True, null=True)
+	book_ci_file = models.FileField(validators=[validate_file_size],blank=True, null=True)
 
 	book_cn = models.IntegerField(blank=True, null=True)
-	book_cn_file = ContentTypeRestrictedFileField(max_upload_size=5242880,blank=True, null=True)
+	book_cn_file = models.FileField(validators=[validate_file_size],blank=True, null=True)
 
 	book_ai = models.IntegerField( blank=True, null=True)
-	book_ai_file = ContentTypeRestrictedFileField(max_upload_size=5242880,blank=True, null=True)
+	book_ai_file = models.FileField(validators=[validate_file_size],blank=True, null=True)
 
 	book_nm = models.IntegerField( blank=True, null=True)
-	book_nm_file = ContentTypeRestrictedFileField(max_upload_size=5242880,blank=True, null=True)
+	book_nm_file = models.FileField(validators=[validate_file_size],blank=True, null=True)
 
 	book_m = models.CharField(max_length=500, blank=True, null=True)
 
 	if_s = models.CharField(max_length=500, blank=True, null=True)
 	if_f = models.CharField(max_length=500, blank=True, null=True)
 	if_c = models.CharField(max_length=500, blank=True, null=True)
-	if_file = ContentTypeRestrictedFileField(max_upload_size=5242880,blank=True, null=True)
+	if_file = models.FileField(validators=[validate_file_size],blank=True, null=True)
 
 	ef_s = models.CharField(max_length=500, blank=True, null=True)
 	ef_f = models.CharField(max_length=500, blank=True, null=True)
 	ef_c = models.CharField(max_length=500, blank=True, null=True)
-	ef_file = ContentTypeRestrictedFileField(max_upload_size=5242880,blank=True, null=True)
+	ef_file = models.FileField(validators=[validate_file_size],blank=True, null=True)
 
 	eef_s = models.CharField(max_length=500, blank=True, null=True)
 	eef_f = models.CharField(max_length=500, blank=True, null=True)
 	eef_c = models.CharField(max_length=500, blank=True, null=True)
-	eef_file = ContentTypeRestrictedFileField(max_upload_size=5242880,blank=True, null=True)
+	eef_file = models.FileField(validators=[validate_file_size],blank=True, null=True)
 
 	Cw_2 = models.CharField(max_length=500, blank=True, null=True)
-	Cw_2_file = ContentTypeRestrictedFileField(max_upload_size=5242880,blank=True, null=True)
+	Cw_2_file = models.FileField(validators=[validate_file_size],blank=True, null=True)
 	Cw_2_5 = models.CharField(max_length=500, blank=True, null=True)
-	Cw_2_5_file = ContentTypeRestrictedFileField(max_upload_size=5242880,blank=True, null=True)
+	Cw_2_5_file = models.FileField(validators=[validate_file_size],blank=True, null=True)
 	Cw_5 = models.CharField(max_length=500, blank=True, null=True)
-	Cw_5_file = ContentTypeRestrictedFileField(max_upload_size=5242880,blank=True, null=True)
+	Cw_5_file = models.FileField(validators=[validate_file_size],blank=True, null=True)
 
 	ipr_status = models.ForeignKey('ipr_status', on_delete=models.CASCADE,null=True,blank=True)
 	ipr_type = models.ForeignKey('ipr_type', on_delete=models.CASCADE,null=True,blank=True)
 	ipr_info = models.TextField(blank=True, null=True)
-	ipr_file = ContentTypeRestrictedFileField(max_upload_size=5242880,blank=True, null=True)
+	ipr_file = models.FileField(validators=[validate_file_size],blank=True, null=True)
 
 	rp_marks = models.CharField(max_length=500, blank=True, null=True)
 
@@ -514,7 +514,7 @@ class conference(models.Model):
 	c1_date = models.CharField(max_length=500,blank=True, null=True)
 	c1_index = models.CharField(max_length=500, blank=True, null=True)
 	c1_author =	models.CharField(max_length=500, blank=True, null=True)
-	c1_file = ContentTypeRestrictedFileField(max_upload_size=5242880,blank=True, null=True)
+	c1_file = models.FileField(validators=[validate_file_size],blank=True, null=True)
 
 	c2_name = models.CharField(max_length=500, blank=True, null=True)
 	c2_title = models.CharField(max_length=500, blank=True, null=True)
@@ -522,7 +522,7 @@ class conference(models.Model):
 	c2_date = models.CharField(max_length=500,blank=True, null=True)
 	c2_index = models.CharField(max_length=500, blank=True, null=True)
 	c2_author =	models.CharField(max_length=500, blank=True, null=True)
-	c2_file = ContentTypeRestrictedFileField(max_upload_size=5242880,blank=True, null=True)
+	c2_file = models.FileField(validators=[validate_file_size],blank=True, null=True)
 
 	c3_name = models.CharField(max_length=500, blank=True, null=True)
 	c3_title = models.CharField(max_length=500, blank=True, null=True)
@@ -530,7 +530,7 @@ class conference(models.Model):
 	c3_date = models.CharField(max_length=500,blank=True, null=True)
 	c3_index = models.CharField(max_length=500, blank=True, null=True)
 	c3_author =	models.CharField(max_length=500, blank=True, null=True)
-	c3_file = ContentTypeRestrictedFileField(max_upload_size=5242880,blank=True, null=True)
+	c3_file = models.FileField(validators=[validate_file_size],blank=True, null=True)
 
 	c4_name = models.CharField(max_length=500, blank=True, null=True)
 	c4_title = models.CharField(max_length=500, blank=True, null=True)
@@ -538,7 +538,7 @@ class conference(models.Model):
 	c4_date = models.CharField(max_length=500,blank=True, null=True)
 	c4_index = models.CharField(max_length=500, blank=True, null=True)
 	c4_author =	models.CharField(max_length=500, blank=True, null=True)
-	c4_file = ContentTypeRestrictedFileField(max_upload_size=5242880,blank=True, null=True)
+	c4_file = models.FileField(validators=[validate_file_size],blank=True, null=True)
 
 	c5_name = models.CharField(max_length=500, blank=True, null=True)
 	c5_title = models.CharField(max_length=500, blank=True, null=True)
@@ -546,7 +546,7 @@ class conference(models.Model):
 	c5_date = models.CharField(max_length=500,blank=True, null=True)
 	c5_index = models.CharField(max_length=500, blank=True, null=True)
 	c5_author =	models.CharField(max_length=500, blank=True, null=True)
-	c5_file = ContentTypeRestrictedFileField(max_upload_size=5242880,blank=True, null=True)
+	c5_file = models.FileField(validators=[validate_file_size],blank=True, null=True)
 
 	c6_name = models.CharField(max_length=500, blank=True, null=True)
 	c6_title = models.CharField(max_length=500, blank=True, null=True)
@@ -554,7 +554,7 @@ class conference(models.Model):
 	c6_date = models.CharField(max_length=500,blank=True, null=True)
 	c6_index = models.CharField(max_length=500, blank=True, null=True)
 	c6_author =	models.CharField(max_length=500, blank=True, null=True)
-	c6_file = ContentTypeRestrictedFileField(max_upload_size=5242880,blank=True, null=True)
+	c6_file = models.FileField(validators=[validate_file_size],blank=True, null=True)
 
 	c7_name = models.CharField(max_length=500, blank=True, null=True)
 	c7_title = models.CharField(max_length=500, blank=True, null=True)
@@ -562,7 +562,7 @@ class conference(models.Model):
 	c7_date = models.CharField(max_length=500,blank=True, null=True)
 	c7_index = models.CharField(max_length=500, blank=True, null=True)
 	c7_author =	models.CharField(max_length=500, blank=True, null=True)
-	c7_file = ContentTypeRestrictedFileField(max_upload_size=5242880,blank=True, null=True)
+	c7_file = models.FileField(validators=[validate_file_size],blank=True, null=True)
 
 	c8_name = models.CharField(max_length=500, blank=True, null=True)
 	c8_title = models.CharField(max_length=500, blank=True, null=True)
@@ -570,7 +570,7 @@ class conference(models.Model):
 	c8_date = models.CharField(max_length=500,blank=True, null=True)
 	c8_index = models.CharField(max_length=500, blank=True, null=True)
 	c8_author =	models.CharField(max_length=500, blank=True, null=True)
-	c8_file = ContentTypeRestrictedFileField(max_upload_size=5242880,blank=True, null=True)
+	c8_file = models.FileField(validators=[validate_file_size],blank=True, null=True)
 
 	info = models.ForeignKey('User', on_delete=models.CASCADE,null=True)
 
@@ -590,7 +590,7 @@ class journal(models.Model):
 	j1_date = models.CharField(max_length=500,blank=True, null=True)
 	j1_page = models.CharField(max_length=500,blank=True, null=True)
 	j1_author =	models.CharField(max_length=500, blank=True, null=True)
-	j1_file = ContentTypeRestrictedFileField(max_upload_size=5242880,blank=True, null=True)
+	j1_file = models.FileField(validators=[validate_file_size],blank=True, null=True)
 
 	j2_index = models.CharField(max_length=500, blank=True, null=True)
 	j2_name = models.CharField(max_length=500, blank=True, null=True)
@@ -600,7 +600,7 @@ class journal(models.Model):
 	j2_date = models.CharField(max_length=500,blank=True, null=True)
 	j2_page = models.CharField(max_length=500,blank=True, null=True)
 	j2_author =	models.CharField(max_length=500, blank=True, null=True)
-	j2_file = ContentTypeRestrictedFileField(max_upload_size=5242880,blank=True, null=True)
+	j2_file = models.FileField(validators=[validate_file_size],blank=True, null=True)
 
 
 	j3_index = models.CharField(max_length=500, blank=True, null=True)
@@ -611,7 +611,7 @@ class journal(models.Model):
 	j3_date = models.CharField(max_length=500,blank=True, null=True)
 	j3_page = models.CharField(max_length=500,blank=True, null=True)
 	j3_author =	models.CharField(max_length=500, blank=True, null=True)
-	j3_file = ContentTypeRestrictedFileField(max_upload_size=5242880,blank=True, null=True)
+	j3_file = models.FileField(validators=[validate_file_size],blank=True, null=True)
 
 	j4_index = models.CharField(max_length=500, blank=True, null=True)
 	j4_name = models.CharField(max_length=500, blank=True, null=True)
@@ -621,7 +621,7 @@ class journal(models.Model):
 	j4_date = models.CharField(max_length=500,blank=True, null=True)
 	j4_page = models.CharField(max_length=500,blank=True, null=True)
 	j4_author =	models.CharField(max_length=500, blank=True, null=True)
-	j4_file = ContentTypeRestrictedFileField(max_upload_size=5242880,blank=True, null=True)
+	j4_file = models.FileField(validators=[validate_file_size],blank=True, null=True)
 
 	j5_index = models.CharField(max_length=500, blank=True, null=True)
 	j5_name = models.CharField(max_length=500, blank=True, null=True)
@@ -631,7 +631,7 @@ class journal(models.Model):
 	j5_date = models.CharField(max_length=500,blank=True, null=True)
 	j5_page = models.CharField(max_length=500,blank=True, null=True)
 	j5_author =	models.CharField(max_length=500, blank=True, null=True)
-	j5_file = ContentTypeRestrictedFileField(max_upload_size=5242880,blank=True, null=True)
+	j5_file = models.FileField(validators=[validate_file_size],blank=True, null=True)
 
 	j6_index = models.CharField(max_length=500, blank=True, null=True)
 	j6_name = models.CharField(max_length=500, blank=True, null=True)
@@ -641,7 +641,7 @@ class journal(models.Model):
 	j6_date = models.CharField(max_length=500,blank=True, null=True)
 	j6_page = models.CharField(max_length=500,blank=True, null=True)
 	j6_author =	models.CharField(max_length=500, blank=True, null=True)
-	j6_file = ContentTypeRestrictedFileField(max_upload_size=5242880,blank=True, null=True)
+	j6_file = models.FileField(validators=[validate_file_size],blank=True, null=True)
 
 	j7_index = models.CharField(max_length=500, blank=True, null=True)
 	j7_name = models.CharField(max_length=500, blank=True, null=True)
@@ -651,7 +651,7 @@ class journal(models.Model):
 	j7_date = models.CharField(max_length=500,blank=True, null=True)
 	j7_page = models.CharField(max_length=500,blank=True, null=True)
 	j7_author =	models.CharField(max_length=500, blank=True, null=True)
-	j7_file = ContentTypeRestrictedFileField(max_upload_size=5242880,blank=True, null=True)
+	j7_file = models.FileField(validators=[validate_file_size],blank=True, null=True)
 
 	j8_index = models.CharField(max_length=500, blank=True, null=True)
 	j8_name = models.CharField(max_length=500, blank=True, null=True)
@@ -661,7 +661,7 @@ class journal(models.Model):
 	j8_date = models.CharField(max_length=500,blank=True, null=True)
 	j8_page = models.CharField(max_length=500,blank=True, null=True)
 	j8_author =	models.CharField(max_length=500, blank=True, null=True)
-	j8_file = ContentTypeRestrictedFileField(max_upload_size=5242880,blank=True, null=True)
+	j8_file = models.FileField(validators=[validate_file_size],blank=True, null=True)
 
 	info = models.ForeignKey('User', on_delete=models.CASCADE,null=True)
 

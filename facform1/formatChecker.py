@@ -1,35 +1,9 @@
-from django.db.models import FileField
-from django.forms import forms
-from django.template.defaultfilters import filesizeformat
-from django.utils.translation import ugettext_lazy as _
+from django.core.exceptions import ValidationError
 
-class ContentTypeRestrictedFileField(FileField):
-    """
-    Same as FileField, but you can specify:
-        * content_types - list containing allowed content_types. Example: ['application/pdf', 'image/jpeg']
-        * max_upload_size - a number indicating the maximum file size allowed for upload.
-            2.5MB - 2621440
-            5MB - 5242880
-            10MB - 10485760
-            20MB - 20971520
-            50MB - 5242880
-            100MB 104857600
-            250MB - 214958080
-    """
-    def __init__(self, *args, **kwargs):
-        self.max_upload_size = kwargs.pop("max_upload_size")
+def validate_file_size(value):
+    filesize=value.size
 
-        super(ContentTypeRestrictedFileField, self).__init__(*args, **kwargs)
-
-    def clean(self, *args, **kwargs):
-        data = super(ContentTypeRestrictedFileField, self).clean(*args, **kwargs)
-
-        file = data.file
-        try:
-            if file._size > self.max_upload_size:
-                raise forms.ValidationError(_('Please keep filesize under %s. Current filesize %s') % (filesizeformat(self.max_upload_size), filesizeformat(file._size)))
-        
-        except AttributeError:
-            pass
-
-        return data
+    if filesize > 20971520:
+        raise forms.ValidationError("The maximum file size that can be uploaded is 20MB")
+    else:
+        return value
