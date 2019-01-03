@@ -15,7 +15,6 @@ class ContentTypeRestrictedFileField(FileField):
             50MB - 5242880
             100MB 104857600
             250MB - 214958080
-            500MB - 429916160
     """
     def __init__(self, *args, **kwargs):
         self.content_types = kwargs.pop("content_types")
