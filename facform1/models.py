@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser, User
-from formatChecker import ContentTypeRestrictedFileField
+from .formatChecker import ContentTypeRestrictedFileField
 
 # from django.urls import reverse
 
