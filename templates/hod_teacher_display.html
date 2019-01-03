@@ -2014,16 +2014,11 @@
 
             {% render_field form1.marks_deduce class="form-control" %}
           </div>
-
-          <div class="card po">
- <div class="input-group text12 ">
-  <div class="input-group-prepend">
-    <span class="input-group-text">Reason:</span>
-  </div>
-  <div>
-{% render_field form1.reason class="form-control" %}</div></div>
-</div>
-        
+          
+          <div class="form-group col-md-12">
+            <label>Reason:</label>
+              {% render_field form1.reason class="form-control" %}
+          </div>
       </div>
 
 
