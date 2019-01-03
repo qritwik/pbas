@@ -2015,6 +2015,21 @@
 {{ key8.ta_hod_remarks }}</div>
 </div>
 
+
+<div class="form-row dis">
+            <div class="form-group col-md-6">
+                          <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="Deduced Marks(if any)">
+
+            </div>
+          <div class="form-group col-md-6 m7"">
+            {{ key8.marks_deduce }}
+          </div>
+          <div class="form-group col-md-12">
+            <h4>Reason:</h4>
+            {{ key8.reason }}
+          </div>
+      </div>
+
 <table class="table table-bordered po">
 <thead class="thead-dark">
   <tr>
@@ -2138,6 +2153,7 @@
   var c = parseFloat($('.m3').html())
   var d = parseFloat($('.m4').html())
   var e = parseFloat($('.m5').val())
+  var k = parseFloat($('.m7').val())
 
   if($('.m6').val()){
     e = 0;
@@ -2165,15 +2181,18 @@
   if(isNaN(g)){
     g = 0;
   }
+  if(isNaN(k)){
+    k = 0;
+  }
 
 
-  var f = a+b+c+d+e+g
+  var f = a+b+c+d+e+g-k
   $('.total_marks').val(f)
 
    if(f>=100){
     f=100;
   }
-  var z=a+b;
+  var z=a+b-k;
   var y=c+d;
   alert("Self marks "+z+"\nHod marks "+y);
 
