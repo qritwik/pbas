@@ -673,6 +673,8 @@ class remarks1(models.Model):
 	hod_marks2_2 = models.IntegerField( blank=True, null=True)
 	hod_marks2_3 = models.IntegerField( blank=True, null=True)
 	hod_marks2 = models.IntegerField( blank=True, null=True)
+	marks_deduce = models.IntegerField( blank=True, null=True)
+	reason = models.TextField( blank=True, null=True)
 
 	ta_hod_remarks = models.TextField( blank=True, null=True)
 	info = models.ForeignKey('User', on_delete=models.CASCADE,null=True)
