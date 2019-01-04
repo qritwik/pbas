@@ -2135,7 +2135,27 @@
         a=15;
        }
       $('.m4').val(a);
+
+            var e = parseFloat($('.m1').val());
+      var f = parseFloat($('.m2').val());
+      var m = parseFloat($('.m3').val());
+      var g = parseFloat($('.m5').val());
+      
+      if(isNaN(g)){
+      g = 0;
+      }
+      if(isNaN(m)){
+      m = 0;
+      }
+
+      var h = e+f-g
+
+      var y = a+m
+
+      alert("Self - Reduce marks "+h+"\nHod marks "+y);
     });
+
+
 
   });
 </script>
