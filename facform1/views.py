@@ -646,7 +646,12 @@ def ao_consolidated(request):
 		except remarks2.DoesNotExist:
 		    data5 = None
 
-		dic[i] = [data2,data3,data4,data5]
+		try:
+		    data7 = empDetailForm.objects.get(info=i.pk)
+		except empDetailForm.DoesNotExist:
+		    data7 = None    
+
+		dic[i] = [data2,data3,data4,data5,data7]
 
 	context = {
 			'data6':dic
