@@ -2118,16 +2118,25 @@
   $(function(){
     $('.hf').click(function(){
       var b = parseFloat($('.h1').val());
+      if(isNaN(b)){
+      b = 0;
+      }
       if(b>5){
         b=5;
        }
 
        var c = parseFloat($('.h2').val());
+       if(isNaN(c)){
+      c = 0;
+      }
       if(c>5){
         c=5;
        }
 
        var d = parseFloat($('.h3').val()) ;
+       if(isNaN(d)){
+      d = 0;
+      }
        if(d>5){
         d=5;
        }
