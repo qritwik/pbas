@@ -58,8 +58,9 @@
       {% if key.designation.name == "HOD" %}
       data-label="principalmarks">{{value.3.prin_marks1}} + {{value.3.prin_marks2}}
       {% else %}
-      data-label="principalmarks">{%if value.3.prin_marks1 %} {{value.3.prin_marks2}}{%endif%}
-      {%if value.3.prin_marks1 %}
+      data-label="principalmarks">{%if value.3.prin_marks1 %} {{value.3.prin_marks1}}{%endif%}
+      {%if value.3.prin_marks2 %}
+      {{value.3.prin_marks2}}
       {%endif%}
       {% endif %}
       </td>
