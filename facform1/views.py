@@ -855,7 +855,7 @@ def hod_teacher_display_edit(request,pk):
 		"key5":data5,
 		"key6":data6,
 		"key7":data7,
-		"key8":data8
+		"key8":data8,
 		"form1":form1
 		}
 
@@ -963,7 +963,7 @@ def hod_teacher1_display_edit(request,pk):
 			"key5":data5,
 			"key6":data6,
 			"key7":data7,
-			"key8":data8
+			"key8":data8,
 			"form1":form1
 			}
 
