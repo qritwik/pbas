@@ -76,7 +76,7 @@
 						<div class="row">
 							<div class="cell" data-title="Faculty Name">
 								{% if info.teach_status and info.hod_status %}
-								<a href="/ao_teacher_display/{{info.username}}" class="h2p">{{info.first_name}}</a>
+								<a href="/hod_teacher_display_edit/{{info.username}}" class="h2p">{{info.first_name}}</a>
 								{% elif info.teach_status %}
 								<a href="/hod_teacher_display/{{info.pk}}">{{info.first_name}}</a>
 								{% else %}
@@ -110,7 +110,7 @@
 						<div class="row">
 							<div class="cell" data-title="Faculty Name">
 								{% if info.teach_status and info.hod_status %}
-								<a href="/ao_teacher1_display/{{info.username}}" class="h2p">{{info.first_name}}</a>
+								<a href="/hod_teacher1_display_edit/{{info.username}}" class="h2p">{{info.first_name}}</a>
 								{% elif info.teach_status %}
 								<a href="/hod_teacher1_display/{{info.pk}}">{{info.first_name}}</a>
 								{% else %}
