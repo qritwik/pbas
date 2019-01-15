@@ -835,7 +835,7 @@ def hod_teacher_display_edit(request,pk):
 
 
 		if request.method == 'POST':
-			remark = remarks1.objects.get(info=name)
+			remark  = remarks1.objects.get(info=name)
 			form1 = forms.form_User(request.POST, instance=remark)
 			if form1.is_valid():
 
@@ -859,7 +859,7 @@ def hod_teacher_display_edit(request,pk):
 		"form1":form1
 		}
 
-		return render(request,'hod_teacher_display.html',context=context1)
+		return render(request,'hod_teacher_display_edit.html',context=context1)
 	else:
 		return HttpResponseRedirect('/invalid')
 
@@ -967,7 +967,7 @@ def hod_teacher1_display_edit(request,pk):
 			"form1":form1
 			}
 
-			return render(request,'hod_teacher1_display.html',context=context1)
+			return render(request,'hod_teacher1_display_edit.html',context=context1)
 		else:
 			return HttpResponseRedirect('/invalid')
 
