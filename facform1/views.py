@@ -835,8 +835,8 @@ def hod_teacher_display_edit(request,pk):
 
 
 		if request.method == 'POST':
-			remarks1 = remarks1.objects.get(info=name)
-			form1 = forms.form_User(request.POST, instance=remarks1)
+			remark = remarks1.objects.get(info=name)
+			form1 = forms.form_User(request.POST, instance=remark)
 			if form1.is_valid():
 
 				obj = form1.save(commit=False)
@@ -943,8 +943,8 @@ def hod_teacher1_display_edit(request,pk):
 
 
 			if request.method == 'POST':
-				remarks1 = remarks1.objects.get(info=name)
-				form1 = forms.form_User(request.POST, instance=remarks1)
+				remark = remarks1.objects.get(info=name)
+				form1 = forms.form_User(request.POST, instance=remark)
 				if form1.is_valid():
 
 					obj = form1.save(commit=False)
