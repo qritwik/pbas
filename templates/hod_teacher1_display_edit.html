@@ -2028,9 +2028,14 @@
 
             {% render_field form1.marks_deduce class="form-control" value=key8.marks_deduce %}
           </div>
+           <div class="form-group col-md-12">
+            <h4>Existing Reason:</h4>
+              {{ key8.reason }}
+          </div>
+
           <div class="form-group col-md-12">
-            <h4>Reason:</h4>
-              {% render_field form1.reason class="form-control" value=key8.reason%}
+            <h4>Reason:(If no changes copy from above)</h4>
+              {% render_field form1.reason class="form-control"  %}
           </div>
       </div>
 
