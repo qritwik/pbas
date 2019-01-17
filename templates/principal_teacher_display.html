@@ -2133,11 +2133,11 @@
   var k = parseFloat($('.m7').html())
   var g = parseFloat($('.m6').val())
 
-    if($('.m6').val()){
-    e = 0;
-    $('.m5').val(0);
+  //   if($('.m6').val()){
+  //   e = 0;
+  //   $('.m5').val(0);
 
-  }
+  // }
   var g = parseFloat($('.m6').val())
 
   if(isNaN(a)){
@@ -2162,6 +2162,11 @@
   if(isNaN(k)){
     k = 0;
   }
+
+  if(e>5){
+    e = 5;
+  }
+
 
 
   var f = a+b+c+d+e+g-k
