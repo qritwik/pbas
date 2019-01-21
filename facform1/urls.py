@@ -57,6 +57,7 @@ urlpatterns = [
     url(r'^principal_first/', views.principal_first,name="principal_first"),
     url(r'^principal_display/(?P<dept>[\w\-]+)$', views.principal_display,name="principal_display"),
     url(r'^principal_teacher_display/(?P<pk>[\w\-]+)$', views.principal_teacher_display,name="principal_teacher_display"),
+    url(r'^principal_teacher_display_edit/(?P<pk>[\w\-]+)$', views.principal_teacher_display_edit,name="principal_teacher_display_edit"),
 
     url(r'^principal_teacher1_display/(?P<pk>[\w\-]+)$', views.principal_teacher1_display,name="principal_teacher1_display"),
     url(r'^principal_hod_display/(?P<pk>[\w\-]+)$', views.principal_hod_display,name="principal_hod_display"),
