@@ -1189,6 +1189,69 @@ def principal_teacher1_display(request,pk):
 
 
 @login_required
+def principal_teacher1_display_edit(request,pk):
+	if request.user.is_principal():
+		name =  User.objects.get(pk = pk);
+		print(name)
+		data1 = User.objects.get(username=name);
+		print(data1.department)
+
+		data2 = empDetailForm.objects.get(info__username=name);
+		data3 = feedbackTab.objects.get(info__username=name);
+		data4 = rd.objects.get(info__username=name);
+		data5 = remarks.objects.get(info__username=name);
+		data6 = conference.objects.get(info__username=name);
+		data7 = journal.objects.get(info__username=name);
+		if User.objects.filter(username=name).filter(hod_status=True):
+			data8 = remarks1.objects.get(info__username=name)
+		else:
+			data8 = []
+
+		if User.objects.filter(username=name).filter(principal_status=True):
+			data9 = remarks2.objects.get(info__username=name);
+		else:
+			data9 = []	
+
+
+
+		if request.method == 'POST':
+			remark  = remarks2.objects.get(info=name)
+			form1 = forms.form_remarks2(request.POST, instance=remark)
+
+			if form1.is_valid():
+				obj = form1.save(commit=False)
+
+				obj.info = name
+				obj.department = data1.department
+				obj.save()
+
+				return HttpResponseRedirect("/principal_display/"+data1.department.name)
+
+		else:
+			form1 = forms.form_remarks2()
+
+
+		context1 = {
+		"key1":data1,
+		"key2":data2,
+		"key3":data3,
+		"key4":data4,
+		"key5":data5,
+		"key6":data6,
+		"key7":data7,
+		"key8":data8,
+		"key9":data9,
+		"form1":form1
+		}
+
+		return render(request,'principal_teacher1_display_edit.html',context=context1)
+	else:
+		return HttpResponseRedirect('/invalid')
+
+
+
+
+@login_required
 def principal_hod_display(request,pk):
 	if request.user.is_principal():
 		name =  User.objects.get(pk = pk);
@@ -1242,6 +1305,64 @@ def principal_hod_display(request,pk):
 		return render(request,'principal_hod_display.html',context=context1)
 	else:
 		return HttpResponseRedirect('/invalid')
+
+
+
+@login_required
+def principal_hod_display_edit(request,pk):
+	if request.user.is_principal():
+		name =  User.objects.get(pk = pk);
+		print(name)
+		data1 = User.objects.get(username=name);
+		print(data1.department)
+
+		data2 = empDetailForm.objects.get(info__username=name);
+		data3 = feedbackTab.objects.get(info__username=name);
+		data4 = rd.objects.get(info__username=name);
+		data5 = remarks.objects.get(info__username=name);
+		data6 = conference.objects.get(info__username=name);
+		data7 = journal.objects.get(info__username=name);
+		if User.objects.filter(username=name).filter(hod_status=True):
+			data8 = remarks2.objects.get(info__username=name)
+		else:
+			data8 = []
+
+
+
+
+		if request.method == 'POST':
+			remark  = remarks2.objects.get(info=name)
+			form1 = forms.form_remarks2(request.POST, instance=remark)
+
+			if form1.is_valid():
+				obj = form1.save(commit=False)
+
+				obj.info = name
+				obj.department = data1.department
+				obj.save()
+
+				return HttpResponseRedirect("/principal_display/"+data1.department.name)
+
+		else:
+			form1 = forms.form_remarks2()
+
+
+		context1 = {
+		"key1":data1,
+		"key2":data2,
+		"key3":data3,
+		"key4":data4,
+		"key5":data5,
+		"key6":data6,
+		"key7":data7,
+		"key8":data8,
+		"form1":form1
+		}
+
+		return render(request,'principal_hod_display_edit.html',context=context1)
+	else:
+		return HttpResponseRedirect('/invalid')
+
 
 @login_required
 def ao_first(request):
