@@ -15,6 +15,37 @@ from openpyxl.writer.excel import save_virtual_workbook
 from django.contrib.auth.decorators import login_required
 from django.forms import formset_factory
 
+import pdfkit
+from django.core.mail import send_mail, EmailMessage
+
+
+
+
+def email_doc(self, name):
+	qs = User.objects.get(username=name)
+	url = 'https://pbas.bmsit.ac.in/ao_teacher1_display/' + name
+
+	
+	# DRIVER = 'chromedriver'
+	# driver = webdriver.Chrome(DRIVER)
+	# driver.get(url)
+	# scn = name + '.png'
+	# # screenshot = driver.get_screenshot_as_png()
+	# screenshot = driver.save_screenshot(scn)
+	# driver.quit()
+
+
+	pdf = pdfkit.from_url(url, False)
+
+	email = EmailMessage(
+				'PBAS',
+				'Hi, ' + qs.first_name + '\n\n' +'Your PBAS report is attached below: \n\nThanks,\nAO-BMSIT' ,
+				'PBAS Support <ao@bmsit.in>',
+				[qs.email],
+				)
+	email.attach_file(pdf)
+	email.send()	
+
 
 
 
@@ -1467,6 +1498,14 @@ def ao_teacher_display(request,name):
 
 
 	}
+
+
+
+
+	if request.method == 'POST':
+		email_doc(name)
+		return HttpResponseRedirect('/ao_display'+ data1.department)
+
 	return render(request,'ao_teacher_display.html',context=context1)
 
 @login_required
