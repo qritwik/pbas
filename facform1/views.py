@@ -16,7 +16,7 @@ from django.contrib.auth.decorators import login_required
 from django.forms import formset_factory
 
 from selenium import webdriver
-import pdfkit
+# import pdfkit
 from django.core.mail import send_mail, EmailMessage
 
 
