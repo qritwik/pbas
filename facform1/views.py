@@ -2027,7 +2027,7 @@ def assistant_preview(request):
 		data7 = journal.objects.get(info=name)
 
 		if User.objects.filter(username=name).filter(hod_status=True):
-		data8 = remarks1.objects.get(info__username=name)
+			data8 = remarks1.objects.get(info__username=name)
 		else:
 			data8 = []
 		if User.objects.filter(username=name).filter(principal_status=True):
