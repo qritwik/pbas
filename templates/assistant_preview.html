@@ -1881,6 +1881,7 @@
 
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js">
+
 window.onload = function(e){
 html2canvas(document.body).then(function(canvas) {
 		canvas.id = "mycanvas";
@@ -1894,8 +1895,10 @@ var img = canvas.toDataURL("image/jpeg");
 
 };
 
+var d = document.getElementById("download");
 
-download.addEventListener("click", function() {
+if(d){
+d.addEventListener("click", function() {
 	html2canvas(document.body).then(function(canvas) {
 			canvas.id = "mycanvas";
 	    document.body.appendChild(canvas);
@@ -1910,6 +1913,8 @@ download.addEventListener("click", function() {
   pdf.addImage(imgData, 'JPEG',0,0, width, height);
   pdf.save("download.pdf");
 }, false);
+
+}
 </script>
 
 </body>
