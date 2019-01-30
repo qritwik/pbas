@@ -1909,8 +1909,9 @@
 //   pdf.addImage(imgData, 'JPEG',0,0, width, height);
 //   pdf.save("download.pdf");
 // }, false);
-
-download.addEventListener("click",function (quality = 1) {
+$(function(){
+	
+$('#download').click(function (quality = 1) {
 		alert("hello");
 		const filename  = 'download.pdf';
 
@@ -1921,8 +1922,8 @@ download.addEventListener("click",function (quality = 1) {
 			pdf.addImage(canvas.toDataURL('image/png'), 'PNG', 0, 0, 211, 298);
 			pdf.save(filename);
 		});
-	}, false);
-
+	});
+});
 
 
 
