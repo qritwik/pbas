@@ -19,11 +19,15 @@
     <table id="consolidated" class="ui celled table" style="margin-top:2%">
   <thead>
     <tr><th>Name</th>
-      <th>Designation</th>
+      <!-- <th>Designation</th> -->
     <th>Department</th>
-    <th>Month of Increment</th>
+    <!-- <th>Month of Increment</th> -->
     <th>Self Marks</th>
     <th>HOD Marks</th>
+
+    <th>HOD Remarks</th>
+    <th>HOD Reduce</th>
+
     <th>Principal Marks</th>
     <th>Add/Reduce Marks</th>
     <th>Reason</th>
@@ -34,16 +38,16 @@
     {% for key, value in data6.items %}
      <tr pk="{{key.department.pk}}">
       <td data-label="Name">{{key.first_name}}</td>
-      <td data-label="Name">{{key.designation}}</td>
+      <!-- <td data-label="Name">{{key.designation}}</td> -->
 
       <td data-label="department">{{key.department}}</td>
 
 
-      {%if value.4 %}
+      <!-- {%if value.4 %}
       <td data-label="incr">{{value.4.month_of_increment}}</td>
       {%else%}
       <td data-label="incr"></td>
-      {%endif%}
+      {%endif%} -->
 
       {%if value.0 or value.1%}
       <td data-label="selfmarks">{{value.0.e_o_f_r_final}} + {{value.1.rd_tot_marks}} {%if value.2.marks_deduce %} - {{value.2.marks_deduce}} {%endif%}</td>
@@ -52,8 +56,12 @@
       {%endif%}
       {%if value.2%}
       <td data-label="hodmarks">{{value.2.hod_marks1}} + {{value.2.hod_marks2}}</td>
+      <td data-label="hod remarks">{{value.2.ta_hod_remarks}}</td>
+      <td data-label="hod reduce">{{value.2.reason}}</td>
       {%else%}
       <td data-label="hodmarks"></td>
+      <td data-label="hod remarks"></td>
+      <td data-label="hod reduce"></td>
       {%endif%}
       {%if value.3%}
       <td
