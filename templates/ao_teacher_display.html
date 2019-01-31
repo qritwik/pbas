@@ -6,9 +6,9 @@
 {% include 'base.html' %}
 <body>
 <div id='content'>
-	<div class="container">
+  <div class="container">
 
-		  <div class="card poi table-bordered">
+      <div class="card poi table-bordered">
         <div class="form-row">
         <div class="form-group col-md-3">
         <img src={% static "image/bms.logo.png" %} class="img-thumbnail" width="150px"/>
@@ -18,7 +18,7 @@
       </div>
     </div>
         <h3 class="lead" align="center">Faculty Appraisal Form</h3>
-				<h1 class="lead" align="center">2017-18</h1>
+        <h1 class="lead" align="center">2017-18</h1>
         <hr class="my-4">
       </div>
 
@@ -26,7 +26,7 @@
       {% csrf_token %}
 
         <div class="table-bordered poi form-row">
-          <div class="form-group col-md-6">
+          <div class="form-group col-md-3">
             <label for="">Internship Company Name</label>
 
             <input type="text" class="form-control" id="inputEmpName" disabled value="{{ key2.it_name }}">
@@ -39,7 +39,7 @@
             <label for="">To</label>
             <input type="text" class="form-control" id="inputEmpName" disabled value="{{ key2.it_t }}">
           </div>
-          <div class="form-group col-md-6">
+          <div class="form-group col-md-3">
 
             <label for="">Internship report file</label>
             {% if key2.internship_report_file %}
@@ -50,66 +50,66 @@
 
           </div>
 
-          <div class="form-group col-md-6">
+          <div class="form-group col-md-3">
             <label for="inputEmpName">Employee Name</label>
             <input type="text" class="form-control" id="inputEmpName" disabled value="{{ key1.first_name }}">
           </div>
-        <div class="form-group col-md-6">
+        <div class="form-group col-md-3">
             <label for="inputEmployeeIdNo">Username</label>
             <input type="text" class="form-control" id="inputEmployeeIdNo" disabled value="{{key1.username}}">
         </div>
-        <div class="form-group col-md-6">
+        <div class="form-group col-md-3">
             <label for="inputHighestQuali">Highest Qualification</label>
             <input type="text" class="form-control" id="inputEmpName" disabled value="{{ key2.high_qual }}">
         </div>
-        <div class="form-group col-md-6">
+        <div class="form-group col-md-3">
           <label for="inputDept">Department</label>
           <input type="text" class="form-control" id="inputEmployeeIdNo" disabled value="{{key1.department}}">
         </div>
-        <div class="form-group col-md-12">
+        <div class="form-group col-md-3">
           <label for="inputDOJ">Date of joining</label>
           <input type="text" class="form-control" id="inputEmpName" disabled value="{{ key2.doj }}">
         </div>
-        <div class="form-group col-md-6">
+        <div class="form-group col-md-3">
           <label for="inputPresentPosition">Designation</label>
-					<input type="text" class="form-control" id="inputEmployeeIdNo" disabled value="{{key1.designation}}">
+          <input type="text" class="form-control" id="inputEmployeeIdNo" disabled value="{{key1.designation}}">
         </div>
-        <div class="form-group col-md-6">
+        <div class="form-group col-md-3">
           <label for="inputHeldFrom">Held From</label>
           <input type="text" class="form-control" id="inputEmpName" disabled value="{{ key2.Held_from }}">
         </div>
 
-        <div class="form-group col-md-6">
+        <div class="form-group col-md-3">
           <label for="inputPhoneNo">Phone No.</label>
           <input type="text" class="form-control" id="inputPhoneNo" disabled placeholder="PhoneNo" value="{{key1.phone}}">
         </div>
-        <div class="form-group col-md-6">
+        <div class="form-group col-md-3">
           <label for="inputEmail">Email Address</label>
           <input type="email" class="form-control" id="inputEmail" disabled placeholder="Email" value="{{key1.email}}">
         </div>
 
         <h3>Experience</h3>
-          <div class="row form-group col-md-12">
+          <div class="row form-group col-md-9">
 
-      	   <div class="form-group col-md-4">
+           <div class="form-group col-md-3">
             <label for="inputteaching">teaching</label>
             <input type="text" class="form-control" id="inputEmpName" disabled value="{{ key2.exp_teach }}">
            </div>
-            <div class="form-group col-md-4">
+            <div class="form-group col-md-3">
               <label for="inputResearch">Research</label>
               <input type="text" class="form-control" id="inputEmpName" disabled value="{{ key2.exp_res }}">
             </div>
-            <div class="form-group col-md-4">
+            <div class="form-group col-md-3">
               <label for="inputIndustry">Industry</label>
               <input type="text" class="form-control" id="inputEmpName" disabled value="{{ key2.exp_indus }}">
             </div>
-	       </div>
+         </div>
          <div class="form-group col-md-6">
          <label>Month of increment</label>
          <input type="text" class="form-control" id="inputEmpName" disabled value="{{ key2.month_of_increment }}">
                      
                       </div>
-	   </div>
+     </div>
 
 
 
@@ -136,7 +136,7 @@
     </tr>
   </thead>
   <tbody>
-		{% if key3.o_t1_name %}
+    {% if key3.o_t1_name %}
     <tr>
       <td>1</td>
       <td>{{ key3.o_t1_name }}</td>
@@ -147,8 +147,8 @@
       <td>{{ key3.o_t1_stu_pass }}</td>
       <td>{{ key3.o_t1_stu_perpass }}</td>
     </tr>
-			{% endif %}
-			{% if key3.o_t2_name %}
+      {% endif %}
+      {% if key3.o_t2_name %}
     <tr>
       <td>2</td>
       <td>{{ key3.o_t2_name }}</td>
@@ -159,8 +159,8 @@
       <td>{{ key3.o_t2_stu_pass }}</td>
       <td>{{ key3.o_t2_stu_perpass }}</td>
     </tr>
-		{% endif %}
-		{% if key3.o_t3_name %}
+    {% endif %}
+    {% if key3.o_t3_name %}
     <tr>
       <td>3</td>
       <td>{{ key3.o_t3_name }}</td>
@@ -171,7 +171,7 @@
       <td>{{ key3.o_t3_stu_pass }}</td>
       <td>{{ key3.o_t3_stu_perpass }}</td>
     </tr>
-		{% endif %}
+    {% endif %}
   </tbody>
 </table>
 <div class="container-fluid">
@@ -186,19 +186,6 @@
 </div>
 
 
-</div>
-<div class="dis1 row">
-
-<div class="form-group col-sm-4">
-
-</div>
-<!-- <div class="form-group col-sm-4">
-
-<button type="button" class="btn btn-info btn-lg btn-block o_t">Calculate</button>
-</div> -->
-<div class="form-group col-sm-4">
-
-</div>
 </div>
 
 
@@ -221,43 +208,43 @@
     </tr>
   </thead>
   <tbody>
-		{% if key3.o_l1_name %}
+    {% if key3.o_l1_name %}
     <tr>
       <td>1</td>
       <td>{{ key3.o_l1_name }}</td>
       <td class="right aligned">{{ key3.o_l1_f1 }}</td>
       <td class="center aligned">{{ key3.o_l1_f2 }}</td>
-			<td>{{ key3.o_l1_favg }}</td>
+      <td>{{ key3.o_l1_favg }}</td>
       <td>{{ key3.o_l1_stu_app }}</td>
       <td>{{ key3.o_l1_stu_pass }}</td>
-			<td>{{ key3.o_l1_stu_perpass }}</td>
+      <td>{{ key3.o_l1_stu_perpass }}</td>
     </tr>
-		{% endif %}
-		{% if key3.o_l2_name %}
+    {% endif %}
+    {% if key3.o_l2_name %}
     <tr>
       <td>2</td>
       <td>{{ key3.o_l2_name }}</td>
       <td class="right aligned">{{ key3.o_l2_f1 }}</td>
       <td class="center aligned">{{ key3.o_l2_f2 }}</td>
-			<td>{{ key3.o_l2_favg }}</td>
+      <td>{{ key3.o_l2_favg }}</td>
       <td>{{ key3.o_l2_stu_app }}</td>
       <td>{{ key3.o_l2_stu_pass }}</td>
-			<td>{{ key3.o_l2_stu_perpass }}</td>
+      <td>{{ key3.o_l2_stu_perpass }}</td>
     </tr>
-		{% endif %}
-		{% if key3.o_l3_name %}
+    {% endif %}
+    {% if key3.o_l3_name %}
      <tr>
       <td>3</td>
       <td>{{ key3.o_l3_name }}</td>
       <td class="right aligned">{{ key3.o_l3_f1 }}</td>
       <td class="center aligned">{{ key3.o_l3_f2 }}</td>
-			<td>{{ key3.o_l3_favg }}</td>
+      <td>{{ key3.o_l3_favg }}</td>
       <td>{{ key3.o_l3_stu_app }}</td>
       <td>{{ key3.o_l3_stu_pass }}</td>
-			<td>{{ key3.o_l3_stu_perpass }}</td>
+      <td>{{ key3.o_l3_stu_perpass }}</td>
     </tr>
-		{% endif %}
-		{% if key3.o_l4_name %}
+    {% endif %}
+    {% if key3.o_l4_name %}
     <tr>
       <td>4</td>
       <td>{{ key3.o_l4_name }}</td>
@@ -268,8 +255,8 @@
       <td>{{ key3.o_l4_stu_pass }}</td>
       <td>{{ key3.o_l4_stu_perpass }}</td>
     </tr>
-		{% endif %}
-		{% if key3.o_l5_name %}
+    {% endif %}
+    {% if key3.o_l5_name %}
     <tr>
       <td>5</td>
       <td>{{ key3.o_l5_name }}</td>
@@ -280,7 +267,7 @@
       <td>{{ key3.o_l5_stu_pass }}</td>
       <td>{{ key3.o_l5_stu_perpass }}</td>
     </tr>
-		{% endif %}
+    {% endif %}
   </tbody>
 
 </table>
@@ -296,19 +283,6 @@
 <em>{{ key3.o_l_r_avg }}</em>
 </div>
 
-</div>
-<div class="dis1 row">
-
-<div class="form-group col-sm-4">
-
-</div>
-<!-- <div class="form-group col-sm-4">
-
-<button type="button" class="btn btn-info btn-lg btn-block o_l">Calculate</button>
-</div> -->
-<div class="form-group col-sm-4">
-
-</div>
 </div>
 
 </div>
@@ -336,7 +310,7 @@
     </tr>
   </thead>
   <tbody>
-		{% if key3.e_t1_name %}
+    {% if key3.e_t1_name %}
     <tr>
       <td>1</td>
       <td>{{ key3.e_t1_name }}</td>
@@ -347,8 +321,8 @@
       <td>{{ key3.e_t1_stu_pass }}</td>
       <td>{{ key3.e_t1_stu_perpass }}</td>
     </tr>
-		{% endif %}
-		{% if key3.e_t2_name %}
+    {% endif %}
+    {% if key3.e_t2_name %}
     <tr>
       <td>2</td>
       <td>{{ key3.e_t2_name }}</td>
@@ -359,8 +333,8 @@
       <td>{{ key3.e_t2_stu_pass }}</td>
       <td>{{ key3.e_t2_stu_perpass }}</td>
     </tr>
-		{% endif %}
-		{% if key3.e_t3_name %}
+    {% endif %}
+    {% if key3.e_t3_name %}
 
       <tr>
       <td>3</td>
@@ -372,7 +346,7 @@
       <td>{{ key3.e_t3_stu_pass }}</td>
       <td>{{ key3.e_t3_stu_perpass }}</td>
     </tr>
-		{% endif %}
+    {% endif %}
   </tbody>
 </table>
 <div class="container-fluid">
@@ -386,19 +360,7 @@
   <em>{{ key3.e_t_r_avg }}</em></div>
   </div>
 
-<div class="dis1 row">
 
-<div class="form-group col-sm-4">
-
-</div>
-<!-- <div class="form-group col-sm-4">
-
-<button type="button" class="btn btn-info btn-lg btn-block e_t">Calculate</button>
-</div> -->
-<div class="form-group col-sm-4">
-
-</div>
-</div>
 </div>
 <table class="table-bordered table">
   <thead>
@@ -418,43 +380,43 @@
     </tr>
   </thead>
   <tbody>
-		{% if key3.e_l1_name %}
+    {% if key3.e_l1_name %}
     <tr>
       <td>1</td>
       <td>{{ key3.e_l1_name }}</td>
       <td class="right aligned">{{ key3.e_l1_f1 }}</td>
       <td class="center aligned">{{ key3.e_l1_f2 }}</td>
-			<td>{{ key3.e_l1_favg }}</td>
+      <td>{{ key3.e_l1_favg }}</td>
       <td>{{ key3.e_l1_stu_app }}</td>
       <td>{{ key3.e_l1_stu_pass }}</td>
-			<td>{{ key3.e_l1_stu_perpass }}</td>
+      <td>{{ key3.e_l1_stu_perpass }}</td>
     </tr>
-		{% endif %}
-		{% if key3.e_l2_name %}
+    {% endif %}
+    {% if key3.e_l2_name %}
     <tr>
       <td>2</td>
       <td>{{ key3.e_l2_name }}</td>
       <td class="right aligned">{{ key3.e_l2_f1 }}</td>
       <td class="center aligned">{{ key3.e_l2_f2 }}</td>
-			<td>{{ key3.e_l2_favg }}</td>
+      <td>{{ key3.e_l2_favg }}</td>
       <td>{{ key3.e_l2_stu_app }}</td>
       <td>{{ key3.e_l2_stu_pass }}</td>
-			<td>{{ key3.e_l2_stu_perpass }}</td>
+      <td>{{ key3.e_l2_stu_perpass }}</td>
     </tr>
-		{% endif %}
-		{% if key3.e_l3_name %}
-		<tr>
+    {% endif %}
+    {% if key3.e_l3_name %}
+    <tr>
       <td>3</td>
       <td>{{ key3.e_l3_name }}</td>
       <td class="right aligned">{{ key3.e_l3_f1 }}</td>
       <td class="center aligned">{{ key3.e_l3_f2 }}</td>
-			<td>{{ key3.e_l3_favg }}</td>
+      <td>{{ key3.e_l3_favg }}</td>
       <td>{{ key3.e_l3_stu_app }}</td>
       <td>{{ key3.e_l3_stu_pass }}</td>
-			<td>{{ key3.e_l3_stu_perpass }}</td>
+      <td>{{ key3.e_l3_stu_perpass }}</td>
     </tr>
-		{% endif %}
-		{% if key3.e_l4_name %}
+    {% endif %}
+    {% if key3.e_l4_name %}
 
     <tr>
       <td>4</td>
@@ -466,8 +428,8 @@
       <td>{{ key3.e_l4_stu_pass }}</td>
       <td>{{ key3.e_l4_stu_perpass }}</td>
     </tr>
-		{% endif %}
-		{% if key3.e_l5_name %}
+    {% endif %}
+    {% if key3.e_l5_name %}
 
     <tr>
       <td>5</td>
@@ -479,7 +441,7 @@
       <td>{{ key3.e_l5_stu_pass }}</td>
       <td>{{ key3.e_l5_stu_perpass }}</td>
     </tr>
-		{% endif %}
+    {% endif %}
   </tbody>
 </table>
 <div class="container-fluid">
@@ -493,19 +455,6 @@
   <em>{{ key3.e_l_r_avg }}</em></div>
   </div>
 
-<div class="dis1 row">
-
-<div class="form-group col-sm-4">
-
-</div>
-<!-- <div class="form-group col-sm-4">
-
-<button type="button" class="btn btn-info btn-lg btn-block e_l">Calculate</button>
-</div> -->
-<div class="form-group col-sm-4">
-
-</div>
-</div>
 
 </div>
 </div>
@@ -526,121 +475,121 @@
       <th>Avg</th>
     </tr>
   </thead>
-	<tbody>
-		{% if key3.p1_name %}
+  <tbody>
+    {% if key3.p1_name %}
 
-		<tr>
-			<td>1</td>
-			<td>{{ key3.p1_name }}</td>
-			<td class="right aligned">{{ key3.p1_f1 }}</td>
-			<td class="center aligned">{{ key3.p1_f2 }}</td>
-			<td>{{ key3.p1_favg }}</td>
-		</tr>
-		{% endif %}
-		{% if key3.p2_name %}
+    <tr>
+      <td>1</td>
+      <td>{{ key3.p1_name }}</td>
+      <td class="right aligned">{{ key3.p1_f1 }}</td>
+      <td class="center aligned">{{ key3.p1_f2 }}</td>
+      <td>{{ key3.p1_favg }}</td>
+    </tr>
+    {% endif %}
+    {% if key3.p2_name %}
 
-		 <tr>
-			<td>2</td>
-			<td>{{ key3.p2_name }}</td>
-			<td class="right aligned">{{ key3.p2_f1 }}</td>
-			<td class="center aligned">{{ key3.p2_f2 }}</td>
-			<td>{{ key3.p2_favg }}</td>
-		</tr>
-		{% endif %}
+     <tr>
+      <td>2</td>
+      <td>{{ key3.p2_name }}</td>
+      <td class="right aligned">{{ key3.p2_f1 }}</td>
+      <td class="center aligned">{{ key3.p2_f2 }}</td>
+      <td>{{ key3.p2_favg }}</td>
+    </tr>
+    {% endif %}
 
-		{% if key3.p3_name %}
+    {% if key3.p3_name %}
 
-		<tr>
-			<td>3</td>
-			<td>{{ key3.p3_name }}</td>
-			<td class="right aligned">{{ key3.p3_f1 }}</td>
-			<td class="center aligned">{{ key3.p3_f2 }}</td>
-			<td>{{ key3.p3_favg }}</td>
-		</tr>
-		{% endif %}
+    <tr>
+      <td>3</td>
+      <td>{{ key3.p3_name }}</td>
+      <td class="right aligned">{{ key3.p3_f1 }}</td>
+      <td class="center aligned">{{ key3.p3_f2 }}</td>
+      <td>{{ key3.p3_favg }}</td>
+    </tr>
+    {% endif %}
 
-		{% if key3.p4_name %}
+    {% if key3.p4_name %}
 
-		<tr>
-			<td>4</td>
-			<td>{{ key3.p4_name }}</td>
-			<td class="right aligned">{{ key3.p4_f1 }}</td>
-			<td class="center aligned">{{ key3.p4_f2 }}</td>
-			<td>{{ key3.p4_favg }}</td>
-		</tr>
-		{% endif %}
+    <tr>
+      <td>4</td>
+      <td>{{ key3.p4_name }}</td>
+      <td class="right aligned">{{ key3.p4_f1 }}</td>
+      <td class="center aligned">{{ key3.p4_f2 }}</td>
+      <td>{{ key3.p4_favg }}</td>
+    </tr>
+    {% endif %}
 
-		{% if key3.p5_name %}
+    {% if key3.p5_name %}
 
-		<tr>
-			<td>5</td>
-			<td>{{ key3.p5_name }}</td>
-			<td class="right aligned">{{ key3.p5_f1 }}</td>
-			<td class="center aligned">{{ key3.p5_f2 }}</td>
-			<td>{{ key3.p5_favg }}</td>
-		</tr>
-		{% endif %}
+    <tr>
+      <td>5</td>
+      <td>{{ key3.p5_name }}</td>
+      <td class="right aligned">{{ key3.p5_f1 }}</td>
+      <td class="center aligned">{{ key3.p5_f2 }}</td>
+      <td>{{ key3.p5_favg }}</td>
+    </tr>
+    {% endif %}
 
-		{% if key3.p6_name %}
+    {% if key3.p6_name %}
 
-		<tr>
-			<td>6</td>
-			<td>{{ key3.p6_name }}</td>
-			<td class="right aligned">{{ key3.p6_f1 }}</td>
-			<td class="center aligned">{{ key3.p6_f2 }}</td>
-			<td>{{ key3.p6_favg }}</td>
-		</tr>
-		{% endif %}
+    <tr>
+      <td>6</td>
+      <td>{{ key3.p6_name }}</td>
+      <td class="right aligned">{{ key3.p6_f1 }}</td>
+      <td class="center aligned">{{ key3.p6_f2 }}</td>
+      <td>{{ key3.p6_favg }}</td>
+    </tr>
+    {% endif %}
 
-		{% if key3.p7_name %}
+    {% if key3.p7_name %}
 
-		<tr>
-			<td>7</td>
-			<td>{{ key3.p7_name }}</td>
-			<td class="right aligned">{{ key3.p7_f1 }}</td>
-			<td class="center aligned">{{ key3.p7_f2 }}</td>
-			<td>{{ key3.p7_favg }}</td>
-		</tr>
-		{% endif %}
-
-
+    <tr>
+      <td>7</td>
+      <td>{{ key3.p7_name }}</td>
+      <td class="right aligned">{{ key3.p7_f1 }}</td>
+      <td class="center aligned">{{ key3.p7_f2 }}</td>
+      <td>{{ key3.p7_favg }}</td>
+    </tr>
+    {% endif %}
 
 
 
-		{% if key3.p8_name %}
-
-		<tr>
-			<td>8</td>
-			<td>{{ key3.p8_name }}</td>
-			<td class="right aligned">{{ key3.p8_f1 }}</td>
-			<td class="center aligned">{{ key3.p8_f2 }}</td>
-			<td>{{ key3.p8_favg }}</td>
-		</tr>
-		{% endif %}
 
 
-		{% if key3.p9_name %}
+    {% if key3.p8_name %}
 
-		<tr>
-			<td>9</td>
-			<td>{{ key3.p9_name }}</td>
-			<td class="right aligned">{{ key3.p9_f1 }}</td>
-			<td class="center aligned">{{ key3.p9_f2 }}</td>
-			<td>{{ key3.p9_favg }}</td>
-		</tr>
-		{% endif %}
+    <tr>
+      <td>8</td>
+      <td>{{ key3.p8_name }}</td>
+      <td class="right aligned">{{ key3.p8_f1 }}</td>
+      <td class="center aligned">{{ key3.p8_f2 }}</td>
+      <td>{{ key3.p8_favg }}</td>
+    </tr>
+    {% endif %}
 
 
-		{% if key3.p10_name %}
+    {% if key3.p9_name %}
 
-		<tr>
-			<td>10</td>
-			<td>{{ key3.p10_name }}</td>
-			<td class="right aligned">{{ key3.p10_f1 }}</td>
-			<td class="center aligned">{{ key3.p10_f2 }}</td>
-			<td>{{ key3.p10_favg }}</td>
-		</tr>
-		{% endif %}
+    <tr>
+      <td>9</td>
+      <td>{{ key3.p9_name }}</td>
+      <td class="right aligned">{{ key3.p9_f1 }}</td>
+      <td class="center aligned">{{ key3.p9_f2 }}</td>
+      <td>{{ key3.p9_favg }}</td>
+    </tr>
+    {% endif %}
+
+
+    {% if key3.p10_name %}
+
+    <tr>
+      <td>10</td>
+      <td>{{ key3.p10_name }}</td>
+      <td class="right aligned">{{ key3.p10_f1 }}</td>
+      <td class="center aligned">{{ key3.p10_f2 }}</td>
+      <td>{{ key3.p10_favg }}</td>
+    </tr>
+    {% endif %}
 
 </tbody>
 
@@ -651,12 +600,6 @@
 <div class="row">
 <div class="form-group col-sm-1">
 </div>
-<!-- <div class="form-group col-sm-4">
-<label > </label>
-
-<button type="button" class="btn btn-info btn-lg btn-block e_p">Calculate</button>
-
-</div> -->
 
 <div class="form-group col-sm-6">
 <label >TOTAL FEEDBACK AVG.</label>
@@ -676,28 +619,13 @@
                </div>
 
                   <div class="orm-group col-md-6">
-									  	<h2 style="color:#1844f1;"><em class="m1">{{ key3.e_o_f_r_final }}</em></h2>
+                      <h2 style="color:#1844f1;"><em class="m1">{{ key3.e_o_f_r_final }}</em></h2>
                         </div>
                     </div>
 </div>
 <div class="col-1"></div>
 </div>
 
-<div class="form-row dis">
-<div class="col-4"></div>
-<div class="col-4">
- <!-- <div class="form-row dis">
-
-
-
-   <button type="button" class="btn btn-success btn-lg btn-block f_calc">Calculate</button>
-
-
-
-</div> -->
-<div class="col-4"></div>
-</div>
-</div>
 </div>
 
 </div>
@@ -713,50 +641,50 @@
     </div>
 
 <div class="form-row dis">
-          <div class="form-group col-md-6">
+          <div class="form-group col-md-4">
                         <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="State Level (.5 m/day)" >
 
           </div>
-        <div class="form-group col-md-6">
+        <div class="form-group col-md-4">
 
             <input type="text" class="form-control" disabled value="{{key4.w_s_d}}">
         </div>
-				<h3>Documents</h3>
-				<div class="form-group col-md-6">
-					{% if key4.w_s_file %}
-						<a href="/media/{{key4.w_s_file}}">Click to view</a>
-						{% else %}
-						<a href="#"></a>
-						{% endif %}
+        <h3>Documents</h3>
+        <div class="form-group col-md-4">
+          {% if key4.w_s_file %}
+            <a href="/media/{{key4.w_s_file}}">Click to view</a>
+            {% else %}
+            <a href="#"></a>
+            {% endif %}
 
 
 
-				</div>
+        </div>
 
 
     </div>
 
     <div class="form-row dis">
-          <div class="form-group col-md-6">
+          <div class="form-group col-md-4">
                         <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="National Level (1 m/day)">
 
           </div>
-        <div class="form-group col-md-6">
+        <div class="form-group col-md-4">
 
           <input type="text" class="form-control" disabled value="{{key4.w_n_d}}">
 
         </div>
-				<h3>Documents</h3>
-				<div class="form-group col-md-6">
-					{% if key4.w_n_file %}
-						<a href="/media/{{key4.w_n_file}}">Click to view</a>
-						{% else %}
-						<a href="#"></a>
-						{% endif %}
+        <h3>Documents</h3>
+        <div class="form-group col-md-4">
+          {% if key4.w_n_file %}
+            <a href="/media/{{key4.w_n_file}}">Click to view</a>
+            {% else %}
+            <a href="#"></a>
+            {% endif %}
 
 
 
-				</div>
+        </div>
 
 
 
@@ -764,59 +692,55 @@
     </div>
 
     <div class="form-row dis">
-          <div class="form-group col-md-6">
+          <div class="form-group col-md-4">
                         <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="International Level (1 m/day)">
 
           </div>
-        <div class="form-group col-md-6">
+        <div class="form-group col-md-4">
 
             <input type="text" class="form-control" disabled value="{{key4.w_i_d}}">
         </div>
-				<h3>Documents</h3>
-				<div class="form-group col-md-6">
-					{% if key4.w_i_file %}
-						<a href="/media/{{key4.w_i_file}}">Click to view</a>
-						{% else %}
-						<a href="#"></a>
-						{% endif %}
+        <h3>Documents</h3>
+        <div class="form-group col-md-4">
+          {% if key4.w_i_file %}
+            <a href="/media/{{key4.w_i_file}}">Click to view</a>
+            {% else %}
+            <a href="#"></a>
+            {% endif %}
 
 
 
-				</div>
+        </div>
 
 
 
     </div>
 
 
-		<div class="form-row dis">
-							<div class="form-group col-md-2">
+    <div class="form-row dis">
 
 
-							</div>
+             <div class="form-group col-md-8">
+                   <div class="form-row dis">
+                 <div class="form-group col-md-4">
 
-
-						 <div class="form-group col-md-8">
-									 <div class="form-row dis">
-								 <div class="form-group col-md-4">
-
-									</div>
-												<div class="form-group col-md-2"></div>
+                  </div>
+                        <div class="form-group col-md-2"></div>
                         <div class="form-row dis">
                                       <div class="form-group col-md-6">
                                      <h6 class=" color1">TOTAL MARKS<span class="sp"></span></h6>
                                       </div>
 
                                          <div class="orm-group col-md-6">
-                       										<em>{{ key4.w_m }}</em>
+                                          <em>{{ key4.w_m }}</em>
                                                </div>
                                            </div>
-												</div>
+                        </div>
 
-							</div>
-							<div class="form-group col-md-2"></div>
+              </div>
+              <div class="form-group col-md-2"></div>
 
-				</div>
+        </div>
 </div>
   <div class="">
     <div class="card-header" id="headingTwo">
@@ -829,92 +753,92 @@
     </div>
 
         <div class="form-row dis">
-          <div class="form-group col-md-6">
+          <div class="form-group col-md-4">
                         <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="State Level (2 m/Day)">
 
           </div>
-        <div class="form-group col-md-6">
+        <div class="form-group col-md-4">
 
           <input type="text" class="form-control" disabled value="{{key4.p_s_d}}">
         </div>
-				<h3>Documents</h3>
-				<div class="form-group col-md-6">
-					{% if key4.p_s_file %}
-						<a href="/media/{{key4.p_s_file}}">Click to view</a>
-						{% else %}
-						<a href="#"></a>
-						{% endif %}
+        <h3>Documents</h3>
+        <div class="form-group col-md-4">
+          {% if key4.p_s_file %}
+            <a href="/media/{{key4.p_s_file}}">Click to view</a>
+            {% else %}
+            <a href="#"></a>
+            {% endif %}
 
 
 
-				</div>
+        </div>
 
     </div>
 
     <div class="form-row dis">
-          <div class="form-group col-md-6">
+          <div class="form-group col-md-4">
                         <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="National Level (4 m/Day)">
 
           </div>
-        <div class="form-group col-md-6">
+        <div class="form-group col-md-4">
 
             <input type="text" class="form-control" disabled value="{{key4.p_n_d}}">
 
         </div>
-				<h3>Documents</h3>
-				<div class="form-group col-md-6">
-					{% if key4.p_n_file %}
-						<a href="/media/{{key4.p_n_file}}">Click to view</a>
-						{% else %}
-						<a href="#"></a>
-						{% endif %}
+        <h3>Documents</h3>
+        <div class="form-group col-md-4">
+          {% if key4.p_n_file %}
+            <a href="/media/{{key4.p_n_file}}">Click to view</a>
+            {% else %}
+            <a href="#"></a>
+            {% endif %}
 
 
 
-				</div>
+        </div>
 
 
     </div>
 
     <div class="form-row dis">
-          <div class="form-group col-md-6">
+          <div class="form-group col-md-4">
                         <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="International Level (5 m/Day)">
 
           </div>
-        <div class="form-group col-md-6">
+        <div class="form-group col-md-4">
 
           <input type="text" class="form-control" disabled value="{{key4.p_i_d}}">
 
         </div>
-				<h3>Documents</h3>
-				<div class="form-group col-md-6">
-					{% if key4.p_i_file %}
-						<a href="/media/{{key4.p_i_file}}">Click to view</a>
-						{% else %}
-						<a href="#"></a>
-						{% endif %}
+        <h3>Documents</h3>
+        <div class="form-group col-md-4">
+          {% if key4.p_i_file %}
+            <a href="/media/{{key4.p_i_file}}">Click to view</a>
+            {% else %}
+            <a href="#"></a>
+            {% endif %}
 
 
 
-				</div>
+        </div>
 
 
 
     </div>
 
-		<div class="form-row dis">
-							<div class="form-group col-md-2">
+    <div class="form-row dis">
+              <div class="form-group col-md-2">
 
 
-							</div>
+              </div>
 
 
-						 <div class="form-group col-md-8">
-									 <div class="form-row dis">
-								 <div class="form-group col-md-4">
+             <div class="form-group col-md-8">
+                   <div class="form-row dis">
+                 <div class="form-group col-md-4">
 
-									</div>
-												<div class="form-group col-md-2"></div>
+                  </div>
+                        <div class="form-group col-md-2"></div>
                         <div class="form-row dis">
                                       <div class="form-group col-md-6">
                                      <h6 class=" color1">TOTAL MARKS<span class="sp"></span></h6>
@@ -924,28 +848,28 @@
                                           <em>{{ key4.p_m }}</em>
                                                </div>
                                            </div>
-												</div>
+                        </div>
 
-							</div>
-							<div class="form-group col-md-2"></div>
+              </div>
+              <div class="form-group col-md-2"></div>
 
-				</div>
+        </div>
   </div>
-	<div class="">
-		<div class="card-header" id="headingThree">
-			<h3 class="">
-				<button class="btn btn-link collapsed fo1" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-				 2C: Number of Online Courses Completed
-			 </button><span class="fo1">(Maximum Score: 10 marks)</span>
-			</h3>
-		</div>
-		<div class="form-group">
-		<div class="form-row dis">
-	 <div class="form-group col-md-6">
-					<input type="text" class="form-control" disabled value="{{key4.onl_course_c}}">
-				</div>
+  <div class="">
+    <div class="card-header" id="headingThree">
+      <h3 class="">
+        <button class="btn btn-link collapsed fo1" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+         2C: Number of Online Courses Completed
+       </button><span class="fo1">(Maximum Score: 10 marks)</span>
+      </h3>
+    </div>
+    <div class="form-group">
+    <div class="form-row dis">
+   <div class="form-group col-md-3">
+          <input type="text" class="form-control" disabled value="{{key4.onl_course_c}}">
+        </div>
 
-				<div class="form-group col-md-6">
+        <div class="form-group col-md-3">
           <label>Documents:</label>
           {% if key4.onl_course_c_file1 %}
            <a href="/media/{{key4.onl_course_c_file1}}">Click to view</a>
@@ -955,27 +879,27 @@
 
         </div>
 
-				<div class="form-group col-md-6">
-					<label>Online courses Documents2:</label>
-					{% if key4.onl_course_c_file2 %}
-					 <a href="/media/{{key4.onl_course_c_file2}}">Click to view</a>
-						{% else %}
-						<a href="#"></a>
-						{% endif %}
+        <div class="form-group col-md-3">
+          <label>Online courses Documents2:</label>
+          {% if key4.onl_course_c_file2 %}
+           <a href="/media/{{key4.onl_course_c_file2}}">Click to view</a>
+            {% else %}
+            <a href="#"></a>
+            {% endif %}
 
-				</div>
-        <div class="form-group col-md-6">
+        </div>
+        <div class="form-group col-md-3">
        <h6 class=" color1">TOTAL MARKS<span class="sp"></span></h6>
 
 
-           <div class="orm-group col-md-6">
+           <div class="orm-group col-md-3">
             <em>{{ key4.onl_course_m }}</em>
                  </div>
 
-	</div>
+  </div>
 
-	</div>
-	</div>
+  </div>
+  </div>
 </div>
 
 
@@ -990,13 +914,13 @@
       </h3>
     </div>
 
-		<div class="form-row dis">
+    <div class="form-row dis">
     <div class="form-group col-md-4">
-			<div class="form-row">
-			<div class="form-group col-sm-12">
-			<h4 class="mb-0" align = "center">Sole Authored </h4>
+      <div class="form-row">
+      <div class="form-group col-sm-12">
+      <h4 class="mb-0" align = "center">Sole Authored </h4>
 </div>
-			</div>
+      </div>
 <div class="form-row">
 <div class="form-group col-sm-12">
 <label >Number of conference/Journal: </label>
@@ -1012,23 +936,20 @@
                </div>
 
                   <div class="orm-group col-md-8">
-                    <h6 class=" color1">TOTAL MARKS<span class="sp"></span></h6>
-										{{ key4.s_c_m }}
+                    TOTAL MARKS
+                    {{ key4.s_c_m }}
                         </div>
-												<div class="orm-group col-md-2">
-
-												</div>
                     </div>
 </div>
 </div>
 </div>
 <div class="form-group col-md-4 " style="  border-left: thin solid #ff0000" >
-	<div class="form-row">
-	<div class="form-group col-sm-12">
-	<h4 class="mb-0" align ="center" >First & Second Author </h4>
+  <div class="form-row">
+  <div class="form-group col-sm-12">
+  <h4 class="mb-0" align ="center" >First & Second Author </h4>
 
-	</div>
-	</div>
+  </div>
+  </div>
 <div class="form-row">
 <div class="form-group col-sm-12">
 <label >Number of conference/Journal: </label>
@@ -1039,27 +960,25 @@
 <div class="form-row">
 <div class="form-group col-sm-12">
 <div class="form-row dis">
-					 <div class="orm-group col-md-2">
+           <div class="orm-group col-md-2">
 
-					 </div>
-							<div class="orm-group col-md-8">
-                <h6 class=" color1">TOTAL MARKS<span class="sp"></span></h6>
+           </div>
+              <div class="orm-group col-md-8">
+                <div>TOTAL MARKS</div>
                 {{ key4.f_c_m }}
-										</div>
-										<div class="orm-group col-md-2">
-
-										</div>
-								</div>
+                    </div>
+                    
+                </div>
 </div>
 </div>
 </div>
 <div class="form-group col-md-4" style="  border-left: thin solid #ff0000" >
-	<div class="form-row">
-	<div class="form-group col-sm-12">
-	<h4 class="mb-0" align ="center" >Other Author </h4>
+  <div class="form-row">
+  <div class="form-group col-sm-12">
+  <h4 class="mb-0" align ="center" >Other Author </h4>
 
-	</div>
-	</div>
+  </div>
+  </div>
 <div class="form-row">
 <div class="form-group col-sm-12">
 <label >Number of conference/Journal: </label>
@@ -1071,56 +990,19 @@
 <div class="form-row">
 <div class="form-group col-sm-12">
 <div class="form-row dis">
-					 <div class="orm-group col-md-2">
+           <div class="orm-group col-md-2">
 
-					 </div>
-							<div class="orm-group col-md-8">
-								    <h6 class=" color1">TOTAL MARKS<span class="sp"></span></h6>
-								{{ key4.o_c_m }}
-										</div>
-										<div class="form-group col-md-2">
-
-										</div>
-								</div>
+           </div>
+              <div class="orm-group col-md-8">
+                    <div>TOTAL MARKS</div>
+                {{ key4.o_c_m }}
+                    </div>
+                
+                </div>
 </div>
 </div>
 </div>
 </div>
-<!-- form>
-        <div class="form-row dis">
-          <div class="form-group col-md-6">
-                        <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="Sole Authored">
-
-          </div>
-        <div class="form-group col-md-6">
-
-            <input type="text" class="form-control" id="inputEmployeeIdNo" placeholder="Count Eg. 3">
-        </div>
-    </div>
-
-    <div class="form-row dis">
-          <div class="form-group col-md-6">
-                        <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="Being first and second author">
-
-          </div>
-        <div class="form-group col-md-6">
-
-            <input type="text" class="form-control" id="inputEmployeeIdNo" placeholder="Count Eg. 3">
-        </div>
-    </div>
-
-    <div class="form-row dis">
-          <div class="form-group col-md-6">
-                        <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="Being other author ">
-
-          </div>
-        <div class="form-group col-md-6">
-
-            <input type="text" class="form-control" id="inputEmployeeIdNo" placeholder="Count Eg. 3">
-        </div>
-    </div>
-</form>
-</div> -->
 
 
   <div class="card">
@@ -1133,14 +1015,14 @@
       </h3>
     </div>
 
-		    <div class="form-row dis">
+        <div class="form-row dis">
       <div class="form-group col-md-4">
         <div class="form-row">
 <div class="form-group col-sm-11">
-					<div class="form-group col-sm-12">
-					<h4 class="mb-0" align ="center" >Sole Authored </h4>
+          <div class="form-group col-sm-12">
+          <h4 class="mb-0" align ="center" >Sole Authored </h4>
 </div>
-					</div>
+          </div>
 <div class="form-group col-sm-11">
 <label >Number of Conference/journal: </label>
 {{ key4.s_j_n }}
@@ -1154,12 +1036,10 @@
 
                </div>
                   <div class="orm-group col-md-8">
-										    <h6 class=" color1">TOTAL MARKS<span class="sp"></span></h6>
-										{{ key4.s_j_m }}
+                        <div>TOTAL MARKS</div>
+                    {{ key4.s_j_m }}
                         </div>
-												<div class="orm-group col-md-2">
-
-				                </div>
+                        
                     </div>
 
    </div>
@@ -1168,12 +1048,12 @@
 </div>
 
 <div class="form-group col-md-4 " style="  border-left: thin solid #ff0000">
-	<div class="form-row">
-		<div class="form-group col-sm-11">
-							<div class="form-group col-sm-12">
-							<h4 class="mb-0" align ="center" >First & Second Author </h4>
-		</div>
-							</div>
+  <div class="form-row">
+    <div class="form-group col-sm-11">
+              <div class="form-group col-sm-12">
+              <h4 class="mb-0" align ="center" >First & Second Author </h4>
+    </div>
+              </div>
 <div class="form-group col-sm-11">
 <label >Number of Conference/journal: </label>
 {{ key4.f_j_n }}
@@ -1183,29 +1063,29 @@
 <div class="form-row">
 <div class="form-group col-sm-11">
 <div class="form-row dis">
-				 <div class="orm-group col-md-2">
+         <div class="orm-group col-md-2">
 
-				 </div>
-						<div class="orm-group col-md-8">
-							    <h6 class=" color1">TOTAL MARKS<span class="sp"></span></h6>
-							{{ key4.f_j_m }}
-									</div>
-									<div class="orm-group col-md-2">
+         </div>
+            <div class="orm-group col-md-8">
+                  <div>TOTAL MARKS</div>
+              {{ key4.f_j_m }}
+                  </div>
+                  <div class="orm-group col-md-2">
 
-									</div>
-							</div>
+                  </div>
+              </div>
 
 </div>
 </div>
 
 </div>
 <div class="form-group col-md-4 " style="border-left: thin solid #ff0000">
-	<div class="form-row">
-		<div class="form-group col-sm-11">
-							<div class="form-group col-sm-12">
-							<h4 class="mb-0" align ="center" >Other Author </h4>
-		</div>
-							</div>
+  <div class="form-row">
+    <div class="form-group col-sm-11">
+              <div class="form-group col-sm-12">
+              <h4 class="mb-0" align ="center" >Other Author </h4>
+    </div>
+              </div>
 <div class="form-group col-sm-11">
 <label >Number of Conference/journal: </label>
 {{ key4.o_j_n }}
@@ -1215,11 +1095,11 @@
 <div class="form-row">
 <div class="form-group col-sm-11">
 <div class="form-row dis">
-				 <div class="orm-group col-md-2">
+         <div class="orm-group col-md-2">
 
-				 </div>
-						<div class="orm-group col-md-8">
-              <h6 class=" color1">TOTAL MARKS<span class="sp"></span></h6>
+         </div>
+            <div class="orm-group col-md-8">
+              <div>TOTAL MARKS</div>
               {{ key4.o_j_m }}
                   </div>
 
@@ -1241,40 +1121,7 @@
       </div>
 </div>
 </div>
-<!--    <form>
-        <div class="form-row dis">
-          <div class="form-group col-md-6">
-                        <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="Sole Authored">
 
-          </div>
-        <div class="form-group col-md-6">
-
-            <input type="text" class="form-control" id="inputEmployeeIdNo" placeholder="Count Eg. 3">
-        </div>
-    </div>
-
-    <div class="form-row dis">
-          <div class="form-group col-md-6">
-                        <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="Being first and second author">
-
-          </div>
-        <div class="form-group col-md-6">
-
-            <input type="text" class="form-control" id="inputEmployeeIdNo" placeholder="Count Eg. 3">
-        </div>
-    </div>
-
-    <div class="form-row dis">
-          <div class="form-group col-md-6">
-                        <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="Being other author ">
-
-          </div>
-        <div class="form-group col-md-6">
-
-            <input type="text" class="form-control" id="inputEmployeeIdNo" placeholder="Count Eg. 3">
-        </div>
-    </div>
-</form> -->
   </div>
 
 
@@ -1522,156 +1369,156 @@
   </tbody>
 </table>
     </div>
-		<div class="card">
-	    <div class="card-header" id="headingThree">
-	      <h3 class="">
-	        <button class="btn btn-link collapsed fo1" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-	         3C: Number of Books/Book chapter Published/Publication in News media<span class="fo1">(Maximum Score: 10 marks)</span>
-	        </button>
-	      </h3>
-	    </div>
+    <div class="card">
+      <div class="card-header" id="headingThree">
+        <h3 class="">
+          <button class="btn btn-link collapsed fo1" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+           3C: Number of Books/Book chapter Published/Publication in News media<span class="fo1">(Maximum Score: 10 marks)</span>
+          </button>
+        </h3>
+      </div>
 
-	        <div class="form-row dis">
-	          <div class="form-group col-md-6">
-	              <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="Book Authored  International (10 marks/Book)">
+          <div class="form-row dis">
+            <div class="form-group col-md-4">
+                <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="Book Authored  International (10 marks/Book)">
 
-	          </div>
-	        <div class="form-group col-md-6">
+            </div>
+          <div class="form-group col-md-4">
 
-	           {{ key4.book_i }}
-	        </div>
+             {{ key4.book_i }}
+          </div>
 
-	        <div class="form-group col-md-6">
-	          <label>Documents:</label>
-	          {% if key4.book_i_file %}
-	           <a href="/media/{{key4.book_i_file}}">Click to view</a>
-	            {% else %}
-	            <a href="#"></a>
-	            {% endif %}
+          <div class="form-group col-md-4">
+            <label>Documents:</label>
+            {% if key4.book_i_file %}
+             <a href="/media/{{key4.book_i_file}}">Click to view</a>
+              {% else %}
+              <a href="#"></a>
+              {% endif %}
 
-	        </div>
-	    </div>
+          </div>
+      </div>
 
-	    <div class="form-row dis">
-	          <div class="form-group col-md-6">
-	                        <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="Book Authored  National (08 marks/Book)">
+      <div class="form-row dis">
+            <div class="form-group col-md-4">
+                          <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="Book Authored  National (08 marks/Book)">
 
-	          </div>
-	        <div class="form-group col-md-6">
+            </div>
+          <div class="form-group col-md-4">
 
-	          {{ key4.book_n }}
-	        </div>
-	        <div class="form-group col-md-6">
-	          <label>Documents:</label>
-	          {% if key4.book_n_file %}
-	           <a href="/media/{{key4.book_n_file}}">Click to view</a>
-	            {% else %}
-	            <a href="#"></a>
-	            {% endif %}
+            {{ key4.book_n }}
+          </div>
+          <div class="form-group col-md-4">
+            <label>Documents:</label>
+            {% if key4.book_n_file %}
+             <a href="/media/{{key4.book_n_file}}">Click to view</a>
+              {% else %}
+              <a href="#"></a>
+              {% endif %}
 
-	        </div>
-	    </div>
+          </div>
+      </div>
 
-	    <div class="form-row dis">
-	          <div class="form-group col-md-6">
-	                        <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="Book chapterAuthored  International (06 marks/Book Chapter)">
+      <div class="form-row dis">
+            <div class="form-group col-md-4">
+                          <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="Book chapterAuthored  International (06 marks/Book Chapter)">
 
-	          </div>
-	        <div class="form-group col-md-6">
+            </div>
+          <div class="form-group col-md-4">
 
-	          {{ key4.book_ci }}
-	        </div>
-	        <div class="form-group col-md-6">
-	          <label>Documents:</label>
-	          {% if key4.book_ci_file %}
-	           <a href="/media/{{key4.book_ci_file}}">Click to view</a>
-	            {% else %}
-	            <a href="#"></a>
-	            {% endif %}
+            {{ key4.book_ci }}
+          </div>
+          <div class="form-group col-md-4">
+            <label>Documents:</label>
+            {% if key4.book_ci_file %}
+             <a href="/media/{{key4.book_ci_file}}">Click to view</a>
+              {% else %}
+              <a href="#"></a>
+              {% endif %}
 
-	        </div>
-	    </div>
+          </div>
+      </div>
 
-	    <div class="form-row dis">
-	          <div class="form-group col-md-6">
-	                        <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="Book chapterAuthored  National (04 marks/Book Chapter)">
+      <div class="form-row dis">
+            <div class="form-group col-md-4">
+                          <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="Book chapterAuthored  National (04 marks/Book Chapter)">
 
-	          </div>
-	        <div class="form-group col-md-6">
-	          {{ key4.book_cn }}
-	        </div>
-	        <div class="form-group col-md-6">
-	          <label>Documents:</label>
-	          {% if key4.book_cn_file %}
-	           <a href="/media/{{key4.book_cn_file}}">Click to view</a>
-	            {% else %}
-	            <a href="#"></a>
-	            {% endif %}
+            </div>
+          <div class="form-group col-md-4">
+            {{ key4.book_cn }}
+          </div>
+          <div class="form-group col-md-4">
+            <label>Documents:</label>
+            {% if key4.book_cn_file %}
+             <a href="/media/{{key4.book_cn_file}}">Click to view</a>
+              {% else %}
+              <a href="#"></a>
+              {% endif %}
 
-	        </div>
-	    </div>
+          </div>
+      </div>
 
-	    <div class="form-row dis">
-	          <div class="form-group col-md-6">
-	                        <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="Articles Published in International (10 marks/Article)">
+      <div class="form-row dis">
+            <div class="form-group col-md-4">
+                          <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="Articles Published in International (10 marks/Article)">
 
-	          </div>
-	        <div class="form-group col-md-6">
+            </div>
+          <div class="form-group col-md-4">
 
-	          {{ key4.book_ai }}
-	        </div>
-	        <div class="form-group col-md-6">
-	          <label>Documents:</label>
-	          {% if key4.book_ai_file %}
-	           <a href="/media/{{key4.book_ai_file}}">Click to view</a>
-	            {% else %}
-	            <a href="#"></a>
-	            {% endif %}
+            {{ key4.book_ai }}
+          </div>
+          <div class="form-group col-md-4">
+            <label>Documents:</label>
+            {% if key4.book_ai_file %}
+             <a href="/media/{{key4.book_ai_file}}">Click to view</a>
+              {% else %}
+              <a href="#"></a>
+              {% endif %}
 
-	        </div>
-	    </div>
+          </div>
+      </div>
 
-	    <div class="form-row dis">
-	          <div class="form-group col-md-6">
-	                        <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="National  Media (06 marks/Article)">
+      <div class="form-row dis">
+            <div class="form-group col-md-4">
+                          <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="National  Media (06 marks/Article)">
 
-	          </div>
-	        <div class="form-group col-md-6">
+            </div>
+          <div class="form-group col-md-4">
 
-	          {{ key4.book_nm }}
-	        </div>
-	        <div class="form-group col-md-6">
-	          <label>Documents:</label>
-	          {% if key4.book_nm_file %}
-	           <a href="/media/{{key4.book_nm_file}}">Click to view</a>
-	            {% else %}
-	            <a href="#"></a>
-	            {% endif %}
+            {{ key4.book_nm }}
+          </div>
+          <div class="form-group col-md-4">
+            <label>Documents:</label>
+            {% if key4.book_nm_file %}
+             <a href="/media/{{key4.book_nm_file}}">Click to view</a>
+              {% else %}
+              <a href="#"></a>
+              {% endif %}
 
-	        </div>
-	    </div>
+          </div>
+      </div>
 
-	    <div class="form-row dis">
-	          <div class="form-group col-md-6">
-
-
-	          </div>
-	        <div class="form-group col-md-6">
-
-	                 <div class="form-row">
-										 <div clas="col-md-9">
-	                       <h6 class=" color1">TOTAL MARKS<span class="sp"></span></h6>
-	                     {{ key4.book_m }}
-	                     </div>
-											 <div class="col-md-3"></div>
-
-	</div>
+      <div class="form-row dis">
+            <div class="form-group col-md-6">
 
 
+            </div>
+          <div class="form-group col-md-6">
 
-	   </div>
-	        </div>
-	    </div>
+                   <div class="form-row">
+                     <div clas="col-md-9">
+                         <h6 class=" color1">TOTAL MARKS<span class="sp"></span></h6>
+                       {{ key4.book_m }}
+                       </div>
+                       <div class="col-md-3"></div>
+
+  </div>
+
+
+
+     </div>
+          </div>
+      </div>
 <!-- </form> -->
   </div>
 </div>
@@ -1687,7 +1534,7 @@
     </div>
         </button>
         <h5>Funded Projects</h5>
-	<table class="table table-bordered">
+  <table class="table table-bordered">
   <thead>
     <tr>
       <th scope="col">Funding</th>
@@ -1834,7 +1681,7 @@
                </div>
 
                   <div class="orm-group col-md-6 m2">
-									<h2 style="color:#1844f1;">{{ key4.rd_tot_marks }}</h2>
+                  <h2 style="color:#1844f1;">{{ key4.rd_tot_marks }}</h2>
                         </div>
                     </div>
 </div>
@@ -1853,7 +1700,7 @@
 </div>
 <div class="card poi">
 
-	<table class="table table-bordered">
+  <table class="table table-bordered">
   <thead class="thead-dark">
     <tr>
       <th scope="col"></th>
@@ -1872,7 +1719,7 @@
 </table>
 
 
-	<table class="table table-bordered po">
+  <table class="table table-bordered po">
   <thead class="thead-dark">
     <tr>
       <th scope="col"></th>
@@ -1955,18 +1802,18 @@
 
 <table class="table table-bordered po">
 <thead class="thead-dark">
-	<tr>
-		<th scope="col"></th>
-		<th scope="col">Institutional  Responsibilities (Please list only those where you have made significant contribution)</th>
+  <tr>
+    <th scope="col"></th>
+    <th scope="col">Institutional  Responsibilities (Please list only those where you have made significant contribution)</th>
 
-	</tr>
+  </tr>
 </thead>
 <tbody>
-	<tr>
-		<th scope="row"></th>
-		<td>{{ key5.ta_ir }}</td>
+  <tr>
+    <th scope="row"></th>
+    <td>{{ key5.ta_ir }}</td>
 
-	</tr>
+  </tr>
 
 </tbody>
 </table>
@@ -2023,7 +1870,7 @@
                </div>
 
                   <div class="form-group col-md-6">
-									<span style="font-size:30px; color:#212121;">{{key9.total_marks }}</span>
+                  <span style="font-size:30px; color:#212121;">{{key9.total_marks }}</span>
                         </div>
                     </div>
 
@@ -2031,16 +1878,9 @@
 <div class="col-1"></div>
 </div>
 
-<div class="form-row dis">
-<div class="col-4"></div>
-<div class="col-4">
- <div class="form-row dis">
-
-<!-- <input type="submit" class="btn btn-success btn-lg btn-block">Send Mail</button> -->
 
 </form>
-<!-- <button type="button" id="download" class="btn btn-blue-grey btn-lg btn-block">Generate PDF</button></div> -->
-<div class="col-4"></div>
+
 </div>
 </div>
 </div>
@@ -2049,36 +1889,6 @@
 </div>
 </div>
 </div>
-<!-- <script>
-window.onload = function(e){
-html2canvas(document.body).then(function(canvas) {
-		canvas.id = "mycanvas";
-    document.body.appendChild(canvas).style.visibility = "hidden";
-});
-var canvas = document.getElementById("mycanvas");
-var img = canvas.toDataURL("image/jpeg");
-// document.write('<img src="'+img+'"/>');
 
-
-
-};
-
-
-download.addEventListener("click", function() {
-	html2canvas(document.body).then(function(canvas) {
-			canvas.id = "mycanvas";
-	    document.body.appendChild(canvas);
-	});
-	var canvas = document.getElementById("mycanvas");
-  var imgData = canvas.toDataURL("image/jpeg", 1.0);
-	var a4 = [1595.28, 1841.89];
-  var pdf = new jsPDF('p', 'mm', [1297, 8210]);
-	var width = pdf.internal.pageSize.width;
-	var height = pdf.internal.pageSize.height;
-
-  pdf.addImage(imgData, 'JPEG',0,0, width, height);
-  pdf.save("download.pdf");
-}, false);
-</script> -->
 </body>
 </html>
