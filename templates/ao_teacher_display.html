@@ -88,23 +88,19 @@
           <input type="email" class="form-control" id="inputEmail" disabled placeholder="Email" value="{{key1.email}}">
         </div>
 
-        <h3>Experience</h3>
-          <div class="row form-group col-md-9">
-
-           <div class="form-group col-md-3">
+           <div class="form-group col-md-2">
             <label for="inputteaching">teaching</label>
             <input type="text" class="form-control" id="inputEmpName" disabled value="{{ key2.exp_teach }}">
            </div>
-            <div class="form-group col-md-3">
+            <div class="form-group col-md-2">
               <label for="inputResearch">Research</label>
               <input type="text" class="form-control" id="inputEmpName" disabled value="{{ key2.exp_res }}">
             </div>
-            <div class="form-group col-md-3">
+            <div class="form-group col-md-2">
               <label for="inputIndustry">Industry</label>
               <input type="text" class="form-control" id="inputEmpName" disabled value="{{ key2.exp_indus }}">
             </div>
-         </div>
-         <div class="form-group col-md-6">
+         <div class="form-group col-md-2">
          <label>Month of increment</label>
          <input type="text" class="form-control" id="inputEmpName" disabled value="{{ key2.month_of_increment }}">
                      
@@ -113,7 +109,7 @@
 
 
 
-   <h3 class="poi">1: Course Feedback and results<span class="sp">(Maximum Score: 40 marks)</span></h3>
+   <h5 class="poi">1: Course Feedback and results<span class="sp">(Maximum Score: 40 marks)</span></h5>
 
 <div class="table-bordered poi">
 
@@ -608,10 +604,8 @@
 </div>
 </div>
 </div>
-<div class="card poi card-header" id="headingOne">
-<div class="form-group">
-<div class="form-row dis">
-<div class="col-1"></div>
+
+
 <div class="col-10">
  <div class="form-row dis">
                <div class="form-group col-md-6">
@@ -623,14 +617,9 @@
                         </div>
                     </div>
 </div>
-<div class="col-1"></div>
-</div>
 
-</div>
-
-</div>
 <div class="table table-bordered" id="accordionExample">
-  <h4 class="po color1">2: RESEARCH & DEVELOPMENT AND CONSULTANCY<span class="sp">(Maximum Score: 35 marks)</span></h4>
+  <h5 class="po color1">2: RESEARCH & DEVELOPMENT AND CONSULTANCY<span class="sp">(Maximum Score: 35 marks)</span></h5>
   <div class="">
     <div class="card-header" id="headingOne">
       <h3 class="">
@@ -649,7 +638,7 @@
 
             <input type="text" class="form-control" disabled value="{{key4.w_s_d}}">
         </div>
-        <h3>Documents</h3>
+        <!-- <h3>Documents</h3> -->
         <div class="form-group col-md-4">
           {% if key4.w_s_file %}
             <a href="/media/{{key4.w_s_file}}">Click to view</a>
@@ -674,7 +663,7 @@
           <input type="text" class="form-control" disabled value="{{key4.w_n_d}}">
 
         </div>
-        <h3>Documents</h3>
+        <!-- <h3>Documents</h3> -->
         <div class="form-group col-md-4">
           {% if key4.w_n_file %}
             <a href="/media/{{key4.w_n_file}}">Click to view</a>
@@ -700,7 +689,7 @@
 
             <input type="text" class="form-control" disabled value="{{key4.w_i_d}}">
         </div>
-        <h3>Documents</h3>
+        <!-- <h3>Documents</h3> -->
         <div class="form-group col-md-4">
           {% if key4.w_i_file %}
             <a href="/media/{{key4.w_i_file}}">Click to view</a>
@@ -761,7 +750,7 @@
 
           <input type="text" class="form-control" disabled value="{{key4.p_s_d}}">
         </div>
-        <h3>Documents</h3>
+        <!-- <h3>Documents</h3> -->
         <div class="form-group col-md-4">
           {% if key4.p_s_file %}
             <a href="/media/{{key4.p_s_file}}">Click to view</a>
@@ -785,7 +774,7 @@
             <input type="text" class="form-control" disabled value="{{key4.p_n_d}}">
 
         </div>
-        <h3>Documents</h3>
+        <!-- <h3>Documents</h3> -->
         <div class="form-group col-md-4">
           {% if key4.p_n_file %}
             <a href="/media/{{key4.p_n_file}}">Click to view</a>
@@ -810,7 +799,7 @@
           <input type="text" class="form-control" disabled value="{{key4.p_i_d}}">
 
         </div>
-        <h3>Documents</h3>
+        <!-- <h3>Documents</h3> -->
         <div class="form-group col-md-4">
           {% if key4.p_i_file %}
             <a href="/media/{{key4.p_i_file}}">Click to view</a>
@@ -870,7 +859,7 @@
         </div>
 
         <div class="form-group col-md-3">
-          <label>Documents:</label>
+          <!-- <label>Documents:</label> -->
           {% if key4.onl_course_c_file1 %}
            <a href="/media/{{key4.onl_course_c_file1}}">Click to view</a>
             {% else %}
@@ -1126,7 +1115,7 @@
 
 
    <div class="poi">
-      <h2>Details of Non-Indexed Papers Published In Conference/Journal</h2>
+      <h5>Details of Non-Indexed Papers Published In Conference/Journal</h5>
   <table class="table table-bordered">
     <thead>
       <tr>
@@ -1229,7 +1218,7 @@
     </tbody>
   </table>
 
-<h2>Details of Indexed Papers Published In Conference/Journal</h2>
+<h5>Details of Indexed Papers Published In Conference/Journal</h5>
 
 <table class="table table-bordered">
   <thead>
@@ -1389,7 +1378,7 @@
           </div>
 
           <div class="form-group col-md-4">
-            <label>Documents:</label>
+            <!-- <label>Documents:</label> -->
             {% if key4.book_i_file %}
              <a href="/media/{{key4.book_i_file}}">Click to view</a>
               {% else %}
@@ -1409,7 +1398,7 @@
             {{ key4.book_n }}
           </div>
           <div class="form-group col-md-4">
-            <label>Documents:</label>
+            <!-- <label>Documents:</label> -->
             {% if key4.book_n_file %}
              <a href="/media/{{key4.book_n_file}}">Click to view</a>
               {% else %}
@@ -1429,7 +1418,7 @@
             {{ key4.book_ci }}
           </div>
           <div class="form-group col-md-4">
-            <label>Documents:</label>
+            <!-- <label>Documents:</label> -->
             {% if key4.book_ci_file %}
              <a href="/media/{{key4.book_ci_file}}">Click to view</a>
               {% else %}
@@ -1448,7 +1437,7 @@
             {{ key4.book_cn }}
           </div>
           <div class="form-group col-md-4">
-            <label>Documents:</label>
+            <!-- <label>Documents:</label> -->
             {% if key4.book_cn_file %}
              <a href="/media/{{key4.book_cn_file}}">Click to view</a>
               {% else %}
@@ -1468,7 +1457,7 @@
             {{ key4.book_ai }}
           </div>
           <div class="form-group col-md-4">
-            <label>Documents:</label>
+            <!-- <label>Documents:</label> -->
             {% if key4.book_ai_file %}
              <a href="/media/{{key4.book_ai_file}}">Click to view</a>
               {% else %}
@@ -1488,7 +1477,7 @@
             {{ key4.book_nm }}
           </div>
           <div class="form-group col-md-4">
-            <label>Documents:</label>
+            <!-- <label>Documents:</label> -->
             {% if key4.book_nm_file %}
              <a href="/media/{{key4.book_nm_file}}">Click to view</a>
               {% else %}
@@ -1771,7 +1760,7 @@
     <tr>
       <th scope="row"></th>
       <td></td>
-      <td class="fo1" style="font-size:55px">{{ key8.hod_marks2 }}</td>
+      <td class="fo1">{{ key8.hod_marks2 }}</td>
     </tr>
   </tbody>
 </table>
@@ -1859,8 +1848,6 @@
 </div>
 </div>
 
-<div class="card poi card-header" id="headingOne">
-<div class="form-group">
 <div class="form-row dis">
 <div class="col-1"></div>
 <div class="col-10">
