@@ -2103,7 +2103,7 @@ def hod_preview(request):
 	data5 = remarks.objects.get(info=name);
 	data6 = conference.objects.get(info=name);
 	data7 = journal.objects.get(info=name);
-	if User.objects.filter(username=name).filter(hod_status=True):
+	if User.objects.filter(username=name).filter(principal_status=True):
 		data8 = remarks2.objects.get(info__username=name)
 	else:
 		data8 = []
