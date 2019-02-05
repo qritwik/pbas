@@ -2070,6 +2070,15 @@ def associate_preview(request):
 	data6 = conference.objects.get(info=name);
 	data7 = journal.objects.get(info=name);
 
+	if User.objects.filter(username=name).filter(hod_status=True):
+		data8 = remarks1.objects.get(info__username=name)
+	else:
+		data8 = []
+	if User.objects.filter(username=name).filter(principal_status=True):
+		data9 = remarks2.objects.get(info__username=name)
+	else:
+		data9 = []
+
 	context1 = {
 	"key1":data1,
 	"key2":data2,
@@ -2078,6 +2087,8 @@ def associate_preview(request):
 	"key5":data5,
 	"key6":data6,
 	"key7":data7,
+	"key8":data8,
+	"key9":data9,
 	}
 
 	return render(request,'associate_preview.html',context=context1)
@@ -2092,6 +2103,10 @@ def hod_preview(request):
 	data5 = remarks.objects.get(info=name);
 	data6 = conference.objects.get(info=name);
 	data7 = journal.objects.get(info=name);
+	if User.objects.filter(username=name).filter(hod_status=True):
+		data8 = remarks2.objects.get(info__username=name)
+	else:
+		data8 = []
 
 	context1 = {
 	"key1":data1,
@@ -2101,6 +2116,7 @@ def hod_preview(request):
 	"key5":data5,
 	"key6":data6,
 	"key7":data7,
+	"key8":data8,
 
 	}
 
