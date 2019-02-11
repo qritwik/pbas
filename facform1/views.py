@@ -858,25 +858,34 @@ def hod_teacher_display_edit(request,pk):
 		data5 = remarks.objects.get(info__username=name);
 		data6 = conference.objects.get(info__username=name);
 		data7 = journal.objects.get(info__username=name);
-		data8 = remarks1.objects.get(info__username=name);
-		
+		# data8 = remarks1.objects.get(info__username=name);
+		# data9 = remarks2.objects.get(info__username=name);
 
-
-
-
-
-
-		if request.method == 'POST':
-			remark  = remarks1.objects.get(info=name)
-			form1 = forms.form_remarks1(request.POST, instance=remark)
-			if form1.is_valid():
-
-				obj = form1.save(commit=False)
-				obj.save()
-				return HttpResponseRedirect("/hod_first/")
-
+		if User.objects.filter(username=name).filter(hod_status=True):
+			data8 = remarks1.objects.get(info__username=name)
 		else:
-			form1 = forms.form_remarks1()
+			data8 = []
+		if User.objects.filter(username=name).filter(principal_status=True):
+			data9 = remarks2.objects.get(info__username=name)
+		else:
+			data9 = []
+
+
+
+
+
+
+		# if request.method == 'POST':
+		# 	remark  = remarks1.objects.get(info=name)
+		# 	form1 = forms.form_remarks1(request.POST, instance=remark)
+		# 	if form1.is_valid():
+
+		# 		obj = form1.save(commit=False)
+		# 		obj.save()
+		# 		return HttpResponseRedirect("/hod_first/")
+
+		# else:
+		# 	form1 = forms.form_remarks1()
 
 
 		context1 = {
@@ -888,7 +897,8 @@ def hod_teacher_display_edit(request,pk):
 		"key6":data6,
 		"key7":data7,
 		"key8":data8,
-		"form1":form1
+		"key9":data9,
+		# "form1":form1
 		}
 
 		return render(request,'hod_teacher_display_edit.html',context=context1)
@@ -966,25 +976,32 @@ def hod_teacher1_display_edit(request,pk):
 			data5 = remarks.objects.get(info__username=name);
 			data6 = conference.objects.get(info__username=name);
 			data7 = journal.objects.get(info__username=name);
-			data8 = remarks1.objects.get(info__username=name);
-			
-
-
-
-
-
-
-			if request.method == 'POST':
-				remark = remarks1.objects.get(info=name)
-				form1 = forms.form_remarks1(request.POST, instance=remark)
-				if form1.is_valid():
-
-					obj = form1.save(commit=False)
-					obj.save()
-					return HttpResponseRedirect("/hod_first/")
-
+			# data8 = remarks1.objects.get(info__username=name);
+			if User.objects.filter(username=name).filter(hod_status=True):
+				data8 = remarks1.objects.get(info__username=name)
 			else:
-				form1 = forms.form_remarks1()
+				data8 = []
+			if User.objects.filter(username=name).filter(principal_status=True):
+				data9 = remarks2.objects.get(info__username=name)
+			else:
+				data9 = []
+
+
+
+
+
+
+			# if request.method == 'POST':
+			# 	remark = remarks1.objects.get(info=name)
+			# 	form1 = forms.form_remarks1(request.POST, instance=remark)
+			# 	if form1.is_valid():
+
+			# 		obj = form1.save(commit=False)
+			# 		obj.save()
+			# 		return HttpResponseRedirect("/hod_first/")
+
+			# else:
+			# 	form1 = forms.form_remarks1()
 
 
 			context1 = {
@@ -996,7 +1013,9 @@ def hod_teacher1_display_edit(request,pk):
 			"key6":data6,
 			"key7":data7,
 			"key8":data8,
-			"form1":form1
+			"key9":data9,
+
+			# "form1":form1
 			}
 
 			return render(request,'hod_teacher1_display_edit.html',context=context1)
