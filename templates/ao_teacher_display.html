@@ -1556,13 +1556,22 @@
 
 
 
-        <div class="form-group col-md-6">
+        <div class="form-group col-md-4">
           <h5>IPR Type :</h5>
         {{ key4.ipr_type }}
         </div>
-        <div class="form-group col-md-6">
+        <div class="form-group col-md-4">
           <h5>IPR Status :</h5>
          {{ key4.ipr_status }}
+       </div>
+       <div class="form-group col-md-4">
+<label>IPR File</label>
+{% if key4.ipr_file %}
+           <a href="/media/{{key4.ipr_file}}"></a>
+            {% else %}
+            <a href="#"></a>
+            {% endif %}
+
 </div>
 
  </div>
@@ -1572,15 +1581,7 @@
 {{ key4.ipr_info }}
 
 </div>
-<div class="form-group col-md-12">
-<label>IPR File</label>
-{% if key4.ipr_file %}
-           <a href="/media/{{key4.ipr_file}}"></a>
-            {% else %}
-            <a href="#"></a>
-            {% endif %}
 
-</div>
  </div>
 
 </div>
