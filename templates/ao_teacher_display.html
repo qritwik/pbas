@@ -930,7 +930,109 @@
 </div>
 </div>
 
+<div class=" container">
+      <h6>Details of Non-Indexed Papers Published In Conference/Journal</h6>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <td>Name of Conference</td>
+        <td>Title of the paper</td>
+        <td>Place</td>
+        <td>Date</td>
+        <td>Author</td>
+        <td>Documents</td>
+      </tr>
+    </thead>
+    <tbody>
+      {% if key6.c1_name %}
+      <tr>
+        <td>{{ key6.c1_name }}</td>
+        <td>{{ key6.c1_title }}</td>
+        <td>{{ key6.c1_place }}</td>
+        <td>{{ key6.c1_date }}</td>
+        <td>{{ key6.c1_author }}</td>
+        <td><a href="/media/{{key6.c1_file}}">Click to view</a></td>
+      </tr>
+      {% endif %}
+      {% if key6.c2_name %}
+      <tr>
+        <td>{{ key6.c2_name }}</td>
+        <td>{{ key6.c2_title }}</td>
+        <td>{{ key6.c2_place }}</td>
+        <td>{{ key6.c2_date }}</td>
+        <td>{{ key6.c2_author }}</td>
+        <td><a href="/media/{{key6.c2_file}}">Click to view</a></td>
 
+      </tr>
+      {% endif %}
+      {% if key6.c3_name %}
+      <tr>
+        <td>{{ key6.c3_name }}</td>
+        <td>{{ key6.c3_title }}</td>
+        <td>{{ key6.c3_place }}</td>
+        <td>{{ key6.c3_date }}</td>
+        <td>{{ key6.c3_author }}</td>
+        <td><a href="/media/{{key6.c3_file}}">Click to view</a></td>
+
+      </tr>
+      {% endif %}
+      {% if key6.c4_name %}
+      <tr>
+        <td>{{ key6.c4_name }}</td>
+        <td>{{ key6.c4_title }}</td>
+        <td>{{ key6.c4_place }}</td>
+        <td>{{ key6.c4_date }}</td>
+        <td>{{ key6.c4_author }}</td>
+        <td><a href="/media/{{key6.c4_file}}">Click to view</a></td>
+
+      </tr>
+      {% endif %}
+      {% if key6.c5_name %}
+      <tr>
+        <td>{{ key6.c5_name }}</td>
+        <td>{{ key6.c5_title }}</td>
+        <td>{{ key6.c5_place }}</td>
+        <td>{{ key6.c5_date }}</td>
+        <td>{{ key6.c5_author }}</td>
+        <td><a href="/media/{{key6.c5_file}}">Click to view</a></td>
+
+      </tr>
+      {% endif %}
+      {% if key6.c6_name %}
+      <tr>
+        <td>{{ key6.c6_name }}</td>
+        <td>{{ key6.c6_title }}</td>
+        <td>{{ key6.c6_place }}</td>
+        <td>{{ key6.c6_date }}</td>
+        <td>{{ key6.c6_author }}</td>
+        <td><a href="/media/{{key6.c6_file}}">Click to view</a></td>
+
+      </tr>
+      {% endif %}
+      {% if key6.c7_name %}
+      <tr>
+        <td>{{ key6.c7_name }}</td>
+        <td>{{ key6.c7_title }}</td>
+        <td>{{ key6.c7_place }}</td>
+        <td>{{ key6.c7_date }}</td>
+        <td>{{ key6.c7_author }}</td>
+        <td><a href="/media/{{key6.c7_file}}">Click to view</a></td>
+
+      </tr>
+      {% endif %}
+      {% if key6.c8_name %}
+      <tr>
+        <td>{{ key6.c8_name }}</td>
+        <td>{{ key6.c8_title }}</td>
+        <td>{{ key6.c8_place }}</td>
+        <td>{{ key6.c8_date }}</td>
+        <td>{{ key6.c8_author }}</td>
+        <td><a href="/media/{{key6.c8_file}}">Click to view</a></td>
+
+      </tr>
+      {% endif %}
+    </tbody>
+  </table>
   
       <h6 class="">
 
@@ -1047,7 +1149,7 @@
   </div>
 
 
-   <div class=" container">
+   <!-- <div class=" container">
       <h6>Details of Non-Indexed Papers Published In Conference/Journal</h6>
   <table class="table table-bordered">
     <thead>
@@ -1149,7 +1251,7 @@
       </tr>
       {% endif %}
     </tbody>
-  </table>
+  </table> -->
 
 <h6>Details of Indexed Papers Published In Conference/Journal</h6>
 
