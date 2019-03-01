@@ -32,6 +32,7 @@ DEBUG = False
 
 
 ALLOWED_HOSTS = ['*']
+
 AUTH_USER_MODEL = 'facform1.User'
 
 LOGIN_REDIRECT_URL = '/main'
