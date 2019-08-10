@@ -71,8 +71,19 @@
 			<center>	<h6> <img src="{{user.profile_pic.url}}" alt="No pic" class="img-responsive " style="width: 25% " align="middle" ></h6></center>
 			{% else %}
 			<center><span style="color:#ffffff;">Cumulative file size shouldn't exceeds <strong>1MB</strong></span></center>
+			<form method="post"  enctype="multipart/form-data">
+				{% csrf_token %}
+				<div class="form-group col-md-6">
 
-			<center><button type="button" name="button">UPLOAD</button></center>
+					<label for="">Profile Pic:</label>
+
+					<input type="file" name="abc" value="PROFILE PIC">
+
+				</div>
+
+			<center><input type="submit" name="" value="UPLOAD"></center>
+			</form>
+
 
 			{% endif %}
 

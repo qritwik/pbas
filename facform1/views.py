@@ -53,7 +53,7 @@ from django.core.mail import send_mail, EmailMessage
 def first_page(request):
 	user=User.objects.get(username=request.user)
 	print("                                                             Entered first_page  try section")
-	if request.method == 'POST':
+	if request.method == 'POST' and user.profile_pic:
 		form=forms.newform(data=request.POST)
 		if form.is_valid():
 			f=form.save(commit=False)
@@ -136,9 +136,17 @@ def first_page(request):
 
 		else:
 			print(form.errors)
+	elif request.method == "POST" and not user.profile_pic:
+		print("elif")
+		f=request.FILES['abc']
+		print(f)
+		user.profile_pic = f
+		user.save()
+		return HttpResponseRedirect(reverse('facform1:first_page'))
+	elif not user.profile_pic:
+		return render(request,'first_page.html',{'user':user})
 	else:
 		form=forms.newform()
-
 		return render(request,'first_page.html',{'form':form,'user':user})
 
 
@@ -761,10 +769,10 @@ def login(request):
 			first_name = user.first_name
 			email = user.email
 			phone = user.phone
-			#random_otp = r''.join(random.choice('0123456789') for i in range(4))
-			#phone_otp(random_otp,phone)
-			#email_otp(random_otp,user.email,user.first_name)
-			random_otp="1234"
+			random_otp = r''.join(random.choice('0123456789') for i in range(4))
+			phone_otp(random_otp,phone)
+			email_otp(random_otp,user.email,user.first_name)
+			#random_otp="1234"
 			hashed_pwd = make_password(random_otp)
 			User.objects.filter(username=username).update(password=hashed_pwd)
 

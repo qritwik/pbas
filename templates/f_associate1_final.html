@@ -42,7 +42,7 @@
 
      <div class="col-12"><h1 align="center" class="display-4" style="color:#f5f5f5"> BMS Institute of Technology and management</h1>
        <h3 class="lead" style="color:white" align="center">Faculty Appraisal Form</h3>
-         <h3 class="lead" style="color:white" align="center">1-Aug-2017 to 31-Jul-2018</h3>
+         <h3 class="lead" style="color:white" align="center">1-Aug-2018 to 31-Jul-2019</h3>
        <hr class="my-4" style="color:white">
        <h5 style="color:white; margin-left:108px;">Internship Report must be submitted.</h5>
      </div>
@@ -212,20 +212,23 @@
 
 
 
-
-
- <div class="form-row dis">
-
-
-
-   <a href="{% url 'facform1:f_associate_edit1' key2.year %}"><button type="button" name="button" class="button button4">GO BACK</button></a>
-   <a href="{% url 'facform1:associate_form2' key2.year %}"><button type="button" name="button">CONTINUE TO Next Form</button></a>
-
-
-
 </form>
 </div>
+<div class="form-row">
 
+<div class="form-group col-md-5">
+  <a href="{% url 'facform1:f_associate_edit1' key2.year %}"><button type="button" name="button" class="btn btn-info btn-sm btn-block">GO BACK</button></a></div>
+  <div class="form-group col-md-1">
+  </div>
+  <div class="form-group col-md-5">
+    <a href="{% url 'facform1:associate_form2' key2.year %}"><button type="button" name="button" class="btn btn-info btn-sm btn-block">CONTINUE TO Next Form</button></a>
+  </div>
+
+
+
+</div>
+
+</div>
 
  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
