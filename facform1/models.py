@@ -6,6 +6,22 @@ from .formatChecker import validate_file_size
 
 #TABLE-1
 
+class new(models.Model):
+	designation=models.ForeignKey('Designation', on_delete=models.CASCADE,blank=True,null=True)
+	year=models.ForeignKey('years', on_delete=models.CASCADE,blank=False,null=True)
+	info=models.ForeignKey('User',on_delete=models.CASCADE,null=True)
+	teach_status = models.BooleanField(default=False)
+	hod_status = models.BooleanField(default=False)
+	principal_status = models.BooleanField(default=False)
+
+	def __str__(self):
+		return self.info.username
+
+class years(models.Model):
+	year=models.CharField(max_length=20)
+
+	def __str__(self):
+		return self.year
 
 class Designation(models.Model):
 	"""
@@ -27,8 +43,9 @@ class Department(models.Model):
 
 class ipr_type(models.Model):
 	"""
+
 	"""
-	name = models.CharField(max_length=40, blank=True, null=True)
+	name = models.CharField(max_length=100, blank=True, null=True)
 
 	def __str__(self):
 		return self.name
@@ -38,7 +55,7 @@ class ipr_status(models.Model):
 	"""
 	Description: Model Description
 	"""
-	name = models.CharField(max_length=40, blank=True, null=True)
+	name = models.CharField(max_length=100, blank=True, null=True)
 
 	def __str__(self):
 		return self.name
@@ -48,87 +65,105 @@ class User(AbstractUser):
 	phone = models.BigIntegerField(null=True)
 	department = models.ForeignKey('Department', on_delete=models.CASCADE,null=True)
 	designation = models.ForeignKey('Designation', on_delete=models.CASCADE,null=True)
-	teach_status = models.BooleanField(default=False)
-	hod_status = models.BooleanField(default=False)
-	principal_status = models.BooleanField(default=False)
+	hodrole	 = models.BooleanField(default=False)
 	info = models.CharField(max_length=20, blank=True, null=True)
+	profile_pic=models.FileField(blank=True,upload_to='profile_pic/')
 
 	def __str__(self):
 		return self.username
 
 	def is_assistant_professor(self):
-		faculty = Designation.objects.get(pk=11)
+		faculty = Designation.objects.get(pk=1)
 		faculty1 = str(faculty)
-		faculty2 = str(self.designation.name)
+		faculty2 = str(self.designation)
 		if faculty1 == faculty2:
 			return True
 		return False
 
 	def is_associate_professor(self):
-		faculty = Designation.objects.get(pk=9)
+		faculty = Designation.objects.get(pk=2)
 		faculty1 = str(faculty)
-		faculty2 = str(self.designation.name)
+		faculty2 = str(self.designation)
 		if faculty1 == faculty2:
 			return True
 		return False
 
 	def is_professor(self):
-		faculty = Designation.objects.get(pk=10)
+		faculty = Designation.objects.get(pk=3)
 		faculty1 = str(faculty)
-		faculty2 = str(self.designation.name)
-		if faculty1 == faculty2:
-			return True
-		return False
-
-	def is_hod(self):
-		faculty = Designation.objects.get(pk=8)
-		faculty1 = str(faculty)
-		faculty2 = str(self.designation.name)
-		if faculty1 == faculty2:
-			return True
-		return False
-
-	def is_principal(self):
-		faculty = Designation.objects.get(pk=7)
-		faculty1 = str(faculty)
-		faculty2 = str(self.designation.name)
-		if faculty1 == faculty2:
-			return True
-		return False
-
-	def is_ao(self):
-		faculty = Designation.objects.get(pk=6)
-		faculty1 = str(faculty)
-		faculty2 = str(self.designation.name)
+		faculty2 = str(self.designation)
 		if faculty1 == faculty2:
 			return True
 		return False
 
 	def get_designation(self):
-		return self.designation.name
+		return self.designation
+
+	def is_hod(self):
+		faculty = Designation.objects.get(pk=4)
+		faculty1 = str(faculty)
+		faculty2 = str(self.designation)
+		if faculty1 == faculty2:
+			return True
+		return False
+
+	def is_ao(self):
+		faculty = Designation.objects.get(pk=5)
+		faculty1 = str(faculty)
+		faculty2 = str(self.designation)
+		if faculty1 == faculty2:
+			return True
+		return False
+"""
+	def is_principal(self):
+		faculty = Designation.objects.get(pk=7)
+		faculty1 = str(faculty)
+		faculty2 = str(self.designation)
+		if faculty1 == faculty2:
+			return True
+		return False
+		"""
+
+
+
+
+
+
+
+
 	#get entry using form
 #TABLE-2
 class empDetailForm(models.Model):
-	it_name = models.CharField(max_length=50, blank=True, null=True)
-	it_f = models.DateField(blank=True, null=True)
-	it_t = models.DateField(blank=True, null=True)
+	#it stands for internship
+	it1_name = models.CharField(max_length=50, blank=True, null=True)
+	it1_f = models.DateField(blank=True, null=True) #internship from
+	it1_t = models.DateField(blank=True, null=True)
 
-	it_name2 = models.CharField(max_length=50, blank=True, null=True)
-	it_f2 = models.DateField(blank=True, null=True)
-	it_t2 = models.DateField(blank=True, null=True)
+	it2_name = models.CharField(max_length=50, blank=True, null=True)
+	it2_f = models.DateField(blank=True, null=True) #internship from
+	it2_t = models.DateField(blank=True, null=True)
 
+	it3_name = models.CharField(max_length=50, blank=True, null=True)
+	it3_f = models.DateField(blank=True, null=True) #internship from
+	it3_t = models.DateField(blank=True, null=True)
+
+	more=models.CharField(max_length=500,blank=True,null=True)
+	#it_name2 = models.CharField(max_length=50, blank=True, null=True)
+	#it_f2 = models.DateField(blank=True, null=True)
+	#it_t2 = models.DateField(blank=True, null=True)
+#high_qual stands for highest qualification
 	high_qual = models.CharField(max_length=50,null=True)
 	doj = models.DateField(null=True)
 	month_of_increment = models.CharField(max_length=50,null=True, blank=True)
 	# Present_pos = models.CharField(max_length=50,null=True,blank=True)
 	Held_from = models.DateField(null=True)
-	exp_teach = models.FloatField(blank=True, null=True)
-	exp_res = models.FloatField( blank=True, null=True)
-	exp_indus = models.FloatField(blank=True, null=True)
+	exp_teach = models.FloatField(blank=True, null=True) #teaching experience
+	exp_res = models.FloatField( blank=True, null=True) #research experience
+	exp_indus = models.FloatField(blank=True, null=True) #industry experience
 	info = models.ForeignKey('User', on_delete=models.CASCADE,null=True)
 	internship_report_file = models.FileField(validators=[validate_file_size],blank=True, null=True)
 	internship_report_file2 = models.FileField(validators=[validate_file_size],blank=True, null=True)
-
+	year=models.CharField(max_length=50,null=True)
 	# def get_absolute_url(self):
  #    	return reverse('assistant_form1', kwargs={'pk': self.pk})
 
@@ -137,12 +172,14 @@ class empDetailForm(models.Model):
 
     # def get_absolute_url3(self):
     # return reverse_lazy('hod_form1', {'pk': self.pk})
-
 	def __str__(self):
 		return self.info.first_name
 
+
+
 #TABLE-3
 class feedbackTab(models.Model):
+	# o stands for odd l stands for lab (odd semester lab1 ka name,feedback1,feedback2)
 	o_l1_name = models.CharField(max_length=500, blank=True, null=True)
 	o_l1_f1 = models.CharField(max_length=500, blank=True, null=True)
 	o_l1_f2 = models.CharField(max_length=500, blank=True, null=True)
@@ -170,9 +207,9 @@ class feedbackTab(models.Model):
 	o_l5_f2 = models.CharField(max_length=500, blank=True, null=True)
 	o_l5_favg = models.CharField(max_length=500, blank=True, null=True)
 
-	o_l_f_avg = models.CharField(max_length=500, blank=True, null=True)
+	o_l_f_avg = models.CharField(max_length=500, blank=True, null=True) # saare odd sem ke lab ka final average
 
-
+    #odd semester theory
 	o_t3_name = models.CharField(max_length=500, blank=True, null=True)
 	o_t3_f1 = models.CharField(max_length=500, blank=True, null=True)
 	o_t3_f2 = models.CharField(max_length=500, blank=True, null=True)
@@ -193,7 +230,7 @@ class feedbackTab(models.Model):
 	o_t_f_avg = models.CharField(max_length=500, blank=True, null=True)
 
 
-
+#even semester
 	e_l1_name = models.CharField(max_length=500, blank=True, null=True)
 	e_l1_f1 = models.CharField(max_length=500, blank=True, null=True)
 	e_l1_f2 = models.CharField(max_length=500, blank=True, null=True)
@@ -247,10 +284,10 @@ class feedbackTab(models.Model):
 	e_t_f_avg = models.CharField(max_length=500, blank=True, null=True)
 
 
-
+#odd semester theory 1 student apperared(kirne bache baithe)
 	o_t1_stu_app = models.CharField(max_length=500, blank=True, null=True)
 	o_t1_stu_pass = models.CharField(max_length=500, blank=True, null=True)
-	o_t1_stu_perpass = models.CharField(max_length=500, blank=True, null=True)
+	o_t1_stu_perpass = models.CharField(max_length=500, blank=True, null=True) #perpass=pass percent
 
 	o_t2_stu_app = models.CharField(max_length=500, blank=True, null=True)
 	o_t2_stu_pass = models.CharField(max_length=500, blank=True, null=True)
@@ -260,7 +297,7 @@ class feedbackTab(models.Model):
 	o_t3_stu_pass = models.CharField(max_length=500, blank=True, null=True)
 	o_t3_stu_perpass = models.CharField(max_length=500, blank=True, null=True)
 
-	o_t_r_avg = models.CharField(max_length=500, blank=True, null=True)
+	o_t_r_avg = models.CharField(max_length=500, blank=True, null=True) #otr_avg:odd thoery result average
 
 	o_l1_stu_app = models.CharField(max_length=500, blank=True, null=True)
 	o_l1_stu_pass = models.CharField(max_length=500, blank=True, null=True)
@@ -325,7 +362,7 @@ class feedbackTab(models.Model):
 
 	e_l_r_avg = models.CharField(max_length=500, blank=True, null=True)
 
-
+ #p mtlb project
 	p1_name = models.CharField(max_length=500, blank=True, null=True)
 	p1_f1 = models.CharField(max_length=500, blank=True, null=True)
 	p1_f2 = models.CharField(max_length=500, blank=True, null=True)
@@ -379,9 +416,12 @@ class feedbackTab(models.Model):
 
 	p_f_avg = models.CharField(max_length=500, blank=True, null=True)
 
-	e_o_f_r_final = models.CharField(max_length=500, blank=True, null=True)
+	e_o_f_r_final = models.CharField(max_length=500, blank=True, null=True) #even odd feedback result final average
 
 	info = models.ForeignKey('User', on_delete=models.CASCADE,null=True)
+
+	#year=models.ForeignKey('new',on_delete=models.CASCADE)
+	year=models.CharField(max_length=50,null=True)
 
 	def __str__(self):
 		return self.info.first_name
@@ -390,9 +430,10 @@ class feedbackTab(models.Model):
 
 #TABLE-4
 class rd(models.Model):
+	#w_s_d: workshop state level
 	w_s_d = models.IntegerField( blank=True, null=True)
 	w_s_file = models.FileField(validators=[validate_file_size],blank=True, null=True)
-
+	#workshop national level
 	w_n_d = models.IntegerField( blank=True, null=True)
 	w_n_file = models.FileField(validators=[validate_file_size],blank=True, null=True)
 
@@ -477,10 +518,19 @@ class rd(models.Model):
 	Cw_5 = models.CharField(max_length=500, blank=True, null=True)
 	Cw_5_file = models.FileField(validators=[validate_file_size],blank=True, null=True)
 
-	ipr_status = models.ForeignKey('ipr_status', on_delete=models.CASCADE,null=True,blank=True)
-	ipr_type = models.ForeignKey('ipr_type', on_delete=models.CASCADE,null=True,blank=True)
-	ipr_info = models.TextField(blank=True, null=True)
-	ipr_file = models.FileField(validators=[validate_file_size],blank=True, null=True)
+	p_ipr_status = models.CharField(max_length=500, blank=True, null=True)
+	#p_pr_type = models.CharField(max_length=500, blank=True, null=True)
+	p_ipr_info = models.TextField(blank=True, null=True)
+	p_ipr_file = models.FileField(validators=[validate_file_size],blank=True, null=True)
+	p_ipr_m=models.CharField(max_length=50,blank=True,null=True)
+
+	c_ipr_status = models.CharField(max_length=500, blank=True, null=True)
+	#p_pr_type = models.CharField(max_length=500, blank=True, null=True)
+	c_ipr_info = models.TextField(blank=True, null=True)
+	c_ipr_file = models.FileField(validators=[validate_file_size],blank=True, null=True)
+	c_ipr_m=models.CharField(max_length=50,blank=True,null=True)
+
+	ipr_m=models.CharField(max_length=50,blank=True,null=True)
 
 	rp_marks = models.CharField(max_length=500, blank=True, null=True)
 
@@ -489,6 +539,8 @@ class rd(models.Model):
 
 
 	info = models.ForeignKey('User', on_delete=models.CASCADE,null=True)
+
+	year=models.CharField(max_length=50,null=True)
 
 
 	def __str__(self):
@@ -501,6 +553,7 @@ class remarks(models.Model):
 	ta_ic = models.TextField( blank=True, null=True)
 	ta_dr = models.TextField( blank=True, null=True)
 	info = models.ForeignKey('User', on_delete=models.CASCADE,null=True)
+	year=models.CharField(max_length=50,null=True)
 
 	def __str__(self):
 		return self.info.first_name
@@ -573,6 +626,8 @@ class conference(models.Model):
 	c8_file = models.FileField(validators=[validate_file_size],blank=True, null=True)
 
 	info = models.ForeignKey('User', on_delete=models.CASCADE,null=True)
+
+	year=models.CharField(max_length=50,null=True)
 
 
 	def __str__(self):
@@ -665,12 +720,14 @@ class journal(models.Model):
 
 	info = models.ForeignKey('User', on_delete=models.CASCADE,null=True)
 
+	year=models.CharField(max_length=50,null=True)
+
 	def __str__(self):
 		return self.info.first_name
 
 
 class remarks1(models.Model):
-	hod_marks1 = models.IntegerField(blank=True, null=True)
+	hod_marks1 = models.IntegerField(blank=True, null=True)#hod award marks
 	hod_marks2_1 = models.IntegerField( blank=True, null=True)
 	hod_marks2_2 = models.IntegerField( blank=True, null=True)
 	hod_marks2_3 = models.IntegerField( blank=True, null=True)
@@ -680,6 +737,8 @@ class remarks1(models.Model):
 
 	ta_hod_remarks = models.TextField( blank=True, null=True)
 	info = models.ForeignKey('User', on_delete=models.CASCADE,null=True)
+
+	year=models.CharField(max_length=50,null=True)
 
 	def __str__(self):
 		return self.info.first_name
@@ -699,6 +758,8 @@ class remarks2(models.Model):
 	total_marks = models.FloatField( blank=True, null=True)
 	info = models.ForeignKey('User', on_delete=models.CASCADE,null=True)
 	department = models.ForeignKey('Department', on_delete=models.CASCADE,null=True)
+
+	year=models.CharField(max_length=50,null=True)
 
 
 	def __str__(self):

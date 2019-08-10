@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+{% load widget_tweaks %}
+<html>
+
+<head>
+	<title>asp1</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href={% static "css/index.css" %}>
+
+
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+<!-- <script type="text/javascript" src={% static "js/h.js" %}></script> -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- Bootstrap core CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.10/css/mdb.min.css" rel="stylesheet">
+<!-- JQuery -->
+
+<!-- MDB core JavaScript -->
+
+
+
+
+  </head>
+  <body style="background:#c3d1f8;font-size: 1;">
+<div class="device pull-right" style="margin:1%;"><a style="color:#f5f5f5;" class="badge badge-danger" href="/logout">Logout</a></div>
+
+
+    <div class="jumbotron" style="background:#736de3">
+
+
+
+    <div class="container-fluid">
+    <center><img  width="125px" src="{% static "image/bms.logo.png" %}" alt="BMS Institute of Technology of management" ></center>
+    <div class="row">
+
+     <div class="col-12"><h1 align="center" class="display-4" style="color:#f5f5f5"> BMS Institute of Technology and management</h1>
+       <h3 class="lead" style="color:white" align="center">Faculty Appraisal Form</h3>
+         <h3 class="lead" style="color:white" align="center">1-Aug-2017 to 31-Jul-2018</h3>
+       <hr class="my-4" style="color:white">
+
+     </div>
+     </div>
+    </div>
+    </div>
+	<div class="container">
+
+
+        <div class="table-bordered poi form-row">
+
+	<div class="table table-bordered" id="accordionExample">
+	  <h4 class="po color1">2: RESEARCH & DEVELOPMENT AND CONSULTANCY<span class="sp">(Maximum Score: 35 marks)</span></h4>
+	  <div class="" style="background: #47d1d1">
+	    <div class="card-header" id="headingOne">
+	      <h3 class="">
+	        <button class="btn btn-link fo1" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+	        <h3>2A: Workshops/FDP attended</h3>
+	        </button>
+	      </h3>
+	    </div>
+
+	<div class="form-row dis">
+	          <div class="form-group col-md-6">
+	                        <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="State Level (.5 m/day)" >
+
+	          </div>
+	        <div class="form-group col-md-6">
+
+	            <input type="text" class="form-control" disabled value="{{key4.w_s_d}}">
+	        </div>
+
+
+	    </div>
+
+	    <div class="form-row dis">
+	          <div class="form-group col-md-6">
+	                        <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="National Level (1 m/day)">
+
+	          </div>
+	        <div class="form-group col-md-6">
+
+	          <input type="text" class="form-control" disabled value="{{key4.w_n_d}}">
+
+	        </div>
+
+
+
+
+	    </div>
+
+	    <div class="form-row dis">
+	          <div class="form-group col-md-6">
+	                        <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="International Level (1 m/day)">
+
+	          </div>
+	        <div class="form-group col-md-6">
+
+	            <input type="text" class="form-control" disabled value="{{key4.w_i_d}}">
+	        </div>
+
+
+
+	    </div>
+			<div class="form-row dis">
+								<div class="form-group col-md-2">
+
+
+								</div>
+
+
+							 <div class="form-group col-md-8">
+										 <div class="form-row dis">
+									 <div class="form-group col-md-4">
+
+										</div>
+													<div class="form-group col-md-2"></div>
+	                        <div class="form-row dis">
+	                                      <div class="form-group col-md-6">
+	                                     <h6 class=" color1">TOTAL MARKS<span class="sp"></span></h6>
+	                                      </div>
+
+	                                         <div class="orm-group col-md-6">
+	                       										<em>{{ key4.w_m }}</em>
+	                                               </div>
+	                                           </div>
+													</div>
+
+								</div>
+								<div class="form-group col-md-2"></div>
+
+					</div>
+	</div>
+	  <div class="card" style="background: #47d1d1">
+	    <div class="card-header" id="headingTwo">
+	      <h3 class="">
+	        <button class="btn btn-link collapsed fo1" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+<h3>2B: Invited talk/panel/keynote</h3>
+
+	        </button>
+	      </h3>
+	    </div>
+
+	        <div class="form-row dis">
+	          <div class="form-group col-md-6">
+	                        <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="State Level (2 m/session)">
+
+	          </div>
+	        <div class="form-group col-md-6">
+
+	          <input type="text" class="form-control" disabled value="{{key4.p_s_d}}">
+	        </div>
+
+	    </div>
+
+	    <div class="form-row dis">
+	          <div class="form-group col-md-6">
+	                        <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="National Level (4 m/session)">
+
+	          </div>
+	        <div class="form-group col-md-6">
+
+	            <input type="text" class="form-control" disabled value="{{key4.p_n_d}}">
+
+	        </div>
+
+
+	    </div>
+
+	    <div class="form-row dis">
+	          <div class="form-group col-md-6">
+	                        <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="International Level (5 m/session)">
+
+	          </div>
+	        <div class="form-group col-md-6">
+
+	          <input type="text" class="form-control" disabled value="{{key4.p_i_d}}">
+
+	        </div>
+
+
+
+	    </div>
+			<div class="form-row dis">
+								<div class="form-group col-md-2">
+
+
+								</div>
+
+
+							 <div class="form-group col-md-8">
+										 <div class="form-row dis">
+									 <div class="form-group col-md-4">
+
+										</div>
+													<div class="form-group col-md-2"></div>
+	                        <div class="form-row">
+	                                      <div class="col-md-12">
+	                                     <h6 class=" color1">TOTAL MARKS<span class="sp"></span></h6>
+	                                      </div>
+
+	                                         <div class="orm-group col-md-6">
+	                                          <em>{{ key4.p_m }}</em>
+	                                               </div>
+	                                           </div>
+													</div>
+
+								</div>
+								<div class="form-group col-md-2"></div>
+
+					</div>
+	  </div>
+		<div class="" style="background: #47d1d1">
+			<div class="card-header" id="headingThree">
+				<h3 class="">
+					<button class="btn btn-link collapsed fo1" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+					 2C: Number of Online Courses Completed
+				 </button><span class="fo1">(Maximum Score: 10 marks)</span>
+				</h3>
+			</div>
+			<div class="form-group">
+			<div class="form-row dis">
+		 <div class="form-group col-md-6">
+						<input type="text" class="form-control" disabled value="{{key4.onl_course_c}}">
+					</div>
+
+	        <div class="form-group col-md-6">
+	       <h6 class=" color1">TOTAL MARKS<span class="sp"></span></h6>
+
+
+	           <div class="orm-group col-md-6">
+	            <em>{{ key4.onl_course_m }}</em>
+	                 </div>
+
+		</div>
+
+		</div>
+		</div>
+	</div>
+
+
+	<div class="accordion dis1" id="accordionExample">
+	  <h4 class=" color1">3:Publications</h4>
+	  <div class="card" style="background:#2eb8b8">
+	    <div class="card-header" id="headingOne">
+	      <h3 class="">
+	        <button class="btn btn-link fo1" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+	       <h3>   3A: Number of Publications in National/International Journals/Conferences</h3><span class="sp">(Maximum Score: 08 marks)</span>
+	        </button>
+	      </h3>
+	    </div>
+
+			<div class="form-row dis">
+	    <div class="form-group col-md-4">
+				<div class="form-row">
+				<div class="form-group col-sm-12">
+				<h4 class="mb-0" align = "center">Sole Authored </h4>
+	</div>
+				</div>
+	<div class="form-row">
+	<div class="form-group col-sm-12">
+	<label >Number of conference: </label>
+	{{ key4.s_c_n }}
+	</div>
+	</div>
+
+
+
+
+	<div class="form-row">
+	<div class="form-group col-sm-12">
+	 <div class="form-row dis">
+	               <div class="orm-group col-md-2">
+
+	               </div>
+
+	                  <div class="orm-group col-md-8">
+	                    <h6 class=" color1">TOTAL MARKS<span class="sp"></span></h6>
+											{{ key4.s_c_m }}
+	                        </div>
+													<div class="orm-group col-md-2">
+
+													</div>
+	                    </div>
+	</div>
+	</div>
+	</div>
+	<div class="form-group col-md-4 " style="  border-left: thin solid #ff0000" >
+		<div class="form-row">
+		<div class="form-group col-sm-12">
+		<h4 class="mb-0" align ="center" >First & Second Author </h4>
+
+		</div>
+		</div>
+	<div class="form-row">
+	<div class="form-group col-sm-12">
+	<label >Number of conference: </label>
+	{{ key4.f_c_n }}
+	</div>
+	</div>
+
+
+	<div class="form-row">
+	<div class="form-group col-sm-12">
+	<div class="form-row dis">
+						 <div class="orm-group col-md-2">
+
+						 </div>
+								<div class="orm-group col-md-8">
+	                <h6 class=" color1">TOTAL MARKS<span class="sp"></span></h6>
+	                {{ key4.f_c_m }}
+											</div>
+											<div class="orm-group col-md-2">
+
+											</div>
+									</div>
+	</div>
+	</div>
+	</div>
+	<div class="form-group col-md-4" style="  border-left: thin solid #ff0000" >
+		<div class="form-row">
+		<div class="form-group col-sm-12">
+		<h4 class="mb-0" align ="center" >Other Author </h4>
+
+		</div>
+		</div>
+	<div class="form-row">
+	<div class="form-group col-sm-12">
+	<label >Number of conference: </label>
+	{{ key4.o_c_n }}
+	</div>
+	</div>
+
+
+
+
+	<div class="form-row">
+	<div class="form-group col-sm-12">
+	<div class="form-row dis">
+						 <div class="orm-group col-md-2">
+
+						 </div>
+								<div class="orm-group col-md-8">
+									    <h6 class=" color1">TOTAL MARKS<span class="sp"></span></h6>
+									{{ key4.o_c_m }}
+											</div>
+											<div class="orm-group col-md-2">
+
+											</div>
+									</div>
+	</div>
+	</div>
+	</div>
+	</div>
+	<!-- form>
+	        <div class="form-row dis">
+	          <div class="form-group col-md-6">
+	                        <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="Sole Authored">
+
+	          </div>
+	        <div class="form-group col-md-6">
+
+	            <input type="text" class="form-control" id="inputEmployeeIdNo" placeholder="Count Eg. 3">
+	        </div>
+	    </div>
+
+	    <div class="form-row dis">
+	          <div class="form-group col-md-6">
+	                        <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="Being first and second author">
+
+	          </div>
+	        <div class="form-group col-md-6">
+
+	            <input type="text" class="form-control" id="inputEmployeeIdNo" placeholder="Count Eg. 3">
+	        </div>
+	    </div>
+
+	    <div class="form-row dis">
+	          <div class="form-group col-md-6">
+	                        <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="Being other author ">
+
+	          </div>
+	        <div class="form-group col-md-6">
+
+	            <input type="text" class="form-control" id="inputEmployeeIdNo" placeholder="Count Eg. 3">
+	        </div>
+	    </div>
+	</form>
+	</div> -->
+
+
+	  <div class="card" style="background:#2eb8b8">
+	    <div class="card-header" id="headingTwo">
+	      <h3 class="">
+	        <button class="btn btn-link collapsed fo1" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+<h3>
+	3B: Number of journal papers with Scopus/DBLP/ Google Scholar Indexed Publications</h3><span class="sp">(Maximum Score: 12 marks)</span>
+	        </button>
+	      </h3>
+	    </div>
+
+			    <div class="form-row dis">
+	      <div class="form-group col-md-4">
+	        <div class="form-row">
+	<div class="form-group col-sm-11">
+						<div class="form-group col-sm-12">
+						<h4 class="mb-0" align ="center" >Sole Authored </h4>
+	</div>
+						</div>
+	<div class="form-group col-sm-11">
+	<label >Number of journal: </label>
+	{{ key4.s_j_n }}
+	</div>
+	</div>
+
+
+
+
+
+
+	    <div class="form-row">
+	<div class="form-group col-sm-11">
+	 <div class="form-row dis">
+	               <div class="orm-group col-md-2">
+
+	               </div>
+	                  <div class="orm-group col-md-8">
+											    <h6 class=" color1">TOTAL MARKS<span class="sp"></span></h6>
+											{{ key4.s_j_m }}
+	                        </div>
+													<div class="orm-group col-md-2">
+
+					                </div>
+	                    </div>
+
+	   </div>
+	</div>
+
+	</div>
+
+	<div class="form-group col-md-4 " style="  border-left: thin solid #ff0000">
+		<div class="form-row">
+			<div class="form-group col-sm-11">
+								<div class="form-group col-sm-12">
+								<h4 class="mb-0" align ="center" >First & Second Author </h4>
+			</div>
+								</div>
+	<div class="form-group col-sm-11">
+	<label >Number of journal: </label>
+	{{ key4.f_j_n }}
+	</div>
+	</div>
+
+
+
+
+
+
+	<div class="form-row">
+	<div class="form-group col-sm-11">
+	<div class="form-row dis">
+					 <div class="orm-group col-md-2">
+
+					 </div>
+							<div class="orm-group col-md-8">
+								    <h6 class=" color1">TOTAL MARKS<span class="sp"></span></h6>
+								{{ key4.f_j_m }}
+										</div>
+										<div class="orm-group col-md-2">
+
+										</div>
+								</div>
+
+	</div>
+	</div>
+
+	</div>
+	<div class="form-group col-md-4 " style="border-left: thin solid #ff0000">
+		<div class="form-row">
+			<div class="form-group col-sm-11">
+								<div class="form-group col-sm-12">
+								<h4 class="mb-0" align ="center" >Other Author </h4>
+			</div>
+								</div>
+	<div class="form-group col-sm-11">
+	<label >Number of journal: </label>
+	{{ key4.o_j_n }}
+	</div>
+	</div>
+
+
+
+
+
+
+	<div class="form-row">
+	<div class="form-group col-sm-11">
+	<div class="form-row dis">
+					 <div class="orm-group col-md-2">
+
+					 </div>
+							<div class="orm-group col-md-8">
+								    <h6 class=" color1">TOTAL MARKS<span class="sp"></span></h6>
+	{{ key4.o_j_m }}									</div>
+										<div class="orm-group col-md-2">
+
+										</div>
+								</div>
+
+	</div>
+	</div>
+</div>
+	<div class="card" style="background:#2eb8b8">
+		<div class="card-header" id="headingThree">
+			<h3 class="">
+				<button class="btn btn-link collapsed fo1" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+				 <h3>3C: Number of Books/Book chapter Published/Publication in News media</hp><span class="fo1">(Maximum Score: 10 marks)</span>
+				</button>
+			</h3>
+		</div>
+
+				<div class="form-row dis">
+					<div class="form-group col-md-6">
+							<input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="Book Authored  International (10 marks/Book)">
+
+					</div>
+				<div class="form-group col-md-6">
+
+					 {{ key4.book_i }}
+				</div>
+		</div>
+
+		<div class="form-row dis">
+					<div class="form-group col-md-6">
+												<input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="Book Authored  National (08 marks/Book)">
+
+					</div>
+				<div class="form-group col-md-6">
+
+					{{ key4.book_n }}
+				</div>
+		</div>
+
+		<div class="form-row dis">
+					<div class="form-group col-md-6">
+												<input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="Book chapterAuthored  International (06 marks/Book Chapter)">
+
+					</div>
+				<div class="form-group col-md-6">
+
+					{{ key4.book_ci }}
+				</div>
+		</div>
+
+		<div class="form-row dis">
+					<div class="form-group col-md-6">
+												<input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="Book chapterAuthored  National (04 marks/Book Chapter)">
+
+					</div>
+				<div class="form-group col-md-6">
+					{{ key4.book_cn }}
+				</div>
+		</div>
+
+		<div class="form-row dis">
+					<div class="form-group col-md-6">
+												<input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="Articles Published in International (10 marks/Article)">
+
+					</div>
+				<div class="form-group col-md-6">
+
+					{{ key4.book_ai }}
+				</div>
+		</div>
+
+		<div class="form-row dis">
+					<div class="form-group col-md-6">
+												<input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="National  Media (06 marks/Article)">
+
+					</div>
+				<div class="form-group col-md-6">
+
+					{{ key4.book_nm }}
+				</div>
+		</div>
+
+		<div class="form-row dis">
+					<div class="form-group col-md-6">
+
+
+					</div>
+				<div class="form-group col-md-6">
+
+								 <div class="form-row">
+									 <div clas="col-md-9">
+												 <h6 class=" color1">TOTAL MARKS<span class="sp"></span></h6>
+										 {{ key4.book_m }}
+										 </div>
+										 <div class="col-md-3"></div>
+
+</div>
+
+
+
+	 </div>
+				</div>
+		</div>
+<!-- </form> -->
+	</div>
+</div>
+<div class="card " style="background:#2eb8b8">
+
+		<div class="card-header" id="headingTwo">
+			<h3 class="mb-0">
+				<button class="btn btn-link collapsed fo1" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+<h4>3D: Research Project</h4>
+<span class="sp">(Maximum Score: 5 marks)</span>
+				</button>
+			</h3>
+		</div>
+				</button>
+				<h5>Funded Projects</h5>
+	<table class="table table-bordered">
+	<thead>
+		<tr>
+			<th scope="col">Funding</th>
+			<th scope="col">Being Sole Principal Investigator</th>
+			<th scope="col">Being first Principal Investigator</th>
+			<th scope="col">Being Co-Investigator</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<th scope="row">Internally Funded<span class="sp">( 5 marks/project)</span></th>
+			<td>{{ key4.if_s }}</td>
+			<td>{{ key4.if_f }}</td>
+			<td>{{ key4.if_c }}</td>
+		</tr>
+		<tr>
+			<th scope="row">Externally Funded Less than 5_Lakhs<span class="sp">( 5 marks/project )</span> </th>
+			<td>{{ key4.ef_s }}</td>
+			<td>{{ key4.ef_f }}</td>
+			<td>{{ key4.ef_c }}</td>
+		</tr>
+		<tr>
+			<th scope="row">Externally Funded more than 5_Lakhs<span class="sp"> (10 marks/project)</span> </th>
+			<td>{{ key4.eef_s }}</td>
+			<td>{{ key4.eef_f }}</td>
+			<td>{{ key4.eef_c }}</td>
+		</tr>
+		<tr>
+
+	</tbody>
+</table>
+<h5>Consultancy Work</h5>
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			<th scope="col">Funding</th>
+			<th scope="col">Upto 2 Lakhs</th>
+			<th scope="col">Upto 2-5 Lakhs</th>
+			<th scope="col">Above 5 Lakhs</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<th scope="row">Consultancy Work</th>
+			<td>{{ key4.Cw_2 }}</td>
+			<td>{{ key4.Cw_2_5 }}</td>
+			<td>{{ key4.Cw_5 }}</td>
+		</tr>
+		</tbody>
+</table>
+<div class="card poi">
+
+<div class="form-group ">
+
+
+
+
+
+										<div class="orm-group col-md-6">
+<label for="inputResearch">Marks Here:</label>
+											{{ key4.rp_marks }}
+
+													</div>
+
+											</div>
+
+											<div class="form-group row">
+
+
+
+
+														 <div class="form-group col-md-6">
+															 <h4>Provisional Specification filing of Patents</h4>
+														 </div>
+
+
+											</div>
+											<div class="form-group col-md-6">
+												<h4>IPR Status :</h4>
+											 {% render_field form4.p_ipr_status class="form-control p_ipr_status" %}
+										 </div>
+											<div class="form-group col-md-12">
+											<label>IPR File</label>
+											{% render_field form4.p_ipr_file class="form-control" %}
+
+											</div>
+
+											 <div class="form-group col-md-12">
+										 <label>Details</label>
+										 {% render_field form4.p_ipr_info class="form-control p_ipr_info" %}
+
+										 </div>
+										 <div class="form-group col-md-12">
+	                 <label>Marks :</label>
+	                 {% render_field form4.p_ipr_m class="form-control p_ipr_m disabled" %}
+
+	                 </div>
+
+
+
+
+
+										 <div class="form-group row">
+
+
+
+
+														<div class="form-group col-md-6">
+															<h4>Complete Specification filing of Patents</h4>
+														</div>
+
+
+										 </div>
+										 <div class="form-group col-md-6">
+											 <h4>IPR Status :</h4>
+											{% render_field form4.ipr_status class="form-control c_ipr_status" %}
+										 </div>
+										 <div class="form-group col-md-12">
+										 <label>IPR File</label>
+										 {% render_field form4.c_ipr_file class="form-control" %}
+
+										 </div>
+
+											<div class="form-group col-md-12">
+										 <label>Details</label>
+										 {% render_field form4.c_ipr_info class="form-control c_ipr_info" %}
+
+										 </div>
+										 <div class="form-group col-md-12">
+	                 <label>Marks :</label>
+	                 {% render_field form4.c_ipr_m class="form-control c_ipr_m disabled" %}
+
+	                 </div>
+								 </div>
+								 <div class="form-row dis" style="background:#cc99ff">
+
+
+
+								               <div class="form-group col-md-6">
+
+								              <h5 class="po color2">TOTAL MARKS<span class="sp">_(Maximum Score: 35)</span></h5>
+
+								               </div>
+
+
+
+								                  <div class="orm-group col-md-6">
+
+								                    {% render_field form4.rd_tot_marks class="form-control rd_tot_marks disabled" %}
+
+								                        </div>
+
+								                    </div>
+								</div>
+
+								<div class="form-row form-group ">
+
+							  <div class="form-group col-md-5">
+							 	<a href="{% url 'facform1:f_assistant_edit3' key4.year %}"><button type="button" name="button" class="btn btn-info btn-sm btn-block">GO BACK</button></a></div>
+							 	 <div class="form-group col-md-1">
+							 	 </div>
+							 	 <div class="form-group col-md-5">
+							 		 <a href="{% url 'facform1:assistant_form4' key4.year %}"><button type="button" name="button" class="btn btn-info btn-sm btn-block">CONTINUE TO Next Form</button></a>
+							 	 </div>
+
+
+
+							  </div>
+
+	</div>
+	</div>
+	  </div>

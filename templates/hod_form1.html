@@ -29,8 +29,7 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.10/js/mdb.min.js"></script>
 
   </head>
-  <body style="background:#c3d1f8">
-    <marquee height="40px;" direction = "right" style="background:#7c4dff"><span style="color:#ffffff;">Cumulative file size shouldn't exceeds <strong>1MB</strong></span></marquee>
+  <body style="background:#ccccb3">
 
     <div class="device pull-right" style="margin:1%;"><a style="color:#f5f5f5;" class="badge badge-danger" href="/logout">Logout</a></div>
 
@@ -43,62 +42,74 @@
 
      <div class="col-12"><h1 align="center" class="display-4" style="color:#f5f5f5"> BMS Institute of Technology and management</h1>
        <h3 class="lead" style="color:white" align="center">Faculty Appraisal Form</h3>
-         <h3 class="lead" style="color:white" align="center">1-Aug-2017 to 31-Jul-2018</h3>
+         <h3 class="lead" style="color:white" align="center">1-Aug-2018 to 31-Jul-2019</h3>
        <hr class="my-4" style="color:white">
-       <h5 style="color:white; margin-left:108px;">Internship Report must be submitted.</h5>
      </div>
      </div>
     </div>
     </div>
 
-  <div class="container">
+  <div class="container" style="background:#6666ff">
 
 
 
        <form method="POST" enctype = "multipart/form-data">
         {% csrf_token %}
-        <div class="table-bordered poi form-row">
-          <div class="form-group col-md-3">
-            <label for="">Internship Company Name 1</label>
-              {% render_field form2.it_name class="form-control"  %}
-          </div>
-          <div class="form-group col-md-3">
-            <label for="">From</label>
-              {% render_field form2.it_f class="form-control" id="datepicker" placeholder="YYYY-MM-DD" %}
-          </div>
-          <div class="form-group col-md-3">
-            <label for="">To</label>
-              {% render_field form2.it_t class="form-control" id="datepicker1" placeholder="YYYY-MM-DD" %}
-          </div>
+        <div class=" poi form-row">
+          <div class=" poi form-row">
+            <div class="form-group col-md-6">
+              <label for="" style="color:white">Internship Company Name 1</label>
+              {% render_field form2.it1_name class="form-control" %}
 
-          <div class="form-group col-md-3">
+            </div>
+            <div class="form-group col-md-3">
+              <label for="" style="color:white">From</label>
+              {% render_field form2.it1_f class="form-control" id="datepicker" placeholder="YYYY-MM-DD"%}
 
-            <label for="">Internship report file</label>
+            </div>
+            <div class="form-group col-md-3">
+              <label for="" style="color:white">To</label>
+              {% render_field form2.it1_t class="form-control" id="datepicker1" placeholder="YYYY-MM-DD"%}
 
-            {% render_field form2.internship_report_file class="form-control" %}
+            </div>
 
-          </div>
+  					<div class="form-group col-md-6">
+  						<label for="" style="color:white">Internship Company Name 2</label>
+  						{% render_field form2.it2_name class="form-control" %}
 
-          <div class="form-group col-md-3">
-            <label for="">Internship Company Name 2</label>
-              {% render_field form2.it_name2 class="form-control"  %}
-          </div>
-          <div class="form-group col-md-3">
-            <label for="">From</label>
-              {% render_field form2.it_f2 class="form-control" id="datepicker4" placeholder="YYYY-MM-DD" %}
-          </div>
-          <div class="form-group col-md-3">
-            <label for="">To</label>
-              {% render_field form2.it_t2 class="form-control" id="datepicker5" placeholder="YYYY-MM-DD" %}
-          </div>
+  					</div>
+  					<div class="form-group col-md-3">
+  						<label for="" style="color:white">From</label>
+  						{% render_field form2.it2_f class="form-control" id="datepicker2" placeholder="YYYY-MM-DD"%}
 
-          <div class="form-group col-md-3">
+  					</div>
+  					<div class="form-group col-md-3">
+  						<label for="" style="color:white">To</label>
+  						{% render_field form2.it2_t class="form-control"id="datepicker3" placeholder="YYYY-MM-DD" %}
 
-            <label for="">Internship report file</label>
+  					</div>
 
-            {% render_field form2.internship_report_file2 class="form-control" %}
+  					<div class="form-group col-md-6">
+  						<label for="" style="color:white">Internship Company Name 3</label>
+  						{% render_field form2.it3_name class="form-control" %}
 
-          </div>
+  					</div>
+  					<div class="form-group col-md-3">
+  						<label for="" style="color:white">From</label>
+  						{% render_field form2.it3_f class="form-control" id="datepicker4" placeholder="YYYY-MM-DD"%}
+
+  					</div>
+  					<div class="form-group col-md-3">
+  						<label for="" style="color:white">To</label>
+  					{% render_field form2.it3_t class="form-control" id="datepicker5" placeholder="YYYY-MM-DD" %}
+
+  					</div>
+
+  					<div class="form-group col-md-12">
+  						<label for="" style="color:white">More data</label>
+  							{% render_field form2.more class="form-control" %}
+
+  					</div>
 
           <div class="form-group col-md-6">
             <label for="inputEmpName">Emp Name</label>
@@ -118,7 +129,7 @@
         </div>
         <div class="form-group col-md-12">
           <label for="inputDOJ">DOJ</label>
-            {% render_field form2.doj class="form-control" id="datepicker2" placeholder="YYYY-MM-DD" %}
+            {% render_field form2.doj class="form-control" id="datepicker6" placeholder="YYYY-MM-DD" %}
         </div>
         <div class="form-group col-md-6">
           <label >Designation</label>
@@ -126,7 +137,7 @@
         </div>
         <div class="form-group col-md-6">
           <label for="inputHeldFrom">HeldFrom</label>
-          {% render_field form2.Held_from class="form-control" id="datepicker3" placeholder="YYYY-MM-DD" %}
+          {% render_field form2.Held_from class="form-control" id="datepicker7" placeholder="YYYY-MM-DD" %}
         </div>
 
         <div class="form-group col-md-6">
@@ -201,11 +212,17 @@
    $( "#datepicker3" ).datepicker({
     dateFormat: "yy-mm-dd"
   });
-   $( "#datepicker4" ).datepicker({
-    dateFormat: "yy-mm-dd"
+  $( "#datepicker4" ).datepicker({
+	  dateFormat: "yy-mm-dd"
   });
-   $( "#datepicker5" ).datepicker({
-    dateFormat: "yy-mm-dd"
+  $( "#datepicker5" ).datepicker({
+  	dateFormat: "yy-mm-dd"
+  });
+  $( "#datepicker6" ).datepicker({
+   dateFormat: "yy-mm-dd"
+  });
+  $( "#datepicker7" ).datepicker({
+   dateFormat: "yy-mm-dd"
   });
   } );
   </script>

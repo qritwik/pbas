@@ -60,7 +60,7 @@
     </div>
     </div>
 
-  <div class="container">
+  <div class="container" >
 
      <form method="POST">
 
@@ -74,31 +74,22 @@
 
   <h5 class="po"> Innovative contributions to teaching learning process provide description below with Initiation,Implementation, Impact Analysis<span class="sp">(Maximum Score: 5 marks)</span></h5>
 
- <div class="input-group text12">
-
-  <div class="input-group-prepend">
-
-  </div>
 
   {% render_field form5.ta_ic class="form-control" %}
 
   <input type="text" class="form-control col-md-2 poi" placeholder="marks" aria-label="Username" aria-describedby="basic-addon1" disabled >
 
-</div>
 
 </div>
 
+</div>
 
 
 <div class="card dis1 po">
 
   <h5 class="po">Departmental  Responsibilities (Please list only those where you have made significant contribution)</h5>
+{% render_field form5.ta_dr class="form-control" %}
 
- <div class="input-group text12">
-
-  {% render_field form5.ta_dr class="form-control" %}
-
-</div>
 
 </div>
 
@@ -188,17 +179,10 @@
 
   <h5 class="po">Institutional  Responsibilities (Please list only those where you have made significant contribution)</h5>
 
- <div class="input-group text12">
-
-  <div class="input-group-prepend">
-
-
-
-  </div>
 
    {% render_field form5.ta_ir class="form-control" %}
 
-</div>
+
 
 </div>
 

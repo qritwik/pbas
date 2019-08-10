@@ -947,7 +947,27 @@ $('.rd').on("click",function(){
 		$('.rp_marks').val(e);
 	}
 
-	 f = a+b+c+d+e+m+n;
+var p_ipr=0;
+var c_ipr=0;
+var ipr=0;
+if($('.p_ipr_info').val()){
+	$('.p_ipr_m').val(5);
+	p_ipr=5;
+}
+else{
+	$('.p_ipr_m').val(0);
+	p_ipr=0;
+}
+if($('.c_ipr_info').val()){
+	$('.c_ipr_m').val(5);
+	c_ipr=5
+}
+else{
+	$('.c_ipr_m').val(0);
+	c_ipr=0;
+}
+ipr=p_ipr+c_ipr
+	 f = a+b+c+d+e+m+n+ipr;
 
 	//out of 35
 

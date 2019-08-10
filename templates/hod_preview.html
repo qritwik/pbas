@@ -5,7 +5,7 @@
 
 {% include 'base.html' %}
 
-<body>
+  <body style="background:#ccccb3">
   <div class="container">
 
     <div class="card poi table-bordered">
@@ -26,49 +26,54 @@
         {% csrf_token %}
 
 
-                <div class="table-bordered poi form-row">
-                  <div class="form-group col-md-3">
-                    <label for="">Internship Company Name 1</label>
-                    <input type="text" class="form-control" id="inputEmpName" disabled value="{{ key2.it_name }}">
-                  </div>
-                  <div class="form-group col-md-3">
-                    <label for="">From</label>
-                    <input type="text" class="form-control" id="inputEmpName" disabled value="{{ key2.it_f }}">
-                  </div>
-                  <div class="form-group col-md-3">
-                    <label for="">To</label>
-                    <input type="text" class="form-control" id="inputEmpName" disabled value="{{ key2.it_t }}">
-                  </div>
-                  <div class="form-group col-md-3">
-
-            <label for="">Internship report file</label>
-            {% if key2.internship_report_file %}
-            <a href="/media/{{ key2.internship_report_file}}">Click to view</a>
-            {% else %}
-            <a href="#"></a>
-            {% endif %}
+        <div class=" poi form-row">
+          <div class="form-group col-md-6">
+            <label for="" style="color:white">Internship Company Name 1</label>
+            <input type="text" class="form-control" id="inputEmpName" disabled value="{{ key2.it1_name }}">
 
           </div>
           <div class="form-group col-md-3">
-                    <label for="">Internship Company Name 2</label>
-                    <input type="text" class="form-control" id="inputEmpName" disabled value="{{ key2.it_name2 }}">
-                  </div>
-                  <div class="form-group col-md-3">
-                    <label for="">From</label>
-                    <input type="text" class="form-control" id="inputEmpName" disabled value="{{ key2.it_f2 }}">
-                  </div>
-                  <div class="form-group col-md-3">
-                    <label for="">To</label>
-                    <input type="text" class="form-control" id="inputEmpName" disabled value="{{ key2.it_t2 }}">
-                  </div>
-                  <div class="form-group col-md-3">
+            <label for="" style="color:white">From</label>
+            <input type="text" class="form-control" id="inputEmpName" disabled value="{{ key2.it1_f }}">
 
-            <label for="">Internship report file</label>
-            {% if key2.internship_report_file2 %}
-            <a href="/media/{{ key2.internship_report_file2}}">Click to view</a>
-            {% else %}
-            <a href="#"></a>
-            {% endif %}
+          </div>
+          <div class="form-group col-md-3">
+            <label for="" style="color:white">To</label>
+            <input type="text" class="form-control" id="inputEmpName" disabled value="{{ key2.it1_t }}">
+
+          </div>
+
+          <div class="form-group col-md-6">
+            <label for="" style="color:white">Internship Company Name 2</label>
+            <input type="text" class="form-control" id="inputEmpName" disabled value="{{ key2.it2_name }}">
+
+          </div>
+          <div class="form-group col-md-3">
+            <label for="" style="color:white">From</label>
+            <input type="text" class="form-control" id="inputEmpName" disabled value="{{ key2.it2_f }}">
+
+          </div>
+          <div class="form-group col-md-3">
+            <label for="" style="color:white">To</label>
+            <input type="text" class="form-control" id="inputEmpName" disabled value="{{ key2.it2_t }}">
+
+          </div>
+
+          <div class="form-group col-md-6">
+            <label for="" style="color:white">Internship Company Name 3</label>
+            <input type="text" class="form-control" id="inputEmpName" disabled value="{{ key2.it3_name }}">
+
+          </div>
+          <div class="form-group col-md-3">
+            <label for="" style="color:white">From</label>
+            <input type="text" class="form-control" id="inputEmpName" disabled value="{{ key2.it3_f }}">
+
+          </div>
+          <div class="form-group col-md-3">
+            <label for="" style="color:white">To</label>
+            <input type="text" class="form-control" id="inputEmpName" disabled value="{{ key2.it3_t }}">
+
+          </div>
 
           </div>
 
@@ -129,7 +134,7 @@
                  <div class="form-group col-md-6">
          <label>Month of increment</label>
          <input type="text" class="form-control" id="inputEmpName" disabled value="{{ key2.month_of_increment }}">
-                     
+
                       </div>
              </div>
 
@@ -1847,36 +1852,74 @@
 
                       </div>
 
- <div class="form-group row">
+                      <div class="form-group row">
 
 
 
 
-        <div class="form-group col-md-6">
-          <h4>IPR Type :</h4>
-        {{ key4.ipr_type }}
-        </div>
-        <div class="form-group col-md-6">
-          <h4>IPR Status :</h4>
-         {{ key4.ipr_status }}
-</div>
+                             <div class="form-group col-md-6">
+                               <h4>Provisional Specification filing of Patents</h4>
+                             </div>
 
- </div>
 
-  <div class="form-group col-md-12">
-<label>Details</label>
-{{ key4.ipr_info }}
+                      </div>
+                      <div class="form-group col-md-6">
+                        <h4>IPR Status :</h4>
+                       {% render_field form4.p_ipr_status class="form-control p_ipr_status" %}
+                     </div>
+                      <div class="form-group col-md-12">
+                      <label>IPR File</label>
+                      {% render_field form4.p_ipr_file class="form-control" %}
 
-</div>
-<div class="form-group col-md-12">
-<label>IPR File</label>
-{% if key4.ipr_file %}
-           <a href="/media/{{key4.ipr_file}}"></a>
-            {% else %}
-            <a href="#"></a>
-            {% endif %}
+                      </div>
 
-</div>
+                       <div class="form-group col-md-12">
+                     <label>Details</label>
+                     {% render_field form4.p_ipr_info class="form-control p_ipr_info" %}
+
+                     </div>
+                     <div class="form-group col-md-12">
+                    <label>Marks :</label>
+                    {% render_field form4.p_ipr_m class="form-control p_ipr_m disabled" %}
+
+                    </div>
+
+
+
+
+
+                     <div class="form-group row">
+
+
+
+
+                            <div class="form-group col-md-6">
+                              <h4>Complete Specification filing of Patents</h4>
+                            </div>
+
+
+                     </div>
+                     <div class="form-group col-md-6">
+                       <h4>IPR Status :</h4>
+                      {% render_field form4.ipr_status class="form-control c_ipr_status" %}
+                     </div>
+                     <div class="form-group col-md-12">
+                     <label>IPR File</label>
+                     {% render_field form4.c_ipr_file class="form-control" %}
+
+                     </div>
+
+                      <div class="form-group col-md-12">
+                     <label>Details</label>
+                     {% render_field form4.c_ipr_info class="form-control c_ipr_info" %}
+
+                     </div>
+                     <div class="form-group col-md-12">
+                    <label>Marks :</label>
+                    {% render_field form4.c_ipr_m class="form-control c_ipr_m disabled" %}
+
+                    </div>
+
  </div>
 
 </div>
@@ -2082,6 +2125,12 @@
 </div>
 
 </div>
+{% if n.teach_status %}
+ <h6>  <a href="{% url 'facform1:first_page'  %}"><button type="button" name="button">GO BACK</button></a>
+	 {% else %}
+	  <h6>  <a href="{% url 'facform1:hod_form5_edit' key4.year %}"><button type="button" name="button">GO BACK</button></a>
+   <a href="{% url 'facform1:status' key3.year %}"><button type="button" name="button">SUBMIT</button></a>
+	 {% endif %}
 
 
 </div>

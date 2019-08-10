@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 from .models import *
 from . import forms
+from django.forms import modelformset_factory
 import urllib.parse as ap
 import urllib.request
 from django.contrib.auth.hashers import make_password, check_password
@@ -11,9 +12,12 @@ from itertools import chain
 from openpyxl import Workbook
 from django.http import HttpResponse, HttpResponseRedirect
 from openpyxl.writer.excel import save_virtual_workbook
-
+from django.urls import reverse
 from django.contrib.auth.decorators import login_required
 from django.forms import formset_factory
+import smtplib
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
 
 # from selenium import webdriver
 # import pdfkit
@@ -21,12 +25,11 @@ from django.core.mail import send_mail, EmailMessage
 
 
 
-
 # def email_doc(self, name):
 # 	qs = User.objects.get(username=name)
 # 	url = 'https://pbas.bmsit.ac.in/ao_teacher1_display/' + name
 
-	
+
 # 	# DRIVER = 'chromedriver'
 # 	# driver = webdriver.Chrome(DRIVER)
 # 	# driver.get(url)
@@ -45,12 +48,102 @@ from django.core.mail import send_mail, EmailMessage
 # 				[qs.email],
 # 				)
 # 	email.attach_file(screenshot)
-# 	email.send()	
+# 	email.send()
+
+def first_page(request):
+	user=User.objects.get(username=request.user)
+	print("                                                             Entered first_page  try section")
+	if request.method == 'POST':
+		form=forms.newform(data=request.POST)
+		if form.is_valid():
+			f=form.save(commit=False)
+			name = request.user
+			user.designation=f.designation
+			user.save()
+			if user.is_ao():
+				print("USER IS AO")
+				return HttpResponseRedirect(reverse('facform1:ao_first',args=(f.year,)))
+			if new.objects.filter(info=request.user).filter(year=f.year).exists():
+				print("                                             Existing Forms ")
+				if journal.objects.filter(info=user).filter(year=f.year).exists():
+					print("It exists directing to final preview")
+					if user.is_assistant_professor():
+						print("User is assistant professor")
+						return HttpResponseRedirect(reverse('facform1:assistant_preview',args=(f.year,)))
+
+					elif user.is_associate_professor():
+						print("user is associate professor")
+						return HttpResponseRedirect(reverse('facform1:associate_preview',args=(f.year,)))
+
+					elif user.is_professor():
+						print("user is professor")
+						return HttpResponseRedirect(reverse('facform1:associate_preview',args=(f.year,)))
+					elif user.is_hod():
+						print("User is HOD")
+						return HttpResponseRedirect(reverse('facform1:hod_first',args=(f.year,)))
+
+
+				else:
+					if user.is_assistant_professor():
+						print("User is assistant professor")
+						return HttpResponseRedirect(reverse('facform1:assistant_form1',args=(f.year,)))
+
+					elif user.is_associate_professor():
+						print("user is associate professor")
+						return HttpResponseRedirect(reverse('facform1:associate_form1',args=(f.year,)))
+
+					elif user.is_professor():
+						print("user is professor")
+						return HttpResponseRedirect(reverse('facform1:associate_form1',args=(f.year,)))
+					elif user.is_hod():
+						print("User is HOD")
+						return HttpResponseRedirect(reverse('facform1:hod_first',args=(f.year,)))
+					elif user.is_ao():
+						print("USER IS AO")
+						return HttpResponseRedirect(reverse('facform1:ao_first',args=(f.year,)))
+
+			else:
+				print("                                                             Entered first_page except section")
+				if request.method == 'POST':
+					form=forms.newform(data=request.POST)
+					if form.is_valid():
+						f=form.save(commit=False)
+						f.info=request.user
+						name = request.user
+						u = User.objects.get(username=name)
+						u.designation=f.designation
+						u.save()
+						f.save()
+						if request.user.is_assistant_professor():
+							return HttpResponseRedirect(reverse('facform1:assistant_form1',args=(f.year,)))
+
+						elif request.user.is_associate_professor():
+							return HttpResponseRedirect(reverse('facform1:associate_form1',args=(f.year,)))
+
+						elif request.user.is_professor():
+							return HttpResponseRedirect(reverse('facform1:associate_form1',args=(f.year,)))
+						elif request.user.is_hod():
+							return HttpResponseRedirect(reverse('facform1:hod_first',args=(f.year,)))
+						elif user.is_ao():
+							print("USER IS AO")
+							return HttpResponseRedirect(reverse('facform1:ao_first',args=(f.year,)))
+
+					else:
+						print(form.errors)
+
+				form=forms.newform()
+				return render(request,'first_page.html',{'form':form,'user':user})
+
+		else:
+			print(form.errors)
+	else:
+		form=forms.newform()
+
+		return render(request,'first_page.html',{'form':form,'user':user})
 
 
 
-
-
+"""
 def teach_fun(request):
 
 	data1 = User.objects.all()
@@ -61,7 +154,7 @@ def teach_fun(request):
 		i.save()
 
 	return HttpResponse("Done")
-
+"""
 
 
 def report(request,dept):
@@ -575,82 +668,9 @@ def report(request,dept):
 		conference1.cell(row = k, column = 51).value = cx.c8_author
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	response = HttpResponse(save_virtual_workbook(book), content_type='application/vnd.ms-excel')
 	response['Content-Disposition'] = 'attachment; filename="final_report.xlsx"'
 	return response
-
-
-
-
-
-
-
-
-
-
-
 
 def ao_consolidated(request):
 	data1 = User.objects.filter(Q(department__name='CSE')|Q(department__name='ISE')|Q(department__name='ECE')|Q(department__name='EEE')|Q(department__name='CIV')|Q(department__name='MCA')|Q(department__name='TCE')|Q(department__name='MECH')|Q(department__name='maths')|Q(department__name='physics')|Q(department__name='chemistry'))
@@ -681,7 +701,7 @@ def ao_consolidated(request):
 		try:
 		    data7 = empDetailForm.objects.get(info=i.pk)
 		except empDetailForm.DoesNotExist:
-		    data7 = None    
+		    data7 = None
 
 		dic[i] = [data2,data3,data4,data5,data7]
 
@@ -691,7 +711,30 @@ def ao_consolidated(request):
 
 	return render(request,'ao_consolidated.html',context = context)
 
+def email_otp(random_otp,email,name):
+	mail_subject = 'Your OTP is :.'
 
+	body="Hi ,"\
+		+name\
+		+"\n\n"\
+		+"Your OTP is : "\
+		+random_otp\
+		+"\n\nThanks,\nPBAS-BMSIT"
+	message = str(MIMEText(body,'plain'))
+
+	#print(rand)
+	#subject='Thank you for registering with us'
+	#message='Please enter the OTP to verify your email.Your OTP is : '+str(rand)
+	#message=str(rand)
+	from_email='ravikrsngh.rks@gmail.com'
+	to_list=[email]
+	print(to_list)
+	s= smtplib.SMTP('smtp.gmail.com',587)
+	s.starttls()
+	s.login('ravikrsngh.rks@gmail.com','ykigquucffuhzmkz')
+	s.sendmail(from_email,to_list,message)
+	s.quit()
+	print("Email Sent")
 
 
 
@@ -700,6 +743,7 @@ def phone_otp(random_otp, phone):
 		message = 'Please login with the OTP: '+random_otp
 		params = { 'number' : phone1, 'text' : message }
 		baseUrl = 'https://www.smsgatewayhub.com/api/mt/SendSMS?APIKey=62sxGWT6MkCjDul6eNKejw&senderid=BMSITM&channel=2&DCS=0&flashsms=0&' + ap.urlencode(params)
+		print("PHONE OTP SENT")
 		urllib.request.urlopen(baseUrl).read(1000)
 
 
@@ -717,9 +761,10 @@ def login(request):
 			first_name = user.first_name
 			email = user.email
 			phone = user.phone
-			random_otp = r''.join(random.choice('0123456789') for i in range(4))
-			phone_otp(random_otp,phone)
-			# random_otp="1234"
+			#random_otp = r''.join(random.choice('0123456789') for i in range(4))
+			#phone_otp(random_otp,phone)
+			#email_otp(random_otp,user.email,user.first_name)
+			random_otp="1234"
 			hashed_pwd = make_password(random_otp)
 			User.objects.filter(username=username).update(password=hashed_pwd)
 
@@ -728,20 +773,22 @@ def login(request):
 	return render(request,'login.html')
 
 def decide_view(request):
+	return HttpResponseRedirect(reverse('facform1:first_page'))
+	"""
 	if request.user.is_assistant_professor():
 		if request.user.teach_status == True:
-			return HttpResponseRedirect("/assistant_preview/")
-		return HttpResponseRedirect("/assistant_form1/")
+			return HttpResponseRedirect(reverse('facform1:first_page'))
+		return HttpResponseRedirect(reverse('facform1:first_page'))
 
 	elif request.user.is_associate_professor():
 		if request.user.teach_status == True:
 			return HttpResponseRedirect("/associate_preview/")
-		return HttpResponseRedirect("/associate_form1/")
+		return HttpResponseRedirect(reverse('facform1:first_page'))
 
 	elif request.user.is_professor():
 		if request.user.teach_status == True:
 			return HttpResponseRedirect("/associate_preview/")
-		return HttpResponseRedirect("/associate_form1/")
+		return HttpResponseRedirect(reverse('facform1:first_page'))
 
 	elif request.user.is_hod():
 		# print('hod')
@@ -753,7 +800,7 @@ def decide_view(request):
 
 	elif request.user.is_ao():
 		return HttpResponseRedirect("/ao_first/")
-
+"""
 	# else:
 	# 	return HttpResponseRedirect("/")
 # def front(request):
@@ -765,7 +812,7 @@ def decide_view(request):
 
 
 @login_required
-def hod_display(request):
+def hod_display(request,y):
 
 	user = request.user
 	hod_dept = user.department
@@ -775,14 +822,28 @@ def hod_display(request):
 		pk = request.user.pk
 
 		hod_desg = user.designation
-		c1 = User.objects.filter(department=hod_dept).filter(designation__pk=11)
-		c2 = User.objects.filter(department=hod_dept).filter(designation__pk=9)
-		c3 = User.objects.filter(department=hod_dept).filter(designation__pk=10)
-
+		c = User.objects.filter(department=hod_dept)
+		print(c)
+		c1=set()
+		c2=set()
+		c3=set()
+		for i in c:
+			if i.designation.pk is 1:
+				x=new.objects.filter(info__username=i).filter(year__year=y)
+				c1.add(x)
+			if i.designation.pk is 2:
+				x=new.objects.filter(info__username=i).filter(year__year=y)
+				c2.add(x)
+			if i.designation.pk is 3:
+				x=new.objects.filter(info__username=i).filter(year__year=y)
+				c3.add(x)
+		print(c1)
+		print(c2)
+		print(c3)
 		c4 = list(chain(c2,c3))
 		# c2 = .objects.filter(info__department=hod_dept).filter(~Q(info__designation=hod_desg))
 
-		context = {'name':c1,'name1':c4 ,'hod_dept':hod_dept}
+		context = {'name':c1,'name1':c4 ,'hod_dept':hod_dept,'y':y}
 
 		# print(data6)
 		return render(request,'hod_display.html',context=context)
@@ -790,18 +851,18 @@ def hod_display(request):
 		return HttpResponseRedirect('/invalid')
 
 @login_required
-def hod_teacher_display(request,pk):
+def hod_teacher_display(request,pk,y):
 		if request.user.is_hod():
 			name =  User.objects.get(pk = pk);
 			print(name)
 			data1 = User.objects.get(username=name);
 			print(data1.first_name)
-			data2 = empDetailForm.objects.get(info__username=name);
-			data3 = feedbackTab.objects.get(info__username=name);
-			data4 = rd.objects.get(info__username=name);
-			data5 = remarks.objects.get(info__username=name);
-			data6 = conference.objects.get(info__username=name);
-			data7 = journal.objects.get(info__username=name);
+			data2 = empDetailForm.objects.filter(info__username=name).get(year=y);
+			data3 = feedbackTab.objects.filter(info__username=name).get(year=y);
+			data4 = rd.objects.filter(info__username=name).get(year=y);
+			data5 = remarks.objects.filter(info__username=name).get(year=y);
+			data6 = conference.objects.filter(info__username=name).get(year=y);
+			data7 = journal.objects.filter(info__username=name).get(year=y);
 
 
 
@@ -812,7 +873,7 @@ def hod_teacher_display(request,pk):
 				form1 = forms.form_remarks1(request.POST)
 				if form1.is_valid():
 
-					sendme = User.objects.get(username=name)
+					sendme = new.objects.filter(info__username=name).get(year__year=y)
 					obj = form1.save(commit=False)
 
 					obj.info = name
@@ -821,7 +882,7 @@ def hod_teacher_display(request,pk):
 					if sendme.hod_status == False:
 						sendme.hod_status = True
 						sendme.save()
-					return HttpResponseRedirect("/hod_first/")
+					return HttpResponseRedirect(reverse('facform1:hod_display',args=(y,)))
 
 			else:
 				form1 = forms.form_remarks1()
@@ -852,20 +913,21 @@ def hod_teacher_display_edit(request,pk):
 		print(name)
 		data1 = User.objects.get(username=name);
 		print(data1.first_name)
-		data2 = empDetailForm.objects.get(info__username=name);
-		data3 = feedbackTab.objects.get(info__username=name);
-		data4 = rd.objects.get(info__username=name);
-		data5 = remarks.objects.get(info__username=name);
-		data6 = conference.objects.get(info__username=name);
-		data7 = journal.objects.get(info__username=name);
+		data2 = empDetailForm.objects.filter(info__username=name).get(year=y);
+		data3 = feedbackTab.objects.filter(info__username=name).get(year=y);
+		data4 = rd.objects.filter(info__username=name).get(year=y);
+		data5 = remarks.objects.filter(info__username=name).get(year=y);
+		data6 = conference.objects.filter(info__username=name).get(year=y);
+		data7 = journal.objects.filter(info__username=name).get(year=y);
+
 		# data8 = remarks1.objects.get(info__username=name);
 		# data9 = remarks2.objects.get(info__username=name);
 
-		if User.objects.filter(username=name).filter(hod_status=True):
+		if new.objects.filter(username=name).get(year__year=y).filter(hod_status=True):
 			data8 = remarks1.objects.get(info__username=name)
 		else:
 			data8 = []
-		if User.objects.filter(username=name).filter(principal_status=True):
+		if new.objects.filter(username=name).get(year__year=y).filter(principal_status=True):
 			data9 = remarks2.objects.get(info__username=name)
 		else:
 			data9 = []
@@ -1176,7 +1238,7 @@ def principal_teacher_display_edit(request,pk):
 
 		return render(request,'principal_teacher_display_edit.html',context=context1)
 	else:
-		return HttpResponseRedirect('/invalid')		
+		return HttpResponseRedirect('/invalid')
 
 
 @login_required
@@ -1261,7 +1323,7 @@ def principal_teacher1_display_edit(request,pk):
 		if User.objects.filter(username=name).filter(principal_status=True):
 			data9 = remarks2.objects.get(info__username=name);
 		else:
-			data9 = []	
+			data9 = []
 
 
 
@@ -1416,10 +1478,11 @@ def principal_hod_display_edit(request,pk):
 
 
 @login_required
-def ao_first(request):
+def ao_first(request,y):
 	if request.user.is_ao():
 		dept = Department.objects.all()
-		context = {'dept':dept}
+		context = {'dept':dept , 'y':y}
+		print(y)
 		return render(request,'ao_first.html',context=context)
 	else:
 		return HttpResponseRedirect('/invalid')
@@ -1427,7 +1490,7 @@ def ao_first(request):
 
 
 @login_required
-def ao_display(request,dept):
+def ao_display(request,dept,y):
 	if request.user.is_ao():
 
 		print(dept)
@@ -1449,25 +1512,50 @@ def ao_display(request,dept):
 		#
 		# below4 = list(chain(below1,below2))
 		general = User.objects.filter(department__name=dept)
+
 		tt = general.count()
-		principal_completed = (User.objects.filter(department__name=dept).filter(principal_status=True)).count()
-		hod_completed  = (User.objects.filter(department__name=dept).filter(hod_status=True)).count()
-		teach_completed  = (User.objects.filter(department__name=dept).filter(teach_status=True)).count()
+		teach_completed=0
+		hod_completed=0
+		principal_completed=0
+		#sub=new.objects.filter(year__year=y)
+		sub=set()
+		for i in general:
+			try:
+				s=new.objects.filter(info__username=i).get(year__year=y)
+				print(s)
+				sub.add(s);
+				if s.teach_status:
+					teach_completed=teach_completed+1
+				if s.hod_status:
+					hod_completed=hod_completed+1
+				if s.principal_status:
+					principal_completed=principal_completed+1
+			except:
+				pass
 
 
-		context = {'dept':dept,'general':general,'p':principal_completed,'h':hod_completed,'t':teach_completed,'total':tt}
+
+
+
+
+
+
+
+
+
+		context = {'dept':dept,'general':general,'p':principal_completed,'h':hod_completed,'t':teach_completed,'total':tt,'sub':sub,'y':y}
 
 		return render(request,'ao_display.html',context=context)
 	else:
 		return HttpResponseRedirect('/invalid')
 
 @login_required
-def ao_approved(request,dept):
+def ao_approved(request,dept,y):
 	if request.user.is_ao():
 
 
-		general = remarks2.objects.filter(department__name=dept)
-		dept = {'dept':dept,'general':general}
+		general = remarks2.objects.filter(department__name=dept).filter(year=y)
+		dept = {'dept':dept,'general':general,'y':y}
 		return render(request,'ao_approved.html',context=dept)
 	else:
 		return HttpResponseRedirect('/invalid')
@@ -1475,22 +1563,22 @@ def ao_approved(request,dept):
 
 
 @login_required
-def ao_teacher_display(request,name):
+def ao_teacher_display(request,name,y):
 	print(name)
 	data1 = User.objects.get(username=name)
-	data2 = empDetailForm.objects.get(info__username=name)
-	data3 = feedbackTab.objects.get(info__username=name)
-	data4 = rd.objects.get(info__username=name)
-	data5 = remarks.objects.get(info__username=name)
-	data6 = conference.objects.get(info__username=name)
-	data7 = journal.objects.get(info__username=name)
+	data2 = empDetailForm.objects.filter(info__username=name).get(year=y)
+	data3 = feedbackTab.objects.filter(info__username=name).get(year=y)
+	data4 = rd.objects.filter(info__username=name).get(year=y)
+	data5 = remarks.objects.filter(info__username=name).get(year=y)
+	data6 = conference.objects.filter(info__username=name).get(year=y)
+	data7 = journal.objects.filter(info__username=name).get(year=y)
 
-	if User.objects.filter(username=name).filter(hod_status=True):
-		data8 = remarks1.objects.get(info__username=name)
+	if new.objects.filter(info__username=name).filter(hod_status=True):
+		data8 = remarks1.objects.filter(info__username=name).get(year=y)
 	else:
 		data8 = []
-	if User.objects.filter(username=name).filter(principal_status=True):
-		data9 = remarks2.objects.get(info__username=name)
+	if new.objects.filter(info__username=name).filter(principal_status=True):
+		data9 = remarks2.objects.filter(info__username=name).get(year=y)
 	else:
 		data9 = []
 	# if remarks1.objects.get(info__username=name):
@@ -1529,21 +1617,22 @@ def ao_teacher_display(request,name):
 	return render(request,'ao_teacher_display.html',context=context1)
 
 @login_required
-def ao_teacher1_display(request,name):
+def ao_teacher1_display(request,name,y):
 	print(name)
 	data1 = User.objects.get(username=name)
-	data2 = empDetailForm.objects.get(info__username=name)
-	data3 = feedbackTab.objects.get(info__username=name)
-	data4 = rd.objects.get(info__username=name)
-	data5 = remarks.objects.get(info__username=name)
-	data6 = conference.objects.get(info__username=name);
-	data7 = journal.objects.get(info__username=name);
-	if User.objects.filter(username=name).filter(hod_status=True):
-		data8 = remarks1.objects.get(info__username=name)
+	data2 = empDetailForm.objects.filter(info__username=name).get(year=y)
+	data3 = feedbackTab.objects.filter(info__username=name).get(year=y)
+	data4 = rd.objects.filter(info__username=name).get(year=y)
+	data5 = remarks.objects.filter(info__username=name).get(year=y)
+	data6 = conference.objects.filter(info__username=name).get(year=y)
+	data7 = journal.objects.filter(info__username=name).get(year=y)
+
+	if new.objects.filter(info__username=name).filter(hod_status=True):
+		data8 = remarks1.objects.filter(info__username=name).get(year=y)
 	else:
 		data8 = []
-	if User.objects.filter(username=name).filter(principal_status=True):
-		data9 = remarks2.objects.get(info__username=name)
+	if new.objects.filter(info__username=name).filter(principal_status=True):
+		data9 = remarks2.objects.filter(info__username=name).get(year=y)
 	else:
 		data9 = []
 
@@ -1565,18 +1654,18 @@ def ao_teacher1_display(request,name):
 	return render(request,'ao_teacher1_display.html',context=context1)
 
 @login_required
-def ao_hod_display(request,name):
+def ao_hod_display(request,name,y):
 	if request.user.is_ao():
 		print(name)
 		data1 = User.objects.get(username=name)
-		data2 = empDetailForm.objects.get(info__username=name)
-		data3 = feedbackTab.objects.get(info__username=name)
-		data4 = rd.objects.get(info__username=name)
-		data5 = remarks.objects.get(info__username=name)
-		data6 = conference.objects.get(info__username=name);
-		data7 = journal.objects.get(info__username=name);
-		if User.objects.filter(username=name).filter(principal_status=True):
-			data8 = remarks2.objects.get(info__username=name)
+		data2 = empDetailForm.objects.filter(info__username=name).get(year=y)
+		data3 = feedbackTab.objects.filter(info__username=name).get(year=y)
+		data4 = rd.objects.filter(info__username=name).get(year=y)
+		data5 = remarks.objects.filter(info__username=name).get(year=y)
+		data6 = conference.objects.filter(info__username=name).get(year=y)
+		data7 = journal.objects.filter(info__username=name).get(year=y)
+		if new.objects.filter(info__username=name).filter(principal_status=True):
+			data8 = remarks2.objects.filter(info__username=name).get(year=y)
 		else:
 			data8 = []
 
@@ -1599,12 +1688,13 @@ def ao_hod_display(request,name):
 		return HttpResponseRedirect('/invalid')
 
 @login_required
-def hod_first(request):
+def hod_first(request,y):
 	if request.user.is_hod():
-
 		user = request.user
 		hod_dept = user.department
-		context = {'dept':hod_dept,'user':user}
+		status=new.objects.filter(info=user).get(year__year=y)
+		print(status)
+		context = {'dept':hod_dept,'user':user,'f':y,'t':status}
 		return render(request,'hod_first.html',context=context)
 
 	else:
@@ -1618,18 +1708,18 @@ def logout(request):
 	return render(request,'hod_success.html')
 
 @login_required
-def f_assistant5(request):
+def f_assistant5(request,y):
 	if request.user.is_assistant_professor():
 
 		form6 = forms.form_conference()
 		form7 = forms.form_journal()
 
-		if conference.objects.filter(info=request.user).exists():
-
-			return HttpResponseRedirect("/logout/")
-		else:
+		try :
+			if conference.objects.filter(info=request.user).get(year=y).exists():
+				return HttpResponseRedirect("/logout/")
+		except:
 			if request.method == 'POST':
-				sendme = User.objects.get(username=request.user)
+
 				form6 = forms.form_conference(request.POST,request.FILES)
 				form7 = forms.form_journal(request.POST,request.FILES)
 				if form6.is_valid() and form7.is_valid():
@@ -1638,128 +1728,316 @@ def f_assistant5(request):
 					obj3.info = request.user
 					obj4.info = request.user
 
+					obj3.year=y
+					obj4.year=y
+
 					obj3.save()
 					obj4.save()
 
-					if sendme.teach_status == False:
-						sendme.teach_status = True
-						sendme.save()
-					return HttpResponseRedirect("/logout/")
+					return HttpResponseRedirect(reverse('facform1:f_assistant5_final',args=(y,)))
 			return render(request,'assistant_form5.html',{'form6':form6,'form7':form7})
 		return render(request,'assistant_form5.html',{'form6':form6,'form7':form7})
 	else:
 		return HttpResponseRedirect('/invalid')
 
 @login_required
-def f_assistant4(request):
+def f_assistant_edit5(request,y):
+	user=request.user
+	obj1=conference.objects.filter(info=user).get(year=y)
+	obj2=journal.objects.filter(info=user).get(year=y)
+	form2= forms.form_conference(instance=obj1)
+	form3=forms.form_journal(instance=obj2)
+	if request.method == 'POST':
+		# form1 = forms.form_User(request.POST)
+		#form3 = form3(request.POST,request.FILES)
+		form2 = forms.form_conference(request.POST,request.FILES,instance=obj1)
+		form3=forms.form_journal(request.POST,request.FILES,instance=obj2)
+
+		if form2.is_valid() and form3.is_valid():
+
+			# sendme = User.objects.get(username=request.user)
+			obj1 = form2.save(commit=False)
+			obj1.info = request.user
+			obj1.year=y
+			obj1.save()
+			obj2 = form3.save(commit=False)
+			obj2.info = request.user
+			obj2.year=y
+			obj2.save()
+			# sendme.doc_link  = 	form1.cleaned_data['doc_link']
+			# sendme.save()
+
+			return HttpResponseRedirect(reverse('facform1:f_assistant5_final',args=(y,)))
+	return render(request,'assistant_form5.html',{'form6':form2,'form7':form3})
+
+@login_required
+def status(request,y):
+	sendme = User.objects.get(username=request.user)
+	n=new.objects.filter(info=request.user).get(year__year=y)
+	if n.teach_status == False:
+		n.teach_status = True
+		n.save()
+	return HttpResponseRedirect(reverse('facform1:logout'))
+
+
+	return HttpResponseRedirect(reverse('facform1:logout'))
+@login_required
+def f_assistant5_final(request,y):
+	user=request.user
+
+	key6=conference.objects.filter(info=user).get(year=y)
+	key7=journal.objects.filter(info=user).get(year=y)
+	return render(request,'f_assistant5_final.html',{'key6':key6,'key7':key7})
+
+
+@login_required
+def f_assistant4(request,y):
 	if request.user.is_assistant_professor():
 		form5 = forms.form_remarks()
-		if remarks.objects.filter(info=request.user).exists():
+		try:
+			if remarks.objects.filter(info=request.user).get(year=y).exists():
 
-			return HttpResponseRedirect("/assistant_form5/")
-		else:
+				return HttpResponseRedirect(reverse('facform1:assistant_form5',args=(y,)))
+		except:
 			if request.method == 'POST':
 
 				form5 = forms.form_remarks(request.POST)
 				if form5.is_valid():
 					obj3 = form5.save(commit=False)
 					obj3.info = request.user
+					obj3.year=y
 					obj3.save()
-					return HttpResponseRedirect("/assistant_form5/")
+					return HttpResponseRedirect(reverse('facform1:f_assistant4_final',args=(y,)))
 			return render(request,'assistant_form4.html',{'form5':form5})
 		return render(request,'assistant_form4.html',{'form5':form5})
 	else:
 		return HttpResponseRedirect('/invalid')
+@login_required
+def f_assistant_edit4(request,y):
+	user=request.user
+	obj=remarks.objects.filter(info=user).get(year=y)
+	form2 = forms.form_remarks(instance=obj)
+	if request.method == 'POST':
+		# form1 = forms.form_User(request.POST)
+		#form3 = form3(request.POST,request.FILES)
+		form2 = forms.form_remarks(request.POST,request.FILES,instance=obj)
+
+		if form2.is_valid():
+
+			# sendme = User.objects.get(username=request.user)
+			obj = form2.save(commit=False)
+			obj.info = request.user
+			obj.year=y
+			obj.save()
+			# sendme.doc_link  = 	form1.cleaned_data['doc_link']
+			# sendme.save()
+
+			return HttpResponseRedirect(reverse('facform1:f_assistant4_final',args=(y,)))
+	return render(request,'assistant_form4.html',{'form5':form2})
 
 @login_required
-def f_assistant3(request):
+def f_assistant4_final(request,y):
+	user=request.user
+	key2=rd.objects.filter(info=user).get(year=y)
+	return render(request,'f_assistant4_final.html',{'key5':key2})
+
+@login_required
+def f_assistant3(request,y):
 	if request.user.is_assistant_professor():
 		form4 = forms.form_rd()
-		if rd.objects.filter(info=request.user).exists():
+		try:
+			if rd.objects.filter(info=request.user).get(year=y).exists():
 
-			return HttpResponseRedirect("/assistant_form4/")
-		else:
+				return HttpResponseRedirect(reverse('facform1:assistant_form4',args=(y,)))
+		except:
 			if request.method == 'POST':
 				form4 = forms.form_rd(request.POST,request.FILES)
 				if form4.is_valid():
 					obj2 = form4.save(commit=False)
 					obj2.info = request.user
+					obj2.year=y
 					obj2.save()
-					return HttpResponseRedirect("/assistant_form4/")
+					return HttpResponseRedirect(reverse('facform1:f_assistant3_final',args=(y,)))
 			return render(request,'assistant_form3.html',{'form4':form4})
 		return render(request,'assistant_form3.html',{'form4':form4})
 	else:
 		return HttpResponseRedirect('/invalid')
 
 @login_required
-def f_assistant2(request):
+def f_assistant_edit3(request,y):
+	user=request.user
+	obj=rd.objects.filter(info=user).get(year=y)
+	form2 = forms.form_rd(instance=obj)
+	if request.method == 'POST':
+		# form1 = forms.form_User(request.POST)
+		#form3 = form3(request.POST,request.FILES)
+		form2 = forms.form_rd(request.POST,request.FILES,instance=obj)
+
+		if form2.is_valid():
+
+			# sendme = User.objects.get(username=request.user)
+			obj = form2.save(commit=False)
+			obj.info = request.user
+			obj.year=y
+			obj.save()
+			# sendme.doc_link  = 	form1.cleaned_data['doc_link']
+			# sendme.save()
+
+			return HttpResponseRedirect(reverse('facform1:f_assistant3_final',args=(y,)))
+	return render(request,'assistant_form3.html',{'form4':form2})
+
+@login_required
+def f_assistant3_final(request,y):
+	user=request.user
+	key2=rd.objects.filter(info=user).get(year=y)
+	return render(request,'f_assistant3_final.html',{'key4':key2})
+
+@login_required
+def f_assistant2(request,y):
+	print("Inside f_assistant2")
+	user=request.user
 	if request.user.is_assistant_professor():
+
 		form3 = forms.form_feedbackTab()
 
-		if feedbackTab.objects.filter(info=request.user).exists():
-
-			return HttpResponseRedirect("/assistant_form3/")
-		else:
+		try:
+			print("entered try")
+			if feedbackTab.objects.filter(info=request.user).get(year=y):
+				print("false")
+				return HttpResponseRedirect(reverse('facform1:assistant_form3',args=(y,)))
+		except:
+			print("entered except")
 			if request.method == 'POST':
 				form3 = forms.form_feedbackTab(request.POST)
+				print("hdsghj")
 				if form3.is_valid():
+					print("form is valid")
 					obj1 = form3.save(commit=False)
 					obj1.info = request.user
+					obj1.year=y
 					obj1.save()
-					return HttpResponseRedirect("/assistant_form3/")
+					return HttpResponseRedirect(reverse('facform1:f_assistant2_final',args=(y,)))
 			return render(request,'assistant_form2.html',{'form3':form3})
-
-
 		return render(request,'assistant_form2.html',{'form3':form3})
 	else:
 		return HttpResponseRedirect('/invalid')
 
 @login_required
-def f_assistant1(request):
+def f_assistant_edit2(request,y):
+	user=request.user
+	data_final = User.objects.get(username=user)
+	obj=feedbackTab.objects.filter(info=user).get(year=y)
+	form2 = forms.form_feedbackTab(instance=obj)
+	if request.method == 'POST':
+		# form1 = forms.form_User(request.POST)
+		#form3 = form3(request.POST,request.FILES)
+		form2 = forms.form_feedbackTab(request.POST,request.FILES,instance=obj)
+
+		if form2.is_valid():
+
+			# sendme = User.objects.get(username=request.user)
+			obj = form2.save(commit=False)
+			obj.info = request.user
+			obj.year=y
+			obj.save()
+			# sendme.doc_link  = 	form1.cleaned_data['doc_link']
+			# sendme.save()
+
+			return HttpResponseRedirect(reverse('facform1:f_assistant2_final',args=(y,)))
+	return render(request,'assistant_form2.html',{'form3':form2})
+
+@login_required
+def f_assistant2_final(request,y):
+	user=request.user
+	key2=feedbackTab.objects.filter(info=user).get(year=y)
+	return render(request,'f_assistant2_final.html',{'key3':key2})
+
+
+@login_required
+def f_assistant1(request,y):
 	if request.user.is_assistant_professor():
 
 		user = request.user
+		print("inside f_assistant1")
 		print(user)
 		data_final = User.objects.get(username=user)
 		# form1 = forms.form_User()
 		form2 = forms.form_empDetailForm()
+	#	form3=modelformset_factory(internships , fields = ('it_name','it_f','it_t'))
+		try:
+			if empDetailForm.objects.filter(info=user).get(year=y):
+				return HttpResponseRedirect(reverse('facform1:assistant_form2',args=(y,)))
 
-		if empDetailForm.objects.filter(info=user).exists():
-
-			return HttpResponseRedirect("/assistant_form2/")
-
-		else:
-
+		except:
 			if request.method == 'POST':
 				# form1 = forms.form_User(request.POST)
+				#form3 = form3(request.POST,request.FILES)
 				form2 = forms.form_empDetailForm(request.POST,request.FILES)
-
+				#f=empDetailForm.objects.filter(info=request.user).get(year="2018-19")
 
 				if form2.is_valid():
 
 					# sendme = User.objects.get(username=request.user)
-
 					obj = form2.save(commit=False)
 					obj.info = request.user
+					obj.year=y
 					obj.save()
-
 					# sendme.doc_link  = 	form1.cleaned_data['doc_link']
 					# sendme.save()
-
-					return HttpResponseRedirect("/assistant_form2/")
+					return HttpResponseRedirect(reverse('facform1:f_assistant1_final',args=(y,)))
+					#return HttpResponseRedirect("/assistant_form2/")
 			return render(request,'assistant_form1.html',{'form2':form2,'info':data_final})
-		return render(request,'assistant_form1.html',{'form2':form2,'info':data_final})
+		return render(request,'assistant_form1.html',{'form2':form2,'info':data_final})#,'f':f})
 	else:
 		return HttpResponseRedirect('/invalid')
 
 @login_required
-def f_associate5(request):
-	if request.user.is_associate_professor() or request.user.is_professor() or request.user.username == 'HOD_CIVIL':
+def f_assistant_edit1(request,y):
+	user=request.user
+	data_final = User.objects.get(username=user)
+	obj=empDetailForm.objects.filter(info=user).get(year=y)
+	form2 = forms.form_empDetailForm(instance=obj)
+	if request.method == 'POST':
+		# form1 = forms.form_User(request.POST)
+		#form3 = form3(request.POST,request.FILES)
+		form2 = forms.form_empDetailForm(request.POST,request.FILES,instance=obj)
+
+		if form2.is_valid():
+
+			# sendme = User.objects.get(username=request.user)
+			obj = form2.save(commit=False)
+			obj.info = request.user
+			obj.save()
+			# sendme.doc_link  = 	form1.cleaned_data['doc_link']
+			# sendme.save()
+
+			return HttpResponseRedirect(reverse('facform1:f_assistant1_final',args=(y,)))
+	return render(request,'assistant_form1.html',{'form2':form2,'info':data_final})
+
+@login_required
+def f_assistant1_final(request,y):
+	print("                                                                              Inside final view")
+	print(y)
+	user=request.user
+	data = User.objects.get(username=user)
+
+	key2=empDetailForm.objects.filter(info=user)
+	print(key2)
+	key2=key2.	get(year=str(y))
+	return render(request,'f_assistant1_final.html',{'key1':data,'key2':key2})
+
+
+
+@login_required
+def f_associate5(request,y):
+	user=User.objects.get(username=request.user)
+	print(user.designation)
+	if user.is_associate_professor() or request.user.is_professor() or request.user.username == 'HOD_CIVIL':
 
 		form6 = forms.form_conference()
 		form7 = forms.form_journal()
 
-		if conference.objects.filter(info=request.user).exists():
+		if conference.objects.filter(info=request.user).filter(year=y).exists():
 
 			return HttpResponseRedirect("/logout/")
 		else:
@@ -1773,13 +2051,12 @@ def f_associate5(request):
 					obj3.info = request.user
 					obj4.info = request.user
 
+					obj3.year=y
+					obj4.year=y
+
 					obj3.save()
 					obj4.save()
-
-					if sendme.teach_status == False:
-						sendme.teach_status = True
-						sendme.save()
-					return HttpResponseRedirect("/logout/")
+					return HttpResponseRedirect(reverse('facform1:f_associate5_final',args=(y,)))
 			else:
 				print(form6.errors)
 				print(form7.errors)
@@ -1789,12 +2066,53 @@ def f_associate5(request):
 		return HttpResponseRedirect('/invalid')
 
 @login_required
-def f_associate4(request):
+def f_associate_edit5(request,y):
+	user=request.user
+	obj1=conference.objects.filter(info=user).get(year=y)
+	obj2=journal.objects.filter(info=user).get(year=y)
+	form2= forms.form_conference(instance=obj1)
+	form3=forms.form_journal(instance=obj2)
+	if request.method == 'POST':
+		# form1 = forms.form_User(request.POST)
+		#form3 = form3(request.POST,request.FILES)
+		form2 = forms.form_conference(request.POST,request.FILES,instance=obj1)
+		form3=forms.form_journal(request.POST,request.FILES,instance=obj2)
+
+		if form2.is_valid() and form3.is_valid():
+
+			# sendme = User.objects.get(username=request.user)
+			obj1 = form2.save(commit=False)
+			obj1.info = request.user
+			obj1.year=y
+			obj1.save()
+			obj2 = form3.save(commit=False)
+			obj2.info = request.user
+			obj2.year=y
+			obj2.save()
+			# sendme.doc_link  = 	form1.cleaned_data['doc_link']
+			# sendme.save()
+
+			return HttpResponseRedirect(reverse('facform1:f_associate5_final',args=(y,)))
+	return render(request,'associate_form5.html',{'form6':form2,'form7':form3})
+
+
+	return HttpResponseRedirect(reverse('facform1:logout'))
+@login_required
+def f_associate5_final(request,y):
+	user=request.user
+
+	key6=conference.objects.filter(info=user).get(year=y)
+	key7=journal.objects.filter(info=user).get(year=y)
+	return render(request,'f_associate5_final.html',{'key6':key6,'key7':key7})
+
+
+@login_required
+def f_associate4(request,y):
 	if request.user.is_associate_professor() or request.user.is_professor() or request.user.username == 'HOD_CIVIL':
 		form5 = forms.form_remarks()
-		if remarks.objects.filter(info=request.user).exists():
+		if remarks.objects.filter(info=request.user).filter(year=y).exists():
 
-			return HttpResponseRedirect("/associate_form5/")
+			return HttpResponseRedirect(reverse('facform1:associate_form5',args=(y,)))
 		else:
 			if request.method == 'POST':
 				sendme = User.objects.get(username=request.user)
@@ -1802,73 +2120,158 @@ def f_associate4(request):
 				if form5.is_valid():
 					obj3 = form5.save(commit=False)
 					obj3.info = request.user
+					obj3.year=y
 					obj3.save()
-					return HttpResponseRedirect("/associate_form5/")
+					return HttpResponseRedirect(reverse('facform1:f_associate4_final',args=(y,)))
 			return render(request,'associate_form4.html',{'form5':form5})
 		return render(request,'associate_form4.html',{'form5':form5})
 	else:
 		return HttpResponseRedirect('/invalid')
 
 @login_required
-def f_associate3(request):
+def f_associate_edit4(request,y):
+	user=request.user
+	obj=remarks.objects.filter(info=user).get(year=y)
+	form2 = forms.form_remarks(instance=obj)
+	if request.method == 'POST':
+		# form1 = forms.form_User(request.POST)
+		#form3 = form3(request.POST,request.FILES)
+		form2 = forms.form_remarks(request.POST,request.FILES,instance=obj)
+
+		if form2.is_valid():
+
+			# sendme = User.objects.get(username=request.user)
+			obj = form2.save(commit=False)
+			obj.info = request.user
+			obj.year=y
+			obj.save()
+			# sendme.doc_link  = 	form1.cleaned_data['doc_link']
+			# sendme.save()
+
+			return HttpResponseRedirect(reverse('facform1:f_associate4_final',args=(y,)))
+	return render(request,'associate_form4.html',{'form5':form2})
+
+@login_required
+def f_associate4_final(request,y):
+	user=request.user
+	key2=remarks.objects.filter(info=user).get(year=y)
+	return render(request,'f_associate4_final.html',{'key5':key2})
+
+
+@login_required
+def f_associate3(request,y):
 	if request.user.is_associate_professor() or request.user.is_professor() or request.user.username == 'HOD_CIVIL':
 		form4 = forms.form_rd()
-		if rd.objects.filter(info=request.user).exists():
+		if rd.objects.filter(info=request.user).filter(year=y).exists():
 
-			return HttpResponseRedirect("/associate_form4/")
+			return HttpResponseRedirect(reverse('facform1:associate_form4',args=(y,)))
 		else:
 			if request.method == 'POST':
 				form4 = forms.form_rd(request.POST,request.FILES)
 				if form4.is_valid():
 					obj2 = form4.save(commit=False)
 					obj2.info = request.user
+					obj2.year=y
 					obj2.save()
-					return HttpResponseRedirect("/associate_form4/")
+					return HttpResponseRedirect(reverse('facform1:f_associate3_final',args=(y,)))
 			return render(request,'associate_form3.html',{'form4':form4})
 		return render(request,'associate_form3.html',{'form4':form4})
 	else:
 		return HttpResponseRedirect('/invalid')
+@login_required
+def f_associate_edit3(request,y):
+	user=request.user
+	obj=rd.objects.filter(info=user).get(year=y)
+	form2 = forms.form_rd(instance=obj)
+	if request.method == 'POST':
+		# form1 = forms.form_User(request.POST)
+		#form3 = form3(request.POST,request.FILES)
+		form2 = forms.form_rd(request.POST,request.FILES,instance=obj)
+
+		if form2.is_valid():
+
+			# sendme = User.objects.get(username=request.user)
+			obj = form2.save(commit=False)
+			obj.info = request.user
+			obj.year=y
+			obj.save()
+			# sendme.doc_link  = 	form1.cleaned_data['doc_link']
+			# sendme.save()
+
+			return HttpResponseRedirect(reverse('facform1:f_associate3_final',args=(y,)))
+	return render(request,'associate_form3.html',{'form4':form2})
+
+@login_required
+def f_associate3_final(request,y):
+	user=request.user
+	key2=rd.objects.filter(info=user).get(year=y)
+	return render(request,'f_associate3_final.html',{'key4':key2})
 
 
 @login_required
-def f_associate2(request):
+def f_associate2(request,y):
 	if request.user.is_associate_professor() or request.user.is_professor() or request.user.username == 'HOD_CIVIL':
 		form3 = forms.form_feedbackTab()
 
-		if feedbackTab.objects.filter(info=request.user).exists():
+		if feedbackTab.objects.filter(info=request.user).filter(year=y).exists():
 
-			return HttpResponseRedirect("/associate_form3/")
+			return HttpResponseRedirect(reverse('facform1:associate_form3',args=(y,)))
 		else:
 			if request.method == 'POST':
 				form3 = forms.form_feedbackTab(request.POST)
 				if form3.is_valid():
 					obj1 = form3.save(commit=False)
 					obj1.info = request.user
+					obj1.year=y
 					obj1.save()
-					return HttpResponseRedirect("/associate_form3/")
+					return HttpResponseRedirect(reverse('facform1:f_associate2_final',args=(y,)))
 			return render(request,'associate_form2.html',{'form3':form3})
 
 		return render(request,'associate_form2.html',{'form3':form3})
 	else:
 		return HttpResponseRedirect('/invalid')
 
+@login_required
+def f_associate_edit2(request,y):
+	user=request.user
+	data_final = User.objects.get(username=user)
+	obj=feedbackTab.objects.filter(info=user).get(year=y)
+	form2 = forms.form_feedbackTab(instance=obj)
+	if request.method == 'POST':
+		# form1 = forms.form_User(request.POST)
+		#form3 = form3(request.POST,request.FILES)
+		form2 = forms.form_feedbackTab(request.POST,request.FILES,instance=obj)
+
+		if form2.is_valid():
+
+			# sendme = User.objects.get(username=request.user)
+			obj = form2.save(commit=False)
+			obj.info = request.user
+			obj.year=y
+			obj.save()
+			# sendme.doc_link  = 	form1.cleaned_data['doc_link']
+			# sendme.save()
+			print("INSIDE f_assistant2  EDIT")
+			return HttpResponseRedirect(reverse('facform1:f_associate2_final',args=(y,)))
+	return render(request,'associate_form2.html',{'form3':form2})
 
 @login_required
-def f_associate1(request):
-	if request.user.is_associate_professor() or request.user.is_professor() or request.user.username == 'HOD_CIVIL':
+def f_associate2_final(request,y):
+	user=request.user
+	key2=feedbackTab.objects.filter(info=user).get(year=y)
+	return render(request,'f_associate2_final.html',{'key3':key2})
 
+@login_required
+def f_associate1(request,y):
+	if request.user.is_associate_professor() or request.user.is_professor() or request.user.username == 'HOD_CIVIL':
 		user = request.user
 		print(user)
 		data_final = User.objects.get(username=user)
 		# form1 = forms.form_User()
 		form2 = forms.form_empDetailForm()
-
-		if empDetailForm.objects.filter(info=user).exists():
-
-			return HttpResponseRedirect("/associate_form2/")
-
+		if empDetailForm.objects.filter(info=user).filter(year=y).exists():
+			return HttpResponseRedirect(reverse('facform1:associate_form2',args=(y,)))
 		else:
-
 			if request.method == 'POST':
 				# form1 = forms.form_User(request.POST)
 				form2 = forms.form_empDetailForm(request.POST,request.FILES)
@@ -1880,27 +2283,66 @@ def f_associate1(request):
 
 					obj = form2.save(commit=False)
 					obj.info = request.user
+					obj.year=y
 					obj.save()
 
 					# sendme.doc_link  = 	form1.cleaned_data['doc_link']
 					# sendme.save()
 
-					return HttpResponseRedirect("/associate_form2/")
+					return HttpResponseRedirect(reverse('facform1:f_associate1_final',args=(y,)))
 			return render(request,'associate_form1.html',{'form2':form2,'info':data_final})
 		return render(request,'associate_form1.html',{'form2':form2,'info':data_final})
 	else:
 		return HttpResponseRedirect('/invalid')
 
+
 @login_required
-def hod_form5(request):
+def f_associate_edit1(request,y):
+	user=request.user
+	data_final = User.objects.get(username=user)
+	obj=empDetailForm.objects.filter(info=user).get(year=y)
+	form2 = forms.form_empDetailForm(instance=obj)
+	if request.method == 'POST':
+		# form1 = forms.form_User(request.POST)
+		#form3 = form3(request.POST,request.FILES)
+		form2 = forms.form_empDetailForm(request.POST,request.FILES,instance=obj)
+
+		if form2.is_valid():
+
+			# sendme = User.objects.get(username=request.user)
+			obj = form2.save(commit=False)
+			obj.info = request.user
+			obj.save()
+			# sendme.doc_link  = 	form1.cleaned_data['doc_link']
+			# sendme.save()
+
+			return HttpResponseRedirect(reverse('facform1:f_associate1_final',args=(y,)))
+	return render(request,'associate_form1.html',{'form2':form2,'info':data_final})
+
+@login_required
+def f_associate1_final(request,y):
+	print("                                                                              Inside final view")
+	print(y)
+	user=request.user
+	data = User.objects.get(username=user)
+
+	key2=empDetailForm.objects.filter(info=user)
+	print(key2)
+	key2=key2.get(year=str(y))
+	return render(request,'f_associate1_final.html',{'key1':data,'key2':key2})
+
+
+
+@login_required
+def hod_form5(request,y):
 	if request.user.is_hod():
 
 		form6 = forms.form_conference()
 		form7 = forms.form_journal()
 
-		if conference.objects.filter(info=request.user).exists():
+		if conference.objects.filter(info=request.user).filter(year=y).exists():
 
-			return HttpResponseRedirect("/logout/")
+			return HttpResponseRedirect(reverse('facform1:hod_preview',args=(y,)))
 		else:
 			if request.method == 'POST':
 				sendme = User.objects.get(username=request.user)
@@ -1912,75 +2354,185 @@ def hod_form5(request):
 					obj3.info = request.user
 					obj4.info = request.user
 
+					obj4.year=y
+					obj3.year=y
+
 					obj3.save()
 					obj4.save()
 
-					if sendme.teach_status == False:
-						sendme.teach_status = True
-						sendme.save()
-					return HttpResponseRedirect("/logout/")
+					return HttpResponseRedirect(reverse('facform1:hod_form5_final',args=(y,)))
 			return render(request,'hod_form5.html',{'form6':form6,'form7':form7})
 		return render(request,'hod_form5.html',{'form6':form6,'form7':form7})
 	else:
 		return HttpResponseRedirect('/invalid')
 
+
 @login_required
-def hod_form4(request):
+def hod_form5_edit(request,y):
+	user=request.user
+	obj1=conference.objects.filter(info=user).get(year=y)
+	obj2=journal.objects.filter(info=user).get(year=y)
+	form2= forms.form_conference(instance=obj1)
+	form3=forms.form_journal(instance=obj2)
+	if request.method == 'POST':
+		# form1 = forms.form_User(request.POST)
+		#form3 = form3(request.POST,request.FILES)
+		form2 = forms.form_conference(request.POST,request.FILES,instance=obj1)
+		form3=forms.form_journal(request.POST,request.FILES,instance=obj2)
+
+		if form2.is_valid() and form3.is_valid():
+
+			# sendme = User.objects.get(username=request.user)
+			obj1 = form2.save(commit=False)
+			obj1.info = request.user
+			obj1.year=y
+			obj1.save()
+			obj2 = form3.save(commit=False)
+			obj2.info = request.user
+			obj2.year=y
+			obj2.save()
+			# sendme.doc_link  = 	form1.cleaned_data['doc_link']
+			# sendme.save()
+
+			return HttpResponseRedirect(reverse('facform1:hod_form5_final',args=(y,)))
+	return render(request,'hod_form5.html',{'form6':form2,'form7':form3})
+
+	return HttpResponseRedirect(reverse('facform1:logout'))
+@login_required
+def hod_form5_final(request,y):
+	user=request.user
+
+	key6=conference.objects.filter(info=user).get(year=y)
+	key7=journal.objects.filter(info=user).get(year=y)
+	return render(request,'hod_form5_final.html',{'key6':key6,'key7':key7})
+
+
+
+
+@login_required
+def hod_form4(request,y):
 	if request.user.is_hod():
 		form5 = forms.form_remarks()
-		if remarks.objects.filter(info=request.user).exists():
+		if remarks.objects.filter(info=request.user).filter(year=y).exists():
 
-			return HttpResponseRedirect("/hod_form5/")
+			return HttpResponseRedirect(reverse('facform1:hod_form5',args=(y,)))
 		else:
 			if request.method == 'POST':
 				form5 = forms.form_remarks(request.POST)
 				if form5.is_valid():
 					obj3 = form5.save(commit=False)
 					obj3.info = request.user
+					obj3.year=y
 					obj3.save()
-					return HttpResponseRedirect("/hod_form5/")
+					return HttpResponseRedirect(reverse('facform1:hod_form4_final',args=(y,)))
 			return render(request,'hod_form4.html',{'form5':form5})
 		return render(request,'hod_form4.html',{'form5':form5})
 	else:
 		return HttpResponseRedirect('/invalid')
 
+
+
 @login_required
-def hod_form3(request):
+def hod_form4_edit(request,y):
+	user=request.user
+	obj=remarks.objects.filter(info=user).get(year=y)
+	form2 = forms.form_remarks(instance=obj)
+	if request.method == 'POST':
+		# form1 = forms.form_User(request.POST)
+		#form3 = form3(request.POST,request.FILES)
+		form2 = forms.form_remarks(request.POST,request.FILES,instance=obj)
+
+		if form2.is_valid():
+
+			# sendme = User.objects.get(username=request.user)
+			obj = form2.save(commit=False)
+			obj.info = request.user
+			obj.year=y
+			obj.save()
+			# sendme.doc_link  = 	form1.cleaned_data['doc_link']
+			# sendme.save()
+
+			return HttpResponseRedirect(reverse('facform1:hod_form4_final',args=(y,)))
+	return render(request,'hod_form4.html',{'form5':form2})
+
+@login_required
+def hod_form4_final(request,y):
+	user=request.user
+	key2=remarks.objects.filter(info=user).get(year=y)
+	return render(request,'hod_form4_final.html',{'key5':key2})
+
+
+
+
+
+@login_required
+def hod_form3(request,y):
 	if request.user.is_hod():
 		form4 = forms.form_rd()
-		if rd.objects.filter(info=request.user).exists():
+		if rd.objects.filter(info=request.user).filter(year=y).exists():
 
-			return HttpResponseRedirect("/hod_form4/")
+			return HttpResponseRedirect(reverse('facform1:hod_form4',args=(y,)))
 		else:
 			if request.method == 'POST':
 				form4 = forms.form_rd(request.POST,request.FILES)
 				if form4.is_valid():
 					obj2 = form4.save(commit=False)
 					obj2.info = request.user
+					obj2.year=y
 					obj2.save()
-					return HttpResponseRedirect("/hod_form4/")
+					return HttpResponseRedirect(reverse('facform1:hod_form3_final',args=(y,)))
 			return render(request,'hod_form3.html',{'form4':form4})
 		return render(request,'hod_form3.html',{'form4':form4})
 	else:
 		return HttpResponseRedirect('/invalid')
 
+@login_required
+def hod_form3_edit(request,y):
+	user=request.user
+	obj=rd.objects.filter(info=user).get(year=y)
+	form2 = forms.form_rd(instance=obj)
+	if request.method == 'POST':
+		# form1 = forms.form_User(request.POST)
+		#form3 = form3(request.POST,request.FILES)
+		form2 = forms.form_rd(request.POST,request.FILES,instance=obj)
+
+		if form2.is_valid():
+
+			# sendme = User.objects.get(username=request.user)
+			obj = form2.save(commit=False)
+			obj.info = request.user
+			obj.year=y
+			obj.save()
+			# sendme.doc_link  = 	form1.cleaned_data['doc_link']
+			# sendme.save()
+
+			return HttpResponseRedirect(reverse('facform1:hod_form3_final',args=(y,)))
+	return render(request,'hod_form3.html',{'form4':form2})
 
 @login_required
-def hod_form2(request):
+def hod_form3_final(request,y):
+	user=request.user
+	key2=rd.objects.filter(info=user).get(year=y)
+	return render(request,'hod_form3_final.html',{'key4':key2})
+
+
+@login_required
+def hod_form2(request,y):
 	if request.user.is_hod():
 		form3 = forms.form_feedbackTab()
 
-		if feedbackTab.objects.filter(info=request.user).exists():
+		if feedbackTab.objects.filter(info=request.user).filter(year=y).exists():
 
-			return HttpResponseRedirect("/hod_form3/")
+			return HttpResponseRedirect(reverse('facform1:hod_form3',args=(y,)))
 		else:
 			if request.method == 'POST':
 				form3 = forms.form_feedbackTab(request.POST)
 				if form3.is_valid():
 					obj1 = form3.save(commit=False)
 					obj1.info = request.user
+					obj1.year=y
 					obj1.save()
-					return HttpResponseRedirect("/hod_form3/")
+					return HttpResponseRedirect(reverse('facform1:hod_form2_final',args=(y,)))
 			return render(request,'hod_form2.html',{'form3':form3})
 
 		return render(request,'hod_form2.html',{'form3':form3})
@@ -1988,9 +2540,40 @@ def hod_form2(request):
 		return HttpResponseRedirect('/invalid')
 
 
+@login_required
+def hod_form2_edit(request,y):
+	user=request.user
+	data_final = User.objects.get(username=user)
+	obj=feedbackTab.objects.filter(info=user).get(year=y)
+	form2 = forms.form_feedbackTab(instance=obj)
+	if request.method == 'POST':
+		# form1 = forms.form_User(request.POST)
+		#form3 = form3(request.POST,request.FILES)
+		form2 = forms.form_feedbackTab(request.POST,request.FILES,instance=obj)
+
+		if form2.is_valid():
+
+			# sendme = User.objects.get(username=request.user)
+			obj = form2.save(commit=False)
+			obj.info = request.user
+			obj.year=y
+			obj.save()
+			# sendme.doc_link  = 	form1.cleaned_data['doc_link']
+			# sendme.save()
+
+			return HttpResponseRedirect(reverse('facform1:hod_form2_final',args=(y,)))
+	return render(request,'hod_form2.html',{'form3':form2})
 
 @login_required
-def hod_form1(request):
+def hod_form2_final(request,y):
+	user=request.user
+	key2=feedbackTab.objects.filter(info=user).get(year=y)
+	return render(request,'hod_form2_final.html',{'key3':key2})
+
+
+
+@login_required
+def hod_form1(request,y):
 	if request.user.is_hod():
 
 		user = request.user
@@ -2000,28 +2583,27 @@ def hod_form1(request):
 		form2 = forms.form_empDetailForm()
 
 		if empDetailForm.objects.filter(info=user).exists():
-
-			return HttpResponseRedirect("/hod_form2/")
+			print("Hey")
+			return HttpResponseRedirect(reverse('facform1:hod_form2',args=(y,)))
 
 		else:
-
 			if request.method == 'POST':
+				print("HEY2")
 				# form1 = forms.form_User(request.POST)
 				form2 = forms.form_empDetailForm(request.POST,request.FILES)
 
 
 				if form2.is_valid():
-
+					print("HOD FORM 1 IS VALID ")
 					# sendme = User.objects.get(username=request.user)
 
 					obj = form2.save(commit=False)
 					obj.info = request.user
+					obj.year=y
 					obj.save()
 
-					# sendme.doc_link  = 	form1.cleaned_data['doc_link']
-					# sendme.save()
-
-					return HttpResponseRedirect("/hod_form2/")
+					print("Redirecting to form 1 review page")
+					return HttpResponseRedirect(reverse('facform1:hod_form1_final',args=(y,)))
 			return render(request,'hod_form1.html',{'form2':form2,'info':data_final})
 		return render(request,'hod_form1.html',{'form2':form2,'info':data_final})
 
@@ -2029,27 +2611,67 @@ def hod_form1(request):
 		return HttpResponseRedirect('/invalid')
 
 
+@login_required
+def hod_form1_edit(request,y):
+	user=request.user
+	data_final = User.objects.get(username=user)
+	obj=empDetailForm.objects.filter(info=user).get(year=y)
+	form2 = forms.form_empDetailForm(instance=obj)
+	if request.method == 'POST':
+		# form1 = forms.form_User(request.POST)
+		#form3 = form3(request.POST,request.FILES)
+		form2 = forms.form_empDetailForm(request.POST,request.FILES,instance=obj)
+
+		if form2.is_valid():
+
+			# sendme = User.objects.get(username=request.user)
+			obj = form2.save(commit=False)
+			obj.info = request.user
+			obj.year=y
+			obj.save()
+			# sendme.doc_link  = 	form1.cleaned_data['doc_link']
+			# sendme.save()
+
+			return HttpResponseRedirect(reverse('facform1:hod_form1_final',args=(y,)))
+	return render(request,'hod_form1.html',{'form2':form2,'info':data_final})
+
+
+@login_required
+def hod_form1_final(request,y):
+	print("                                                                              Inside final view of first form ")
+	print(y)
+	user=request.user
+	data = User.objects.get(username=user)
+	key2=empDetailForm.objects.filter(info=user)
+	print(key2)
+	key2=key2.get(year=str(y))
+	return render(request,'hod_form1_final.html',{'key1':data,'key2':key2})
+
+
+
 
 
 
 
 @login_required
-def assistant_preview(request):
+def assistant_preview(request,y):
 	if request.user.is_assistant_professor():
-		name = request.user
-		data1 = User.objects.get(username=name)
-		data2 = empDetailForm.objects.get(info=name)
-		data3 = feedbackTab.objects.get(info=name)
-		data4 = rd.objects.get(info=name)
-		data5 = remarks.objects.get(info=name)
-		data6 = conference.objects.get(info=name)
-		data7 = journal.objects.get(info=name)
 
-		if User.objects.filter(username=name).filter(hod_status=True):
+		name = request.user
+		n=new.objects.filter(info=name).get(year__year=y)
+		data1 = User.objects.get(username=name)
+		data2 = empDetailForm.objects.filter(info=name).get(year=y)
+		data3 = feedbackTab.objects.filter(info=name).get(year=y)
+		data4 = rd.objects.filter(info=name).get(year=y)
+		data5 = remarks.objects.filter(info=name).get(year=y)
+		data6 = conference.objects.filter(info=name).get(year=y)
+		data7 = journal.objects.filter(info=name).get(year=y)
+
+		if new.objects.filter(info__username=name).filter(year__year=y).filter(hod_status=True):
 			data8 = remarks1.objects.get(info__username=name)
 		else:
 			data8 = []
-		if User.objects.filter(username=name).filter(principal_status=True):
+		if new.objects.filter(info__username=name).filter(year__year=y).filter(principal_status=True):
 			data9 = remarks2.objects.get(info__username=name)
 		else:
 			data9 = []
@@ -2065,7 +2687,7 @@ def assistant_preview(request):
 		"key7":data7,
 		"key8":data8,
 		"key9":data9,
-
+		"n":n
 		}
 
 		return render(request,'assistant_preview.html',context=context1)
@@ -2079,26 +2701,28 @@ def assistant_preview(request):
 
 
 @login_required
-def associate_preview(request):
+def associate_preview(request,y):
 	name = request.user
+	n=new.objects.filter(info=name).get(year__year=y)
 	data1 = User.objects.get(username=name)
-	data2 = empDetailForm.objects.get(info=name);
-	data3 = feedbackTab.objects.get(info=name);
-	data4 = rd.objects.get(info=name);
-	data5 = remarks.objects.get(info=name);
-	data6 = conference.objects.get(info=name);
-	data7 = journal.objects.get(info=name);
+	data2 = empDetailForm.objects.filter(info=name).get(year=y);
+	data3 = feedbackTab.objects.filter(info=name).get(year=y)
+	data4 = rd.objects.filter(info=name).get(year=y)
+	data5 = remarks.objects.filter(info=name).get(year=y)
+	data6 = conference.objects.filter(info=name).get(year=y)
+	data7 = journal.objects.filter(info=name).get(year=y)
 
-	if User.objects.filter(username=name).filter(hod_status=True):
+	if new.objects.filter(info__username=name).filter(hod_status=True):
 		data8 = remarks1.objects.get(info__username=name)
 	else:
 		data8 = []
-	if User.objects.filter(username=name).filter(principal_status=True):
+	if new.objects.filter(info__username=name).filter(principal_status=True):
 		data9 = remarks2.objects.get(info__username=name)
 	else:
 		data9 = []
 
 	context1 = {
+	"n":n,
 	"key1":data1,
 	"key2":data2,
 	"key3":data3,
@@ -2113,16 +2737,17 @@ def associate_preview(request):
 	return render(request,'associate_preview.html',context=context1)
 
 @login_required
-def hod_preview(request):
+def hod_preview(request,y):
 	name = request.user
+	n=new.objects.filter(info=name).get(year__year=y)
 	data1 = User.objects.get(username=name)
-	data2 = empDetailForm.objects.get(info=name);
-	data3 = feedbackTab.objects.get(info=name);
-	data4 = rd.objects.get(info=name);
-	data5 = remarks.objects.get(info=name);
-	data6 = conference.objects.get(info=name);
-	data7 = journal.objects.get(info=name);
-	if User.objects.filter(username=name).filter(principal_status=True):
+	data2 = empDetailForm.objects.filter(info=name).get(year=y);
+	data3 = feedbackTab.objects.filter(info=name).get(year=y);
+	data4 = rd.objects.filter(info=name).get(year=y);
+	data5 = remarks.objects.filter(info=name).get(year=y);
+	data6 = conference.objects.filter(info=name).get(year=y);
+	data7 = journal.objects.filter(info=name).get(year=y);
+	if new.objects.filter(info__username=name).filter(principal_status=True):
 		data8 = remarks2.objects.get(info__username=name)
 	else:
 		data8 = []
@@ -2136,7 +2761,7 @@ def hod_preview(request):
 	"key6":data6,
 	"key7":data7,
 	"key8":data8,
-
+	"n":n
 	}
 
 	return render(request,'hod_preview.html',context=context1)

@@ -29,7 +29,7 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.10/js/mdb.min.js"></script>
 
   </head>
-  <body style="background:#c3d1f8">
+  <body style="background:#ccccb3">
     <marquee height="40px;" direction = "right" style="background:#7c4dff"><span style="color:#ffffff;">Cumulative file size shouldn't exceeds <strong>1MB</strong></span></marquee>
 
     <div class="device pull-right" style="margin:1%;"><a style="color:#f5f5f5;" class="badge badge-danger" href="/logout">Logout</a></div>
@@ -43,23 +43,26 @@
 
      <div class="col-12"><h1 align="center" class="display-4" style="color:#f5f5f5"> BMS Institute of Technology and management</h1>
        <h3 class="lead" style="color:white" align="center">Faculty Appraisal Form</h3>
-         <h3 class="lead" style="color:white" align="center">1-Aug-2017 to 31-Jul-2018</h3>
+         <h3 class="lead" style="color:white" align="center">1-Aug-2018 to 31-Jul-2019</h3>
        <hr class="my-4" style="color:white">
-       <h5 style="color:white; margin-left:108px;">Report must be submitted.</h5>
      </div>
      </div>
     </div>
     </div>
+
+
+
   <div class="container">
   	<form method="POST" enctype = "multipart/form-data">
         {% csrf_token %}
 <div class="accordion dis1" id="accordionExample">
   <h5 class="po color1">2: RESEARCH & DEVELOPMENT AND CONSULTANCY<span class="sp">(Maximum Score: 35 marks)</span></h5>
-  <div class="">
-    <div class="card-header" id="headingOne">
+  <div class="card" style="background: #47d1d1">
+    <div class="card-header" id="headingOne" >
       <h5 class="mb-0">
         <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-         2A: Workshops/FDP attended
+
+         <h4 >2A: Workshops/FDP attended</h4>
         </button>
       </h5>
     </div>
@@ -73,7 +76,8 @@
 
             {% render_field form4.w_s_d class="form-control w_s_d" %}
         </div>
-        <h3>Upload Documents</h3>
+        <h4 style="margin-left:20px">Upload Documents</h4>
+
         <div class="form-group col-md-6">
 
 
@@ -93,7 +97,7 @@
 
             {% render_field form4.w_n_d class="form-control w_n_d" %}
         </div>
-        <h3>Upload Documents</h3>
+        <h4 style="margin-left:20px">Upload Documents</h4>
         <div class="form-group col-md-6">
 
 
@@ -115,7 +119,7 @@
 
             {% render_field form4.w_i_d class="form-control w_i_d" %}
         </div>
-        <h3>Upload Documents</h3>
+        <h4 style="margin-left:20px">Upload Documents</h4>
         <div class="form-group col-md-6">
 
 
@@ -153,12 +157,12 @@
 
         </div>
 </div>
-  <div class="">
+  <div class="card" style="background: #47d1d1">
     <div class="card-header" id="headingTwo">
       <h5 class="mb-0">
         <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+<h4>2B.Invited talk/Seminar/Key Note Delivered</h4>
 
-2B.Invited talk/Seminar/Key Note Delivered
         </button>
       </h5>
     </div>
@@ -172,7 +176,7 @@
 
             {% render_field form4.p_s_d class="form-control p_s_d" %}
         </div>
-        <h3>Upload Documents</h3>
+        <h4 style="margin-left:20px">Upload Documents</h4>
         <div class="form-group col-md-6">
 
 
@@ -194,7 +198,7 @@
 
         </div>
 
-        <h3>Upload Documents</h3>
+        <h4 style="margin-left:20px">Upload Documents</h4>
         <div class="form-group col-md-6">
 
 
@@ -217,7 +221,7 @@
 
         </div>
 
-        <h3>Upload Documents</h3>
+        <h4 style="margin-left:20px">Upload Documents</h4>
         <div class="form-group col-md-6">
 
 
@@ -255,11 +259,12 @@
 
         </div>
   </div>
-  <div class="">
+<div class="card" style="background: #47d1d1">
     <div class="card-header" id="headingThree">
       <h5 class="mb-0">
         <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-         2C: Number of Online Courses Completed
+          <h4>2C: Number of Online Courses Completed</h4>
+
            <span class="sp">(Maximum Score: 10 marks)</span>
         </button>
 
@@ -297,7 +302,7 @@
 
 <div class="accordion dis1" id="accordionExample">
   <h5 class="po color1">3: Publications</h5>
-  <div class="card">
+    <div class="card"  style="background:#2eb8b8">
     <div class="card-header" id="headingOne">
       <h5 class="mb-0">
         <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
@@ -441,7 +446,7 @@
 </div> -->
 
 
-  <div class="card">
+  <div class="card"  style="background:#2eb8b8">
     <div class="card-header" id="headingTwo">
       <h5 class="mb-0">
         <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
@@ -591,7 +596,7 @@
     </div>
 </form> -->
   </div>
-  <div class="card">
+  <div class="card"  style="background:#2eb8b8">
     <div class="card-header" id="headingThree">
       <h5 class="mb-0">
         <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
@@ -611,7 +616,7 @@
         </div>
 
         <div class="form-group col-md-6">
-    <h3>Upload Document</h3>
+    <h3 style="margin-left:20px">Upload Document</h3>
 
 
              {% render_field form4.book_i_file class="form-control" %}
@@ -630,7 +635,7 @@
         </div>
 
         <div class="form-group col-md-6">
-    <h3>Upload Document</h3>
+    <h3 style="margin-left:20px">Upload Document</h3>
 
 
              {% render_field form4.book_n_file class="form-control" %}
@@ -648,7 +653,7 @@
              {% render_field form4.book_ci class="form-control book_ci" %}
         </div>
         <div class="form-group col-md-6">
-    <h3>Upload Document</h3>
+    <h3 style="margin-left:20px">Upload Document</h3>
 
 
              {% render_field form4.book_ci_file class="form-control" %}
@@ -666,7 +671,7 @@
         </div>
 
         <div class="form-group col-md-6">
-    <h3>Upload Document</h3>
+    <h3 style="margin-left:20px">Upload Document</h3>
 
 
              {% render_field form4.book_cn_file class="form-control" %}
@@ -685,7 +690,7 @@
         </div>
 
         <div class="form-group col-md-6">
-    <h3>Upload Document</h3>
+    <h3 style="margin-left:20px">Upload Document</h3>
 
 
              {% render_field form4.book_ai_file class="form-control" %}
@@ -704,7 +709,7 @@
         </div>
 
         <div class="form-group col-md-6">
-    <h3>Upload Document</h3>
+    <h3 style="margin-left:20px">Upload Document</h3>
 
 
              {% render_field form4.book_nm_file class="form-control" %}
@@ -736,7 +741,7 @@
 <!-- </form> -->
   </div>
 </div>
-<div class="card ">
+<div class="card"  style="background:#2eb8b8">
 
     <div class="card-header" id="headingTwo">
       <h5 class="mb-0">
@@ -839,41 +844,85 @@
 
 
 
-                    <div class="orm-group col-md-6">
-<label for="inputResearch">Marks Here:</label>
+                    <div class="orm-group col-md-6" style="background:#2eb8b8">
+<label for="inputResearch" >Marks Here:</label>
                       {% render_field form4.rp_marks class="form-control rp_marks disabled" %}
 
                           </div>
 
                       </div>
 
- <div class="form-group row">
+
+
+
+                      <div class="container" style="background:#2eb8b8">
 
 
 
 
-        <div class="form-group col-md-6">
-          <h4>IPR Type :</h4>
-        {% render_field form4.ipr_type class="form-control ipr_type" %}
-        </div>
-        <div class="form-group col-md-6">
-          <h4>IPR Status :</h4>
-         {% render_field form4.ipr_status class="form-control ipr_status" %}
-</div>
 
- </div>
 
- <div class="form-group col-md-12">
- <label>IPR File</label>
- {% render_field form4.ipr_file class="form-control" %}
 
- </div>
+                               <div class="form-group col-md-12">
+                                 <h4 style="margin-left:30px">Provisional Specification filing of Patents</h4>
+                               </div>
+                               <div class="form-group col-md-6">
+                                 <h4>IPR Status :</h4>
+                                {% render_field form4.p_ipr_status class="form-control p_ipr_status" %}
+                               </div>
+                               <div class="form-group col-md-12">
+                               <label>IPR File</label>
+                               {% render_field form4.p_ipr_file class="form-control p_ipr_file" %}
 
-  <div class="form-group col-md-12">
-<label>Details</label>
-{% render_field form4.ipr_info class="form-control ipr_info" %}
+                               </div>
 
-</div>
+                                <div class="form-group col-md-12">
+                               <label>Details</label>
+                               {% render_field form4.p_ipr_info class="form-control p_ipr_info" %}
+
+                               </div>
+                               <div class="form-group col-md-12" style="background:#2eb8b8">
+                               <label>Marks :</label>
+                               {% render_field form4.p_ipr_m class="form-control p_ipr_m disabled" %}
+
+                               </div>
+
+
+
+
+
+
+
+
+
+
+
+
+                              <div class="form-group col-md-12">
+                                <h4>Complete Specification filing of Patents</h4>
+                              </div>
+
+                              <div class="form-group col-md-6">
+                                <h4>IPR Status :</h4>
+                               {% render_field form4.ipr_status class="form-control c_ipr_status" %}
+                              </div>
+                              <div class="form-group col-md-12">
+                              <label>IPR File</label>
+                              {% render_field form4.c_ipr_file class="form-control c_ipr_file" %}
+
+                              </div>
+
+                               <div class="form-group col-md-12">
+                              <label>Details</label>
+                              {% render_field form4.c_ipr_info class="form-control c_ipr_info" %}
+
+                              </div>
+                              <div class="form-group col-md-12">
+                              <label>Marks :</label>
+                              {% render_field form4.c_ipr_m class="form-control c_ipr_m disabled" %}
+
+                              </div>
+                       </div>
 
  </div>
 

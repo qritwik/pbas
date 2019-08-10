@@ -71,33 +71,33 @@
 							</div>
 						</div>
 
-            {% for info in name %}
+            {% for x in name %}
 
 						<div class="row">
 							<div class="cell" data-title="Faculty Name">
-								{% if info.teach_status and info.hod_status %}
-								<a href="/hod_teacher_display_edit/{{info.pk}}" class="h2p">{{info.first_name}}</a>
-								{% elif info.teach_status %}
-								<a href="/hod_teacher_display/{{info.pk}}">{{info.first_name}}</a>
+								{% if x.teach_status and info.hod_status %}
+								<a href="/hod_teacher_display_edit/{{info.info.pk}}/{{y}}" class="h2p">{{x.info.first_name}}</a>
+								{% elif x.teach_status %}
+								<a href="/hod_teacher_display/{{info.info.pk}}/{{y}}">{{x.info.first_name}}</a>
 								{% else %}
-								<a href="#" class="h3p">{{info.first_name}}</a>
+								<a href="#" class="h3p">{{x.info.first_name}}</a>
 								{% endif %}
 								  <!-- <a {% if info.hod_status == False %} href="/hod_teacher_display/{{info.pk}}" {% else %} href="#" {% endif %}>{{info.first_name}}</a> -->
 							</div>
 
 							<div class="cell" data-title="f-sub">
-                {% if info.teach_status %}
-								  <span class="badge badge-success pull-left">{{info.teach_status}}</span>
+                {% if x.teach_status %}
+								  <span class="badge badge-success pull-left">{{x.teach_status}}</span>
                 {% else %}
-                  <span class="badge badge-danger pull-left">{{info.teach_status}}</span>
+                  <span class="badge badge-danger pull-left">{{x.teach_status}}</span>
                 {% endif %}
 
 							</div>
 							<div class="cell" data-title="hod-review">
-                {% if info.hod_status %}
-								  <span class="badge badge-success pull-left">{{info.hod_status}}</span>
+                {% if x.hod_status %}
+								  <span class="badge badge-success pull-left">{{x.hod_status}}</span>
                 {% else %}
-                  <span class="badge badge-danger pull-left">{{info.hod_status}}</span>
+                  <span class="badge badge-danger pull-left">{{x.hod_status}}</span>
                 {% endif %}
 							</div>
 						</div>
@@ -117,7 +117,7 @@
 								<a href="#" class="h3p">{{info.first_name}}</a>
 								{% endif %}
 							</div>
-							
+
 							<div class="cell" data-title="f-sub">
                 {% if info.teach_status %}
                   <span class="badge badge-success pull-left">{{info.teach_status}}</span>

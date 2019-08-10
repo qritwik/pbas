@@ -21,11 +21,11 @@ class UserAdmin(DjangoUserAdmin, ImportExportModelAdmin):
 
 	fieldsets = (
 		(None, {'fields': ('username', 'email', 'password')}),
-		(('Personal info'), {'fields': ('first_name', 'last_name', 'phone', 'department','info')}),
+		(('Personal info'), {'fields': ('first_name', 'last_name', 'phone', 'department','info','profile_pic')}),
 		(('Permissions'), {'fields': ('is_active', 'is_staff', 'is_superuser',
 									   )}),
 
-		(('Status'), {'fields': ('teach_status','hod_status','principal_status')}),
+		(('Status'), {'fields': ('hodrole',)}),
 
 		(('Designation'), {'fields': ('designation',)}),
 		(('Important dates'), {'fields': ('last_login', 'date_joined')}),
@@ -200,5 +200,5 @@ class Userjournal(ImportExportModelAdmin):
 
 	def name(self, instance):
 		return instance.info.first_name
-
-# admin.site.register(journal)
+admin.site.register(new)
+admin.site.register(years)

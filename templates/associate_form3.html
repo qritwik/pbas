@@ -28,7 +28,7 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.10/js/mdb.min.js"></script>
 
   </head>
-  <body style="background:#c3d1f8">
+  <body style="background:#ccccb3">
     <marquee height="40px;" direction = "right" style="background:#7c4dff"><span style="color:#ffffff;">Cumulative file size shouldn't exceeds <strong>1MB</strong></span></marquee>
 
     <div class="device pull-right" style="margin:1%;"><a style="color:#f5f5f5;" class="badge badge-danger" href="/logout">Logout</a></div>
@@ -56,7 +56,7 @@
          {% csrf_token %}
 <div class="accordion dis1" id="accordionExample">
   <h5 class="po color1">2: RESEARCH & DEVELOPMENT AND CONSULTANCY<span class="sp">(Maximum Score: 40 marks)</span></h5>
-  <div class="card">
+  <div class="card" style="background: #47d1d1">
     <div class="card-header" id="headingOne">
       <h5 class="mb-0">
         <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
@@ -157,7 +157,7 @@
 
     </div>
 </div>
-  <div class="card">
+  <div class="card" style="background: #47d1d1">
     <div class="card-header" id="headingTwo">
       <h5 class="mb-0">
         <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
@@ -263,7 +263,7 @@
 
         </div>
   </div>
-  <div class="card">
+  <div class="card" style="background: #47d1d1">
     <div class="card-header" id="headingThree">
       <h5 class="mb-0">
         <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
@@ -304,7 +304,7 @@
 
 <div class="accordion dis1" id="accordionExample">
   <h5 class="po color1">3: Publications</h5>
-  <div class="card">
+  <div class="card" style="background:#2eb8b8">
     <div class="card-header" id="headingOne">
       <h5 class="mb-0">
         <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
@@ -449,7 +449,7 @@
 </div> -->
 
 
-  <div class="card">
+  <div class="card" style="background:#2eb8b8">
     <div class="card-header" id="headingTwo">
       <h5 class="mb-0">
         <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
@@ -597,7 +597,7 @@
     </div>
 </form> -->
   </div>
-  <div class="card">
+  <div class="card" style="background:#2eb8b8">
     <div class="card-header" id="headingThree">
       <h5 class="mb-0">
         <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
@@ -744,7 +744,7 @@
 <!-- </form> -->
   </div>
 </div>
-<div class="card ">
+<div class="card " style="background:#2eb8b8">
 
     <div class="card-header" id="headingTwo">
       <h5 class="mb-0">
@@ -862,28 +862,69 @@
 
 
 
-        <div class="form-group col-md-6">
-          <h4>IPR Type :</h4>
-        {% render_field form4.ipr_type class="form-control ipr_type" %}
-        </div>
-        <div class="form-group col-md-6">
-          <h4>IPR Status :</h4>
-         {% render_field form4.ipr_status class="form-control ipr_status" %}
-</div>
+   <div class="form-group col-md-6">
+     <h4>Provisional Specification filing of Patents</h4>
+   </div>
 
- </div>
 
- <div class="form-group col-md-12">
- <label>IPR File</label>
- {% render_field form4.ipr_file class="form-control" %}
+   </div>
+   <div class="form-group col-md-6">
+   <h4>IPR Status :</h4>
+   {% render_field form4.p_ipr_status class="form-control p_ipr_status" %}
+   </div>
+   <div class="form-group col-md-12">
+   <label>IPR File</label>
+   {% render_field form4.p_ipr_file class="form-control p_ipr_file" %}
 
- </div>
+   </div>
 
-  <div class="form-group col-md-12">
-<label>Details</label>
-{% render_field form4.ipr_info class="form-control ipr_info" %}
+   <div class="form-group col-md-12">
+   <label>Details</label>
+   {% render_field form4.p_ipr_info class="form-control p_ipr_info" %}
 
-</div>
+   </div>
+   <div class="form-group col-md-12">
+   <label>Marks :</label>
+   {% render_field form4.p_ipr_m class="form-control p_ipr_m disabled" %}
+
+   </div>
+
+
+
+
+
+   <div class="form-group row">
+
+
+
+
+   <div class="form-group col-md-6">
+    <h4>Complete Specification filing of Patents</h4>
+   </div>
+
+
+   </div>
+   <div class="form-group col-md-6">
+   <h4>IPR Status :</h4>
+   {% render_field form4.ipr_status class="form-control c_ipr_status" %}
+   </div>
+   <div class="form-group col-md-12">
+   <label>IPR File</label>
+   {% render_field form4.c_ipr_file class="form-control c_ipr_file" %}
+
+   </div>
+
+   <div class="form-group col-md-12">
+   <label>Details</label>
+   {% render_field form4.c_ipr_info class="form-control c_ipr_info" %}
+
+   </div>
+
+   <div class="form-group col-md-12">
+   <label>Marks :</label>
+   {% render_field form4.c_ipr_m class="form-control c_ipr_m disabled" %}
+
+   </div>
 
  </div>
 
@@ -939,7 +980,7 @@
 </div>
 
 
-<div class="card poi card-header" id="headingOne">
+<div class="card poi card-header" id="headingOne" style="background:#cc99ff">
 
 <div class="form-group">
 

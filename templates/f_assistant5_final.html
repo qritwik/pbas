@@ -1,0 +1,359 @@
+key6
+<!DOCTYPE html>
+{% load staticfiles %}
+{% load widget_tweaks %}
+<html>
+
+<head>
+	<title>asp1</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href={% static "css/index.css" %}>
+
+
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+<!-- <script type="text/javascript" src={% static "js/h.js" %}></script> -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- Bootstrap core CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.10/css/mdb.min.css" rel="stylesheet">
+<!-- JQuery -->
+
+<!-- MDB core JavaScript -->
+
+
+
+
+  </head>
+  <body style="background:#c3d1f8;font-size: 1;">
+<div class="device pull-right" style="margin:1%;"><a style="color:#f5f5f5;" class="badge badge-danger" href="/logout">Logout</a></div>
+
+
+    <div class="jumbotron" style="background:#736de3">
+
+
+
+    <div class="container-fluid">
+    <center><img  width="125px" src="{% static "image/bms.logo.png" %}" alt="BMS Institute of Technology of management" ></center>
+    <div class="row">
+
+     <div class="col-12"><h1 align="center" class="display-4" style="color:#f5f5f5"> BMS Institute of Technology and management</h1>
+       <h3 class="lead" style="color:white" align="center">Faculty Appraisal Form</h3>
+         <h3 class="lead" style="color:white" align="center">1-Aug-2018 to 31-Jul-2019</h3>
+       <hr class="my-4" style="color:white">
+
+     </div>
+     </div>
+    </div>
+    </div>
+	<div class="container">
+	  <div class="poi">
+	  	<h2>Details of Papers Published In Conference</h2>
+	<table class="table table-bordered" style="background:#66ff66">
+		<thead>
+			<tr>
+				<td>Name of Conference</td>
+				<td>Title of the paper</td>
+				<td>Place</td>
+				<td>Date</td>
+				<td>Indexed</td>
+				<td>Author</td>
+			</tr>
+		</thead>
+		<tbody>
+			{% if key6.c1_name %}
+			<tr>
+				<td>{{ key6.c1_name }}</td>
+				<td>{{ key6.c1_title }}</td>
+				<td>{{ key6.c1_place }}</td>
+				<td>{{ key6.c1_date }}</td>
+				<td>{{ key6.c1_index }}</td>
+				<td>{{ key6.c1_author }}</td>
+			</tr>
+			{% endif %}
+			{% if key6.c2_name %}
+			<tr>
+				<td>{{ key6.c2_name }}</td>
+				<td>{{ key6.c2_title }}</td>
+				<td>{{ key6.c2_place }}</td>
+				<td>{{ key6.c2_date }}</td>
+				<td>{{ key6.c2_index }}</td>
+				<td>{{ key6.c2_author }}</td>
+			</tr>
+			{% endif %}
+			{% if key6.c3_name %}
+			<tr>
+				<td>{{ key6.c3_name }}</td>
+				<td>{{ key6.c3_title }}</td>
+				<td>{{ key6.c3_place }}</td>
+				<td>{{ key6.c3_date }}</td>
+				<td>{{ key6.c3_index }}</td>
+				<td>{{ key6.c3_author }}</td>
+			</tr>
+			{% endif %}
+			{% if key6.c4_name %}
+			<tr>
+				<td>{{ key6.c4_name }}</td>
+				<td>{{ key6.c4_title }}</td>
+				<td>{{ key6.c4_place }}</td>
+				<td>{{ key6.c4_date }}</td>
+				<td>{{ key6.c4_index }}</td>
+				<td>{{ key6.c4_author }}</td>
+			</tr>
+			{% endif %}
+			{% if key6.c5_name %}
+			<tr>
+				<td>{{ key6.c5_name }}</td>
+				<td>{{ key6.c5_title }}</td>
+				<td>{{ key6.c5_place }}</td>
+				<td>{{ key6.c5_date }}</td>
+				<td>{{ key6.c5_index }}</td>
+				<td>{{ key6.c5_author }}</td>
+			</tr>
+			{% endif %}
+			{% if key6.c6_name %}
+			<tr>
+				<td>{{ key6.c6_name }}</td>
+				<td>{{ key6.c6_title }}</td>
+				<td>{{ key6.c6_place }}</td>
+				<td>{{ key6.c6_date }}</td>
+				<td>{{ key6.c6_index }}</td>
+				<td>{{ key6.c6_author }}</td>
+			</tr>
+			{% endif %}
+			{% if key6.c7_name %}
+			<tr>
+				<td>{{ key6.c7_name }}</td>
+				<td>{{ key6.c7_title }}</td>
+				<td>{{ key6.c7_place }}</td>
+				<td>{{ key6.c7_date }}</td>
+				<td>{{ key6.c7_index }}</td>
+				<td>{{ key6.c7_author }}</td>
+			</tr>
+			{% endif %}
+			{% if key6.c8_name %}
+			<tr>
+				<td>{{ key6.c8_name }}</td>
+				<td>{{ key6.c8_title }}</td>
+				<td>{{ key6.c8_place }}</td>
+				<td>{{ key6.c8_date }}</td>
+				<td>{{ key6.c8_index }}</td>
+				<td>{{ key6.c8_author }}</td>
+			</tr>
+			{% endif %}
+		</tbody>
+	</table>
+
+<h2>Details of Papers Published In Journal</h2>
+
+<table class="table table-bordered" style="background:#33ff33">
+	<thead>
+		<tr>
+			<td>Name</td>
+			<td>Title of the paper</td>
+			<td>Volume</td>
+			<td>Date</td>
+			<td>Indexed</td>
+			<td>Issn/Doi no.</td>
+			<td>Page</td>
+			<td>Author</td>
+		</tr>
+	</thead>
+	<tbody>
+		{% if key7.j1_name %}
+		<tr>
+			<td>{{ key7.j1_name }}</td>
+			<td>{{ key7.j1_title }}</td>
+			<td>{{ key7.j1_volume }}</td>
+			<td>{{ key7.j1_date }}</td>
+			<td>{{ key7.j1_index }}</td>
+			<td>{{ key7.j1_issn }}</td>
+			<td>{{ key7.j1_page }}</td>
+			<td>{{ key7.j1_author }}</td>
+
+		</tr>
+		{% endif %}
+		{% if key7.j2_name %}
+		<tr>
+			<td>{{ key7.j2_name }}</td>
+			<td>{{ key7.j2_title }}</td>
+			<td>{{ key7.j2_volume }}</td>
+			<td>{{ key7.j2_date }}</td>
+			<td>{{ key7.j2_index }}</td>
+			<td>{{ key7.j2_issn }}</td>
+			<td>{{ key7.j2_page }}</td>
+			<td>{{ key7.j2_author }}</td>
+
+		</tr>
+		{% endif %}
+		{% if key7.j3_name %}
+		<tr>
+			<td>{{ key7.j3_name }}</td>
+			<td>{{ key7.j3_title }}</td>
+			<td>{{ key7.j3_volume }}</td>
+			<td>{{ key7.j3_date }}</td>
+			<td>{{ key7.j3_index }}</td>
+			<td>{{ key7.j3_issn }}</td>
+			<td>{{ key7.j3_page }}</td>
+			<td>{{ key7.j3_author }}</td>
+
+		</tr>
+		{% endif %}
+		{% if key7.j4_name %}
+		<tr>
+			<td>{{ key7.j4_name }}</td>
+			<td>{{ key7.j4_title }}</td>
+			<td>{{ key7.j4_volume }}</td>
+			<td>{{ key7.j4_date }}</td>
+			<td>{{ key7.j4_index }}</td>
+			<td>{{ key7.j4_issn }}</td>
+			<td>{{ key7.j4_page }}</td>
+			<td>{{ key7.j4_author }}</td>
+
+		</tr>
+		{% endif %}
+		{% if key7.j5_name %}
+		<tr>
+			<td>{{ key7.j5_name }}</td>
+			<td>{{ key7.j5_title }}</td>
+			<td>{{ key7.j5_volume }}</td>
+			<td>{{ key7.j5_date }}</td>
+			<td>{{ key7.j5_index }}</td>
+			<td>{{ key7.j5_issn }}</td>
+			<td>{{ key7.j5_page }}</td>
+			<td>{{ key7.j5_author }}</td>
+
+		</tr>
+		{% endif %}
+		{% if key7.j6_name %}
+		<tr>
+			<td>{{ key7.j6_name }}</td>
+			<td>{{ key7.j6_title }}</td>
+			<td>{{ key7.j6_volume }}</td>
+			<td>{{ key7.j6_date }}</td>
+			<td>{{ key7.j6_index }}</td>
+			<td>{{ key7.j6_issn }}</td>
+			<td>{{ key7.j6_page }}</td>
+			<td>{{ key7.j6_author }}</td>
+
+		</tr>
+		{% endif %}
+		{% if key7.j7_name %}
+		<tr>
+			<td>{{ key7.j7_name }}</td>
+			<td>{{ key7.j7_title }}</td>
+			<td>{{ key7.j7_volume }}</td>
+			<td>{{ key7.j7_date }}</td>
+			<td>{{ key7.j7_index }}</td>
+			<td>{{ key7.j7_issn }}</td>
+			<td>{{ key7.j7_page }}</td>
+			<td>{{ key7.j7_author }}</td>
+
+		</tr>
+		{% endif %}
+		{% if key7.j8_name %}
+		<tr>
+			<td>{{ key7.j8_name }}</td>
+			<td>{{ key7.j8_title }}</td>
+			<td>{{ key7.j8_volume }}</td>
+			<td>{{ key7.j8_date }}</td>
+			<td>{{ key7.j8_index }}</td>
+			<td>{{ key7.j8_issn }}</td>
+			<td>{{ key7.j8_page }}</td>
+			<td>{{ key7.j8_author }}</td>
+
+		</tr>
+		{% endif %}
+
+
+	</tbody>
+
+
+</table>
+
+
+
+
+<button type="button" id="download" class="btn btn-blue-grey btn-lg btn-block">Press Ctrl + p to download as pdf</button></div>
+
+
+
+
+
+
+<div class="form-row form-group ">
+
+<div class="form-group col-md-5">
+<a href="{% url 'facform1:f_assistant_edit5' key6.year %}"><button type="button" name="button" class="btn btn-info btn-sm btn-block">GO BACK</button></a></div>
+ <div class="form-group col-md-1">
+ </div>
+ <div class="form-group col-md-5">
+	 <a href="{% url 'facform1:assistant_preview' key6.year %}"><button type="button" name="button" class="btn btn-info btn-sm btn-block">DONE</button></a>
+ </div>
+
+
+
+</div>
+
+
+
+
+</div>
+</div>
+
+
+
+<!-- <script>
+$(function(){
+	alert("hi");
+$("#download").on("click",function (quality = 1) {
+		alert("hello");
+		const filename  = 'download.pdf';
+
+		html2canvas(document.body,
+								{scale: quality}
+						 ).then(canvas => {
+			let pdf = new jsPDF('p', 'mm', 'a4');
+			pdf.addImage(canvas.toDataURL('image/png'), 'PNG', 0, 0, 211, 298);
+			pdf.save(filename);
+		});
+	});
+});
+
+
+
+</script> -->
+
+
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.10/js/mdb.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<h5>
+
+</h5>
+
+</body>
+
+
+</html>

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+{% load widget_tweaks %}
+<html>
+
+<head>
+  <title>asp1</title>
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+  <link rel="stylesheet" type="text/css" href={% static "css/index.css" %}>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+<script type="text/javascript" src={% static "js/h.js" %}></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- Bootstrap core CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.10/css/mdb.min.css" rel="stylesheet">
+<!-- JQuery -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.10/js/mdb.min.js"></script>
+
+  </head>
+  <body style="background:#ccccb3">
+
+    <div class="device pull-right" style="margin:1%;"><a style="color:#f5f5f5;" class="badge badge-danger" href="/logout">Logout</a></div>
+
+
+    <div class="jumbotron" style="background:#736de3">
+
+    <div class="container-fluid">
+    <center><img  width="125px" src="{% static "image/bms.logo.png" %}" alt="BMS Institute of Technology of management" ></center>
+    <div class="row">
+
+     <div class="col-12"><h1 align="center" class="display-4" style="color:#f5f5f5"> BMS Institute of Technology and management</h1>
+       <h3 class="lead" style="color:white" align="center">Faculty Appraisal Form</h3>
+         <h3 class="lead" style="color:white" align="center">1-Aug-2018 to 31-Jul-2019</h3>
+       <hr class="my-4" style="color:white">
+     </div>
+     </div>
+    </div>
+    </div>
+
+  <div class="container" style="background:#6666ff">
+
+
+
+       <form method="POST" enctype = "multipart/form-data">
+        {% csrf_token %}
+        <div class=" poi form-row">
+          <div class="form-group col-md-6">
+            <label for="">Internship Company Name 1</label>
+            <input type="text" class="form-control" id="inputEmpName" disabled value="{{ key2.it1_name }}">
+
+          </div>
+          <div class="form-group col-md-3">
+            <label for="">From</label>
+            <input type="text" class="form-control" id="inputEmpName" disabled value="{{ key2.it1_f }}">
+
+          </div>
+          <div class="form-group col-md-3">
+            <label for="">To</label>
+            <input type="text" class="form-control" id="inputEmpName" disabled value="{{ key2.it1_t }}">
+
+          </div>
+
+
+
+          <div class="form-group col-md-6">
+            <label for="">Internship Company Name 2</label>
+            <input type="text" class="form-control" id="inputEmpName" disabled value="{{ key2.it2_name }}">
+
+          </div>
+          <div class="form-group col-md-3">
+            <label for="">From</label>
+            <input type="text" class="form-control" id="inputEmpName" disabled value="{{ key2.it2_f }}">
+
+          </div>
+          <div class="form-group col-md-3">
+            <label for="">To</label>
+            <input type="text" class="form-control" id="inputEmpName" disabled value="{{ key2.it2_t }}">
+
+          </div>
+
+          <div class="form-group col-md-6">
+            <label for="">Internship Company Name 3</label>
+            <input type="text" class="form-control" id="inputEmpName" disabled value="{{ key2.it3_name }}">
+
+          </div>
+          <div class="form-group col-md-3">
+            <label for="">From</label>
+            <input type="text" class="form-control" id="inputEmpName" disabled value="{{ key2.it3_f }}">
+
+          </div>
+          <div class="form-group col-md-3">
+            <label for="">To</label>
+            <input type="text" class="form-control" id="inputEmpName" disabled value="{{ key2.it3_t }}">
+
+          </div>
+          <div class="form-group col-md-12">
+            <label for="">More</label>
+            <input type="text" class="form-control" id="inputEmpName" disabled value="{{ key2.more }}">
+
+          </div>
+
+
+          <div class="form-group col-md-6">
+            <label for="inputEmpName">Emp Name</label>
+            <input type="email" class="form-control" id="inputEmpName" placeholder="EmpName" value="{{ info.first_name }}" disabled>
+          </div>
+        <div class="form-group col-md-6">
+            <label for="inputEmployeeIdNo">Username</label>
+            <input type="text" class="form-control" id="inputEmployeeIdNo" placeholder="EmployeeIdNo" value="{{key1.username}}" disabled>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="inputHighestQuali">Highest Qualification</label>
+            <input type="text" class="form-control" id="inputEmpName" disabled value="{{ key2.high_qual }}">
+
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputDept">Dept</label>
+            <input type="text" class="form-control" id="inputEmployeeIdNo" placeholder="EmployeeIdNo" value="{{key1.department}}" disabled>
+        </div>
+        <div class="form-group col-md-12">
+          <label for="inputDOJ">DOJ</label>
+          <input type="text" class="form-control" id="inputEmpName" disabled value="{{ key2.doj }}">
+
+        </div>
+        <div class="form-group col-md-6">
+          <label >Designation</label>
+          <input type="text" class="form-control"  disabled value="{{key1.designation}}">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputHeldFrom">HeldFrom</label>
+          <input type="text" class="form-control" id="inputEmpName" disabled value="{{ key2.Held_from }}">
+
+        </div>
+
+        <div class="form-group col-md-6">
+          <label for="inputPhoneNo">PhoneNo</label>
+          <input type="text" class="form-control" id="inputPhoneNo" placeholder="PhoneNo" value="{{key1.phone}}" disabled>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputEmail">Email</label>
+          <input type="email" class="form-control" id="inputEmail" placeholder="Email" value="{{key1.email}}" disabled>
+        </div>
+
+        <h3>Experience</h3>
+          <div class="row form-group col-md-12">
+
+           <div class="form-group col-md-4">
+            <label for="inputteaching">Teaching</label>
+            <input type="text" class="form-control" id="inputEmpName" disabled value="{{ key2.exp_teach}}">
+
+           </div>
+            <div class="form-group col-md-4">
+              <label for="inputResearch">Research</label>
+              <input type="text" class="form-control" id="inputEmpName" disabled value="{{ key2.exp_res }}">
+
+            </div>
+            <div class="form-group col-md-4">
+              <label for="inputIndustry">Industry</label>
+              <input type="text" class="form-control" id="inputEmpName" disabled value="{{ key2.exp_indus }}">
+
+            </div>
+         </div>
+     </div>
+
+
+
+<div class="form-group col-md-6">
+
+
+
+                <h5 class="po color2">Month of increment</h5>
+
+			               <div class="form-group col-md-6">
+
+                       <input type="text" class="form-control" id="inputEmpName" disabled value="{{ key2.month_of_increment }}">
+
+
+			                </div>
+
+
+
+
+
+<div class="form-row">
+
+<div class="form-group col-md-5">
+  <a href="{% url 'facform1:hod_form1_edit' key2.year %}" ><button type="button" name="button" class="btn btn-info btn-sm btn-block">GO BACK</button></a></div>
+  <div class="form-group col-md-1">
+  </div>
+  <div class="form-group col-md-5">
+    <a href="{% url 'facform1:hod_form2' key2.year %}"><button type="button" name="button" class="btn btn-info btn-sm btn-block">CONTINUE TO Next Form</button></a>
+  </div>
+
+
+
+</div>
+</form>
+</div>
+
+ <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script>
+  $( function() {
+    $( "#datepicker" ).datepicker({
+    dateFormat: "yy-mm-dd"
+  });
+   $( "#datepicker1" ).datepicker({
+    dateFormat: "yy-mm-dd"
+  });
+   $( "#datepicker2" ).datepicker({
+    dateFormat: "yy-mm-dd"
+  });
+   $( "#datepicker3" ).datepicker({
+    dateFormat: "yy-mm-dd"
+  });
+   $( "#datepicker4" ).datepicker({
+    dateFormat: "yy-mm-dd"
+  });
+   $( "#datepicker5" ).datepicker({
+    dateFormat: "yy-mm-dd"
+  });
+  } );
+  </script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+</body>
+</html>

@@ -48,15 +48,15 @@
 
       {% if user.username == "HOD_CIVIL" %}
      <a
-     {% if user.teach_status == False %} href="/associate_form1/" {% else %} href="/associate_preview/" {% endif %} style="background:#9ccc65;margin-top:1%;width:100%;" class="list-group-item list-group-item-action">Submit your own form</a>
+     {% if t.teach_status == False %} href="/associate_form1/" {% else %} href="/associate_preview/" {% endif %} style="background:#9ccc65;margin-top:1%;width:100%;" class="list-group-item list-group-item-action">Submit your own form</a>
      {% else %}
      <a
-     {% if user.teach_status == False %} href="/hod_form1/" {% else %} href="/hod_preview/" {% endif %}
+     {% if t.teach_status == False %} href="{% url 'facform1:hod_form1' f %}" {% else %} href="{% url 'facform1:hod_preview' f %}" {% endif %}
      style="background:#9ccc65;margin-top:1%;width:100%;" class="list-group-item list-group-item-action">Submit your own form</a>
      {% endif %}
 
 
-     <a href="/hod_display/" style="background:#7e5ae6;margin-top:6%;width:100%;" class="list-group-item list-group-item-action">View faculty form</a>
+     <a href="{% url 'facform1:hod_display' f %}" style="background:#7e5ae6;margin-top:6%;width:100%;" class="list-group-item list-group-item-action">View faculty form</a>
 
 
 
