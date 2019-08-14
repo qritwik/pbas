@@ -771,6 +771,7 @@ def login(request):
 			phone = user.phone
 			random_otp = r''.join(random.choice('0123456789') for i in range(4))
 			phone_otp(random_otp,phone)
+
 			email_otp(random_otp,user.email,user.first_name)
 			#random_otp="1234"
 			hashed_pwd = make_password(random_otp)
@@ -837,21 +838,33 @@ def hod_display(request,y):
 		c3=set()
 		for i in c:
 			if i.designation.pk is 1:
-				x=new.objects.filter(info__username=i).filter(year__year=y)
-				c1.add(x)
+				try:
+					x=new.objects.filter(info__username=i.username).get(year__year=y)
+					print(x.teach_status)
+					c1.add(x)
+				except:
+					pass
 			if i.designation.pk is 2:
-				x=new.objects.filter(info__username=i).filter(year__year=y)
-				c2.add(x)
+				try:
+					x=new.objects.filter(info__username=i.username).get(year__year=y)
+					print(x.teach_status)
+					c1.add(x)
+				except:
+					pass
+
 			if i.designation.pk is 3:
-				x=new.objects.filter(info__username=i).filter(year__year=y)
-				c3.add(x)
+				try:
+					x=new.objects.filter(info__username=i.username).get(year__year=y)
+					print(x.teach_status)
+					c1.add(x)
+				except:
+					pass
 		print(c1)
 		print(c2)
 		print(c3)
-		c4 = list(chain(c2,c3))
 		# c2 = .objects.filter(info__department=hod_dept).filter(~Q(info__designation=hod_desg))
 
-		context = {'name':c1,'name1':c4 ,'hod_dept':hod_dept,'y':y}
+		context = {'name':c1,'name1':c2 ,'hod_dept':hod_dept,'y':y,'name2':c3}
 
 		# print(data6)
 		return render(request,'hod_display.html',context=context)
@@ -885,6 +898,7 @@ def hod_teacher_display(request,pk,y):
 					obj = form1.save(commit=False)
 
 					obj.info = name
+					obj.year=y
 					obj.save()
 
 					if sendme.hod_status == False:
@@ -915,7 +929,7 @@ def hod_teacher_display(request,pk,y):
 
 
 @login_required
-def hod_teacher_display_edit(request,pk):
+def hod_teacher_display_edit(request,pk,y):
 	if request.user.is_hod():
 		name =  User.objects.get(pk = pk);
 		print(name)
@@ -931,16 +945,33 @@ def hod_teacher_display_edit(request,pk):
 		# data8 = remarks1.objects.get(info__username=name);
 		# data9 = remarks2.objects.get(info__username=name);
 
-		if new.objects.filter(username=name).get(year__year=y).filter(hod_status=True):
+		if new.objects.filter(info=name).filter(hod_status=True).filter(year__year=y):
 			data8 = remarks1.objects.get(info__username=name)
 		else:
 			data8 = []
-		if new.objects.filter(username=name).get(year__year=y).filter(principal_status=True):
+		if new.objects.filter(info=name).filter(year__year=y).filter(principal_status=True):
 			data9 = remarks2.objects.get(info__username=name)
 		else:
 			data9 = []
 
+		if request.method == 'POST':
+			form1 = forms.form_remarks1(request.POST,instance=data8)
+			if form1.is_valid():
 
+				sendme = new.objects.filter(info__username=name).get(year__year=y)
+				obj = form1.save(commit=False)
+
+				obj.info = name
+				obj.year=y
+				obj.save()
+
+				if sendme.hod_status == False:
+					sendme.hod_status = True
+					sendme.save()
+				return HttpResponseRedirect(reverse('facform1:hod_display',args=(y,)))
+
+		else:
+			form1 = forms.form_remarks1(instance=data8)
 
 
 
@@ -966,7 +997,7 @@ def hod_teacher_display_edit(request,pk):
 		"key5":data5,
 		"key6":data6,
 		"key7":data7,
-		"key8":data8,
+		"key8":form1,
 		"key9":data9,
 		# "form1":form1
 		}
