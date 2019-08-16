@@ -2025,7 +2025,7 @@ def f_assistant1(request,y):
 					# sendme.save()
 					return HttpResponseRedirect(reverse('facform1:f_assistant1_final',args=(y,)))
 					#return HttpResponseRedirect("/assistant_form2/")
-			return render(request,'assistant_form1.html',{'form2':form2,'info':data_fina,'y':y})
+			return render(request,'assistant_form1.html',{'form2':form2,'info':data_final,'y':y})
 		return render(request,'assistant_form1.html',{'form2':form2,'info':data_final,'y':y})#,'f':f})
 	else:
 		return HttpResponseRedirect('/invalid')
