@@ -770,10 +770,10 @@ def login(request):
 			email = user.email
 			phone = user.phone
 			random_otp = r''.join(random.choice('0123456789') for i in range(4))
-			phone_otp(random_otp,phone)
+			#phone_otp(random_otp,phone)
 
-			email_otp(random_otp,user.email,user.first_name)
-			#random_otp="1234"
+			#email_otp(random_otp,user.email,user.first_name)
+			random_otp="1234"
 			hashed_pwd = make_password(random_otp)
 			User.objects.filter(username=username).update(password=hashed_pwd)
 
@@ -1774,8 +1774,8 @@ def f_assistant5(request,y):
 					obj4.save()
 
 					return HttpResponseRedirect(reverse('facform1:f_assistant5_final',args=(y,)))
-			return render(request,'assistant_form5.html',{'form6':form6,'form7':form7})
-		return render(request,'assistant_form5.html',{'form6':form6,'form7':form7})
+			return render(request,'assistant_form5.html',{'form6':form6,'form7':form7,'y':y})
+		return render(request,'assistant_form5.html',{'form6':form6,'form7':form7,'y':y})
 	else:
 		return HttpResponseRedirect('/invalid')
 
@@ -1807,7 +1807,7 @@ def f_assistant_edit5(request,y):
 			# sendme.save()
 
 			return HttpResponseRedirect(reverse('facform1:f_assistant5_final',args=(y,)))
-	return render(request,'assistant_form5.html',{'form6':form2,'form7':form3})
+	return render(request,'assistant_form5.html',{'form6':form2,'form7':form3,'y':y})
 
 @login_required
 def status(request,y):
@@ -1826,7 +1826,7 @@ def f_assistant5_final(request,y):
 
 	key6=conference.objects.filter(info=user).get(year=y)
 	key7=journal.objects.filter(info=user).get(year=y)
-	return render(request,'f_assistant5_final.html',{'key6':key6,'key7':key7})
+	return render(request,'f_assistant5_final.html',{'key6':key6,'key7':key7,'y':y})
 
 
 @login_required
@@ -1847,8 +1847,8 @@ def f_assistant4(request,y):
 					obj3.year=y
 					obj3.save()
 					return HttpResponseRedirect(reverse('facform1:f_assistant4_final',args=(y,)))
-			return render(request,'assistant_form4.html',{'form5':form5})
-		return render(request,'assistant_form4.html',{'form5':form5})
+			return render(request,'assistant_form4.html',{'form5':form5,'y':y})
+		return render(request,'assistant_form4.html',{'form5':form5,'y':y})
 	else:
 		return HttpResponseRedirect('/invalid')
 @login_required
@@ -1872,7 +1872,7 @@ def f_assistant_edit4(request,y):
 			# sendme.save()
 
 			return HttpResponseRedirect(reverse('facform1:f_assistant4_final',args=(y,)))
-	return render(request,'assistant_form4.html',{'form5':form2})
+	return render(request,'assistant_form4.html',{'form5':form2,'y':y})
 
 @login_required
 def f_assistant4_final(request,y):
@@ -1897,8 +1897,8 @@ def f_assistant3(request,y):
 					obj2.year=y
 					obj2.save()
 					return HttpResponseRedirect(reverse('facform1:f_assistant3_final',args=(y,)))
-			return render(request,'assistant_form3.html',{'form4':form4})
-		return render(request,'assistant_form3.html',{'form4':form4})
+			return render(request,'assistant_form3.html',{'form4':form4,'y':y})
+		return render(request,'assistant_form3.html',{'form4':form4,'y':y})
 	else:
 		return HttpResponseRedirect('/invalid')
 
@@ -1923,13 +1923,13 @@ def f_assistant_edit3(request,y):
 			# sendme.save()
 
 			return HttpResponseRedirect(reverse('facform1:f_assistant3_final',args=(y,)))
-	return render(request,'assistant_form3.html',{'form4':form2})
+	return render(request,'assistant_form3.html',{'form4':form2,'y':y})
 
 @login_required
 def f_assistant3_final(request,y):
 	user=request.user
 	key2=rd.objects.filter(info=user).get(year=y)
-	return render(request,'f_assistant3_final.html',{'key4':key2})
+	return render(request,'f_assistant3_final.html',{'key4':key2,'y':y})
 
 @login_required
 def f_assistant2(request,y):
@@ -1956,8 +1956,8 @@ def f_assistant2(request,y):
 					obj1.year=y
 					obj1.save()
 					return HttpResponseRedirect(reverse('facform1:f_assistant2_final',args=(y,)))
-			return render(request,'assistant_form2.html',{'form3':form3})
-		return render(request,'assistant_form2.html',{'form3':form3})
+			return render(request,'assistant_form2.html',{'form3':form3,'y':y})
+		return render(request,'assistant_form2.html',{'form3':form3,'y':y})
 	else:
 		return HttpResponseRedirect('/invalid')
 
@@ -1983,13 +1983,13 @@ def f_assistant_edit2(request,y):
 			# sendme.save()
 
 			return HttpResponseRedirect(reverse('facform1:f_assistant2_final',args=(y,)))
-	return render(request,'assistant_form2.html',{'form3':form2})
+	return render(request,'assistant_form2.html',{'form3':form2,'y':y})
 
 @login_required
 def f_assistant2_final(request,y):
 	user=request.user
 	key2=feedbackTab.objects.filter(info=user).get(year=y)
-	return render(request,'f_assistant2_final.html',{'key3':key2})
+	return render(request,'f_assistant2_final.html',{'key3':key2,'y':y})
 
 
 @login_required
@@ -2025,8 +2025,8 @@ def f_assistant1(request,y):
 					# sendme.save()
 					return HttpResponseRedirect(reverse('facform1:f_assistant1_final',args=(y,)))
 					#return HttpResponseRedirect("/assistant_form2/")
-			return render(request,'assistant_form1.html',{'form2':form2,'info':data_final})
-		return render(request,'assistant_form1.html',{'form2':form2,'info':data_final})#,'f':f})
+			return render(request,'assistant_form1.html',{'form2':form2,'info':data_fina,'y':y})
+		return render(request,'assistant_form1.html',{'form2':form2,'info':data_final,'y':y})#,'f':f})
 	else:
 		return HttpResponseRedirect('/invalid')
 
@@ -2051,7 +2051,7 @@ def f_assistant_edit1(request,y):
 			# sendme.save()
 
 			return HttpResponseRedirect(reverse('facform1:f_assistant1_final',args=(y,)))
-	return render(request,'assistant_form1.html',{'form2':form2,'info':data_final})
+	return render(request,'assistant_form1.html',{'form2':form2,'info':data_final,'y':y})
 
 @login_required
 def f_assistant1_final(request,y):
@@ -2063,7 +2063,7 @@ def f_assistant1_final(request,y):
 	key2=empDetailForm.objects.filter(info=user)
 	print(key2)
 	key2=key2.	get(year=str(y))
-	return render(request,'f_assistant1_final.html',{'key1':data,'key2':key2})
+	return render(request,'f_assistant1_final.html',{'key1':data,'key2':key2,'y':y})
 
 
 
@@ -2099,8 +2099,8 @@ def f_associate5(request,y):
 			else:
 				print(form6.errors)
 				print(form7.errors)
-			return render(request,'associate_form5.html',{'form6':form6,'form7':form7})
-		return render(request,'associate_form5.html',{'form6':form6,'form7':form7})
+			return render(request,'associate_form5.html',{'form6':form6,'form7':form7,'y':y})
+		return render(request,'associate_form5.html',{'form6':form6,'form7':form7,'y':y})
 	else:
 		return HttpResponseRedirect('/invalid')
 
@@ -2130,9 +2130,8 @@ def f_associate_edit5(request,y):
 			obj2.save()
 			# sendme.doc_link  = 	form1.cleaned_data['doc_link']
 			# sendme.save()
-
 			return HttpResponseRedirect(reverse('facform1:f_associate5_final',args=(y,)))
-	return render(request,'associate_form5.html',{'form6':form2,'form7':form3})
+	return render(request,'associate_form5.html',{'form6':form2,'form7':form3,'y':y})
 
 
 	return HttpResponseRedirect(reverse('facform1:logout'))
@@ -2142,7 +2141,7 @@ def f_associate5_final(request,y):
 
 	key6=conference.objects.filter(info=user).get(year=y)
 	key7=journal.objects.filter(info=user).get(year=y)
-	return render(request,'f_associate5_final.html',{'key6':key6,'key7':key7})
+	return render(request,'f_associate5_final.html',{'key6':key6,'key7':key7,'y':y})
 
 
 @login_required
@@ -2162,8 +2161,8 @@ def f_associate4(request,y):
 					obj3.year=y
 					obj3.save()
 					return HttpResponseRedirect(reverse('facform1:f_associate4_final',args=(y,)))
-			return render(request,'associate_form4.html',{'form5':form5})
-		return render(request,'associate_form4.html',{'form5':form5})
+			return render(request,'associate_form4.html',{'form5':form5,'y':y})
+		return render(request,'associate_form4.html',{'form5':form5,'y':y})
 	else:
 		return HttpResponseRedirect('/invalid')
 
@@ -2188,13 +2187,13 @@ def f_associate_edit4(request,y):
 			# sendme.save()
 
 			return HttpResponseRedirect(reverse('facform1:f_associate4_final',args=(y,)))
-	return render(request,'associate_form4.html',{'form5':form2})
+	return render(request,'associate_form4.html',{'form5':form2,'y':y})
 
 @login_required
 def f_associate4_final(request,y):
 	user=request.user
 	key2=remarks.objects.filter(info=user).get(year=y)
-	return render(request,'f_associate4_final.html',{'key5':key2})
+	return render(request,'f_associate4_final.html',{'key5':key2,'y':y})
 
 
 @login_required
@@ -2213,8 +2212,8 @@ def f_associate3(request,y):
 					obj2.year=y
 					obj2.save()
 					return HttpResponseRedirect(reverse('facform1:f_associate3_final',args=(y,)))
-			return render(request,'associate_form3.html',{'form4':form4})
-		return render(request,'associate_form3.html',{'form4':form4})
+			return render(request,'associate_form3.html',{'form4':form4,'y':y})
+		return render(request,'associate_form3.html',{'form4':form4,'y':y})
 	else:
 		return HttpResponseRedirect('/invalid')
 @login_required
@@ -2238,13 +2237,13 @@ def f_associate_edit3(request,y):
 			# sendme.save()
 
 			return HttpResponseRedirect(reverse('facform1:f_associate3_final',args=(y,)))
-	return render(request,'associate_form3.html',{'form4':form2})
+	return render(request,'associate_form3.html',{'form4':form2,'y':y})
 
 @login_required
 def f_associate3_final(request,y):
 	user=request.user
 	key2=rd.objects.filter(info=user).get(year=y)
-	return render(request,'f_associate3_final.html',{'key4':key2})
+	return render(request,'f_associate3_final.html',{'key4':key2,'y':y})
 
 
 @login_required
@@ -2264,9 +2263,9 @@ def f_associate2(request,y):
 					obj1.year=y
 					obj1.save()
 					return HttpResponseRedirect(reverse('facform1:f_associate2_final',args=(y,)))
-			return render(request,'associate_form2.html',{'form3':form3})
+			return render(request,'associate_form2.html',{'form3':form3,'y':y})
 
-		return render(request,'associate_form2.html',{'form3':form3})
+		return render(request,'associate_form2.html',{'form3':form3,'y':y})
 	else:
 		return HttpResponseRedirect('/invalid')
 
@@ -2292,13 +2291,13 @@ def f_associate_edit2(request,y):
 			# sendme.save()
 			print("INSIDE f_assistant2  EDIT")
 			return HttpResponseRedirect(reverse('facform1:f_associate2_final',args=(y,)))
-	return render(request,'associate_form2.html',{'form3':form2})
+	return render(request,'associate_form2.html',{'form3':form2,'y':y})
 
 @login_required
 def f_associate2_final(request,y):
 	user=request.user
 	key2=feedbackTab.objects.filter(info=user).get(year=y)
-	return render(request,'f_associate2_final.html',{'key3':key2})
+	return render(request,'f_associate2_final.html',{'key3':key2,'y':y})
 
 @login_required
 def f_associate1(request,y):
@@ -2329,8 +2328,8 @@ def f_associate1(request,y):
 					# sendme.save()
 
 					return HttpResponseRedirect(reverse('facform1:f_associate1_final',args=(y,)))
-			return render(request,'associate_form1.html',{'form2':form2,'info':data_final})
-		return render(request,'associate_form1.html',{'form2':form2,'info':data_final})
+			return render(request,'associate_form1.html',{'form2':form2,'info':data_final,'y':y})
+		return render(request,'associate_form1.html',{'form2':form2,'info':data_final,'y':y})
 	else:
 		return HttpResponseRedirect('/invalid')
 
@@ -2356,7 +2355,7 @@ def f_associate_edit1(request,y):
 			# sendme.save()
 
 			return HttpResponseRedirect(reverse('facform1:f_associate1_final',args=(y,)))
-	return render(request,'associate_form1.html',{'form2':form2,'info':data_final})
+	return render(request,'associate_form1.html',{'form2':form2,'info':data_final,'y':y})
 
 @login_required
 def f_associate1_final(request,y):
@@ -2368,7 +2367,7 @@ def f_associate1_final(request,y):
 	key2=empDetailForm.objects.filter(info=user)
 	print(key2)
 	key2=key2.get(year=str(y))
-	return render(request,'f_associate1_final.html',{'key1':data,'key2':key2})
+	return render(request,'f_associate1_final.html',{'key1':data,'key2':key2,'y':y})
 
 
 
@@ -2400,8 +2399,8 @@ def hod_form5(request,y):
 					obj4.save()
 
 					return HttpResponseRedirect(reverse('facform1:hod_form5_final',args=(y,)))
-			return render(request,'hod_form5.html',{'form6':form6,'form7':form7})
-		return render(request,'hod_form5.html',{'form6':form6,'form7':form7})
+			return render(request,'hod_form5.html',{'form6':form6,'form7':form7,'y':y})
+		return render(request,'hod_form5.html',{'form6':form6,'form7':form7,'y':y})
 	else:
 		return HttpResponseRedirect('/invalid')
 
@@ -2434,7 +2433,7 @@ def hod_form5_edit(request,y):
 			# sendme.save()
 
 			return HttpResponseRedirect(reverse('facform1:hod_form5_final',args=(y,)))
-	return render(request,'hod_form5.html',{'form6':form2,'form7':form3})
+	return render(request,'hod_form5.html',{'form6':form2,'form7':form3,'y':y})
 
 	return HttpResponseRedirect(reverse('facform1:logout'))
 @login_required
@@ -2443,7 +2442,7 @@ def hod_form5_final(request,y):
 
 	key6=conference.objects.filter(info=user).get(year=y)
 	key7=journal.objects.filter(info=user).get(year=y)
-	return render(request,'hod_form5_final.html',{'key6':key6,'key7':key7})
+	return render(request,'hod_form5_final.html',{'key6':key6,'key7':key7,'y':y})
 
 
 
@@ -2464,8 +2463,8 @@ def hod_form4(request,y):
 					obj3.year=y
 					obj3.save()
 					return HttpResponseRedirect(reverse('facform1:hod_form4_final',args=(y,)))
-			return render(request,'hod_form4.html',{'form5':form5})
-		return render(request,'hod_form4.html',{'form5':form5})
+			return render(request,'hod_form4.html',{'form5':form5,'y':y})
+		return render(request,'hod_form4.html',{'form5':form5,'y':y})
 	else:
 		return HttpResponseRedirect('/invalid')
 
@@ -2492,13 +2491,13 @@ def hod_form4_edit(request,y):
 			# sendme.save()
 
 			return HttpResponseRedirect(reverse('facform1:hod_form4_final',args=(y,)))
-	return render(request,'hod_form4.html',{'form5':form2})
+	return render(request,'hod_form4.html',{'form5':form2,'y':y})
 
 @login_required
 def hod_form4_final(request,y):
 	user=request.user
 	key2=remarks.objects.filter(info=user).get(year=y)
-	return render(request,'hod_form4_final.html',{'key5':key2})
+	return render(request,'hod_form4_final.html',{'key5':key2,'y':y})
 
 
 
@@ -2520,8 +2519,8 @@ def hod_form3(request,y):
 					obj2.year=y
 					obj2.save()
 					return HttpResponseRedirect(reverse('facform1:hod_form3_final',args=(y,)))
-			return render(request,'hod_form3.html',{'form4':form4})
-		return render(request,'hod_form3.html',{'form4':form4})
+			return render(request,'hod_form3.html',{'form4':form4,'y':y})
+		return render(request,'hod_form3.html',{'form4':form4,'y':y})
 	else:
 		return HttpResponseRedirect('/invalid')
 
@@ -2546,13 +2545,13 @@ def hod_form3_edit(request,y):
 			# sendme.save()
 
 			return HttpResponseRedirect(reverse('facform1:hod_form3_final',args=(y,)))
-	return render(request,'hod_form3.html',{'form4':form2})
+	return render(request,'hod_form3.html',{'form4':form2,'y':y})
 
 @login_required
 def hod_form3_final(request,y):
 	user=request.user
 	key2=rd.objects.filter(info=user).get(year=y)
-	return render(request,'hod_form3_final.html',{'key4':key2})
+	return render(request,'hod_form3_final.html',{'key4':key2,'y':y})
 
 
 @login_required
@@ -2572,9 +2571,9 @@ def hod_form2(request,y):
 					obj1.year=y
 					obj1.save()
 					return HttpResponseRedirect(reverse('facform1:hod_form2_final',args=(y,)))
-			return render(request,'hod_form2.html',{'form3':form3})
+			return render(request,'hod_form2.html',{'form3':form3,'y':y})
 
-		return render(request,'hod_form2.html',{'form3':form3})
+		return render(request,'hod_form2.html',{'form3':form3,'y':y})
 	else:
 		return HttpResponseRedirect('/invalid')
 
@@ -2601,13 +2600,13 @@ def hod_form2_edit(request,y):
 			# sendme.save()
 
 			return HttpResponseRedirect(reverse('facform1:hod_form2_final',args=(y,)))
-	return render(request,'hod_form2.html',{'form3':form2})
+	return render(request,'hod_form2.html',{'form3':form2,'y':y})
 
 @login_required
 def hod_form2_final(request,y):
 	user=request.user
 	key2=feedbackTab.objects.filter(info=user).get(year=y)
-	return render(request,'hod_form2_final.html',{'key3':key2})
+	return render(request,'hod_form2_final.html',{'key3':key2,'y':y})
 
 
 
@@ -2643,8 +2642,8 @@ def hod_form1(request,y):
 
 					print("Redirecting to form 1 review page")
 					return HttpResponseRedirect(reverse('facform1:hod_form1_final',args=(y,)))
-			return render(request,'hod_form1.html',{'form2':form2,'info':data_final})
-		return render(request,'hod_form1.html',{'form2':form2,'info':data_final})
+			return render(request,'hod_form1.html',{'form2':form2,'info':data_final,'y':y})
+		return render(request,'hod_form1.html',{'form2':form2,'info':data_final,'y':y})
 
 	else:
 		return HttpResponseRedirect('/invalid')
@@ -2672,7 +2671,7 @@ def hod_form1_edit(request,y):
 			# sendme.save()
 
 			return HttpResponseRedirect(reverse('facform1:hod_form1_final',args=(y,)))
-	return render(request,'hod_form1.html',{'form2':form2,'info':data_final})
+	return render(request,'hod_form1.html',{'form2':form2,'info':data_final,'y':y})
 
 
 @login_required
@@ -2684,7 +2683,7 @@ def hod_form1_final(request,y):
 	key2=empDetailForm.objects.filter(info=user)
 	print(key2)
 	key2=key2.get(year=str(y))
-	return render(request,'hod_form1_final.html',{'key1':data,'key2':key2})
+	return render(request,'hod_form1_final.html',{'key1':data,'key2':key2,'y':y})
 
 
 

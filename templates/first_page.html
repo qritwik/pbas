@@ -71,6 +71,7 @@
 			<center>	<h6> <img src="{{user.profile_pic.url}}" alt="No pic" class="img-responsive " style="width: 25% " align="middle" ></h6></center>
 			{% else %}
 			<center><span style="color:#ffffff;">Cumulative file size shouldn't exceeds <strong>1MB</strong></span></center>
+			<center><span style="color:#ffffff;">IT IS COMPULSORY TO UPLOAD OFFICIAL PROFILE PICTURE <strong>1MB</strong></span></center>
 			<form method="post"  enctype="multipart/form-data">
 				{% csrf_token %}
 				<div class="form-group col-md-6">
