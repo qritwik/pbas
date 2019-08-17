@@ -773,7 +773,7 @@ def login(request):
 			phone_otp(random_otp,phone)
 
 			email_otp(random_otp,user.email,user.first_name)
-			# random_otp="1234"
+			#random_otp="1234"
 			hashed_pwd = make_password(random_otp)
 			User.objects.filter(username=username).update(password=hashed_pwd)
 
@@ -1748,17 +1748,19 @@ def logout(request):
 
 @login_required
 def f_assistant5(request,y):
-	if request.user.is_assistant_professor():
+	user=User.objects.get(username=request.user)
+	print(user.designation)
+	if user.is_assistant_professor():
 
 		form6 = forms.form_conference()
 		form7 = forms.form_journal()
 
-		try :
-			if conference.objects.filter(info=request.user).get(year=y).exists():
-				return HttpResponseRedirect("/logout/")
-		except:
-			if request.method == 'POST':
+		if conference.objects.filter(info=request.user).filter(year=y).exists():
 
+			return HttpResponseRedirect("/logout/")
+		else:
+			if request.method == 'POST':
+				sendme = User.objects.get(username=request.user)
 				form6 = forms.form_conference(request.POST,request.FILES)
 				form7 = forms.form_journal(request.POST,request.FILES)
 				if form6.is_valid() and form7.is_valid():
@@ -1772,8 +1774,10 @@ def f_assistant5(request,y):
 
 					obj3.save()
 					obj4.save()
-
 					return HttpResponseRedirect(reverse('facform1:f_assistant5_final',args=(y,)))
+			else:
+				print(form6.errors)
+				print(form7.errors)
 			return render(request,'assistant_form5.html',{'form6':form6,'form7':form7,'y':y})
 		return render(request,'assistant_form5.html',{'form6':form6,'form7':form7,'y':y})
 	else:
@@ -1834,7 +1838,7 @@ def f_assistant4(request,y):
 	if request.user.is_assistant_professor():
 		form5 = forms.form_remarks()
 		try:
-			if remarks.objects.filter(info=request.user).get(year=y).exists():
+			if remarks.objects.filter(info=request.user).filter(year=y).exists():
 
 				return HttpResponseRedirect(reverse('facform1:assistant_form5',args=(y,)))
 		except:
@@ -1885,8 +1889,8 @@ def f_assistant3(request,y):
 	if request.user.is_assistant_professor():
 		form4 = forms.form_rd()
 		try:
-			if rd.objects.filter(info=request.user).get(year=y).exists():
-
+			if rd.objects.filter(info=request.user).filter(year=y).exists():
+				print("FORM ALREADY EXISTS")
 				return HttpResponseRedirect(reverse('facform1:assistant_form4',args=(y,)))
 		except:
 			if request.method == 'POST':
@@ -2044,9 +2048,9 @@ def f_assistant_edit1(request,y):
 		if form2.is_valid():
 
 			# sendme = User.objects.get(username=request.user)
-			obj = form2.save(commit=False)
-			obj.info = request.user
-			obj.save()
+			obj1 = form2.save(commit=False)
+			obj1.info = request.user
+			obj1.save()
 			# sendme.doc_link  = 	form1.cleaned_data['doc_link']
 			# sendme.save()
 
