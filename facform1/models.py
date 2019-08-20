@@ -157,9 +157,9 @@ class empDetailForm(models.Model):
 	month_of_increment = models.CharField(max_length=50,null=True, blank=True)
 	# Present_pos = models.CharField(max_length=50,null=True,blank=True)
 	Held_from = models.DateField(null=True)
-	exp_teach = models.CharField(max_length=50,blank=True, null=True) #teaching experience
-	exp_res = models.CharField(max_length=50, blank=True, null=True) #research experience
-	exp_indus = models.CharField(max_length=50,blank=True, null=True) #industry experience
+	exp_teach = models.CharField(blank=True, null=True,max_length=50) #teaching experience
+	exp_res = models.CharField( blank=True, null=True,max_length=50) #research experience
+	exp_indus = models.CharField(blank=True, null=True,max_length=50) #industry experience
 	info = models.ForeignKey('User', on_delete=models.CASCADE,null=True)
 	internship_report_file = models.FileField(validators=[validate_file_size],blank=True, null=True)
 	internship_report_file2 = models.FileField(validators=[validate_file_size],blank=True, null=True)

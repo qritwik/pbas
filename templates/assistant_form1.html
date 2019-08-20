@@ -256,7 +256,7 @@
 
             <label for="inputteaching" style="color:white">Teaching</label>
 
-						<input type="text" class="form-control"  value="{{form2.exp_teach}}">
+					  {% render_field form2.exp_teach class="form-control" %}
 
 
            </div>
@@ -265,7 +265,7 @@
 
               <label for="inputResearch" style="color:white">Research</label>
 
-              <input type="text" class="form-control"  value="{{form2.exp_res}}">
+              {% render_field form2.exp_res class="form-control" %}
 
             </div>
 
@@ -273,7 +273,7 @@
 
               <label for="inputIndustry" style="color:white">Industry</label>
 
-              <input type="text" class="form-control"  value="{{form2.exp_indus}}">
+            {% render_field form2.exp_indus class="form-control" %}
 
             </div>
 

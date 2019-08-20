@@ -773,7 +773,7 @@ def login(request):
 			phone_otp(random_otp,phone)
 
 			email_otp(random_otp,user.email,user.first_name)
-			#random_otp="1234"
+			# random_otp="1234"
 			hashed_pwd = make_password(random_otp)
 			User.objects.filter(username=username).update(password=hashed_pwd)
 
