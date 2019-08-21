@@ -24,6 +24,8 @@
     <th>Month of Increment</th>
     <th>Self Marks</th>
     <th>HOD Marks</th>
+    <th>Add/Reduce Marks</th>
+    <th>Reason</th>
     <th>Principal Marks</th>
     <th>Add/Reduce Marks</th>
     <th>Reason</th>
@@ -55,6 +57,17 @@
       {%else%}
       <td data-label="hodmarks"></td>
       {%endif%}
+      {%if value.2%}
+      <td data-label="deduce">{{value.2.marks_deduce}}</td>
+      {%else%}
+      <td data-label="deduce"></td>
+      {%endif%}
+      {%if value.2%}
+      <td data-label="raeson">{{value.2.reason}}</td>
+      {%else%}
+      <td data-label="reason"></td>
+      {%endif%}
+
       {%if value.3%}
       <td
       {% if key.designation.name == "HOD" %}

@@ -60,6 +60,9 @@
 
 						<div class="row header">
 							<div class="cell">
+								Profile picture
+							</div>
+							<div class="cell">
 								Faculty Name
 							</div>
 
@@ -74,7 +77,13 @@
             {% for x in name %}
 
 						<div class="row">
+							<div class="cell">
+								<div class="col-sm-2">
+									<img src="{{x.info.profile_pic.url}}" alt="No pic" class="img-responsive " style="width:300%" align="middle" >
+								</div>
+							</div>
 							<div class="cell" data-title="Faculty Name">
+
 								{% if x.teach_status and x.hod_status %}
 								<a href="/hod_teacher_display_edit/{{x.info.pk}}/{{y}}" class="h2p">{{x.info.first_name}}</a>
 								{% elif x.teach_status %}

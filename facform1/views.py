@@ -142,6 +142,15 @@ def first_page(request):
 		print(f)
 		user.profile_pic = f
 		user.save()
+		"""
+		f=forms.profileform(request.POST,request.FILES)
+		if f.is_valid():
+			user.profile_pic=f.save(commit=False)
+			print(f)
+			user.save()
+			return HttpResponseRedirect(reverse('facform1:first_page'))
+		else:
+			HttpResponse("INVALID FILES UPLOADED")"""
 		return HttpResponseRedirect(reverse('facform1:first_page'))
 	elif not user.profile_pic:
 		return render(request,'first_page.html',{'user':user})
@@ -773,7 +782,7 @@ def login(request):
 			phone_otp(random_otp,phone)
 
 			email_otp(random_otp,user.email,user.first_name)
-			# random_otp="1234"
+			#random_otp="1234"
 			hashed_pwd = make_password(random_otp)
 			User.objects.filter(username=username).update(password=hashed_pwd)
 
@@ -822,7 +831,6 @@ def decide_view(request):
 
 @login_required
 def hod_display(request,y):
-
 	user = request.user
 	hod_dept = user.department
 	if request.user.is_hod() and request.user.department == hod_dept:
@@ -1837,11 +1845,11 @@ def f_assistant5_final(request,y):
 def f_assistant4(request,y):
 	if request.user.is_assistant_professor():
 		form5 = forms.form_remarks()
-		try:
-			if remarks.objects.filter(info=request.user).filter(year=y).exists():
 
-				return HttpResponseRedirect(reverse('facform1:assistant_form5',args=(y,)))
-		except:
+		if remarks.objects.filter(info=request.user).filter(year=y).exists():
+
+			return HttpResponseRedirect(reverse('facform1:assistant_form5',args=(y,)))
+		else:
 			if request.method == 'POST':
 
 				form5 = forms.form_remarks(request.POST)
@@ -1888,11 +1896,9 @@ def f_assistant4_final(request,y):
 def f_assistant3(request,y):
 	if request.user.is_assistant_professor():
 		form4 = forms.form_rd()
-		try:
-			if rd.objects.filter(info=request.user).filter(year=y).exists():
-				print("FORM ALREADY EXISTS")
-				return HttpResponseRedirect(reverse('facform1:assistant_form4',args=(y,)))
-		except:
+		if rd.objects.filter(info=request.user).filter(year=y).exists():
+			return HttpResponseRedirect(reverse('facform1:assistant_form4',args=(y,)))
+		else:
 			if request.method == 'POST':
 				form4 = forms.form_rd(request.POST,request.FILES)
 				if form4.is_valid():

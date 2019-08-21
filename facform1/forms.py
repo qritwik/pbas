@@ -34,7 +34,7 @@ class form_journal(forms.ModelForm):
 		fields = '__all__'
 		exclude = ['info','year']
 
-class profile(forms.ModelForm):
+class profileform(forms.ModelForm):
 	class Meta:
 		model =User
 		fields=('profile_pic',)

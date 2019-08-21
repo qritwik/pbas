@@ -11,6 +11,7 @@ from django.contrib.auth.admin import UserAdmin as DjangoUserAdmin
 admin.site.site_header = "PBAS System";
 
 # Register your models here.
+admin.site.register(new)
 class UserResource(resources.ModelResource):
 	class Meta:
 		model = User
@@ -53,7 +54,18 @@ class UserempDetailForm(ImportExportModelAdmin):
 
 	def name(self, instance):
 		return instance.info.first_name
+"""
+class new_resource(resources.ModelResource):
+	class Meta:
+		model = new
 
+@admin.register(new)
+class user_new(ImportExportModelAdmin):
+	list_display=('name',)
+	search_fields = ('info__first_name',)
+	ordering=('id',)
+	resource_class = new_resource
+"""
 
 
 
@@ -200,5 +212,5 @@ class Userjournal(ImportExportModelAdmin):
 
 	def name(self, instance):
 		return instance.info.first_name
-admin.site.register(new)
+
 admin.site.register(years)
