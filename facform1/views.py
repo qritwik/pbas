@@ -1135,7 +1135,7 @@ def hod_teacher1_display_edit(request,pk):
 
 
 @login_required
-def principal_first(request):
+def principal_first(request,y):
 	if request.user.is_principal():
 		dept = Department.objects.all()
 
@@ -1144,7 +1144,7 @@ def principal_first(request):
 
 
 
-		context = {'dept':dept}
+		context = {'dept':dept,'y':y}
 
 
 		return render(request,'principal_first.html',context=context)

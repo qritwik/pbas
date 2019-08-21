@@ -82,7 +82,6 @@ WSGI_APPLICATION = 'facform.wsgi.application'
 
 #Database
 #https://docs.djangoproject.com/en/1.11/ref/settings/
-
 DATABASES = {
 	'default': {
          'ENGINE': 'django.db.backends.postgresql',
@@ -102,8 +101,8 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-"""
 
+"""
 
 
 # Password validation

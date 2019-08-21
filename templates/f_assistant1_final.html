@@ -52,7 +52,7 @@
 
 
         <div class=" poi form-row">
-          <div class="form-group col-md-6">
+          <div class="form-group col-md-4">
             <label for="" style="color:white">Internship Company Name 1</label>
             <input type="text" class="form-control" id="inputEmpName" disabled value="{{ key2.it1_name }}">
 
@@ -67,8 +67,18 @@
             <input type="text" class="form-control" id="inputEmpName" disabled value="{{ key2.it1_t }}">
 
           </div>
+					<div class="form-group col-md-2">
 
-					<div class="form-group col-md-6">
+						<label for="" style="color:white">Internship report file</label>
+						{% if key2.internship_report_file1 %}
+						<a href="/media/{{ key2.internship_report_file1}}" style="color:white">Click to view</a>
+						{% else %}
+						<a href="#"></a>
+						{% endif %}
+
+					</div>
+
+					<div class="form-group col-md-4">
 						<label for="" style="color:white">Internship Company Name 2</label>
 						<input type="text" class="form-control" id="inputEmpName" disabled value="{{ key2.it2_name }}">
 
@@ -83,8 +93,18 @@
 						<input type="text" class="form-control" id="inputEmpName" disabled value="{{ key2.it2_t }}">
 
 					</div>
+					<div class="form-group col-md-2">
 
-					<div class="form-group col-md-6">
+						<label for="" style="color:white">Internship report file</label>
+						{% if key2.internship_report_file2 %}
+						<a href="/media/{{ key2.internship_report_file2}}" style="color:white">Click to view</a>
+						{% else %}
+						<a href="#"></a>
+						{% endif %}
+
+					</div>
+
+					<div class="form-group col-md-4">
 						<label for="" style="color:white">Internship Company Name 3</label>
 						<input type="text" class="form-control" id="inputEmpName" disabled value="{{ key2.it3_name }}">
 
@@ -97,6 +117,16 @@
 					<div class="form-group col-md-3">
 						<label for="" style="color:white">To</label>
 						<input type="text" class="form-control" id="inputEmpName" disabled value="{{ key2.it3_t }}">
+
+					</div>
+					<div class="form-group col-md-2">
+
+						<label for="" style="color:white">Internship report file</label>
+						{% if key2.internship_report_file3 %}
+						<a href="/media/{{ key2.internship_report_file3}}" style="color:white">Click to view</a>
+						{% else %}
+						<a href="#"></a>
+						{% endif %}
 
 					</div>
 

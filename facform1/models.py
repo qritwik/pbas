@@ -161,8 +161,9 @@ class empDetailForm(models.Model):
 	exp_res = models.CharField( blank=True, null=True,max_length=50) #research experience
 	exp_indus = models.CharField(blank=True, null=True,max_length=50) #industry experience
 	info = models.ForeignKey('User', on_delete=models.CASCADE,null=True)
-	internship_report_file = models.FileField(validators=[validate_file_size],blank=True, null=True)
+	internship_report_file1 = models.FileField(validators=[validate_file_size],blank=True, null=True)
 	internship_report_file2 = models.FileField(validators=[validate_file_size],blank=True, null=True)
+	internship_report_file3 = models.FileField(validators=[validate_file_size],blank=True, null=True)
 	year=models.CharField(max_length=50,null=True)
 	# def get_absolute_url(self):
  #    	return reverse('assistant_form1', kwargs={'pk': self.pk})
