@@ -114,15 +114,15 @@ class User(AbstractUser):
 		if faculty1 == faculty2:
 			return True
 		return False
-"""
+
 	def is_principal(self):
-		faculty = Designation.objects.get(pk=7)
+		faculty = Designation.objects.get(pk=6)
 		faculty1 = str(faculty)
 		faculty2 = str(self.designation)
 		if faculty1 == faculty2:
 			return True
 		return False
-		"""
+
 
 
 

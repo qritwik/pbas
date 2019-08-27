@@ -50,6 +50,20 @@ from django.core.mail import send_mail, EmailMessage
 # 	email.attach_file(screenshot)
 # 	email.send()
 
+def ao_principal(request):
+	if request.method == 'POST':
+		y=forms.yearform(request.POST)
+		year=y.save(commit=False)
+		print(year.year)
+		if request.user.is_ao():
+			return HttpResponseRedirect(reverse('facform1:ao_first',args=(year.year,)))
+		if request.user.is_principal():
+			return HttpResponseRedirect(reverse('facform1:principal_first',args=(year.year,)))
+	y=forms.yearform()
+	return render(request,'ao_principal.html',{'y':y})
+
+
+
 def first_page(request):
 	user=User.objects.get(username=request.user)
 	print("                                                             Entered first_page  try section")
@@ -64,43 +78,26 @@ def first_page(request):
 				print("USER IS AO")
 				return HttpResponseRedirect(reverse('facform1:ao_first',args=(f.year,)))
 			if new.objects.filter(info=request.user).filter(year=f.year).exists():
-				print("                                             Existing Forms ")
-				if journal.objects.filter(info=user).filter(year=f.year).exists():
-					print("It exists directing to final preview")
-					if user.is_assistant_professor():
-						print("User is assistant professor")
-						return HttpResponseRedirect(reverse('facform1:assistant_preview',args=(f.year,)))
+				if user.is_assistant_professor():
+					print("User is assistant professor")
+					return HttpResponseRedirect(reverse('facform1:assistant_form1',args=(f.year,)))
 
-					elif user.is_associate_professor():
-						print("user is associate professor")
-						return HttpResponseRedirect(reverse('facform1:associate_preview',args=(f.year,)))
+				elif user.is_associate_professor():
+					print("user is associate professor")
+					return HttpResponseRedirect(reverse('facform1:associate_form1',args=(f.year,)))
 
-					elif user.is_professor():
-						print("user is professor")
-						return HttpResponseRedirect(reverse('facform1:associate_preview',args=(f.year,)))
-					elif user.is_hod():
-						print("User is HOD")
-						return HttpResponseRedirect(reverse('facform1:hod_first',args=(f.year,)))
-
-
-				else:
-					if user.is_assistant_professor():
-						print("User is assistant professor")
-						return HttpResponseRedirect(reverse('facform1:assistant_form1',args=(f.year,)))
-
-					elif user.is_associate_professor():
-						print("user is associate professor")
-						return HttpResponseRedirect(reverse('facform1:associate_form1',args=(f.year,)))
-
-					elif user.is_professor():
-						print("user is professor")
-						return HttpResponseRedirect(reverse('facform1:associate_form1',args=(f.year,)))
-					elif user.is_hod():
-						print("User is HOD")
-						return HttpResponseRedirect(reverse('facform1:hod_first',args=(f.year,)))
-					elif user.is_ao():
-						print("USER IS AO")
-						return HttpResponseRedirect(reverse('facform1:ao_first',args=(f.year,)))
+				elif user.is_professor():
+					print("user is professor")
+					return HttpResponseRedirect(reverse('facform1:associate_form1',args=(f.year,)))
+				elif user.is_hod():
+					print("User is HOD")
+					return HttpResponseRedirect(reverse('facform1:hod_first',args=(f.year,)))
+				elif user.is_ao():
+					print("USER IS AO")
+					return HttpResponseRedirect(reverse('facform1:ao_first',args=(f.year,)))
+				elif user.is_principal():
+					print("User is HOD")
+					return HttpResponseRedirect(reverse('facform1:principal_first',args=(f.year,)))
 
 			else:
 				print("                                                             Entered first_page except section")
@@ -153,7 +150,7 @@ def first_page(request):
 			HttpResponse("INVALID FILES UPLOADED")"""
 		return HttpResponseRedirect(reverse('facform1:first_page'))
 	elif not user.profile_pic:
-		return render(request,'first_page.html',{'user':user})
+		return render(request,'first_page.html',{'user':user })
 	else:
 		form=forms.newform()
 		return render(request,'first_page.html',{'form':form,'user':user})
@@ -791,6 +788,9 @@ def login(request):
 	return render(request,'login.html')
 
 def decide_view(request):
+	user=request.user
+	if user.designation.pk is 5 or  user.designation.pk is 6:
+		return HttpResponseRedirect(reverse('facform1:ao_principal'))
 	return HttpResponseRedirect(reverse('facform1:first_page'))
 	"""
 	if request.user.is_assistant_professor():
@@ -856,7 +856,7 @@ def hod_display(request,y):
 				try:
 					x=new.objects.filter(info__username=i.username).get(year__year=y)
 					print(x.teach_status)
-					c1.add(x)
+					c2.add(x)
 				except:
 					pass
 
@@ -864,7 +864,7 @@ def hod_display(request,y):
 				try:
 					x=new.objects.filter(info__username=i.username).get(year__year=y)
 					print(x.teach_status)
-					c1.add(x)
+					c3.add(x)
 				except:
 					pass
 		print(c1)
@@ -1139,11 +1139,6 @@ def principal_first(request,y):
 	if request.user.is_principal():
 		dept = Department.objects.all()
 
-
-
-
-
-
 		context = {'dept':dept,'y':y}
 
 
@@ -1153,10 +1148,57 @@ def principal_first(request,y):
 
 
 @login_required
-def principal_display(request,dept):
+def principal_display(request,dept,y):
 	if request.user.is_principal():
-
+		user=User.objects.filter(department__name=dept)
+		print(user)
 		print(dept)
+		hod=set()
+		teach3=set()
+		teach2=set()
+		for x in user:
+			print(x)
+			print(x.designation.pk)
+			if x.designation.pk == 1:
+				try:
+					i=new.objects.filter(info__username=x.username).get(year__year=y)
+					print(i.teach_status)
+					teach2.add(i)
+					print(i)
+				except:
+					pass
+			if x.designation.pk is 2:
+				try:
+					i=new.objects.filter(info__username=x.username).get(year__year=y)
+					print(i.teach_status)
+					teach3.add(i)
+					print(i)
+				except:
+					pass
+			if x.designation.pk is 3:
+				try:
+					i=new.objects.filter(info__username=x.username).get(year__year=y)
+					print(i.teach_status)
+					print(i)
+					teach3.add(i)
+				except:
+					pass
+			if x.designation.pk is 4:
+				try:
+					i=new.objects.filter(info__username=x.username).get(year__year=y)
+					print(i.teach_status)
+					print(i)
+					hod.add(i)
+				except:
+					pass
+
+		print(teach2)
+		print(teach3)
+		print(hod)
+		return render(request,'principal_display.html',{'dept':dept,'hod':hod,'teach3':teach3,'teach2':teach2,'y':y})
+	else:
+			return HttpResponseRedirect('/invalid')
+"""
 		hod = User.objects.filter(department__name=dept).filter(designation__pk = 8).filter(teach_status=True)
 
 		teach = User.objects.filter(department__name=dept).filter(designation__pk = 9).filter(hod_status=True)
@@ -1164,32 +1206,25 @@ def principal_display(request,dept):
 
 		teach3 = list(chain(teach,teach1))
 		teach2 = User.objects.filter(department__name=dept).filter(designation__pk = 11).filter(hod_status=True)
+"""
 
-
-		dept = {'dept':dept,'hod':hod,'teach3':teach3,'teach2':teach2}
-
-
-
-		return render(request,'principal_display.html',context=dept)
-	else:
-		return HttpResponseRedirect('/invalid')
 
 
 @login_required
-def principal_teacher_display(request,pk):
+def principal_teacher_display(request,pk,y):
 	if request.user.is_principal():
 		name =  User.objects.get(pk = pk);
 		print(name)
 		data1 = User.objects.get(username=name);
 		print(data1.department)
 
-		data2 = empDetailForm.objects.get(info__username=name);
-		data3 = feedbackTab.objects.get(info__username=name);
-		data4 = rd.objects.get(info__username=name);
-		data5 = remarks.objects.get(info__username=name);
-		data6 = conference.objects.get(info__username=name);
-		data7 = journal.objects.get(info__username=name);
-		data8 = remarks1.objects.get(info__username=name);
+		data2 = empDetailForm.objects.filter(info__username=name).get(year=y);
+		data3 = feedbackTab.objects.filter(info__username=name).get(year=y);
+		data4 = rd.objects.filter(info__username=name).get(year=y);
+		data5 = remarks.objects.filter(info__username=name).get(year=y);
+		data6 = conference.objects.filter(info__username=name).get(year=y);
+		data7 = journal.objects.filter(info__username=name).get(year=y);
+		data8 = remarks1.objects.filter(info__username=name).get(year=y);
 
 
 
@@ -1203,14 +1238,16 @@ def principal_teacher_display(request,pk):
 				obj = form1.save(commit=False)
 
 				obj.info = name
+				obj.year=y
 				obj.department = data1.department
 				obj.save()
 
+				sendme=new.objects.filter(info__username=name).get(year__year=y)
 				if sendme.principal_status == False:
 					sendme.principal_status = True
 					sendme.save()
 
-				return HttpResponseRedirect("/principal_display/"+ data1.department.name)
+				return HttpResponseRedirect(reverse('facform1:principal_display',args=(data1.department.name,y)))
 
 		else:
 			form1 = forms.form_remarks2()
@@ -1225,7 +1262,8 @@ def principal_teacher_display(request,pk):
 		"key6":data6,
 		"key7":data7,
 		"key8":data8,
-		"form1":form1
+		"form1":form1,
+		"y":y
 		}
 
 		return render(request,'principal_teacher_display.html',context=context1)
@@ -1289,21 +1327,21 @@ def principal_teacher_display_edit(request,pk):
 
 
 @login_required
-def principal_teacher1_display(request,pk):
+def principal_teacher1_display(request,pk,y):
 	if request.user.is_principal():
 		name =  User.objects.get(pk = pk);
 		print(name)
 		data1 = User.objects.get(username=name);
 		print(data1.department)
 
-		data2 = empDetailForm.objects.get(info__username=name);
-		data3 = feedbackTab.objects.get(info__username=name);
-		data4 = rd.objects.get(info__username=name);
-		data5 = remarks.objects.get(info__username=name);
-		data6 = conference.objects.get(info__username=name);
-		data7 = journal.objects.get(info__username=name);
-		if User.objects.filter(username=name).filter(hod_status=True):
-			data8 = remarks1.objects.get(info__username=name)
+		data2 = empDetailForm.objects.filter(info__username=name).get(year=y);
+		data3 = feedbackTab.objects.filter(info__username=name).get(year=y);
+		data4 = rd.objects.filter(info__username=name).get(year=y);
+		data5 = remarks.objects.filter(info__username=name).get(year=y);
+		data6 = conference.objects.filter(info__username=name).get(year=y);
+		data7 = journal.objects.filter(info__username=name).get(year=y);
+		if new.objects.filter(info__username=name).filter(hod_status=True):
+			data8 = remarks1.objects.filter(info__username=name).get(year=y)
 		else:
 			data8 = []
 
@@ -1314,18 +1352,19 @@ def principal_teacher1_display(request,pk):
 
 			if form1.is_valid():
 				print("logout")
-				sendme = User.objects.get(username=name)
+				#sendme = User.objects.get(username=name)
 				obj = form1.save(commit=False)
 
 				obj.info = name
+				obj.year=y
 				obj.department = data1.department
 				obj.save()
-
+				sendme=new.objects.filter(info__username=name).get(year__year=y)
 				if sendme.principal_status == False:
 					sendme.principal_status = True
 					sendme.save()
 
-				return HttpResponseRedirect("/principal_display/"+data1.department.name)
+				return HttpResponseRedirect(reverse('facform1:principal_display',args=(data1.department.name,y,)))
 
 		else:
 			form1 = forms.form_remarks2()
@@ -1340,7 +1379,8 @@ def principal_teacher1_display(request,pk):
 		"key6":data6,
 		"key7":data7,
 		"key8":data8,
-		"form1":form1
+		"form1":form1,
+		"y":y
 		}
 
 		return render(request,'principal_teacher1_display.html',context=context1)
@@ -1412,19 +1452,19 @@ def principal_teacher1_display_edit(request,pk):
 
 
 @login_required
-def principal_hod_display(request,pk):
+def principal_hod_display(request,pk,y):
 	if request.user.is_principal():
 		name =  User.objects.get(pk = pk);
 		print(name)
 		data1 = User.objects.get(username=name);
 		print(data1.department)
 
-		data2 = empDetailForm.objects.get(info__username=name);
-		data3 = feedbackTab.objects.get(info__username=name);
-		data4 = rd.objects.get(info__username=name);
-		data5 = remarks.objects.get(info__username=name);
-		data6 = conference.objects.get(info__username=name);
-		data7 = journal.objects.get(info__username=name);
+		data2 = empDetailForm.objects.filter(info__username=name).get(year=y);
+		data3 = feedbackTab.objects.filter(info__username=name).get(year=y);
+		data4 = rd.objects.filter(info__username=name).get(year=y);
+		data5 = remarks.objects.filter(info__username=name).get(year=y);
+		data6 = conference.objects.filter(info__username=name).get(year=y);
+		data7 = journal.objects.filter(info__username=name).get(year=y);
 
 
 
@@ -1438,14 +1478,15 @@ def principal_hod_display(request,pk):
 				obj = form1.save(commit=False)
 
 				obj.info = name
+				obj.year=y
 				obj.department = data1.department
 				obj.save()
-
+				sendme=new.objects.filter(info__username=name).get(year__year=y)
 				if sendme.principal_status == False:
 					sendme.principal_status = True
 					sendme.save()
 
-				return HttpResponseRedirect("/principal_display/"+data1.department.name)
+				return HttpResponseRedirect(reverse('facform1:principal_display',args=(data1.department.name,y,)))
 
 		else:
 			form1 = forms.form_remarks2()
@@ -1459,7 +1500,8 @@ def principal_hod_display(request,pk):
 		"key5":data5,
 		"key6":data6,
 		"key7":data7,
-		"form1":form1
+		"form1":form1,
+		"y":y,
 		}
 
 		return render(request,'principal_hod_display.html',context=context1)
@@ -1765,7 +1807,7 @@ def f_assistant5(request,y):
 
 		if conference.objects.filter(info=request.user).filter(year=y).exists():
 
-			return HttpResponseRedirect("/logout/")
+			return HttpResponseRedirect(reverse('facform1:assistant_preview',args=(y,)))
 		else:
 			if request.method == 'POST':
 				sendme = User.objects.get(username=request.user)

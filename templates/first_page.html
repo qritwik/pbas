@@ -58,7 +58,7 @@
 				 <h3 class="lead" style="color:white" align="center">Department : {{user.department}}</h3>
        <hr class="my-4" style="color:white">
        <h5 style="color:white; margin-left:108px;"></h5>
-     </div> 
+     </div>
      </div>
     </div>
     </div>
@@ -67,6 +67,8 @@
 
 	<div class="container">
 		<div class="container">
+			{% if c %}
+			{% else %}
 			{% if user.profile_pic %}
 			<center>	<h6> <img src="{{user.profile_pic.url}}" alt="No pic" class="img-responsive " style="width: 25% " align="middle" ></h6></center>
 			{% else %}
@@ -87,7 +89,7 @@
 
 
 			{% endif %}
-
+{% endif %}
 		</div>
 
 
@@ -98,7 +100,9 @@
 
          {% csrf_token %}
         <div class="table-bordered poi form-row">
-
+{% if c %}
+<input type="text" name="designation" value="user.designation">
+{% else %}
           <div class="form-group col-md-6">
 
             <label for="">Designation</label>
@@ -106,7 +110,9 @@
             {% render_field form.designation class="form-control" %}
 
           </div>
+
 				</div>
+				{% endif %}
 <div class="table-bordered poi form-row">
           <div class="form-group col-md-6">
 

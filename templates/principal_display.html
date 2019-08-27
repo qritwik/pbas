@@ -62,7 +62,7 @@
 
 							</div>
 							<div class="cell">
-								<a href="/principal_first"  id="t1">
+								<a href="/principal_first/{{y}}"  id="t1">
 								View other Department</a>
 							</div>
 
@@ -79,6 +79,9 @@
 					<div class="table">
 
 						<div class="row header">
+							<div class="cell">
+								Profile pic
+							</div>
 							<div class="cell">
 								Faculty Name
 							</div>
@@ -97,14 +100,19 @@
             {% for hod_name in hod %}
 
 						<div class="row">
+							<div class="cell">
+								<div class="col-sm-2">
+									<img src="{{hod_name.info.profile_pic.url}}" alt="No pic" class="img-responsive " style="width:300%" align="middle" >
+								</div>
+							</div>
 							<div class="cell" data-title="Faculty Name">
 								{% if hod_name.principal_status %}
-								<a href="/principal_hod_display_edit/{{hod_name.pk}}" class="h2p">{{hod_name.first_name}}</a>
+								<a href="" class="h2p">{{hod_name.info.first_name}}</a>
 								{% else %}
 								{% if hod_name.username == "HOD_CIVIL" %}
-								<a href="/principal_teacher1_display/{{hod_name.pk}}" class="">{{hod_name.first_name}}</a>
+								<a href="/principal_teacher1_display/{{hod_name.info.pk}}/{{y}}" class="">{{hod_name.first_name}}</a>
 								{% else %}
-								<a href="/principal_hod_display/{{hod_name.pk}}" class="">{{hod_name.first_name}}</a>
+								<a href="/principal_hod_display/{{hod_name.info.pk}}/{{y}}" class="">{{hod_name.info.first_name}}</a>
 								{% endif %}
 								{% endif %}
 							</div>
@@ -128,11 +136,16 @@
             {% for name in teach3 %}
 
 						<div class="row">
+							<div class="cell">
+								<div class="col-sm-2">
+									<img src="{{name.info.profile_pic.url}}" alt="No pic" class="img-responsive " style="width:300%" align="middle" >
+								</div>
+							</div>
 							<div class="cell" data-title="Faculty Name">
 								{% if name.principal_status %}
-								<a href="/principal_teacher1_display_edit/{{name.pk}}" class="h2p">{{name.first_name}}</a>
+								<a href="" class="h2p">{{name.info.first_name}}</a>
 								{% else %}
-								<a href="/principal_teacher1_display/{{name.pk}}" class="">{{name.first_name}}</a>
+								<a href="/principal_teacher1_display/{{name.info.pk}}/{{y}}" class="">{{name.info.first_name}}</a>
 								{% endif %}
 								  <!-- <a {% if name.principal_status == False %} href="/principal_teacher1_display/{{name.pk}}" {% else %} href="#" {% endif %}>{{name.first_name}}</a> -->
 							</div>
@@ -160,16 +173,21 @@
             {% for name1 in teach2 %}
 
             <div class="row">
+							<div class="cell">
+								<div class="col-sm-2">
+									<img src="{{name1.info.profile_pic.url}}" alt="No pic" class="img-responsive " style="width:300%" align="middle" >
+								</div>
+							</div>
               <div class="cell" data-title="Faculty Name">
 								{% if name1.principal_status %}
-								<a href="/principal_teacher_display_edit/{{name1.pk}}" class="h2p">{{name1.first_name}}</a>
+								<a href="" class="h2p">{{name1.info.first_name}}</a>
 								{% else %}
-								<a href="/principal_teacher_display/{{name1.pk}}" class="">{{name1.first_name}}</a>
+								<a href="/principal_teacher_display/{{name1.info.pk}}/{{y}}" class="">{{name1.info.first_name}}</a>
 								{% endif %}
 
                   <!-- <a {% if name1.principal_status == False %} href="/principal_teacher_display/{{name1.pk}}" {% else %} href="#" {% endif %}>{{name1.first_name}}</a> -->
               </div>
-              
+
 
 							<div class="cell" data-title="designation">
 								<p>{{ name1.designation }}</p>

@@ -2156,10 +2156,10 @@
 
 </div>
 {% if n.teach_status %}
- <h6>  <a href="{% url 'facform1:first_page'  %}"><button type="button" name="button">GO BACK</button></a>
+ <h6>  <a href="{% url 'facform1:first_page'  %}"><button type="button" name="button" class="btn btn-secondary">GO BACK</button></a>
 	 {% else %}
-	  <h6>  <a href="{% url 'facform1:hod_form5_edit' key4.year %}"><button type="button" name="button">GO BACK</button></a>
-   <a href="{% url 'facform1:status' key3.year %}"><button type="button" name="button">SUBMIT</button></a>
+	  <h6>  <a href="{% url 'facform1:hod_form5_edit' key4.year %}"><button type="button" name="button" class="btn btn-secondary">GO BACK</button></a>
+   <a href="{% url 'facform1:status' key3.year %}"><button type="button" name="button" class="btn btn-secondary">SUBMIT</button></a>
 	 {% endif %}
 
 

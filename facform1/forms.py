@@ -11,6 +11,12 @@ class newform(forms.ModelForm):
 		fields='__all__'
 		exclude=['info']
 
+class yearform(forms.ModelForm):
+	class Meta:
+
+		model=new
+		fields=('year',)
+
 class LoginForm(AuthenticationForm):
 	'''
 	Form for taking Username and password

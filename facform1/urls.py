@@ -21,6 +21,7 @@ urlpatterns = [
 
     url(r'^report/(?P<dept>[\w\-]+)$',views.report,name="report"),
     path('first_page/',views.first_page,name='first_page'),
+    path('ao_principal/',views.ao_principal,name='ao_principal'),
 
     url(r'^assistant_form1/(?P<y>[\w\-]+)$', views.f_assistant1,name="assistant_form1"),
     path('f_assistant_edit1/<slug:y>/',views.f_assistant_edit1,name="f_assistant_edit1"),
@@ -85,6 +86,8 @@ urlpatterns = [
 
     url(r'^hod_teacher_display_edit/(?P<pk>[\w\-]+)/(?P<y>[\w\-]+)$', views.hod_teacher_display_edit,name="hod_teacher_display_edit"),
     url(r'^hod_teacher1_display_edit/(?P<pk>[\w\-]+)/(?P<y>[\w\-]+)$', views.hod_teacher1_display_edit,name="hod_teacher1_display_edit"),
+
+
 
     url(r'^principal_first/(?P<y>[\w\-]+)$', views.principal_first,name="principal_first"),
     url(r'^principal_display/(?P<dept>[\w\-]+)/(?P<y>[\w\-]+)$', views.principal_display,name="principal_display"),

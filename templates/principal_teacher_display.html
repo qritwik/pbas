@@ -58,29 +58,90 @@
       <form method="POST">
       {% csrf_token %}
 
-        <div class="table-bordered poi form-row">
-          <div class="form-group col-md-6">
-            <label for="">Internship Company Name</label>
-            <input type="text" class="form-control" id="inputEmpName" disabled value="{{ key2.it_name }}">
-          </div>
-          <div class="form-group col-md-3">
-            <label for="">From</label>
-            <input type="text" class="form-control" id="inputEmpName" disabled value="{{ key2.it_f }}">
-          </div>
-          <div class="form-group col-md-3">
-            <label for="">To</label>
-            <input type="text" class="form-control" id="inputEmpName" disabled value="{{ key2.it_t }}">
-          </div>
-          <div class="form-group col-md-6">
-
-            <label for="">Internship report file</label>
-            {% if key2.internship_report_file %}
-            <a href="/media/{{ key2.internship_report_file}}">Click to view</a>
-            {% else %}
-            <a href="#"></a>
-            {% endif %}
+        <div class="table-bordered poi form-row" style="background:#6666ff">
+					<div class="form-group col-md-4">
+            <label for="" style="color:white">Internship Company Name 1</label>
+            <input type="text" class="form-control" id="inputEmpName" disabled value="{{ key2.it1_name }}">
 
           </div>
+          <div class="form-group col-md-3">
+            <label for="" style="color:white">From</label>
+            <input type="text" class="form-control" id="inputEmpName" disabled value="{{ key2.it1_f }}">
+
+          </div>
+          <div class="form-group col-md-3">
+            <label for="" style="color:white">To</label>
+            <input type="text" class="form-control" id="inputEmpName" disabled value="{{ key2.it1_t }}">
+
+          </div>
+					<div class="form-group col-md-2">
+
+						<label for="" style="color:white">Internship report file</label>
+						{% if key2.internship_report_file1 %}
+						<a href="/media/{{ key2.internship_report_file1}}" style="color:white">Click to view</a>
+						{% else %}
+						<a href="#"></a>
+						{% endif %}
+
+					</div>
+
+					<div class="form-group col-md-4">
+						<label for="" style="color:white">Internship Company Name 2</label>
+						<input type="text" class="form-control" id="inputEmpName" disabled value="{{ key2.it2_name }}">
+
+					</div>
+					<div class="form-group col-md-3">
+						<label for="" style="color:white">From</label>
+						<input type="text" class="form-control" id="inputEmpName" disabled value="{{ key2.it2_f }}">
+
+					</div>
+					<div class="form-group col-md-3">
+						<label for="" style="color:white">To</label>
+						<input type="text" class="form-control" id="inputEmpName" disabled value="{{ key2.it2_t }}">
+
+					</div>
+					<div class="form-group col-md-2">
+
+						<label for="" style="color:white">Internship report file</label>
+						{% if key2.internship_report_file2 %}
+						<a href="/media/{{ key2.internship_report_file2}}" style="color:white">Click to view</a>
+						{% else %}
+						<a href="#"></a>
+						{% endif %}
+
+					</div>
+
+					<div class="form-group col-md-4">
+						<label for="" style="color:white">Internship Company Name 3</label>
+						<input type="text" class="form-control" id="inputEmpName" disabled value="{{ key2.it3_name }}">
+
+					</div>
+					<div class="form-group col-md-3">
+						<label for="" style="color:white">From</label>
+						<input type="text" class="form-control" id="inputEmpName" disabled value="{{ key2.it3_f }}">
+
+					</div>
+					<div class="form-group col-md-3">
+						<label for="" style="color:white">To</label>
+						<input type="text" class="form-control" id="inputEmpName" disabled value="{{ key2.it3_t }}">
+
+					</div>
+					<div class="form-group col-md-2">
+
+						<label for="" style="color:white">Internship report file</label>
+						{% if key2.internship_report_file3 %}
+						<a href="/media/{{ key2.internship_report_file3}}" style="color:white">Click to view</a>
+						{% else %}
+						<a href="#"></a>
+						{% endif %}
+
+					</div>
+
+					<div class="form-group col-md-12">
+						<label for="" style="color:white">More data</label>
+						<input type="text" class="form-control" id="inputEmpName" disabled value="{{ key2.more }}">
+
+					</div>
 
           <div class="form-group col-md-6">
             <label for="inputEmpName">Employee Name</label>
@@ -147,7 +208,7 @@
 
 		 <h3 class="poi">1: Course Feedback and results<span class="sp">(Maximum Score: 40 marks)</span></h3>
 
-	<div class="table-bordered poi">
+	<div class="table-bordered poi" style="background:#ffbf80">
 
 	    <h4>1A: Odd Semester</h4>
 	  <table class="table table-bordered">
@@ -347,7 +408,7 @@
 
 	</div>
 
-	<div class="table-bordered poi">
+	<div class="table-bordered poi" style="background:#ffbf70">
 
 	   <h4>1B: Even Semester</h4>
 	  <table class="table-bordered table">
@@ -542,7 +603,7 @@
 	</div>
 	</div>
 
-	<div class=" table-bordered poi">
+	<div class=" table-bordered poi" style="background:#ffbf60">
 
 	   <h4>1C: Project Guided</h4>
 	  <table class="table-bordered table">
@@ -735,7 +796,7 @@
 	<div class="table table-bordered" id="accordionExample">
 	  <h4 class="po color1">2: RESEARCH & DEVELOPMENT AND CONSULTANCY<span class="sp">(Maximum Score: 35 marks)</span></h4>
 	  <div class="">
-	    <div class="card-header" id="headingOne">
+	    <div class="card-header" id="headingOne" style="background: #47d1d1">
 	      <h3 class="">
 	        <button class="btn btn-link fo1" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
 	         2A: Workshops/FDP attended
@@ -851,7 +912,7 @@
 					</div>
 	</div>
 	  <div class="">
-	    <div class="card-header" id="headingTwo">
+	    <div class="card-header" id="headingTwo" style="background: #47d1d1">
 	      <h3 class="">
 	        <button class="btn btn-link collapsed fo1" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
 
@@ -964,7 +1025,7 @@
 					</div>
 	  </div>
 		<div class="">
-			<div class="card-header" id="headingThree">
+			<div class="card-header" id="headingThree" style="background: #47d1d1">
 				<h3 class="">
 					<button class="btn btn-link collapsed fo1" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
 					 2C: Number of Online Courses Completed
@@ -1016,7 +1077,7 @@
 	<div class="accordion dis1" id="accordionExample">
 	  <h4 class=" color1">3:Publications</h4>
 	  <div class="card">
-	    <div class="card-header" id="headingOne">
+	    <div class="card-header" id="headingOne" style="background:#2eb8b8">
 	      <h3 class="">
 	        <button class="btn btn-link fo1" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
 	          3A: Non-Indexed Publications in National Conference/Journals and International Conference/Journals<span class="sp">(Maximum Score: 08 marks)</span>
@@ -1166,7 +1227,7 @@
 
 
 	  <div class="card">
-	    <div class="card-header" id="headingTwo">
+	    <div class="card-header" id="headingTwo" style="background:#2eb8b8">
 	      <h3 class="">
 	        <button class="btn btn-link collapsed fo1" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
 
@@ -1571,7 +1632,7 @@
 </table>
 	  </div>
 
-		<div class="card">
+		<div class="card" style="background:#2eb8b8">
 			<div class="card-header" id="headingThree">
 				<h3 class="">
 					<button class="btn btn-link collapsed fo1" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
@@ -1724,7 +1785,7 @@
 	<!-- </form> -->
 	  </div>
 	</div>
-	<div class="card ">
+	<div class="card" style="background:#2eb8b8">
 
 	    <div class="card-header" id="headingTwo">
 	      <h3 class="mb-0">
@@ -1838,36 +1899,74 @@
 
                       </div>
 
- <div class="form-group row">
+											<div class="form-group row">
 
 
 
 
-        <div class="form-group col-md-6">
-          <h4>IPR Type :</h4>
-        {{ key4.ipr_type }}
-        </div>
-        <div class="form-group col-md-6">
-          <h4>IPR Status :</h4>
-         {{ key4.ipr_status }}
-</div>
+										 				<div class="form-group col-md-6">
+										 					<h4>Provisional Specification filing of Patents</h4>
+										 				</div>
 
- </div>
 
-  <div class="form-group col-md-12">
-<label>Details</label>
-{{ key4.ipr_info }}
+										  </div>
+										  <div class="form-group col-md-6">
+										 	 <h4>IPR Status :</h4>
+										 	{{key4.p_ipr_status}}
+										 </div>
+										  <div class="form-group col-md-12">
+										  <label>IPR File</label>
+										  {{key4.p_ipr_file}}
 
-</div>
-<div class="form-group col-md-12">
-<label>IPR File</label>
-{% if key4.ipr_file %}
-           <a href="/media/{{key4.ipr_file}}"></a>
-            {% else %}
-            <a href="#"></a>
-            {% endif %}
+										  </div>
 
-</div>
+										 	<div class="form-group col-md-12">
+										 <label>Details</label>
+										 {{key4.p_ipr_info}}
+
+										 </div>
+										 <div class="form-group col-md-12">
+										 <label>Marks :</label>
+										 {{key4.p_ipr_m}}
+
+										 </div>
+
+
+
+
+
+										 <div class="form-group row">
+
+
+
+
+										 			 <div class="form-group col-md-6">
+										 				 <h4>Complete Specification filing of Patents</h4>
+										 			 </div>
+
+
+										 </div>
+										 <div class="form-group col-md-6">
+										 	<h4>IPR Status :</h4>
+										  {{key4.ipr_status}}
+										 </div>
+										 <div class="form-group col-md-12">
+										 <label>IPR File</label>
+										 {{key4.c_ipr_file}}
+
+										 </div>
+
+										  <div class="form-group col-md-12">
+										 <label>Details :-</label>
+										 {{key4.c_ipr_info}}
+
+										 </div>
+										 <div class="form-group col-md-12">
+										 <label>Marks :</label>
+										 {{key4.c_ipr_m}}
+
+										 </div>
+										 </div>
 
  </div>
 
@@ -1992,7 +2091,7 @@
 </div>
 
 <div class="card poi">
- <div class="input-group text12">
+ <div class="input-group text7">
   <div class="input-group-prepend">
     <span class="input-group-text">Brief Remarks of the HOD</span>
   </div>
@@ -2051,7 +2150,7 @@
 </div>
 
 <div class="card poi">
- <div class="input-group text12">
+ <div class="input-group text7">
   <div class="input-group-prepend">
     <span class="input-group-text">Brief Remarks of the Principal</span>
   </div>
@@ -2061,7 +2160,8 @@
 </div>
 
 </div>
-<button type="button" class="btn btn-info btn-lg btn-block s_case col-md-4">Special Case/Correction</button>
+<center><button type="button" class="btn btn-info btn-lg btn-block s_case col-md-4">Special Case/Correction</button></center>
+
 <div class="c_marks" style="display: none;">
   <div>
     <label>Reason for marks</label>
@@ -2092,8 +2192,9 @@
                     <button type="button" class="btn btn-success btn-lg btn-block tm">Calculate </button>
                   </div>
 </div>
-<div class="col-1"></div>
 </div>
+<div class="col-1"></div>
+
 
 <div class="form-row dis">
 <div class="col-4"></div>
@@ -2111,8 +2212,9 @@
 </div>
 </div>
 </div>
-
 </div>
+</div>
+
 
 
 </div>

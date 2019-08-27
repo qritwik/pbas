@@ -145,7 +145,7 @@
                 {{ forloop.counter }}
               </div>
 							<div class="cell" data-title="Department">
-								  <a class="" href="/principal_display/{{dept.name}}" value="{dept.name}">{{dept.name}}</a>
+								  <a class="" href="{% url 'facform1:principal_display' dept.name y %}" value="{dept.name}">{{dept.name}}</a>
 							</div>
 
 						</div>
