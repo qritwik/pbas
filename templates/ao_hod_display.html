@@ -18,7 +18,7 @@
         <h6 align="center">Faculty Appraisal Form 2017-18</h6>
       </div>
     </div>
-        
+
       </div>
 
       <form>
@@ -26,51 +26,89 @@
 
 
                 <div class="table-bordered poi form-row">
+                  <div class="form-group col-md-4">
+                    <label for="" >Internship Company Name 1</label>
+                    <input type="text" class="form-control" id="inputEmpName" disabled value="{{ key2.it1_name }}">
+
+                  </div>
                   <div class="form-group col-md-3">
-                    <label for="">Internship Company Name 1</label>
-                    <input type="text" class="form-control" id="inputEmpName" disabled value="{{ key2.it_name }}">
+                    <label for="" >From</label>
+                    <input type="text" class="form-control" id="inputEmpName" disabled value="{{ key2.it1_f }}">
+
+                  </div>
+                  <div class="form-group col-md-3">
+                    <label for="" >To</label>
+                    <input type="text" class="form-control" id="inputEmpName" disabled value="{{ key2.it1_t }}">
+
+                  </div>
+                  <div class="form-group col-md-2">
+
+                    <label for="" >Internship report file</label>
+                    {% if key2.internship_report_file1 %}
+                    <a href="/media/{{ key2.internship_report_file1}}" style="color:white">Click to view</a>
+                    {% else %}
+                    <a href="#"></a>
+                    {% endif %}
+
+                  </div>
+
+                  <div class="form-group col-md-4">
+                    <label for="" >Internship Company Name 2</label>
+                    <input type="text" class="form-control" id="inputEmpName" disabled value="{{ key2.it2_name }}">
+
                   </div>
                   <div class="form-group col-md-3">
                     <label for="">From</label>
-                    <input type="text" class="form-control" id="inputEmpName" disabled value="{{ key2.it_f }}">
+                    <input type="text" class="form-control" id="inputEmpName" disabled value="{{ key2.it2_f }}">
+
                   </div>
                   <div class="form-group col-md-3">
-                    <label for="">To</label>
-                    <input type="text" class="form-control" id="inputEmpName" disabled value="{{ key2.it_t }}">
+                    <label for="" >To</label>
+                    <input type="text" class="form-control" id="inputEmpName" disabled value="{{ key2.it2_t }}">
+
                   </div>
-                  <div class="form-group col-md-3">
+                  <div class="form-group col-md-2">
 
-            <label for="">Internship report file</label>
-            {% if key2.internship_report_file %}
-            <a href="/media/{{ key2.internship_report_file}}">Click to view</a>
-            {% else %}
-            <a href="#"></a>
-            {% endif %}
+                    <label for="" >Internship report file</label>
+                    {% if key2.internship_report_file2 %}
+                    <a href="/media/{{ key2.internship_report_file2}}" style="color:white">Click to view</a>
+                    {% else %}
+                    <a href="#"></a>
+                    {% endif %}
 
-          </div>
-          <div class="form-group col-md-3">
-                    <label for="">Internship Company Name 2</label>
-                    <input type="text" class="form-control" id="inputEmpName" disabled value="{{ key2.it_name2 }}">
+                  </div>
+
+                  <div class="form-group col-md-4">
+                    <label for="">Internship Company Name 3</label>
+                    <input type="text" class="form-control" id="inputEmpName" disabled value="{{ key2.it3_name }}">
+
                   </div>
                   <div class="form-group col-md-3">
                     <label for="">From</label>
-                    <input type="text" class="form-control" id="inputEmpName" disabled value="{{ key2.it_f2 }}">
+                    <input type="text" class="form-control" id="inputEmpName" disabled value="{{ key2.it3_f }}">
+
                   </div>
                   <div class="form-group col-md-3">
                     <label for="">To</label>
-                    <input type="text" class="form-control" id="inputEmpName" disabled value="{{ key2.it_t2 }}">
+                    <input type="text" class="form-control" id="inputEmpName" disabled value="{{ key2.it3_t }}">
+
                   </div>
-                  <div class="form-group col-md-3">
+                  <div class="form-group col-md-2">
 
-            <label for="">Internship report file</label>
-            {% if key2.internship_report_file2 %}
-            <a href="/media/{{ key2.internship_report_file2}}">Click to view</a>
-            {% else %}
-            <a href="#"></a>
-            {% endif %}
+                    <label for="" >Internship report file</label>
+                    {% if key2.internship_report_file3 %}
+                    <a href="/media/{{ key2.internship_report_file3}}" style="color:white">Click to view</a>
+                    {% else %}
+                    <a href="#"></a>
+                    {% endif %}
 
-          </div>
+                  </div>
 
+                  <div class="form-group col-md-12">
+                    <label for="">More data</label>
+                    <input type="text" class="form-control" id="inputEmpName" disabled value="{{ key2.more }}">
+
+                  </div>
                   <div class="form-group col-md-3">
                     <label for="inputEmpName">Employee Name</label>
                     <input type="text" class="form-control" id="inputEmpName" disabled value="{{ key1.first_name }}">
@@ -124,7 +162,7 @@
          <div class="form-group col-md-2">
          <label>Month of increment</label>
          <input type="text" class="form-control" id="inputEmpName" disabled value="{{ key2.month_of_increment }}">
-                     
+
                       </div>
         	   </div>
 
@@ -764,7 +802,7 @@
 
         </div>
 
-        
+
 
         <div class="form-group col-md-1">
           {% if key4.w_n_file %}
@@ -784,7 +822,7 @@
             <input type="text" class="form-control" disabled value="{{key4.w_i_d}}">
         </div>
 
-        
+
         <div class="form-group col-md-1">
           {% if key4.w_i_file %}
             <a href="/media/{{key4.w_i_file}}">Click to view</a>
@@ -802,7 +840,7 @@
 
 
 		<div class="form-row dis">
-							
+
                                       <div class="form-group col-md-6">
                                      <h6 class=" color1">TOTAL MARKS <em>{{ key4.w_m }}</em><span class="sp"></span></h6>
                                       </div>
@@ -847,7 +885,7 @@
 
       </div>
 
-     
+
       <div class="form-group col-md-1">
         {% if key4.p_n_file %}
           <a href="/media/{{key4.p_n_file}}">Click to view</a>
@@ -870,7 +908,7 @@
 
       </div>
 
- 
+
       <div class="form-group col-md-1">
         {% if key4.p_i_file %}
           <a href="/media/{{key4.p_i_file}}">Click to view</a>
@@ -888,12 +926,12 @@
   </div>
 
   <div class="form-row dis">
-          
+
                                     <div class="form-group col-md-6">
                                    <h6 class="color1">TOTAL MARKS <em>{{ key4.p_m }}</em><span class="sp"></span></h6>
                                     </div>
 
-    
+
 </div>
 <div class="">
   <div class="card-header" id="headingThree">
@@ -909,7 +947,7 @@
       </div>
 
       <div class="form-group col-md-3">
-        
+
         {% if key4.onl_course_c_file1 %}
          <a href="/media/{{key4.onl_course_c_file1}}">Click to view</a>
           {% else %}
@@ -1506,7 +1544,7 @@
         </div>
 
         <div class="form-group col-md-2">
-          
+
           {% if key4.book_i_file %}
            <a href="/media/{{key4.book_i_file}}">Click to view</a>
             {% else %}
@@ -1523,7 +1561,7 @@
           {{ key4.book_n }}
         </div>
         <div class="form-group col-md-2">
-          
+
           {% if key4.book_n_file %}
            <a href="/media/{{key4.book_n_file}}">Click to view</a>
             {% else %}
@@ -1531,7 +1569,7 @@
             {% endif %}
 
         </div>
-  
+
           <div class="form-group col-md-3">
                         <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="Book chapterAuthored  International (06 marks/Book Chapter)">
 
@@ -1541,7 +1579,7 @@
           {{ key4.book_ci }}
         </div>
         <div class="form-group col-md-2">
-          
+
           {% if key4.book_ci_file %}
            <a href="/media/{{key4.book_ci_file}}">Click to view</a>
             {% else %}
@@ -1549,7 +1587,7 @@
             {% endif %}
 
         </div>
-  
+
           <div class="form-group col-md-3">
                         <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="Book chapterAuthored  National (04 marks/Book Chapter)">
 
@@ -1558,7 +1596,7 @@
           {{ key4.book_cn }}
         </div>
         <div class="form-group col-md-2">
-          
+
           {% if key4.book_cn_file %}
            <a href="/media/{{key4.book_cn_file}}">Click to view</a>
             {% else %}
@@ -1566,7 +1604,7 @@
             {% endif %}
 
         </div>
-  
+
           <div class="form-group col-md-3">
                         <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="Articles Published in International (10 marks/Article)">
 
@@ -1576,7 +1614,7 @@
           {{ key4.book_ai }}
         </div>
         <div class="form-group col-md-2">
-          
+
           {% if key4.book_ai_file %}
            <a href="/media/{{key4.book_ai_file}}">Click to view</a>
             {% else %}
@@ -1584,7 +1622,7 @@
             {% endif %}
 
         </div>
-   
+
           <div class="form-group col-md-3">
                         <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="National  Media (06 marks/Article)">
 
@@ -1594,7 +1632,7 @@
           {{ key4.book_nm }}
         </div>
         <div class="form-group col-md-2">
-          
+
           {% if key4.book_nm_file %}
            <a href="/media/{{key4.book_nm_file}}">Click to view</a>
             {% else %}
@@ -1741,41 +1779,74 @@
 
                       </div>
 
- <div class="form-group row">
+                      <div class="form-group row">
 
 
 
 
-        <div class="form-group col-md-4">
-          <h6>IPR Type :</h6>
-        {{ key4.ipr_type }}
-        </div>
-        <div class="form-group col-md-4">
-          <h6>IPR Status :</h6>
-         {{ key4.ipr_status }}
-</div>
-<div class="form-group col-md-4">
-<label>IPR File</label>
-{% if key4.ipr_file %}
-           <a href="/media/{{key4.ipr_file}}"></a>
-            {% else %}
-            <a href="#"></a>
-            {% endif %}
+                              <div class="form-group col-md-6">
+                                <h4>Provisional Specification filing of Patents</h4>
+                              </div>
 
-</div>
 
- </div>
+                       </div>
+                       <div class="form-group col-md-6">
+                         <h4>IPR Status :</h4>
+                        {{key4.p_ipr_status}}
+                      </div>
+                       <div class="form-group col-md-12">
+                       <label>IPR File</label>
+                       {{key4.p_ipr_file}}
 
-  <div class="form-group col-md-12">
-<label>Details</label>
-{{ key4.ipr_info }}
+                       </div>
 
-</div>
+                        <div class="form-group col-md-12">
+                      <label>Details</label>
+                      {{key4.p_ipr_info}}
 
- </div>
+                      </div>
+                      <div class="form-group col-md-12">
+                    <label>Marks :</label>
+                    {{key4.p_ipr_m}}
 
-</div>
-</div>
+                    </div>
+
+
+
+
+
+                      <div class="form-group row">
+
+
+
+
+                             <div class="form-group col-md-6">
+                               <h4>Complete Specification filing of Patents</h4>
+                             </div>
+
+
+                      </div>
+                      <div class="form-group col-md-6">
+                        <h4>IPR Status :</h4>
+                       {{key4.c_ipr_status}}
+                      </div>
+                      <div class="form-group col-md-12">
+                      <label>IPR File</label>
+                      {{key4.c_ipr_file}}
+
+                      </div>
+
+                       <div class="form-group col-md-12">
+                      <label>Details :-</label>
+                      {{key4.c_ipr_info}}
+
+                      </div>
+                      <div class="form-group col-md-12">
+                    <label>Marks :</label>
+                    {{key4.c_ipr_m}}
+
+                    </div>
+                    </div>
 <div class="container">
 
 

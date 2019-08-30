@@ -74,9 +74,6 @@ def first_page(request):
 			name = request.user
 			user.designation=f.designation
 			user.save()
-			if user.is_ao():
-				print("USER IS AO")
-				return HttpResponseRedirect(reverse('facform1:ao_first',args=(f.year,)))
 			if new.objects.filter(info=request.user).filter(year=f.year).exists():
 				if user.is_assistant_professor():
 					print("User is assistant professor")
@@ -92,12 +89,7 @@ def first_page(request):
 				elif user.is_hod():
 					print("User is HOD")
 					return HttpResponseRedirect(reverse('facform1:hod_first',args=(f.year,)))
-				elif user.is_ao():
-					print("USER IS AO")
-					return HttpResponseRedirect(reverse('facform1:ao_first',args=(f.year,)))
-				elif user.is_principal():
-					print("User is HOD")
-					return HttpResponseRedirect(reverse('facform1:principal_first',args=(f.year,)))
+				return HttpResponse("YOU ARE NOT AO OR PRINCIPAL,PLEASE ENTER YOUR CURRENT DESIGNATION")
 
 			else:
 				print("                                                             Entered first_page except section")
@@ -121,9 +113,8 @@ def first_page(request):
 							return HttpResponseRedirect(reverse('facform1:associate_form1',args=(f.year,)))
 						elif request.user.is_hod():
 							return HttpResponseRedirect(reverse('facform1:hod_first',args=(f.year,)))
-						elif user.is_ao():
-							print("USER IS AO")
-							return HttpResponseRedirect(reverse('facform1:ao_first',args=(f.year,)))
+						return HttpResponse("YOU ARE NOT AO OR PRINCIPAL,PLEASE ENTER YOUR CURRENT DESIGNATION")
+
 
 					else:
 						print(form.errors)

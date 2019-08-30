@@ -18,34 +18,94 @@
         <h6 align="center">Faculty Appraisal Form 2017-18</h6>
       </div>
     </div>
-        
+
       </div>
 
       <form method="POST">
       {% csrf_token %}
 
         <div class="table-bordered  form-row">
-          <div class="form-group col-md-3">
-            <label for="">Internship Company Name</label>
+          <div class="form-group col-md-4">
+            <label for="" >Internship Company Name 1</label>
+            <input type="text" class="form-control" id="inputEmpName" disabled value="{{ key2.it1_name }}">
 
-            <input type="text" class="form-control" id="inputEmpName" disabled value="{{ key2.it_name }}">
           </div>
           <div class="form-group col-md-3">
-            <label for="">From</label>
-            <input type="text" class="form-control" id="inputEmpName" disabled value="{{ key2.it_f }}">
-          </div>
-          <div class="form-group col-md-3">
-            <label for="">To</label>
-            <input type="text" class="form-control" id="inputEmpName" disabled value="{{ key2.it_t }}">
-          </div>
-          <div class="form-group col-md-3">
+            <label for="" >From</label>
+            <input type="text" class="form-control" id="inputEmpName" disabled value="{{ key2.it1_f }}">
 
-            <label for="">Internship report file</label>
-            {% if key2.internship_report_file %}
-            <a href="/media/{{ key2.internship_report_file}}">Click to view</a>
+          </div>
+          <div class="form-group col-md-3">
+            <label for="" >To</label>
+            <input type="text" class="form-control" id="inputEmpName" disabled value="{{ key2.it1_t }}">
+
+          </div>
+          <div class="form-group col-md-2">
+
+            <label for="" >Internship report file</label>
+            {% if key2.internship_report_file1 %}
+            <a href="/media/{{ key2.internship_report_file1}}" style="color:white">Click to view</a>
             {% else %}
             <a href="#"></a>
             {% endif %}
+
+          </div>
+
+          <div class="form-group col-md-4">
+            <label for="" >Internship Company Name 2</label>
+            <input type="text" class="form-control" id="inputEmpName" disabled value="{{ key2.it2_name }}">
+
+          </div>
+          <div class="form-group col-md-3">
+            <label for="">From</label>
+            <input type="text" class="form-control" id="inputEmpName" disabled value="{{ key2.it2_f }}">
+
+          </div>
+          <div class="form-group col-md-3">
+            <label for="" >To</label>
+            <input type="text" class="form-control" id="inputEmpName" disabled value="{{ key2.it2_t }}">
+
+          </div>
+          <div class="form-group col-md-2">
+
+            <label for="" >Internship report file</label>
+            {% if key2.internship_report_file2 %}
+            <a href="/media/{{ key2.internship_report_file2}}" style="color:white">Click to view</a>
+            {% else %}
+            <a href="#"></a>
+            {% endif %}
+
+          </div>
+
+          <div class="form-group col-md-4">
+            <label for="">Internship Company Name 3</label>
+            <input type="text" class="form-control" id="inputEmpName" disabled value="{{ key2.it3_name }}">
+
+          </div>
+          <div class="form-group col-md-3">
+            <label for="">From</label>
+            <input type="text" class="form-control" id="inputEmpName" disabled value="{{ key2.it3_f }}">
+
+          </div>
+          <div class="form-group col-md-3">
+            <label for="">To</label>
+            <input type="text" class="form-control" id="inputEmpName" disabled value="{{ key2.it3_t }}">
+
+          </div>
+          <div class="form-group col-md-2">
+
+            <label for="" >Internship report file</label>
+            {% if key2.internship_report_file3 %}
+            <a href="/media/{{ key2.internship_report_file3}}" style="color:white">Click to view</a>
+            {% else %}
+            <a href="#"></a>
+            {% endif %}
+
+          </div>
+
+          <div class="form-group col-md-12">
+            <label for="">More data</label>
+            <input type="text" class="form-control" id="inputEmpName" disabled value="{{ key2.more }}">
 
           </div>
 
@@ -102,7 +162,7 @@
          <div class="form-group col-md-2">
          <label>Month of increment</label>
          <input type="text" class="form-control" id="inputEmpName" disabled value="{{ key2.month_of_increment }}">
-                     
+
                       </div>
      </div>
 
@@ -670,7 +730,7 @@
 
 
 
-  
+
           <div class="form-group col-md-2">
                         <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="International Level (1 m/day)">
 
@@ -700,15 +760,15 @@
                         <div class="form-row dis">
                                       <div class="form-group col-md-6">
                                      <h6 class=" color1">TOTAL MARKS  <em>{{ key4.w_m }}</em><span class="sp"></span></h6>
-                                     
+
                                       </div>
 
-                              
+
 
         </div>
 </div>
       <h6 class="">
-      
+
 2B: Invited talk/Seminar/Key Note Delivered
       </h6>
 
@@ -780,10 +840,10 @@
     </div>
 
     <div class="form-row dis">
-            
+
                                       <div class="form-group col-md-6">
                                      <h6 class=" color1">TOTAL MARKS  <em>{{ key4.p_m }}</em><span class="sp"></span></h6>
-                                     
+
                                       </div>
 
                         </div>
@@ -893,7 +953,7 @@
                 <div>TOTAL MARKS</div>
                 {{ key4.f_c_m }}
                     </div>
-                    
+
                 </div>
 </div>
 </div>
@@ -923,7 +983,7 @@
                     <div>TOTAL MARKS</div>
                 {{ key4.o_c_m }}
                     </div>
-                
+
                 </div>
 </div>
 </div>
@@ -1033,7 +1093,7 @@
       {% endif %}
     </tbody>
   </table>
-  
+
       <h6 class="">
 
 3B:  Indexed Publications in Conference/Journals with SCOPUS<span class="sp">(Maximum Score: 12 marks)</span>
@@ -1063,7 +1123,7 @@
                         <div>TOTAL MARKS</div>
                     {{ key4.s_j_m }}
                         </div>
-                        
+
                     </div>
 
    </div>
@@ -1417,7 +1477,7 @@
               {% endif %}
 
           </div>
-    
+
             <div class="form-group col-md-2">
                           <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="Book Authored  National (08 marks/Book)">
 
@@ -1435,7 +1495,7 @@
               {% endif %}
 
           </div>
-      
+
             <div class="form-group col-md-2">
                           <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="Book chapterAuthored  International (06 marks/Book Chapter)">
 
@@ -1453,7 +1513,7 @@
               {% endif %}
 
           </div>
-    
+
             <div class="form-group col-md-2">
                           <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="Book chapterAuthored  National (04 marks/Book Chapter)">
 
@@ -1470,7 +1530,7 @@
               {% endif %}
 
           </div>
- 
+
             <div class="form-group col-md-2">
                           <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="Articles Published in International (10 marks/Article)">
 
@@ -1488,7 +1548,7 @@
               {% endif %}
 
           </div>
-    
+
             <div class="form-group col-md-2">
                           <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="National  Media (06 marks/Article)">
 
@@ -1641,40 +1701,74 @@
 
                       </div>
 
- <div class="form-group row">
+                      <div class="form-group row">
 
 
 
 
-        <div class="form-group col-md-4">
-          <h5>IPR Type :</h5>
-        {{ key4.ipr_type }}
-        </div>
-        <div class="form-group col-md-4">
-          <h5>IPR Status :</h5>
-         {{ key4.ipr_status }}
-       </div>
-       <div class="form-group col-md-4">
-<label>IPR File</label>
-{% if key4.ipr_file %}
-           <a href="/media/{{key4.ipr_file}}"></a>
-            {% else %}
-            <a href="#"></a>
-            {% endif %}
+                              <div class="form-group col-md-6">
+                                <h4>Provisional Specification filing of Patents</h4>
+                              </div>
 
-</div>
 
- </div>
+                       </div>
+                       <div class="form-group col-md-6">
+                         <h4>IPR Status :</h4>
+                        {{key4.p_ipr_status}}
+                      </div>
+                       <div class="form-group col-md-12">
+                       <label>IPR File</label>
+                       {{key4.p_ipr_file}}
 
-  <div class="form-group col-md-12">
-<label>Details</label>
-{{ key4.ipr_info }}
+                       </div>
 
-</div>
+                        <div class="form-group col-md-12">
+                      <label>Details</label>
+                      {{key4.p_ipr_info}}
 
- </div>
+                      </div>
+                      <div class="form-group col-md-12">
+                    <label>Marks :</label>
+                    {{key4.p_ipr_m}}
 
-</div>
+                    </div>
+
+
+
+
+
+                      <div class="form-group row">
+
+
+
+
+                             <div class="form-group col-md-6">
+                               <h4>Complete Specification filing of Patents</h4>
+                             </div>
+
+
+                      </div>
+                      <div class="form-group col-md-6">
+                        <h4>IPR Status :</h4>
+                       {{key4.c_ipr_status}}
+                      </div>
+                      <div class="form-group col-md-12">
+                      <label>IPR File</label>
+                      {{key4.c_ipr_file}}
+
+                      </div>
+
+                       <div class="form-group col-md-12">
+                      <label>Details :-</label>
+                      {{key4.c_ipr_info}}
+
+                      </div>
+                      <div class="form-group col-md-12">
+                    <label>Marks :</label>
+                    {{key4.c_ipr_m}}
+
+                    </div>
+                    </div>
 <div class="form-row dis">
 <div class="col-1"></div>
 <div class="col-10">
