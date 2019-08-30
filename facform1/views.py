@@ -1014,12 +1014,12 @@ def hod_teacher1_display(request,pk):
 		print(name)
 		data1 = User.objects.get(username=name);
 		print(data1.first_name)
-		data2 = empDetailForm.objects.get(info__username=name);
-		data3 = feedbackTab.objects.get(info__username=name);
-		data4 = rd.objects.get(info__username=name);
-		data5 = remarks.objects.get(info__username=name);
-		data6 = conference.objects.get(info__username=name);
-		data7 = journal.objects.get(info__username=name);
+		data2 = empDetailForm.objects.filter(info__username=name).get(year=y);
+		data3 = feedbackTab.objects.filter(info__username=name).get(year=y);
+		data4 = rd.objects.filter(info__username=name).get(year=y);
+		data5 = remarks.objects.filter(info__username=name).get(year=y);
+		data6 = conference.objects.filter(info__username=name).get(year=y);
+		data7 = journal.objects.filter(info__username=name).get(year=y);
 
 
 
@@ -1029,16 +1029,17 @@ def hod_teacher1_display(request,pk):
 			form1 = forms.form_remarks1(request.POST)
 			if form1.is_valid():
 
-				sendme = User.objects.get(username=name)
+				sendme = new.objects.filter(username=name).get(year=y)
 				obj = form1.save(commit=False)
 
 				obj.info = name
+				obj.year=y
 				obj.save()
 
 				if sendme.hod_status == False:
 					sendme.hod_status = True
 					sendme.save()
-				return HttpResponseRedirect("/hod_first/")
+				return HttpResponseRedirect(reverse('facform1:hod_first',args=(y,)))
 
 		else:
 			form1 = forms.form_remarks1()
@@ -2121,7 +2122,7 @@ def f_associate5(request,y):
 
 		if conference.objects.filter(info=request.user).filter(year=y).exists():
 
-			return HttpResponseRedirect("/logout/")
+			return HttpResponseRedirect(reverse('facform1:associate_preview',args=(y,)))
 		else:
 			if request.method == 'POST':
 				sendme = User.objects.get(username=request.user)
