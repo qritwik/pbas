@@ -82,7 +82,6 @@ WSGI_APPLICATION = 'facform.wsgi.application'
 
 #Database
 #https://docs.djangoproject.com/en/1.11/ref/settings/
-"""
 DATABASES = {
 	'default': {
          'ENGINE': 'django.db.backends.postgresql',
@@ -103,7 +102,7 @@ DATABASES = {
     }
 }
 
-
+"""
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
