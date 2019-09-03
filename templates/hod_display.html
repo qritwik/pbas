@@ -32,7 +32,7 @@
 
 	{% include 'partials/nav_primary.html' %}
 
-	<div style="margin-top:-18%;" class="limiter">
+	<div style="margin-top:10%" class="limiter">
 		<div class="container-table100">
 			<div class="wrap-table100">
 					<div class="table">
@@ -53,7 +53,7 @@
 							</div>
 						</div>
 
-	<div style="margin-top:-25%;" class="limiter">
+	<div style="margin-top:-20%;" class="limiter">
 		<div class="container-table100">
 			<div class="wrap-table100">
 					<div class="table">
@@ -128,7 +128,7 @@
 								{% if info.teach_status and info.hod_status %}
 								<a href="/hod_teacher1_display_edit/{{info.info.pk}}" class="h2p">{{info.info.first_name}}</a>
 								{% elif info.teach_status %}
-								<a href="/hod_teacher1_display/{{info.info.pk}}">{{info.info.first_name}}</a>
+								<a href="/hod_teacher1_display/{{info.info.pk}}/{{y}}">{{info.info.first_name}}</a>
 								{% else %}
 								<a href="#" class="h3p">{{info.info.first_name}}</a>
 								{% endif %}

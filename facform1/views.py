@@ -767,10 +767,10 @@ def login(request):
 			email = user.email
 			phone = user.phone
 			random_otp = r''.join(random.choice('0123456789') for i in range(4))
-			phone_otp(random_otp,phone)
+			#phone_otp(random_otp,phone)
 
-			email_otp(random_otp,user.email,user.first_name)
-			#random_otp="1234"
+			#email_otp(random_otp,user.email,user.first_name)
+			random_otp="1234"
 			hashed_pwd = make_password(random_otp)
 			User.objects.filter(username=username).update(password=hashed_pwd)
 
@@ -1008,7 +1008,7 @@ def hod_teacher_display_edit(request,pk,y):
 
 
 @login_required
-def hod_teacher1_display(request,pk):
+def hod_teacher1_display(request,pk,y):
 	if request.user.is_hod():
 		name =  User.objects.get(pk = pk);
 		print(name)
@@ -1053,7 +1053,8 @@ def hod_teacher1_display(request,pk):
 		"key5":data5,
 		"key6":data6,
 		"key7":data7,
-		"form1":form1
+		"form1":form1,
+		"y":y
 		}
 
 		return render(request,'hod_teacher1_display.html',context=context1)
