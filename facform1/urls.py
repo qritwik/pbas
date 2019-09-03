@@ -106,7 +106,7 @@ urlpatterns = [
 
 
     url(r'^ao_first/(?P<y>[\w\-]+)$', views.ao_first,name="ao_first"),
-    url(r'^ao_consolidated/', views.ao_consolidated,name="ao_consolidated"),
+    url(r'^ao_consolidated/(?P<y>[\w\-]+)$', views.ao_consolidated,name="ao_consolidated"),
     url(r'^ao_display/(?P<dept>[\w\-]+)/(?P<y>[\w\-]+)$',views.ao_display,name="ao_display"),
     url(r'^ao_approved/(?P<dept>[\w\-]+)/(?P<y>[\w\-]+)$', views.ao_approved,name="ao_approved"),
     url(r'^ao_teacher_display/(?P<name>[\w\-\.\w]+)/(?P<y>[\w\-]+)$',views.ao_teacher_display,name="ao_teacher_display"),

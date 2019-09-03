@@ -677,34 +677,34 @@ def report(request,dept):
 	response['Content-Disposition'] = 'attachment; filename="final_report.xlsx"'
 	return response
 
-def ao_consolidated(request):
+def ao_consolidated(request,y):
 	data1 = User.objects.filter(Q(department__name='CSE')|Q(department__name='ISE')|Q(department__name='ECE')|Q(department__name='EEE')|Q(department__name='CIV')|Q(department__name='MCA')|Q(department__name='TCE')|Q(department__name='MECH')|Q(department__name='maths')|Q(department__name='physics')|Q(department__name='chemistry'))
 	dic = {}
 
 	for i in data1:
 
 		try:
-		    data2 = feedbackTab.objects.get(info=i.pk)
+		    data2 = feedbackTab.objects.filter(info=i.pk).get(year=y)
 		except feedbackTab.DoesNotExist:
 		    data2 = None
 
 		try:
-		    data3 = rd.objects.get(info=i.pk)
+		    data3 = rd.objects.filter(info=i.pk).get(year=y)
 		except rd.DoesNotExist:
 		    data3 = None
 
 		try:
-		    data4 = remarks1.objects.get(info=i.pk)
+		    data4 = remarks1.objects.filter(info=i.pk).get(year=y)
 		except remarks1.DoesNotExist:
 		    data4 = None
 
 		try:
-		    data5 = remarks2.objects.get(info=i.pk)
+		    data5 = remarks2.objects.filter(info=i.pk).get(year=y)
 		except remarks2.DoesNotExist:
 		    data5 = None
 
 		try:
-		    data7 = empDetailForm.objects.get(info=i.pk)
+		    data7 = empDetailForm.objects.filter(info=i.pk).get(year=y)
 		except empDetailForm.DoesNotExist:
 		    data7 = None
 
