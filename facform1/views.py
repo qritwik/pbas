@@ -678,11 +678,10 @@ def report(request,dept):
 	return response
 
 def ao_consolidated(request,y):
-	data1 = User.objects.filter(Q(department__name='CSE')|Q(department__name='ISE')|Q(department__name='ECE')|Q(department__name='EEE')|Q(department__name='CIV')|Q(department__name='MCA')|Q(department__name='TCE')|Q(department__name='MECH')|Q(department__name='maths')|Q(department__name='physics')|Q(department__name='chemistry')).order_by('department')
-	dic = {}
-
+	data1 = User.objects.filter(Q(department__name='CSE')|Q(department__name='ISE')|Q(department__name='ECE')|Q(department__name='EEE')|Q(department__name='CIV')|Q(department__name='MCA')|Q(department__name='TCE')|Q(department__name='MECH')|Q(department__name='maths')|Q(department__name='physics')|Q(department__name='chemistry')).order_by('department','username')
+	dic ={}
 	for i in data1:
-
+		print(i.department)
 		try:
 		    data2 = feedbackTab.objects.filter(info=i.pk).get(year=y)
 		except feedbackTab.DoesNotExist:
@@ -715,6 +714,40 @@ def ao_consolidated(request,y):
 		}
 
 	return render(request,'ao_consolidated.html',context = context)
+
+"""	data1=set()
+	data=User.objects.filter(department__name='CSE')
+	for i in data:
+		data1.add(i)
+	data=User.objects.filter(department__name='ISE')
+	for i in data:
+		data1.add(i)
+	data=User.objects.filter(department__name='EEE')
+	for i in data:
+		data1.add(i)
+	data=User.objects.filter(department__name='CIV')
+	for i in data:
+		data1.add(i)
+	data=User.objects.filter(department__name='MCA')
+	for i in data:
+		data1.add(i)
+	data=User.objects.filter(department__name='TCE')
+	for i in data:
+		data1.add(i)
+	data=User.objects.filter(department__name='MECH')
+	for i in data:
+		data1.add(i)
+	data=User.objects.filter(department__name='maths')
+	for i in data:
+		data1.add(i)
+	data=User.objects.filter(department__name='physics')
+	for i in data:
+		data1.add(i)
+	data=User.objects.filter(department__name='chemistry')
+	for i in data:
+		data1.add(i)
+"""
+
 
 def email_otp(random_otp,email,name):
 	mail_subject = 'Your OTP is :.'
