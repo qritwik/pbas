@@ -37,10 +37,6 @@
 							<div class="cell">
 								<h3>AO View</h3>
 							</div>
-
-							<div class="cell">
-								<a href="{% url 'facform1:ao_consolidated_dept' y %}" style="color:#ffffff">Consolidated Report</a>
-							</div>
 <h1></h1>
 
 						</div>
@@ -63,13 +59,6 @@
 							<div class="cell">
 								Departments
 							</div>
-							<div class="cell">
-								Status of PBAS completion
-							</div>
-							<div class="cell">
-							Final Appraisal Form
-							</div>
-
 						</div>
 
             {% for dept in dept %}
@@ -80,15 +69,8 @@
                 {{ forloop.counter }}
               </div>
 							<div class="cell" data-title="Department">
-                <a class="" href="" value="{dept.name}">{{dept.name}}</a>
+                <a class="" href="{% url 'facform1:ao_consolidated' y dept %}" value="{dept.name}">{{dept.name}}</a>
 							</div>
-							<div class="cell" data-title="Department">
-                <a class="" href="{% url 'facform1:ao_display' dept=dept y=y %}" value="{dept.name}">Status of PBAS completion</a>
-							</div>
-							<div class="cell" data-title="Department">
-                <a class="" href="/ao_approved/{{dept.name}}/{{y}}" value="{dept.name}">Final Appraisal Form</a>
-							</div>
-
 						</div>
 
             {% endfor %}

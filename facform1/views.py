@@ -676,9 +676,12 @@ def report(request,dept):
 	response = HttpResponse(save_virtual_workbook(book), content_type='application/vnd.ms-excel')
 	response['Content-Disposition'] = 'attachment; filename="final_report.xlsx"'
 	return response
-
-def ao_consolidated(request,y):
-	data1 = User.objects.filter(Q(department__name='CSE')|Q(department__name='ISE')|Q(department__name='ECE')|Q(department__name='EEE')|Q(department__name='CIV')|Q(department__name='MCA')|Q(department__name='TCE')|Q(department__name='MECH')|Q(department__name='maths')|Q(department__name='physics')|Q(department__name='chemistry')).order_by('department','username')
+def ao_consolidated_dept(request,y):
+	dept=Department.objects.all()
+	return render(request,'ao_consolidated_dept.html',{'dept':dept,'y':y})
+def ao_consolidated(request,y,dept):
+	#data1 = User.objects.filter(Q(department__name='CSE')|Q(department__name='ISE')|Q(department__name='ECE')|Q(department__name='EEE')|Q(department__name='CIV')|Q(department__name='MCA')|Q(department__name='TCE')|Q(department__name='MECH')|Q(department__name='maths')|Q(department__name='physics')|Q(department__name='chemistry')).order_by('department','username')
+	data1=User.objects.filter(department__name=dept)
 	dic ={}
 	for i in data1:
 		print(i.department)
@@ -710,7 +713,8 @@ def ao_consolidated(request,y):
 		dic[i] = [data2,data3,data4,data5,data7]
 
 	context = {
-			'data6':dic
+			'data6':dic,
+			'dept':dept
 		}
 
 	return render(request,'ao_consolidated.html',context = context)
