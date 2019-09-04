@@ -731,12 +731,12 @@ def email_otp(random_otp,email,name):
 	#subject='Thank you for registering with us'
 	#message='Please enter the OTP to verify your email.Your OTP is : '+str(rand)
 	#message=str(rand)
-	from_email='ravikrsngh.rks@gmail.com'
+	from_email='pbasotp@gmail.com'
 	to_list=[email]
 	print(to_list)
 	s= smtplib.SMTP('smtp.gmail.com',587)
 	s.starttls()
-	s.login('ravikrsngh.rks@gmail.com','ykigquucffuhzmkz')
+	s.login('pbasotp@gmail.com','jiwytjodcksarqoh')
 	s.sendmail(from_email,to_list,message)
 	s.quit()
 	print("Email Sent")
