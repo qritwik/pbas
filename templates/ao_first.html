@@ -21,27 +21,28 @@
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="{% static "css/util.css" %}">
 	<link rel="stylesheet" type="text/css" href="{% static "css/main1.css" %}">
-<!--===============================================================================================-->
+<!--========================================================================================	{% include 'partials/nav_primary.html' %} =======-->
 </head>
+{% include 'partials/nav_primary.html' %}
 <body style="background:#c3d1f8">
-
-	{% include 'partials/nav_primary.html' %}
-
-	<div style="margin-top:-10px;" class="limiter">
+	<div style="margin-top:-200px;" class="limiter">
 
 		<div class="container-table100">
 			<div class="wrap-table100">
 					<div class="table">
-
 						<div class="row header">
 							<div class="cell">
 								<h3>AO View</h3>
 							</div>
 
-							<div class="cell">
+						</div>
+
+<h1>              </h1>
+
+						<div class="row header " style="font-size:25px">
+							<div class="col-sm-12">
 								<a href="{% url 'facform1:ao_consolidated_dept' y %}" style="color:#ffffff">Consolidated Report</a>
 							</div>
-<h1></h1>
 
 						</div>
 					</div>
@@ -51,7 +52,7 @@
 
 
 
-	<div style="margin-top:-250px;" class="limiter">
+	<div style="margin-top:-300px;" class="limiter">
 		<div class="container-table100">
 			<div class="wrap-table100">
 					<div class="table">

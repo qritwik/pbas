@@ -27,7 +27,7 @@
 
 	{% include 'partials/nav_primary.html' %}
 
-	<div style="margin-top:-10px;" class="limiter">
+	<div style="margin-top:-200px;" class="limiter">
 
 		<div class="container-table100">
 			<div class="wrap-table100">
@@ -35,7 +35,7 @@
 
 						<div class="row header">
 							<div class="cell">
-								<h3>AO View</h3>
+								<h3>Consolidated Report View</h3>
 							</div>
 <h1></h1>
 
@@ -47,7 +47,7 @@
 
 
 
-	<div style="margin-top:-250px;" class="limiter">
+	<div style="margin-top:-300px;" class="limiter">
 		<div class="container-table100">
 			<div class="wrap-table100">
 					<div class="table">
@@ -59,18 +59,30 @@
 							<div class="cell">
 								Departments
 							</div>
+							<div class="cell">
+								<center>No. of Submission</center>
+							</div>
 						</div>
 
-            {% for dept in dept %}
+            {% for dept,tt,a in t %}
 
 
 	           <div class="row">
-							<div class="cell" data-title="S no.">
-                {{ forloop.counter }}
-              </div>
-							<div class="cell" data-title="Department">
-                <a class="" href="{% url 'facform1:ao_consolidated' y dept %}" value="{dept.name}">{{dept.name}}</a>
-							</div>
+
+								 <div class="cell" data-title="S no.">
+ 	                {{ forloop.counter }}
+
+							 </div>
+
+								 <div class="cell" data-title="Department">
+ 	                <a class="" href="{% url 'facform1:ao_consolidated' y dept %}" value="{dep}">{{dept}}</a>
+
+							 </div>
+							 <div class="cell" data-title="No. of Submission">
+								<center> {{a}}/{{tt}}</center>
+						 </div>
+
+
 						</div>
 
             {% endfor %}

@@ -32,7 +32,7 @@
 
 	{% include 'partials/nav_primary.html' %}
 
-	<div style="margin-top:10%" class="limiter">
+	<div style="margin-top:-200px" class="limiter">
 		<div class="container-table100">
 			<div class="wrap-table100">
 					<div class="table">
@@ -53,7 +53,7 @@
 							</div>
 						</div>
 
-	<div style="margin-top:-20%;" class="limiter">
+	<div style="margin-top:-500px" class="limiter">
 		<div class="container-table100">
 			<div class="wrap-table100">
 					<div class="table">
@@ -72,85 +72,10 @@
 							<div class="cell">
 								HOD's Review
 							</div>
-						</div>
-
-            {% for x in name %}
-
-						<div class="row">
-							<div class="cell">
-								<div class="col-sm-2">
-									<img src="{{x.info.profile_pic.url}}" alt="No pic" class="img-responsive " style="width:300%" align="middle" >
-								</div>
-							</div>
-							<div class="cell" data-title="Faculty Name">
-
-								{% if x.teach_status and x.hod_status %}
-								<a href="/hod_teacher_display_edit/{{x.info.pk}}/{{y}}" class="h2p">{{x.info.first_name}}</a>
-								{% elif x.teach_status %}
-								<a href="/hod_teacher_display/{{x.info.pk}}/{{y}}">{{x.info.first_name}}</a>
-								{% else %}
-								<a href="#" class="h3p">{{x.info.first_name}}else</a>
-								{% endif %}
-								  <!-- <a {% if info.hod_status == False %} href="/hod_teacher_display/{{info.pk}}" {% else %} href="#" {% endif %}>{{info.first_name}}</a> -->
-							</div>
-
-							<div class="cell" data-title="f-sub">
-                {% if x.teach_status %}
-								  <span class="badge badge-success pull-left">{{x.teach_status}}</span>
-                {% else %}
-                  <span class="badge badge-danger pull-left">{{x.teach_status}}</span>
-                {% endif %}
-
-							</div>
-							<div class="cell" data-title="hod-review">
-                {% if x.hod_status %}
-								  <span class="badge badge-success pull-left">{{x.hod_status}}</span>
-                {% else %}
-                  <span class="badge badge-danger pull-left">{{x.hod_status}}</span>
-                {% endif %}
+							<div class="cell ">
+								Principals's Review
 							</div>
 						</div>
-
-            {% endfor %}
-
-
-            {% for info in name1 %}
-
-						<div class="row">
-							<div class="cell">
-								<div class="col-sm-2">
-									<img src="{{info.info.profile_pic.url}}" alt="No pic" class="img-responsive " style="width:300%" align="middle" >
-								</div>
-							</div>
-
-							<div class="cell" data-title="Faculty Name">
-
-								{% if info.teach_status and info.hod_status %}
-								<a href="/hod_teacher1_display_edit/{{info.info.pk}}" class="h2p">{{info.info.first_name}}</a>
-								{% elif info.teach_status %}
-								<a href="/hod_teacher1_display/{{info.info.pk}}/{{y}}">{{info.info.first_name}}</a>
-								{% else %}
-								<a href="#" class="h3p">{{info.info.first_name}}</a>
-								{% endif %}
-							</div>
-
-							<div class="cell" data-title="f-sub">
-                {% if info.teach_status %}
-                  <span class="badge badge-success pull-left">{{info.teach_status}}</span>
-                {% else %}
-                  <span class="badge badge-danger pull-left">{{info.teach_status}}</span>
-                {% endif %}
-							</div>
-							<div class="cell" data-title="hod-review">
-                {% if info.hod_status %}
-								  <span class="badge badge-success pull-left">{{info.hod_status}}</span>
-                {% else %}
-                  <span class="badge badge-danger pull-left">{{info.hod_status}}</span>
-                {% endif %}
-							</div>
-						</div>
-
-            {% endfor %}
 						{% for x in name2 %}
 
 						<div class="row">
@@ -187,9 +112,96 @@
 									<span class="badge badge-danger pull-left">{{x.hod_status}}</span>
 								{% endif %}
 							</div>
+							<div class="cell" data-title="hod-review">
+								{% if x.principal_status %}
+									<span class="badge badge-success pull-left">{{x.principal_status}}</span>
+								{% else %}
+									<span class="badge badge-danger pull-left">{{x.principal_status}}</span>
+								{% endif %}
+							</div>
 						</div>
 
 						{% endfor %}
+
+						{% for info in name1 %}
+
+						<div class="row">
+							<div class="cell">
+								<div class="col-sm-2">
+									<img src="{{info.info.profile_pic.url}}" alt="No pic" class="img-responsive " style="width:300%" align="middle" >
+								</div>
+							</div>
+
+							<div class="cell" data-title="Faculty Name">
+
+								{% if info.teach_status and info.hod_status %}
+								<a href="/hod_teacher1_display_edit/{{info.info.pk}}" class="h2p">{{info.info.first_name}}</a>
+								{% elif info.teach_status %}
+								<a href="/hod_teacher1_display/{{info.info.pk}}/{{y}}">{{info.info.first_name}}</a>
+								{% else %}
+								<a href="#" class="h3p">{{info.info.first_name}}</a>
+								{% endif %}
+							</div>
+
+							<div class="cell" data-title="f-sub">
+                {% if info.teach_status %}
+                  <span class="badge badge-success pull-left">{{info.teach_status}}</span>
+                {% else %}
+                  <span class="badge badge-danger pull-left">{{info.teach_status}}</span>
+                {% endif %}
+							</div>
+							<div class="cell" data-title="hod-review">
+                {% if info.hod_status %}
+								  <span class="badge badge-success pull-left">{{info.hod_status}}</span>
+                {% else %}
+                  <span class="badge badge-danger pull-left">{{info.hod_status}}</span>
+                {% endif %}
+							</div>
+						</div>
+
+            {% endfor %}
+
+
+            {% for x in name %}
+
+						<div class="row">
+							<div class="cell">
+								<div class="col-sm-2">
+									<img src="{{x.info.profile_pic.url}}" alt="No pic" class="img-responsive " style="width:300%" align="middle" >
+								</div>
+							</div>
+							<div class="cell" data-title="Faculty Name">
+
+								{% if x.teach_status and x.hod_status %}
+								<a href="/hod_teacher_display_edit/{{x.info.pk}}/{{y}}" class="h2p">{{x.info.first_name}}</a>
+								{% elif x.teach_status %}
+								<a href="/hod_teacher_display/{{x.info.pk}}/{{y}}">{{x.info.first_name}}</a>
+								{% else %}
+								<a href="#" class="h3p">{{x.info.first_name}}</a>
+								{% endif %}
+								  <!-- <a {% if info.hod_status == False %} href="/hod_teacher_display/{{info.pk}}" {% else %} href="#" {% endif %}>{{info.first_name}}</a> -->
+							</div>
+
+							<div class="cell" data-title="f-sub">
+                {% if x.teach_status %}
+								  <span class="badge badge-success pull-left">{{x.teach_status}}</span>
+                {% else %}
+                  <span class="badge badge-danger pull-left">{{x.teach_status}}</span>
+                {% endif %}
+
+							</div>
+							<div class="cell" data-title="hod-review">
+                {% if x.hod_status %}
+								  <span class="badge badge-success pull-left">{{x.hod_status}}</span>
+                {% else %}
+                  <span class="badge badge-danger pull-left">{{x.hod_status}}</span>
+                {% endif %}
+							</div>
+						</div>
+
+            {% endfor %}
+
+
 
 
 

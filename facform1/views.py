@@ -678,7 +678,30 @@ def report(request,dept):
 	return response
 def ao_consolidated_dept(request,y):
 	dept=Department.objects.all()
-	return render(request,'ao_consolidated_dept.html',{'dept':dept,'y':y})
+	general=set()
+	tt=[]
+	t=[]
+
+	for i in dept:
+		gen=User.objects.filter(department__name=i)
+		c=0
+		count=0
+		for k in gen:
+			count=count+1
+		z=[]
+		z.append(i.name)
+		z.append(count)
+		for j in gen:
+			try:
+				x=new.objects.filter(info__username=j.username).get(year__year=y)
+				if x.teach_status:
+					c=c+1
+			except:
+				pass
+		z.append(c)
+		t.append(z)
+		print(t)
+	return render(request,'ao_consolidated_dept.html',{'dept':dept,'y':y,'tt':tt,'t':t})
 def ao_consolidated(request,y,dept):
 	#data1 = User.objects.filter(Q(department__name='CSE')|Q(department__name='ISE')|Q(department__name='ECE')|Q(department__name='EEE')|Q(department__name='CIV')|Q(department__name='MCA')|Q(department__name='TCE')|Q(department__name='MECH')|Q(department__name='maths')|Q(department__name='physics')|Q(department__name='chemistry')).order_by('department','username')
 	data1=User.objects.filter(department__name=dept)
@@ -804,10 +827,10 @@ def login(request):
 			email = user.email
 			phone = user.phone
 			random_otp = r''.join(random.choice('0123456789') for i in range(4))
-			phone_otp(random_otp,phone)
+			#phone_otp(random_otp,phone)
 
-			email_otp(random_otp,user.email,user.first_name)
-			#random_otp="1234"
+			#email_otp(random_otp,user.email,user.first_name)
+			random_otp="1234"
 			hashed_pwd = make_password(random_otp)
 			User.objects.filter(username=username).update(password=hashed_pwd)
 
@@ -888,7 +911,7 @@ def hod_display(request,y):
 				except:
 					pass
 
-			if i.designation.pk is 3:
+			if i.designation.pk is 3 or i.designation.pk is 4:
 				try:
 					x=new.objects.filter(info__username=i.username).get(year__year=y)
 					print(x.teach_status)
