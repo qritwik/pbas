@@ -72,8 +72,10 @@ def first_page(request):
 		if form.is_valid():
 			f=form.save(commit=False)
 			name = request.user
-			user.designation=f.designation
-			user.save()
+			#user.designation=f.designation
+			#user.save()
+			if f.designation != user.designation:
+				return HttpResponseRedirect(reverse('facform1:invalid'))
 			if new.objects.filter(info=request.user).filter(year=f.year).exists():
 				if user.is_assistant_professor():
 					print("User is assistant professor")
@@ -703,38 +705,40 @@ def ao_consolidated_dept(request,y):
 		print(t)
 	return render(request,'ao_consolidated_dept.html',{'dept':dept,'y':y,'tt':tt,'t':t})
 def ao_consolidated(request,y,dept):
-	#data1 = User.objects.filter(Q(department__name='CSE')|Q(department__name='ISE')|Q(department__name='ECE')|Q(department__name='EEE')|Q(department__name='CIV')|Q(department__name='MCA')|Q(department__name='TCE')|Q(department__name='MECH')|Q(department__name='maths')|Q(department__name='physics')|Q(department__name='chemistry')).order_by('department','username')
-	data1=User.objects.filter(department__name=dept)
+	d=4
 	dic ={}
-	for i in data1:
-		print(i.department)
-		try:
-		    data2 = feedbackTab.objects.filter(info=i.pk).get(year=y)
-		except feedbackTab.DoesNotExist:
-		    data2 = None
+	#data1 = User.objects.filter(Q(department__name='CSE')|Q(department__name='ISE')|Q(department__name='ECE')|Q(department__name='EEE')|Q(department__name='CIV')|Q(department__name='MCA')|Q(department__name='TCE')|Q(department__name='MECH')|Q(department__name='maths')|Q(department__name='physics')|Q(department__name='chemistry')).order_by('department','username')
+	for j in range(4,0,-1):
+		data1=User.objects.filter(department__name=dept).filter(designation__pk=j)
+		for i in data1:
 
-		try:
-		    data3 = rd.objects.filter(info=i.pk).get(year=y)
-		except rd.DoesNotExist:
-		    data3 = None
+			print(i.department)
+			try:
+			    data2 = feedbackTab.objects.filter(info=i.pk).get(year=y)
+			except feedbackTab.DoesNotExist:
+			    data2 = None
 
-		try:
-		    data4 = remarks1.objects.filter(info=i.pk).get(year=y)
-		except remarks1.DoesNotExist:
-		    data4 = None
+			try:
+			    data3 = rd.objects.filter(info=i.pk).get(year=y)
+			except rd.DoesNotExist:
+			    data3 = None
 
-		try:
-		    data5 = remarks2.objects.filter(info=i.pk).get(year=y)
-		except remarks2.DoesNotExist:
-		    data5 = None
+			try:
+			    data4 = remarks1.objects.filter(info=i.pk).get(year=y)
+			except remarks1.DoesNotExist:
+			    data4 = None
 
-		try:
-		    data7 = empDetailForm.objects.filter(info=i.pk).get(year=y)
-		except empDetailForm.DoesNotExist:
-		    data7 = None
+			try:
+			    data5 = remarks2.objects.filter(info=i.pk).get(year=y)
+			except remarks2.DoesNotExist:
+			    data5 = None
 
-		dic[i] = [data2,data3,data4,data5,data7]
+			try:
+			    data7 = empDetailForm.objects.filter(info=i.pk).get(year=y)
+			except empDetailForm.DoesNotExist:
+			    data7 = None
 
+			dic[i] = [data2,data3,data4,data5,data7]
 	context = {
 			'data6':dic,
 			'dept':dept
