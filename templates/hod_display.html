@@ -157,6 +157,13 @@
                   <span class="badge badge-danger pull-left">{{info.hod_status}}</span>
                 {% endif %}
 							</div>
+							<div class="cell" data-title="hod-review">
+                {% if info.principal_status %}
+								  <span class="badge badge-success pull-left">{{info.principal_status}}</span>
+                {% else %}
+                  <span class="badge badge-danger pull-left">{{info.principal_status}}</span>
+                {% endif %}
+							</div>
 						</div>
 
             {% endfor %}
@@ -195,6 +202,13 @@
 								  <span class="badge badge-success pull-left">{{x.hod_status}}</span>
                 {% else %}
                   <span class="badge badge-danger pull-left">{{x.hod_status}}</span>
+                {% endif %}
+							</div>
+							<div class="cell" data-title="hod-review">
+                {% if x.principal_status %}
+								  <span class="badge badge-success pull-left">{{x.principal_status}}</span>
+                {% else %}
+                  <span class="badge badge-danger pull-left">{{x.principal_status}}</span>
                 {% endif %}
 							</div>
 						</div>
