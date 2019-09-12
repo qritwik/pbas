@@ -46,10 +46,19 @@
 <div class="container">
   <div class="login-form">
 
-      {% if user.username == "HOD_CIVIL" %}
+      {% if user.designation.name == "ASSOCIATE PROFESSOR" %}
      <a
-     {% if t.teach_status == False %} href="/associate_form1/" {% else %} href="/associate_preview/" {% endif %} style="background:#9ccc65;margin-top:1%;width:100%;" class="list-group-item list-group-item-action">Submit your own form</a>
-     {% else %}
+     {% if t.teach_status == False %} href="/associate_form1/{{f}}" {% else %} href="/associate_preview/{{f}}" {% endif %} style="background:#9ccc65;margin-top:1%;width:100%;" class="list-group-item list-group-item-action">Submit your own form</a>
+     {% endif %}
+     {% if user.designation.name == "ASSISTANT PROFESSOR" %}
+    <a
+    {% if t.teach_status == False %} href="/assistant_form1/{{f}}" {% else %} href="/assistant_preview/{{f}}" {% endif %} style="background:#9ccc65;margin-top:1%;width:100%;" class="list-group-item list-group-item-action">Submit your own form</a>
+    {% endif %}
+    {% if user.designation.name == "PROFESSOR" %}
+   <a
+   {% if t.teach_status == False %} href="/associate_form1/{{f}}" {% else %} href="/associate_preview/{{f}}" {% endif %} style="background:#9ccc65;margin-top:1%;width:100%;" class="list-group-item list-group-item-action">Submit your own form</a>
+   {% endif %}
+{% if user.designation.name == "HOD" %}
      <a
      {% if t.teach_status == False %} href="{% url 'facform1:hod_form1' f %}" {% else %} href="{% url 'facform1:hod_preview' f %}" {% endif %}
      style="background:#9ccc65;margin-top:1%;width:100%;" class="list-group-item list-group-item-action">Submit your own form</a>

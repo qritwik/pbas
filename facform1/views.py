@@ -77,14 +77,22 @@ def first_page(request):
 			if f.designation != user.designation:
 				return HttpResponseRedirect(reverse('facform1:invalid'))
 			if new.objects.filter(info=request.user).filter(year=f.year).exists():
-				if user.is_assistant_professor():
+				if user.is_assistant_professor() and user.hodrole:
+					print("User is assistant professor")
+					return HttpResponseRedirect(reverse('facform1:hod_first',args=(f.year,)))
+				elif user.is_assistant_professor():
 					print("User is assistant professor")
 					return HttpResponseRedirect(reverse('facform1:assistant_form1',args=(f.year,)))
 
+				elif user.is_associate_professor() and user.hodrole:
+					print("user is associate professor")
+					return HttpResponseRedirect(reverse('facform1:hod_first',args=(f.year,)))
 				elif user.is_associate_professor():
 					print("user is associate professor")
 					return HttpResponseRedirect(reverse('facform1:associate_form1',args=(f.year,)))
-
+				elif user.is_professor() and user.hodrole:
+					print("user is professor")
+					return HttpResponseRedirect(reverse('facform1:hod_first',args=(f.year,)))
 				elif user.is_professor():
 					print("user is professor")
 					return HttpResponseRedirect(reverse('facform1:associate_form1',args=(f.year,)))
@@ -105,13 +113,22 @@ def first_page(request):
 						u.designation=f.designation
 						u.save()
 						f.save()
-						if request.user.is_assistant_professor():
+						if user.is_assistant_professor() and user.hodrole:
+							print("User is assistant professor")
+							return HttpResponseRedirect(reverse('facform1:hod_first',args=(f.year,)))
+						elif request.user.is_assistant_professor():
 							return HttpResponseRedirect(reverse('facform1:assistant_form1',args=(f.year,)))
-
-						elif request.user.is_associate_professor():
+						elif user.is_associate_professor() and user.hodrole:
+							print("user is associate professor")
+							return HttpResponseRedirect(reverse('facform1:hod_first',args=(f.year,)))
+						elif user.is_associate_professor():
+							print("user is associate professor")
 							return HttpResponseRedirect(reverse('facform1:associate_form1',args=(f.year,)))
-
-						elif request.user.is_professor():
+						elif user.is_professor() and user.hodrole:
+							print("user is professor")
+							return HttpResponseRedirect(reverse('facform1:hod_first',args=(f.year,)))
+						elif user.is_professor():
+							print("user is professor")
 							return HttpResponseRedirect(reverse('facform1:associate_form1',args=(f.year,)))
 						elif request.user.is_hod():
 							return HttpResponseRedirect(reverse('facform1:hod_first',args=(f.year,)))
@@ -888,7 +905,7 @@ def decide_view(request):
 def hod_display(request,y):
 	user = request.user
 	hod_dept = user.department
-	if request.user.is_hod() and request.user.department == hod_dept:
+	if request.user.is_hod() or user.hodrole:
 
 		user = request.user
 		pk = request.user.pk
@@ -915,7 +932,7 @@ def hod_display(request,y):
 				except:
 					pass
 
-			if i.designation.pk is 3 or i.designation.pk is 4:
+			if i.designation.pk is 3 :
 				try:
 					x=new.objects.filter(info__username=i.username).get(year__year=y)
 					print(x.teach_status)
@@ -936,7 +953,7 @@ def hod_display(request,y):
 
 @login_required
 def hod_teacher_display(request,pk,y):
-		if request.user.is_hod():
+		if request.user.is_hod() or request.user.hodrole:
 			name =  User.objects.get(pk = pk);
 			print(name)
 			data1 = User.objects.get(username=name);
@@ -1073,7 +1090,7 @@ def hod_teacher_display_edit(request,pk,y):
 
 @login_required
 def hod_teacher1_display(request,pk,y):
-	if request.user.is_hod():
+	if request.user.is_hod() or request.user.hodrole:
 		name =  User.objects.get(pk = pk);
 		print(name)
 		data1 = User.objects.get(username=name);
@@ -1835,7 +1852,7 @@ def ao_hod_display(request,name,y):
 
 @login_required
 def hod_first(request,y):
-	if request.user.is_hod():
+	if request.user.is_hod() or request.user.hodrole:
 		user = request.user
 		hod_dept = user.department
 		status=new.objects.filter(info=user).get(year__year=y)

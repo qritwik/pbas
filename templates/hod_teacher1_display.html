@@ -778,7 +778,7 @@
                </div>
 
                   <div class="form-group col-md-6">
-                      	<em>{{ key3.e_o_f_r_final }}</em>
+                      	<em class="m1">{{ key3.e_o_f_r_final }}</em>
                         </div>
                     </div>
 </div>
@@ -1991,7 +1991,7 @@
               <h6 class="po color1">TOTAL MARKS<span class="sp">_(Maximum Score: 40)</span></h6>
                </div>
 
-                  <div class="orm-group col-md-6">
+                  <div class="orm-group col-md-6 m2">
 										{{ key4.rd_tot_marks }}
                         </div>
                     </div>
@@ -2026,7 +2026,7 @@
     <tr>
       <th scope="row"></th>
       <td>{{ key5.ta_ic }}</td>
-       <td rowspan="3" class="fo1">{% render_field form1.hod_marks1 class="form-control m3" %}</td>
+       <td rowspan="3" class="fo1">{% render_field form1.hod_marks1 class="form-control m5 " %}</td>
     </tr>
 
   </tbody>
@@ -2103,9 +2103,9 @@
                           <input type="text" class="form-control" id="inputEmployeeIdNo" disabled placeholder="Ajust/Normalize Marks(if any)">
 
             </div>
-          <div class="form-group col-md-6">
+          <div class="form-group col-md-6 ">
 
-            {% render_field form1.marks_deduce class="form-control" %}
+            {% render_field form1.marks_deduce class="form-control m3" %}
           </div>
           <div class="form-group col-md-12">
             <h4>Reason:</h4>
@@ -2249,8 +2249,8 @@
 
       var e = parseFloat($('.m1').html());
       var f = parseFloat($('.m2').html());
-      var m = parseFloat($('.m3').val());
-      var g = parseFloat($('.m5').val());
+      var m = parseFloat($('.m5').val());
+      var g = parseFloat($('.m3').val());
 
       if(isNaN(g)){
       g = 0;
