@@ -1110,7 +1110,7 @@ def hod_teacher1_display(request,pk,y):
 			form1 = forms.form_remarks1(request.POST)
 			if form1.is_valid():
 
-				sendme = new.objects.filter(username=name).get(year=y)
+				sendme = new.objects.filter(info__username=name).get(year__year=y)
 				obj = form1.save(commit=False)
 
 				obj.info = name
