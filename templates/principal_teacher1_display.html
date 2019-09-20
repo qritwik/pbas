@@ -86,7 +86,7 @@
 
             <label for="" style="color:white">Internship report file</label>
             {% if key2.internship_report_file1 %}
-            <a href="/media/{{ key2.internship_report_file1}}" style="color:white">Click to view</a>
+            <a href="/media/{{ key2.internship_report_file1}}" style="color:#ff1a1a">Click to view</a>
             {% else %}
             <a href="#"></a>
             {% endif %}
@@ -124,7 +124,7 @@
 
             <label for="" style="color:white">Internship report file</label>
             {% if key2.internship_report_file2 %}
-            <a href="/media/{{ key2.internship_report_file2}}" style="color:white">Click to view</a>
+            <a href="/media/{{ key2.internship_report_file2}}" style="color:#ff1a1a">Click to view</a>
             {% else %}
             <a href="#"></a>
             {% endif %}
@@ -162,7 +162,7 @@
 
             <label for="" style="color:white">Internship report file</label>
             {% if key2.internship_report_file3 %}
-            <a href="/media/{{ key2.internship_report_file3}}" style="color:white">Click to view</a>
+            <a href="/media/{{ key2.internship_report_file3}}" style="color:#ff1a1a">Click to view</a>
             {% else %}
             <a href="#"></a>
             {% endif %}
@@ -859,7 +859,17 @@
 
         <input type="text" class="form-control" disabled value="{{key4.w_s_d}}">
     </div>
+    <h3>Documents</h3>
+    <div class="form-group col-md-6">
+      {% if key4.w_s_file %}
+        <a href="/media/{{key4.w_s_file}}" style="color:#ff1a1a">Click to view</a>
+        {% else %}
+        <a href="#"></a>
+        {% endif %}
 
+
+
+    </div>
 
   </div>
 
@@ -873,7 +883,17 @@
       <input type="text" class="form-control" disabled value="{{key4.w_n_d}}">
 
     </div>
+    <h3>Documents</h3>
+    <div class="form-group col-md-6">
+      {% if key4.w_n_file %}
+        <a href="/media/{{key4.w_n_file}}" style="color:#ff1a1a">Click to view</a>
+        {% else %}
+        <a href="#"></a>
+        {% endif %}
 
+
+
+    </div>
 
 
 
@@ -888,7 +908,17 @@
 
         <input type="text" class="form-control" disabled value="{{key4.w_i_d}}">
     </div>
+    <h3>Documents</h3>
+    <div class="form-group col-md-6">
 
+
+      {% if key4.w_i_file %}
+        <a href="/media/{{key4.w_i_file}}" style="color:#ff1a1a">Click to view</a>
+        {% else %}
+        <a href="#"></a>
+        {% endif %}
+
+    </div>
 
 
   </div>
@@ -940,6 +970,17 @@
 
       <input type="text" class="form-control" disabled value="{{key4.p_s_d}}">
     </div>
+    <h3>Documents</h3>
+    <div class="form-group col-md-6">
+      {% if key4.p_s_file %}
+        <a href="/media/{{key4.p_s_file}}" style="color:#ff1a1a">Click to view</a>
+        {% else %}
+        <a href="#"></a>
+        {% endif %}
+
+
+
+    </div>
 
   </div>
 
@@ -951,6 +992,17 @@
     <div class="form-group col-md-6">
 
         <input type="text" class="form-control" disabled value="{{key4.p_n_d}}">
+
+    </div>
+    <h3>Documents</h3>
+    <div class="form-group col-md-6">
+      {% if key4.p_n_file %}
+        <a href="/media/{{key4.p_n_file}}" style="color:#ff1a1a">Click to view</a>
+        {% else %}
+        <a href="#"></a>
+        {% endif %}
+
+
 
     </div>
 
@@ -967,7 +1019,15 @@
       <input type="text" class="form-control" disabled value="{{key4.p_i_d}}">
 
     </div>
+    <h3>Documents</h3>
+    <div class="form-group col-md-6">
+      {% if key4.p_i_file %}
+        <a href="/media/{{key4.p_i_file}}" style="color:#ff1a1a">Click to view</a>
+        {% else %}
+        <a href="#"></a>
+        {% endif %}
 
+    </div>
 
 
   </div>
@@ -1013,6 +1073,26 @@
   <div class="form-group col-md-6">
       <input type="text" class="form-control" disabled value="{{key4.onl_course_c}}">
     </div>
+    <div class="form-group col-md-6">
+      <label>Documents:</label>
+      {% if key4.onl_course_c_file1 %}
+       <a href="/media/{{key4.onl_course_c_file1}}" style="color:#ff1a1a">Click to view</a>
+        {% else %}
+        <a href="#"></a>
+        {% endif %}
+
+    </div>
+
+    <div class="form-group col-md-6">
+      <label>Online courses Documents2:</label>
+      {% if key4.onl_course_c_file2 %}
+       <a href="/media/{{key4.onl_course_c_file2}}" style="color:#ff1a1a">Click to view</a>
+        {% else %}
+        <a href="#"></a>
+        {% endif %}
+
+    </div>
+
 
     <div class="form-group col-md-6">
    <h6 class=" color1">TOTAL MARKS<span class="sp"></span></h6>
@@ -1551,7 +1631,7 @@
 
                          <div class="form-group col-md-6">
 
-                        <h5 class="po color2">TOTAL MARKS<span class="sp" style="color:#ff0808">_(Maximum Score: 35)</span></h5>
+                        <h5 class="po color2">TOTAL MARKS<span class="sp" style="color:#ff0808">(Maximum Score: 35)</span></h5>
 
                          </div>
 
@@ -1572,7 +1652,16 @@
   </div>
 
 <div class="card poi">
+  <div class="col-12" style="background:#9999ff">
+    <center><h1>HOD REVIEW</h2></center>
+  </div>
+  <div class="form-row dis">
+  <div class="col-4"></div>
+  <div class="col-4">
 
+  <div class="col-4"></div>
+  </div>
+  </div>
 
 
 
@@ -1696,6 +1785,16 @@
 
 
 <div class="card dis1 ">
+  <div class="col-12" style="background:#9999ff">
+    <center><h1>HOD REVIEW</h2></center>
+  </div>
+  <div class="form-row dis">
+  <div class="col-4"></div>
+  <div class="col-4">
+
+  <div class="col-4"></div>
+  </div>
+  </div>
   <table class="table table-bordered">
   <thead class="thead-dark">
     <tr>
