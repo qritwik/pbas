@@ -127,7 +127,9 @@
 					<div class="table">
 
 						<div class="row header">
-
+							<div class="cell">
+								Profile picture
+							</div>
 							<div class="cell">
 								Faculty Name
 							</div>
@@ -140,13 +142,17 @@
 							</div>
 							<div class="cell">
 								Principal's Review
-							</div> 
+							</div>
 						</div>
 
 						{% for x in sub %}
 
 						<div class="row">
-
+							<div class="cell">
+								<div class="col-sm-2">
+									<img src="{{x.info.profile_pic.url}}" alt="No pic" class="img-responsive " style="width:300%" align="middle" >
+								</div>
+							</div>
 							<div class="cell" data-title="Faculty Name">
 								{% if x.teach_status %}
 								<a {% if x.designation.pk == 4 %}	href="/ao_hod_display/{{x.info.username}}/{{y}}"
