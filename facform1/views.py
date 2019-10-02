@@ -23,7 +23,7 @@ from email.mime.text import MIMEText
 # import pdfkit
 from django.core.mail import send_mail, EmailMessage
 
- 
+
 
 # def email_doc(self, name):
 # 	qs = User.objects.get(username=name)
