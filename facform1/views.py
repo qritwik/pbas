@@ -1737,11 +1737,17 @@ def ao_teacher_display(request,name,y):
 	data7 = journal.objects.filter(info__username=name).get(year=y)
 
 	if new.objects.filter(info__username=name).filter(hod_status=True):
-		data8 = remarks1.objects.filter(info__username=name).get(year=y)
+		if remarks1.objects.filter(info__username=name).filter(year=y).exists():
+			data8=remarks1.objects.filter(info__username=name).get(year=y)
+		else:
+			data8=[]
 	else:
 		data8 = []
 	if new.objects.filter(info__username=name).filter(principal_status=True):
-		data9 = remarks2.objects.filter(info__username=name).get(year=y)
+		if remarks2.objects.filter(info__username=name).filter(year=y).exists():
+			data9=remarks2.objects.filter(info__username=name).get(year=y)
+		else:
+			data9=[]
 	else:
 		data9 = []
 	# if remarks1.objects.get(info__username=name):
@@ -1791,11 +1797,17 @@ def ao_teacher1_display(request,name,y):
 	data7 = journal.objects.filter(info__username=name).get(year=y)
 
 	if new.objects.filter(info__username=name).filter(hod_status=True):
-		data8 = remarks1.objects.filter(info__username=name).get(year=y)
+		if remarks1.objects.filter(info__username=name).filter(year=y).exists():
+			data8=remarks1.objects.filter(info__username=name).get(year=y)
+		else:
+			data8=[]
 	else:
 		data8 = []
 	if new.objects.filter(info__username=name).filter(principal_status=True):
-		data9 = remarks2.objects.filter(info__username=name).get(year=y)
+		if remarks2.objects.filter(info__username=name).filter(year=y).exists():
+			data9=remarks2.objects.filter(info__username=name).get(year=y)
+		else:
+			data9=[]
 	else:
 		data9 = []
 
@@ -1828,7 +1840,10 @@ def ao_hod_display(request,name,y):
 		data6 = conference.objects.filter(info__username=name).get(year=y)
 		data7 = journal.objects.filter(info__username=name).get(year=y)
 		if new.objects.filter(info__username=name).filter(principal_status=True):
-			data8 = remarks2.objects.filter(info__username=name).get(year=y)
+			if remarks2.objects.filter(info__username=name).filter(year=y).exists():
+				data8=remarks2.objects.filter(info__username=name).get(year=y)
+			else:
+				data8=[]
 		else:
 			data8 = []
 
