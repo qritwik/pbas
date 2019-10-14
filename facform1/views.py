@@ -1298,7 +1298,13 @@ def principal_teacher_display(request,pk,y):
 		data5 = remarks.objects.filter(info__username=name).get(year=y);
 		data6 = conference.objects.filter(info__username=name).get(year=y);
 		data7 = journal.objects.filter(info__username=name).get(year=y);
-		data8 = remarks1.objects.filter(info__username=name).get(year=y);
+		if new.objects.filter(info__username=name).filter(hod_status=True):
+			if remarks1.objects.filter(info__username=name).filter(year=y).exists():
+				data8=remarks1.objects.filter(info__username=name).get(year=y)
+			else:
+				data8=[]
+		else:
+			data8 = []
 
 
 
@@ -1415,7 +1421,10 @@ def principal_teacher1_display(request,pk,y):
 		data6 = conference.objects.filter(info__username=name).get(year=y);
 		data7 = journal.objects.filter(info__username=name).get(year=y);
 		if new.objects.filter(info__username=name).filter(hod_status=True):
-			data8 = remarks1.objects.filter(info__username=name).get(year=y)
+			if remarks1.objects.filter(info__username=name).filter(year=y).exists():
+				data8=remarks1.objects.filter(info__username=name).get(year=y)
+			else:
+				data8=[]
 		else:
 			data8 = []
 
