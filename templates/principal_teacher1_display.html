@@ -1555,8 +1555,24 @@
   <tr>
   <th scope="row">Consultancy Work</th>
   <td>{{ key4.Cw_2 }}</td>
+  <td>
+    {% if key4.Cw_2_file %}
+       <a href="/media/{{key4.Cw_2_file}}" style="color:#ff1a1a">Click to View</a>
+        {% else %}
+        <a href="#"></a>
+        {% endif %}</td>
   <td>{{ key4.Cw_2_5 }}</td>
+  <td>{% if key4.Cw_2_5_file %}
+       <a href="/media/{{key4.Cw_2_5_file}}" style="color:#ff1a1a">Click to View</a>
+        {% else %}
+        <a href="#"></a>
+        {% endif %}</td>
   <td>{{ key4.Cw_5 }}</td>
+  <td>{% if key4.Cw_5_file %}
+       <a href="/media/{{key4.Cw_5_file}}" style="color:#ff1a1a">Click to View</a>
+        {% else %}
+        <a href="#"></a>
+        {% endif %}</td>
   </tr>
   </tbody>
   </table>
