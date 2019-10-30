@@ -49,10 +49,7 @@
 
      <div class="col-12"><h1 align="center" class="display-4" style="color:#f5f5f5"> BMS Institute of Technology and management</h1>
        <h3 class="lead" style="color:white" align="center">Faculty Appraisal Form</h3>
-         <h3 class="lead" style="color:white" align="center">1-Aug-2018 to 31-Jul-2019</h3>
-       <hr class="my-4" style="color:white">
-       <h5 style="color:white; margin-left:108px;">Report must be submitted.</h5>
-
+         <h3 class="lead" style="color:white;height:5px" align="center">1-Aug-2018 to 31-Jul-2019</h3>
 
      </div>
      </div>
@@ -89,7 +86,7 @@
 
 						<label for="" style="color:white">Internship report file</label>
 						{% if key2.internship_report_file1 %}
-						<a href="/media/{{ key2.internship_report_file1}}" style="color:#ff1a1a">Click to view</a>
+						<a href="/media/{{ key2.internship_report_file1}}" style="color:yellow">Click to view</a>
 						{% else %}
 						<a href="#"></a>
 						{% endif %}
@@ -115,7 +112,7 @@
 
 						<label for="" style="color:white">Internship report file</label>
 						{% if key2.internship_report_file2 %}
-						<a href="/media/{{ key2.internship_report_file2}}" style="color:#ff1a1a">Click to view</a>
+						<a href="/media/{{ key2.internship_report_file2}}" style="color:yellow">Click to view</a>
 						{% else %}
 						<a href="#"></a>
 						{% endif %}
@@ -141,7 +138,7 @@
 
 						<label for="" style="color:white">Internship report file</label>
 						{% if key2.internship_report_file3 %}
-						<a href="/media/{{ key2.internship_report_file3}}" style="color:#ff1a1a">Click to view</a>
+						<a href="/media/{{ key2.internship_report_file3}}" style="color:yellow">Click to view</a>
 						{% else %}
 						<a href="#"></a>
 						{% endif %}
@@ -214,14 +211,14 @@
 
 			                </div>
 	   </div>
+		 <div class="row">
+		 <h1></h1>
+		 </div>
+<h1 style="text-align:center;height:50px">PART 1</h1>
+<div class="table-bordered" style="background:#ffa64d">
+		 <h3 class="poi">1: Course Feedback and results<span class="sp" style="color:#ff0808">(Maximum Score: 40 marks)</span></h3>
 
-
-
-		 <h3 class="poi">1: Course Feedback and results<span class="sp">(Maximum Score: 40 marks)</span></h3>
-
-	<div class="table-bordered poi" style="background:#ffbf80">
-
-	    <h4>1A: Odd Semester</h4>
+	    <h4 style="height:50px">1A: Odd Semester</h4>
 	  <table class="table table-bordered">
 	  <thead>
 	    <tr>
@@ -417,9 +414,9 @@
 
 	</div>
 
-	</div>
 
-	<div class="table-bordered poi" style="background:#ffbf70">
+
+	<div class="table-bordered poi">
 
 	   <h4>1B: Even Semester</h4>
 	  <table class="table-bordered table">
@@ -612,9 +609,9 @@
 	</div>
 
 	</div>
-	</div>
 
-	<div class=" table-bordered poi" style="background:#ffbf60">
+
+	<div class=" table-bordered poi">
 
 	   <h4>1C: Project Guided</h4>
 	  <table class="table-bordered table">
@@ -768,19 +765,16 @@
 	</div>
 	</div>
 	</div>
-	<div class="card poi card-header" id="headingOne" style="background:#4d9900">
+	<div class="card poi card-header" id="headingOne">
 	<div class="form-group">
 	<div class="form-row dis">
-	<div class="col-1"></div>
-	<div class="col-10">
-	 <div class="form-row dis">
-	               <div class="form-group col-md-6">
-	              <h3 class=" color1">TOTAL MARKS<span class="sp">(Maximum Score: 40)</span></h3>
+
+	<div class="container">
+	 <div class="form-row">
+	               <div class="container">
+	              <h3 class=" color1" style="text-align:right;height:5px">TOTAL MARKS<span class="sp" style="color:#ff0808">(Maximum Score: 40)</span> : {{ key3.e_o_f_r_final }}</h3>
 	               </div>
 
-	                  <div class="orm-group col-md-6">
-											<h4 class="m1 color1">{{ key3.e_o_f_r_final }}</h4>
-	                        </div>
 	                    </div>
 	</div>
 	<div class="col-1"></div>
@@ -802,17 +796,22 @@
 	</div>
 	</div>
 	</div>
-
+</div>
+</div>
 	</div>
-	<div class="table table-bordered" id="accordionExample">
-	  <h4 class="po color1">2: RESEARCH & DEVELOPMENT AND CONSULTANCY<span class="sp">(Maximum Score: 35 marks)</span></h4>
+
+	<h1></h1>
+	<center><h1 style="height:5px">PART 2</h1></center>
+	<br>
+	<div class="table-bordered poi form-row">
+	<div class="table table-bordered" id="accordionExample" style="background:#99ebff">
+	  <h4 class="po color1">2: RESEARCH & DEVELOPMENT AND CONSULTANCY<span class="sp" style="color:#ff0808">(Maximum Score: 35 marks)</span></h4>
 	  <div class="">
-	    <div class="card-header" id="headingOne" style="background: #47d1d1">
-	      <h3 class="">
-	        <button class="btn btn-link fo1" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-	         2A: Workshops/FDP attended
-	        </button>
-	      </h3>
+	    <div class="card-header" id="headingOne" style="background:#99ebff">
+	      <h4 style="text-align:left">
+	         Workshops/FDP attended
+
+	      </h4>
 	    </div>
 
 	<div class="form-row dis">
@@ -824,10 +823,10 @@
 
 	            <input type="text" class="form-control" disabled value="{{key4.w_s_d}}">
 	        </div>
-					<h3>Documents</h3>
+					<h3 style="margin-left:10px">Documents</h3>
 					<div class="form-group col-md-6">
 						{% if key4.w_s_file %}
-							<a href="/media/{{key4.w_s_file}}" style="color:#ff1a1a">Click to view</a>
+							<a href="/media/{{key4.w_s_file}}" style="color:yellow">Click to view</a>
 							{% else %}
 							<a href="#"></a>
 							{% endif %}
@@ -849,10 +848,10 @@
 	          <input type="text" class="form-control" disabled value="{{key4.w_n_d}}">
 
 	        </div>
-					<h3>Documents</h3>
+					<h3 style="margin-left:10px">Documents</h3>
 					<div class="form-group col-md-6">
 						{% if key4.w_n_file %}
-							<a href="/media/{{key4.w_n_file}}" style="color:#ff1a1a">Click to view</a>
+							<a href="/media/{{key4.w_n_file}}" style="color:yellow">Click to view</a>
 							{% else %}
 							<a href="#"></a>
 							{% endif %}
@@ -875,10 +874,10 @@
 
 	            <input type="text" class="form-control" disabled value="{{key4.w_i_d}}">
 	        </div>
-					<h3>Documents</h3>
+					<h3 style="margin-left:10px">Documents</h3>
 					<div class="form-group col-md-6">
 						{% if key4.w_i_file %}
-							<a href="/media/{{key4.w_i_file}}" style="color:#ff1a1a">Click to view</a>
+							<a href="/media/{{key4.w_i_file}}" style="color:yellow">Click to view</a>
 							{% else %}
 							<a href="#"></a>
 							{% endif %}
@@ -894,42 +893,25 @@
 
 
 			<div class="form-row dis">
-								<div class="form-group col-md-2">
+
+					 <div class="container">
+					 <div class="form-row">
+												 <div class="cell col-sm-12" >
+												<h6 class="color1" style="text-align:right"> TOTAL MARKS : {{ key4.w_m }}</h6>
+											</div>
+															</div>
+					 </div>
 
 
-								</div>
-
-
-							 <div class="form-group col-md-8">
-										 <div class="form-row dis">
-									 <div class="form-group col-md-4">
-
-										</div>
-													<div class="form-group col-md-2"></div>
-	                        <div class="form-row dis">
-	                                      <div class="form-group col-md-6">
-	                                     <h6 class=" color1">TOTAL MARKS<span class="sp"></span></h6>
-	                                      </div>
-
-	                                         <div class="orm-group col-md-6">
-	                       										<em>{{ key4.w_m }}</em>
-	                                               </div>
-	                                           </div>
-													</div>
-
-								</div>
-								<div class="form-group col-md-2"></div>
-
-					</div>
+</div>
 	</div>
 	  <div class="">
-	    <div class="card-header" id="headingTwo" style="background: #47d1d1">
-	      <h3 class="">
-	        <button class="btn btn-link collapsed fo1" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+	    <div class="card-header" id="headingTwo" style="background:#99ebff">
+	      <h4 class="">
 
-	2B: Invited talk/Seminar/Key Note Delivered
-	        </button>
-	      </h3>
+	Invited talk/Seminar/Key Note Delivered
+
+	      </h4>
 	    </div>
 
 	        <div class="form-row dis">
@@ -941,10 +923,10 @@
 
 	          <input type="text" class="form-control" disabled value="{{key4.p_s_d}}">
 	        </div>
-					<h3>Documents</h3>
+					<h3 style="margin-left:10px">Documents</h3>
 					<div class="form-group col-md-6">
 						{% if key4.p_s_file %}
-							<a href="/media/{{key4.p_s_file}}" style="color:#ff1a1a">Click to view</a>
+							<a href="/media/{{key4.p_s_file}}" style="color:yellow">Click to view</a>
 							{% else %}
 							<a href="#"></a>
 							{% endif %}
@@ -965,10 +947,10 @@
 	            <input type="text" class="form-control" disabled value="{{key4.p_n_d}}">
 
 	        </div>
-					<h3>Documents</h3>
+					<h3 style="margin-left:10px">Documents</h3>
 					<div class="form-group col-md-6">
 						{% if key4.p_n_file %}
-							<a href="/media/{{key4.p_n_file}}" style="color:#ff1a1a">Click to view</a>
+							<a href="/media/{{key4.p_n_file}}" style="color:yellow">Click to view</a>
 							{% else %}
 							<a href="#"></a>
 							{% endif %}
@@ -990,10 +972,10 @@
 	          <input type="text" class="form-control" disabled value="{{key4.p_i_d}}">
 
 	        </div>
-					<h3>Documents</h3>
+					<h3 style="margin-left:10px">Documents</h3>
 					<div class="form-group col-md-6">
 						{% if key4.p_i_file %}
-							<a href="/media/{{key4.p_i_file}}" style="color:#ff1a1a">Click to view</a>
+							<a href="/media/{{key4.p_i_file}}" style="color:yellow">Click to view</a>
 							{% else %}
 							<a href="#"></a>
 							{% endif %}
@@ -1006,42 +988,23 @@
 
 	    </div>
 
-			<div class="form-row dis">
-								<div class="form-group col-md-2">
+			<div class="container">
+						<div class="form-row">
 
 
-								</div>
 
+															 <div class="cell col-sm-12">
+															<h6 class=" color1" style="text-align:right">TOTAL MARKS : {{ key4.p_m }}</h6>
+															 </div>
 
-							 <div class="form-group col-md-8">
-										 <div class="form-row dis">
-									 <div class="form-group col-md-4">
-
-										</div>
-													<div class="form-group col-md-2"></div>
-	                        <div class="form-row dis">
-	                                      <div class="form-group col-md-6">
-	                                     <h6 class=" color1">TOTAL MARKS<span class="sp"></span></h6>
-	                                      </div>
-
-	                                         <div class="orm-group col-md-6">
-	                                          <em>{{ key4.p_m }}</em>
-	                                               </div>
-	                                           </div>
-													</div>
-
-								</div>
-								<div class="form-group col-md-2"></div>
-
-					</div>
+</div>
+</div>
 	  </div>
 		<div class="">
-			<div class="card-header" id="headingThree" style="background: #47d1d1">
-				<h3 class="">
-					<button class="btn btn-link collapsed fo1" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-					 2C: Number of Online Courses Completed
-				 </button><span class="fo1">(Maximum Score: 10 marks)</span>
-				</h3>
+			<div class="card-header" id="headingThree" style="background:#99ebff">
+				<h4 class="">
+					 Number of Online Courses Completed<span class="fo1" style="color:#ff0808">(Maximum Score: 10 marks)</span>
+				</h4>
 			</div>
 			<div class="form-group">
 			<div class="form-row dis">
@@ -1050,61 +1013,61 @@
 					</div>
 
 
-					<div class="form-group col-md-6">
-	          <label>Documents:</label>
+					<div class="form-group col-md-12">
+	          <label>Online Course Documents 1:</label>
 	          {% if key4.onl_course_c_file1 %}
-	           <a href="/media/{{key4.onl_course_c_file1}}" style="color:#ff1a1a">Click to view</a>
+	           <a href="/media/{{key4.onl_course_c_file1}}" style="color:yellow">Click to view</a>
 	            {% else %}
 	            <a href="#"></a>
 	            {% endif %}
 
 	        </div>
 
-					<div class="form-group col-md-6">
+					<div class="form-group col-md-12">
 						<label>Online courses Documents2:</label>
 						{% if key4.onl_course_c_file2 %}
-						 <a href="/media/{{key4.onl_course_c_file2}}" style="color:#ff1a1a">Click to view</a>
+						 <a href="/media/{{key4.onl_course_c_file2}}" style="color:yellow">Click to view</a>
 							{% else %}
 							<a href="#"></a>
 							{% endif %}
 
 					</div>
 
-	        <div class="form-group col-md-6">
-	       <h6 class=" color1">TOTAL MARKS<span class="sp"></span></h6>
+
+		 		     <div class="container">
+		 		           <div class="form-row">
 
 
-	           <div class="orm-group col-md-6">
-	            <em>{{ key4.onl_course_m }}</em>
-	                 </div>
 
-		</div>
+		 		                              <div class="cell col-sm-12">
+		 		                             <h6 class=" color1" style="text-align:right">TOTAL MARKS : {{ key4.onl_course_m }}</h6>
+		 		                              </div>
 
+		 		   </div>
+		 		   </div>
 		</div>
 		</div>
 	</div>
 
 
-	<div class="accordion dis1" id="accordionExample">
+	<div class="accordion dis1" id="accordionExample" style="background:#99ebff">
 	  <h4 class=" color1">3:Publications</h4>
 	  <div class="card">
-	    <div class="card-header" id="headingOne" style="background:#2eb8b8">
-	      <h3 class="">
-	        <button class="btn btn-link fo1" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-	          3A: Non-Indexed Publications in National Conference/Journals and International Conference/Journals<span class="sp">(Maximum Score: 08 marks)</span>
-	        </button>
-	      </h3>
+	    <div class="card-header" id="headingOne" style="background:#99ebff">
+	      <h4 class="" style="background:#99ebff">
+	         <strong>Non-Indexed Publications in National Conference/Journals and International Conference/Journals<span class="sp" style="color:#ff0808">(Maximum Score: 08 marks)</span></strong>
+	      </h4>
 	    </div>
 
-			<div class="form-row dis">
+			<div class="form-row dis" style="background:#99ebff">
 	    <div class="form-group col-md-4">
 				<div class="form-row">
 				<div class="form-group col-sm-12">
-				<h4 class="mb-0" align = "center">Sole Authored </h4>
+				<h4 class="mb-0" align = "center" style="background:#99ebff">Sole Authored </h4>
 	</div>
 				</div>
-	<div class="form-row">
-	<div class="form-group col-sm-12">
+	<div class="form-row" style="background:#99ebff">
+	<div class="form-group col-sm-12" style="background:#99ebff">
 	<label >Number of Conference/Journal: </label>
 	{{ key4.s_c_n }}
 	</div>
@@ -1237,14 +1200,12 @@
 	</div> -->
 
 
-	  <div class="card">
-	    <div class="card-header" id="headingTwo" style="background:#2eb8b8">
-	      <h3 class="">
-	        <button class="btn btn-link collapsed fo1" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+	  <div class="card" style="background:#99ebff">
+	    <div class="card-header" id="headingTwo" style="background:#99ebff">
+	      <h4 class="" >
 
-	3B: Indexed Publications in Conference/Journals with SCOPUS <span class="sp">(Maximum Score: 12 marks)</span>
-	        </button>
-	      </h3>
+	<strong>Indexed Publications in Conference/Journals with SCOPUS <span class="sp" style="color:#ff0808">(Maximum Score: 12 marks)</span></strong>
+</h4>
 	    </div>
 
 			    <div class="form-row dis">
@@ -1342,7 +1303,7 @@
 
 
 
-	<div class="form-row">
+	<div class="form-row" style="background:#99ebff">
 	<div class="form-group col-sm-11">
 	<div class="form-row dis">
 					 <div class="orm-group col-md-2">
@@ -1398,9 +1359,9 @@
 	    </div>
 	</form> -->
 	  </div>
- <div class="poi">
+ <div class="poi" style="background:#99ebff">
 	  	<h2>Details of Non-Indexed Papers Published In Conference/Journal</h2>
-  <table class="table table-bordered">
+  <table class="table table-bordered" style="background:#99ebff">
     <thead>
       <tr>
         <td>Name of Conference</td>
@@ -1419,7 +1380,7 @@
         <td>{{ key6.c1_place }}</td>
         <td>{{ key6.c1_date }}</td>
         <td>{{ key6.c1_author }}</td>
-        <td><a href="/media/{{key6.c1_file}}" style="color:#ff1a1a">Click to view</a></td>
+        <td><a href="/media/{{key6.c1_file}}" style="color:yellow">Click to view</a></td>
       </tr>
       {% endif %}
       {% if key6.c2_name %}
@@ -1429,7 +1390,7 @@
         <td>{{ key6.c2_place }}</td>
         <td>{{ key6.c2_date }}</td>
         <td>{{ key6.c2_author }}</td>
-        <td><a href="/media/{{key6.c2_file}}" style="color:#ff1a1a">Click to view</a></td>
+        <td><a href="/media/{{key6.c2_file}}" style="color:yellow">Click to view</a></td>
 
       </tr>
       {% endif %}
@@ -1440,7 +1401,7 @@
         <td>{{ key6.c3_place }}</td>
         <td>{{ key6.c3_date }}</td>
         <td>{{ key6.c3_author }}</td>
-        <td><a href="/media/{{key6.c3_file}}" style="color:#ff1a1a">Click to view</a></td>
+        <td><a href="/media/{{key6.c3_file}}" style="color:yellow">Click to view</a></td>
 
       </tr>
       {% endif %}
@@ -1451,7 +1412,7 @@
         <td>{{ key6.c4_place }}</td>
         <td>{{ key6.c4_date }}</td>
         <td>{{ key6.c4_author }}</td>
-        <td><a href="/media/{{key6.c4_file}}" style="color:#ff1a1a">Click to view</a></td>
+        <td><a href="/media/{{key6.c4_file}}" style="color:yellow">Click to view</a></td>
 
       </tr>
       {% endif %}
@@ -1462,7 +1423,7 @@
         <td>{{ key6.c5_place }}</td>
         <td>{{ key6.c5_date }}</td>
         <td>{{ key6.c5_author }}</td>
-        <td><a href="/media/{{key6.c5_file}}" style="color:#ff1a1a">Click to view</a></td>
+        <td><a href="/media/{{key6.c5_file}}" style="color:yellow">Click to view</a></td>
 
       </tr>
       {% endif %}
@@ -1473,7 +1434,7 @@
         <td>{{ key6.c6_place }}</td>
         <td>{{ key6.c6_date }}</td>
         <td>{{ key6.c6_author }}</td>
-        <td><a href="/media/{{key6.c6_file}}" style="color:#ff1a1a">Click to view</a></td>
+        <td><a href="/media/{{key6.c6_file}}" style="color:yellow">Click to view</a></td>
 
       </tr>
       {% endif %}
@@ -1484,7 +1445,7 @@
         <td>{{ key6.c7_place }}</td>
         <td>{{ key6.c7_date }}</td>
         <td>{{ key6.c7_author }}</td>
-        <td><a href="/media/{{key6.c7_file}}" style="color:#ff1a1a">Click to view</a></td>
+        <td><a href="/media/{{key6.c7_file}}" style="color:yellow">Click to view</a></td>
 
       </tr>
       {% endif %}
@@ -1495,7 +1456,7 @@
         <td>{{ key6.c8_place }}</td>
         <td>{{ key6.c8_date }}</td>
         <td>{{ key6.c8_author }}</td>
-        <td><a href="/media/{{key6.c8_file}}" style="color:#ff1a1a">Click to view</a></td>
+        <td><a href="/media/{{key6.c8_file}}" style="color:yellow">Click to view</a></td>
 
       </tr>
       {% endif %}
@@ -1504,7 +1465,7 @@
 
 <h2>Details of Indexed Papers Published In Conference/Journal</h2>
 
-<table class="table table-bordered">
+<table class="table table-bordered" style="background:#99ebff">
   <thead>
     <tr>
       <td>Name</td>
@@ -1529,7 +1490,7 @@
       <td>{{ key7.j1_issn }}</td>
       <td>{{ key7.j1_page }}</td>
       <td>{{ key7.j1_author }}</td>
-      <td><a href="/media/{{key7.j1_file}}" style="color:#ff1a1a">Click to view</a></td>
+      <td><a href="/media/{{key7.j1_file}}" style="color:yellow">Click to view</a></td>
 
 
     </tr>
@@ -1544,7 +1505,7 @@
       <td>{{ key7.j2_issn }}</td>
       <td>{{ key7.j2_page }}</td>
       <td>{{ key7.j2_author }}</td>
-      <td><a href="/media/{{key7.j2_file}}" style="color:#ff1a1a">Click to view</a></td>
+      <td><a href="/media/{{key7.j2_file}}" style="color:yellow">Click to view</a></td>
 
 
     </tr>
@@ -1559,7 +1520,7 @@
       <td>{{ key7.j3_issn }}</td>
       <td>{{ key7.j3_page }}</td>
       <td>{{ key7.j3_author }}</td>
-      <td><a href="/media/{{key7.j3_file}}" style="color:#ff1a1a">Click to view</a></td>
+      <td><a href="/media/{{key7.j3_file}}" style="color:yellow">Click to view</a></td>
 
 
     </tr>
@@ -1574,7 +1535,7 @@
       <td>{{ key7.j4_issn }}</td>
       <td>{{ key7.j4_page }}</td>
       <td>{{ key7.j4_author }}</td>
-      <td><a href="/media/{{key7.j4_file}}" style="color:#ff1a1a">Click to view</a></td>
+      <td><a href="/media/{{key7.j4_file}}" style="color:yellow">Click to view</a></td>
 
 
     </tr>
@@ -1589,7 +1550,7 @@
       <td>{{ key7.j5_issn }}</td>
       <td>{{ key7.j5_page }}</td>
       <td>{{ key7.j5_author }}</td>
-      <td><a href="/media/{{key7.j5_file}}" style="color:#ff1a1a">Click to view</a></td>
+      <td><a href="/media/{{key7.j5_file}}" style="color:yellow">Click to view</a></td>
 
 
     </tr>
@@ -1604,7 +1565,7 @@
       <td>{{ key7.j6_issn }}</td>
       <td>{{ key7.j6_page }}</td>
       <td>{{ key7.j6_author }}</td>
-      <td><a href="/media/{{key7.j6_file}}" style="color:#ff1a1a">Click to view</a></td>
+      <td><a href="/media/{{key7.j6_file}}" style="color:yellow">Click to view</a></td>
 
 
     </tr>
@@ -1619,7 +1580,7 @@
       <td>{{ key7.j7_issn }}</td>
       <td>{{ key7.j7_page }}</td>
       <td>{{ key7.j7_author }}</td>
-      <td><a href="/media/{{key7.j7_file}}" style="color:#ff1a1a">Click to view</a></td>
+      <td><a href="/media/{{key7.j7_file}}" style="color:yellow">Click to view</a></td>
 
 
     </tr>
@@ -1634,7 +1595,7 @@
       <td>{{ key7.j8_issn }}</td>
       <td>{{ key7.j8_page }}</td>
       <td>{{ key7.j8_author }}</td>
-      <td><a href="/media/{{key7.j8_file}}" style="color:#ff1a1a">Click to view</a></td>
+      <td><a href="/media/{{key7.j8_file}}" style="color:yellow">Click to view</a></td>
 
     </tr>
     {% endif %}
@@ -1643,13 +1604,11 @@
 </table>
 	  </div>
 
-		<div class="card" style="background:#2eb8b8">
+		<div class="card" style="background:#99ebff">
 			<div class="card-header" id="headingThree">
-				<h3 class="">
-					<button class="btn btn-link collapsed fo1" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-					 3C: Number of Books/Book chapter Published/Publication in News media<span class="fo1">(Maximum Score: 10 marks)</span>
-					</button>
-				</h3>
+				<h4>
+			<strong>Number of Books/Book chapter Published/Publication in News media<span class="fo1" style="color:#ff0808">(Maximum Score: 10 marks)</span></strong>
+				</h4>
 			</div>
 
 					<div class="form-row dis">
@@ -1665,7 +1624,7 @@
 					<div class="form-group col-md-6">
 						<label>Documents:</label>
 						{% if key4.book_i_file %}
-						 <a href="/media/{{key4.book_i_file}}" style="color:#ff1a1a">Click to view</a>
+						 <a href="/media/{{key4.book_i_file}}" style="color:yellow">Click to view</a>
 							{% else %}
 							<a href="#"></a>
 							{% endif %}
@@ -1685,7 +1644,7 @@
 					<div class="form-group col-md-6">
 						<label>Documents:</label>
 						{% if key4.book_n_file %}
-						 <a href="/media/{{key4.book_n_file}}" style="color:#ff1a1a">Click to view</a>
+						 <a href="/media/{{key4.book_n_file}}" style="color:yellow">Click to view</a>
 							{% else %}
 							<a href="#"></a>
 							{% endif %}
@@ -1705,7 +1664,7 @@
 					<div class="form-group col-md-6">
 						<label>Documents:</label>
 						{% if key4.book_ci_file %}
-						 <a href="/media/{{key4.book_ci_file}}" style="color:#ff1a1a">Click to view</a>
+						 <a href="/media/{{key4.book_ci_file}}" style="color:yellow">Click to view</a>
 							{% else %}
 							<a href="#"></a>
 							{% endif %}
@@ -1724,7 +1683,7 @@
 					<div class="form-group col-md-6">
 						<label>Documents:</label>
 						{% if key4.book_cn_file %}
-						 <a href="/media/{{key4.book_cn_file}}" style="color:#ff1a1a">Click to view</a>
+						 <a href="/media/{{key4.book_cn_file}}" style="color:yellow">Click to view</a>
 							{% else %}
 							<a href="#"></a>
 							{% endif %}
@@ -1744,7 +1703,7 @@
 					<div class="form-group col-md-6">
 						<label>Documents:</label>
 						{% if key4.book_ai_file %}
-						 <a href="/media/{{key4.book_ai_file}}" style="color:#ff1a1a">Click to view</a>
+						 <a href="/media/{{key4.book_ai_file}}" style="color:yellow">Click to view</a>
 							{% else %}
 							<a href="#"></a>
 							{% endif %}
@@ -1764,7 +1723,7 @@
 					<div class="form-group col-md-6">
 						<label>Documents:</label>
 						{% if key4.book_nm_file %}
-						 <a href="/media/{{key4.book_nm_file}}" style="color:#ff1a1a">Click to view</a>
+						 <a href="/media/{{key4.book_nm_file}}" style="color:yellow">Click to view</a>
 							{% else %}
 							<a href="#"></a>
 							{% endif %}
@@ -1772,43 +1731,35 @@
 					</div>
 			</div>
 
-			<div class="form-row dis">
-						<div class="form-group col-md-6">
+			<div class="conatiner">
+
+							 <div class="conatiner">
+								 <div clas="cell">
+											 <h6 class=" color1" style="text-align:right">TOTAL MARKS : {{ key4.book_m }}</h6>
+
+									 </div>
 
 
-						</div>
-					<div class="form-group col-md-6">
-
-									 <div class="form-row">
-										 <div clas="col-md-9">
-												 <h6 class=" color1">TOTAL MARKS<span class="sp"></span></h6>
-											 {{ key4.book_m }}
-											 </div>
-											 <div class="col-md-3"></div>
-
-	</div>
+			</div>
 
 
 
-		 </div>
-					</div>
+			</div>
 			</div>
 	<!-- </form> -->
 	  </div>
 	</div>
-	<div class="card" style="background:#2eb8b8">
+	<div class="card" style="background:#99ebff">
 
-	    <div class="card-header" id="headingTwo">
-	      <h3 class="mb-0">
-	        <button class="btn btn-link collapsed fo1" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+	    <div class="card-header" id="headingTwo" style="background:#99ebff">
+	      <h4 class="mb-0" style="background:#99ebff">
 
-	3D: Research Project<span class="sp">(Maximum Score: 5 marks)</span>
-	        </button>
-	      </h3>
+	<strong>Research Project<span class="sp" style="color:#ff0808">(Maximum Score: 5 marks)</span></strong>
+	      </h4>
 	    </div>
 	        </button>
-	        <h5>Funded Projects</h5>
-		<table class="table table-bordered">
+	        <h5><strong>Funded Projects</strong></h5>
+		<table class="table table-bordered" style="background:#99ebff">
 	  <thead>
 	   <tr>
       <th scope="col">Funding</th>
@@ -1826,7 +1777,7 @@
       <td>{{ key4.if_c }}</td>
       <td>
         {% if key4.if_file %}
-           <a href="/media/{{key4.if_file}}" style="color:#ff1a1a">Click to view</a>
+           <a href="/media/{{key4.if_file}}" style="color:yellow">Click to view</a>
             {% else %}
             <a href="#"></a>
             {% endif %}</td>
@@ -1837,7 +1788,7 @@
       <td>{{ key4.ef_f }}</td>
       <td>{{ key4.ef_c }}</td>
       <td>{% if key4.ef_file %}
-           <a href="/media/{{key4.ef_file}}" style="color:#ff1a1a">Click to view</a>
+           <a href="/media/{{key4.ef_file}}" style="color:yellow">Click to view</a>
             {% else %}
             <a href="#"></a>
             {% endif %}</td>
@@ -1848,7 +1799,7 @@
       <td>{{ key4.eef_f }}</td>
       <td>{{ key4.eef_c }}</td>
       <td>{% if key4.eef_file %}
-           <a href="/media/{{key4.eef_file}}" style="color:#ff1a1a">Click to view</a>
+           <a href="/media/{{key4.eef_file}}" style="color:yellow">Click to view</a>
             {% else %}
             <a href="#"></a>
             {% endif %}</td>
@@ -1856,8 +1807,8 @@
 		<tr>
 	  </tbody>
 	</table>
-	<h5>Consultancy Work</h5>
-	<table class="table table-bordered">
+	<h5><strong>Consultancy Work</strong></h5>
+	<table class="table table-bordered" style="background:#99ebff">
 	  <thead>
 	    <tr>
       <th scope="col">Funding</th>
@@ -1875,26 +1826,26 @@
       <td>{{ key4.Cw_2 }}</td>
       <td>
         {% if key4.Cw_2_file %}
-           <a href="/media/{{key4.Cw_2_file}}" style="color:#ff1a1a">Click to View</a>
+           <a href="/media/{{key4.Cw_2_file}}" style="color:yellow">Click to View</a>
             {% else %}
             <a href="#"></a>
             {% endif %}</td>
       <td>{{ key4.Cw_2_5 }}</td>
       <td>{% if key4.Cw_2_5_file %}
-           <a href="/media/{{key4.Cw_2_5_file}}" style="color:#ff1a1a">Click to View</a>
+           <a href="/media/{{key4.Cw_2_5_file}}" style="color:yellow">Click to View</a>
             {% else %}
             <a href="#"></a>
             {% endif %}</td>
       <td>{{ key4.Cw_5 }}</td>
       <td>{% if key4.Cw_5_file %}
-           <a href="/media/{{key4.Cw_5_file}}" style="color:#ff1a1a">Click to View</a>
+           <a href="/media/{{key4.Cw_5_file}}" style="color:yellow">Click to View</a>
             {% else %}
             <a href="#"></a>
             {% endif %}</td>
     </tr>
 	    </tbody>
 	</table>
-<div class="card poi">
+<div class="card poi" style="background:#99ebff">
 
 <div class="form-group ">
 
@@ -1978,41 +1929,31 @@
 
 										 </div>
 										 </div>
+										 <div class=""  style="background:#99ebff">
 
+										 							 <h1></h1>
+
+										 							<div class="">
+
+										 						 <h3  style="text-align:right;height:70px">TOTAL MARKS<span class="sp" style="color:#ff0808">(Maximum Score: 40)</span> : {{key4.rd_tot_marks}}</h3>
+
+										 							</div>
+
+
+										 									 </div>
  </div>
 
 </div>
-	<div class="card po card-header" id="headingOne" style="background:#4d9900">
-	<div class="form-group">
-	<div class="form-row dis">
-	<div class="col-1"></div>
-	<div class="col-10">
-	 <div class="form-row">
-	               <div class="orm-group col-md-6">
-	              <h3 class=" color1">TOTAL MARKS<span class="sp">(Maximum Score: 35)</span></h3>
-	               </div>
 
-	                  <div class="orm-group col-md-6">
-											<h4 class="m2 color1">{{ key4.rd_tot_marks }}</h4>
-	                        </div>
-	                    </div>
-	</div>
-	<div class="col-1"></div>
-	</div>
-
-	<div class="form-row dis">
-	<div class="col-4"></div>
-	<div class="col-4">
-
-	<div class="col-4"></div>
-	</div>
-	</div>
-	</div>
-
-	</div>
+</div>
+<div class="cell">
+  <h1></h1>
+</div>
+<div class="container">
+<center> <h1 style="height:5px">PART 3</h1> <center>
 <div class="card poi">
 	<div class="col-12" style="background:#9999ff">
-	  <center><h1>HOD REVIEW</h2></center>
+	  <center><h1>REVIEW BY HOD</h2></center>
 	</div>
 	<div class="form-row dis">
 	<div class="col-4"></div>
@@ -2026,7 +1967,7 @@
 	  <thead class="thead-dark">
 	    <tr>
 	      <th scope="col"></th>
-	      <th scope="col">Innovative contributions to teaching learning process provide description below with Initiation,Implementation, Impact Analysis<span class="sp">(Maximum Score: 5 marks)</span></th>
+	      <th scope="col"><h5>Innovative contributions to teaching learning process provide description below with Initiation,Implementation, Impact Analysis<span class="sp" style="color:#ff0808">(Maximum Score: 5 marks)</span></h5></th>
 	      <th scope="col">HOD MARKS-1</th>
 	    </tr>
 	  </thead>
@@ -2056,7 +1997,7 @@
   <thead class="thead-dark">
     <tr>
       <th scope="col"></th>
-      <th scope="col">Departmental  Responsibilities (Please list only those where you have made significant contribution)</th>
+      <th scope="col"><h5>Departmental  Responsibilities (Please list only those where you have made significant contribution)</h5></th>
 
     </tr>
   </thead>
@@ -2075,25 +2016,25 @@
   <thead class="thead-dark">
     <tr>
       <th scope="col"></th>
-      <th scope="col">Attitude and Commitment to Departmental and Regular Teaching and Examination works:<span class="sp">(Maximum Score: 15 marks)</span></th>
+      <th scope="col"><h5>Attitude and Commitment to Departmental and Regular Teaching and Examination works:<span class="sp" style="color:#ff0808">(Maximum Score: 15 marks)</span></h5></th>
       <th scope="col">HOD MARKS-2</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th scope="row">1</th>
-      <td>Contribution to Department Developmental Activites<span class="sp"> (Maximum Score: 5 marks)</span></td>
+      <td><h5>Contribution to Department Developmental Activites<span class="sp" style="color:#ff0808"> (Maximum Score: 5 marks)</span></h5></td>
        <td  class="fo1" >{{ key8.hod_marks2_1 }}</td>
     </tr>
     <tr>
       <th scope="row">2</th>
-      <td>Attitude/Behaviour/Discipline/Punctuality<span class="sp"> (Maximum Score: 5 marks)</span></td>
+      <td><h5>Attitude/Behaviour/Discipline/Punctuality<span class="sp" style="color:#ff0808"> (Maximum Score: 5 marks)</span></h5></td>
       <td  class="fo1">{{ key8.hod_marks2_2 }}</td>
 
     </tr>
     <tr>
       <th scope="row">3</th>
-      <td>Examination/Test duties, Question paper preparation, Evaluation Preparation of Course material and Dedicaton in conducting Theory and Laboratory classes<span class="sp"> (Maximum Score: 5 marks)</span></td>
+      <td><h5>Examination/Test duties, Question paper preparation, Evaluation Preparation of Course material and Dedicaton in conducting Theory and Laboratory classes<span class="sp" style="color:#ff0808"> (Maximum Score: 5 marks)</span></h5></td>
       <td class="fo1">{{ key8.hod_marks2_3 }}</td>
 
     </tr>
@@ -2113,7 +2054,7 @@
 <div class="card poi">
  <div class="input-group text7">
   <div class="input-group-prepend">
-    <span class="input-group-text">Brief Remarks of the HOD</span>
+    <span class="input-group-text"><h4>Remarks of the HOD</h4></span>
   </div>
 {{ key8.ta_hod_remarks }}</div>
 </div>
@@ -2127,31 +2068,18 @@
           <div class="form-group col-md-6 m7">
           	{{ key8.marks_deduce }}
           </div>
-          <div class="form-group col-md-12">
-            <h4>Reason:</h4>
+					  </div>
+          <div class="cell">
+            <h4 style="text-align:left">Reason:</h4>
             {{ key8.reason }}
           </div>
-      </div>
 
 
-<table class="table table-bordered po">
-<thead class="thead-dark">
-  <tr>
-    <th scope="col"></th>
-    <th scope="col">Institutional  Responsibilities (Please list only those where you have made significant contribution)</th>
 
-  </tr>
-</thead>
-<tbody>
-  <tr>
-    <th scope="row"></th>
-    <td>{{ key5.ta_ir }}</td>
-
-  </tr>
-
-</tbody>
-</table>
-
+</div>
+<br>
+<h1 style="height:5px">PART 4</h1>
+<div class="container">
 <div class="card poi ">
 	<div class="col-12" style="background:#9999ff">
 		<center><h1>PRINCIPAL REVIEW</h2></center>
@@ -2162,6 +2090,24 @@
 
 	<div class="col-4"></div>
 	</div>
+	<table class="table table-bordered po">
+	<thead class="thead-dark">
+		<tr>
+			<th scope="col"></th>
+			<th scope="col">Institutional  Responsibilities (Please list only those where you have made significant contribution)</th>
+
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<th scope="row"></th>
+			<td>{{ key5.ta_ir }}</td>
+
+		</tr>
+
+	</tbody>
+	</table>
+
 	</div>
   <table class="table table-bordered">
   <thead class="thead-dark">
@@ -2172,24 +2118,23 @@
   </thead>
   <tbody>
     <tr>
-      <td>Contribution to Institutional Developmental Activites<span class="sp">(Maximum Score: 5 marks)</span></td>
+      <td>Contribution to Institutional Developmental Activites<span class="sp" style="color:#ff0808">(Maximum Score: 5 marks)</span></td>
        <td rowspan="3"> {% render_field form1.prin_marks1 class="form-control m5"  %}</td>
      </tr>
   </tbody>
 </table>
-</div>
 
 <div class="card poi">
  <div class="input-group text7">
   <div class="input-group-prepend">
-    <span class="input-group-text">Brief Remarks of the Principal</span>
+    <span class="input-group-text"><h5>Remarks of the Principal</h5></span>
   </div>
   {% render_field form1.ta_prin_remarks class="form-control"  %}
 </div>
 </div>
-</div>
 
-</div>
+<br>
+
 <center><button type="button" class="btn btn-info btn-lg btn-block s_case col-md-4">Special Case/Correction</button></center>
 
 <div class="c_marks" style="display: none;">
@@ -2202,52 +2147,73 @@
 {% render_field form1.prin_marks2 class="form-control m6"  %}
 </div>
 </div>
+</div>
 
-<div class="card poi card-header" id="headingOne" style="background:#4d9900">
+<div class="container">
+<div class="card poi card-header" id="headingOne" style="background:#77ff33">
 <div class="form-group">
 <div class="form-row dis">
 <div class="col-1"></div>
 <div class="col-10">
- <div class="form-row dis">
-               <div class="orm-group col-md-6">
-              <h2 class=" color1">TOTAL MARKS<span class="sp">_(Maximum Score: 100)</span></h2>
-               </div>
 
-                  <div class="form-group col-md-6 color1">
-										<h3 class="color1">{% render_field form1.total_marks class="form-control total_marks" %}</h3>
-                        </div>
-                    </div>
-                    <div class="form-group col-md-6">
-                    	( To review and finalize marks click here )
-                    <button type="button" class="btn btn-success btn-lg btn-block tm">Calculate </button>
-                  </div>
+
+
+   <div class="form-row dis">
+     <div class="col-sm-3">
+       <h1></h1>
+     </div>
+     <div class="col-sm-6">
+       <center>( To review and finalize marks click here )</center>
+         <button type="button" class="btn btn-success btn-lg btn-block tm">Calculate</button>
+     </div>
+     <div class="col-sm-3">
+       <h1></h1>
+     </div>
+
 </div>
+<div class="form-row dis">
+</div>
+<div class="form-row dis">
+</div>
+<div class="form-row dis">
+</div>
+<div class="form-row dis">
+  <div class="col-md-6">
+ <h3 >GRAND TOTAL <span class="sp" style="color:#ff0808">(Maximum Score: 100) </span> :</h3>
+  </div>
+  <div class=" col-md-3">
+  <h3 class="color1">	{% render_field form1.total_marks class="form-control disabled total_marks" %}</h3>
+        </div>
+  <div class="col-sm-3" style="padding-left:50px">
+<input type="submit" class="btn btn-danger btn-lg btn-block" ></button>
+  </div>
+</div>
+
+
+
+
 </div>
 <div class="col-1"></div>
-
+</div>
 
 <div class="form-row dis">
 <div class="col-4"></div>
 <div class="col-4">
- <div class="form-row dis">
 
-
-
-   <input type="submit" class="btn btn-danger btn-lg btn-block"></button>
 
 
 </form>
-</div>
 <div class="col-4"></div>
 </div>
 </div>
 </div>
-</div>
+
 </div>
 
 
 
 </div>
+
 
 <script>
   $(function(){

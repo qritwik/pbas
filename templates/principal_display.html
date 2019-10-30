@@ -48,20 +48,21 @@
 	<div style="margin-top:-16%;" class="limiter">
 		<div class="container-table100">
 			<div class="wrap-table100">
+				<h2 style="text-align:center;height:40px;background:#736de3;color:white">Department of CSE</h2>
+				<div class="cell">
+					<h1></h1>
+				</div>
 					<div class="table">
 
-						<div class="row header">
-							<div class="cell">
-								<h3>Principal View</h3>
+						<div class="row header" >
+							<div class="col-sm-10 cell">
+								<h3 style="color:white">Principal View</h3>
 							</div>
 
-							<div class="cell">
-								<h3>Department of {{dept}}</h3>
+							<div class="cell col-sm-4" >
+								<h1></h1>
 							</div>
-							<div class="cell">
-
-							</div>
-							<div class="cell">
+							<div class="cell col-sm-4">
 								<a href="/principal_first/{{y}}"  id="t1" style="color:#ffff1a">
 								View other Department</a>
 							</div>
@@ -160,9 +161,9 @@
 
               <div class="cell" data-title="prin-review">
                 {% if name.principal_status %}
-                <span class="badge badge-success">{{name.principal_status}}</span>
+                <span class="badge badge-success">DONE</span>
                 {% else %}
-                <span class="badge badge-danger">{{name.principal_status}}</span>
+                <span class="badge badge-danger">NOT DONE</span>
                 {% endif %}
 							</div>
 						</div>
@@ -195,9 +196,9 @@
 
               <div class="cell" data-title="prin-review">
                 {% if name1.principal_status %}
-                <span class="badge badge-success">{{name1.principal_status}}</span>
+                <span class="badge badge-success">DONE</span>
                 {% else %}
-                <span class="badge badge-danger">{{name1.principal_status}}</span>
+                <span class="badge badge-danger">NOT DONE</span>
                 {% endif %}
               </div>
             </div>
