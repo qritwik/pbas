@@ -813,7 +813,13 @@
 	            <input type="text" class="form-control" disabled value="{{key4.w_s_d}}">
 	        </div>
 
-
+					<h3 class="heading heading" style="margin-left:10px">Documents</h3>
+					<div class="heading form-group col-md-6">
+						{% if key4.w_s_file %}
+							<a href="/media/{{key4.w_s_file}}" style="color:#ffcc00" class="heading heading">Click to view</a>
+							{% else %}
+							<a href="#"></a>
+							{% endif %}
 	    </div>
 
 	    <div class="form-row dis">
@@ -826,7 +832,13 @@
 	          <input type="text" class="form-control" disabled value="{{key4.w_n_d}}">
 
 	        </div>
-
+					<h3 class="heading heading" style="margin-left:10px">Documents</h3>
+					<div class="heading form-group col-md-6">
+						{% if key4.w_n_file %}
+							<a href="/media/{{key4.w_n_file}}" style="color:#ffcc00" class="heading heading">Click to view</a>
+							{% else %}
+							<a href="#"></a>
+							{% endif %}
 
 
 
@@ -841,6 +853,17 @@
 
 	            <input type="text" class="form-control" disabled value="{{key4.w_i_d}}">
 	        </div>
+					<h3 class="heading heading" style="margin-left:10px">Documents</h3>
+					<div class="heading form-group col-md-6">
+						{% if key4.w_i_file %}
+							<a href="/media/{{key4.w_i_file}}" style="color:#ffcc00" class="heading heading">Click to view</a>
+							{% else %}
+							<a href="#"></a>
+							{% endif %}
+
+
+
+					</div>
 
 
 
@@ -893,7 +916,17 @@
 
 	          <input type="text" class="form-control" disabled value="{{key4.p_s_d}}">
 	        </div>
+					<h3 class="heading heading" style="margin-left:10px">Documents</h3>
+					<div class="heading form-group col-md-6">
+						{% if key4.p_s_file %}
+							<a href="/media/{{key4.p_s_file}}" style="color:#ffcc00" class="heading heading">Click to view</a>
+							{% else %}
+							<a href="#"></a>
+							{% endif %}
 
+
+
+					</div>
 	    </div>
 
 	    <div class="form-row dis">
@@ -906,7 +939,17 @@
 	            <input type="text" class="form-control" disabled value="{{key4.p_n_d}}">
 
 	        </div>
+					<h3 style="margin-left:10px" class="heading heading">Documents</h3>
+					<div class="heading form-group col-md-6">
+						{% if key4.p_n_file %}
+							<a href="/media/{{key4.p_n_file}}" style="color:#ffcc00" class="heading heading">Click to view</a>
+							{% else %}
+							<a href="#"></a>
+							{% endif %}
 
+
+
+					</div>
 
 	    </div>
 
@@ -920,7 +963,17 @@
 	          <input type="text" class="form-control" disabled value="{{key4.p_i_d}}">
 
 	        </div>
+					<h3 style="margin-left:10px" class="heading heading">Documents</h3>
+					<div class="heading form-group col-md-6">
+						{% if key4.p_i_file %}
+							<a href="/media/{{key4.p_i_file}}" style="color:#ffcc00" class="heading heading">Click to view</a>
+							{% else %}
+							<a href="#"></a>
+							{% endif %}
 
+
+
+					</div>
 
 
 	    </div>
@@ -966,7 +1019,24 @@
 		 <div class="form-group col-md-6">
 						<input type="text" class="form-control" disabled value="{{key4.onl_course_c}}">
 					</div>
+					<div class="heading form-group col-md-12">
+						<label class="heading heading">Online Course Documents 1:</label>
+						{% if key4.onl_course_c_file1 %}
+						 <a href="/media/{{key4.onl_course_c_file1}}" style="color:#ffcc00" class="heading heading">Click to view</a>
+							{% else %}
+							<a href="#"></a>
+							{% endif %}
 
+					</div>
+					<div class="heading form-group col-md-12">
+						<label class="heading heading">Online courses Documents2:</label>
+						{% if key4.onl_course_c_file2 %}
+						 <a href="/media/{{key4.onl_course_c_file2}}" style="color:#ffcc00" class="heading heading">Click to view</a>
+							{% else %}
+							<a href="#"></a>
+							{% endif %}
+
+					</div>
 	        <div class="form-group col-md-6">
 	       <h6 class=" color1">TOTAL MARKS<span class="sp"></span></h6>
 
@@ -1303,6 +1373,7 @@
 				<td>Date</td>
 				<td>Indexed</td>
 				<td>Author</td>
+				<td>Documents</td>
 			</tr>
 		</thead>
 		<tbody>
@@ -1314,6 +1385,7 @@
 				<td>{{ key6.c1_date }}</td>
 				<td>{{ key6.c1_index }}</td>
 				<td>{{ key6.c1_author }}</td>
+				<td class="heading heading"><a href="/media/{{key6.c1_file}}" style="color:#ffcc00" class="heading heading">Click to view</a></td>
 			</tr>
 			{% endif %}
 			{% if key6.c2_name %}
@@ -1324,6 +1396,7 @@
 				<td>{{ key6.c2_date }}</td>
 				<td>{{ key6.c2_index }}</td>
 				<td>{{ key6.c2_author }}</td>
+				<td class="heading heading"><a href="/media/{{key6.c2_file}}" style="color:#ffcc00" class="heading heading">Click to view</a></td>
 			</tr>
 			{% endif %}
 			{% if key6.c3_name %}
@@ -1334,6 +1407,7 @@
 				<td>{{ key6.c3_date }}</td>
 				<td>{{ key6.c3_index }}</td>
 				<td>{{ key6.c3_author }}</td>
+				<td class="heading heading"><a href="/media/{{key6.c3_file}}" style="color:#ffcc00" class="heading heading">Click to view</a></td>
 			</tr>
 			{% endif %}
 			{% if key6.c4_name %}
@@ -1344,6 +1418,7 @@
 				<td>{{ key6.c4_date }}</td>
 				<td>{{ key6.c4_index }}</td>
 				<td>{{ key6.c4_author }}</td>
+				<td class="heading heading"><a href="/media/{{key6.c4_file}}" style="color:#ffcc00" class="heading heading">Click to view</a></td>
 			</tr>
 			{% endif %}
 			{% if key6.c5_name %}
@@ -1354,6 +1429,7 @@
 				<td>{{ key6.c5_date }}</td>
 				<td>{{ key6.c5_index }}</td>
 				<td>{{ key6.c5_author }}</td>
+				<td class="heading heading"><a href="/media/{{key6.c5_file}}" style="color:#ffcc00" class="heading heading">Click to view</a></td>
 			</tr>
 			{% endif %}
 			{% if key6.c6_name %}
@@ -1364,6 +1440,7 @@
 				<td>{{ key6.c6_date }}</td>
 				<td>{{ key6.c6_index }}</td>
 				<td>{{ key6.c6_author }}</td>
+				<td class="heading heading"><a href="/media/{{key6.c6_file}}" style="color:#ffcc00" class="heading heading">Click to view</a></td>
 			</tr>
 			{% endif %}
 			{% if key6.c7_name %}
@@ -1374,6 +1451,7 @@
 				<td>{{ key6.c7_date }}</td>
 				<td>{{ key6.c7_index }}</td>
 				<td>{{ key6.c7_author }}</td>
+				<td class="heading heading"><a href="/media/{{key6.c7_file}}" style="color:#ffcc00" class="heading heading">Click to view</a></td>
 			</tr>
 			{% endif %}
 			{% if key6.c8_name %}
@@ -1384,6 +1462,7 @@
 				<td>{{ key6.c8_date }}</td>
 				<td>{{ key6.c8_index }}</td>
 				<td>{{ key6.c8_author }}</td>
+				<td class="heading heading"><a href="/media/{{key6.c8_file}}" style="color:#ffcc00" class="heading heading">Click to view</a></td>
 			</tr>
 			{% endif %}
 		</tbody>
@@ -1402,6 +1481,7 @@
 			<td>Issn/Doi no.</td>
 			<td>Page</td>
 			<td>Author</td>
+			<td>Documents</td>
 		</tr>
 	</thead>
 	<tbody>
@@ -1415,7 +1495,7 @@
 			<td>{{ key7.j1_issn }}</td>
 			<td>{{ key7.j1_page }}</td>
 			<td>{{ key7.j1_author }}</td>
-
+			<td class="heading heading"><a href="/media/{{key7.j1_file}}" style="color:#ffcc00" class="heading heading">Click to view</a></td>
 		</tr>
 		{% endif %}
 		{% if key7.j2_name %}
@@ -1428,6 +1508,7 @@
 			<td>{{ key7.j2_issn }}</td>
 			<td>{{ key7.j2_page }}</td>
 			<td>{{ key7.j2_author }}</td>
+			<td class="heading heading"><a href="/media/{{key7.j2_file}}" style="color:#ffcc00" class="heading heading">Click to view</a></td>
 
 		</tr>
 		{% endif %}
@@ -1441,6 +1522,7 @@
 			<td>{{ key7.j3_issn }}</td>
 			<td>{{ key7.j3_page }}</td>
 			<td>{{ key7.j3_author }}</td>
+			<td class="heading heading"><a href="/media/{{key7.j3_file}}" style="color:#ffcc00" class="heading heading">Click to view</a></td>
 
 		</tr>
 		{% endif %}
@@ -1454,6 +1536,7 @@
 			<td>{{ key7.j4_issn }}</td>
 			<td>{{ key7.j4_page }}</td>
 			<td>{{ key7.j4_author }}</td>
+			<td class="heading heading"><a href="/media/{{key7.j4_file}}" style="color:#ffcc00" class="heading heading">Click to view</a></td>
 
 		</tr>
 		{% endif %}
@@ -1467,6 +1550,7 @@
 			<td>{{ key7.j5_issn }}</td>
 			<td>{{ key7.j5_page }}</td>
 			<td>{{ key7.j5_author }}</td>
+			<td class="heading heading"><a href="/media/{{key7.j5_file}}" style="color:#ffcc00" class="heading heading">Click to view</a></td>
 
 		</tr>
 		{% endif %}
@@ -1480,7 +1564,7 @@
 			<td>{{ key7.j6_issn }}</td>
 			<td>{{ key7.j6_page }}</td>
 			<td>{{ key7.j6_author }}</td>
-
+<td class="heading heading"><a href="/media/{{key7.j6_file}}" style="color:#ffcc00" class="heading heading">Click to view</a></td>
 		</tr>
 		{% endif %}
 		{% if key7.j7_name %}
@@ -1493,6 +1577,7 @@
 			<td>{{ key7.j7_issn }}</td>
 			<td>{{ key7.j7_page }}</td>
 			<td>{{ key7.j7_author }}</td>
+			<td class="heading heading"><a href="/media/{{key7.j7_file}}" style="color:#ffcc00" class="heading heading">Click to view</a></td>
 
 		</tr>
 		{% endif %}
@@ -1506,6 +1591,7 @@
 			<td>{{ key7.j8_issn }}</td>
 			<td>{{ key7.j8_page }}</td>
 			<td>{{ key7.j8_author }}</td>
+			<td class="heading heading"><a href="/media/{{key7.j8_file}}" style="color:#ffcc00" class="heading heading">Click to view</a></td>
 
 		</tr>
 		{% endif %}
@@ -1533,6 +1619,15 @@
 
 	           {{ key4.book_i }}
 	        </div>
+					<div class="heading form-group col-md-6">
+						<label class="heading heading">Documents:</label>
+						{% if key4.book_i_file %}
+						 <a href="/media/{{key4.book_i_file}}" style="color:#ffcc00" class="heading heading">Click to view</a>
+							{% else %}
+							<a href="#"></a>
+							{% endif %}
+
+					</div>
 	    </div>
 
 	    <div class="form-row dis">
@@ -1544,6 +1639,15 @@
 
 	          {{ key4.book_n }}
 	        </div>
+					<div class="heading form-group col-md-6">
+						<label class="heading heading">Documents:</label>
+						{% if key4.book_n_file %}
+						 <a href="/media/{{key4.book_n_file}}" style="color:#ffcc00" class="heading heading">Click to view</a>
+							{% else %}
+							<a href="#"></a>
+							{% endif %}
+
+					</div>
 	    </div>
 
 	    <div class="form-row dis">
@@ -1555,6 +1659,15 @@
 
 	          {{ key4.book_ci }}
 	        </div>
+					<div class="heading form-group col-md-6">
+						<label class="heading heading">Documents:</label>
+						{% if key4.book_ci_file %}
+						 <a href="/media/{{key4.book_ci_file}}" style="color:#ffcc00" class="heading heading">Click to view</a>
+							{% else %}
+							<a href="#"></a>
+							{% endif %}
+
+					</div>
 	    </div>
 
 	    <div class="form-row dis">
@@ -1565,6 +1678,15 @@
 	        <div class="form-group col-md-6">
 	          {{ key4.book_cn }}
 	        </div>
+					<div class="heading form-group col-md-6">
+						<label class="heading heading">Documents:</label>
+						{% if key4.book_cn_file %}
+						 <a href="/media/{{key4.book_cn_file}}" style="color:#ffcc00" class="heading heading">Click to view</a>
+							{% else %}
+							<a href="#"></a>
+							{% endif %}
+
+					</div>
 	    </div>
 
 	    <div class="form-row dis">
@@ -1576,6 +1698,15 @@
 
 	          {{ key4.book_ai }}
 	        </div>
+					<div class="heading form-group col-md-6">
+						<label class="heading heading">Documents:</label>
+						{% if key4.book_ai_file %}
+						 <a href="/media/{{key4.book_ai_file}}" style="color:#ffcc00" class="heading heading">Click to view</a>
+							{% else %}
+							<a href="#"></a>
+							{% endif %}
+
+					</div>
 	    </div>
 
 	    <div class="form-row dis">
@@ -1587,6 +1718,15 @@
 
 	          {{ key4.book_nm }}
 	        </div>
+					<div class="heading form-group col-md-6">
+						<label class="heading heading">Documents:</label>
+						{% if key4.book_nm_file %}
+						 <a href="/media/{{key4.book_nm_file}}" style="color:#ffcc00" class="heading heading">Click to view</a>
+							{% else %}
+							<a href="#"></a>
+							{% endif %}
+
+					</div>
 	    </div>
 
 	    <div class="form-row dis">
@@ -1632,6 +1772,7 @@
 	      <th scope="col">Being Sole Principal Investigator</th>
 	      <th scope="col">Being first Principal Investigator</th>
 	      <th scope="col">Being Co-Investigator</th>
+				<th scope="col">Documents</th>
 	    </tr>
 	  </thead>
 	  <tbody>
@@ -1640,18 +1781,34 @@
 	      <td>{{ key4.if_s }}</td>
 	      <td>{{ key4.if_f }}</td>
 	      <td>{{ key4.if_c }}</td>
+				<td class="heading heading" class="heading heading">
+	        {% if key4.if_file %}
+	           <a href="/media/{{key4.if_file}}" style="color:#ffcc00" class="heading heading">Click to view</a>
+	            {% else %}
+	            <a href="#"></a>
+	            {% endif %}</td>
 	    </tr>
 	    <tr>
 	      <th scope="row">Externally Funded Less than 5_Lakhs<span class="sp">( 5 marks/project )</span> </th>
 	      <td>{{ key4.ef_s }}</td>
 	      <td>{{ key4.ef_f }}</td>
 	      <td>{{ key4.ef_c }}</td>
+				<td class="heading heading">{% if key4.ef_file %}
+	           <a href="/media/{{key4.ef_file}}" style="color:#ffcc00" class="heading heading">Click to view</a>
+	            {% else %}
+	            <a href="#"></a>
+	            {% endif %}</td>
 	    </tr>
 	    <tr>
 	      <th scope="row">Externally Funded more than 5_Lakhs<span class="sp"> (10 marks/project)</span> </th>
 	      <td>{{ key4.eef_s }}</td>
 	      <td>{{ key4.eef_f }}</td>
 	      <td>{{ key4.eef_c }}</td>
+				<td class="heading heading">{% if key4.eef_file %}
+	           <a href="/media/{{key4.eef_file}}" style="color:#ffcc00" class="heading heading">Click to view</a>
+	            {% else %}
+	            <a href="#"></a>
+	            {% endif %}</td>
 	    </tr>
 			<tr>
 
@@ -1661,18 +1818,37 @@
 	<table class="table table-bordered">
 	  <thead>
 	    <tr>
-	      <th scope="col">Funding</th>
-	      <th scope="col">Upto 2 Lakhs</th>
-	      <th scope="col">Upto 2-5 Lakhs</th>
-	      <th scope="col">Above 5 Lakhs</th>
+				<th class="heading heading" scope="col">Funding</th>
+	      <th class="heading heading" scope="col">Upto 2 Lakhs</th>
+	      <th class="heading heading" scope="col">Documents Of (Upto 2 Lakhs)</th>
+	      <th class="heading heading" scope="col">Upto 2-5 Lakhs</th>
+	      <th class="heading heading" scope="col">Documents Of (Upto 2-5 Lakhs)</th>
+	      <th class="heading heading" scope="col">Above 5 Lakhs</th>
+	      <th class="heading heading" scope="col">Documents Of (Above 5 Lakhs)</th>
 	    </tr>
 	  </thead>
 	  <tbody>
 	    <tr>
 	      <th scope="row">Consultancy Work</th>
 	      <td>{{ key4.Cw_2 }}</td>
+				<td class="heading heading">
+	        {% if key4.Cw_2_file %}
+	           <a href="/media/{{key4.Cw_2_file}}" style="color:#ffcc00" class="heading heading">Click to View</a>
+	            {% else %}
+	            <a href="#"></a>
+	            {% endif %}</td>
 	      <td>{{ key4.Cw_2_5 }}</td>
+				<td class="heading heading">{% if key4.Cw_2_5_file %}
+	           <a href="/media/{{key4.Cw_2_5_file}}" style="color:#ffcc00" class="heading heading">Click to View</a>
+	            {% else %}
+	            <a href="#"></a>
+	            {% endif %}</td>
 	      <td>{{ key4.Cw_5 }}</td>
+				<td class="heading heading">{% if key4.Cw_5_file %}
+	           <a href="/media/{{key4.Cw_5_file}}" style="color:#ffcc00" class="heading heading">Click to View</a>
+	            {% else %}
+	            <a href="#"></a>
+	            {% endif %}</td>
 	    </tr>
 	    </tbody>
 	</table>
@@ -1685,7 +1861,7 @@
 
 
 	                    <div class="orm-group col-md-6">
-	<label for="inputResearch">Marks Here:</label>
+	<label for="inputResearch">Research Project Marks:</label>
 	                      {{ key4.rp_marks }}
 
 	                          </div>
