@@ -93,6 +93,9 @@
 								Designation
 							</div>
 
+							<div class="cell">
+								HOD's Review
+							</div>
 
               <div class="cell">
 								Principal's Review
@@ -123,6 +126,11 @@
 								<p>{{ hod_name.designation }}</p>
 
 							</div>
+
+							<div class="cell" data-title="hod-review">
+
+						</div>
+
 								<div class="cell" data-title="prin-review">
                 {% if hod_name.principal_status %}
 								<span class="badge badge-success">DONE</span>
@@ -159,6 +167,14 @@
 
 							</div>
 
+							<div class="cell" data-title="hod-review">
+                {% if name.hod_status %}
+                <span class="badge badge-success">DONE</span>
+                {% else %}
+                <span class="badge badge-danger">NOT DONE</span>
+                {% endif %}
+							</div>
+
 
               <div class="cell" data-title="prin-review">
                 {% if name.principal_status %}
@@ -193,6 +209,14 @@
 
 							<div class="cell" data-title="designation">
 								<p>{{ name1.designation }}</p>
+							</div>
+
+							<div class="cell" data-title="hod-review">
+								{% if name1.hod_status %}
+								<span class="badge badge-success">DONE</span>
+								{% else %}
+								<span class="badge badge-danger">NOT DONE</span>
+								{% endif %}
 							</div>
 
               <div class="cell" data-title="prin-review">
