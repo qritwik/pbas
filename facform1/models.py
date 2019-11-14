@@ -4,7 +4,7 @@ from .formatChecker import validate_file_size
 
 # from django.urls import reverse
 
-#TABLE-1 
+#TABLE-1
 
 class new(models.Model):
 	designation=models.ForeignKey('Designation', on_delete=models.CASCADE,blank=True,null=True)

@@ -1364,6 +1364,250 @@
  </div>
  </div>
  </div>
+ <div class="poi" style="background:#99ebff">
+      <h2>Details of Non-Indexed Papers Published In Conference/Journal</h2>
+  <table class="table table-bordered" style="background:#99ebff">
+    <thead>
+      <tr>
+        <td>Name of Conference</td>
+        <td>Title of the paper</td>
+        <td>Place</td>
+        <td>Date</td>
+        <td>Author</td>
+        <td>Documents</td>
+      </tr>
+    </thead>
+    <tbody>
+      {% if key6.c1_name %}
+      <tr>
+        <td>{{ key6.c1_name }}</td>
+        <td>{{ key6.c1_title }}</td>
+        <td>{{ key6.c1_place }}</td>
+        <td>{{ key6.c1_date }}</td>
+        <td>{{ key6.c1_author }}</td>
+        <td><a href="/media/{{key6.c1_file}}" style="color:yellow">Click to view</a></td>
+      </tr>
+      {% endif %}
+      {% if key6.c2_name %}
+      <tr>
+        <td>{{ key6.c2_name }}</td>
+        <td>{{ key6.c2_title }}</td>
+        <td>{{ key6.c2_place }}</td>
+        <td>{{ key6.c2_date }}</td>
+        <td>{{ key6.c2_author }}</td>
+        <td><a href="/media/{{key6.c2_file}}" style="color:yellow">Click to view</a></td>
+
+      </tr>
+      {% endif %}
+      {% if key6.c3_name %}
+      <tr>
+        <td>{{ key6.c3_name }}</td>
+        <td>{{ key6.c3_title }}</td>
+        <td>{{ key6.c3_place }}</td>
+        <td>{{ key6.c3_date }}</td>
+        <td>{{ key6.c3_author }}</td>
+        <td><a href="/media/{{key6.c3_file}}" style="color:yellow">Click to view</a></td>
+
+      </tr>
+      {% endif %}
+      {% if key6.c4_name %}
+      <tr>
+        <td>{{ key6.c4_name }}</td>
+        <td>{{ key6.c4_title }}</td>
+        <td>{{ key6.c4_place }}</td>
+        <td>{{ key6.c4_date }}</td>
+        <td>{{ key6.c4_author }}</td>
+        <td><a href="/media/{{key6.c4_file}}" style="color:yellow">Click to view</a></td>
+
+      </tr>
+      {% endif %}
+      {% if key6.c5_name %}
+      <tr>
+        <td>{{ key6.c5_name }}</td>
+        <td>{{ key6.c5_title }}</td>
+        <td>{{ key6.c5_place }}</td>
+        <td>{{ key6.c5_date }}</td>
+        <td>{{ key6.c5_author }}</td>
+        <td><a href="/media/{{key6.c5_file}}" style="color:yellow">Click to view</a></td>
+
+      </tr>
+      {% endif %}
+      {% if key6.c6_name %}
+      <tr>
+        <td>{{ key6.c6_name }}</td>
+        <td>{{ key6.c6_title }}</td>
+        <td>{{ key6.c6_place }}</td>
+        <td>{{ key6.c6_date }}</td>
+        <td>{{ key6.c6_author }}</td>
+        <td><a href="/media/{{key6.c6_file}}" style="color:yellow">Click to view</a></td>
+
+      </tr>
+      {% endif %}
+      {% if key6.c7_name %}
+      <tr>
+        <td>{{ key6.c7_name }}</td>
+        <td>{{ key6.c7_title }}</td>
+        <td>{{ key6.c7_place }}</td>
+        <td>{{ key6.c7_date }}</td>
+        <td>{{ key6.c7_author }}</td>
+        <td><a href="/media/{{key6.c7_file}}" style="color:yellow">Click to view</a></td>
+
+      </tr>
+      {% endif %}
+      {% if key6.c8_name %}
+      <tr>
+        <td>{{ key6.c8_name }}</td>
+        <td>{{ key6.c8_title }}</td>
+        <td>{{ key6.c8_place }}</td>
+        <td>{{ key6.c8_date }}</td>
+        <td>{{ key6.c8_author }}</td>
+        <td><a href="/media/{{key6.c8_file}}" style="color:yellow">Click to view</a></td>
+
+      </tr>
+      {% endif %}
+    </tbody>
+  </table>
+
+<h2>Details of Indexed Papers Published In Conference/Journal</h2>
+
+<table class="table table-bordered" style="background:#99ebff">
+  <thead>
+    <tr>
+      <td>Name</td>
+      <td>Title of the paper</td>
+      <td>Volume</td>
+      <td>Date</td>
+      <td>Indexed</td>
+      <td>Issn/Doi no.</td>
+      <td>Page</td>
+      <td>Author</td>
+      <td>Documents</td>
+    </tr>
+  </thead>
+  <tbody>
+    {% if key7.j1_name %}
+    <tr>
+      <td>{{ key7.j1_name }}</td>
+      <td>{{ key7.j1_title }}</td>
+      <td>{{ key7.j1_volume }}</td>
+      <td>{{ key7.j1_date }}</td>
+      <td>{{ key7.j1_index }}</td>
+      <td>{{ key7.j1_issn }}</td>
+      <td>{{ key7.j1_page }}</td>
+      <td>{{ key7.j1_author }}</td>
+      <td><a href="/media/{{key7.j1_file}}" style="color:yellow">Click to view</a></td>
+
+
+    </tr>
+    {% endif %}
+    {% if key7.j2_name %}
+    <tr>
+      <td>{{ key7.j2_name }}</td>
+      <td>{{ key7.j2_title }}</td>
+      <td>{{ key7.j2_volume }}</td>
+      <td>{{ key7.j2_date }}</td>
+      <td>{{ key7.j2_index }}</td>
+      <td>{{ key7.j2_issn }}</td>
+      <td>{{ key7.j2_page }}</td>
+      <td>{{ key7.j2_author }}</td>
+      <td><a href="/media/{{key7.j2_file}}" style="color:yellow">Click to view</a></td>
+
+
+    </tr>
+    {% endif %}
+    {% if key7.j3_name %}
+    <tr>
+      <td>{{ key7.j3_name }}</td>
+      <td>{{ key7.j3_title }}</td>
+      <td>{{ key7.j3_volume }}</td>
+      <td>{{ key7.j3_date }}</td>
+      <td>{{ key7.j3_index }}</td>
+      <td>{{ key7.j3_issn }}</td>
+      <td>{{ key7.j3_page }}</td>
+      <td>{{ key7.j3_author }}</td>
+      <td><a href="/media/{{key7.j3_file}}" style="color:yellow">Click to view</a></td>
+
+
+    </tr>
+    {% endif %}
+    {% if key7.j4_name %}
+    <tr>
+      <td>{{ key7.j4_name }}</td>
+      <td>{{ key7.j4_title }}</td>
+      <td>{{ key7.j4_volume }}</td>
+      <td>{{ key7.j4_date }}</td>
+      <td>{{ key7.j4_index }}</td>
+      <td>{{ key7.j4_issn }}</td>
+      <td>{{ key7.j4_page }}</td>
+      <td>{{ key7.j4_author }}</td>
+      <td><a href="/media/{{key7.j4_file}}" style="color:yellow">Click to view</a></td>
+
+
+    </tr>
+    {% endif %}
+    {% if key7.j5_name %}
+    <tr>
+      <td>{{ key7.j5_name }}</td>
+      <td>{{ key7.j5_title }}</td>
+      <td>{{ key7.j5_volume }}</td>
+      <td>{{ key7.j5_date }}</td>
+      <td>{{ key7.j5_index }}</td>
+      <td>{{ key7.j5_issn }}</td>
+      <td>{{ key7.j5_page }}</td>
+      <td>{{ key7.j5_author }}</td>
+      <td><a href="/media/{{key7.j5_file}}" style="color:yellow">Click to view</a></td>
+
+
+    </tr>
+    {% endif %}
+    {% if key7.j6_name %}
+    <tr>
+      <td>{{ key7.j6_name }}</td>
+      <td>{{ key7.j6_title }}</td>
+      <td>{{ key7.j6_volume }}</td>
+      <td>{{ key7.j6_date }}</td>
+      <td>{{ key7.j6_index }}</td>
+      <td>{{ key7.j6_issn }}</td>
+      <td>{{ key7.j6_page }}</td>
+      <td>{{ key7.j6_author }}</td>
+      <td><a href="/media/{{key7.j6_file}}" style="color:yellow">Click to view</a></td>
+
+
+    </tr>
+    {% endif %}
+    {% if key7.j7_name %}
+    <tr>
+      <td>{{ key7.j7_name }}</td>
+      <td>{{ key7.j7_title }}</td>
+      <td>{{ key7.j7_volume }}</td>
+      <td>{{ key7.j7_date }}</td>
+      <td>{{ key7.j7_index }}</td>
+      <td>{{ key7.j7_issn }}</td>
+      <td>{{ key7.j7_page }}</td>
+      <td>{{ key7.j7_author }}</td>
+      <td><a href="/media/{{key7.j7_file}}" style="color:yellow">Click to view</a></td>
+
+
+    </tr>
+    {% endif %}
+    {% if key7.j8_name %}
+    <tr>
+      <td>{{ key7.j8_name }}</td>
+      <td>{{ key7.j8_title }}</td>
+      <td>{{ key7.j8_volume }}</td>
+      <td>{{ key7.j8_date }}</td>
+      <td>{{ key7.j8_index }}</td>
+      <td>{{ key7.j8_issn }}</td>
+      <td>{{ key7.j8_page }}</td>
+      <td>{{ key7.j8_author }}</td>
+      <td><a href="/media/{{key7.j8_file}}" style="color:yellow">Click to view</a></td>
+
+    </tr>
+    {% endif %}
+
+  </tbody>
+</table>
+    </div>
  <div class="card"  style="background:#99ebff;margin-left:10px">
  <div class="" id="headingThree">
  <h4><strong>Number of Books/Book chapter Published/Publication in News media<span class="fo1" style="color:#ff0808">(Maximum Score: 10 marks)</span></strong></h4>

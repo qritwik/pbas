@@ -851,7 +851,7 @@ def login(request):
 			phone_otp(random_otp,phone)
 
 			email_otp(random_otp,user.email,user.first_name)
-			#random_otp="1234"
+			# random_otp="1234"
 			hashed_pwd = make_password(random_otp)
 			User.objects.filter(username=username).update(password=hashed_pwd)
 
@@ -953,6 +953,8 @@ def hod_display(request,y):
 
 @login_required
 def hod_teacher_display(request,pk,y):
+		name =  User.objects.get(pk = pk);
+		sendme = new.objects.filter(info__username=name).get(year__year=y)
 		if request.user.is_hod() or request.user.hodrole:
 			name =  User.objects.get(pk = pk);
 			print(name)
@@ -989,7 +991,8 @@ def hod_teacher_display(request,pk,y):
 			else:
 				form1 = forms.form_remarks1()
 
-
+			if sendme.hod_status:
+				form1=remarks1.objects.filter(info__username=name).get(year=y)
 			context1 = {
 			"key1":data1,
 			"key2":data2,
@@ -999,7 +1002,8 @@ def hod_teacher_display(request,pk,y):
 
 			"key6":data6,
 			"key7":data7,
-			"form1":form1
+			"form1":form1,
+			"s":sendme
 			}
 
 			return render(request,'hod_teacher_display.html',context=context1)
@@ -1090,6 +1094,8 @@ def hod_teacher_display_edit(request,pk,y):
 
 @login_required
 def hod_teacher1_display(request,pk,y):
+	name =  User.objects.get(pk = pk);
+	sendme = new.objects.filter(info__username=name).get(year__year=y)
 	if request.user.is_hod() or request.user.hodrole:
 		name =  User.objects.get(pk = pk);
 		print(name)
@@ -1101,7 +1107,6 @@ def hod_teacher1_display(request,pk,y):
 		data5 = remarks.objects.filter(info__username=name).get(year=y);
 		data6 = conference.objects.filter(info__username=name).get(year=y);
 		data7 = journal.objects.filter(info__username=name).get(year=y);
-
 
 
 
@@ -1125,6 +1130,10 @@ def hod_teacher1_display(request,pk,y):
 		else:
 			form1 = forms.form_remarks1()
 
+		if sendme.hod_status:
+			form1=remarks1.objects.filter(info__username=name).get(year=y);
+			print("printing form1")
+			print(form1.hod_marks1)
 
 		context1 = {
 		"key1":data1,
@@ -1135,7 +1144,8 @@ def hod_teacher1_display(request,pk,y):
 		"key6":data6,
 		"key7":data7,
 		"form1":form1,
-		"y":y
+		"y":y,
+		"s":sendme
 		}
 
 		return render(request,'hod_teacher1_display.html',context=context1)
@@ -2927,14 +2937,14 @@ def associate_preview(request,y):
 @login_required
 def hod_preview(request,y):
 	name = request.user
-	n=new.objects.filter(info=name).get(year__year=y)
+	n=new.objects.filter(info__username=name).get(year__year=y)
 	data1 = User.objects.get(username=name)
-	data2 = empDetailForm.objects.filter(info=name).get(year=y);
-	data3 = feedbackTab.objects.filter(info=name).get(year=y);
-	data4 = rd.objects.filter(info=name).get(year=y);
-	data5 = remarks.objects.filter(info=name).get(year=y);
-	data6 = conference.objects.filter(info=name).get(year=y);
-	data7 = journal.objects.filter(info=name).get(year=y);
+	data2 = empDetailForm.objects.filter(info__username=name).get(year=y);
+	data3 = feedbackTab.objects.filter(info__username=name).get(year=y);
+	data4 = rd.objects.filter(info__username=name).get(year=y);
+	data5 = remarks.objects.filter(info__username=name).get(year=y);
+	data6 = conference.objects.filter(info__username=name).get(year=y);
+	data7 = journal.objects.filter(info__username=name).get(year=y);
 	if new.objects.filter(info__username=name).filter(principal_status=True):
 		data8 = remarks2.objects.get(info__username=name)
 	else:
