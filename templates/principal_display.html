@@ -48,7 +48,7 @@
 	<div style="margin-top:-16%;" class="limiter">
 		<div class="container-table100">
 			<div class="wrap-table100">
-				
+
 				<div class="cell">
 					<h1></h1>
 				</div>
@@ -170,6 +170,8 @@
 							<div class="cell" data-title="hod-review">
                 {% if name.hod_status %}
                 <span class="badge badge-success">DONE</span>
+								{% elif name.info.username == "ANNAMMA"%}
+								<span class="badge badge-danger"></span>
                 {% else %}
                 <span class="badge badge-danger">NOT DONE</span>
                 {% endif %}
