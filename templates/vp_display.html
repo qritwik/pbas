@@ -155,10 +155,10 @@
 							</div>
 							<div class="cell" data-title="Faculty Name">
 								{% if x.teach_status %}
-								<a {% if x.designation.pk == 4 %}	href="/ao_hod_display/{{x.info.username}}/{{y}}"
-								 {% elif x.designation.pk == 3 %} href="/ao_teacher1_display/{{x.info.username}}/{{y}}"
-								 {% elif x.designation.pk == 2 %} href="/ao_teacher1_display/{{x.info.username}}/{{y}}"
-								 {% elif x.designation.pk == 1 %} href="/ao_teacher_display/{{x.info.username}}/{{y}}"
+								<a {% if x.designation.pk == 4 %}	href="/vp_hod_display/{{x.info.username}}/{{y}}"
+								 {% elif x.designation.pk == 3 %} href="/vp_teacher1_display/{{x.info.username}}/{{y}}"
+								 {% elif x.designation.pk == 2 %} href="/vp_teacher1_display/{{x.info.username}}/{{y}}"
+								 {% elif x.designation.pk == 1 %} href="/vp_teacher_display/{{x.info.username}}/{{y}}"
 								 {% endif %}>
 								 {{x.info.first_name}}</a>
 								 {% else %}
