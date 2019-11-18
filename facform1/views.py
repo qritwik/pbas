@@ -57,6 +57,8 @@ def ao_principal(request):
 		print(year.year)
 		if request.user.is_ao():
 			return HttpResponseRedirect(reverse('facform1:ao_first',args=(year.year,)))
+		if request.user.is_vp():
+			return HttpResponseRedirect(reverse('facform1:vp_first',args=(year.year,)))
 		if request.user.is_principal():
 			return HttpResponseRedirect(reverse('facform1:principal_first',args=(year.year,)))
 	y=forms.yearform()
@@ -861,7 +863,7 @@ def login(request):
 
 def decide_view(request):
 	user=request.user
-	if user.designation.pk is 5 or  user.designation.pk is 6:
+	if user.designation.pk is 5 or  user.designation.pk is 6 or user.designation.pk is 8:
 		return HttpResponseRedirect(reverse('facform1:ao_principal'))
 	return HttpResponseRedirect(reverse('facform1:first_page'))
 	"""
