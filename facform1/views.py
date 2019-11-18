@@ -3034,13 +3034,13 @@ def vp_teacher_display(request,name,y):
 	data6 = conference.objects.filter(info__username=name).get(year=y)
 	data7 = journal.objects.filter(info__username=name).get(year=y)
 
-	# if new.objects.filter(info__username=name).filter(hod_status=True):
-	# 	if remarks1.objects.filter(info__username=name).filter(year=y).exists():
-	# 		data8=remarks1.objects.filter(info__username=name).get(year=y)
-	# 	else:
-	# 		data8=[]
-	# else:
-	# 	data8 = []
+	if new.objects.filter(info__username=name).filter(hod_status=True):
+		if remarks1.objects.filter(info__username=name).filter(year=y).exists():
+			data8=remarks1.objects.filter(info__username=name).get(year=y)
+		else:
+			data8=[]
+	else:
+		data8 = []
 	# if new.objects.filter(info__username=name).filter(principal_status=True):
 	# 	if remarks2.objects.filter(info__username=name).filter(year=y).exists():
 	# 		data9=remarks2.objects.filter(info__username=name).get(year=y)
@@ -3063,7 +3063,7 @@ def vp_teacher_display(request,name,y):
 	"key5":data5,
 	"key6":data6,
 	"key7":data7,
-	# "key8":data8,
+	"key8":data8,
 	# "key9":data9,
 
 
@@ -3089,13 +3089,13 @@ def vp_teacher1_display(request,name,y):
 	data6 = conference.objects.filter(info__username=name).get(year=y)
 	data7 = journal.objects.filter(info__username=name).get(year=y)
 
-	# if new.objects.filter(info__username=name).filter(hod_status=True):
-	# 	if remarks1.objects.filter(info__username=name).filter(year=y).exists():
-	# 		data8=remarks1.objects.filter(info__username=name).get(year=y)
-	# 	else:
-	# 		data8=[]
-	# else:
-	# 	data8 = []
+	if new.objects.filter(info__username=name).filter(hod_status=True):
+		if remarks1.objects.filter(info__username=name).filter(year=y).exists():
+			data8=remarks1.objects.filter(info__username=name).get(year=y)
+		else:
+			data8=[]
+	else:
+		data8 = []
 	# if new.objects.filter(info__username=name).filter(principal_status=True):
 	# 	if remarks2.objects.filter(info__username=name).filter(year=y).exists():
 	# 		data9=remarks2.objects.filter(info__username=name).get(year=y)
@@ -3114,7 +3114,7 @@ def vp_teacher1_display(request,name,y):
 	"key5":data5,
 	"key6":data6,
 	"key7":data7,
-	# "key8":data8,
+	"key8":data8,
 	# "key9":data9,
 
 
