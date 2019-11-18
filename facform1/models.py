@@ -125,7 +125,7 @@ class User(AbstractUser):
 
 
 	def is_vp(self):
-		faculty = Designation.objects.get(pk=7)
+		faculty = Designation.objects.get(pk=8)
 		faculty1 = str(faculty)
 		faculty2 = str(self.designation)
 		if faculty1 == faculty2:
