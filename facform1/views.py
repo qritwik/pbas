@@ -3123,7 +3123,7 @@ def vp_teacher1_display(request,name,y):
 
 @login_required
 def vp_hod_display(request,name,y):
-	if request.user.is_ao():
+	if request.user.is_vp():
 		print(name)
 		data1 = User.objects.get(username=name)
 		data2 = empDetailForm.objects.filter(info__username=name).get(year=y)
