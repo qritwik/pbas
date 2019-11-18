@@ -2221,17 +2221,18 @@
 <div class="col-10">
  <div class="form-row dis">
                <div class="orm-group col-md-6">
-              <h2 class="color1" style="color:#000000">TOTAL MARKS<span class="sp">_(Maximum Score: 100)</span></h2>
+              <h2 class="color1" style="color:#000000">TOTAL MARKS<span class="sp">(Maximum Score: 100)</span></h2>
                </div>
 
                 <h3>  <div class="orm-group col-md-6 color1" >
-										
+
                         </div>
                     </div><h3>
 </div>
 <div class="col-1"></div>
 </div>
 
+{% if not s.hod_status %}
 <div class="form-row dis">
 <div class="col-4"></div>
 <div class="col-4">
@@ -2249,11 +2250,30 @@
 </div>
 <div class="col-4"></div>
 </div>
+
+
+
+{% endif %}
 </div>
-</div>
+{% if s.hod_status %}
+
+<div class="form-row dis">
+<div class="col-4"></div>
+<div class="col-4">
+ <div class="form-row dis">
+    <!-- <button type="button" class="p12 btn btn-success btn-block">Calculate</button> -->
+<center><h3>You have already reviewed the form</h3></center>
 
 </div>
 
+</div>
+<div class="col-4"></div>
+</div>
+{% endif %}
+
+</div>
+
+</div>
 
 
 </div>
@@ -2324,6 +2344,11 @@
 
 
   });
+</script>
+<script>
+function myfunc() {
+  alert("YOU HAVE ALREADY REVIEWED ONCE");
+}
 </script>
 </body>
 </html>

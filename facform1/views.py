@@ -851,7 +851,6 @@ def login(request):
 			phone = user.phone
 			random_otp = r''.join(random.choice('0123456789') for i in range(4))
 			phone_otp(random_otp,phone)
-
 			email_otp(random_otp,user.email,user.first_name)
 			# random_otp="1234"
 			hashed_pwd = make_password(random_otp)
@@ -3157,6 +3156,3 @@ def vp_hod_display(request,name,y):
 		return render(request,'vp_hod_display.html',context=context1)
 	else:
 		return HttpResponseRedirect('/invalid')
-
-
-

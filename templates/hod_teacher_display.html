@@ -2270,7 +2270,7 @@ Invited talk/Seminar/Key Note Delivered
 </div>
 <div class="col-1"></div>
 </div>
-
+{% if not s.hod_status %}
 <div class="form-row dis">
 <div class="col-4"></div>
 <div class="col-4">
@@ -2289,8 +2289,29 @@ Invited talk/Seminar/Key Note Delivered
 <div class="col-4"></div>
 </div>
 </div>
+
+{% endif %}
+</div>
+{% if s.hod_status %}
+<div class="form-row dis">
+<div class="col-4"></div>
+<div class="col-4">
+ <div class="form-row dis">
+
+	 <!-- <button type="button" class="btn btn-success btn-block"></button> -->
+
+
+
+<center>
+  <h3>You have already reviewed the form</h3>
+</center>
+</form>
+</div>
+<div class="col-4"></div>
+</div>
 </div>
 
+{% endif %}
 </div>
 
 
