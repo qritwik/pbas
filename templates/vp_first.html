@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+
+	<title>AO First</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="{% static "images/favicon.ico" %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static "vendor/bootstrap/css/bootstrap.min.css" %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static "fonts/font-awesome-4.7.0/css/font-awesome.min.css" %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static "vendor/animate/animate.css" %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static "vendor/select2/select2.min.css" %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static "vendor/perfect-scrollbar/perfect-scrollbar.css" %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static "css/util.css" %}">
+	<link rel="stylesheet" type="text/css" href="{% static "css/main1.css" %}">
+<!--========================================================================================	{% include 'partials/nav_primary.html' %} =======-->
+</head>
+{% include 'partials/nav_primary.html' %}
+<body style="background:#c3d1f8">
+	<div style="margin-top:-200px;" class="limiter">
+
+		<div class="container-table100">
+			<div class="wrap-table100">
+					<div class="table">
+						<div class="row header">
+							<div class="cell">
+								<center><h3>Vice Principal View</h3><center>
+							</div>
+
+						</div>
+
+<h1>              </h1>
+
+					<!-- 	<div class="row header " style="font-size:25px">
+							<div class="col-sm-12">
+								<center><a href="{% url 'facform1:ao_consolidated_dept' y %}" style="color:#ffffff">Consolidated Report</a></center>
+							</div>
+
+						</div> -->
+					</div>
+						</div>
+							</div>
+						</div>
+
+
+
+	<div style="margin-top:-300px;" class="limiter">
+		<div class="container-table100">
+			<div class="wrap-table100">
+					<div class="table">
+
+						<div class="row header">
+							<div class="cell">
+								S No.
+							</div>
+							<div class="cell">
+								Departments
+							</div>
+							<div class="cell" >
+								Status of PBAS completion
+							</div>
+							<!-- <div class="cell" >
+							Final Appraisal Form
+							</div> -->
+
+						</div>
+
+            {% for dept in dept %}
+
+
+	           <div class="row">
+							<div class="cell" data-title="S no.">
+                {{ forloop.counter }}
+              </div>
+							<div class="cell" data-title="Department">
+                <a class="" href="" value="{dept.name}">{{dept.name}}</a>
+							</div>
+							<div class="cell" data-title="Department">
+                <a class="" href="{% url 'facform1:ao_display' dept=dept y=y %}" value="{dept.name}" style="color:red">Status of PBAS completion</a>
+							</div>
+							<!-- <div class="cell" data-title="Department">
+                <a class="" href="/ao_approved/{{dept.name}}/{{y}}" value="{dept.name}" style="color:#09a607">Final Appraisal Form</a>
+							</div> -->
+
+						</div>
+
+            {% endfor %}
+
+
+
+
+
+
+					</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+<!--===============================================================================================-->
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="js/main.js"></script>
+
+</body>
+</html>

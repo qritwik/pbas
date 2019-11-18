@@ -1,0 +1,229 @@
+
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+	<title>AO Display</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="{% static "images/favicon.ico" %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static "vendor/bootstrap/css/bootstrap.min.css" %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static "fonts/font-awesome-4.7.0/css/font-awesome.min.css" %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static "vendor/animate/animate.css" %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static "vendor/select2/select2.min.css" %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static "vendor/perfect-scrollbar/perfect-scrollbar.css" %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static "css/util.css" %}">
+	<link rel="stylesheet" type="text/css" href="{% static "css/main1.css" %}">
+<!--===============================================================================================-->
+</head>
+<body style="background:#c3d1f8">
+
+	{% include 'partials/nav_primary.html' %}
+
+
+
+
+
+	<div style="margin-top:-10%;">
+		<div class="container-table100">
+			<div class="wrap-table100">
+					<div class="table">
+
+						<div class="row header">
+							<div class="cell">
+								<center><h3>vice Principal View</h3></center>
+							</div>
+
+							<div class="cell">
+								<center><h3>Department of {{dept}}</h3></center>
+							</div>
+
+
+
+
+
+
+
+						</div>
+					</div>
+						</div>
+							</div>
+						</div>
+
+
+
+
+
+	<div style="margin-top:-35%;" class="limiter">
+		<div class="container-table100">
+			<div class="wrap-table100">
+					<div class="table">
+
+						<div class="row header">
+
+							<div class="cell">
+								Department
+							</div>
+							<div class="cell">
+								Faculty Submission
+							</div>
+							<div class="cell">
+								HOD's Review
+							</div>
+							<div class="cell">
+								Principal's Review
+							</div>
+
+						</div>
+
+
+
+
+	           <div class="row">
+
+							<div class="cell" data-title="Department">
+              <h4>{{ dept }}</h4>
+							</div>
+							<div class="cell" data-title="Department">
+								<h4>{{ t }}/{{ total }}</h4>
+							</div>
+							<div class="cell" data-title="HOD's Review">
+								<h4>{{ h }}</h4>
+							</div>
+							<div class="cell" data-title="Principal's Review">
+								<h4>{{ p }}</h4>
+							</div>
+
+						</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+					</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div style="margin-top:-15%;" class="limiter">
+		<div class="container">
+			<div class="wrap-table180">
+					<div class="table">
+
+						<div class="row header">
+							<div class="cell">
+								Profile picture
+							</div>
+							<div class="cell">
+								Faculty Name
+							</div>
+
+							<div class="cell">
+								Faculty Submitted
+							</div>
+							<div class="cell">
+								HOD's Review
+							</div>
+							<div class="cell">
+								Principal's Review
+							</div>
+						</div>
+
+						{% for x in sub %}
+
+						<div class="row">
+							<div class="cell">
+								<div class="col-sm-2">
+									<img src="{{x.info.profile_pic.url}}" alt="No pic" class="img-responsive " style="width:300%" align="middle" >
+								</div>
+							</div>
+							<div class="cell" data-title="Faculty Name">
+								{% if x.teach_status %}
+								<a {% if x.designation.pk == 4 %}	href="/ao_hod_display/{{x.info.username}}/{{y}}"
+								 {% elif x.designation.pk == 3 %} href="/ao_teacher1_display/{{x.info.username}}/{{y}}"
+								 {% elif x.designation.pk == 2 %} href="/ao_teacher1_display/{{x.info.username}}/{{y}}"
+								 {% elif x.designation.pk == 1 %} href="/ao_teacher_display/{{x.info.username}}/{{y}}"
+								 {% endif %}>
+								 {{x.info.first_name}}</a>
+								 {% else %}
+								 {{x.info.first_name}}
+								 {% endif %}
+
+						 </div>
+
+							<div class="cell" data-title="f-s">
+									{% if x.teach_status %}
+									<h6><span class="badge badge-success">{{x.teach_status}}</span></h6>
+									{% else %}
+									<h6><span class="badge badge-danger">{{x.teach_status}}</span></h6>
+									{% endif %}
+
+							</div>
+							<div class="cell" data-title="h-s">
+								{% if x.designation.name == "HOD" %}
+
+								{% else %}
+
+								{% if x.hod_status %}
+								<h6><span class="badge badge-success">{{x.hod_status}}</span></h6>
+								{% else %}
+								<h6><span class="badge badge-danger">{{x.hod_status}}</span></h6>
+								{% endif %}
+
+								{% endif %}
+
+
+							</div>
+							<div class="cell" data-title="p-s">
+								{% if x.principal_status %}
+								<h6><span class="badge badge-success">{{x.principal_status}}</span></h6>
+								{% else %}
+								<h6><span class="badge badge-danger">{{x.principal_status}}</span></h6>
+								{% endif %}
+
+							</div>
+						</div>
+
+						{% endfor %}
+
+
+
+
+
+					</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+<!--===============================================================================================-->
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="js/main.js"></script>
+
+</body>
+</html>

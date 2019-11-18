@@ -124,6 +124,13 @@ class User(AbstractUser):
 		return False
 
 
+	def is_vp(self):
+		faculty = Designation.objects.get(pk=7)
+		faculty1 = str(faculty)
+		faculty2 = str(self.designation)
+		if faculty1 == faculty2:
+			return True
+		return False
 
 
 

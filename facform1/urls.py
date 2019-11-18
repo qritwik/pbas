@@ -114,5 +114,10 @@ urlpatterns = [
     url(r'^ao_teacher1_display/(?P<name>[\w\-\.\w]+)/(?P<y>[\w\-]+)$',views.ao_teacher1_display,name="ao_teacher1_display"),
     url(r'^ao_hod_display/(?P<name>[\w\-\.\w]+)/(?P<y>[\w\-]+)$',views.ao_hod_display,name="ao_hod_display"),
 
+    url(r'^vp_first/(?P<y>[\w\-]+)$', views.vp_first,name="vp_first"),
+    url(r'^vp_display/(?P<dept>[\w\-]+)/(?P<y>[\w\-]+)$',views.vp_display,name="vp_display"),
+    url(r'^vp_teacher_display/(?P<name>[\w\-\.\w]+)/(?P<y>[\w\-]+)$',views.vp_teacher_display,name="vp_teacher_display"),
+    url(r'^vp_teacher1_display/(?P<name>[\w\-\.\w]+)/(?P<y>[\w\-]+)$',views.vp_teacher1_display,name="vp_teacher1_display"),
+    url(r'^vp_hod_display/(?P<name>[\w\-\.\w]+)/(?P<y>[\w\-]+)$',views.vp_hod_display,name="vp_hod_display"),
  #    url(r'^success/', views.success,name="success"),
   ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

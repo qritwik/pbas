@@ -1899,10 +1899,10 @@ def hod_first(request,y):
 		return HttpResponseRedirect('/invalid')
 
 
-
-
 def logout(request):
 	return render(request,'hod_success.html')
+
+
 
 @login_required
 def f_assistant5(request,y):
@@ -2963,3 +2963,198 @@ def hod_preview(request,y):
 	}
 
 	return render(request,'hod_preview.html',context=context1)
+
+
+
+
+
+@login_required
+def vp_first(request,y):
+	if request.user.is_vp():
+		dept = Department.objects.all()
+		context = {'dept':dept , 'y':y}
+		print(y)
+		return render(request,'vp_first.html',context=context)
+	else:
+		return HttpResponseRedirect('/invalid')
+
+
+
+@login_required
+def vp_display(request,dept,y):
+	if request.user.is_vp():
+
+		print(dept)
+		a = "assistant"
+		b = "associate"
+		c = "professor"
+		d = "hod"
+		general = User.objects.filter(department__name=dept)
+
+		tt = general.count()
+		teach_completed=0
+		hod_completed=0
+		principal_completed=0
+		#sub=new.objects.filter(year__year=y)
+		sub=set()
+
+		for i in general:
+			try:
+				s=new.objects.filter(info__username=i).get(year__year=y)
+				print(s)
+				sub.add(s);
+				if s.teach_status:
+					teach_completed=teach_completed+1
+				if s.hod_status:
+					hod_completed=hod_completed+1
+				if s.principal_status:
+					principal_completed=principal_completed+1
+			except:
+				pass
+
+
+
+		context = {'dept':dept,'general':general,'p':principal_completed,'h':hod_completed,'t':teach_completed,'total':tt,'sub':sub,'y':y}
+
+		return render(request,'vp_display.html',context=context)
+	else:
+		return HttpResponseRedirect('/invalid')
+
+
+@login_required
+def vp_teacher_display(request,name,y):
+	print(name)
+	data1 = User.objects.get(username=name)
+	data2 = empDetailForm.objects.filter(info__username=name).get(year=y)
+	data3 = feedbackTab.objects.filter(info__username=name).get(year=y)
+	data4 = rd.objects.filter(info__username=name).get(year=y)
+	data5 = remarks.objects.filter(info__username=name).get(year=y)
+	data6 = conference.objects.filter(info__username=name).get(year=y)
+	data7 = journal.objects.filter(info__username=name).get(year=y)
+
+	# if new.objects.filter(info__username=name).filter(hod_status=True):
+	# 	if remarks1.objects.filter(info__username=name).filter(year=y).exists():
+	# 		data8=remarks1.objects.filter(info__username=name).get(year=y)
+	# 	else:
+	# 		data8=[]
+	# else:
+	# 	data8 = []
+	# if new.objects.filter(info__username=name).filter(principal_status=True):
+	# 	if remarks2.objects.filter(info__username=name).filter(year=y).exists():
+	# 		data9=remarks2.objects.filter(info__username=name).get(year=y)
+	# 	else:
+	# 		data9=[]
+	# else:
+	# 	data9 = []
+
+
+
+
+
+
+
+	context1 = {
+	"key1":data1,
+	"key2":data2,
+	"key3":data3,
+	"key4":data4,
+	"key5":data5,
+	"key6":data6,
+	"key7":data7,
+	# "key8":data8,
+	# "key9":data9,
+
+
+	}
+
+
+
+
+	# if request.method == 'POST':
+	# 	email_doc(name)
+	# 	return HttpResponseRedirect('/ao_display'+ data1.department)
+
+	return render(request,'vp_teacher_display.html',context=context1)
+
+@login_required
+def vp_teacher1_display(request,name,y):
+	print(name)
+	data1 = User.objects.get(username=name)
+	data2 = empDetailForm.objects.filter(info__username=name).get(year=y)
+	data3 = feedbackTab.objects.filter(info__username=name).get(year=y)
+	data4 = rd.objects.filter(info__username=name).get(year=y)
+	data5 = remarks.objects.filter(info__username=name).get(year=y)
+	data6 = conference.objects.filter(info__username=name).get(year=y)
+	data7 = journal.objects.filter(info__username=name).get(year=y)
+
+	# if new.objects.filter(info__username=name).filter(hod_status=True):
+	# 	if remarks1.objects.filter(info__username=name).filter(year=y).exists():
+	# 		data8=remarks1.objects.filter(info__username=name).get(year=y)
+	# 	else:
+	# 		data8=[]
+	# else:
+	# 	data8 = []
+	# if new.objects.filter(info__username=name).filter(principal_status=True):
+	# 	if remarks2.objects.filter(info__username=name).filter(year=y).exists():
+	# 		data9=remarks2.objects.filter(info__username=name).get(year=y)
+	# 	else:
+	# 		data9=[]
+	# else:
+	# 	data9 = []
+
+
+
+	context1 = {
+	"key1":data1,
+	"key2":data2,
+	"key3":data3,
+	"key4":data4,
+	"key5":data5,
+	"key6":data6,
+	"key7":data7,
+	# "key8":data8,
+	# "key9":data9,
+
+
+	}
+	return render(request,'vp_teacher1_display.html',context=context1)
+
+@login_required
+def vp_hod_display(request,name,y):
+	if request.user.is_ao():
+		print(name)
+		data1 = User.objects.get(username=name)
+		data2 = empDetailForm.objects.filter(info__username=name).get(year=y)
+		data3 = feedbackTab.objects.filter(info__username=name).get(year=y)
+		data4 = rd.objects.filter(info__username=name).get(year=y)
+		data5 = remarks.objects.filter(info__username=name).get(year=y)
+		data6 = conference.objects.filter(info__username=name).get(year=y)
+		data7 = journal.objects.filter(info__username=name).get(year=y)
+		# if new.objects.filter(info__username=name).filter(principal_status=True):
+		# 	if remarks2.objects.filter(info__username=name).filter(year=y).exists():
+		# 		data8=remarks2.objects.filter(info__username=name).get(year=y)
+		# 	else:
+		# 		data8=[]
+		# else:
+		# 	data8 = []
+
+
+
+		context1 = {
+		"key1":data1,
+		"key2":data2,
+		"key3":data3,
+		"key4":data4,
+		"key5":data5,
+		"key6":data5,
+		"key7":data7,
+		# "key8":data8,
+
+
+		}
+		return render(request,'vp_hod_display.html',context=context1)
+	else:
+		return HttpResponseRedirect('/invalid')
+
+
+
