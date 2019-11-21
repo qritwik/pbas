@@ -28,6 +28,7 @@
     <th>Add/Reduce Marks</th>
     <th>Reason</th>
     <th>Principal Marks</th>
+    <th>Principal Remarks</th>
     <th>Add/Reduce Marks</th>
     <th>Reason</th>
     <th>Total Marks</th>
@@ -79,6 +80,8 @@
       {% endif %}
       </td>
 
+      <td>
+       {{value.3.ta_prin_remarks}}</td>
       <td {% if key.designation.name == "HOD" %} data-label="bonus">
       {%if value.3.prin_marks3 %}
       {{value.3.prin_marks3}}

@@ -2104,23 +2104,28 @@
 
 
 <div class="card dis1">
- <div class="input-group text7 ">
+ <div class="input-group text12">
   <div class="input-group-prepend">
-    <span class="input-group-text">Brief Remarks of the Principal</span>
+    <span class="input-group-text"><h4 class="sheading">Remarks of the Principal</h4></span>
+      <div style="padding-left:10px">
+        <h5>{{key9.ta_prin_remarks}}</h5>
+      </div>
   </div>
-  {{key8.ta_prin_remarks}}
 </div>
+
+<div class="input-group-prepend">
+  <span class="input-group-text"><h4 class="sheading">Reason for marks</h4></span>
+    <div style="padding-left:10px">
+      <h5>{{ key9.ta_prin_remarks1}}</h5>
+    </div>
 </div>
-<div class="c_marks" >
-  <!-- style="display: none;" -->
-  <div>
-    <label>Reason for marks</label>
-  {{key8.ta_prin_remarks1}}
+<div class="input-group-prepend">
+  <span class="input-group-text"><h4 class="sheading">Bonus/Reduce marks</h4></span>
+    <div style="padding-left:10px">
+      <h5>{{key9.prin_marks2}}</h5>
+    </div>
 </div>
-<div class="form-group">
-  <label>Bonus/Reduce marks</label>
-{{key8.prin_marks3}}
-</div>
+
 </div>
 </div>
 <!-- <button type="button" class="btn btn-info btn-lg btn-block s_case col-md-4">Special Case/Correction</button> -->
