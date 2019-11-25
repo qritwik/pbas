@@ -2210,63 +2210,99 @@ Invited talk/Seminar/Key Note Delivered
 </table>
 {% endif %}
 
-<div class="card poi ">
-	<center> <h1 class="heading theading" style="height:5px">PART 4</h1> </center>
+<center>  <h1 style="height:5px">PART 4</h1></center>
+  <div class="container">
+  <div class="card poi ">
+  	<div class="col-12" style="background:#9999ff">
+  		<center><h1>REVIEW BY PRINCIPAL</h2></center>
+  	</div>
+  	<div class="form-row dis">
+  	<div class="col-4"></div>
+  	<div class="col-4">
 
-	<div class="heading card poi">
-		<div class="heading col-12" style="background:#9999ff">
-		  <center><h1 class="heading theading">REVIEW BY PRINCIPAL</h2></center>
-		</div>
-	<div class="form-row dis">
-	<div class="col-4"></div>
-	<div class="col-4">
+  	<div class="col-4"></div>
+  	</div>
+  	<table class="table table-bordered po">
+  	<thead class="thead-dark">
+  		<tr>
+  			<th scope="col"></th>
+        <th scope="col"><h4><strong>Institutional  Responsibilities (Please list only those where you have made significant contribution)</strong></h4></th>
 
-	<div class="col-4"></div>
-	</div>
-	</div>
-  <table class="table table-bordered">
-  <thead class="thead-dark">
-    <tr>
-      <th scope="col"></th>
-      <th scope="col">PRINCIPAL'S MARKS</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Contribution to Institutional Developmental Activites<span class="sp">(Maximum Score: 5 marks)</span></td>
-       <td rowspan="3" class="fo1"><input type="text" class="form-control" placeholder="marks" aria-label="Username" aria-describedby="basic-addon1" disabled></td>
-     </tr>
-  </tbody>
-</table>
-</div>
+  		</tr>
+  	</thead>
+  	<tbody>
+  		<tr>
+  			<th scope="row"></th>
+  			<td><div style="overflow:scroll;">{{ key5.ta_ir }}</div></td>
 
+  		</tr>
 
+  	</tbody>
+  	</table>
 
+  	</div>
+    <table class="table table-bordered">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col"></th>
+        <th scope="col">PRINCIPAL'S MARKS</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><h5>Contribution to Institutional Developmental Activites<span class="sp" style="color:#ff0808">(Maximum Score: 5 marks)</span></h5></td>
+         <td rowspan="3"> {{ key9.prin_marks1 }}</td>
+       </tr>
+    </tbody>
+  </table>
 
-<div class="card dis1">
- <div class="input-group ">
-  <div class="input-group-prepend">
-    <span class="input-group-text">Brief Remarks of the Principal</span>
+	<div class="card dis1">
+   <div class="input-group text12">
+    <div class="input-group-prepend">
+      <span class="input-group-text"><h4 class="sheading">Remarks of the Principal</h4></span>
+        <div style="padding-left:10px">
+          <h5>{{key9.ta_prin_remarks}}</h5>
+        </div>
+    </div>
   </div>
-  <textarea class="form-control" aria-label="With textarea" disabled></textarea>
-</div>
-</div>
-</div>
 
-<div class="card poi card-header" id="headingOne" style="background:#4d9900">
-<div class="form-group">
-<div class="form-row dis">
-<div class="col-1"></div>
-<div class="col-10">
- <div class="form-row dis">
-               <div class="orm-group col-md-6">
-              <h2 class="po color1">TOTAL MARKS<span class="sp">_(Maximum Score: 100)</span></h2>
-               </div>
+  <div class="input-group-prepend">
+    <span class="input-group-text"><h4 class="sheading">Reason for marks</h4></span>
+      <div style="padding-left:10px">
+        <h5>{{ key9.ta_prin_remarks1}}</h5>
+      </div>
+  </div>
+  <div class="input-group-prepend">
+    <span class="input-group-text"><h4 class="sheading">Bonus/Reduce marks</h4></span>
+      <div style="padding-left:10px">
+        <h5>{{key9.prin_marks2}}</h5>
+      </div>
+  </div>
 
-                  <div class="orm-group col-md-6 color1">
-									<h3 class="color1"></h3>
-                        </div>
-                    </div>
+  </div>
+
+  <br>
+
+
+  </div>
+
+  <div class="container">
+  <div class="card poi card-header" id="headingOne" style="background:#77ff33">
+  <div class="form-group">
+  <div class="form-row dis">
+  <div class="col-1"></div>
+  <div class="col-10">
+
+
+		<div class="form-row dis">
+ 	   <div class="col-md-6">
+ 	  <h3 >GRAND TOTAL <span class="sp" style="color:#ff0808">(Maximum Score: 100) </span> :</h3>
+ 	   </div>
+ 	   <div class=" col-md-3">
+ 	   <h3 class="color1">	{{ key9.total_marks}}</h3>
+ 	         </div>
+
+ 	 </div>
 </div>
 <div class="col-1"></div>
 </div>

@@ -994,6 +994,12 @@ def hod_teacher_display(request,pk,y):
 
 			if sendme.hod_status:
 				form1=remarks1.objects.filter(info__username=name).get(year=y)
+
+				if remarks2.objects.filter(info__username=name).get(year=y):
+					data9 = remarks2.objects.get(info__username=name)
+				else:
+					data9 = []
+
 			context1 = {
 			"key1":data1,
 			"key2":data2,
@@ -1004,6 +1010,7 @@ def hod_teacher_display(request,pk,y):
 			"key6":data6,
 			"key7":data7,
 			"form1":form1,
+			"key9":data9,
 			"s":sendme
 			}
 
@@ -1133,6 +1140,10 @@ def hod_teacher1_display(request,pk,y):
 
 		if sendme.hod_status:
 			form1=remarks1.objects.filter(info__username=name).get(year=y);
+			if remarks2.objects.filter(info__username=name).get(year=y):
+				data9 = remarks2.objects.get(info__username=name)
+			else:
+				data9 = []
 			print("printing form1")
 			print(form1.hod_marks1)
 
@@ -1145,6 +1156,7 @@ def hod_teacher1_display(request,pk,y):
 		"key6":data6,
 		"key7":data7,
 		"form1":form1,
+		"key9":data9,
 		"y":y,
 		"s":sendme
 		}
