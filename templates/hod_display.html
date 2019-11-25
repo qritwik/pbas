@@ -88,7 +88,7 @@
 							<div class="cell" data-title="Faculty Name">
 
 								{% if x.teach_status and x.hod_status %}
-								<a href="/hod_teacher1_display/{{x.info.pk}}/{{y}}" class="">{{x.info.first_name}}</a>
+								<a href="/ao_teacher1_display/{{x.info.pk}}/{{y}}" class="">{{x.info.first_name}}</a>
 								{% elif x.teach_status %}
 								<a href="/hod_teacher1_display/{{x.info.pk}}/{{y}}">{{x.info.first_name}}</a>
 								{% else %}
@@ -135,7 +135,7 @@
 							<div class="cell" data-title="Faculty Name">
 
 								{% if info.teach_status and info.hod_status %}
-								<a href="/hod_teacher1_display/{{info.info.pk}}/{{y}}" class="">{{info.info.first_name}}</a>
+								<a href="/ao_teacher1_display/{{info.info.pk}}/{{y}}" class="">{{info.info.first_name}}</a>
 								{% elif info.teach_status %}
 								<a href="/hod_teacher1_display/{{info.info.pk}}/{{y}}">{{info.info.first_name}}</a>
 								{% else %}
@@ -180,7 +180,7 @@
 							<div class="cell" data-title="Faculty Name">
 
 								{% if x.teach_status and x.hod_status %}
-								<a href="/hod_teacher_display/{{x.info.pk}}/{{y}}" class="">{{x.info.first_name}}</a>
+								<a href="/ao_teacher_display/{{x.info.pk}}/{{y}}" class="">{{x.info.first_name}}</a>
 								{% elif x.teach_status %}
 								<a href="/hod_teacher_display/{{x.info.pk}}/{{y}}">{{x.info.first_name}}</a>
 								{% else %}
