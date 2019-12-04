@@ -1979,11 +1979,236 @@
                                     </div>
                                     <div class="heading container">
                                     <center> <h1 class="theading" style="height:5px">PART 3</h1></center>
+
+{% if sendme.principal_status %}
+
 <div class="heading card poi">
+<div class="heading card dis1 ">
+  <div class="heading col-12" style="background:#9999ff">
+    <center><h1 class="theading">REVIEW BY PRINCIPAL</h2></center>
+  </div>
+  <div class="heading form-row dis">
+  <div class="heading col-4"></div>
+  <div class="heading col-4">
+
+  <div class="heading col-4"></div>
+  </div>
+  </div>
+  <table class="heading table table-bordered" style="width:100%;">
+  <thead class="heading thead-dark">
+    <tr>
+
+      <th scope="col"><h4>Innovative contributions to teaching learning process provide description below with Initiation,Implementation, Impact Analysis<span class="heading sp" style="color:#ff0808">(Maximum Score: 5 marks)</h4></span></th>
+      <th scope="col">PRINCIPAL'S MARKS</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+
+      <td class="heading heading">
+
+         {{ key5.ta_ic }}
+
+
+
+     </td>
+      <td rowspan="4">{{form1.prin_marks1}}</td>
+       <!-- <td rowspan="4"><input type="text" class="heading form-control" placeholder="marks" aria-label="Username" aria-describedby="basic-addon1" disabled></td> -->
+    </tr>
+  </tbody>
+</table>
+</div>
 
 
 
 
+
+
+
+<table class="heading table table-bordered poi">
+<thead class="heading thead-dark">
+	<tr>
+		<th scope="col"></th>
+		<th scope="col"><h4>Departmental  Responsibilities (Please list only those where you have made significant contribution)</h4></th>
+
+	</tr>
+</thead>
+<tbody>
+	<tr>
+		<th scope="row"></th>
+		<td class="heading" style="height:auto">{{ key5.ta_dr }}</td>
+
+	</tr>
+
+</tbody>
+</table>
+
+
+
+
+
+<table class="heading table table-bordered poi">
+<thead class="heading thead-dark">
+	<tr>
+		<th scope="col"></th>
+		<th scope="col"><h4>Institutional  Responsibilities (Please list only those where you have made significant contribution)</h4></th>
+
+	</tr>
+</thead>
+<tbody>
+	<tr>
+		<th scope="row"></th>
+		<td class="heading heading">{{ key5.ta_ir }}</td>
+
+	</tr>
+
+</tbody>
+</table>
+
+
+<div class="heading card poi ">
+  <table class="heading table table-bordered">
+  <thead class="heading thead-dark">
+    <tr>
+      <th scope="col"></th>
+      <th scope="col"><h4>Attitude and Commitment to Departmental and Regular Teaching and Examination works:<span class="heading sp" style="color:#ff0808">(Min Score:25| Max Score:40)</span></h4></th>
+      <th scope="col">PRINCIPAL'S MARKS</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td class="heading heading"><h5>Contribution to Department Developmental Activites<span class="heading sp" style="color:#ff0808"> (Maximum Score:15 marks)</span></h5></td>
+       <td class="heading fo1">{{ form1.prin_marks2_1}}</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td class="heading heading"><h5>Attitude/Behaviour/Discipline/Punctuality<span class="heading sp" style="color:#ff0808"> (Maximum Score: 5 marks)</span></h5></td>
+       <td class="heading fo1">{{form1.prin_marks2_2}}</td>
+
+
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td class="heading heading"><h5>Examination/Test duties, Question paper preparation, Evaluation Preparation of Course material and Dedicaton in conducting Theory and Laboratory classes<span class="heading sp" style="color:#ff0808"> (Maximum Score: 5 marks)</span></h5></td>
+       <td >{{form1.prin_marks2_3}}</td>
+
+    </tr>
+
+    <tr>
+      <th scope="row">4</th>
+      <td class="heading heading"><h5>Contribution to Institutional Developmental Activites<span class="heading sp" style="color:#ff0808">(Maximum Score: 15 marks)</span></h5></td>
+       <td class="heading fo1">{{form1.prin_marks2_4 }}</td>
+
+    </tr>
+   <tr>
+      <th scope="row"></th>
+      <td class="heading heading"></td>
+      <td class="heading fo1">{{form1.prin_marks2}}</td>
+    </tr>
+  </tbody>
+</table>
+
+</div>
+
+
+
+<div class="heading card dis1">
+ <div class="heading input-group text7 ">
+  <div class="heading input-group-prepend">
+    <span class="heading input-group-text">Brief Remarks of the Principal</span>
+  </div>
+  {{form1.ta_prin_remarks}}
+</div>
+</div>
+<div class="heading c_marks" >
+  <!-- style="display: none;" -->
+  <div>
+    <label>Reason for marks</label>
+  {{form1.ta_prin_remarks1}}
+</div>
+<div class="heading form-group col-md-4">
+  <label>Bonus/Reduce marks</label>
+{{form1.prin_marks3}}
+</div>
+</div>
+</div>
+<!-- <button type="button" class="heading btn btn-info btn-lg btn-block s_case col-md-4">Special Case/Correction</button> -->
+
+<div class="heading container">
+<div class="heading card poi card-header" id="headingOne" style="background:#77ff33">
+<div class="heading form-group">
+<div class="heading form-row dis">
+<div class="heading col-1"></div>
+<div class="heading col-10">
+
+
+
+   <div class="heading form-row dis">
+     <div class="heading col-sm-3">
+       <h1></h1>
+     </div>
+     <div class="heading col-sm-6">
+       <center>( To review and finalize marks click here )</center>
+         <button type="button" class="heading btn btn-success btn-lg btn-block">Calculate</button>
+     </div>
+     <div class="heading col-sm-3">
+       <h1></h1>
+     </div>
+
+</div>
+<div class="heading form-row dis">
+</div>
+<div class="heading form-row dis">
+</div>
+<div class="heading form-row dis">
+</div>
+<div class="heading form-row dis">
+  <div class="heading col-md-6">
+ <h3 class="sheading">GRAND TOTAL <span class="heading sp" style="color:#ff0808">(Maximum Score: 100) </span> :</h3>
+  </div>
+  <div class="heading  col-md-3">
+  <h3 class="heading color1">	{{form1.total_marks}}</h3>
+        </div>
+  <div class="heading col-sm-3" style="padding-left:50px">
+  </div>
+</div>
+
+
+
+
+</div>
+<div class="heading col-1"></div>
+</div>
+
+<div class="heading form-row dis">
+<div class="heading col-4"></div>
+<div class="heading col-4">
+
+
+
+</form>
+<div class="heading col-4"></div>
+</div>
+</div>
+</div>
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+{% else %}
+<div class="heading card poi">
 <div class="heading card dis1 ">
   <div class="heading col-12" style="background:#9999ff">
     <center><h1 class="theading">REVIEW BY PRINCIPAL</h2></center>
@@ -2201,7 +2426,7 @@
 
 
 </div>
-
+{% endif %}
 
 <script>
 
