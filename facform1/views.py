@@ -1355,7 +1355,7 @@ def principal_teacher_display(request,pk,y):
 		else:
 			form1 = forms.form_remarks2()
 
-
+		sendme=new.objects.filter(info__username=name).get(year__year=y)
 		context1 = {
 		"key1":data1,
 		"key2":data2,
@@ -1366,7 +1366,8 @@ def principal_teacher_display(request,pk,y):
 		"key7":data7,
 		"key8":data8,
 		"form1":form1,
-		"y":y
+		"y":y,
+		"sendme":sendme,
 		}
 
 		return render(request,'principal_teacher_display.html',context=context1)
