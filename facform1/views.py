@@ -1354,6 +1354,9 @@ def principal_teacher_display(request,pk,y):
 
 		else:
 			form1 = forms.form_remarks2()
+			if new.objects.filter(info__username=name).filter(principal_status=True):
+				if remarks2.objects.filter(info__username=name).filter(year=y).exists():
+					form1=remarks2.objects.filter(info__username=name).get(year=y)
 
 		sendme=new.objects.filter(info__username=name).get(year__year=y)
 		context1 = {

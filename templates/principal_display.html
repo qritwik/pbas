@@ -153,7 +153,7 @@
 							</div>
 							<div class="cell" data-title="Faculty Name">
 								{% if name.principal_status %}
-								<a href="" class="h2p">{{name.info.first_name}}</a>
+								<a href="/principal_teacher1_display/{{name.info.pk}}/{{y}}" class="">{{name.info.first_name}}</a>
 								{% else %}
 								<a href="/principal_teacher1_display/{{name.info.pk}}/{{y}}" class="">{{name.info.first_name}}</a>
 								{% endif %}
