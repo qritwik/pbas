@@ -2071,6 +2071,150 @@
 <br>
 <center>
 <h1  class="heading theading" style="height:5px">PART 4</h1></center>
+
+{% if sendme.principal_status %}
+
+<div class="heading container">
+<div class="heading card poi ">
+	<div class="heading col-12" style="background:#9999ff">
+		<center><h1 class="heading theading">REVIEW BY PRINCIPAL</h2></center>
+	</div>
+	<div class="heading form-row dis">
+	<div class="heading col-4"></div>
+	<div class="heading col-4">
+
+	<div class="heading col-4"></div>
+	</div>
+	<table class="heading table table-bordered po">
+	<thead class="heading thead-dark">
+		<tr>
+			<th scope="col"></th>
+			<th scope="col"><h4><strong>Institutional  Responsibilities (Please list only those where you have made significant contribution)</strong></h4></th>
+
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<th scope="row"></th>
+			<td class="heading heading">{{ key5.ta_ir }}</td>
+
+		</tr>
+
+	</tbody>
+	</table>
+
+	</div>
+  <table class="heading table table-bordered">
+  <thead class="heading thead-dark">
+    <tr>
+      <th scope="col"></th>
+      <th scope="col">PRINCIPAL'S MARKS</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="heading heading"><h5>Contribution to Institutional Developmental Activites<span class="heading sp" style="color:#ff0808">(Maximum Score: 5 marks)</span></h5></td>
+       <td rowspan="3"> {{form1.prin_marks1}}</td>
+     </tr>
+  </tbody>
+</table>
+
+<div class="heading card poi">
+ <div class="heading input-group text7">
+  <div class="heading input-group-prepend">
+    <span class="heading input-group-text"><h5>Remarks of the Principal</h5></span>
+  </div>
+  {{form1.ta_prin_remarks}}
+</div>
+</div>
+
+<br>
+
+<center><button type="button" class="heading btn btn-info btn-lg btn-block s_case col-md-4">Special Case/Correction</button></center>
+
+<div class="heading c_marks" style="display: none;">
+  <div>
+    <label>Reason for marks</label>
+  {{form1.ta_prin_remarks1}}
+</div>
+<div class="heading form-group col-md-4">
+  <label>Bonus/Reduce marks</label>
+{{ form1.prin_marks2 }}
+</div>
+</div>
+</div>
+
+<div class="heading container">
+<div class="heading card poi card-header" id="headingOne" style="background:#77ff33">
+<div class="heading form-group">
+<div class="heading form-row dis">
+<div class="heading col-1"></div>
+<div class="heading col-10">
+
+
+
+   <div class="heading form-row dis">
+     <div class="heading col-sm-3">
+       <h1></h1>
+     </div>
+     <div class="heading col-sm-6">
+       <center>( To review and finalize marks click here )</center>
+         <button type="button" class="heading btn btn-success btn-lg btn-block ">Calculate</button>
+     </div>
+     <div class="heading col-sm-3">
+       <h1></h1>
+     </div>
+
+</div>
+<div class="heading form-row dis">
+</div>
+<div class="heading form-row dis">
+</div>
+<div class="heading form-row dis">
+</div>
+<div class="heading form-row dis">
+  <div class="heading col-md-6">
+ <h3 class="sheading">GRAND TOTAL <span class="heading sp" style="color:#ff0808">(Maximum Score: 100) </span> :</h3>
+  </div>
+  <div class="heading  col-md-3">
+  <h3 class="heading color1">	{{form1.total_marks}}</h3>
+        </div>
+  <div class="heading col-sm-3" style="padding-left:50px">
+
+  </div>
+</div>
+
+
+
+
+</div>
+<div class="heading col-1"></div>
+</div>
+
+<div class="heading form-row dis">
+<div class="heading col-4"></div>
+<div class="heading col-4">
+
+
+
+</form>
+<div class="heading col-4"></div>
+</div>
+</div>
+</div>
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+{% else %}
+
 <div class="heading container">
 <div class="heading card poi ">
 	<div class="heading col-12" style="background:#9999ff">
@@ -2205,7 +2349,7 @@
 
 
 </div>
-
+{% endif %}
 
 <script>
   $(function(){
