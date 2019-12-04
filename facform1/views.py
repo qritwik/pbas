@@ -1455,8 +1455,7 @@ def principal_teacher1_display(request,pk,y):
 		else:
 			data8 = []
 
-
-
+		sendme=new.objects.filter(info__username=name).get(year__year=y)
 		if request.method == 'POST':
 			form1 = forms.form_remarks2(request.POST)
 
@@ -1469,7 +1468,7 @@ def principal_teacher1_display(request,pk,y):
 				obj.year=y
 				obj.department = data1.department
 				obj.save()
-				sendme=new.objects.filter(info__username=name).get(year__year=y)
+
 				if sendme.principal_status == False:
 					sendme.principal_status = True
 					sendme.save()
@@ -1478,7 +1477,8 @@ def principal_teacher1_display(request,pk,y):
 
 		else:
 			form1 = forms.form_remarks2()
-
+			if sendme.principal_status:
+				form1=remarks2.objects.filter(info__username=name).get(year=y)
 
 		context1 = {
 		"key1":data1,
@@ -1490,7 +1490,8 @@ def principal_teacher1_display(request,pk,y):
 		"key7":data7,
 		"key8":data8,
 		"form1":form1,
-		"y":y
+		"y":y,
+		"sendme":sendme,
 		}
 
 		return render(request,'principal_teacher1_display.html',context=context1)
@@ -1539,6 +1540,7 @@ def principal_teacher1_display_edit(request,pk):
 
 		else:
 			form1 = forms.form_remarks2()
+			if
 
 
 		context1 = {
