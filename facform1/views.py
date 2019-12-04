@@ -1540,8 +1540,6 @@ def principal_teacher1_display_edit(request,pk):
 
 		else:
 			form1 = forms.form_remarks2()
-			if
-
 
 		context1 = {
 		"key1":data1,
