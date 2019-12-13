@@ -40,10 +40,9 @@
   <body style="background:#c3d1f8">
 		<div class="device pull-right" style="margin:1%;"><a style="color:#f5f5f5;" class="badge badge-danger" href="/logout">Logout</a></div>
 
-
     <div class="jumbotron" style="background:#736de3">
 
-    <div class="container-fluid">
+
     <center><img  width="125px" src="{% static "image/bms.logo.png" %}" alt="BMS Institute of Technology of management" ></center>
     <div class="row">
 
@@ -54,33 +53,26 @@
      </div>
      </div>
     </div>
-    </div>
+
 		<div class="sticky-top sticky">
 			<h2 style="color:black" >{{key1.first_name}}</h2>
-
 		</div>
+
 	<div class="container">
-
-
-
       <form method="POST">
       {% csrf_token %}
-
         <div class="table-bordered poi form-row" style="background:#6666ff">
 					<div class="form-group col-md-4">
             <label for="" style="color:white">Internship Company Name 1</label>
             <input type="text" class="form-control" id="inputEmpName" disabled value="{{ key2.it1_name }}">
-
           </div>
           <div class="form-group col-md-3">
             <label for="" style="color:white">From</label>
             <input type="text" class="form-control" id="inputEmpName" disabled value="{{ key2.it1_f }}">
-
           </div>
           <div class="form-group col-md-3">
             <label for="" style="color:white">To</label>
             <input type="text" class="form-control" id="inputEmpName" disabled value="{{ key2.it1_t }}">
-
           </div>
 					<div class="form-group col-md-2">
 
@@ -211,14 +203,10 @@
 
 			                </div>
 	   </div>
-		 <div class="row">
-		 <h1></h1>
-		 </div>
-<h1 style="text-align:center;height:50px">PART 1</h1>
 
+<h1 style="text-align:center;height:50px">PART 1</h1>
 <div class="table-bordered" style="background:#ffa64d">
 		 <h3 class="poi">1: Course Feedback and results<span class="sp" style="color:#ff0808">(Maximum Score: 40 marks)</span></h3>
-
 	    <h4 style="height:50px">Odd Semester</h4>
 	  <table class="table table-bordered">
 	  <thead>
@@ -399,19 +387,7 @@
 	</div>
 
 	</div>
-	<div class="dis1 row">
 
-	<div class="form-group col-sm-4">
-
-	</div>
-	<!-- <div class="form-group col-sm-4">
-
-	<button type="button" class="btn btn-info btn-lg btn-block o_l">Calculate</button>
-	</div> -->
-	<div class="form-group col-sm-4">
-
-	</div>
-	</div>
 
 	</div>
 
@@ -595,20 +571,6 @@
 	  <em>{{ key3.e_l_r_avg }}</em></div>
 	  </div>
 
-	<div class="dis1 row">
-
-	<div class="form-group col-sm-4">
-
-	</div>
-	<!-- <div class="form-group col-sm-4">
-
-	<button type="button" class="btn btn-info btn-lg btn-block e_l">Calculate</button>
-	</div> -->
-	<div class="form-group col-sm-4">
-
-	</div>
-	</div>
-
 	</div>
 
 
@@ -781,30 +743,14 @@
 	<div class="col-1"></div>
 	</div>
 
-	<div class="form-row dis">
-	<div class="col-4"></div>
-	<div class="col-4">
-	 <!-- <div class="form-row dis">
 
-
-
-	   <button type="button" class="btn btn-success btn-lg btn-block f_calc">Calculate</button>
-
-
-
-
-	</div> -->
-	<div class="col-4"></div>
-	</div>
-	</div>
 	</div>
 </div>
 </div>
 	</div>
 
-	<h1></h1>
 	<center><h1 style="height:5px">PART 2</h1></center>
-	<br>
+
 
 
   	<div class="table-bordered poi form-row">
@@ -1865,7 +1811,7 @@
 
                         </div>
 
-  											<div class="form-group row">
+  											<div class=" row">
 
 
 
@@ -1876,22 +1822,22 @@
 
 
   										  </div>
-  										  <div class="form-group col-md-6">
+  										  <div class="col-md-6">
   										 	 <h4>IPR Status :</h4>
   										 	{{key4.p_ipr_status}}
   										 </div>
-  										  <div class="form-group col-md-12">
+  										  <div class="col-md-12">
   										  <label>IPR File</label>
   										  {{key4.p_ipr_file}}
 
   										  </div>
 
-  										 	<div class="form-group col-md-12">
+  										 	<div class=" col-md-12">
   										 <label>Details</label>
   										 {{key4.p_ipr_info}}
 
   										 </div>
-  										 <div class="form-group col-md-12">
+  										 <div class=" col-md-12">
   										 <label>Marks :</label>
   										 {{key4.p_ipr_m}}
 
@@ -1901,33 +1847,33 @@
 
 
 
-  										 <div class="form-group row">
+  										 <div class="row">
 
 
 
 
-  										 			 <div class="form-group col-md-6">
+  										 			 <div class="col-md-6">
   										 				 <h4>Complete Specification filing of Patents</h4>
   										 			 </div>
 
 
   										 </div>
-  										 <div class="form-group col-md-6">
+  										 <div class="col-md-6">
   										 	<h4>IPR Status :</h4>
   										  {{key4.ipr_status}}
   										 </div>
-  										 <div class="form-group col-md-12">
+  										 <div class="col-md-12">
   										 <label>IPR File</label>
   										 {{key4.c_ipr_file}}
 
   										 </div>
 
-  										  <div class="form-group col-md-12">
+  										  <div class="col-md-12">
   										 <label>Details :-</label>
   										 {{key4.c_ipr_info}}
 
   										 </div>
-  										 <div class="form-group col-md-12">
+  										 <div class="col-md-12">
   										 <label>Marks :</label>
   										 {{key4.c_ipr_m}}
 
@@ -1935,7 +1881,7 @@
   										 </div>
   										 <div class=""  style="background:#99ebff">
 
-  										 							 <h1></h1>
+
 
   										 							<div class="">
 
@@ -1950,24 +1896,14 @@
   </div>
 
   </div>
-  <div class="cell">
-    <h1></h1>
-  </div>
+
   <div class="container">
   <center> <h1 style="height:5px">PART 3</h1> </center>
-
-
   <div class="card poi">
   	<div class="col-12" style="background:#9999ff">
   	  <center><h1>REVIEW BY HOD</h2></center>
   	</div>
-  	<div class="form-row dis">
-  	<div class="col-4"></div>
-  	<div class="col-4">
 
-  	<div class="col-4"></div>
-  	</div>
-  	</div>
   	<div class="card dis1 ">
   	  <table class="table table-bordered" style="width:100%;">
   	  <thead class="thead-dark">
