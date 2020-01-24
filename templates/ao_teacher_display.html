@@ -40,25 +40,25 @@
   <body style="background:#c3d1f8">
 		<div class="device pull-right" style="margin:1%;"><a style="color:#f5f5f5;" class="badge badge-danger" href="/logout">Logout</a></div>
 
-    <div class="jumbotron" style="background:#736de3">
+    <div class="jumbotron" style="background:#736de3;margin-top:-50px;">
 
 
     <center><img  width="125px" src="{% static "image/bms.logo.png" %}" alt="BMS Institute of Technology of management" ></center>
     <div class="row">
 
-     <div class="col-12"><h1 align="center" class="display-4" style="color:#f5f5f5"> BMS Institute of Technology and management</h1>
-       <h3 class="lead" style="color:white" align="center">Faculty Appraisal Form</h3>
-         <h3 class="lead" style="color:white;height:5px" align="center">1-Aug-2018 to 31-Jul-2019</h3>
+     <div class="col-12"><h3 align="center" class="display-4" style="color:#f5f5f5"> BMS Institute of Technology and management</h3>
+       <h4 class="lead" style="color:white" align="center">Faculty Appraisal Form</h4>
+         <h4 class="lead" style="color:white;height:5px" align="center">1-Aug-2018 to 31-Jul-2019</h4>
 
      </div>
      </div>
     </div>
 
-		<div class="sticky-top sticky">
+		<div class="sticky-top sticky" style="margin-top:-50px;">
 			<h2 style="color:black" >{{key1.first_name}}</h2>
 		</div>
 
-	<div class="container">
+	<div class="container" style="margin-top:-50px;">
       <form method="POST">
       {% csrf_token %}
         <div class="table-bordered poi form-row" style="background:#6666ff">
@@ -206,7 +206,7 @@
 
 <h1 style="text-align:center;height:50px">PART 1</h1>
 <div class="table-bordered" style="background:#ffa64d">
-		 <h3 class="poi">1: Course Feedback and results<span class="sp" style="color:#ff0808">(Maximum Score: 40 marks)</span></h3>
+		 <h3 class="poi" >1: Course Feedback and results<span class="sp" style="color:#ff0808">(Maximum Score: 40 marks)</span></h3>
 	    <h4 style="height:50px">Odd Semester</h4>
 	  <table class="table table-bordered">
 	  <thead>
@@ -574,7 +574,7 @@
 	</div>
 
 
-	<div class=" table-bordered poi">
+	<div class=" table-bordered poi" style="margin-top:-80px;">
 
 	   <h4>Project Guided</h4>
 	  <table class="table-bordered table">
@@ -728,11 +728,11 @@
 	</div>
 	</div>
 	</div>
-	<div class="card poi card-header" id="headingOne">
+	<div class="card poi card-header" id="headingOne" style="margin-top:-50px;">
 	<div class="form-group">
 	<div class="form-row dis">
 
-	<div class="container">
+	<div class="container" >
 	 <div class="form-row">
 	               <div class="container">
 	              <h3 class=" color1" style="text-align:right;height:5px">TOTAL MARKS<span class="sp" style="color:#ff0808">(Maximum Score: 40)</span> : {{ key3.e_o_f_r_final }}</h3>
@@ -1916,7 +1916,7 @@
   	  <tbody>
   	    <tr>
   	      <th scope="row">1</th>
-  	      <td><div class="input-group text12" style="overflow:scroll;">
+  	      <td><div class="input-group text12" style="width:100%;height:100%;">
   			  <div> {{ key5.ta_ic }}</div>
 
 
@@ -1944,14 +1944,14 @@
     <tbody>
       <tr>
         <th scope="row"></th>
-        <td><div style="overflow:scroll;">{{ key5.ta_dr }}</div></td>
+        <td><div style="width:100%;height:100%;">{{ key5.ta_dr }}</div></td>
 
       </tr>
 
     </tbody>
   </table>
 
-  <div class="card poi ">
+  <div class="card poi " style="margin-top:-50px;">
     <table class="table table-bordered">
     <thead class="thead-dark">
       <tr>
@@ -2041,7 +2041,7 @@
   	<tbody>
   		<tr>
   			<th scope="row"></th>
-  			<td><div style="overflow:scroll;">{{ key5.ta_ir }}</div></td>
+  			<td><div style="width:100%;height:100%;">{{ key5.ta_ir }}</div></td>
 
   		</tr>
 
@@ -2073,19 +2073,20 @@
         </div>
     </div>
   </div>
-
-  <div class="input-group-prepend">
-    <span class="input-group-text"><h4 class="sheading">Reason for marks</h4></span>
-      <div style="padding-left:10px">
-        <h5>{{ key9.ta_prin_remarks1}}</h5>
-      </div>
-  </div>
+<br>
   <div class="input-group-prepend">
     <span class="input-group-text"><h4 class="sheading">Bonus/Reduce marks</h4></span>
       <div style="padding-left:10px">
         <h5>{{key9.prin_marks2}}</h5>
       </div>
   </div>
+<br>
+	  <div class="input-group-prepend">
+	    <span class="input-group-text"><h4 class="sheading">Reason for marks</h4></span>
+	      <div style="padding-left:10px">
+	        <h5>{{ key9.ta_prin_remarks1}}</h5>
+	      </div>
+	  </div>
 
   </div>
 
@@ -2094,7 +2095,7 @@
 
   </div>
 
-  <div class="container">
+  <div class="container" style="margin-top:-50px;">
   <div class="card poi card-header" id="headingOne" style="background:#77ff33">
   <div class="form-group">
   <div class="form-row dis">
@@ -2116,19 +2117,7 @@
 
 
   </div>
-  <div class="col-1"></div>
-  </div>
 
-  <div class="form-row dis">
-  <div class="col-4"></div>
-  <div class="col-4">
-
-
-
-  </form>
-  <div class="col-4"></div>
-  </div>
-  </div>
   </div>
 
   </div>

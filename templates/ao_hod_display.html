@@ -41,7 +41,7 @@
     <div class="device pull-right" style="margin:1%;"><a style="color:#f5f5f5;" class="badge badge-danger" href="/logout">Logout</a></div>
 
 
-    <div class="jumbotron" style="background:#736de3">
+    <div class="jumbotron" style="background:#736de3;margin-top:-50px;">
 
     <div class="container-fluid">
     <center><img  width="125px" src="{% static "image/bms.logo.png" %}" alt="BMS Institute of Technology of management" ></center>
@@ -55,10 +55,10 @@
      </div>
     </div>
     </div>
-    <div class="sticky-top sticky">
+    <div class="sticky-top sticky" style="margin-top:-50px;">
       <h2 style="color:black">{{key1.first_name}}</h2>
     </div>
-  <div class="container">
+  <div class="container" style="margin-top:-50px;">
 
 
 
@@ -1996,7 +1996,7 @@
   <tbody>
     <tr>
 
-      <td><div class="input-group text12" style="overflow: scroll;">
+      <td><div class="input-group text12" style="width:100%;height:100%;">
        <div class="input-group-prepend">
        </div>
        {{ key5.ta_ic }}
@@ -2111,26 +2111,26 @@
         <h5>{{key9.ta_prin_remarks}}</h5>
       </div>
   </div>
-</div>
-
+</div><br>
+<div class="input-group-prepend">
+  <span class="input-group-text"><h4 class="sheading">Bonus/Reduce marks</h4></span>
+    <div style="padding-left:10px">
+      <h5>{{key9.prin_marks2}}</h5>
+    </div>
+</div><br>
 <div class="input-group-prepend">
   <span class="input-group-text"><h4 class="sheading">Reason for marks</h4></span>
     <div style="padding-left:10px">
       <h5>{{ key9.ta_prin_remarks1}}</h5>
     </div>
 </div>
-<div class="input-group-prepend">
-  <span class="input-group-text"><h4 class="sheading">Bonus/Reduce marks</h4></span>
-    <div style="padding-left:10px">
-      <h5>{{key9.prin_marks2}}</h5>
-    </div>
-</div>
+
 
 </div>
 </div>
 <!-- <button type="button" class="btn btn-info btn-lg btn-block s_case col-md-4">Special Case/Correction</button> -->
 
-<div class="container">
+<div class="container" style="margin-top:-50px;">
 <div class="card poi card-header" id="headingOne" style="background:#77ff33">
 <div class="form-group">
 <div class="form-row dis">

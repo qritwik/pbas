@@ -855,7 +855,6 @@ def login(request):
 			#random_otp="1234"
 			hashed_pwd = make_password(random_otp)
 			User.objects.filter(username=username).update(password=hashed_pwd)
-
 			return HttpResponseRedirect("/login/user=" + username)
 
 	return render(request,'login.html')

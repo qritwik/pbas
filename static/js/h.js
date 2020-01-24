@@ -10,7 +10,6 @@ $(function(){
 	var o_t3_favg = 0;
 
 	var c=0 ;
-
 	var o_tr_avg = 0;
 
 	var	d=0;
