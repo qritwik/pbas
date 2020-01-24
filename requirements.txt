@@ -46,7 +46,7 @@ pyexcel-io==0.5.9.1
 pyexcel-webio==0.1.4
 python-dateutil==2.7.3
 pytz==2018.5
-PyYAML==3.13
+PyYAML==5.1
 qrcode==6.0
 requests==2.19.1
 semantic-version==2.5.0
