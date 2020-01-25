@@ -60,19 +60,18 @@
     </div>
     </div>
 
-      <div class="sticky-top sticky" style="margin-top:-50px;">
+    <div class="sticky-top sticky" style="margin-top:-50px;">
     <h2 style="color:black">{{key1.first_name}}</h2>
-      </div>
+    </div>
 
-
-  <div class="container" style="margin-top:-50px;">
+  <div class="container" style="">
 
 
 
 
       <form method="POST">
         {% csrf_token %}
-        <div class="table-bordered poi form-row" style="background:#6666ff">
+        <div class="table-bordered  form-row" style="background:#6666ff">
           <div class="form-group col-md-4">
 
             <label for="" style="color:white">Internship Company Name 1</label>
@@ -258,9 +257,9 @@
   <h1 style="text-align:center;">PART 1</h1>
   <div class="table-bordered"  style="background:#ffa64d">
 
- <h3 class="poi">1: Course Feedback and Results<span class="sp" style="color:#ff0808">(Maximum Score: 30 marks)</span></h3>
+ <h3 class="">1: Course Feedback and Results<span class="sp" style="color:#ff0808">(Maximum Score: 30 marks)</span></h3>
 
- <div class="table-bordered poi" >
+ <div class="table-bordered " >
 
  <h4>Odd Semester</h4>
  <table class="table table-bordered">
@@ -332,20 +331,6 @@
 
 
  </div>
- <div class="dis1 row">
-
- <div class="form-group col-sm-4">
-
- </div>
- <!-- <div class="form-group col-sm-4">
-
- <button type="button" class="btn btn-info btn-lg btn-block o_t">Calculate</button>
- </div> -->
- <div class="form-group col-sm-4">
-
- </div>
- </div>
-
 
  <!-- </div> -->
  <table class="table-bordered table">
@@ -442,25 +427,13 @@
  </div>
 
  </div>
- <div class="dis1 row">
 
- <div class="form-group col-sm-4">
-
- </div>
- <!-- <div class="form-group col-sm-4">
-
- <button type="button" class="btn btn-info btn-lg btn-block o_l">Calculate</button>
- </div> -->
- <div class="form-group col-sm-4">
-
- </div>
- </div>
 
  </div>
 
  </div>
 
- <div class="table-bordered poi" >
+ <div class="table-bordered " style="margin-top:">
 
  <h4>Even Semester</h4>
  <table class="table-bordered table">
@@ -531,19 +504,7 @@
  <em>{{ key3.e_t_r_avg }}</em></div>
  </div>
 
- <div class="dis1 row">
 
- <div class="form-group col-sm-4">
-
- </div>
- <!-- <div class="form-group col-sm-4">
-
- <button type="button" class="btn btn-info btn-lg btn-block e_t">Calculate</button>
- </div> -->
- <div class="form-group col-sm-4">
-
- </div>
- </div>
  </div>
  <table class="table-bordered table">
  <thead>
@@ -638,24 +599,11 @@
  <em>{{ key3.e_l_r_avg }}</em></div>
  </div>
 
- <div class="dis1 row">
-
- <div class="form-group col-sm-4">
-
- </div>
- <!-- <div class="form-group col-sm-4">
-
- <button type="button" class="btn btn-info btn-lg btn-block e_l">Calculate</button>
- </div> -->
- <div class="form-group col-sm-4">
 
  </div>
  </div>
 
- </div>
- </div>
-
- <div class=" table-bordered poi"  >
+ <div class=" table-bordered "  >
 
  <h4>Project Guided</h4>
  <table class="table-bordered table">
@@ -809,7 +757,7 @@
  </div>
  </div>
  </div>
- <div class="card poi card-header " id="headingOne" >
+ <div class="card  card-header " id="headingOne" >
 
 
 
@@ -847,7 +795,7 @@
 
  <h1></h1>
  <center><h1 style="height:5px">PART 2</h1></center>
- <div class="table-bordered poi form-row" style="background:#99ebff">
+ <div class="table-bordered  form-row" style="background:#99ebff;margin-top:40px;">
 
  <div class="table table-bordered" id="accordionExample" style="background:#99ebff">
  <h4 class="po color1">2: RESEARCH & DEVELOPMENT AND CONSULTANCY<span class="sp" style="color:#ff0808">(Maximum Score: 40 marks)</span></h4>
@@ -1361,7 +1309,7 @@
  </div>
  </div>
  </div>
- <div class="poi" style="background:#99ebff">
+ <div class="" style="background:#99ebff">
       <h2>Details of Non-Indexed Papers Published In Conference/Journal</h2>
   <table class="table table-bordered" style="background:#99ebff">
     <thead>
@@ -1769,7 +1717,7 @@
  </tr>
  </tbody>
  </table>
- <div class="card poi"  style="background:#99ebff">
+ <div class="card "  style="background:#99ebff">
 
  <div class="form-group ">
 
@@ -1876,7 +1824,7 @@
  </div>
  <div class="container">
  <center> <h1 style="height:5px">PART 3</h1> <center>
- <div class="card poi">
+ <div class="card" style="margin-top:40px;">
    <div class="col-12" style="background:#9999ff">
      <center><h1> REVIEW BY HOD</h1></center>
    </div>
@@ -2003,7 +1951,7 @@
  </div>
  <div class="container">
  <center> <h1 style="height:5px">PART 4</h1></center>
- <div class="card poi">
+ <div class="card " style="margin-top:40px;">
    <div class="col-12" style="background:#9999ff">
      <center><h1>REVIEW BY PRINCIPAL</h2></center>
    </div>
@@ -2077,8 +2025,9 @@
 
  </div>
  </div>
- <div class="container" style="margin-top:-50px;">
- <div class="card poi card-header" id="headingOne" style="background:#77ff33">
+ <div class="container">
+   <br>
+ <div class="card  card-header" id="headingOne" style="background:#77ff33">
  <div class="form-group">
  <div class="form-row dis">
  <div class="col-1"></div>
