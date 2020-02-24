@@ -856,7 +856,7 @@ def login(request):
 			hashed_pwd = make_password(random_otp)
 			User.objects.filter(username=username).update(password=hashed_pwd)
 			return HttpResponseRedirect("/login/user=" + username)
-
+	print("Username does not exists")
 	return render(request,'login.html')
 
 def decide_view(request):
