@@ -1101,6 +1101,7 @@ def hod_teacher_display_edit(request,pk,y):
 
 @login_required
 def hod_teacher1_display(request,pk,y):
+	data9=[]
 	name =  User.objects.get(pk = pk);
 	sendme = new.objects.filter(info__username=name).get(year__year=y)
 	if request.user.is_hod() or request.user.hodrole:
