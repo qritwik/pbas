@@ -67,7 +67,7 @@ class User(AbstractUser):
 	designation = models.ForeignKey('Designation', on_delete=models.CASCADE,null=True)
 	hodrole	 = models.BooleanField(default=False)
 	info = models.CharField(max_length=20, blank=True, null=True)
-	profile_pic=models.ImageField(blank=True	,upload_to='profile_pic/')
+	profile_pic=models.ImageField(blank=True , upload_to='profile_pic/')
 
 	def __str__(self):
 		return self.username
