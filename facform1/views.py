@@ -966,7 +966,7 @@ def hod_teacher_display(request,pk,y):
 			data5 = remarks.objects.filter(info__username=name).get(year=y);
 			data6 = conference.objects.filter(info__username=name).get(year=y);
 			data7 = journal.objects.filter(info__username=name).get(year=y);
-
+			data9 = []
 
 
 
