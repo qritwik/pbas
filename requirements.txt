@@ -9,7 +9,7 @@ cffi==1.11.5
 chardet==3.0.4
 diff-match-patch==20121119
 dj-database-url==0.5.0
-Django==2.0.2
+Django==2.2.24
 django-csv-export-view==0.5.0
 django-debug-toolbar==1.10.1
 django-excel==0.0.4
